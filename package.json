@@ -1,0 +1,27 @@
+{
+  "name": "digital-planning-data-schemas",
+  "version": "0.0.1",
+  "description": "Digital Planning Schemas",
+  "main": "schema/schema.json",
+  "scripts": {
+    "build": "pnpm ts-json-schema-generator --path 'types/**/*.ts' --out 'schema/schema.json'",
+    "lint": "gts lint",
+    "clean": "gts clean",
+    "compile": "tsc",
+    "fix": "gts fix",
+    "prepare": "pnpm run compile",
+    "pretest": "pnpm run compile",
+    "posttest": "pnpm run lint"
+  },
+  "keywords": [],
+  "author": "Open Systems Lab",
+  "license": "MPL2",
+  "devDependencies": {
+    "@types/node": "18.16.1",
+    "gts": "^5.0.0",
+    "typescript": "~5.1.6"
+  },
+  "dependencies": {
+    "ts-json-schema-generator": "^1.2.0"
+  }
+}
