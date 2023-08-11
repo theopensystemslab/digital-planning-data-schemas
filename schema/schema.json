@@ -1,0 +1,264 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "Applicant": {
+      "$id": "Applicant",
+      "additionalProperties": false,
+      "properties": {
+        "name123": {
+          "$ref": "#/definitions/UUId"
+        }
+      },
+      "required": [
+        "name123"
+      ],
+      "type": "object"
+    },
+    "Application": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "type": "object"
+    },
+    "Email": {
+      "format": "email",
+      "type": "string"
+    },
+    "File": {
+      "additionalProperties": false,
+      "examples": [
+        {
+          "size": "10mb"
+        }
+      ],
+      "properties": {
+        "foo": {
+          "enum": [
+            "bar",
+            "baz",
+            "boo"
+          ],
+          "type": "string"
+        },
+        "size": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "size",
+        "foo"
+      ],
+      "type": "object"
+    },
+    "Metadata": {
+      "additionalProperties": false,
+      "properties": {
+        "service": {
+          "additionalProperties": false,
+          "properties": {
+            "$description": {
+              "type": "string"
+            },
+            "council": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "publishedFlowId": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "$description",
+            "publishedFlowId",
+            "name",
+            "council"
+          ],
+          "type": "object"
+        },
+        "session": {
+          "additionalProperties": false,
+          "properties": {
+            "createdAt": {
+              "format": "date-time",
+              "type": "string"
+            },
+            "id": {
+              "type": "string"
+            },
+            "submittedAt": {
+              "format": "date-time",
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "createdAt",
+            "submittedAt"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "service",
+        "session"
+      ],
+      "type": "object"
+    },
+    "Property": {
+      "$id": "Property",
+      "additionalProperties": false,
+      "description": "This is an applicant",
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "type": "object"
+    },
+    "Proposal": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "type": "object"
+    },
+    "Responses": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "type": "object"
+    },
+    "Result": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "type": "object"
+    },
+    "Schema": {
+      "additionalProperties": false,
+      "description": "Root of PlanX's Digital Planning Schema",
+      "properties": {
+        "data": {
+          "additionalProperties": false,
+          "properties": {
+            "applicant": {
+              "$ref": "#/definitions/Applicant"
+            },
+            "application": {
+              "$ref": "#/definitions/Application"
+            },
+            "property": {
+              "$ref": "#/definitions/Property"
+            },
+            "proposal": {
+              "$ref": "#/definitions/Proposal"
+            },
+            "user": {
+              "$ref": "#/definitions/User"
+            }
+          },
+          "required": [
+            "applicant",
+            "property",
+            "application",
+            "proposal",
+            "user"
+          ],
+          "type": "object"
+        },
+        "files": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "lastModified": {
+                "type": "number"
+              },
+              "name": {
+                "type": "string"
+              },
+              "size": {
+                "type": "number"
+              },
+              "type": {
+                "type": "string"
+              },
+              "webkitRelativePath": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "lastModified",
+              "name",
+              "size",
+              "type",
+              "webkitRelativePath"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "metadata": {
+          "$ref": "#/definitions/Metadata"
+        },
+        "responses": {
+          "$ref": "#/definitions/Responses"
+        },
+        "result": {
+          "$ref": "#/definitions/Result"
+        }
+      },
+      "required": [
+        "data",
+        "result",
+        "metadata",
+        "responses",
+        "files"
+      ],
+      "type": "object"
+    },
+    "UUId": {
+      "format": "uuid",
+      "type": "string"
+    },
+    "User": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "type": "object"
+    }
+  }
+}
