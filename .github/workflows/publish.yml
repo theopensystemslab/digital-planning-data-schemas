@@ -43,8 +43,8 @@ jobs:
         if: steps.version_check.outputs.changed == 'true'
         run: |
           pnpm build
-          mkdir -p "$GITHUB_WORKSPACE/${{ steps.version_check.output.version }}"
-          mv schema/* "$GITHUB_WORKSPACE/${{ steps.version_check.output.version }}"
+          mkdir -p "$GITHUB_WORKSPACE/${{ steps.version_check.outputs.version }}"
+          mv schema/* "$GITHUB_WORKSPACE/${{ steps.version_check.outputs.version }}"
 
       - name: Commit and Push Changes
         if: steps.version_check.outputs.changed == 'true'
@@ -52,14 +52,14 @@ jobs:
           git config user.name "${GITHUB_ACTOR}"
           git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
           git add .
-          git commit -m "Add build files for version ${{ steps.version_check.output.version }}"
+          git commit -m "Add build files for version ${{ steps.version_check.outputs.version }}"
           git push origin dist
 
       - name: Create Release and Tag
         if: steps.version_check.outputs.changed == 'true'
         uses: actions/create-release@v1
         with:
-          tag_name: ${{ steps.version_check.output.version }}
-          release_name: ${{ steps.version_check.output.version }}
+          tag_name: ${{ steps.version_check.outputs.version }}
+          release_name: ${{ steps.version_check.outputs.version }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
