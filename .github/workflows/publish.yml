@@ -5,6 +5,10 @@ on:
     branches:
       - main
 
+env:
+  VERSION_BUMPED: false
+  PACKAGE_VERSION: "0.0.0"
+
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -13,55 +17,61 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '18.16.1'
-
-      - name: Install pnpm
-        run: npm install -g pnpm
-
-      - name: Install Dependencies
-        run: pnpm install
-
       - name: Check for Version Bump
         id: version_changed
         run: |
           if git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep -E 'package\.json'; then
             echo "Version bumped in package.json"
-            echo "::set-output name=version_bumped::true"
+            echo "VERSION_BUMPED=true" >> $GITHUB_ENV
           else
             echo "Version not bumped in package.json"
-            echo "::set-output name=version_bumped::false"
+            echo "VERSION_BUMPED=false" >> $GITHUB_ENV
           fi
 
-      - name: Create Dist Branch
-        if: steps.version_changed.outputs.version_bumped
-        run: git checkout dist || git checkout -b dist
+      - name: Setup Node.js
+        if: env.VERSION_BUMPED
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18.16.1'
+
+      - name: Install pnpm
+        if: env.VERSION_BUMPED
+        run: npm install -g pnpm
+
+      - name: Install Dependencies
+        if: env.VERSION_BUMPED  
+        run: pnpm install
+
+      - name: Checkout Dist Branch
+        if: env.VERSION_BUMPED
+        run: |
+          git checkout dist
+          git pull origin dist
+
+      - name: Get package version
+        run: echo "PACKAGE_VERSION=$(jq -r .version package.json)" >> $GITHUB_ENV
 
       - name: Build and Move Files
-        if: steps.version_changed.outputs.version_bumped
+        if: env.VERSION_BUMPED
         run: |
           pnpm build
-          PACKAGE_VERSION=$(jq -r .version package.json)
           mkdir -p "$GITHUB_WORKSPACE/$PACKAGE_VERSION"
           mv schema/* "$GITHUB_WORKSPACE/$PACKAGE_VERSION"
 
       - name: Commit and Push Changes
-        if: steps.version_changed.outputs.version_bumped
+        if: env.VERSION_BUMPED
         run: |
           git config user.name "${GITHUB_ACTOR}"
           git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
           git add .
           git commit -m "Add build files for version $PACKAGE_VERSION"
-          git fetch origin
-          git push --force origin dist
+          git push origin dist
 
       - name: Create Release and Tag
-        if: steps.version_changed.outputs.version_bumped
+        if: env.VERSION_BUMPED
         uses: actions/create-release@v1
         with:
-          tag_name: ${{ steps.version_changed.outputs.version_bumped }}
-          release_name: Release ${{ steps.version_changed.outputs.version_bumped }}
+          tag_name: ${{ env.PACKAGE_VERSION }}
+          release_name: ${{ env.PACKAGE_VERSION }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
