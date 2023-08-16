@@ -44,7 +44,7 @@ jobs:
         if: steps.version_changed.outputs.version_bumped == 'true'
 
       - name: Create Dist Branch
-        run: git checkout dist || git checkout -b dist
+        run: git checkout dist
 
       - name: Build and Move Files
         run: |
@@ -59,6 +59,10 @@ jobs:
           git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
           git add .
           git commit -m "Add build files for version $PACKAGE_VERSION"
+
+          git fetch origin
+          git merge --ff-only origin/dist
+
           git push origin dist
 
       - name: Clean Up
