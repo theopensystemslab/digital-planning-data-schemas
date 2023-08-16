@@ -20,34 +20,34 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Node.js
-        if: steps.version_check.outputs.changed
+        if: steps.version_check.outputs.changed == 'true'
         uses: actions/setup-node@v2
         with:
           node-version: '18.16.1'
 
       - name: Install pnpm
-        if: steps.version_check.outputs.changed
+        if: steps.version_check.outputs.changed == 'true'
         run: npm install -g pnpm
 
       - name: Install Dependencies
-        if: steps.version_check.outputs.changed  
+        if: steps.version_check.outputs.changed == 'true'  
         run: pnpm install
 
       - name: Checkout Dist Branch
-        if: steps.version_check.outputs.changed
+        if: steps.version_check.outputs.changed == 'true'
         run: |
-          git checkout -b dist
-          git pull origin dist --ff-only
+          git fetch origin dist
+          git checkout -b dist origin/dist
 
       - name: Build and Move Files
-        if: steps.version_check.outputs.changed
+        if: steps.version_check.outputs.changed == 'true'
         run: |
           pnpm build
           mkdir -p "$GITHUB_WORKSPACE/${{ steps.version_check.output.version }}"
           mv schema/* "$GITHUB_WORKSPACE/${{ steps.version_check.output.version }}"
 
       - name: Commit and Push Changes
-        if: steps.version_check.outputs.changed
+        if: steps.version_check.outputs.changed == 'true'
         run: |
           git config user.name "${GITHUB_ACTOR}"
           git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
@@ -56,7 +56,7 @@ jobs:
           git push origin dist
 
       - name: Create Release and Tag
-        if: steps.version_check.outputs.changed
+        if: steps.version_check.outputs.changed == 'true'
         uses: actions/create-release@v1
         with:
           tag_name: ${{ steps.version_check.output.version }}
