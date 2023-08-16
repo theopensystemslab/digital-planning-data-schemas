@@ -1,16 +1,18 @@
 {
+  "$id": "DigitalPlanningDataSchema",
+  "$ref": "#/definitions/Schema",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "definitions": {
     "Applicant": {
       "$id": "Applicant",
       "additionalProperties": false,
       "properties": {
-        "name123": {
-          "$ref": "#/definitions/UUId"
+        "name": {
+          "type": "string"
         }
       },
       "required": [
-        "name123"
+        "name"
       ],
       "type": "object"
     },
@@ -26,8 +28,8 @@
       ],
       "type": "object"
     },
-    "Email": {
-      "format": "email",
+    "DateTime": {
+      "format": "date-time",
       "type": "string"
     },
     "File": {
@@ -61,25 +63,26 @@
       "properties": {
         "service": {
           "additionalProperties": false,
+          "description": "Details of the digital planning service which generated this payload",
           "properties": {
-            "$description": {
-              "type": "string"
-            },
-            "council": {
-              "type": "string"
-            },
             "name": {
               "type": "string"
             },
-            "publishedFlowId": {
+            "owner": {
               "type": "string"
+            },
+            "publishedFlowId": {
+              "$ref": "#/definitions/UUID"
+            },
+            "url": {
+              "$ref": "#/definitions/URL"
             }
           },
           "required": [
-            "$description",
             "publishedFlowId",
             "name",
-            "council"
+            "owner",
+            "url"
           ],
           "type": "object"
         },
@@ -87,18 +90,22 @@
           "additionalProperties": false,
           "properties": {
             "createdAt": {
-              "format": "date-time",
-              "type": "string"
+              "$ref": "#/definitions/DateTime"
             },
             "id": {
+              "$ref": "#/definitions/UUID"
+            },
+            "source": {
+              "const": "PlanX",
+              "default": "PlanX",
               "type": "string"
             },
             "submittedAt": {
-              "format": "date-time",
-              "type": "string"
+              "$ref": "#/definitions/DateTime"
             }
           },
           "required": [
+            "source",
             "id",
             "createdAt",
             "submittedAt"
@@ -163,6 +170,7 @@
       "type": "object"
     },
     "Schema": {
+      "$id": "DigitalPlanningDataSchema",
       "additionalProperties": false,
       "description": "Root of PlanX's Digital Planning Schema",
       "properties": {
@@ -196,32 +204,7 @@
         },
         "files": {
           "items": {
-            "additionalProperties": false,
-            "properties": {
-              "lastModified": {
-                "type": "number"
-              },
-              "name": {
-                "type": "string"
-              },
-              "size": {
-                "type": "number"
-              },
-              "type": {
-                "type": "string"
-              },
-              "webkitRelativePath": {
-                "type": "string"
-              }
-            },
-            "required": [
-              "lastModified",
-              "name",
-              "size",
-              "type",
-              "webkitRelativePath"
-            ],
-            "type": "object"
+            "$ref": "#/definitions/File"
           },
           "type": "array"
         },
@@ -242,9 +225,15 @@
         "responses",
         "files"
       ],
+      "title": "Digital Planning Data Schema",
       "type": "object"
     },
-    "UUId": {
+    "URL": {
+      "format": "uri",
+      "pattern": "^https?://",
+      "type": "string"
+    },
+    "UUID": {
       "format": "uuid",
       "type": "string"
     },

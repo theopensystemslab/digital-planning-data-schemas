@@ -1,13 +1,22 @@
+import {DateTime, URL, UUID} from './../utils';
+
 export interface Metadata {
+  /**
+   * @description Details of the digital planning service which generated this payload
+   */
   service: {
-    $description: string;
-    publishedFlowId: string; // uuid
-    name: string; // find-out-if-...
-    council: string; // enum? better name for this needed
+    publishedFlowId: UUID;
+    name: string;
+    owner: string;
+    url: URL;
   };
   session: {
-    id: string; // uuid
-    createdAt: Date;
-    submittedAt: Date;
+    /**
+     * @default PlanX
+     */
+    source: 'PlanX';
+    id: UUID;
+    createdAt: DateTime;
+    submittedAt: DateTime;
   };
 }
