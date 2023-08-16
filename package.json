@@ -11,8 +11,7 @@
     "clean": "gts clean",
     "compile": "tsc",
     "fix": "gts fix",
-    "test": "vitest",
-    "pretest": "pnpm run compile",
+    "test": "pnpm build-schema && vitest",
     "posttest": "pnpm run lint"
   },
   "keywords": [],
