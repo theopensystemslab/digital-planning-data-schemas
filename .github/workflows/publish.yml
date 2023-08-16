@@ -37,7 +37,7 @@ jobs:
         if: steps.version_check.outputs.changed
         run: |
           git checkout -b dist
-          git pull origin dist
+          git pull origin dist --ff-only
 
       - name: Build and Move Files
         if: steps.version_check.outputs.changed
