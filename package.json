@@ -4,13 +4,14 @@
   "description": "Digital Planning Schemas",
   "main": "schema/schema.json",
   "scripts": {
-    "build": "pnpm ts-json-schema-generator --path 'types/**/*.ts' --out 'schema/schema.json'",
+    "build": "pnpm build-schema && pnpm build-json-examples",
+    "build-json-examples": "pnpm ts-node scripts/build-json-examples.ts",
+    "build-schema": "pnpm ts-json-schema-generator --path 'types/**/*.ts' --out 'schema/schema.json' --type Schema --id 'DigitalPlanningDataSchema'",
     "lint": "gts lint",
     "clean": "gts clean",
     "compile": "tsc",
     "fix": "gts fix",
-    "prepare": "pnpm run compile",
-    "pretest": "pnpm run compile",
+    "test": "pnpm build-schema && vitest",
     "posttest": "pnpm run lint"
   },
   "keywords": [],
@@ -19,9 +20,12 @@
   "devDependencies": {
     "@types/node": "18.16.1",
     "gts": "^5.0.0",
-    "typescript": "~5.1.6"
+    "jsonschema": "^1.4.1",
+    "typescript": "~5.1.6",
+    "vitest": "^0.34.1"
   },
   "dependencies": {
-    "ts-json-schema-generator": "^1.2.0"
+    "ts-json-schema-generator": "^1.2.0",
+    "ts-node": "^10.9.1"
   }
 }
