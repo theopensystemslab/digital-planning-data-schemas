@@ -2,8 +2,9 @@ name: PR Workflow
 
 on:
   pull_request:
-    branches:
-      - main
+    types:
+      - opened
+      - synchronize
 
 jobs:
   test:
