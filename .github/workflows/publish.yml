@@ -25,6 +25,7 @@ jobs:
         run: pnpm install
 
       - name: Check for Version Bump
+        id: version_changed
         run: |
           if git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep -E 'package\.json'; then
             echo "Version bumped in package.json"
