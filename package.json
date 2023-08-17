@@ -11,7 +11,8 @@
     "lint": "gts lint",
     "check": "tsc --noEmit",
     "fix": "gts fix",
-    "test": "pnpm build-schema:dev && vitest"
+    "test": "pnpm build-schema:dev && vitest",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "Open Systems Lab",
@@ -19,6 +20,7 @@
   "devDependencies": {
     "@types/node": "18.16.1",
     "gts": "^5.0.0",
+    "husky": "^8.0.0",
     "jsonschema": "^1.4.1",
     "typescript": "~5.1.6",
     "vitest": "^0.34.1"
