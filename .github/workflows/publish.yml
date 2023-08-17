@@ -42,7 +42,7 @@ jobs:
       - name: Build and Move Files
         if: steps.version_check.outputs.changed == 'true'
         run: |
-          $VERSION=v${{steps.version_check.outputs.version}} pnpm build:dist
+          $VERSION=v${{steps.version_check.outputs.version}} pnpm build
           mkdir -p "$GITHUB_WORKSPACE/v${{ steps.version_check.outputs.version }}"
           mv schema/* "$GITHUB_WORKSPACE/v${{ steps.version_check.outputs.version }}"
 
