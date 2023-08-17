@@ -10,11 +10,11 @@ pnpm i
 ## Repository Structure
 Here's an overview of the main directories:
 
-`/schema`: This directory contains the JSON schema files for different aspects of Digital Planning. Each schema is documented and versioned to ensure consistency and traceability. (TODO)
+`/schema`: This directory contains the JSON schema files for different aspects of Digital Planning. Each schema is documented and versioned to ensure consistency and traceability.
 
 `/examples`: Here, you'll find real-world examples illustrating how to use the schemas in various scenarios. These examples provide practical guidance on implementing the schemas in your projects. (TODO)
 
-`/types`: This directory holds the TypeScript interfaces which are used to generate the JSON schema
+`/types`: This directory holds the TypeScript interfaces which are used to generate the JSON schema.
 
 `/tests`: This houses test suites and cases to ensure that the schemas are valid, accurate, and capable of handling a variety of scenarios.
 
@@ -23,8 +23,7 @@ Integrating our Digital Planning data schemas into your projects is straightforw
 
 To reference a schema directly, you can use URLs like the following:
 
-TODO: Setup GitHub pages or similar for simple hosting
-`https://digital-planning-schemas.github.io/<version_number>/schema.json`
+http://theopensystemslab.github.io/digital-planning-data-schemas/\<VERSION\>/schema.json
 
 Alternatively, you can clone the repository to your local environment and use the schema files programmatically in your code.
 
