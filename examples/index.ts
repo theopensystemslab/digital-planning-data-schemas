@@ -9,7 +9,7 @@ export const validExample: Schema = {
       name: 'Test',
     },
     application: {
-      name: 'Test',
+      name: "Test",
     },
     proposal: {
       name: 'Test',

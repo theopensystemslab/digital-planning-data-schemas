@@ -4,16 +4,14 @@
   "description": "Digital Planning Schemas",
   "main": "schema/schema.json",
   "scripts": {
-    "build": "pnpm build-schema && pnpm build-json-examples",
+    "build": "pnpm build-schema:dist && pnpm build-json-examples",
     "build-json-examples": "pnpm ts-node scripts/build-json-examples.ts",
     "build-schema:dev": "pnpm ts-json-schema-generator --path 'types/**/*.ts' --out 'schema/schema.json' --type Schema --id '@next'",
     "build-schema:dist": "pnpm ts-json-schema-generator --path 'types/**/*.ts' --out 'schema/schema.json' --type Schema --id $VERSION",
     "lint": "gts lint",
-    "clean": "gts clean",
-    "compile": "tsc",
+    "check": "tsc --noEmit",
     "fix": "gts fix",
-    "test": "pnpm build-schema:dev && vitest",
-    "posttest": "pnpm run lint"
+    "test": "pnpm build-schema:dev && vitest"
   },
   "keywords": [],
   "author": "Open Systems Lab",

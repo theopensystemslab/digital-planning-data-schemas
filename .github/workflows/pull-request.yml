@@ -25,5 +25,11 @@ jobs:
       - name: Install Dependencies
         run: pnpm install
 
+      - name: Check for TypeScript errors
+        run: pnpm check
+
+      - name: Lint fix
+        run: pnpm lint:fix
+
       - name: Run Tests
         run: pnpm test
