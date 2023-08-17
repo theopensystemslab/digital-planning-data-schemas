@@ -58,6 +58,13 @@ Many additional properties can be provided, such as
 
 Please see the [JSON schema docs](https://json-schema.org/understanding-json-schema/reference/) for a full list of references for various types
 
+## Publishing
+To publish a new version, commit a change to `main` which increments `package.json` version. 
+
+GitHub actions will then checkout the `dist` branch and commit your change, and they'll be published via GitHub pages at http://theopensystemslab.github.io/digital-planning-data-schemas/\<VERSION\>/schema.json
+
+For more details, take a look at [publish.yml](https://github.com/theopensystemslab/digital-planning-data-schemas/blob/main/.github/workflows/publish.yml)
+
 ## Contributing
 We welcome contributions from the community to help us improve and expand our Digital Planning data schemas. Whether you find a bug, want to propose an enhancement, or have created a new schema that you believe would benefit others, we encourage you to get involved by opening an issue.
 
