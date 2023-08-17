@@ -9,7 +9,6 @@ import {User} from './schema/data/User';
 import {File} from './schema/File';
 
 /**
- * @id DigitalPlanningDataSchema
  * @title Digital Planning Data Schema
  * @description Root of PlanX's Digital Planning Schema
  */
