@@ -1,5 +1,5 @@
 {
-  "$id": "DigitalPlanningDataSchema",
+  "$id": "@next",
   "$ref": "#/definitions/Schema",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "definitions": {
@@ -170,7 +170,7 @@
       "type": "object"
     },
     "Schema": {
-      "$id": "DigitalPlanningDataSchema",
+      "$id": "v0.0.1",
       "additionalProperties": false,
       "description": "Root of PlanX's Digital Planning Schema",
       "properties": {
