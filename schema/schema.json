@@ -170,7 +170,6 @@
       "type": "object"
     },
     "Schema": {
-      "$id": "v0.0.1",
       "additionalProperties": false,
       "description": "Root of PlanX's Digital Planning Schema",
       "properties": {
