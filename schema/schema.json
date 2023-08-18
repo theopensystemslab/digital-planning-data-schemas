@@ -1,7 +1,7 @@
 {
   "$id": "@next",
-  "$ref": "#/definitions/Schema",
   "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
   "definitions": {
     "Applicant": {
       "$id": "Applicant",
@@ -169,64 +169,6 @@
       ],
       "type": "object"
     },
-    "Schema": {
-      "additionalProperties": false,
-      "description": "Root of PlanX's Digital Planning Schema",
-      "properties": {
-        "data": {
-          "additionalProperties": false,
-          "properties": {
-            "applicant": {
-              "$ref": "#/definitions/Applicant"
-            },
-            "application": {
-              "$ref": "#/definitions/Application"
-            },
-            "property": {
-              "$ref": "#/definitions/Property"
-            },
-            "proposal": {
-              "$ref": "#/definitions/Proposal"
-            },
-            "user": {
-              "$ref": "#/definitions/User"
-            }
-          },
-          "required": [
-            "applicant",
-            "property",
-            "application",
-            "proposal",
-            "user"
-          ],
-          "type": "object"
-        },
-        "files": {
-          "items": {
-            "$ref": "#/definitions/File"
-          },
-          "type": "array"
-        },
-        "metadata": {
-          "$ref": "#/definitions/Metadata"
-        },
-        "responses": {
-          "$ref": "#/definitions/Responses"
-        },
-        "result": {
-          "$ref": "#/definitions/Result"
-        }
-      },
-      "required": [
-        "data",
-        "result",
-        "metadata",
-        "responses",
-        "files"
-      ],
-      "title": "Digital Planning Data Schema",
-      "type": "object"
-    },
     "URL": {
       "format": "uri",
       "pattern": "^https?://",
@@ -248,5 +190,60 @@
       ],
       "type": "object"
     }
-  }
+  },
+  "description": "Root of PlanX's Digital Planning Schema",
+  "properties": {
+    "data": {
+      "additionalProperties": false,
+      "properties": {
+        "applicant": {
+          "$ref": "#/definitions/Applicant"
+        },
+        "application": {
+          "$ref": "#/definitions/Application"
+        },
+        "property": {
+          "$ref": "#/definitions/Property"
+        },
+        "proposal": {
+          "$ref": "#/definitions/Proposal"
+        },
+        "user": {
+          "$ref": "#/definitions/User"
+        }
+      },
+      "required": [
+        "applicant",
+        "property",
+        "application",
+        "proposal",
+        "user"
+      ],
+      "type": "object"
+    },
+    "files": {
+      "items": {
+        "$ref": "#/definitions/File"
+      },
+      "type": "array"
+    },
+    "metadata": {
+      "$ref": "#/definitions/Metadata"
+    },
+    "responses": {
+      "$ref": "#/definitions/Responses"
+    },
+    "result": {
+      "$ref": "#/definitions/Result"
+    }
+  },
+  "required": [
+    "data",
+    "result",
+    "metadata",
+    "responses",
+    "files"
+  ],
+  "title": "Digital Planning Data Schema",
+  "type": "object"
 }
