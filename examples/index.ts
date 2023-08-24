@@ -15,7 +15,9 @@ export const validExample: Schema = {
       name: 'Test',
     },
     user: {
-      name: 'Test',
+      name: 'daf',
+      role: 'applicant',
+      applicantAddress: [],
     },
   },
   result: {
