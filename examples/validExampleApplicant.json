@@ -1,7 +1,18 @@
 {
   "data": {
     "applicant": {
-      "name": "Test"
+      "type": "individual",
+      "name": {
+        "first": "Test",
+        "last": "Test"
+      },
+      "address": {
+        "sameAsSiteAddress": true
+      },
+      "resident": true,
+      "siteContact": {
+        "role": "applicant"
+      }
     },
     "property": {
       "name": "Test"
@@ -13,7 +24,7 @@
       "name": "Test"
     },
     "user": {
-      "name": "Test"
+      "role": "applicant"
     }
   },
   "result": {

@@ -1,3 +1,6 @@
+/**
+ * @id User
+ */
 export interface User {
-  name: string;
+  role: 'applicant' | 'agent' | 'proxy';
 }
