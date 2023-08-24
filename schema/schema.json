@@ -3,6 +3,27 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "additionalProperties": false,
   "definitions": {
+    "AgentUser": {
+      "additionalProperties": false,
+      "properties": {
+        "agentNumber": {
+          "type": "number"
+        },
+        "name": {
+          "type": "string"
+        },
+        "role": {
+          "const": "agent",
+          "type": "string"
+        }
+      },
+      "required": [
+        "agentNumber",
+        "name",
+        "role"
+      ],
+      "type": "object"
+    },
     "Applicant": {
       "$id": "Applicant",
       "additionalProperties": false,
@@ -13,6 +34,30 @@
       },
       "required": [
         "name"
+      ],
+      "type": "object"
+    },
+    "ApplicantUser": {
+      "additionalProperties": false,
+      "properties": {
+        "applicantAddress": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "name": {
+          "type": "string"
+        },
+        "role": {
+          "const": "applicant",
+          "type": "string"
+        }
+      },
+      "required": [
+        "applicantAddress",
+        "name",
+        "role"
       ],
       "type": "object"
     },
@@ -179,16 +224,16 @@
       "type": "string"
     },
     "User": {
-      "additionalProperties": false,
-      "properties": {
-        "name": {
-          "type": "string"
+      "$id": "User",
+      "anyOf": [
+        {
+          "$ref": "#/definitions/ApplicantUser"
+        },
+        {
+          "$ref": "#/definitions/AgentUser"
         }
-      },
-      "required": [
-        "name"
       ],
-      "type": "object"
+      "description": "The user who completed the service. They could have completed it for themselves, or on behalf of another."
     }
   },
   "description": "Root of PlanX's Digital Planning Schema",
