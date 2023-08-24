@@ -2,14 +2,19 @@
   "data": {
     "applicant": {
       "type": "individual",
-      "name": {
-        "first": "Test",
-        "last": "Test"
+      "contact": {
+        "name": {
+          "first": "Test",
+          "last": "Test"
+        },
+        "email": "test@test.com",
+        "phone": {
+          "primary": "123"
+        }
       },
       "address": {
         "sameAsSiteAddress": true
       },
-      "resident": true,
       "siteContact": {
         "role": "applicant"
       }

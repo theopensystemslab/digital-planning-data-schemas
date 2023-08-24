@@ -3,18 +3,65 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "additionalProperties": false,
   "definitions": {
-    "Applicant": {
-      "$id": "Applicant",
+    "Agent": {
       "additionalProperties": false,
+      "description": "Information about the user who completed the application on behalf of someone else",
       "properties": {
-        "name": {
+        "address": {
+          "$ref": "#/definitions/UserAddress"
+        },
+        "agent": {
+          "additionalProperties": false,
+          "properties": {
+            "address": {
+              "$ref": "#/definitions/UserAddress"
+            },
+            "contact": {
+              "$ref": "#/definitions/UserContact"
+            }
+          },
+          "required": [
+            "contact",
+            "address"
+          ],
+          "type": "object"
+        },
+        "contact": {
+          "$ref": "#/definitions/UserContact"
+        },
+        "siteContact": {
+          "$ref": "#/definitions/SiteContact"
+        },
+        "type": {
+          "enum": [
+            "individual",
+            "company",
+            "charity",
+            "public",
+            "parishCouncil"
+          ],
           "type": "string"
         }
       },
       "required": [
-        "name"
+        "address",
+        "agent",
+        "contact",
+        "siteContact",
+        "type"
       ],
       "type": "object"
+    },
+    "Applicant": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/BaseApplicant"
+        },
+        {
+          "$ref": "#/definitions/Agent"
+        }
+      ],
+      "description": "The user who completed the application either for themself or on behalf of someone else"
     },
     "Application": {
       "additionalProperties": false,
@@ -28,8 +75,44 @@
       ],
       "type": "object"
     },
+    "BaseApplicant": {
+      "additionalProperties": false,
+      "description": "Information about the user who completed the application for themself, or information about the resident who the user applied on behalf of",
+      "properties": {
+        "address": {
+          "$ref": "#/definitions/UserAddress"
+        },
+        "contact": {
+          "$ref": "#/definitions/UserContact"
+        },
+        "siteContact": {
+          "$ref": "#/definitions/SiteContact"
+        },
+        "type": {
+          "enum": [
+            "individual",
+            "company",
+            "charity",
+            "public",
+            "parishCouncil"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "type",
+        "contact",
+        "address",
+        "siteContact"
+      ],
+      "type": "object"
+    },
     "DateTime": {
       "format": "date-time",
+      "type": "string"
+    },
+    "Email": {
+      "format": "email",
       "type": "string"
     },
     "File": {
@@ -169,6 +252,34 @@
       ],
       "type": "object"
     },
+    "SiteContact": {
+      "additionalProperties": false,
+      "description": "Contact information for the site visit",
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "role": {
+          "enum": [
+            "applicant",
+            "agent",
+            "proxy",
+            "other"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "role"
+      ],
+      "type": "object"
+    },
     "URL": {
       "format": "uri",
       "pattern": "^https?://",
@@ -179,14 +290,107 @@
       "type": "string"
     },
     "User": {
+      "$id": "User",
       "additionalProperties": false,
+      "description": "The role of the user who completed the application",
       "properties": {
-        "name": {
+        "role": {
+          "enum": [
+            "applicant",
+            "agent",
+            "proxy"
+          ],
           "type": "string"
         }
       },
       "required": [
-        "name"
+        "role"
+      ],
+      "type": "object"
+    },
+    "UserAddress": {
+      "additionalProperties": false,
+      "description": "Address information for any user",
+      "properties": {
+        "country": {
+          "type": "string"
+        },
+        "county": {
+          "type": "string"
+        },
+        "line1": {
+          "type": "string"
+        },
+        "line2": {
+          "type": "string"
+        },
+        "postcode": {
+          "type": "string"
+        },
+        "sameAsSiteAddress": {
+          "type": "boolean"
+        },
+        "town": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "sameAsSiteAddress"
+      ],
+      "type": "object"
+    },
+    "UserContact": {
+      "additionalProperties": false,
+      "description": "Contact information for any user",
+      "properties": {
+        "company": {
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
+        "email": {
+          "$ref": "#/definitions/Email"
+        },
+        "name": {
+          "additionalProperties": false,
+          "properties": {
+            "first": {
+              "type": "string"
+            },
+            "last": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "first",
+            "last"
+          ],
+          "type": "object"
+        },
+        "phone": {
+          "additionalProperties": false,
+          "properties": {
+            "primary": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "primary"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "name",
+        "email",
+        "phone"
       ],
       "type": "object"
     }

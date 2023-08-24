@@ -1,52 +1,41 @@
 import {Email} from '../../utils';
+import {User} from './User';
 
 /**
- * @id Applicant
+ * # @id Applicant
+ * @description The user who completed the application either for themself or on behalf of someone else
  */
-export interface Applicant {
+export type Applicant = BaseApplicant | Agent;
+
+/**
+ * # @id BaseApplicant
+ * @description Information about the user who completed the application for themself, or information about the resident who the user applied on behalf of
+ */
+export interface BaseApplicant {
   type: 'individual' | 'company' | 'charity' | 'public' | 'parishCouncil';
-  title?: string;
-  name: {
-    first: string;
-    last: string;
-  };
-  provideApplicantsEmail?: boolean; // seen on agent/proxy path only
-  email?: Email; // optional if provideApplicantsEmail is false
-  provideApplicantsPhone?: boolean; // seen on agent/proxy path only
-  phone?: {
-    // optional if provideApplicantsPhone is false
-    primary?: string;
-  };
-  company?: {
-    name?: string;
-  };
-  address: ApplicantAddress;
-  resident: boolean; // same as `address.sameAsSiteAddress` ??
-  agent?: {
-    // require if User.role in ["agent", "proxy"]
-    title?: string;
-    name: {
-      first: string;
-      last: string;
-    };
-    phone: {
-      primary: string;
-    };
-    email: Email;
-    address: ApplicantAddress;
-  };
-  // siteContact: "applicant" | "agent" | "proxy" | "other";
-  siteContact: {
-    role: 'applicant' | 'agent' | 'proxy' | 'other'; // type as User.role | "other" ??
-    name?: string;
-    email?: string;
-    telephone?: string;
+  contact: UserContact;
+  address: UserAddress;
+  siteContact: SiteContact;
+}
+
+/**
+ * # @id Agent
+ * @description Information about the user who completed the application on behalf of someone else
+ */
+export interface Agent extends BaseApplicant {
+  agent: {
+    contact: UserContact;
+    address: UserAddress;
   };
 }
 
-export interface Contact {
-  title?: string;
+/**
+ * # @id UserContact
+ * @description Contact information for any user
+ */
+export interface UserContact {
   name: {
+    title?: string;
     first: string;
     last: string;
   };
@@ -59,12 +48,27 @@ export interface Contact {
   };
 }
 
-export interface ApplicantAddress {
-  line1?: string; // require if sameAsSiteAddress is false
+/**
+ * # @id UserAddress
+ * @description Address information for any user
+ */
+export interface UserAddress {
+  sameAsSiteAddress: boolean; // todo improve conditions based on true/false
+  line1?: string;
   line2?: string;
   town?: string;
   county?: string;
   postcode?: string;
   country?: string;
-  sameAsSiteAddress: boolean; // "Yes" | "No" in content; same as `sameAddress.form` ??
+}
+
+/**
+ * # @id SiteContact
+ * @description Contact information for the site visit
+ */
+export interface SiteContact {
+  role: User['role'] | 'other'; // todo improve conditions based on true/false
+  name?: string;
+  email?: string;
+  phone?: string;
 }

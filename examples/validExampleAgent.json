@@ -2,35 +2,48 @@
   "data": {
     "applicant": {
       "type": "charity",
-      "name": {
-        "first": "Test",
-        "last": "Test"
-      },
-      "address": {
-        "line1": "123 Test",
-        "town": "Test",
-        "postcode": "TES T12",
-        "sameAsSiteAddress": false
-      },
-      "agent": {
+      "contact": {
         "name": {
           "first": "Test",
           "last": "Test"
         },
+        "email": "test@test.com",
         "phone": {
           "primary": "123"
         },
-        "email": "test@test.com",
-        "address": {
-          "line1": "456 Test",
-          "town": "Test",
-          "postcode": "TES T34",
-          "sameAsSiteAddress": false
+        "company": {
+          "name": "Test Charity Ltd"
         }
       },
-      "resident": false,
+      "address": {
+        "sameAsSiteAddress": false,
+        "line1": "123 Test",
+        "town": "Test",
+        "postcode": "TES T12"
+      },
+      "agent": {
+        "contact": {
+          "name": {
+            "first": "Agent",
+            "last": "Agent"
+          },
+          "email": "agent@test.com",
+          "phone": {
+            "primary": "123"
+          }
+        },
+        "address": {
+          "sameAsSiteAddress": false,
+          "line1": "456 Test",
+          "town": "Test",
+          "postcode": "TES T34"
+        }
+      },
       "siteContact": {
-        "role": "applicant"
+        "role": "other",
+        "name": "Neighbor",
+        "email": "neighbor@test.com",
+        "phone": "567"
       }
     },
     "property": {

@@ -4,14 +4,19 @@ export const validExampleApplicant: Schema = {
   data: {
     applicant: {
       type: 'individual',
-      name: {
-        first: 'Test',
-        last: 'Test',
+      contact: {
+        name: {
+          first: 'Test',
+          last: 'Test',
+        },
+        email: 'test@test.com',
+        phone: {
+          primary: '123',
+        },
       },
       address: {
         sameAsSiteAddress: true,
       },
-      resident: true,
       siteContact: {
         role: 'applicant',
       },
@@ -69,35 +74,48 @@ export const validExampleAgent: Schema = {
   data: {
     applicant: {
       type: 'charity',
-      name: {
-        first: 'Test',
-        last: 'Test',
-      },
-      address: {
-        line1: '123 Test',
-        town: 'Test',
-        postcode: 'TES T12',
-        sameAsSiteAddress: false,
-      },
-      agent: {
+      contact: {
         name: {
           first: 'Test',
           last: 'Test',
         },
+        email: 'test@test.com',
         phone: {
           primary: '123',
         },
-        email: 'test@test.com',
+        company: {
+          name: 'Test Charity Ltd',
+        },
+      },
+      address: {
+        sameAsSiteAddress: false,
+        line1: '123 Test',
+        town: 'Test',
+        postcode: 'TES T12',
+      },
+      agent: {
+        contact: {
+          name: {
+            first: 'Agent',
+            last: 'Agent',
+          },
+          email: 'agent@test.com',
+          phone: {
+            primary: '123',
+          },
+        },
         address: {
+          sameAsSiteAddress: false,
           line1: '456 Test',
           town: 'Test',
           postcode: 'TES T34',
-          sameAsSiteAddress: false,
         },
       },
-      resident: false,
       siteContact: {
-        role: 'applicant',
+        role: 'other',
+        name: 'Neighbor',
+        email: 'neighbor@test.com',
+        phone: '567',
       },
     },
     property: {
