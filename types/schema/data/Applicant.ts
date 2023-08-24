@@ -44,7 +44,7 @@ export interface Applicant {
   };
 }
 
-interface Contact {
+export interface Contact {
   title?: string;
   name: {
     first: string;
@@ -59,7 +59,7 @@ interface Contact {
   };
 }
 
-interface ApplicantAddress {
+export interface ApplicantAddress {
   line1?: string; // require if sameAsSiteAddress is false
   line2?: string;
   town?: string;
