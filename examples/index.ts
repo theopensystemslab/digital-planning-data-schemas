@@ -1,5 +1,49 @@
 import {Schema} from '../types/Schema';
 
+const validSiteAddress: Schema['data']['property'] = {
+  address: {
+    uprn: '200003453480',
+    usrn: '22500531',
+    latitude: 51.4859056,
+    longitude: -0.0760466,
+    pao: '47',
+    street: 'COBOURG ROAD',
+    town: 'LONDON',
+    postcode: 'SE5 0HU',
+    x: 533683,
+    y: 178083,
+    title: '47, COBOURG ROAD, LONDON',
+    region: 'London',
+    localAuthorityDistrict: ['Southwark'],
+    source: 'Ordnance Survey',
+  },
+  type: {
+    value: 'residential.HMO.parent',
+    description: 'HMO Parent',
+  },
+  boundary: {
+    site: 'Test',
+    area: {
+      squareMeters: 10000,
+      hectares: 1,
+    },
+  },
+  constraints: {
+    planning: [
+      {
+        value: 'listed',
+        description: 'Listed Building',
+        intersects: false,
+      },
+      {
+        value: 'designated.conservationArea',
+        description: 'Conservation Area',
+        intersects: true,
+      },
+    ],
+  },
+};
+
 export const validExampleApplicant: Schema = {
   data: {
     applicant: {
@@ -21,9 +65,7 @@ export const validExampleApplicant: Schema = {
         role: 'applicant',
       },
     },
-    property: {
-      name: 'Test',
-    },
+    property: validSiteAddress,
     application: {
       name: 'Test',
     },
@@ -118,9 +160,7 @@ export const validExampleAgent: Schema = {
         phone: '567',
       },
     },
-    property: {
-      name: 'Test',
-    },
+    property: validSiteAddress,
     application: {
       name: 'Test',
     },

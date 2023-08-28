@@ -98,6 +98,55 @@
       ],
       "type": "object"
     },
+    "BaseAddress": {
+      "$id": "#BaseAddress",
+      "additionalProperties": false,
+      "description": "Address information available for any site, whether existing or proposed",
+      "properties": {
+        "latitude": {
+          "type": "number"
+        },
+        "localAuthorityDistrict": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "longitude": {
+          "type": "number"
+        },
+        "region": {
+          "type": "string"
+        },
+        "source": {
+          "enum": [
+            "Ordnance Survey",
+            "Proposed by applicant"
+          ],
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "x": {
+          "type": "number"
+        },
+        "y": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "title",
+        "x",
+        "y",
+        "latitude",
+        "longitude",
+        "region",
+        "localAuthorityDistrict",
+        "source"
+      ],
+      "type": "object"
+    },
     "BaseApplicant": {
       "$id": "#BaseApplicant",
       "additionalProperties": false,
@@ -240,17 +289,177 @@
       ],
       "type": "object"
     },
-    "Property": {
-      "$id": "Property",
+    "OSAddress": {
+      "$id": "#OSAddress",
       "additionalProperties": false,
-      "description": "This is an applicant",
+      "description": "Address information for the site if an existing address sourced from 'Ordnance Survey'",
       "properties": {
-        "name": {
+        "latitude": {
+          "type": "number"
+        },
+        "localAuthorityDistrict": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "longitude": {
+          "type": "number"
+        },
+        "organisation": {
           "type": "string"
+        },
+        "pao": {
+          "type": "string"
+        },
+        "postcode": {
+          "type": "string"
+        },
+        "region": {
+          "type": "string"
+        },
+        "source": {
+          "enum": [
+            "Ordnance Survey",
+            "Proposed by applicant"
+          ],
+          "type": "string"
+        },
+        "street": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "town": {
+          "type": "string"
+        },
+        "uprn": {
+          "type": "string"
+        },
+        "usrn": {
+          "type": "string"
+        },
+        "x": {
+          "type": "number"
+        },
+        "y": {
+          "type": "number"
         }
       },
       "required": [
-        "name"
+        "latitude",
+        "localAuthorityDistrict",
+        "longitude",
+        "pao",
+        "postcode",
+        "region",
+        "source",
+        "street",
+        "title",
+        "town",
+        "uprn",
+        "usrn",
+        "x",
+        "y"
+      ],
+      "type": "object"
+    },
+    "Property": {
+      "$id": "#Property",
+      "additionalProperties": false,
+      "description": "The site where the works will happen",
+      "properties": {
+        "address": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/BaseAddress"
+            },
+            {
+              "$ref": "#/definitions/OSAddress"
+            }
+          ]
+        },
+        "boundary": {
+          "additionalProperties": false,
+          "properties": {
+            "area": {
+              "additionalProperties": false,
+              "properties": {
+                "hectares": {
+                  "type": "number"
+                },
+                "squareMeters": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "squareMeters",
+                "hectares"
+              ],
+              "type": "object"
+            },
+            "site": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "site",
+            "area"
+          ],
+          "type": "object"
+        },
+        "constraints": {
+          "additionalProperties": false,
+          "properties": {
+            "planning": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "description": {
+                    "type": "string"
+                  },
+                  "intersects": {
+                    "type": "boolean"
+                  },
+                  "value": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "value",
+                  "description",
+                  "intersects"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "planning"
+          ],
+          "type": "object"
+        },
+        "type": {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "type": "string"
+            },
+            "value": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "address"
       ],
       "type": "object"
     },
