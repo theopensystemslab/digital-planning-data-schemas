@@ -9,27 +9,13 @@
       "description": "Information about the user who completed the application on behalf of someone else",
       "properties": {
         "address": {
-          "anyOf": [
-            {
-              "$ref": "#/definitions/UserAddress"
-            },
-            {
-              "$ref": "#/definitions/UserAddressNotSameSite"
-            }
-          ]
+          "$ref": "#/definitions/UserAddress"
         },
         "agent": {
           "additionalProperties": false,
           "properties": {
             "address": {
-              "anyOf": [
-                {
-                  "$ref": "#/definitions/UserAddress"
-                },
-                {
-                  "$ref": "#/definitions/UserAddressNotSameSite"
-                }
-              ]
+              "$ref": "#/definitions/UserAddress"
             },
             "contact": {
               "$ref": "#/definitions/UserContact"
@@ -45,14 +31,7 @@
           "$ref": "#/definitions/UserContact"
         },
         "siteContact": {
-          "anyOf": [
-            {
-              "$ref": "#/definitions/SiteContact"
-            },
-            {
-              "$ref": "#/definitions/SiteContactOther"
-            }
-          ]
+          "$ref": "#/definitions/SiteContact"
         },
         "type": {
           "enum": [
@@ -153,27 +132,13 @@
       "description": "Information about the user who completed the application for themself, or information about the resident who the user applied on behalf of",
       "properties": {
         "address": {
-          "anyOf": [
-            {
-              "$ref": "#/definitions/UserAddress"
-            },
-            {
-              "$ref": "#/definitions/UserAddressNotSameSite"
-            }
-          ]
+          "$ref": "#/definitions/UserAddress"
         },
         "contact": {
           "$ref": "#/definitions/UserContact"
         },
         "siteContact": {
-          "anyOf": [
-            {
-              "$ref": "#/definitions/SiteContact"
-            },
-            {
-              "$ref": "#/definitions/SiteContactOther"
-            }
-          ]
+          "$ref": "#/definitions/SiteContact"
         },
         "type": {
           "enum": [
@@ -501,23 +466,29 @@
     },
     "SiteContact": {
       "$id": "#SiteContact",
-      "additionalProperties": false,
-      "description": "Contact information for the site visit",
-      "properties": {
-        "role": {
-          "enum": [
-            "applicant",
-            "agent",
-            "proxy",
-            "other"
+      "anyOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "role": {
+              "enum": [
+                "applicant",
+                "agent",
+                "proxy"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "role"
           ],
-          "type": "string"
+          "type": "object"
+        },
+        {
+          "$ref": "#/definitions/SiteContactOther"
         }
-      },
-      "required": [
-        "role"
       ],
-      "type": "object"
+      "description": "Contact information for the site visit"
     },
     "SiteContactOther": {
       "$id": "#SiteContactOther",
@@ -534,20 +505,15 @@
           "type": "string"
         },
         "role": {
-          "enum": [
-            "applicant",
-            "agent",
-            "proxy",
-            "other"
-          ],
+          "const": "other",
           "type": "string"
         }
       },
       "required": [
-        "email",
+        "role",
         "name",
-        "phone",
-        "role"
+        "email",
+        "phone"
       ],
       "type": "object"
     },
@@ -581,22 +547,30 @@
     },
     "UserAddress": {
       "$id": "#UserAddress",
-      "additionalProperties": false,
-      "description": "Address information for any user",
-      "properties": {
-        "sameAsSiteAddress": {
-          "type": "boolean"
+      "anyOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "sameAsSiteAddress": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "sameAsSiteAddress"
+          ],
+          "type": "object"
+        },
+        {
+          "$ref": "#/definitions/UserAddressNotSameSite"
         }
-      },
-      "required": [
-        "sameAsSiteAddress"
       ],
-      "type": "object"
+      "description": "Address information for any user"
     },
     "UserAddressNotSameSite": {
       "$id": "#UserAddressNotSameSite",
       "additionalProperties": false,
-      "description": "Address information for any user when sameAsSiteAddress is false",
+      "description": "Address information for any user who's contact information differs from the site address",
       "properties": {
         "country": {
           "type": "string"
@@ -614,6 +588,7 @@
           "type": "string"
         },
         "sameAsSiteAddress": {
+          "const": false,
           "type": "boolean"
         },
         "town": {
@@ -621,10 +596,10 @@
         }
       },
       "required": [
-        "line1",
-        "postcode",
         "sameAsSiteAddress",
-        "town"
+        "line1",
+        "town",
+        "postcode"
       ],
       "type": "object"
     },

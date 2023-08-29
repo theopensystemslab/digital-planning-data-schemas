@@ -14,8 +14,8 @@ export type Applicant = BaseApplicant | Agent;
 export interface BaseApplicant {
   type: 'individual' | 'company' | 'charity' | 'public' | 'parishCouncil';
   contact: UserContact;
-  address: UserAddress | UserAddressNotSameSite;
-  siteContact: SiteContact | SiteContactOther;
+  address: UserAddress;
+  siteContact: SiteContact;
 }
 
 /**
@@ -25,7 +25,7 @@ export interface BaseApplicant {
 export interface Agent extends BaseApplicant {
   agent: {
     contact: UserContact;
-    address: UserAddress | UserAddressNotSameSite;
+    address: UserAddress;
   };
 }
 
@@ -52,15 +52,14 @@ export interface UserContact {
  * @id #UserAddress
  * @description Address information for any user
  */
-export interface UserAddress {
-  sameAsSiteAddress: boolean;
-}
+export type UserAddress = {sameAsSiteAddress: true} | UserAddressNotSameSite;
 
 /**
  * @id #UserAddressNotSameSite
- * @description Address information for any user when sameAsSiteAddress is false
+ * @description Address information for any user who's contact information differs from the site address
  */
-export interface UserAddressNotSameSite extends UserAddress {
+export interface UserAddressNotSameSite {
+  sameAsSiteAddress: false;
   line1: string;
   line2?: string;
   town: string;
@@ -73,15 +72,14 @@ export interface UserAddressNotSameSite extends UserAddress {
  * @id #SiteContact
  * @description Contact information for the site visit
  */
-export interface SiteContact {
-  role: User['role'] | 'other'; // todo improve conditions based on true/false
-}
+export type SiteContact = {role: User['role']} | SiteContactOther;
 
 /**
  * @id #SiteContactOther
  * @description Contact information for the site visit when the SiteContact's role is 'other'
  */
-export interface SiteContactOther extends SiteContact {
+export interface SiteContactOther {
+  role: 'other';
   name: string;
   email: string;
   phone: string;
