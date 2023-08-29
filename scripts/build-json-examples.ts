@@ -1,5 +1,5 @@
 import * as path from 'path';
-import {validExample} from '../examples';
+import {validExampleApplicant, validExampleAgent} from '../examples';
 import * as fs from 'fs';
 import {Schema} from '../types/Schema';
 
@@ -10,8 +10,12 @@ interface Example {
 
 const examplesToConvert: Example[] = [
   {
-    filename: 'validExample',
-    data: validExample,
+    filename: 'validExampleApplicant',
+    data: validExampleApplicant,
+  },
+  {
+    filename: 'validExampleAgent',
+    data: validExampleAgent,
   },
 ];
 
