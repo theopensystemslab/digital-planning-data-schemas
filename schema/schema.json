@@ -77,55 +77,6 @@
       ],
       "type": "object"
     },
-    "BaseAddress": {
-      "$id": "#BaseAddress",
-      "additionalProperties": false,
-      "description": "Address information available for any site, whether existing or proposed",
-      "properties": {
-        "latitude": {
-          "type": "number"
-        },
-        "localAuthorityDistrict": {
-          "items": {
-            "type": "string"
-          },
-          "type": "array"
-        },
-        "longitude": {
-          "type": "number"
-        },
-        "region": {
-          "type": "string"
-        },
-        "source": {
-          "enum": [
-            "Ordnance Survey",
-            "Proposed by applicant"
-          ],
-          "type": "string"
-        },
-        "title": {
-          "type": "string"
-        },
-        "x": {
-          "type": "number"
-        },
-        "y": {
-          "type": "number"
-        }
-      },
-      "required": [
-        "title",
-        "x",
-        "y",
-        "latitude",
-        "longitude",
-        "region",
-        "localAuthorityDistrict",
-        "source"
-      ],
-      "type": "object"
-    },
     "BaseApplicant": {
       "$id": "#BaseApplicant",
       "additionalProperties": false,
@@ -284,10 +235,7 @@
           "type": "string"
         },
         "source": {
-          "enum": [
-            "Ordnance Survey",
-            "Proposed by applicant"
-          ],
+          "const": "Ordnance Survey",
           "type": "string"
         },
         "street": {
@@ -338,7 +286,7 @@
         "address": {
           "anyOf": [
             {
-              "$ref": "#/definitions/BaseAddress"
+              "$ref": "#/definitions/SiteAddress"
             },
             {
               "$ref": "#/definitions/OSAddress"
@@ -461,6 +409,55 @@
       },
       "required": [
         "name"
+      ],
+      "type": "object"
+    },
+    "SiteAddress": {
+      "$id": "#SiteAddress",
+      "additionalProperties": false,
+      "description": "Address information available for any site, whether existing or proposed",
+      "properties": {
+        "latitude": {
+          "type": "number"
+        },
+        "localAuthorityDistrict": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "longitude": {
+          "type": "number"
+        },
+        "region": {
+          "type": "string"
+        },
+        "source": {
+          "enum": [
+            "Ordnance Survey",
+            "Proposed by applicant"
+          ],
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "x": {
+          "type": "number"
+        },
+        "y": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "title",
+        "x",
+        "y",
+        "latitude",
+        "longitude",
+        "region",
+        "localAuthorityDistrict",
+        "source"
       ],
       "type": "object"
     },

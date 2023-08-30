@@ -5,13 +5,13 @@ import {GeoJSON} from '../../utils';
  * @description The site where the works will happen
  */
 export interface Property {
-  address: BaseAddress | OSAddress;
+  address: SiteAddress | OSAddress;
   type?: {
     value: string;
     description: string;
   };
   boundary?: {
-    site: string; // todo use GeoJSON from utils, but ajv tests "ignore"/fail
+    site: string; // @todo use GeoJSON from utils, but ajv tests "ignore"/fail
     area: {
       squareMeters: number;
       hectares: number;
@@ -27,10 +27,10 @@ export interface Property {
 }
 
 /**
- * @id #BaseAddress
+ * @id #SiteAddress
  * @description Address information available for any site, whether existing or proposed
  */
-export interface BaseAddress {
+export interface SiteAddress {
   title: string;
   x: number;
   y: number;
@@ -45,7 +45,7 @@ export interface BaseAddress {
  * @id #OSAddress
  * @description Address information for the site if an existing address sourced from 'Ordnance Survey'
  */
-export interface OSAddress extends BaseAddress {
+export interface OSAddress extends SiteAddress {
   uprn: string;
   usrn: string;
   pao: string;
@@ -53,4 +53,5 @@ export interface OSAddress extends BaseAddress {
   town: string;
   postcode: string;
   organisation?: string;
+  source: 'Ordnance Survey';
 }
