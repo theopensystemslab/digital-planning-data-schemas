@@ -66,16 +66,207 @@
       "description": "The user who completed the application either for themself or on behalf of someone else"
     },
     "Application": {
+      "$id": "#Application",
       "additionalProperties": false,
+      "description": "Information about this planning application",
       "properties": {
-        "name": {
-          "type": "string"
+        "declaration": {
+          "additionalProperties": false,
+          "properties": {
+            "accurate": {
+              "const": true,
+              "type": "boolean"
+            },
+            "connection": {
+              "enum": [
+                "employee",
+                "relation.employee",
+                "electedMember",
+                "relation.electedMember",
+                "none"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "accurate",
+            "connection"
+          ],
+          "type": "object"
+        },
+        "fee": {
+          "$ref": "#/definitions/ApplicationFee"
+        },
+        "preApp": {
+          "$ref": "#/definitions/PreApplication"
+        },
+        "type": {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "$ref": "#/definitions/ApplicationType"
+            },
+            "value": {
+              "enum": [
+                "ldc",
+                "ldc.proposed",
+                "ldc.existing",
+                "pa",
+                "pa.part1.classA",
+                "pa.part1.classAA",
+                "pa.part3.classG",
+                "pa.part3.classM",
+                "pa.part3.classMA",
+                "pa.part3.classN",
+                "pa.part3.classQ",
+                "pa.part3.classR",
+                "pa.part3.classS",
+                "pa.part3.classT",
+                "pa.part4.classBB",
+                "pa.part4.classE",
+                "pa.part6.classA",
+                "pa.part6.classB",
+                "pa.part6.classE",
+                "pa.part7.classC",
+                "pa.part7.classM",
+                "pa.part11.classB",
+                "pa.part14.classJ",
+                "pa.part16.classA",
+                "pa.part20.classA",
+                "pa.part20.classAA",
+                "pa.part20.classAB",
+                "pa.part20.classAC",
+                "pa.part20.classAD",
+                "pa.part20.classZA",
+                "pp",
+                "pp.full.householder",
+                "pp.full.householder.retro"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
         }
       },
       "required": [
-        "name"
+        "type",
+        "fee",
+        "declaration"
       ],
       "type": "object"
+    },
+    "ApplicationFee": {
+      "$id": "#ApplicationFee",
+      "additionalProperties": false,
+      "description": "The costs associated with this application",
+      "properties": {
+        "calculated": {
+          "type": "number"
+        },
+        "exemption": {
+          "additionalProperties": false,
+          "properties": {
+            "disability": {
+              "type": "boolean"
+            },
+            "resubmission": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "disability",
+            "resubmission"
+          ],
+          "type": "object"
+        },
+        "payable": {
+          "type": "number"
+        },
+        "reduction": {
+          "additionalProperties": false,
+          "properties": {
+            "alternative": {
+              "type": "boolean"
+            },
+            "parishCouncil": {
+              "type": "boolean"
+            },
+            "sports": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "alternative",
+            "parishCouncil",
+            "sports"
+          ],
+          "type": "object"
+        },
+        "reference": {
+          "additionalProperties": false,
+          "properties": {
+            "govPay": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "govPay"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "calculated",
+        "payable",
+        "exemption",
+        "reduction"
+      ],
+      "type": "object"
+    },
+    "ApplicationType": {
+      "$id": "#ApplicationType",
+      "description": "Planning application types supported by this schema",
+      "enum": [
+        "Lawful Development Certificate",
+        "Lawful Development Certificate - Proposed",
+        "Lawful Development Certificate - Existing",
+        "Prior Approval",
+        "Prior Approval - Larger extension to a house",
+        "Prior Approval - Adding storeys to a house",
+        "Prior Approval - Convert a commercial building to mixed use",
+        "Prior Approval - Convert a mixed use building into a home",
+        "Prior Approval - Convert a commercial building into a home or homes",
+        "Prior Approval - Convert a casino or amusement arcade into a home or homes",
+        "Prior Approval - Convert an agricultural building into a home",
+        "Prior Approval - Convert an agricultural building to a commercial use",
+        "Prior Approval - Convert an agricultural building to a school",
+        "Prior Approval - Convert a commercial building to a school",
+        "Prior Approval - Put up a temporary structure",
+        "Prior Approval - Use a building or land to shoot a film",
+        "Prior Approval - Build new agricultural buildings on a unit of 5 hectares or more",
+        "Prior Approval - Build new agricultural buildings on a unit of less than 5 hectares",
+        "Prior Approval - Build new forestry buildings",
+        "Prior Approval - Install click and collect facilities",
+        "Prior Approval - Extend a school, college, university, prison or hospital",
+        "Prior Approval - Demolish a building",
+        "Prior Approval - Install or change solar panels",
+        "Prior Approval - Install telecommunications equipment",
+        "Prior Approval - Build homes on a detached blocks of flats",
+        "Prior Approval - Build homes on a detached commercial building",
+        "Prior Approval - Build homes on an adjoining commercial or mixed use building",
+        "Prior Approval - Build homes on adjoining houses",
+        "Prior Approval - Build homes on detached houses",
+        "Prior Approval - Demolish buildings and build homes in their place",
+        "Planning Permission"
+      ],
+      "type": "string"
     },
     "BaseAddress": {
       "$id": "#BaseAddress",
@@ -327,6 +518,32 @@
         "usrn",
         "x",
         "y"
+      ],
+      "type": "object"
+    },
+    "PreApplication": {
+      "$id": "#PreApplication",
+      "additionalProperties": false,
+      "description": "Details of the pre-application, if applicable",
+      "properties": {
+        "date": {
+          "$ref": "#/definitions/DateTime"
+        },
+        "officer": {
+          "type": "string"
+        },
+        "reference": {
+          "type": "string"
+        },
+        "summary": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "reference",
+        "date",
+        "officer",
+        "summary"
       ],
       "type": "object"
     },

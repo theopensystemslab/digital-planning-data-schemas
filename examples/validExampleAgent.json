@@ -1,5 +1,8 @@
 {
   "data": {
+    "user": {
+      "role": "agent"
+    },
     "applicant": {
       "type": "charity",
       "contact": {
@@ -44,6 +47,32 @@
         "name": "Neighbor",
         "email": "neighbor@test.com",
         "phone": "567"
+      }
+    },
+    "application": {
+      "type": {
+        "value": "ldc.proposed",
+        "description": "Lawful Development Certificate - Proposed"
+      },
+      "fee": {
+        "calculated": 103,
+        "payable": 103,
+        "exemption": {
+          "disability": false,
+          "resubmission": false
+        },
+        "reduction": {
+          "alternative": false,
+          "parishCouncil": false,
+          "sports": false
+        },
+        "reference": {
+          "govPay": "abc123"
+        }
+      },
+      "declaration": {
+        "accurate": true,
+        "connection": "none"
       }
     },
     "property": {
@@ -91,14 +120,8 @@
         ]
       }
     },
-    "application": {
-      "name": "Test"
-    },
     "proposal": {
       "name": "Test"
-    },
-    "user": {
-      "role": "agent"
     }
   },
   "result": {
