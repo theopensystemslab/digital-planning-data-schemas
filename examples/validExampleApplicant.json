@@ -1,5 +1,8 @@
 {
   "data": {
+    "user": {
+      "role": "applicant"
+    },
     "applicant": {
       "type": "individual",
       "contact": {
@@ -17,6 +20,32 @@
       },
       "siteContact": {
         "role": "applicant"
+      }
+    },
+    "application": {
+      "type": {
+        "value": "ldc.proposed",
+        "description": "Lawful Development Certificate - Proposed"
+      },
+      "fee": {
+        "calculated": 103,
+        "payable": 103,
+        "exemption": {
+          "disability": false,
+          "resubmission": false
+        },
+        "reduction": {
+          "alternative": false,
+          "parishCouncil": false,
+          "sports": false
+        },
+        "reference": {
+          "govPay": "abc123"
+        }
+      },
+      "declaration": {
+        "accurate": true,
+        "connection": "none"
       }
     },
     "property": {
@@ -64,14 +93,8 @@
         ]
       }
     },
-    "application": {
-      "name": "Test"
-    },
     "proposal": {
       "name": "Test"
-    },
-    "user": {
-      "role": "applicant"
     }
   },
   "result": {
