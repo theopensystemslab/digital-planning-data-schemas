@@ -1,10 +1,9 @@
 import {Schema} from '../../types/Schema';
-import {ApplicationType} from '../../types/schema/data/Application';
 
 export const validApplication: Schema['data']['application'] = {
   type: {
     value: 'ldc.proposed',
-    description: ApplicationType['ldc.proposed'],
+    description: 'Lawful Development Certificate - Proposed',
   },
   fee: {
     calculated: 103,

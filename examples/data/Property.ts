@@ -20,7 +20,7 @@ export const validProperty: Schema['data']['property'] = {
   },
   type: {
     value: 'residential.HMO.parent',
-    description: PropertyType['residential.HMO.parent'],
+    description: 'HMO Parent',
   },
   boundary: {
     site: 'GeoJSON TBD',
