@@ -43,7 +43,7 @@
         "description": "HMO Parent"
       },
       "boundary": {
-        "site": "Test",
+        "site": "GeoJSON TBD",
         "area": {
           "squareMeters": 10000,
           "hectares": 1
