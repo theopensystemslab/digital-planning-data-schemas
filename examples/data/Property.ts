@@ -1,5 +1,4 @@
 import {Schema} from '../../types/Schema';
-import {PropertyType} from '../../types/schema/data/Property';
 
 export const validProperty: Schema['data']['property'] = {
   address: {
