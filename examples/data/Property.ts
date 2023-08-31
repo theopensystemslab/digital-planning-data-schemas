@@ -1,4 +1,5 @@
 import {Schema} from '../../types/Schema';
+import {PropertyType} from '../../types/schema/data/Property';
 
 export const validProperty: Schema['data']['property'] = {
   address: {
@@ -19,10 +20,10 @@ export const validProperty: Schema['data']['property'] = {
   },
   type: {
     value: 'residential.HMO.parent',
-    description: 'HMO Parent',
+    description: PropertyType['residential.HMO.parent'],
   },
   boundary: {
-    site: 'Test',
+    site: 'GeoJSON TBD',
     area: {
       squareMeters: 10000,
       hectares: 1,
