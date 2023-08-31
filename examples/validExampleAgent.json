@@ -121,7 +121,16 @@
       }
     },
     "proposal": {
-      "name": "Test"
+      "projectType": [
+        {
+          "value": "alter.equipment.solar",
+          "description": "Install solar panels"
+        },
+        {
+          "value": "new.leisure",
+          "description": "Leisure premises"
+        }
+      ]
     }
   },
   "result": {
