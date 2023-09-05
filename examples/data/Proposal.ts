@@ -11,4 +11,5 @@ export const validProposal: Schema['data']['proposal'] = {
       description: 'Leisure premises',
     },
   ],
+  description: 'This is a test application',
 };

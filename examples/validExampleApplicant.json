@@ -103,7 +103,8 @@
           "value": "new.leisure",
           "description": "Leisure premises"
         }
-      ]
+      ],
+      "description": "This is a test application"
     }
   },
   "result": {

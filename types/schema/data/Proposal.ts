@@ -1,7 +1,19 @@
 import {ProjectTypes} from '../../enums/ProjectTypes';
+import {DateTime} from '../../utils';
 
+/**
+ * @id #Proposal
+ * @description Information about the project
+ */
 export interface Proposal {
   projectType: ProjectType[];
+  description: string;
+  date?: {
+    start: DateTime;
+    finish: DateTime;
+  };
+  time?: 'future' | 'past';
+  completion?: '10plus' | '4plus' | 'lessThan4' | 'lessThan10';
 }
 
 type ProjectTypeKeys = keyof typeof ProjectTypes;
