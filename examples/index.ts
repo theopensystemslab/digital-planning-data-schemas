@@ -21,16 +21,27 @@ const validMetadata: Schema['metadata'] = {
 
 const validFiles: Schema['files'] = [
   {
-    size: '1mb',
-    foo: 'bar',
+    name: 'https://api.editor.planx.uk/file/private/folderId/file1.pdf',
+    type: [
+      {
+        value: 'proposal.drawing.roofPlan',
+        description: 'Roof plan - proposed',
+      },
+      {
+        value: 'property.drawing.roofPlan',
+        description: 'Roof plan - existing',
+      },
+    ],
   },
   {
-    size: '2mb',
-    foo: 'baz',
-  },
-  {
-    size: '3mb',
-    foo: 'boo',
+    name: 'https://api.editor.planx.uk/file/private/folderId/file2.pdf',
+    description: 'Evidence of my project start date',
+    type: [
+      {
+        value: 'proposal.document.construction.invoice',
+        description: 'Construction invoice',
+      },
+    ],
   },
 ];
 
