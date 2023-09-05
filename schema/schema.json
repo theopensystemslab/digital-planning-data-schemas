@@ -824,30 +824,664 @@
       "type": "string"
     },
     "File": {
+      "$id": "#File",
       "additionalProperties": false,
-      "examples": [
-        {
-          "size": "10mb"
-        }
-      ],
+      "description": "Files uploaded by the user to support this application",
       "properties": {
-        "foo": {
-          "enum": [
-            "bar",
-            "baz",
-            "boo"
-          ],
+        "description": {
           "type": "string"
         },
-        "size": {
+        "name": {
           "type": "string"
+        },
+        "type": {
+          "items": {
+            "$ref": "#/definitions/FileType"
+          },
+          "type": "array"
         }
       },
       "required": [
-        "size",
-        "foo"
+        "name",
+        "type"
       ],
       "type": "object"
+    },
+    "FileType": {
+      "$id": "#FileType",
+      "anyOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Elevation plan - existing",
+              "type": "string"
+            },
+            "value": {
+              "const": "property.drawing.elevation",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Floor plan - existing",
+              "type": "string"
+            },
+            "value": {
+              "const": "property.drawing.floorPlan",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Roof plan - existing",
+              "type": "string"
+            },
+            "value": {
+              "const": "property.drawing.roofPlan",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Section - existing",
+              "type": "string"
+            },
+            "value": {
+              "const": "property.drawing.section",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Site plan - existing",
+              "type": "string"
+            },
+            "value": {
+              "const": "property.drawing.sitePlan",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Use plan - existing",
+              "type": "string"
+            },
+            "value": {
+              "const": "property.drawing.usePlan",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Photographs",
+              "type": "string"
+            },
+            "value": {
+              "const": "property.photograph",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Location plan",
+              "type": "string"
+            },
+            "value": {
+              "const": "property.site.locationPlan",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Elevation plan - proposed",
+              "type": "string"
+            },
+            "value": {
+              "const": "proposal.drawing.elevation",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Floor plan - proposed",
+              "type": "string"
+            },
+            "value": {
+              "const": "proposal.drawing.floorPlan",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Other - drawing",
+              "type": "string"
+            },
+            "value": {
+              "const": "proposal.drawing.other",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Roof plan - proposed",
+              "type": "string"
+            },
+            "value": {
+              "const": "proposal.drawing.roofPlan",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Section - proposed",
+              "type": "string"
+            },
+            "value": {
+              "const": "proposal.drawing.section",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Site plan - proposed",
+              "type": "string"
+            },
+            "value": {
+              "const": "proposal.drawing.sitePlan",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Unit plan - proposed",
+              "type": "string"
+            },
+            "value": {
+              "const": "proposal.drawing.unitPlan",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Use plan - proposed",
+              "type": "string"
+            },
+            "value": {
+              "const": "proposal.drawing.usePlan",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Bank statement",
+              "type": "string"
+            },
+            "value": {
+              "const": "proposal.document.bankStatement",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Building control certificate",
+              "type": "string"
+            },
+            "value": {
+              "const": "proposal.document.buildingControl.certificate",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Construction invoice",
+              "type": "string"
+            },
+            "value": {
+              "const": "proposal.document.construction.invoice",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Contamination report",
+              "type": "string"
+            },
+            "value": {
+              "const": "proposal.document.contamination",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Council tax bill",
+              "type": "string"
+            },
+            "value": {
+              "const": "proposal.document.councilTaxBill",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Statuatory declaration",
+              "type": "string"
+            },
+            "value": {
+              "const": "proposal.document.declaration",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Design and Access Statement",
+              "type": "string"
+            },
+            "value": {
+              "const": "proposal.document.designAndAccess",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Flood risk assessment",
+              "type": "string"
+            },
+            "value": {
+              "const": "proposal.document.floodRisk",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Heritage Statement",
+              "type": "string"
+            },
+            "value": {
+              "const": "proposal.document.heritageStatement",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Noise assessment",
+              "type": "string"
+            },
+            "value": {
+              "const": "proposal.document.noise",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Other - document",
+              "type": "string"
+            },
+            "value": {
+              "const": "proposal.document.other",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Other - correspondence",
+              "type": "string"
+            },
+            "value": {
+              "const": "proposal.document.other.evidence",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Sunlight and daylight report",
+              "type": "string"
+            },
+            "value": {
+              "const": "proposal.document.sunAndDaylight",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Tenancy agreement",
+              "type": "string"
+            },
+            "value": {
+              "const": "proposal.document.tenancyAgreement",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Tenancy invoice",
+              "type": "string"
+            },
+            "value": {
+              "const": "proposal.document.tenancyInvoice",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Transport assessment",
+              "type": "string"
+            },
+            "value": {
+              "const": "proposal.document.transport",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Utility bill",
+              "type": "string"
+            },
+            "value": {
+              "const": "proposal.document.utility.bill",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Photographs",
+              "type": "string"
+            },
+            "value": {
+              "const": "proposal.photograph",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Visualisations",
+              "type": "string"
+            },
+            "value": {
+              "const": "proposal.visualisation",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        }
+      ],
+      "description": "Types of planning documents and drawings"
     },
     "Metadata": {
       "additionalProperties": false,
@@ -10936,17 +11570,55 @@
       "description": "Property types derived from Basic Land and Property Unit (BLPU) classification codes"
     },
     "Proposal": {
+      "$id": "#Proposal",
       "additionalProperties": false,
+      "description": "Information about the project",
       "properties": {
+        "completion": {
+          "enum": [
+            "10plus",
+            "4plus",
+            "lessThan4",
+            "lessThan10"
+          ],
+          "type": "string"
+        },
+        "date": {
+          "additionalProperties": false,
+          "properties": {
+            "finish": {
+              "$ref": "#/definitions/DateTime"
+            },
+            "start": {
+              "$ref": "#/definitions/DateTime"
+            }
+          },
+          "required": [
+            "start",
+            "finish"
+          ],
+          "type": "object"
+        },
+        "description": {
+          "type": "string"
+        },
         "projectType": {
           "items": {
             "$ref": "#/definitions/ProjectType"
           },
           "type": "array"
+        },
+        "time": {
+          "enum": [
+            "future",
+            "past"
+          ],
+          "type": "string"
         }
       },
       "required": [
-        "projectType"
+        "projectType",
+        "description"
       ],
       "type": "object"
     },
