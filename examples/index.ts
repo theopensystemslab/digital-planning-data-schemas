@@ -45,6 +45,17 @@ const validFiles: Schema['files'] = [
   },
 ];
 
+const validResult = [
+  {
+    value: "Planning permission / Permitted development",
+    description: "It looks like the proposed changes may fall within the rules for Permitted Development and therefore would not need planning permission."
+  },
+  {
+    value: "Listed building consent / Not required",
+    description: "",
+  },
+];
+
 export const validExampleApplicant: Schema = {
   data: {
     user: {
@@ -55,9 +66,7 @@ export const validExampleApplicant: Schema = {
     property: validProperty,
     proposal: validProposal,
   },
-  result: {
-    name: 'Test',
-  },
+  result: validResult,
   metadata: validMetadata,
   responses: {
     name: 'Test',
@@ -75,9 +84,7 @@ export const validExampleAgent: Schema = {
     property: validProperty,
     proposal: validProposal,
   },
-  result: {
-    name: 'Test',
-  },
+  result: validResult,
   metadata: validMetadata,
   responses: {
     name: 'Test',
