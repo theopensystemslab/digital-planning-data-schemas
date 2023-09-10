@@ -3,6 +3,7 @@ import {validAgent, validApplicant} from './data/Applicant';
 import {validApplication} from './data/Application';
 import {validProperty} from './data/Property';
 import {validProposal} from './data/Proposal';
+import { validResponses } from './data/Responses';
 
 const validMetadata: Schema['metadata'] = {
   service: {
@@ -68,9 +69,7 @@ export const validExampleApplicant: Schema = {
   },
   result: validResult,
   metadata: validMetadata,
-  responses: {
-    name: 'Test',
-  },
+  repsonses: validResponses,
   files: validFiles,
 };
 
@@ -86,8 +85,6 @@ export const validExampleAgent: Schema = {
   },
   result: validResult,
   metadata: validMetadata,
-  responses: {
-    name: 'Test',
-  },
+  repsonses: validResponses,
   files: validFiles,
 };

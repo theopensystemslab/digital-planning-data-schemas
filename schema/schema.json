@@ -11668,29 +11668,656 @@
       ],
       "type": "object"
     },
-    "Responses": {
+    "QuestionAndResponses": {
       "additionalProperties": false,
       "properties": {
-        "name": {
+        "metadata": {
+          "$ref": "#/definitions/QuestionMetaData"
+        },
+        "question": {
           "type": "string"
+        },
+        "responses": {
+          "anyOf": [
+            {
+              "items": {
+                "$ref": "#/definitions/Response"
+              },
+              "type": "array"
+            },
+            {
+              "type": "string"
+            }
+          ]
         }
       },
       "required": [
-        "name"
+        "question",
+        "responses"
       ],
       "type": "object"
     },
-    "Result": {
+    "QuestionMetaData": {
       "additionalProperties": false,
       "properties": {
-        "name": {
+        "auto_answered": {
+          "type": "boolean"
+        },
+        "feedback": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        },
+        "policy_refs": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "text": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "section_name": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "Response": {
+      "additionalProperties": false,
+      "properties": {
+        "metadata": {
+          "$ref": "#/definitions/ResponseMetaData"
+        },
+        "value": {
           "type": "string"
         }
       },
       "required": [
-        "name"
+        "value"
       ],
       "type": "object"
+    },
+    "ResponseMetaData": {
+      "additionalProperties": false,
+      "properties": {
+        "flags": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "Responses": {
+      "$id": "#Responses",
+      "description": "The ordered list of questions, answers, and their metadata for this application",
+      "items": {
+        "$ref": "#/definitions/QuestionAndResponses"
+      },
+      "type": "array"
+    },
+    "Result": {
+      "$id": "#Result",
+      "description": "The result of this application. Results are determined by flags corresponding to responses; each application can have up to one result per flagset",
+      "items": {
+        "$ref": "#/definitions/ResultFlag"
+      },
+      "type": "array"
+    },
+    "ResultFlag": {
+      "$id": "#ResultFlag",
+      "anyOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "It looks like the changes may now be beyond the time limit for enforcement action. This does not apply if the changes have been deliberately concealed.",
+              "type": "string"
+            },
+            "value": {
+              "const": "Planning permission / Immune",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "There is some key information missing that will be needed to assess this application.",
+              "type": "string"
+            },
+            "value": {
+              "const": "Planning permission / Missing information",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "It looks like the proposed changes may require planning permission.",
+              "type": "string"
+            },
+            "value": {
+              "const": "Planning permission / Permission needed",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "It looks like the proposed changes do not require planning permission, however the applicant must apply for Prior Approval before proceeding.",
+              "type": "string"
+            },
+            "value": {
+              "const": "Planning permission / Prior approval",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "It looks like the proposed changes may not require planning permission, however the applicant must provide notice to the planning authority before proceeding.",
+              "type": "string"
+            },
+            "value": {
+              "const": "Planning permission / Notice",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "It looks like the proposed changes may fall within the rules for Permitted Development and therefore would not need planning permission.",
+              "type": "string"
+            },
+            "value": {
+              "const": "Planning permission / Permitted development",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "It looks like the proposed changes may not fall within the legal definition of 'development', and therefore would not require planning permission.",
+              "type": "string"
+            },
+            "value": {
+              "const": "Planning permission / Not development",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "",
+              "type": "string"
+            },
+            "value": {
+              "const": "Listed building consent / Missing information",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "",
+              "type": "string"
+            },
+            "value": {
+              "const": "Listed building consent / Required",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "",
+              "type": "string"
+            },
+            "value": {
+              "const": "Listed building consent / De minimis",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "",
+              "type": "string"
+            },
+            "value": {
+              "const": "Listed building consent / Not required",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "",
+              "type": "string"
+            },
+            "value": {
+              "const": "Works to trees & hedges / Missing information",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "",
+              "type": "string"
+            },
+            "value": {
+              "const": "Works to trees & hedges / Required",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "",
+              "type": "string"
+            },
+            "value": {
+              "const": "Works to trees & hedges / De minimis",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "",
+              "type": "string"
+            },
+            "value": {
+              "const": "Works to trees & hedges / Not required",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "",
+              "type": "string"
+            },
+            "value": {
+              "const": "Demolition in a conservation area / Missing information",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "",
+              "type": "string"
+            },
+            "value": {
+              "const": "Demolition in a conservation area / Required",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "",
+              "type": "string"
+            },
+            "value": {
+              "const": "Demolition in a conservation area / De minimis",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "",
+              "type": "string"
+            },
+            "value": {
+              "const": "Demolition in a conservation area / Not required",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "",
+              "type": "string"
+            },
+            "value": {
+              "const": "Planning policy / Missing information",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "",
+              "type": "string"
+            },
+            "value": {
+              "const": "Planning policy / Fails to meet policy",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "",
+              "type": "string"
+            },
+            "value": {
+              "const": "Planning policy / Edge case",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "",
+              "type": "string"
+            },
+            "value": {
+              "const": "Planning policy / Meets policy",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "",
+              "type": "string"
+            },
+            "value": {
+              "const": "Community infrastructure levy / Missing information",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "",
+              "type": "string"
+            },
+            "value": {
+              "const": "Community infrastructure levy / Exemption void",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "",
+              "type": "string"
+            },
+            "value": {
+              "const": "Community infrastructure levy / Exempt",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "",
+              "type": "string"
+            },
+            "value": {
+              "const": "Community infrastructure levy / Relief void",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "",
+              "type": "string"
+            },
+            "value": {
+              "const": "Community infrastructure levy / Relief",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "",
+              "type": "string"
+            },
+            "value": {
+              "const": "Community infrastructure levy / Liable",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "",
+              "type": "string"
+            },
+            "value": {
+              "const": "Community infrastructure levy / Not liable",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        }
+      ],
+      "description": "An individual result of this application"
     },
     "SiteContact": {
       "$id": "#SiteContact",
