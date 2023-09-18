@@ -5,14 +5,12 @@
 export type Responses = QuestionAndResponses[];
 
 export interface QuestionMetaData {
-  auto_answered?: boolean;
-  policy_refs?: Array<{
+  autoAnswered?: boolean;
+  policyRefs?: Array<{
     url?: string;
     text?: string;
   }>;
-  section_name?: string;
-  feedback?: string;
-  notes?: string;
+  sectionName?: string;
 }
 
 export interface ResponseMetaData {

@@ -11700,16 +11700,10 @@
     "QuestionMetaData": {
       "additionalProperties": false,
       "properties": {
-        "auto_answered": {
+        "autoAnswered": {
           "type": "boolean"
         },
-        "feedback": {
-          "type": "string"
-        },
-        "notes": {
-          "type": "string"
-        },
-        "policy_refs": {
+        "policyRefs": {
           "items": {
             "additionalProperties": false,
             "properties": {
@@ -11724,7 +11718,7 @@
           },
           "type": "array"
         },
-        "section_name": {
+        "sectionName": {
           "type": "string"
         }
       },
