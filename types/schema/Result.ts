@@ -1,4 +1,4 @@
-import {Flags} from "../enums/Flags";
+import {Flags} from '../enums/Flags';
 
 /**
  * @id #Result

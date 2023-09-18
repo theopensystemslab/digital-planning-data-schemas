@@ -3,7 +3,7 @@ import {validAgent, validApplicant} from './data/Applicant';
 import {validApplication} from './data/Application';
 import {validProperty} from './data/Property';
 import {validProposal} from './data/Proposal';
-import { validResponses } from './data/Responses';
+import {validResponses} from './data/Responses';
 
 const validMetadata: Schema['metadata'] = {
   service: {
@@ -46,14 +46,15 @@ const validFiles: Schema['files'] = [
   },
 ];
 
-const validResult = [
+const validResult: Schema['result'] = [
   {
-    value: "Planning permission / Permitted development",
-    description: "It looks like the proposed changes may fall within the rules for Permitted Development and therefore would not need planning permission."
+    value: 'Planning permission / Permitted development',
+    description:
+      'It looks like the proposed changes may fall within the rules for Permitted Development and therefore would not need planning permission.',
   },
   {
-    value: "Listed building consent / Not required",
-    description: "",
+    value: 'Listed building consent / Not required',
+    description: '',
   },
 ];
 
@@ -69,7 +70,7 @@ export const validExampleApplicant: Schema = {
   },
   result: validResult,
   metadata: validMetadata,
-  repsonses: validResponses,
+  responses: validResponses,
   files: validFiles,
 };
 
@@ -85,6 +86,6 @@ export const validExampleAgent: Schema = {
   },
   result: validResult,
   metadata: validMetadata,
-  repsonses: validResponses,
+  responses: validResponses,
   files: validFiles,
 };

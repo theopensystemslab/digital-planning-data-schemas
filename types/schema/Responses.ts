@@ -28,4 +28,4 @@ export interface QuestionAndResponses {
   question: string;
   responses: Array<Response> | string;
   metadata?: QuestionMetaData;
-};
+}
