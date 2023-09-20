@@ -1,0 +1,216 @@
+{
+  "data": {
+    "user": {
+      "role": "agent"
+    },
+    "applicant": {
+      "type": "charity",
+      "contact": {
+        "name": {
+          "first": "Test",
+          "last": "Test"
+        },
+        "email": "test@test.com",
+        "phone": {
+          "primary": "123"
+        },
+        "company": {
+          "name": "Test Charity Ltd"
+        }
+      },
+      "address": {
+        "sameAsSiteAddress": false,
+        "line1": "123 Test",
+        "town": "Test",
+        "postcode": "TES T12"
+      },
+      "agent": {
+        "contact": {
+          "name": {
+            "first": "Agent",
+            "last": "Agent"
+          },
+          "email": "agent@test.com",
+          "phone": {
+            "primary": "123"
+          }
+        },
+        "address": {
+          "sameAsSiteAddress": false,
+          "line1": "456 Test",
+          "town": "Test",
+          "postcode": "TES T34"
+        }
+      },
+      "siteContact": {
+        "role": "other",
+        "name": "Neighbor",
+        "email": "neighbor@test.com",
+        "phone": "567"
+      }
+    },
+    "application": {
+      "type": {
+        "value": "ldc.proposed",
+        "description": "Lawful Development Certificate - Proposed"
+      },
+      "fee": {
+        "calculated": 103,
+        "payable": 103,
+        "exemption": {
+          "disability": false,
+          "resubmission": false
+        },
+        "reduction": {
+          "alternative": false,
+          "parishCouncil": false,
+          "sports": false
+        },
+        "reference": {
+          "govPay": "abc123"
+        }
+      },
+      "declaration": {
+        "accurate": true,
+        "connection": "none"
+      }
+    },
+    "property": {
+      "address": {
+        "uprn": "200003453480",
+        "usrn": "22500531",
+        "latitude": 51.4859056,
+        "longitude": -0.0760466,
+        "pao": "47",
+        "street": "COBOURG ROAD",
+        "town": "LONDON",
+        "postcode": "SE5 0HU",
+        "x": 533683,
+        "y": 178083,
+        "title": "47, COBOURG ROAD, LONDON",
+        "region": "London",
+        "localAuthorityDistrict": [
+          "Southwark"
+        ],
+        "source": "Ordnance Survey"
+      },
+      "type": {
+        "value": "residential.HMO.parent",
+        "description": "HMO Parent"
+      },
+      "boundary": {
+        "site": "GeoJSON TBD",
+        "area": {
+          "squareMeters": 10000,
+          "hectares": 1
+        }
+      },
+      "constraints": {
+        "planning": [
+          {
+            "value": "listed",
+            "description": "Listed Building",
+            "intersects": false
+          },
+          {
+            "value": "designated.conservationArea",
+            "description": "Conservation Area",
+            "intersects": true
+          }
+        ]
+      }
+    },
+    "proposal": {
+      "projectType": [
+        {
+          "value": "alter.equipment.solar",
+          "description": "Install solar panels"
+        },
+        {
+          "value": "new.leisure",
+          "description": "Leisure premises"
+        }
+      ],
+      "description": "This is a test application"
+    }
+  },
+  "result": [
+    {
+      "value": "Planning permission / Permitted development",
+      "description": "It looks like the proposed changes may fall within the rules for Permitted Development and therefore would not need planning permission."
+    },
+    {
+      "value": "Listed building consent / Not required",
+      "description": ""
+    }
+  ],
+  "metadata": {
+    "service": {
+      "publishedFlowId": "b3320abe-f5bc-4185-b61f-40e9e65f07ad",
+      "name": "Test",
+      "owner": "Test",
+      "url": "https://www.planx.uk/"
+    },
+    "session": {
+      "source": "PlanX",
+      "id": "b3320abe-f5bc-4185-b61f-40e9e65f07ad",
+      "createdAt": "2018-11-13T20:20:39+00:00",
+      "submittedAt": "2018-11-13T20:20:39+00:00"
+    }
+  },
+  "responses": [
+    {
+      "metadata": {
+        "sectionName": "The property",
+        "autoAnswered": true
+      },
+      "question": "Is the property in London Borough of Southwark?",
+      "responses": [
+        {
+          "value": "Yes"
+        }
+      ]
+    },
+    {
+      "metadata": {
+        "policyRefs": [
+          {
+            "text": "Town and Country Planning Act 1990, Part 7, Section 191 &amp; Section 192"
+          }
+        ],
+        "sectionName": "About the project"
+      },
+      "question": "What are you applying about?",
+      "responses": [
+        {
+          "value": "Proposed changes I want to make in the future"
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "name": "https://api.editor.planx.uk/file/private/folderId/file1.pdf",
+      "type": [
+        {
+          "value": "proposal.drawing.roofPlan",
+          "description": "Roof plan - proposed"
+        },
+        {
+          "value": "property.drawing.roofPlan",
+          "description": "Roof plan - existing"
+        }
+      ]
+    },
+    {
+      "name": "https://api.editor.planx.uk/file/private/folderId/file2.pdf",
+      "description": "Evidence of my project start date",
+      "type": [
+        {
+          "value": "proposal.document.construction.invoice",
+          "description": "Construction invoice"
+        }
+      ]
+    }
+  ]
+}
