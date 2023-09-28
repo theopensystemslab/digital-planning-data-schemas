@@ -1,7 +1,7 @@
 {
-  "$id": "@next",
+  "$id": "--no-top-ref",
+  "$ref": "#/definitions/Schema",
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "additionalProperties": false,
   "definitions": {
     "AddressInput": {
       "$id": "#AddressInput",
@@ -88,6 +88,7 @@
         "address",
         "agent",
         "contact",
+        "siteContact",
         "type"
       ],
       "type": "object"
@@ -857,7 +858,8 @@
       "required": [
         "type",
         "contact",
-        "address"
+        "address",
+        "siteContact"
       ],
       "type": "object"
     },
@@ -12810,6 +12812,64 @@
       ],
       "description": "An individual result of this application"
     },
+    "Schema": {
+      "additionalProperties": false,
+      "description": "Root of PlanX's Digital Planning Schema",
+      "properties": {
+        "data": {
+          "additionalProperties": false,
+          "properties": {
+            "applicant": {
+              "$ref": "#/definitions/Applicant"
+            },
+            "application": {
+              "$ref": "#/definitions/Application"
+            },
+            "property": {
+              "$ref": "#/definitions/Property"
+            },
+            "proposal": {
+              "$ref": "#/definitions/Proposal"
+            },
+            "user": {
+              "$ref": "#/definitions/User"
+            }
+          },
+          "required": [
+            "applicant",
+            "property",
+            "application",
+            "proposal",
+            "user"
+          ],
+          "type": "object"
+        },
+        "files": {
+          "items": {
+            "$ref": "#/definitions/File"
+          },
+          "type": "array"
+        },
+        "metadata": {
+          "$ref": "#/definitions/Metadata"
+        },
+        "responses": {
+          "$ref": "#/definitions/Responses"
+        },
+        "result": {
+          "$ref": "#/definitions/Result"
+        }
+      },
+      "required": [
+        "data",
+        "result",
+        "metadata",
+        "responses",
+        "files"
+      ],
+      "title": "Digital Planning Data Schema",
+      "type": "object"
+    },
     "SiteContact": {
       "$id": "#SiteContact",
       "anyOf": [
@@ -13005,60 +13065,5 @@
       ],
       "type": "object"
     }
-  },
-  "description": "Root of PlanX's Digital Planning Schema",
-  "properties": {
-    "data": {
-      "additionalProperties": false,
-      "properties": {
-        "applicant": {
-          "$ref": "#/definitions/Applicant"
-        },
-        "application": {
-          "$ref": "#/definitions/Application"
-        },
-        "property": {
-          "$ref": "#/definitions/Property"
-        },
-        "proposal": {
-          "$ref": "#/definitions/Proposal"
-        },
-        "user": {
-          "$ref": "#/definitions/User"
-        }
-      },
-      "required": [
-        "applicant",
-        "property",
-        "application",
-        "proposal",
-        "user"
-      ],
-      "type": "object"
-    },
-    "files": {
-      "items": {
-        "$ref": "#/definitions/File"
-      },
-      "type": "array"
-    },
-    "metadata": {
-      "$ref": "#/definitions/Metadata"
-    },
-    "responses": {
-      "$ref": "#/definitions/Responses"
-    },
-    "result": {
-      "$ref": "#/definitions/Result"
-    }
-  },
-  "required": [
-    "data",
-    "result",
-    "metadata",
-    "responses",
-    "files"
-  ],
-  "title": "Digital Planning Data Schema",
-  "type": "object"
+  }
 }

@@ -16,7 +16,7 @@ export interface BaseApplicant {
   interest?: 'owner.sole' | 'owner.co' | 'tenant' | 'occupier';
   contact: UserContact;
   address: UserAddress;
-  siteContact?: SiteContact;
+  siteContact: SiteContact;
 }
 
 /**
