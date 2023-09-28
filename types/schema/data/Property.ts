@@ -6,20 +6,18 @@ import {PropertyTypes} from '../../enums/PropertyTypes';
  */
 export interface Property {
   address: ProposedAddress | OSAddress;
+  region: string;
+  localAuthorityDistrict: string[];
   type: PropertyType;
   boundary?: {
     site: string; // @todo use GeoJSON from utils here, but ajv tests failing
     area: {
-      squareMeters: number;
+      squareMetres: number;
       hectares: number;
     };
   };
   constraints?: {
-    planning: {
-      value: string;
-      description: string;
-      intersects: boolean;
-    }[];
+    planning: PlanningConstraint[];
   };
 }
 
@@ -33,8 +31,6 @@ export interface SiteAddress {
   y: number;
   latitude: number;
   longitude: number;
-  region: string;
-  localAuthorityDistrict: string[];
 }
 
 /**
@@ -76,3 +72,26 @@ type PropertyTypeMap = {
  * @description Property types derived from Basic Land and Property Unit (BLPU) classification codes
  */
 export type PropertyType = PropertyTypeMap[keyof PropertyTypeMap];
+
+/** @todo in future value & description should check against PlanningConstraints enum, but also allow custom per-council variables ?? */
+interface BasePlanningConstraint {
+  value: string;
+  description: string;
+}
+
+interface NonOverlappingPlanningConstraint extends BasePlanningConstraint {
+  overlaps: false;
+}
+
+interface OverlappingPlanningConstraint extends BasePlanningConstraint {
+  overlaps: true;
+  entities: string[];
+}
+
+/**
+ * @id #PlanningConstraint
+ * @description Planning constraints that overlap with the proposed site boundary determined by spatial queries against Planning Data (planning.data.gov.uk) and Ordnance Survey
+ */
+type PlanningConstraint =
+  | NonOverlappingPlanningConstraint
+  | OverlappingPlanningConstraint;

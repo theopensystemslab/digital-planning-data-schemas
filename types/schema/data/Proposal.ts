@@ -8,12 +8,35 @@ import {DateTime} from '../../utils';
 export interface Proposal {
   projectType: ProjectType[];
   description: string;
+  boundary?: {
+    site: string; // @todo use GeoJSON from utils here, but ajv tests failing
+    area: {
+      squareMetres: number;
+      hectares: number;
+    };
+  };
   date?: {
     start: DateTime;
-    finish: DateTime;
+    completion?: DateTime;
   };
-  time?: 'future' | 'past';
-  completion?: '10plus' | '4plus' | 'lessThan4' | 'lessThan10';
+  retro?: {
+    date: {
+      start: DateTime;
+      completion: DateTime;
+    };
+  };
+  details?: {
+    extend?: {
+      area: {
+        squareMetres: number;
+      };
+    };
+    new?: {
+      area: {
+        squareMetres: number;
+      };
+    };
+  };
 }
 
 type ProjectTypeKeys = keyof typeof ProjectTypes;

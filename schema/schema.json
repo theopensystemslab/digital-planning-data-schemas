@@ -30,6 +30,15 @@
         "contact": {
           "$ref": "#/definitions/UserContact"
         },
+        "interest": {
+          "enum": [
+            "owner.sole",
+            "owner.co",
+            "tenant",
+            "occupier"
+          ],
+          "type": "string"
+        },
         "siteContact": {
           "$ref": "#/definitions/SiteContact"
         },
@@ -793,6 +802,15 @@
         "contact": {
           "$ref": "#/definitions/UserContact"
         },
+        "interest": {
+          "enum": [
+            "owner.sole",
+            "owner.co",
+            "tenant",
+            "occupier"
+          ],
+          "type": "string"
+        },
         "siteContact": {
           "$ref": "#/definitions/SiteContact"
         },
@@ -1552,12 +1570,6 @@
         "latitude": {
           "type": "number"
         },
-        "localAuthorityDistrict": {
-          "items": {
-            "type": "string"
-          },
-          "type": "array"
-        },
         "longitude": {
           "type": "number"
         },
@@ -1568,9 +1580,6 @@
           "type": "string"
         },
         "postcode": {
-          "type": "string"
-        },
-        "region": {
           "type": "string"
         },
         "source": {
@@ -1601,11 +1610,9 @@
       },
       "required": [
         "latitude",
-        "localAuthorityDistrict",
         "longitude",
         "pao",
         "postcode",
-        "region",
         "source",
         "street",
         "title",
@@ -1686,6 +1693,42 @@
           "additionalProperties": false,
           "properties": {
             "description": {
+              "const": "Add a bay window",
+              "type": "string"
+            },
+            "value": {
+              "const": "alter.bayWindow.add",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Remove a bay window",
+              "type": "string"
+            },
+            "value": {
+              "const": "alter.bayWindow.remove",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
               "const": "Changes to a fence, wall or gate",
               "type": "string"
             },
@@ -1727,6 +1770,42 @@
             },
             "value": {
               "const": "alter.chimneys",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Add a chimney",
+              "type": "string"
+            },
+            "value": {
+              "const": "alter.chimneys.add",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Replace a chimney",
+              "type": "string"
+            },
+            "value": {
+              "const": "alter.chimneys.replace",
               "type": "string"
             }
           },
@@ -1920,6 +1999,42 @@
           "additionalProperties": false,
           "properties": {
             "description": {
+              "const": "Install solar photovoltaics (PV)",
+              "type": "string"
+            },
+            "value": {
+              "const": "alter.equipment.solar.pv",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Install solar thermal equipment",
+              "type": "string"
+            },
+            "value": {
+              "const": "alter.equipment.solar.thermal",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
               "const": "Install an outdoor tank (for example a water tank)",
               "type": "string"
             },
@@ -2028,11 +2143,47 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Add new doorways or windows",
+              "const": "Add one or more new doorways",
               "type": "string"
             },
             "value": {
-              "const": "alter.openings.add",
+              "const": "alter.openings.add.door",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Add one or more new windows",
+              "type": "string"
+            },
+            "value": {
+              "const": "alter.openings.add.window",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Add doorways or new windows - 1.7m or higher",
+              "type": "string"
+            },
+            "value": {
+              "const": "alter.openings.add.windows.high",
               "type": "string"
             }
           },
@@ -2051,6 +2202,114 @@
             },
             "value": {
               "const": "alter.openings.alter",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Convert a doorway into a window",
+              "type": "string"
+            },
+            "value": {
+              "const": "alter.openings.alter.convert.doorToWindow",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Convert a window into a doorway",
+              "type": "string"
+            },
+            "value": {
+              "const": "alter.openings.alter.convert.windowToDoor",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Enlarge a door opening",
+              "type": "string"
+            },
+            "value": {
+              "const": "alter.openings.alter.enlarge.door",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Enlarge a window opening",
+              "type": "string"
+            },
+            "value": {
+              "const": "alter.openings.alter.enlarge.window",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Reduce the size of a door opening",
+              "type": "string"
+            },
+            "value": {
+              "const": "alter.openings.alter.reduce.door",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Reduce the size of a window opening",
+              "type": "string"
+            },
+            "value": {
+              "const": "alter.openings.alter.reduce.window",
               "type": "string"
             }
           },
@@ -2087,6 +2346,24 @@
             },
             "value": {
               "const": "alter.remove",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Remove a chimney",
+              "type": "string"
+            },
+            "value": {
+              "const": "alter.remove.chimney",
               "type": "string"
             }
           },
@@ -2141,6 +2418,78 @@
             },
             "value": {
               "const": "alter.replace",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Replace door with door",
+              "type": "string"
+            },
+            "value": {
+              "const": "alter.replace.doorsToDoors",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Replace door with window",
+              "type": "string"
+            },
+            "value": {
+              "const": "alter.replace.doorsToWindows",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Replace window with door",
+              "type": "string"
+            },
+            "value": {
+              "const": "alter.replace.windowsToDoors",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Replace window with window",
+              "type": "string"
+            },
+            "value": {
+              "const": "alter.replace.windowsToWindows",
               "type": "string"
             }
           },
@@ -2532,11 +2881,11 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Change the use of a property",
+              "const": "Convert a home to bedsits or a shared home",
               "type": "string"
             },
             "value": {
-              "const": "changeOfUse.whole",
+              "const": "changeOfUse.whole.homeToHMO",
               "type": "string"
             }
           },
@@ -2550,11 +2899,11 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Convert a home to bedsits or a shared home",
+              "const": "Change the use of a property",
               "type": "string"
             },
             "value": {
-              "const": "changeOfUse.whole.homeToHMO",
+              "const": "changeOfUse.whole",
               "type": "string"
             }
           },
@@ -2946,11 +3295,11 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Leisure premises",
+              "const": "Industrial premises",
               "type": "string"
             },
             "value": {
-              "const": "new.leisure",
+              "const": "new.industrial",
               "type": "string"
             }
           },
@@ -2964,11 +3313,11 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Industrial premises",
+              "const": "Leisure premises",
               "type": "string"
             },
             "value": {
-              "const": "new.industrial",
+              "const": "new.leisure",
               "type": "string"
             }
           },
@@ -3149,12 +3498,12 @@
                 "hectares": {
                   "type": "number"
                 },
-                "squareMeters": {
+                "squareMetres": {
                   "type": "number"
                 }
               },
               "required": [
-                "squareMeters",
+                "squareMetres",
                 "hectares"
               ],
               "type": "object"
@@ -3174,24 +3523,59 @@
           "properties": {
             "planning": {
               "items": {
-                "additionalProperties": false,
-                "properties": {
-                  "description": {
-                    "type": "string"
+                "$id": "#PlanningConstraint",
+                "anyOf": [
+                  {
+                    "additionalProperties": false,
+                    "properties": {
+                      "description": {
+                        "type": "string"
+                      },
+                      "overlaps": {
+                        "const": false,
+                        "type": "boolean"
+                      },
+                      "value": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "description",
+                      "overlaps",
+                      "value"
+                    ],
+                    "type": "object"
                   },
-                  "intersects": {
-                    "type": "boolean"
-                  },
-                  "value": {
-                    "type": "string"
+                  {
+                    "additionalProperties": false,
+                    "properties": {
+                      "description": {
+                        "type": "string"
+                      },
+                      "entities": {
+                        "items": {
+                          "type": "string"
+                        },
+                        "type": "array"
+                      },
+                      "overlaps": {
+                        "const": true,
+                        "type": "boolean"
+                      },
+                      "value": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "description",
+                      "entities",
+                      "overlaps",
+                      "value"
+                    ],
+                    "type": "object"
                   }
-                },
-                "required": [
-                  "value",
-                  "description",
-                  "intersects"
                 ],
-                "type": "object"
+                "description": "Planning constraints that overlap with the proposed site boundary determined by spatial queries against Planning Data (planning.data.gov.uk) and Ordnance Survey"
               },
               "type": "array"
             }
@@ -3201,12 +3585,23 @@
           ],
           "type": "object"
         },
+        "localAuthorityDistrict": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "region": {
+          "type": "string"
+        },
         "type": {
           "$ref": "#/definitions/PropertyType"
         }
       },
       "required": [
         "address",
+        "region",
+        "localAuthorityDistrict",
         "type"
       ],
       "type": "object"
@@ -11574,19 +11969,39 @@
       "additionalProperties": false,
       "description": "Information about the project",
       "properties": {
-        "completion": {
-          "enum": [
-            "10plus",
-            "4plus",
-            "lessThan4",
-            "lessThan10"
+        "boundary": {
+          "additionalProperties": false,
+          "properties": {
+            "area": {
+              "additionalProperties": false,
+              "properties": {
+                "hectares": {
+                  "type": "number"
+                },
+                "squareMetres": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "squareMetres",
+                "hectares"
+              ],
+              "type": "object"
+            },
+            "site": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "site",
+            "area"
           ],
-          "type": "string"
+          "type": "object"
         },
         "date": {
           "additionalProperties": false,
           "properties": {
-            "finish": {
+            "completion": {
               "$ref": "#/definitions/DateTime"
             },
             "start": {
@@ -11594,13 +12009,60 @@
             }
           },
           "required": [
-            "start",
-            "finish"
+            "start"
           ],
           "type": "object"
         },
         "description": {
           "type": "string"
+        },
+        "details": {
+          "additionalProperties": false,
+          "properties": {
+            "extend": {
+              "additionalProperties": false,
+              "properties": {
+                "area": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "squareMetres": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "squareMetres"
+                  ],
+                  "type": "object"
+                }
+              },
+              "required": [
+                "area"
+              ],
+              "type": "object"
+            },
+            "new": {
+              "additionalProperties": false,
+              "properties": {
+                "area": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "squareMetres": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "squareMetres"
+                  ],
+                  "type": "object"
+                }
+              },
+              "required": [
+                "area"
+              ],
+              "type": "object"
+            }
+          },
+          "type": "object"
         },
         "projectType": {
           "items": {
@@ -11608,12 +12070,30 @@
           },
           "type": "array"
         },
-        "time": {
-          "enum": [
-            "future",
-            "past"
+        "retro": {
+          "additionalProperties": false,
+          "properties": {
+            "date": {
+              "additionalProperties": false,
+              "properties": {
+                "completion": {
+                  "$ref": "#/definitions/DateTime"
+                },
+                "start": {
+                  "$ref": "#/definitions/DateTime"
+                }
+              },
+              "required": [
+                "start",
+                "completion"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "date"
           ],
-          "type": "string"
+          "type": "object"
         }
       },
       "required": [
@@ -11630,17 +12110,8 @@
         "latitude": {
           "type": "number"
         },
-        "localAuthorityDistrict": {
-          "items": {
-            "type": "string"
-          },
-          "type": "array"
-        },
         "longitude": {
           "type": "number"
-        },
-        "region": {
-          "type": "string"
         },
         "source": {
           "const": "Proposed by applicant",
@@ -11658,9 +12129,7 @@
       },
       "required": [
         "latitude",
-        "localAuthorityDistrict",
         "longitude",
-        "region",
         "source",
         "title",
         "x",
