@@ -16,7 +16,7 @@ export interface BaseApplicant {
   interest?: 'owner.sole' | 'owner.co' | 'tenant' | 'occupier';
   contact: UserContact;
   address: UserAddress;
-  siteContact: SiteContact;
+  siteContact?: SiteContact;
 }
 
 /**
@@ -26,7 +26,7 @@ export interface BaseApplicant {
 export interface Agent extends BaseApplicant {
   agent: {
     contact: UserContact;
-    address: UserAddress;
+    address: AddressInput;
   };
 }
 
@@ -50,8 +50,21 @@ export interface UserContact {
 }
 
 /**
+ * @id #AddressInput
+ * @description Address information for an applicant contact rather than site
+ */
+export interface AddressInput {
+  line1: string;
+  line2?: string;
+  town: string;
+  county?: string;
+  postcode: string;
+  country?: string;
+}
+
+/**
  * @id #UserAddress
- * @description Address information for any user
+ * @description Address information for the applicant
  */
 export type UserAddress = {sameAsSiteAddress: true} | UserAddressNotSameSite;
 
@@ -59,14 +72,8 @@ export type UserAddress = {sameAsSiteAddress: true} | UserAddressNotSameSite;
  * @id #UserAddressNotSameSite
  * @description Address information for any user who's contact information differs from the site address
  */
-export interface UserAddressNotSameSite {
+export interface UserAddressNotSameSite extends AddressInput {
   sameAsSiteAddress: false;
-  line1: string;
-  line2?: string;
-  town: string;
-  county?: string;
-  postcode: string;
-  country?: string;
 }
 
 /**

@@ -9,7 +9,7 @@ export interface Application {
   type: ApplicationType;
   fee: ApplicationFee;
   declaration: {
-    accurate: true;
+    accurate: boolean;
     connection:
       | 'employee'
       | 'relation.employee'

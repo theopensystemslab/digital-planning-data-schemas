@@ -3,6 +3,37 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "additionalProperties": false,
   "definitions": {
+    "AddressInput": {
+      "$id": "#AddressInput",
+      "additionalProperties": false,
+      "description": "Address information for an applicant contact rather than site",
+      "properties": {
+        "country": {
+          "type": "string"
+        },
+        "county": {
+          "type": "string"
+        },
+        "line1": {
+          "type": "string"
+        },
+        "line2": {
+          "type": "string"
+        },
+        "postcode": {
+          "type": "string"
+        },
+        "town": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "line1",
+        "town",
+        "postcode"
+      ],
+      "type": "object"
+    },
     "Agent": {
       "$id": "#Agent",
       "additionalProperties": false,
@@ -15,7 +46,7 @@
           "additionalProperties": false,
           "properties": {
             "address": {
-              "$ref": "#/definitions/UserAddress"
+              "$ref": "#/definitions/AddressInput"
             },
             "contact": {
               "$ref": "#/definitions/UserContact"
@@ -57,7 +88,6 @@
         "address",
         "agent",
         "contact",
-        "siteContact",
         "type"
       ],
       "type": "object"
@@ -83,7 +113,6 @@
           "additionalProperties": false,
           "properties": {
             "accurate": {
-              "const": true,
               "type": "boolean"
             },
             "connection": {
@@ -828,8 +857,7 @@
       "required": [
         "type",
         "contact",
-        "address",
-        "siteContact"
+        "address"
       ],
       "type": "object"
     },
@@ -12883,7 +12911,7 @@
           "$ref": "#/definitions/UserAddressNotSameSite"
         }
       ],
-      "description": "Address information for any user"
+      "description": "Address information for the applicant"
     },
     "UserAddressNotSameSite": {
       "$id": "#UserAddressNotSameSite",
@@ -12914,10 +12942,10 @@
         }
       },
       "required": [
-        "sameAsSiteAddress",
         "line1",
-        "town",
-        "postcode"
+        "postcode",
+        "sameAsSiteAddress",
+        "town"
       ],
       "type": "object"
     },

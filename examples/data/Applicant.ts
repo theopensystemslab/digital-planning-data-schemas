@@ -53,7 +53,6 @@ export const validAgent: Schema['data']['applicant'] = {
       },
     },
     address: {
-      sameAsSiteAddress: false,
       line1: '456 Test',
       town: 'Test',
       postcode: 'TES T34',
