@@ -1,7 +1,7 @@
 {
-  "$id": "--no-top-ref",
-  "$ref": "#/definitions/Schema",
+  "$id": "@next",
   "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
   "definitions": {
     "AddressInput": {
       "$id": "#AddressInput",
@@ -100,7 +100,7 @@
                     "type": "string"
                   },
                   "noticeDate": {
-                    "$ref": "#/definitions/DateTime"
+                    "type": "string"
                   },
                   "noticeGiven": {
                     "type": "boolean"
@@ -922,7 +922,7 @@
                     "type": "string"
                   },
                   "noticeDate": {
-                    "$ref": "#/definitions/DateTime"
+                    "type": "string"
                   },
                   "noticeGiven": {
                     "type": "boolean"
@@ -2258,59 +2258,7 @@
           "properties": {
             "planning": {
               "items": {
-                "$id": "#PlanningConstraint",
-                "anyOf": [
-                  {
-                    "additionalProperties": false,
-                    "properties": {
-                      "description": {
-                        "type": "string"
-                      },
-                      "overlaps": {
-                        "const": false,
-                        "type": "boolean"
-                      },
-                      "value": {
-                        "type": "string"
-                      }
-                    },
-                    "required": [
-                      "description",
-                      "overlaps",
-                      "value"
-                    ],
-                    "type": "object"
-                  },
-                  {
-                    "additionalProperties": false,
-                    "properties": {
-                      "description": {
-                        "type": "string"
-                      },
-                      "entities": {
-                        "items": {
-                          "type": "string"
-                        },
-                        "type": "array"
-                      },
-                      "overlaps": {
-                        "const": true,
-                        "type": "boolean"
-                      },
-                      "value": {
-                        "type": "string"
-                      }
-                    },
-                    "required": [
-                      "description",
-                      "entities",
-                      "overlaps",
-                      "value"
-                    ],
-                    "type": "object"
-                  }
-                ],
-                "description": "Planning constraints that overlap with the proposed site boundary determined by spatial queries against Planning Data (planning.data.gov.uk) and Ordnance Survey"
+                "$ref": "#/definitions/PlanningConstraint"
               },
               "type": "array"
             }
@@ -2484,6 +2432,61 @@
         "y"
       ],
       "type": "object"
+    },
+    "PlanningConstraint": {
+      "$id": "#PlanningConstraint",
+      "anyOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "type": "string"
+            },
+            "overlaps": {
+              "const": false,
+              "type": "boolean"
+            },
+            "value": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "description",
+            "overlaps",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "type": "string"
+            },
+            "entities": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "overlaps": {
+              "const": true,
+              "type": "boolean"
+            },
+            "value": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "description",
+            "entities",
+            "overlaps",
+            "value"
+          ],
+          "type": "object"
+        }
+      ],
+      "description": "Planning constraints that overlap with the proposed site boundary determined by spatial queries against Planning Data (planning.data.gov.uk) and Ordnance Survey"
     },
     "PreApplication": {
       "$id": "#PreApplication",
@@ -13490,64 +13493,6 @@
       ],
       "description": "An individual result of this application"
     },
-    "Schema": {
-      "additionalProperties": false,
-      "description": "Root of PlanX's Digital Planning Schema",
-      "properties": {
-        "data": {
-          "additionalProperties": false,
-          "properties": {
-            "applicant": {
-              "$ref": "#/definitions/Applicant"
-            },
-            "application": {
-              "$ref": "#/definitions/Application"
-            },
-            "property": {
-              "$ref": "#/definitions/Property"
-            },
-            "proposal": {
-              "$ref": "#/definitions/Proposal"
-            },
-            "user": {
-              "$ref": "#/definitions/User"
-            }
-          },
-          "required": [
-            "applicant",
-            "property",
-            "application",
-            "proposal",
-            "user"
-          ],
-          "type": "object"
-        },
-        "files": {
-          "items": {
-            "$ref": "#/definitions/File"
-          },
-          "type": "array"
-        },
-        "metadata": {
-          "$ref": "#/definitions/Metadata"
-        },
-        "responses": {
-          "$ref": "#/definitions/Responses"
-        },
-        "result": {
-          "$ref": "#/definitions/Result"
-        }
-      },
-      "required": [
-        "data",
-        "result",
-        "metadata",
-        "responses",
-        "files"
-      ],
-      "title": "Digital Planning Data Schema",
-      "type": "object"
-    },
     "SiteContact": {
       "$id": "#SiteContact",
       "anyOf": [
@@ -13650,59 +13595,7 @@
           "properties": {
             "planning": {
               "items": {
-                "$id": "#PlanningConstraint",
-                "anyOf": [
-                  {
-                    "additionalProperties": false,
-                    "properties": {
-                      "description": {
-                        "type": "string"
-                      },
-                      "overlaps": {
-                        "const": false,
-                        "type": "boolean"
-                      },
-                      "value": {
-                        "type": "string"
-                      }
-                    },
-                    "required": [
-                      "description",
-                      "overlaps",
-                      "value"
-                    ],
-                    "type": "object"
-                  },
-                  {
-                    "additionalProperties": false,
-                    "properties": {
-                      "description": {
-                        "type": "string"
-                      },
-                      "entities": {
-                        "items": {
-                          "type": "string"
-                        },
-                        "type": "array"
-                      },
-                      "overlaps": {
-                        "const": true,
-                        "type": "boolean"
-                      },
-                      "value": {
-                        "type": "string"
-                      }
-                    },
-                    "required": [
-                      "description",
-                      "entities",
-                      "overlaps",
-                      "value"
-                    ],
-                    "type": "object"
-                  }
-                ],
-                "description": "Planning constraints that overlap with the proposed site boundary determined by spatial queries against Planning Data (planning.data.gov.uk) and Ordnance Survey"
+                "$ref": "#/definitions/PlanningConstraint"
               },
               "type": "array"
             }
@@ -14313,5 +14206,60 @@
       ],
       "description": "Vehicle parking types"
     }
-  }
+  },
+  "description": "Root of PlanX's Digital Planning Schema",
+  "properties": {
+    "data": {
+      "additionalProperties": false,
+      "properties": {
+        "applicant": {
+          "$ref": "#/definitions/Applicant"
+        },
+        "application": {
+          "$ref": "#/definitions/Application"
+        },
+        "property": {
+          "$ref": "#/definitions/Property"
+        },
+        "proposal": {
+          "$ref": "#/definitions/Proposal"
+        },
+        "user": {
+          "$ref": "#/definitions/User"
+        }
+      },
+      "required": [
+        "applicant",
+        "property",
+        "application",
+        "proposal",
+        "user"
+      ],
+      "type": "object"
+    },
+    "files": {
+      "items": {
+        "$ref": "#/definitions/File"
+      },
+      "type": "array"
+    },
+    "metadata": {
+      "$ref": "#/definitions/Metadata"
+    },
+    "responses": {
+      "$ref": "#/definitions/Responses"
+    },
+    "result": {
+      "$ref": "#/definitions/Result"
+    }
+  },
+  "required": [
+    "data",
+    "result",
+    "metadata",
+    "responses",
+    "files"
+  ],
+  "title": "Digital Planning Data Schema",
+  "type": "object"
 }

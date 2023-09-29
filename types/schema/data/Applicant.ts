@@ -20,7 +20,7 @@ export interface BaseApplicant {
       name: string;
       address: AddressInput | string;
       noticeGiven: boolean;
-      noticeDate?: DateTime;
+      noticeDate?: string; // @todo type DateTime throws test error
     }[];
   };
   contact: UserContact;

@@ -117,6 +117,6 @@ interface OverlappingPlanningConstraint extends BasePlanningConstraint {
  * @id #PlanningConstraint
  * @description Planning constraints that overlap with the proposed site boundary determined by spatial queries against Planning Data (planning.data.gov.uk) and Ordnance Survey
  */
-type PlanningConstraint =
+export type PlanningConstraint =
   | NonOverlappingPlanningConstraint
   | OverlappingPlanningConstraint;
