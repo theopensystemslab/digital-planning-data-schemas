@@ -1,4 +1,3 @@
-import {DateTime} from '../../utils';
 import {ApplicationTypes} from '../../enums/ApplicationTypes';
 
 /**
@@ -10,13 +9,15 @@ export interface Application {
   fee: ApplicationFee;
   declaration: {
     accurate: boolean;
-    connection:
-      | 'employee'
-      | 'relation.employee'
-      | 'electedMember'
-      | 'relation.electedMember'
-      | 'none';
-    description?: string; // application.declaration.connection.description in content
+    connection: {
+      value:
+        | 'employee'
+        | 'relation.employee'
+        | 'electedMember'
+        | 'relation.electedMember'
+        | 'none';
+      description?: string;
+    };
   };
   preApp?: PreApplication;
 }

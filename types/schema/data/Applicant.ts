@@ -16,10 +16,10 @@ export interface BaseApplicant {
   interest?: 'owner.sole' | 'owner.co' | 'tenant' | 'occupier';
   ownership?: {
     certificate: 'a' | 'b' | 'c' | 'd';
+    noticeGiven?: boolean;
     owners?: {
       name: string;
       address: AddressInput | string;
-      noticeGiven: boolean;
       noticeDate?: Date;
     }[];
   };

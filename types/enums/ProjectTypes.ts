@@ -11,6 +11,7 @@ export const ProjectTypes = {
   'alter.chimneys': 'Change chimneys',
   'alter.chimneys.add': 'Add a chimney',
   'alter.chimneys.replace': 'Replace a chimney',
+  'alter.deck': 'Add a verandah or deck',
   'alter.drains': 'Work on drains',
   'alter.equipment.airConditioning': 'Install an air conditioning unit',
   'alter.equipment.alarm': 'Install a security alarm',
@@ -45,8 +46,8 @@ export const ProjectTypes = {
   'alter.openings.alter.reduce.window': 'Reduce the size of a window opening',
   'alter.openings.remove': 'Block up doorways or windows',
   'alter.remove': 'Remove part of a building (such as a decorative feature)',
-  'alter.remove.chimney': 'Remove a chimney', // Propose: alter.chimeys.remove ??
-  'alter.remove.equipment': 'Remove equipment', // Remove energy equipment
+  'alter.remove.chimney': 'Remove a chimney',
+  'alter.remove.equipment': 'Remove energy equipment',
   'alter.repair': 'Repair windows or doors',
   'alter.replace': 'Replace windows or doors',
   'alter.replace.doorsToDoors': 'Replace door with door',
@@ -74,9 +75,9 @@ export const ProjectTypes = {
   'changeOfUse.let.part': 'Let a part of the property',
   'changeOfUse.let.whole': 'Let the property',
   'changeOfUse.outbuilding':
-    'Convert an outbuilding (such as a shed, garage or barn)', // Change the use of an outbuilding (such as a shed, garage or barn)
-  'changeOfUse.part': 'Convert part of a building', // Change the use of part of a building
-  'changeOfUse.whole.homeToHMO': 'Convert a home to bedsits or a shared home', // Share a home
+    'Convert or change the use of an outbuilding (such as a shed, garage or barn)',
+  'changeOfUse.part': 'Convert or change the use of part of a building',
+  'changeOfUse.whole.homeToHMO': 'Convert a home to bedsits or a shared home',
   'changeOfUse.whole': 'Change the use of a property',
   'changeOfUse.workFromHome': 'Work from home',
   demolish: 'Demolish a building',
@@ -88,27 +89,49 @@ export const ProjectTypes = {
   'extend.basement': 'Add a basement extension',
   'extend.front': 'Add a front extension',
   'extend.outbuildings':
-    'Add an outbuilding (such as a shed, garage or garden office)', // Outbuildings (shed, car shelter or garden office)
+    'Add an outbuilding (such as a shed, garage or garden office)',
+  'extend.outbuildings.animals':
+    'Add an outbuilding - animal enclosure, aviary or beehive',
+  'extend.outbuildings.annexe':
+    'Add an outbuilding - residential (or "granny") annexe',
+  'extend.outbuildings.bedroom': 'Add an outbuilding - bedroom or guest room',
+  'extend.outbuildings.games': 'Add an outbuilding - games room',
+  'extend.outbuildings.garage': 'Add an outbuilding - garage',
+  'extend.outbuildings.greenhouse': 'Add an outbuilding - greenhouse',
+  'extend.outbuildings.gym': 'Add an outbuilding - gym',
+  'extend.outbuildings.office': 'Add an outbuilding - office',
+  'extend.outbuildings.other': 'Add an outbuilding - something else',
+  'extend.outbuildings.sauna': 'Add an outbuilding - sauna',
+  'extend.outbuildings.shed': 'Add an outbuilding - shed',
+  'extend.outbuildings.shelter':
+    'Add an outbuilding - car parking or smoking shelter',
+  'extend.outbuildings.store': 'Add an outbuilding - storage',
+  'extend.outbuildings.studio': 'Add an outbuilding - studio',
+  'extend.outbuildings.summerHouse': 'Add an outbuilding - summer house',
+  'extend.outbuildings.swimmingPool': 'Add an outbuilding - swimming pool',
+  'extend.outbuildings.tank': 'Add an outbuilding - tank',
+  'extend.outbuildings.workshop': 'Add an outbuilding - workshop',
   'extend.porch': 'Add a porch',
   'extend.rear': 'Add a rear or side extension (or conservatory)',
   'extend.roof': 'Add a roof extension',
   'extend.roof.dormer': 'Add roof dormers',
-  internal: 'Change the internal layout', // Internal building works
+  internal: 'Internal building works, such as change the internal layout',
   'internal.loft': 'Convert a loft',
   'internal.mezzanine': 'Add a mezzanine floor',
   new: 'Another type of building',
   'new.agriculture': 'Agricultural buildings',
   'new.clickCollect': 'Install click and collect facilities',
+  'new.dwelling': 'New, self-contained dwelling',
   'new.forestry': 'Build new forestry buildings',
   'new.industrial': 'Industrial premises',
   'new.leisure': 'Leisure premises',
   'new.office': 'Offices',
-  'new.residential.dwelling': 'Build new homes on a roof', // Homes
+  'new.residential.dwelling': 'Build new homes on a roof',
   'new.retail': 'Retail premises',
   'new.telecoms': 'Install telecommunications equipment',
   'new.temporaryStructure':
     'Erect a temporary structure for historic visitor attractions and listed buildings',
   'new.warehouse': 'Storage or distribution premises',
   'unit.merge': 'Convert two or more properties into one',
-  'unit.subdivide': 'Convert part of a house into a flat', // Convert a home into flats
+  'unit.subdivide': 'Convert a home or part of a home into flats',
 };

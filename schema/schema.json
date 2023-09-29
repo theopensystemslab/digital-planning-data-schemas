@@ -82,6 +82,9 @@
               ],
               "type": "string"
             },
+            "noticeGiven": {
+              "type": "boolean"
+            },
             "owners": {
               "items": {
                 "additionalProperties": false,
@@ -101,15 +104,11 @@
                   },
                   "noticeDate": {
                     "$ref": "#/definitions/Date"
-                  },
-                  "noticeGiven": {
-                    "type": "boolean"
                   }
                 },
                 "required": [
                   "name",
-                  "address",
-                  "noticeGiven"
+                  "address"
                 ],
                 "type": "object"
               },
@@ -168,17 +167,26 @@
               "type": "boolean"
             },
             "connection": {
-              "enum": [
-                "employee",
-                "relation.employee",
-                "electedMember",
-                "relation.electedMember",
-                "none"
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "type": "string"
+                },
+                "value": {
+                  "enum": [
+                    "employee",
+                    "relation.employee",
+                    "electedMember",
+                    "relation.electedMember",
+                    "none"
+                  ],
+                  "type": "string"
+                }
+              },
+              "required": [
+                "value"
               ],
-              "type": "string"
-            },
-            "description": {
-              "type": "string"
+              "type": "object"
             }
           },
           "required": [
@@ -920,6 +928,9 @@
               ],
               "type": "string"
             },
+            "noticeGiven": {
+              "type": "boolean"
+            },
             "owners": {
               "items": {
                 "additionalProperties": false,
@@ -939,15 +950,11 @@
                   },
                   "noticeDate": {
                     "$ref": "#/definitions/Date"
-                  },
-                  "noticeGiven": {
-                    "type": "boolean"
                   }
                 },
                 "required": [
                   "name",
-                  "address",
-                  "noticeGiven"
+                  "address"
                 ],
                 "type": "object"
               },
@@ -1698,6 +1705,10 @@
       ],
       "description": "Types of planning documents and drawings"
     },
+    "GeoJSON": {
+      "$id": "#GeoJSON",
+      "type": "object"
+    },
     "LondonDetails": {
       "additionalProperties": false,
       "properties": {
@@ -1746,6 +1757,22 @@
             "bicycles": {
               "additionalProperties": false,
               "properties": {
+                "count": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "existing": {
+                      "type": "number"
+                    },
+                    "proposed": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "existing",
+                    "proposed"
+                  ],
+                  "type": "object"
+                },
                 "offStreet": {
                   "additionalProperties": false,
                   "properties": {
@@ -1797,11 +1824,30 @@
                   "type": "object"
                 }
               },
+              "required": [
+                "count"
+              ],
               "type": "object"
             },
             "buses": {
               "additionalProperties": false,
               "properties": {
+                "count": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "existing": {
+                      "type": "number"
+                    },
+                    "proposed": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "existing",
+                    "proposed"
+                  ],
+                  "type": "object"
+                },
                 "offStreet": {
                   "additionalProperties": false,
                   "properties": {
@@ -1853,6 +1899,9 @@
                   "type": "object"
                 }
               },
+              "required": [
+                "count"
+              ],
               "type": "object"
             },
             "cars": {
@@ -2095,6 +2144,22 @@
             "motorcyles": {
               "additionalProperties": false,
               "properties": {
+                "count": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "existing": {
+                      "type": "number"
+                    },
+                    "proposed": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "existing",
+                    "proposed"
+                  ],
+                  "type": "object"
+                },
                 "offStreet": {
                   "additionalProperties": false,
                   "properties": {
@@ -2146,6 +2211,9 @@
                   "type": "object"
                 }
               },
+              "required": [
+                "count"
+              ],
               "type": "object"
             },
             "type": {
@@ -2157,6 +2225,22 @@
             "vans": {
               "additionalProperties": false,
               "properties": {
+                "count": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "existing": {
+                      "type": "number"
+                    },
+                    "proposed": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "existing",
+                    "proposed"
+                  ],
+                  "type": "object"
+                },
                 "offStreet": {
                   "additionalProperties": false,
                   "properties": {
@@ -2208,6 +2292,9 @@
                   "type": "object"
                 }
               },
+              "required": [
+                "count"
+              ],
               "type": "object"
             }
           },
@@ -2265,7 +2352,7 @@
               "$ref": "#/definitions/Area"
             },
             "site": {
-              "type": "object"
+              "$ref": "#/definitions/GeoJSON"
             }
           },
           "required": [
@@ -2334,10 +2421,32 @@
     "Metadata": {
       "additionalProperties": false,
       "properties": {
+        "schema": {
+          "additionalProperties": false,
+          "properties": {
+            "url": {
+              "$ref": "#/definitions/URL"
+            }
+          },
+          "required": [
+            "url"
+          ],
+          "type": "object"
+        },
         "service": {
           "additionalProperties": false,
           "description": "Details of the digital planning service which generated this payload",
           "properties": {
+            "flowId": {
+              "anyOf": [
+                {
+                  "$ref": "#/definitions/UUID"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            },
             "name": {
               "type": "string"
             },
@@ -2345,13 +2454,14 @@
               "type": "string"
             },
             "publishedFlowId": {
-              "$ref": "#/definitions/UUID"
+              "type": "number"
             },
             "url": {
               "$ref": "#/definitions/URL"
             }
           },
           "required": [
+            "flowId",
             "publishedFlowId",
             "name",
             "owner",
@@ -2366,7 +2476,14 @@
               "$ref": "#/definitions/DateTime"
             },
             "id": {
-              "$ref": "#/definitions/UUID"
+              "anyOf": [
+                {
+                  "$ref": "#/definitions/UUID"
+                },
+                {
+                  "type": "string"
+                }
+              ]
             },
             "source": {
               "const": "PlanX",
@@ -2388,7 +2505,8 @@
       },
       "required": [
         "service",
-        "session"
+        "session",
+        "schema"
       ],
       "type": "object"
     },
@@ -2692,6 +2810,24 @@
             },
             "value": {
               "const": "alter.chimneys.replace",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Add a verandah or deck",
+              "type": "string"
+            },
+            "value": {
+              "const": "alter.deck",
               "type": "string"
             }
           },
@@ -3263,7 +3399,7 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Remove equipment",
+              "const": "Remove energy equipment",
               "type": "string"
             },
             "value": {
@@ -3731,7 +3867,7 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Convert an outbuilding (such as a shed, garage or barn)",
+              "const": "Convert or change the use of an outbuilding (such as a shed, garage or barn)",
               "type": "string"
             },
             "value": {
@@ -3749,7 +3885,7 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Convert part of a building",
+              "const": "Convert or change the use of part of a building",
               "type": "string"
             },
             "value": {
@@ -3983,6 +4119,330 @@
           "additionalProperties": false,
           "properties": {
             "description": {
+              "const": "Add an outbuilding - animal enclosure, aviary or beehive",
+              "type": "string"
+            },
+            "value": {
+              "const": "extend.outbuildings.animals",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Add an outbuilding - residential (or \"granny\") annexe",
+              "type": "string"
+            },
+            "value": {
+              "const": "extend.outbuildings.annexe",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Add an outbuilding - bedroom or guest room",
+              "type": "string"
+            },
+            "value": {
+              "const": "extend.outbuildings.bedroom",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Add an outbuilding - games room",
+              "type": "string"
+            },
+            "value": {
+              "const": "extend.outbuildings.games",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Add an outbuilding - garage",
+              "type": "string"
+            },
+            "value": {
+              "const": "extend.outbuildings.garage",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Add an outbuilding - greenhouse",
+              "type": "string"
+            },
+            "value": {
+              "const": "extend.outbuildings.greenhouse",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Add an outbuilding - gym",
+              "type": "string"
+            },
+            "value": {
+              "const": "extend.outbuildings.gym",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Add an outbuilding - office",
+              "type": "string"
+            },
+            "value": {
+              "const": "extend.outbuildings.office",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Add an outbuilding - something else",
+              "type": "string"
+            },
+            "value": {
+              "const": "extend.outbuildings.other",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Add an outbuilding - sauna",
+              "type": "string"
+            },
+            "value": {
+              "const": "extend.outbuildings.sauna",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Add an outbuilding - shed",
+              "type": "string"
+            },
+            "value": {
+              "const": "extend.outbuildings.shed",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Add an outbuilding - car parking or smoking shelter",
+              "type": "string"
+            },
+            "value": {
+              "const": "extend.outbuildings.shelter",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Add an outbuilding - storage",
+              "type": "string"
+            },
+            "value": {
+              "const": "extend.outbuildings.store",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Add an outbuilding - studio",
+              "type": "string"
+            },
+            "value": {
+              "const": "extend.outbuildings.studio",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Add an outbuilding - summer house",
+              "type": "string"
+            },
+            "value": {
+              "const": "extend.outbuildings.summerHouse",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Add an outbuilding - swimming pool",
+              "type": "string"
+            },
+            "value": {
+              "const": "extend.outbuildings.swimmingPool",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Add an outbuilding - tank",
+              "type": "string"
+            },
+            "value": {
+              "const": "extend.outbuildings.tank",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Add an outbuilding - workshop",
+              "type": "string"
+            },
+            "value": {
+              "const": "extend.outbuildings.workshop",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
               "const": "Add a porch",
               "type": "string"
             },
@@ -4055,7 +4515,7 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Change the internal layout",
+              "const": "Internal building works, such as change the internal layout",
               "type": "string"
             },
             "value": {
@@ -4150,6 +4610,24 @@
             },
             "value": {
               "const": "new.clickCollect",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "New, self-contained dwelling",
+              "type": "string"
+            },
+            "value": {
+              "const": "new.dwelling",
               "type": "string"
             }
           },
@@ -4343,7 +4821,7 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Convert part of a house into a flat",
+              "const": "Convert a home or part of a home into flats",
               "type": "string"
             },
             "value": {
@@ -12742,7 +13220,7 @@
               "$ref": "#/definitions/Area"
             },
             "site": {
-              "type": "object"
+              "$ref": "#/definitions/GeoJSON"
             }
           },
           "required": [
@@ -13581,7 +14059,7 @@
               "$ref": "#/definitions/Area"
             },
             "site": {
-              "type": "object"
+              "$ref": "#/definitions/GeoJSON"
             }
           },
           "required": [

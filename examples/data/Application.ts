@@ -23,6 +23,8 @@ export const validApplication: Schema['data']['application'] = {
   },
   declaration: {
     accurate: true,
-    connection: 'none',
+    connection: {
+      value: 'none',
+    },
   },
 };

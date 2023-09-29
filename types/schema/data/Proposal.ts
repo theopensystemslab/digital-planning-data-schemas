@@ -1,6 +1,6 @@
 import {ProjectTypes} from '../../enums/ProjectTypes';
 import {VehicleParking} from '../../enums/VehicleParking';
-import {Area, DateTime, GeoJSON} from '../../utils';
+import {Area, GeoJSON} from '../../utils';
 
 /**
  * @id #Proposal
@@ -68,18 +68,34 @@ export interface LondonDetails extends BaseDetails {
       };
     };
     vans?: {
+      count: {
+        existing: number;
+        proposed: number;
+      };
       onStreet?: VehicleParkingCount;
       offStreet?: VehicleParkingCount;
     };
     motorcyles?: {
+      count: {
+        existing: number;
+        proposed: number;
+      };
       onStreet?: VehicleParkingCount;
       offStreet?: VehicleParkingCount;
     };
     bicycles?: {
+      count: {
+        existing: number;
+        proposed: number;
+      };
       onStreet?: VehicleParkingCount;
       offStreet?: VehicleParkingCount;
     };
     buses?: {
+      count: {
+        existing: number;
+        proposed: number;
+      };
       onStreet?: VehicleParkingCount;
       offStreet?: VehicleParkingCount;
     };
