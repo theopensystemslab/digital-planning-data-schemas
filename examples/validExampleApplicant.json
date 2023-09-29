@@ -71,6 +71,13 @@
         "value": "residential.HMO.parent",
         "description": "HMO Parent"
       },
+      "boundary": {
+        "site": "GeoJSON TBD",
+        "area": {
+          "squareMetres": 10000,
+          "hectares": 1
+        }
+      },
       "constraints": {
         "planning": [
           {
@@ -87,6 +94,13 @@
             ]
           }
         ]
+      },
+      "titleNumber": {
+        "known": "Yes",
+        "number": "123"
+      },
+      "EPC": {
+        "known": "The property does not have one"
       }
     },
     "proposal": {

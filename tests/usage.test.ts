@@ -33,6 +33,7 @@ describe("parsing using the 'ajv' library", () => {
       const validate = ajv.compile(generatedSchema);
       const isValid = validate(example);
 
+      console.log(validate.errors);
       expect(validate.errors).toBeNull();
       expect(isValid).toBe(true);
     });

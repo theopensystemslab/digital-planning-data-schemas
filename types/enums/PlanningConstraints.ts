@@ -1,6 +1,6 @@
 /**
- * Minimum set of values and descriptions for `property.constraints.planning`
- *   actual values may also include council-specific variables like `article4.{councilName}.hmo`
+ * Minimum set of values for `property.constraints.planning`
+ *   actual values will also include council-specific variables like `article4.{councilName}.hmo`
  */
 export const PlanningConstraints = {
   article4: 'Article 4 Direction area',

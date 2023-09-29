@@ -21,6 +21,13 @@ export const validProperty: Schema['data']['property'] = {
     value: 'residential.HMO.parent',
     description: 'HMO Parent',
   },
+  boundary: {
+    site: 'GeoJSON TBD',
+    area: {
+      squareMetres: 10000,
+      hectares: 1,
+    },
+  },
   constraints: {
     planning: [
       {
@@ -35,5 +42,12 @@ export const validProperty: Schema['data']['property'] = {
         entities: ['Cobourg Road Nature Preserve'],
       },
     ],
+  },
+  titleNumber: {
+    known: 'Yes',
+    number: '123',
+  },
+  EPC: {
+    known: 'The property does not have one',
   },
 };

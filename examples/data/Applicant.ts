@@ -18,6 +18,27 @@ export const validApplicant: Schema['data']['applicant'] = {
   siteContact: {
     role: 'applicant',
   },
+  // interest: 'owner.co',
+  // ownership: {
+  //   certificate: 'a',
+  //   owners: [
+  //     {
+  //       name: 'Owner 1',
+  //       address: {
+  //         line1: '123 Main Street',
+  //         town: 'Anywhere',
+  //         postcode: 'SE5 0HU'
+  //       },
+  //       noticeGiven: true,
+  //       noticeDate: '2023-10-01',
+  //     },
+  //     {
+  //       name: 'Owner 2',
+  //       address: 'Same as Owner 1',
+  //       noticeGiven: false,
+  //     },
+  //   ],
+  // },
 };
 
 export const validAgent: Schema['data']['applicant'] = {

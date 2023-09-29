@@ -4,7 +4,13 @@ import {PropertyTypes} from '../../enums/PropertyTypes';
  * @id #Property
  * @description The site where the works will happen
  */
-export interface Property {
+export type Property = UKProperty | LondonProperty;
+
+/**
+ * @id #UKProperty
+ * @description Property details for sites anywhere in the UK
+ */
+export interface UKProperty {
   address: ProposedAddress | OSAddress;
   region: string;
   localAuthorityDistrict: string[];
@@ -18,6 +24,25 @@ export interface Property {
   };
   constraints?: {
     planning: PlanningConstraint[];
+  };
+}
+
+/**
+ * @id #LondonProperty
+ * @description Property details for sites within London
+ */
+export interface LondonProperty extends UKProperty {
+  titleNumber: {
+    known: 'Yes' | 'No';
+    number?: string;
+  };
+  EPC: {
+    known:
+      | 'Yes'
+      | 'Yes, but only some of the properties have one'
+      | 'The property does not have one'
+      | 'No';
+    number?: string;
   };
 }
 
@@ -89,7 +114,7 @@ interface OverlappingPlanningConstraint extends BasePlanningConstraint {
 }
 
 /**
- * @id #PlanningConstraint
+ * @id #PlanningConstraints
  * @description Planning constraints that overlap with the proposed site boundary determined by spatial queries against Planning Data (planning.data.gov.uk) and Ordnance Survey
  */
 type PlanningConstraint =
