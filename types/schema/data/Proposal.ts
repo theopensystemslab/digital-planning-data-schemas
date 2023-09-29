@@ -10,7 +10,7 @@ export interface Proposal {
   projectType: ProjectType[];
   description: string;
   boundary?: {
-    site: string; // @todo use GeoJSON from utils here, but ajv tests failing
+    site: Record<string, any>; // @todo use GeoJSON from utils here, but ajv tests failing
     area: {
       squareMetres: number;
       hectares: number;

@@ -22,7 +22,7 @@ export const validProperty: Schema['data']['property'] = {
     description: 'HMO Parent',
   },
   boundary: {
-    site: 'GeoJSON TBD',
+    site: {type: 'GeoJSON Features TBD'},
     area: {
       squareMetres: 10000,
       hectares: 1,

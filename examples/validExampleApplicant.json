@@ -93,7 +93,9 @@
         "description": "HMO Parent"
       },
       "boundary": {
-        "site": "GeoJSON TBD",
+        "site": {
+          "type": "GeoJSON Features TBD"
+        },
         "area": {
           "squareMetres": 10000,
           "hectares": 1
@@ -137,7 +139,9 @@
       ],
       "description": "This is a test application",
       "boundary": {
-        "site": "GeoJSON TBD",
+        "site": {
+          "type": "GeoJSON Features TBD"
+        },
         "area": {
           "squareMetres": 10000,
           "hectares": 1

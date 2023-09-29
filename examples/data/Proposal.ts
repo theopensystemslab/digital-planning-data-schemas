@@ -13,7 +13,7 @@ export const validProposal: Schema['data']['proposal'] = {
   ],
   description: 'This is a test application',
   boundary: {
-    site: 'GeoJSON TBD',
+    site: {type: 'GeoJSON Features TBD'},
     area: {
       squareMetres: 10000,
       hectares: 1,

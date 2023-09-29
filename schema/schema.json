@@ -2244,7 +2244,7 @@
               "type": "object"
             },
             "site": {
-              "type": "string"
+              "type": "object"
             }
           },
           "required": [
@@ -12733,7 +12733,7 @@
               "type": "object"
             },
             "site": {
-              "type": "string"
+              "type": "object"
             }
           },
           "required": [
@@ -13581,7 +13581,7 @@
               "type": "object"
             },
             "site": {
-              "type": "string"
+              "type": "object"
             }
           },
           "required": [
