@@ -1,5 +1,6 @@
 import {ProjectTypes} from '../../enums/ProjectTypes';
-import {DateTime} from '../../utils';
+import {VehicleParking} from '../../enums/VehicleParking';
+import {Area, DateTime, GeoJSON} from '../../utils';
 
 /**
  * @id #Proposal
@@ -8,13 +9,89 @@ import {DateTime} from '../../utils';
 export interface Proposal {
   projectType: ProjectType[];
   description: string;
-  date?: {
-    start: DateTime;
-    finish: DateTime;
+  boundary?: {
+    site: GeoJSON;
+    area: Area;
   };
-  time?: 'future' | 'past';
-  completion?: '10plus' | '4plus' | 'lessThan4' | 'lessThan10';
+  date?: {
+    start: Date;
+    completion?: Date;
+  };
+  retro?: {
+    date: {
+      start: Date;
+      completion: Date;
+    };
+  };
+  details?: ProposalDetails;
 }
+
+/**
+ * @id #ProposalDetails
+ * @description Details about the changes being proposed
+ */
+export type ProposalDetails = BaseDetails | LondonDetails;
+
+export interface BaseDetails {
+  extend?: {
+    area: Area;
+  };
+  new?: {
+    area: Area;
+    count?: {
+      bathrooms?: number;
+      bedrooms?: number;
+      dwellings?: number;
+    };
+  };
+}
+
+export interface LondonDetails extends BaseDetails {
+  vehicleParking: {
+    type: VehicleParking[];
+    cars?: {
+      count: {
+        existing: number;
+        proposed: number;
+      };
+      onStreet?: {
+        club?: VehicleParkingCount;
+        disabled?: VehicleParkingCount;
+        other?: VehicleParkingCount;
+        residents?: VehicleParkingCount;
+      };
+      offStreet?: {
+        club?: VehicleParkingCount;
+        disabled?: VehicleParkingCount;
+        other?: VehicleParkingCount;
+        residents?: VehicleParkingCount;
+      };
+    };
+    vans?: {
+      onStreet?: VehicleParkingCount;
+      offStreet?: VehicleParkingCount;
+    };
+    motorcyles?: {
+      onStreet?: VehicleParkingCount;
+      offStreet?: VehicleParkingCount;
+    };
+    bicycles?: {
+      onStreet?: VehicleParkingCount;
+      offStreet?: VehicleParkingCount;
+    };
+    buses?: {
+      onStreet?: VehicleParkingCount;
+      offStreet?: VehicleParkingCount;
+    };
+  };
+}
+
+type VehicleParkingCount = {
+  count: {
+    existing: number;
+    proposed: number;
+  };
+};
 
 type ProjectTypeKeys = keyof typeof ProjectTypes;
 
@@ -32,3 +109,20 @@ type ProjectTypeMap = {
  * @description Planning project types
  */
 export type ProjectType = ProjectTypeMap[keyof ProjectTypeMap];
+
+type VehicleParkingKeys = keyof typeof VehicleParking;
+
+type GenericVehicleParking<TKey extends VehicleParkingKeys> = {
+  value: TKey;
+  description: (typeof VehicleParking)[TKey];
+};
+
+type VehicleParkingMap = {
+  [K in VehicleParkingKeys]: GenericVehicleParking<K>;
+};
+
+/**
+ * @id #VehicleParking
+ * @description Vehicle parking types
+ */
+export type VehicleParking = VehicleParkingMap[keyof VehicleParkingMap];

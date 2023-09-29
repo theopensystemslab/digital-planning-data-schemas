@@ -1,25 +1,46 @@
 import {PropertyTypes} from '../../enums/PropertyTypes';
+import {Area, GeoJSON} from '../../utils';
 
 /**
  * @id #Property
  * @description The site where the works will happen
  */
-export interface Property {
+export type Property = UKProperty | LondonProperty;
+
+/**
+ * @id #UKProperty
+ * @description Property details for sites anywhere in the UK
+ */
+export interface UKProperty {
   address: ProposedAddress | OSAddress;
+  region: string;
+  localAuthorityDistrict: string[];
   type: PropertyType;
   boundary?: {
-    site: string; // @todo use GeoJSON from utils here, but ajv tests failing
-    area: {
-      squareMeters: number;
-      hectares: number;
-    };
+    site: GeoJSON;
+    area: Area;
   };
   constraints?: {
-    planning: {
-      value: string;
-      description: string;
-      intersects: boolean;
-    }[];
+    planning: PlanningConstraint[];
+  };
+}
+
+/**
+ * @id #LondonProperty
+ * @description Property details for sites within London
+ */
+export interface LondonProperty extends UKProperty {
+  titleNumber: {
+    known: 'Yes' | 'No';
+    number?: string;
+  };
+  EPC: {
+    known:
+      | 'Yes'
+      | 'Yes, but only some of the properties have one'
+      | 'The property does not have one'
+      | 'No';
+    number?: string;
   };
 }
 
@@ -33,8 +54,6 @@ export interface SiteAddress {
   y: number;
   latitude: number;
   longitude: number;
-  region: string;
-  localAuthorityDistrict: string[];
 }
 
 /**
@@ -76,3 +95,26 @@ type PropertyTypeMap = {
  * @description Property types derived from Basic Land and Property Unit (BLPU) classification codes
  */
 export type PropertyType = PropertyTypeMap[keyof PropertyTypeMap];
+
+/** @todo in future value & description should check against PlanningConstraints enum, but also allow custom per-council variables ?? */
+interface BasePlanningConstraint {
+  value: string;
+  description: string;
+}
+
+interface NonOverlappingPlanningConstraint extends BasePlanningConstraint {
+  overlaps: false;
+}
+
+interface OverlappingPlanningConstraint extends BasePlanningConstraint {
+  overlaps: true;
+  entities: string[];
+}
+
+/**
+ * @id #PlanningConstraint
+ * @description Planning constraints that overlap with the proposed site boundary determined by spatial queries against Planning Data (planning.data.gov.uk) and Ordnance Survey
+ */
+export type PlanningConstraint =
+  | NonOverlappingPlanningConstraint
+  | OverlappingPlanningConstraint;

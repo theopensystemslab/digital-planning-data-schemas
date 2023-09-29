@@ -13,18 +13,33 @@ export const validProperty: Schema['data']['property'] = {
     x: 533683,
     y: 178083,
     title: '47, COBOURG ROAD, LONDON',
-    region: 'London',
-    localAuthorityDistrict: ['Southwark'],
     source: 'Ordnance Survey',
   },
+  region: 'London',
+  localAuthorityDistrict: ['Southwark'],
   type: {
     value: 'residential.HMO.parent',
     description: 'HMO Parent',
   },
   boundary: {
-    site: 'GeoJSON TBD',
+    site: {
+      type: 'Feature',
+      geometry: {
+        type: 'Polygon',
+        coordinates: [
+          [
+            [-0.1186569035053321, 51.465703531871384],
+            [-0.1185938715934822, 51.465724418998775],
+            [-0.1184195280075143, 51.46552473766957],
+            [-0.11848390102387167, 51.4655038504508],
+            [-0.1186569035053321, 51.465703531871384],
+          ],
+        ],
+      },
+      properties: null,
+    },
     area: {
-      squareMeters: 10000,
+      squareMetres: 10000,
       hectares: 1,
     },
   },
@@ -33,13 +48,21 @@ export const validProperty: Schema['data']['property'] = {
       {
         value: 'listed',
         description: 'Listed Building',
-        intersects: false,
+        overlaps: false,
       },
       {
         value: 'designated.conservationArea',
         description: 'Conservation Area',
-        intersects: true,
+        overlaps: true,
+        entities: ['Cobourg Road Nature Preserve'],
       },
     ],
+  },
+  titleNumber: {
+    known: 'Yes',
+    number: '123',
+  },
+  EPC: {
+    known: 'The property does not have one',
   },
 };

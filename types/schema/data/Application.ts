@@ -9,7 +9,7 @@ export interface Application {
   type: ApplicationType;
   fee: ApplicationFee;
   declaration: {
-    accurate: true;
+    accurate: boolean;
     connection:
       | 'employee'
       | 'relation.employee'
@@ -49,7 +49,7 @@ export interface ApplicationFee {
  */
 export interface PreApplication {
   reference: string;
-  date: DateTime;
+  date: Date;
   officer: string;
   summary: string;
 }

@@ -1,4 +1,4 @@
-import {Email} from '../../utils';
+import {Date, Email} from '../../utils';
 import {User} from './User';
 
 /**
@@ -13,6 +13,16 @@ export type Applicant = BaseApplicant | Agent;
  */
 export interface BaseApplicant {
   type: 'individual' | 'company' | 'charity' | 'public' | 'parishCouncil';
+  interest?: 'owner.sole' | 'owner.co' | 'tenant' | 'occupier';
+  ownership?: {
+    certificate: 'a' | 'b' | 'c' | 'd';
+    owners?: {
+      name: string;
+      address: AddressInput | string;
+      noticeGiven: boolean;
+      noticeDate?: Date;
+    }[];
+  };
   contact: UserContact;
   address: UserAddress;
   siteContact: SiteContact;
@@ -25,7 +35,7 @@ export interface BaseApplicant {
 export interface Agent extends BaseApplicant {
   agent: {
     contact: UserContact;
-    address: UserAddress;
+    address: AddressInput;
   };
 }
 
@@ -49,23 +59,30 @@ export interface UserContact {
 }
 
 /**
- * @id #UserAddress
- * @description Address information for any user
+ * @id #AddressInput
+ * @description Address information for an applicant contact rather than site
  */
-export type UserAddress = {sameAsSiteAddress: true} | UserAddressNotSameSite;
-
-/**
- * @id #UserAddressNotSameSite
- * @description Address information for any user who's contact information differs from the site address
- */
-export interface UserAddressNotSameSite {
-  sameAsSiteAddress: false;
+export interface AddressInput {
   line1: string;
   line2?: string;
   town: string;
   county?: string;
   postcode: string;
   country?: string;
+}
+
+/**
+ * @id #UserAddress
+ * @description Address information for the applicant
+ */
+export type UserAddress = {sameAsSiteAddress: true} | UserAddressNotSameSite;
+
+/**
+ * @id #UserAddressNotSameSite
+ * @description Address information for an applicant with contact information that differs from the site address
+ */
+export interface UserAddressNotSameSite extends AddressInput {
+  sameAsSiteAddress: false;
 }
 
 /**
