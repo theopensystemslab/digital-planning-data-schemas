@@ -23,3 +23,11 @@ export type DateTime = string;
  * @format geojson
  */
 export type GeoJSON = string;
+
+/**
+ * @id #Area
+ */
+export type Area = {
+  squareMetres: number;
+  hectares?: number;
+};

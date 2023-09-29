@@ -1,6 +1,6 @@
 import {ProjectTypes} from '../../enums/ProjectTypes';
 import {VehicleParking} from '../../enums/VehicleParking';
-import {DateTime} from '../../utils';
+import {Area, DateTime} from '../../utils';
 
 /**
  * @id #Proposal
@@ -11,10 +11,7 @@ export interface Proposal {
   description: string;
   boundary?: {
     site: Record<string, any>; // @todo use GeoJSON from utils here, but ajv tests failing
-    area: {
-      squareMetres: number;
-      hectares: number;
-    };
+    area: Area;
   };
   date?: {
     start: DateTime;
@@ -37,14 +34,10 @@ export type ProposalDetails = BaseDetails | LondonDetails;
 
 export interface BaseDetails {
   extend?: {
-    area: {
-      squareMetres: number;
-    };
+    area: Area;
   };
   new?: {
-    area: {
-      squareMetres: number;
-    };
+    area: Area;
     count?: {
       bathrooms?: number;
       bedrooms?: number;
@@ -62,104 +55,43 @@ export interface LondonDetails extends BaseDetails {
         proposed: number;
       };
       onStreet?: {
-        club?: {
-          count: {
-            existing: number;
-            proposed: number;
-          };
-        };
-        disabled?: {
-          count: {
-            existing: number;
-            proposed: number;
-          };
-        };
-        other?: {
-          count: {
-            existing: number;
-            proposed: number;
-          };
-        };
+        club?: VehicleParkingCount;
+        disabled?: VehicleParkingCount;
+        other?: VehicleParkingCount;
+        residents?: VehicleParkingCount;
       };
       offStreet?: {
-        club?: {
-          count: {
-            existing: number;
-            proposed: number;
-          };
-        };
-        disabled?: {
-          count: {
-            existing: number;
-            proposed: number;
-          };
-        };
-        other?: {
-          count: {
-            existing: number;
-            proposed: number;
-          };
-        };
+        club?: VehicleParkingCount;
+        disabled?: VehicleParkingCount;
+        other?: VehicleParkingCount;
+        residents?: VehicleParkingCount;
       };
     };
     vans?: {
-      onStreet?: {
-        count: {
-          existing: number;
-          proposed: number;
-        };
-      };
-      offStreet?: {
-        count: {
-          existing: number;
-          proposed: number;
-        };
-      };
+      onStreet?: VehicleParkingCount;
+      offStreet?: VehicleParkingCount;
     };
     motorcyles?: {
-      onStreet?: {
-        count: {
-          existing: number;
-          proposed: number;
-        };
-      };
-      offStreet?: {
-        count: {
-          existing: number;
-          proposed: number;
-        };
-      };
+      onStreet?: VehicleParkingCount;
+      offStreet?: VehicleParkingCount;
     };
     bicycles?: {
-      onStreet?: {
-        count: {
-          existing: number;
-          proposed: number;
-        };
-      };
-      offStreet?: {
-        count: {
-          existing: number;
-          proposed: number;
-        };
-      };
+      onStreet?: VehicleParkingCount;
+      offStreet?: VehicleParkingCount;
     };
     buses?: {
-      onStreet?: {
-        count: {
-          existing: number;
-          proposed: number;
-        };
-      };
-      offStreet?: {
-        count: {
-          existing: number;
-          proposed: number;
-        };
-      };
+      onStreet?: VehicleParkingCount;
+      offStreet?: VehicleParkingCount;
     };
   };
 }
+
+type VehicleParkingCount = {
+  count: {
+    existing: number;
+    proposed: number;
+  };
+};
 
 type ProjectTypeKeys = keyof typeof ProjectTypes;
 

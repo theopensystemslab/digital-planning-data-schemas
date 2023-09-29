@@ -1,4 +1,5 @@
 import {PropertyTypes} from '../../enums/PropertyTypes';
+import {Area} from '../../utils';
 
 /**
  * @id #Property
@@ -17,10 +18,7 @@ export interface UKProperty {
   type: PropertyType;
   boundary?: {
     site: Record<string, any>; // @todo use GeoJSON from utils here, but ajv tests failing
-    area: {
-      squareMetres: number;
-      hectares: number;
-    };
+    area: Area;
   };
   constraints?: {
     planning: PlanningConstraint[];

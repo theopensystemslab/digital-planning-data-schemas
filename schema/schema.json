@@ -872,6 +872,22 @@
       ],
       "description": "Planning application types supported by this schema"
     },
+    "Area": {
+      "$id": "#Area",
+      "additionalProperties": false,
+      "properties": {
+        "hectares": {
+          "type": "number"
+        },
+        "squareMetres": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "squareMetres"
+      ],
+      "type": "object"
+    },
     "BaseApplicant": {
       "$id": "#BaseApplicant",
       "additionalProperties": false,
@@ -972,16 +988,7 @@
           "additionalProperties": false,
           "properties": {
             "area": {
-              "additionalProperties": false,
-              "properties": {
-                "squareMetres": {
-                  "type": "number"
-                }
-              },
-              "required": [
-                "squareMetres"
-              ],
-              "type": "object"
+              "$ref": "#/definitions/Area"
             }
           },
           "required": [
@@ -993,16 +1000,7 @@
           "additionalProperties": false,
           "properties": {
             "area": {
-              "additionalProperties": false,
-              "properties": {
-                "squareMetres": {
-                  "type": "number"
-                }
-              },
-              "required": [
-                "squareMetres"
-              ],
-              "type": "object"
+              "$ref": "#/definitions/Area"
             },
             "count": {
               "additionalProperties": false,
@@ -1703,16 +1701,7 @@
           "additionalProperties": false,
           "properties": {
             "area": {
-              "additionalProperties": false,
-              "properties": {
-                "squareMetres": {
-                  "type": "number"
-                }
-              },
-              "required": [
-                "squareMetres"
-              ],
-              "type": "object"
+              "$ref": "#/definitions/Area"
             }
           },
           "required": [
@@ -1724,16 +1713,7 @@
           "additionalProperties": false,
           "properties": {
             "area": {
-              "additionalProperties": false,
-              "properties": {
-                "squareMetres": {
-                  "type": "number"
-                }
-              },
-              "required": [
-                "squareMetres"
-              ],
-              "type": "object"
+              "$ref": "#/definitions/Area"
             },
             "count": {
               "additionalProperties": false,
@@ -1967,6 +1947,31 @@
                         "count"
                       ],
                       "type": "object"
+                    },
+                    "residents": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "count": {
+                          "additionalProperties": false,
+                          "properties": {
+                            "existing": {
+                              "type": "number"
+                            },
+                            "proposed": {
+                              "type": "number"
+                            }
+                          },
+                          "required": [
+                            "existing",
+                            "proposed"
+                          ],
+                          "type": "object"
+                        }
+                      },
+                      "required": [
+                        "count"
+                      ],
+                      "type": "object"
                     }
                   },
                   "type": "object"
@@ -2025,6 +2030,31 @@
                       "type": "object"
                     },
                     "other": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "count": {
+                          "additionalProperties": false,
+                          "properties": {
+                            "existing": {
+                              "type": "number"
+                            },
+                            "proposed": {
+                              "type": "number"
+                            }
+                          },
+                          "required": [
+                            "existing",
+                            "proposed"
+                          ],
+                          "type": "object"
+                        }
+                      },
+                      "required": [
+                        "count"
+                      ],
+                      "type": "object"
+                    },
+                    "residents": {
                       "additionalProperties": false,
                       "properties": {
                         "count": {
@@ -2228,20 +2258,7 @@
           "additionalProperties": false,
           "properties": {
             "area": {
-              "additionalProperties": false,
-              "properties": {
-                "hectares": {
-                  "type": "number"
-                },
-                "squareMetres": {
-                  "type": "number"
-                }
-              },
-              "required": [
-                "squareMetres",
-                "hectares"
-              ],
-              "type": "object"
+              "$ref": "#/definitions/Area"
             },
             "site": {
               "type": "object"
@@ -12717,20 +12734,7 @@
           "additionalProperties": false,
           "properties": {
             "area": {
-              "additionalProperties": false,
-              "properties": {
-                "hectares": {
-                  "type": "number"
-                },
-                "squareMetres": {
-                  "type": "number"
-                }
-              },
-              "required": [
-                "squareMetres",
-                "hectares"
-              ],
-              "type": "object"
+              "$ref": "#/definitions/Area"
             },
             "site": {
               "type": "object"
@@ -13565,20 +13569,7 @@
           "additionalProperties": false,
           "properties": {
             "area": {
-              "additionalProperties": false,
-              "properties": {
-                "hectares": {
-                  "type": "number"
-                },
-                "squareMetres": {
-                  "type": "number"
-                }
-              },
-              "required": [
-                "squareMetres",
-                "hectares"
-              ],
-              "type": "object"
+              "$ref": "#/definitions/Area"
             },
             "site": {
               "type": "object"
