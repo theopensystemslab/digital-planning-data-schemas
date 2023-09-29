@@ -18,7 +18,7 @@ export interface Metadata {
     source: 'PlanX';
     id: UUID | string;
     createdAt: DateTime;
-    submittedAt: DateTime;
+    submittedAt?: DateTime;
   };
   schema: {
     url: URL;
