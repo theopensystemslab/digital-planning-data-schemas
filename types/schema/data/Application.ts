@@ -49,7 +49,7 @@ export interface ApplicationFee {
  */
 export interface PreApplication {
   reference: string;
-  date: DateTime;
+  date: Date;
   officer: string;
   summary: string;
 }

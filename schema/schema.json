@@ -100,7 +100,7 @@
                     "type": "string"
                   },
                   "noticeDate": {
-                    "type": "string"
+                    "$ref": "#/definitions/Date"
                   },
                   "noticeGiven": {
                     "type": "boolean"
@@ -938,7 +938,7 @@
                     "type": "string"
                   },
                   "noticeDate": {
-                    "type": "string"
+                    "$ref": "#/definitions/Date"
                   },
                   "noticeGiven": {
                     "type": "boolean"
@@ -1025,6 +1025,10 @@
         }
       },
       "type": "object"
+    },
+    "Date": {
+      "format": "date",
+      "type": "string"
     },
     "DateTime": {
       "format": "date-time",
@@ -2511,7 +2515,8 @@
       "description": "Details of the pre-application, if applicable",
       "properties": {
         "date": {
-          "$ref": "#/definitions/DateTime"
+          "format": "date-time",
+          "type": "string"
         },
         "officer": {
           "type": "string"
@@ -12750,10 +12755,12 @@
           "additionalProperties": false,
           "properties": {
             "completion": {
-              "$ref": "#/definitions/DateTime"
+              "format": "date-time",
+              "type": "string"
             },
             "start": {
-              "$ref": "#/definitions/DateTime"
+              "format": "date-time",
+              "type": "string"
             }
           },
           "required": [
@@ -12780,10 +12787,12 @@
               "additionalProperties": false,
               "properties": {
                 "completion": {
-                  "$ref": "#/definitions/DateTime"
+                  "format": "date-time",
+                  "type": "string"
                 },
                 "start": {
-                  "$ref": "#/definitions/DateTime"
+                  "format": "date-time",
+                  "type": "string"
                 }
               },
               "required": [

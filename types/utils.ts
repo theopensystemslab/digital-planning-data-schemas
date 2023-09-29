@@ -1,3 +1,5 @@
+/** see available @format types here https://json-schema.org/understanding-json-schema/reference/string.html#built-in-formats */
+
 /**
  * @format uuid
  */
@@ -20,9 +22,14 @@ export type URL = string;
 export type DateTime = string;
 
 /**
- * @format geojson
+ * @format date
  */
-export type GeoJSON = string;
+export type Date = string;
+
+/**
+ * @id #GeoJSON
+ */
+export type GeoJSON = Record<string, any>;
 
 /**
  * @id #Area

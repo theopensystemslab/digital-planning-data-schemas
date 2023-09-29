@@ -1,6 +1,6 @@
 import {ProjectTypes} from '../../enums/ProjectTypes';
 import {VehicleParking} from '../../enums/VehicleParking';
-import {Area, DateTime} from '../../utils';
+import {Area, DateTime, GeoJSON} from '../../utils';
 
 /**
  * @id #Proposal
@@ -10,17 +10,17 @@ export interface Proposal {
   projectType: ProjectType[];
   description: string;
   boundary?: {
-    site: Record<string, any>; // @todo use GeoJSON from utils here, but ajv tests failing
+    site: GeoJSON;
     area: Area;
   };
   date?: {
-    start: DateTime;
-    completion?: DateTime;
+    start: Date;
+    completion?: Date;
   };
   retro?: {
     date: {
-      start: DateTime;
-      completion: DateTime;
+      start: Date;
+      completion: Date;
     };
   };
   details?: ProposalDetails;

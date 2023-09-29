@@ -1,4 +1,4 @@
-import {DateTime, Email} from '../../utils';
+import {Date, Email} from '../../utils';
 import {User} from './User';
 
 /**
@@ -20,7 +20,7 @@ export interface BaseApplicant {
       name: string;
       address: AddressInput | string;
       noticeGiven: boolean;
-      noticeDate?: string; // @todo type DateTime throws test error
+      noticeDate?: Date;
     }[];
   };
   contact: UserContact;

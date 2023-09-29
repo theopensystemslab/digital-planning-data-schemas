@@ -1,5 +1,5 @@
 import {PropertyTypes} from '../../enums/PropertyTypes';
-import {Area} from '../../utils';
+import {Area, GeoJSON} from '../../utils';
 
 /**
  * @id #Property
@@ -17,7 +17,7 @@ export interface UKProperty {
   localAuthorityDistrict: string[];
   type: PropertyType;
   boundary?: {
-    site: Record<string, any>; // @todo use GeoJSON from utils here, but ajv tests failing
+    site: GeoJSON;
     area: Area;
   };
   constraints?: {
