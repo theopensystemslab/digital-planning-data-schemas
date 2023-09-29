@@ -21,6 +21,7 @@ export const validApplicant: Schema['data']['applicant'] = {
   interest: 'owner.co',
   ownership: {
     certificate: 'a',
+    noticeGiven: true,
     owners: [
       {
         name: 'Owner 1',
@@ -29,13 +30,11 @@ export const validApplicant: Schema['data']['applicant'] = {
           town: 'Anywhere',
           postcode: 'SE5 0HU',
         },
-        noticeGiven: true,
         noticeDate: '2023-10-01',
       },
       {
         name: 'Owner 2',
         address: 'Same as Owner 1',
-        noticeGiven: false,
       },
     ],
   },

@@ -7,7 +7,8 @@ import {validResponses} from './data/Responses';
 
 const validMetadata: Schema['metadata'] = {
   service: {
-    publishedFlowId: 'b3320abe-f5bc-4185-b61f-40e9e65f07ad',
+    flowId: 'b3320abe-f5bc-4185-b61f-40e9e65f07ad',
+    publishedFlowId: 22,
     name: 'Test',
     owner: 'Test',
     url: 'https://www.planx.uk/',
@@ -17,6 +18,9 @@ const validMetadata: Schema['metadata'] = {
     id: 'b3320abe-f5bc-4185-b61f-40e9e65f07ad',
     createdAt: '2018-11-13T20:20:39+00:00',
     submittedAt: '2018-11-13T20:20:39+00:00',
+  },
+  schema: {
+    url: 'https://theopensystemslab.github.io/digital-planning-data-schemas/v0.0.1/schema.json',
   },
 };
 

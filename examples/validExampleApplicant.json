@@ -24,6 +24,7 @@
       "interest": "owner.co",
       "ownership": {
         "certificate": "a",
+        "noticeGiven": true,
         "owners": [
           {
             "name": "Owner 1",
@@ -32,13 +33,11 @@
               "town": "Anywhere",
               "postcode": "SE5 0HU"
             },
-            "noticeGiven": true,
             "noticeDate": "2023-10-01"
           },
           {
             "name": "Owner 2",
-            "address": "Same as Owner 1",
-            "noticeGiven": false
+            "address": "Same as Owner 1"
           }
         ]
       }
@@ -66,7 +65,9 @@
       },
       "declaration": {
         "accurate": true,
-        "connection": "none"
+        "connection": {
+          "value": "none"
+        }
       }
     },
     "property": {
@@ -217,7 +218,8 @@
   ],
   "metadata": {
     "service": {
-      "publishedFlowId": "b3320abe-f5bc-4185-b61f-40e9e65f07ad",
+      "flowId": "b3320abe-f5bc-4185-b61f-40e9e65f07ad",
+      "publishedFlowId": 22,
       "name": "Test",
       "owner": "Test",
       "url": "https://www.planx.uk/"
@@ -227,6 +229,9 @@
       "id": "b3320abe-f5bc-4185-b61f-40e9e65f07ad",
       "createdAt": "2018-11-13T20:20:39+00:00",
       "submittedAt": "2018-11-13T20:20:39+00:00"
+    },
+    "schema": {
+      "url": "https://theopensystemslab.github.io/digital-planning-data-schemas/v0.0.1/schema.json"
     }
   },
   "responses": [

@@ -5,7 +5,8 @@ export interface Metadata {
    * @description Details of the digital planning service which generated this payload
    */
   service: {
-    publishedFlowId: UUID;
+    flowId: UUID | string; // @todo temp fix for failing UUID validation, sort out and tighten
+    publishedFlowId: number;
     name: string;
     owner: string;
     url: URL;
@@ -15,8 +16,11 @@ export interface Metadata {
      * @default PlanX
      */
     source: 'PlanX';
-    id: UUID;
+    id: UUID | string;
     createdAt: DateTime;
-    submittedAt: DateTime;
+    submittedAt?: DateTime;
+  };
+  schema: {
+    url: URL;
   };
 }
