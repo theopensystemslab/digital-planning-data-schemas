@@ -14,11 +14,11 @@ import {File} from './schema/File';
  */
 export interface Schema {
   data: {
+    application: Application;
+    user: User;
     applicant: Applicant;
     property: Property;
-    application: Application;
     proposal: Proposal;
-    user: User;
   };
   result: Result;
   metadata: Metadata;

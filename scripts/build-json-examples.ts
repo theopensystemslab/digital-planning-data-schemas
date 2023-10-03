@@ -1,6 +1,9 @@
-import * as path from 'path';
-import {validExampleApplicant, validExampleAgent} from '../examples';
 import * as fs from 'fs';
+import * as path from 'path';
+import {validLDCE} from '../examples/data/ldcE';
+import {validLDCP} from '../examples/data/ldcP';
+import {validPlanningPermission} from '../examples/data/planningPermission';
+import {validPriorApproval} from '../examples/data/priorApproval';
 import {Schema} from '../types/Schema';
 
 interface Example {
@@ -10,12 +13,20 @@ interface Example {
 
 const examplesToConvert: Example[] = [
   {
-    filename: 'validExampleApplicant',
-    data: validExampleApplicant,
+    filename: 'validLawfulDevelopmentCertificateExisting',
+    data: validLDCE,
   },
   {
-    filename: 'validExampleAgent',
-    data: validExampleAgent,
+    filename: 'validLawfulDevelopmentCertificateProposed',
+    data: validLDCP,
+  },
+  {
+    filename: 'validPriorApproval',
+    data: validPriorApproval,
+  },
+  {
+    filename: 'validPlanningPermission',
+    data: validPlanningPermission,
   },
 ];
 

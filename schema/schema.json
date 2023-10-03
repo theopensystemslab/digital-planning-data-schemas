@@ -2497,8 +2497,7 @@
           "required": [
             "source",
             "id",
-            "createdAt",
-            "submittedAt"
+            "createdAt"
           ],
           "type": "object"
         }
