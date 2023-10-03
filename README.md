@@ -37,9 +37,19 @@ The JSON schema is defined using TypeScript interfaces and then generated using 
 
 To make changes, update `/types` and then run `pnpm build` to automatically generate the output JSON file under `/schema`.
 
-We use JSDocs to annotate our types, which is also used as part of the schema generation. 
+Types should be annotated using JSDocs, which will then be read during schema generation. 
 
-Please see the [JSON schema docs](https://json-schema.org/understanding-json-schema/reference/) for a full list of references for various types
+Please see the [JSON schema docs](https://json-schema.org/understanding-json-schema/reference/) for a full list of references for various types.
+
+## Adding examples and tests
+
+Add a TypeScript file to `/examples/data` with at least one exported variable representing an example payload definition.
+
+Add each exported payload to `examplesToConvert` in `/scripts/build-json-examples` and `examplesToTest` in `/tests/usage.test.ts`.
+
+Run `pnpm build-json-examples` to automatically generate a corresponding JSON file per example payload in the root of `/examples`.
+
+Run `pnpm test` to confirm your example payload can be successfully validated against the Digital Planning Data schema.
 
 ## Publishing
 To publish a new version, open a pull request against `main` which increments the `package.json` version.

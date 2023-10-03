@@ -9,7 +9,7 @@ import {validPlanningPermission} from '../examples/data/planningPermission';
 import {validPriorApproval} from '../examples/data/priorApproval';
 import generatedSchema from '../schema/schema.json';
 
-const examples = [
+const examplesToTest = [
   validLDCE,
   validLDCP,
   validPriorApproval,
@@ -17,7 +17,7 @@ const examples = [
 ];
 
 describe("parsing using the 'jsonschema' library", () => {
-  examples.forEach(example => {
+  examplesToTest.forEach(example => {
     test(`accepts a valid example: ${example.data.application.type.description}`, () => {
       const validator = new Validator();
       const result = validator.validate(example, generatedSchema, {
@@ -40,7 +40,7 @@ describe("parsing using the 'jsonschema' library", () => {
 });
 
 describe("parsing using the 'ajv' library", () => {
-  examples.forEach(example => {
+  examplesToTest.forEach(example => {
     test(`accepts a valid example: ${example.data.application.type.description}`, () => {
       // addFormats() is required for types UUID, email, datetime etc
       const ajv = addFormats(new Ajv());
