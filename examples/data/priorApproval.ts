@@ -19,6 +19,9 @@ export const validPriorApproval: Schema = {
           parishCouncil: false,
           alternative: false,
         },
+        reference: {
+          govPay: 'sandbox-ref-789',
+        },
       },
       declaration: {
         accurate: true,

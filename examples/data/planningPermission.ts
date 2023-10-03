@@ -19,6 +19,9 @@ export const validPlanningPermission: Schema = {
           parishCouncil: true,
           alternative: true,
         },
+        reference: {
+          govPay: 'sandbox-ref-456',
+        },
       },
       declaration: {
         accurate: true,

@@ -10,7 +10,7 @@ There's two main options for integrating with Digital Planning Data schemas:
 
 1. Reference a hosted schema file directly, like `http://theopensystemslab.github.io/digital-planning-data-schemas/<VERSION>/schema.json` 
 
-2. Clone this repository and reference the local schema files programmatically in your own code through tools that support JSON schema validation
+2. Clone this repository and reference the local schema files programmatically in your own code using tools that support JSON schema validation
 
 For more detailed info on integrating and validating schemas, please refer to the examples and tests in this repo.
 

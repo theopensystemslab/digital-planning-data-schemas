@@ -19,6 +19,9 @@ export const validLDCE: Schema = {
           parishCouncil: true,
           alternative: true,
         },
+        reference: {
+          govPay: 'sandbox-ref-123',
+        },
       },
       declaration: {
         accurate: true,
