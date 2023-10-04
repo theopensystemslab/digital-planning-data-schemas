@@ -1,7 +1,7 @@
 {
   "name": "digital-planning-data-schemas",
-  "version": "0.0.1",
-  "description": "Digital Planning Schemas",
+  "version": "0.0.2",
+  "description": "Digital Planning Data schemas",
   "main": "schema/schema.json",
   "scripts": {
     "build": "pnpm build-schema:dist && pnpm build-json-examples",
