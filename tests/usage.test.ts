@@ -1,33 +1,47 @@
-import {expect, test} from 'vitest';
-import {Validator} from 'jsonschema';
-import addFormats from 'ajv-formats';
 import Ajv from 'ajv';
+import addFormats from 'ajv-formats';
+import {Validator} from 'jsonschema';
+import {describe, expect, test} from 'vitest';
+
+import {validLDCE} from '../examples/data/ldcE';
+import {validLDCP} from '../examples/data/ldcP';
+import {validPlanningPermission} from '../examples/data/planningPermission';
+import {validPriorApproval} from '../examples/data/priorApproval';
 import generatedSchema from '../schema/schema.json';
-import {validExampleAgent, validExampleApplicant} from '../examples/';
-import {describe} from 'vitest';
+
+const examplesToTest = [
+  validLDCE,
+  validLDCP,
+  validPriorApproval,
+  validPlanningPermission,
+];
 
 describe("parsing using the 'jsonschema' library", () => {
-  [validExampleAgent, validExampleApplicant].forEach(example => {
-    test(`the schema accepts a valid example: ${example.data.user.role}`, () => {
+  examplesToTest.forEach(example => {
+    test(`accepts a valid example: ${example.data.application.type.description}`, () => {
       const validator = new Validator();
-      const result = validator.validate(example, generatedSchema);
+      const result = validator.validate(example, generatedSchema, {
+        disableFormat: true,
+      });
 
       expect(result.errors).toHaveLength(0);
     });
   });
 
-  test('the schema rejects an invalid example', () => {
+  test('rejects an invalid example', () => {
     const validator = new Validator();
     const invalidExample = {foo: 'bar'};
-    const result = validator.validate(invalidExample, generatedSchema);
+    const result = validator.validate(invalidExample, generatedSchema, {
+      disableFormat: true,
+    });
 
     expect(result.errors).not.toHaveLength(0);
   });
 });
 
 describe("parsing using the 'ajv' library", () => {
-  [validExampleAgent, validExampleApplicant].forEach(example => {
-    test(`the schema accepts a valid example: ${example.data.user.role}`, () => {
+  examplesToTest.forEach(example => {
+    test(`accepts a valid example: ${example.data.application.type.description}`, () => {
       // addFormats() is required for types UUID, email, datetime etc
       const ajv = addFormats(new Ajv());
       const validate = ajv.compile(generatedSchema);
@@ -38,7 +52,7 @@ describe("parsing using the 'ajv' library", () => {
     });
   });
 
-  test('the schema rejects an invalid example', () => {
+  test('rejects an invalid example', () => {
     const invalidExample = {foo: 'bar'};
 
     const ajv = addFormats(new Ajv());

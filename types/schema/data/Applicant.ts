@@ -9,7 +9,7 @@ export type Applicant = BaseApplicant | Agent;
 
 /**
  * @id #BaseApplicant
- * @description Information about the user who completed the application for themself, or information about the resident who the user applied on behalf of
+ * @description Information about the user who completed the application for themself, or information about the person who the user applied on behalf of
  */
 export interface BaseApplicant {
   type: 'individual' | 'company' | 'charity' | 'public' | 'parishCouncil';
@@ -60,7 +60,7 @@ export interface UserContact {
 
 /**
  * @id #AddressInput
- * @description Address information for an applicant contact rather than site
+ * @description Address information for a personal contact not necessarily associated with the site
  */
 export interface AddressInput {
   line1: string;

@@ -6,7 +6,7 @@
     "AddressInput": {
       "$id": "#AddressInput",
       "additionalProperties": false,
-      "description": "Address information for an applicant contact rather than site",
+      "description": "Address information for a personal contact not necessarily associated with the site",
       "properties": {
         "country": {
           "type": "string"
@@ -863,7 +863,7 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Planning Permission",
+              "const": "Planning Permission - Retrospective",
               "type": "string"
             },
             "value": {
@@ -878,7 +878,7 @@
           "type": "object"
         }
       ],
-      "description": "Planning application types supported by this schema"
+      "description": "Planning application types"
     },
     "Area": {
       "$id": "#Area",
@@ -899,7 +899,7 @@
     "BaseApplicant": {
       "$id": "#BaseApplicant",
       "additionalProperties": false,
-      "description": "Information about the user who completed the application for themself, or information about the resident who the user applied on behalf of",
+      "description": "Information about the user who completed the application for themself, or information about the person who the user applied on behalf of",
       "properties": {
         "address": {
           "$ref": "#/definitions/UserAddress"
@@ -1048,7 +1048,7 @@
     "File": {
       "$id": "#File",
       "additionalProperties": false,
-      "description": "Files uploaded by the user to support this application",
+      "description": "File uploaded and labeled by the user to support the application",
       "properties": {
         "description": {
           "type": "string"
@@ -2434,8 +2434,9 @@
           "type": "object"
         },
         "service": {
+          "$id": "#DigitalPlanningMetadata",
           "additionalProperties": false,
-          "description": "Details of the digital planning service which generated this payload",
+          "description": "Details of the digital planning service which sent the application",
           "properties": {
             "flowId": {
               "anyOf": [
@@ -2497,8 +2498,7 @@
           "required": [
             "source",
             "id",
-            "createdAt",
-            "submittedAt"
+            "createdAt"
           ],
           "type": "object"
         }
@@ -2625,7 +2625,7 @@
           "type": "object"
         }
       ],
-      "description": "Planning constraints that overlap with the proposed site boundary determined by spatial queries against Planning Data (planning.data.gov.uk) and Ordnance Survey"
+      "description": "Planning constraints that overlap with the property site boundary determined by spatial queries against Planning Data (planning.data.gov.uk) and Ordnance Survey"
     },
     "PreApplication": {
       "$id": "#PreApplication",
@@ -4848,7 +4848,7 @@
           "$ref": "#/definitions/LondonProperty"
         }
       ],
-      "description": "The site where the works will happen"
+      "description": "Information about the site where the works will happen"
     },
     "PropertyType": {
       "$id": "#PropertyType",
@@ -13211,7 +13211,7 @@
     "Proposal": {
       "$id": "#Proposal",
       "additionalProperties": false,
-      "description": "Information about the project",
+      "description": "Information about the proposed works and any changes to the property",
       "properties": {
         "boundary": {
           "additionalProperties": false,
@@ -13418,13 +13418,29 @@
             "type": "string"
           },
           "type": "array"
+        },
+        "options": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "items": {
+                "$ref": "#/definitions/Response"
+              },
+              "type": "array"
+            }
+          ]
         }
       },
       "type": "object"
     },
     "Responses": {
       "$id": "#Responses",
-      "description": "The ordered list of questions, answers, and their metadata for this application",
+      "description": "The ordered list of questions, answers, and their metadata for the application",
       "items": {
         "$ref": "#/definitions/QuestionAndResponses"
       },
@@ -13432,7 +13448,7 @@
     },
     "Result": {
       "$id": "#Result",
-      "description": "The result of this application. Results are determined by flags corresponding to responses; each application can have up to one result per flagset",
+      "description": "The result of the application. Results are determined by flags corresponding to responses; each application can have up to one result per flagset",
       "items": {
         "$ref": "#/definitions/ResultFlag"
       },
@@ -13982,7 +13998,7 @@
           "type": "object"
         }
       ],
-      "description": "An individual result of this application"
+      "description": "The result of a single flagset"
     },
     "SiteContact": {
       "$id": "#SiteContact",
@@ -14685,7 +14701,7 @@
       "description": "Vehicle parking types"
     }
   },
-  "description": "Root of PlanX's Digital Planning Schema",
+  "description": "The root schema for an application generated by a digital planning service",
   "properties": {
     "data": {
       "additionalProperties": false,
@@ -14707,11 +14723,11 @@
         }
       },
       "required": [
+        "application",
+        "user",
         "applicant",
         "property",
-        "application",
-        "proposal",
-        "user"
+        "proposal"
       ],
       "type": "object"
     },
@@ -14738,6 +14754,6 @@
     "responses",
     "files"
   ],
-  "title": "Digital Planning Data Schema",
+  "title": "Digital Planning Application",
   "type": "object"
 }

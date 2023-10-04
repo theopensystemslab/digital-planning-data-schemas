@@ -1,5 +1,5 @@
 /**
- * Values of proposal.details.vehicleParking
+ * Values of `data.proposal.details.vehicleParking`
  */
 export const VehicleParking = {
   cars: 'Cars',

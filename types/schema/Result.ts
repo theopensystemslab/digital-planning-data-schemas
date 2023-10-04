@@ -2,7 +2,7 @@ import {Flags} from '../enums/Flags';
 
 /**
  * @id #Result
- * @description The result of this application. Results are determined by flags corresponding to responses; each application can have up to one result per flagset
+ * @description The result of the application. Results are determined by flags corresponding to responses; each application can have up to one result per flagset
  */
 export type Result = ResultFlag[]; // @todo validate/restrict array to one result per flagset
 
@@ -19,6 +19,6 @@ type FlagMap = {
 
 /**
  * @id #ResultFlag
- * @description An individual result of this application
+ * @description The result of a single flagset
  */
 export type ResultFlag = FlagMap[keyof FlagMap];

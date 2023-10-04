@@ -4,7 +4,7 @@ import {Area, GeoJSON} from '../../utils';
 
 /**
  * @id #Proposal
- * @description Information about the project
+ * @description Information about the proposed works and any changes to the property
  */
 export interface Proposal {
   projectType: ProjectType[];

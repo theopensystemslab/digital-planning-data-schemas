@@ -1,5 +1,5 @@
 /**
- * File types
+ * Values of `file.type`
  */
 export const FileTypes = {
   'property.drawing.elevation': 'Elevation plan - existing',

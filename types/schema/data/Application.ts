@@ -68,6 +68,6 @@ type ApplicationTypeMap = {
 
 /**
  * @id #ApplicationType
- * @description Planning application types supported by this schema
+ * @description Planning application types
  */
 export type ApplicationType = ApplicationTypeMap[keyof ApplicationTypeMap];

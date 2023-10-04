@@ -3,7 +3,7 @@ import {Area, GeoJSON} from '../../utils';
 
 /**
  * @id #Property
- * @description The site where the works will happen
+ * @description Information about the site where the works will happen
  */
 export type Property = UKProperty | LondonProperty;
 
@@ -113,7 +113,7 @@ interface OverlappingPlanningConstraint extends BasePlanningConstraint {
 
 /**
  * @id #PlanningConstraint
- * @description Planning constraints that overlap with the proposed site boundary determined by spatial queries against Planning Data (planning.data.gov.uk) and Ordnance Survey
+ * @description Planning constraints that overlap with the property site boundary determined by spatial queries against Planning Data (planning.data.gov.uk) and Ordnance Survey
  */
 export type PlanningConstraint =
   | NonOverlappingPlanningConstraint

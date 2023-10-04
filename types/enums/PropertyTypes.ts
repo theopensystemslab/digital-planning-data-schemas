@@ -1,5 +1,5 @@
 /**
- * Values of `property.type`
+ * Values of `data.property.type`
  */
 export const PropertyTypes = {
   commercial: 'Commercial',

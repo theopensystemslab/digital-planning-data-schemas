@@ -2,7 +2,7 @@ import {FileTypes} from '../enums/FileTypes';
 
 /**
  * @id #File
- * @description Files uploaded by the user to support this application
+ * @description File uploaded and labeled by the user to support the application
  */
 export interface File {
   name: string;
