@@ -1,5 +1,5 @@
 /**
- * Values of `application.type`
+ * Values of `data.application.type`
  */
 export const ApplicationTypes = {
   ldc: 'Lawful Development Certificate',
@@ -49,5 +49,5 @@ export const ApplicationTypes = {
     'Prior Approval - Demolish buildings and build homes in their place',
   pp: 'Planning Permission',
   'pp.full.householder': 'Planning Permission',
-  'pp.full.householder.retro': 'Planning Permission',
+  'pp.full.householder.retro': 'Planning Permission - Retrospective',
 };

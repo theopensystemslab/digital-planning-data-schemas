@@ -2,7 +2,8 @@ import {DateTime, URL, UUID} from './../utils';
 
 export interface Metadata {
   /**
-   * @description Details of the digital planning service which generated this payload
+   * @id #DigitalPlanningMetadata
+   * @description Details of the digital planning service which sent the application
    */
   service: {
     flowId: UUID | string; // @todo temp fix for failing UUID validation, sort out and tighten

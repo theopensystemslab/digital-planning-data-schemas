@@ -16,6 +16,9 @@
           "sports": true,
           "parishCouncil": true,
           "alternative": true
+        },
+        "reference": {
+          "govPay": "sandbox-ref-456"
         }
       },
       "declaration": {
@@ -1567,17 +1570,17 @@
   ],
   "metadata": {
     "service": {
-      "flowId": "c06eebb7-6201-4bc0-9fe7-ec5d7a1c0797",
+      "flowId": "01e38c5d-e701-4e44-acdc-4d6b5cc3b854",
       "publishedFlowId": 1,
-      "name": "Apply for a test service",
-      "owner": "opensystemslab",
-      "url": "https://www.editor.planx.uk/opensystemslab/apply-for-a-test-service/preview"
+      "name": "Apply for planning permission",
+      "owner": "Lambeth",
+      "url": "https://www.editor.planx.dev/lambeth/apply-for-planning-permission/preview"
     },
     "session": {
       "source": "PlanX",
-      "id": "session123",
-      "createdAt": "2023-01-01 00:00:00",
-      "submittedAt": "2023-01-02 00:00:00"
+      "id": "81bcaa0f-baf5-4573-ba0a-ea868c573faf",
+      "createdAt": "2023-10-01 00:00:00",
+      "submittedAt": "2023-10-02 00:00:00"
     },
     "schema": {
       "url": "https://theopensystemslab.github.io/digital-planning-data-schemas/v0.0.1/schema.json"

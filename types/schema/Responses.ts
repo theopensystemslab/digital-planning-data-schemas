@@ -1,6 +1,6 @@
 /**
  * @id #Responses
- * @description The ordered list of questions, answers, and their metadata for this application
+ * @description The ordered list of questions, answers, and their metadata for the application
  */
 export type Responses = QuestionAndResponses[];
 
@@ -15,6 +15,7 @@ export interface QuestionMetaData {
 
 export interface ResponseMetaData {
   flags?: Array<string>; // @todo connect to result/flags enum
+  options?: Array<string> | Array<Response>;
 }
 
 export interface Response {

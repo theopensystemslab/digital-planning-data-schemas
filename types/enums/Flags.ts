@@ -1,5 +1,5 @@
 /**
- * Flags
+ * Flags and their flagset that make up a result
  */
 export const Flags = {
   'Planning permission / Immune':

@@ -1,5 +1,5 @@
 /**
- * Values of proposal.projectType
+ * Values of `data.proposal.projectType`
  */
 export const ProjectTypes = {
   'alter.balcony': 'Add or alter a balcony',

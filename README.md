@@ -1,9 +1,9 @@
 # Digital Planning Data schemas
 This repository contains [JSON schemas](https://json-schema.org/) to describe Digital Planning services developed by [Open Digital Planning](https://opendigitalplanning.org/).
 
-Our initial schema defines planning application types - including Lawful Development Certificates, Prior Approval, and Householder Planning Permission - that are being designed and submitted via [PlanX](https://www.planx.uk/). 
+Our initial schema defines data structures, rules, and validation logic for planning applications - including Lawful Development Certificates, Prior Approval, and Householder Planning Permission - that are being designed and submitted via [PlanX](https://www.planx.uk/). 
 
-Digital Planning Data schemas aim to encourage more interoperability and consistency between systems by offering a central, version controlled standard for documenting and validating planning data. Going forward, we hope that this repository will expand to further describe planning reference numbers, site notices, consultations, and more.
+Digital Planning Data schemas aim to encourage more interoperability and consistency between systems by offering a central, version controlled standard for documenting and validating planning data. Going forward, we hope that this repository will expand beyond applications to further describe planning reference numbers, site notices, consultations, and more.
 
 ## Usage
 There's two main options for integrating with Digital Planning Data schemas:

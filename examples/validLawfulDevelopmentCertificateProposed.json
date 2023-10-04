@@ -1169,17 +1169,17 @@
   ],
   "metadata": {
     "service": {
-      "flowId": "c06eebb7-6201-4bc0-9fe7-ec5d7a1c0797",
+      "flowId": "824628b2-deeb-48b0-92b1-2ca7f3b17163",
       "publishedFlowId": 1,
       "name": "Apply for a lawful development certificate",
       "owner": "Buckinghamshire",
-      "url": "https://www.editor.planx.uk/buckinghamshire/apply-for-a-lawful-development-certificate/preview"
+      "url": "https://www.editor.planx.dev/buckinghamshire/apply-for-a-lawful-development-certificate/preview"
     },
     "session": {
       "source": "PlanX",
-      "id": "session123",
-      "createdAt": "2023-01-01 00:00:00",
-      "submittedAt": "2023-01-02 00:00:00"
+      "id": "8da51c5b-a2a0-4386-a15d-29d66f9c121c",
+      "createdAt": "2023-10-01 00:00:00",
+      "submittedAt": "2023-10-02 00:00:00"
     },
     "schema": {
       "url": "https://theopensystemslab.github.io/digital-planning-data-schemas/v0.0.1/schema.json"
