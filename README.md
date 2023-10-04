@@ -1,16 +1,20 @@
 # Digital Planning Data schemas
 This repository contains [JSON schemas](https://json-schema.org/) to describe Digital Planning services developed by [Open Digital Planning](https://opendigitalplanning.org/).
 
-Our initial schema defines data structures, rules, and validation logic for planning applications - including Lawful Development Certificates, Prior Approval, and Householder Planning Permission - that are being designed and submitted via [PlanX](https://www.planx.uk/). 
+Our initial schema defines data structures, rules, and validation logic for planning applications - including Lawful Development Certificate, Prior Approval, and Planning Permission services - that are being designed and submitted via [PlanX](https://www.planx.uk/). 
 
-Digital Planning Data schemas aim to encourage more interoperability and consistency between systems by offering a central, version controlled standard for documenting and validating planning data. Going forward, we hope that this repository will expand beyond applications to further describe planning reference numbers, site notices, consultations, and more.
+Digital Planning Data schemas aim to encourage more interoperability and consistency between systems by offering a central, version controlled standard for documenting and validating planning data. 
+
+Going forward, we hope that this repository will expand beyond applications to further describe planning reference numbers, site notices, consultations, and more.
 
 ## Usage
 There's two main options for integrating with Digital Planning Data schemas:
 
-1. Reference a hosted schema file directly, like `http://theopensystemslab.github.io/digital-planning-data-schemas/<VERSION>/schema.json` 
+1. Reference a hosted schema file directly:
 
-2. Clone this repository and reference the local schema files programmatically in your own code using tools that support JSON schema validation
+   `http://theopensystemslab.github.io/digital-planning-data-schemas/<VERSION>/schema.json` 
+
+1. Clone this repository and reference the local schema files programmatically in your own code using tools that support JSON schema validation
 
 For more detailed info on integrating and validating schemas, please refer to the examples and tests in this repo.
 
@@ -41,7 +45,7 @@ Types should be annotated using JSDocs, which will then be read during schema ge
 
 Please see the [JSON schema docs](https://json-schema.org/understanding-json-schema/reference/) for a full list of references for various types.
 
-## Adding examples and tests
+## Adding examples and testing
 
 Add a TypeScript file to `/examples/data` with at least one exported variable representing an example payload definition.
 
