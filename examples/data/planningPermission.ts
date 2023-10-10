@@ -85,6 +85,7 @@ export const validPlanningPermission: Schema = {
         x: 530787,
         y: 175754,
         title: '40, STANSFIELD ROAD, LONDON',
+        singleLine: '40, STANSFIELD ROAD, LONDON, SW9 9RZ',
         source: 'Ordnance Survey',
         uprn: '100021892955',
         usrn: '21901294',
@@ -183,8 +184,8 @@ export const validPlanningPermission: Schema = {
             overlaps: false,
           },
           {
-            value: 'article4.lambeth.caz',
-            description: 'Article 4 Direction area',
+            value: 'article4.caz',
+            description: 'Central Activities Zone (CAZ)',
             overlaps: false,
           },
           {

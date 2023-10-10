@@ -61,6 +61,7 @@ export const validLDCP: Schema = {
         x: 493822,
         y: 191603,
         title: '7, BLYTON CLOSE, BEACONSFIELD',
+        singleLine: '7, BLYTON CLOSE, BEACONSFIELD, HP9 2LX',
         source: 'Ordnance Survey',
         uprn: '100080482163',
         usrn: '35200844',
@@ -175,8 +176,8 @@ export const validLDCP: Schema = {
             overlaps: false,
           },
           {
-            value: 'article4.buckinghamshire.caz',
-            description: 'Article 4 Direction area',
+            value: 'article4.caz',
+            description: 'Central Activities Zone (CAZ)',
             overlaps: false,
           },
           {
