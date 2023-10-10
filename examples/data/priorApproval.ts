@@ -65,6 +65,8 @@ export const validPriorApproval: Schema = {
         y: 180515,
         title:
           'INTERNATIONAL SHAKESPEARE GLOBE CENTRE LTD, SHAKESPEARE GLOBE THEATRE, 21, NEW GLOBE WALK, LONDON',
+        singleLine:
+          'INTERNATIONAL SHAKESPEARE GLOBE CENTRE LTD, SHAKESPEARE GLOBE THEATRE, 21, NEW GLOBE WALK, LONDON, SE1 9DT',
         source: 'Ordnance Survey',
         uprn: '200003377200',
         usrn: '22503078',
@@ -115,11 +117,36 @@ export const validPriorApproval: Schema = {
             description: 'Article 4 Direction area',
             overlaps: true,
             entities: [
-              'Central Activities Zone - Change of use from offices to dwelling houses is restricted',
-              'Central Activities Zone - Demolition of commercial buildings and construction of new dwellinghouses is restricted',
-              'Bankside and Borough District Town Centre - Demolition of commercial buildings and construction of new dwellinghouses is restricted',
-              'Central Activities Zone - Change of use from Class E to residential is restricted',
-              'Bankside and Borough District Town Centre - Change of use from Class E to residential is restricted',
+              {
+                name: 'Central Activities Zone',
+                description:
+                  'Change of use from offices to dwelling houses is restricted',
+                source: 'https://www.planning.data.gov.uk/entity/7010000942',
+              },
+              {
+                name: 'Central Activities Zone',
+                description:
+                  'Demolition of commercial buildings and construction of new dwellinghouses is restricted',
+                source: 'https://www.planning.data.gov.uk/entity/7010000944',
+              },
+              {
+                name: 'Bankside and Borough District Town Centre',
+                description:
+                  'Demolition of commercial buildings and construction of new dwellinghouses is restricted',
+                source: 'https://www.planning.data.gov.uk/entity/7010001042',
+              },
+              {
+                name: 'Central Activities Zone',
+                description:
+                  'Change of use from Class E to residential is restricted',
+                source: 'https://www.planning.data.gov.uk/entity/7010001055',
+              },
+              {
+                name: 'Bankside and Borough District Town Centre',
+                description:
+                  'Change of use from Class E to residential is restricted',
+                source: 'https://www.planning.data.gov.uk/entity/7010001153',
+              },
             ],
           },
           {
@@ -173,36 +200,10 @@ export const validPriorApproval: Schema = {
             overlaps: false,
           },
           {
-            value: 'article4.southwark.MA',
-            description: 'Article 4 Direction area',
+            value: 'article4.caz',
+            description: 'Central Activities Zone (CAZ)',
             overlaps: true,
             entities: [],
-          },
-          {
-            value: 'article4.southwark.caz',
-            description: 'Article 4 Direction area',
-            overlaps: true,
-            entities: [''],
-          },
-          {
-            value: 'article4.southwark.hmo',
-            description: 'Article 4 Direction area',
-            overlaps: false,
-          },
-          {
-            value: 'designated.nationalPark',
-            description: 'National Park',
-            overlaps: false,
-          },
-          {
-            value: 'article4.southwark.sunray',
-            description: 'Article 4 Direction area',
-            overlaps: false,
-          },
-          {
-            value: 'article4.southwark.railway',
-            description: 'Article 4 Direction area',
-            overlaps: false,
           },
           {
             value: 'designated.conservationArea',
@@ -210,18 +211,8 @@ export const validPriorApproval: Schema = {
             overlaps: false,
           },
           {
-            value: 'article4.southwark.publichouse',
-            description: 'Article 4 Direction area',
-            overlaps: false,
-          },
-          {
             value: 'designated.nationalPark.broads',
             description: 'National Park - Broads',
-            overlaps: false,
-          },
-          {
-            value: 'article4.southwark.southernrail',
-            description: 'Article 4 Direction area',
             overlaps: false,
           },
           {

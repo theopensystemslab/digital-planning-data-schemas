@@ -14,14 +14,8 @@ export interface Proposal {
     area: Area;
   };
   date?: {
-    start: Date;
+    start?: Date;
     completion?: Date;
-  };
-  retro?: {
-    date: {
-      start: Date;
-      completion: Date;
-    };
   };
   details?: ProposalDetails;
 }
@@ -55,12 +49,20 @@ export interface LondonDetails extends BaseDetails {
         proposed: number;
       };
       onStreet?: {
+        count: {
+          existing: number;
+          proposed: number;
+        };
         club?: VehicleParkingCount;
         disabled?: VehicleParkingCount;
         other?: VehicleParkingCount;
         residents?: VehicleParkingCount;
       };
       offStreet?: {
+        count: {
+          existing: number;
+          proposed: number;
+        };
         club?: VehicleParkingCount;
         disabled?: VehicleParkingCount;
         other?: VehicleParkingCount;

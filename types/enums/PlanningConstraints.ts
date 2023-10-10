@@ -1,6 +1,5 @@
 /**
- * Minimum set of values for `data.property.constraints.planning`
- *   actual values will also include council-specific variables like `article4.{councilName}.hmo`
+ * Values for `data.property.constraints.planning`
  */
 export const PlanningConstraints = {
   article4: 'Article 4 Direction area',
@@ -12,6 +11,10 @@ export const PlanningConstraints = {
   'designated.nationalPark.broads': 'National Park - Broads',
   'designated.SPA': 'Special Protection Area (SPA)',
   'designated.WHS': 'UNESCO World Heritage Site or buffer zone',
+  flood: 'Flood Risk Zone',
+  'flood.zone.1': 'Flood Risk Zone 1 - Low risk',
+  'flood.zone.2': 'Flood Risk Zone 2 - Medium risk',
+  'flood.zone.3': 'Flood Risk Zone 3 - High risk',
   listed: 'Listed Building',
   locallyListed: 'Locally Listed Building',
   monument: 'Site of a Scheduled Monument',

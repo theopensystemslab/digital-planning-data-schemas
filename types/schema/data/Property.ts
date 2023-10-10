@@ -1,5 +1,6 @@
+import {PlanningConstraints} from '../../enums/PlanningConstraints';
 import {PropertyTypes} from '../../enums/PropertyTypes';
-import {Area, GeoJSON} from '../../utils';
+import {Area, GeoJSON, URL} from '../../utils';
 
 /**
  * @id #Property
@@ -76,6 +77,7 @@ export interface OSAddress extends SiteAddress {
   town: string;
   postcode: string;
   organisation?: string;
+  singleLine: string;
   source: 'Ordnance Survey';
 }
 
@@ -96,20 +98,40 @@ type PropertyTypeMap = {
  */
 export type PropertyType = PropertyTypeMap[keyof PropertyTypeMap];
 
-/** @todo in future value & description should check against PlanningConstraints enum, but also allow custom per-council variables ?? */
-interface BasePlanningConstraint {
-  value: string;
-  description: string;
-}
+type PlanningConstraintKeys = keyof typeof PlanningConstraints;
 
-interface NonOverlappingPlanningConstraint extends BasePlanningConstraint {
+type GenericPlanningConstraint<TKey extends PlanningConstraintKeys> = {
+  value: TKey;
+  description: (typeof PlanningConstraints)[TKey];
+  category?:
+    | 'Ecology'
+    | 'Flooding'
+    | 'General policy'
+    | 'Heritage and conservation'
+    | 'Trees';
+};
+
+type PlanningConstraintMap = {
+  [K in PlanningConstraintKeys]: GenericPlanningConstraint<K>;
+};
+
+type BasePlanningConstraint =
+  PlanningConstraintMap[keyof PlanningConstraintMap];
+
+type NonOverlappingPlanningConstraint = {
   overlaps: false;
-}
+} & BasePlanningConstraint;
 
-interface OverlappingPlanningConstraint extends BasePlanningConstraint {
+type OverlappingPlanningConstraint = {
   overlaps: true;
-  entities: string[];
-}
+  entities:
+    | {
+        name: string;
+        description?: string;
+        source?: URL;
+      }[]
+    | [];
+} & BasePlanningConstraint;
 
 /**
  * @id #PlanningConstraint

@@ -1951,6 +1951,22 @@
                       ],
                       "type": "object"
                     },
+                    "count": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "existing": {
+                          "type": "number"
+                        },
+                        "proposed": {
+                          "type": "number"
+                        }
+                      },
+                      "required": [
+                        "existing",
+                        "proposed"
+                      ],
+                      "type": "object"
+                    },
                     "disabled": {
                       "additionalProperties": false,
                       "properties": {
@@ -2027,6 +2043,9 @@
                       "type": "object"
                     }
                   },
+                  "required": [
+                    "count"
+                  ],
                   "type": "object"
                 },
                 "onStreet": {
@@ -2057,6 +2076,22 @@
                       ],
                       "type": "object"
                     },
+                    "count": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "existing": {
+                          "type": "number"
+                        },
+                        "proposed": {
+                          "type": "number"
+                        }
+                      },
+                      "required": [
+                        "existing",
+                        "proposed"
+                      ],
+                      "type": "object"
+                    },
                     "disabled": {
                       "additionalProperties": false,
                       "properties": {
@@ -2133,6 +2168,9 @@
                       "type": "object"
                     }
                   },
+                  "required": [
+                    "count"
+                  ],
                   "type": "object"
                 }
               },
@@ -2530,6 +2568,9 @@
         "postcode": {
           "type": "string"
         },
+        "singleLine": {
+          "type": "string"
+        },
         "source": {
           "const": "Ordnance Survey",
           "type": "string"
@@ -2561,6 +2602,7 @@
         "longitude",
         "pao",
         "postcode",
+        "singleLine",
         "source",
         "street",
         "title",
@@ -2578,7 +2620,18 @@
         {
           "additionalProperties": false,
           "properties": {
+            "category": {
+              "enum": [
+                "Ecology",
+                "Flooding",
+                "General policy",
+                "Heritage and conservation",
+                "Trees"
+              ],
+              "type": "string"
+            },
             "description": {
+              "const": "Article 4 Direction area",
               "type": "string"
             },
             "overlaps": {
@@ -2586,6 +2639,7 @@
               "type": "boolean"
             },
             "value": {
+              "const": "article4",
               "type": "string"
             }
           },
@@ -2599,20 +2653,2093 @@
         {
           "additionalProperties": false,
           "properties": {
+            "category": {
+              "enum": [
+                "Ecology",
+                "Flooding",
+                "General policy",
+                "Heritage and conservation",
+                "Trees"
+              ],
+              "type": "string"
+            },
             "description": {
+              "const": "Central Activities Zone (CAZ)",
+              "type": "string"
+            },
+            "overlaps": {
+              "const": false,
+              "type": "boolean"
+            },
+            "value": {
+              "const": "article4.caz",
+              "type": "string"
+            }
+          },
+          "required": [
+            "description",
+            "overlaps",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "category": {
+              "enum": [
+                "Ecology",
+                "Flooding",
+                "General policy",
+                "Heritage and conservation",
+                "Trees"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Designated land",
+              "type": "string"
+            },
+            "overlaps": {
+              "const": false,
+              "type": "boolean"
+            },
+            "value": {
+              "const": "designated",
+              "type": "string"
+            }
+          },
+          "required": [
+            "description",
+            "overlaps",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "category": {
+              "enum": [
+                "Ecology",
+                "Flooding",
+                "General policy",
+                "Heritage and conservation",
+                "Trees"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Area of Outstanding Natural Beauty (AONB)",
+              "type": "string"
+            },
+            "overlaps": {
+              "const": false,
+              "type": "boolean"
+            },
+            "value": {
+              "const": "designated.AONB",
+              "type": "string"
+            }
+          },
+          "required": [
+            "description",
+            "overlaps",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "category": {
+              "enum": [
+                "Ecology",
+                "Flooding",
+                "General policy",
+                "Heritage and conservation",
+                "Trees"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Conservation Area",
+              "type": "string"
+            },
+            "overlaps": {
+              "const": false,
+              "type": "boolean"
+            },
+            "value": {
+              "const": "designated.conservationArea",
+              "type": "string"
+            }
+          },
+          "required": [
+            "description",
+            "overlaps",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "category": {
+              "enum": [
+                "Ecology",
+                "Flooding",
+                "General policy",
+                "Heritage and conservation",
+                "Trees"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "National Park",
+              "type": "string"
+            },
+            "overlaps": {
+              "const": false,
+              "type": "boolean"
+            },
+            "value": {
+              "const": "designated.nationalPark",
+              "type": "string"
+            }
+          },
+          "required": [
+            "description",
+            "overlaps",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "category": {
+              "enum": [
+                "Ecology",
+                "Flooding",
+                "General policy",
+                "Heritage and conservation",
+                "Trees"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "National Park - Broads",
+              "type": "string"
+            },
+            "overlaps": {
+              "const": false,
+              "type": "boolean"
+            },
+            "value": {
+              "const": "designated.nationalPark.broads",
+              "type": "string"
+            }
+          },
+          "required": [
+            "description",
+            "overlaps",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "category": {
+              "enum": [
+                "Ecology",
+                "Flooding",
+                "General policy",
+                "Heritage and conservation",
+                "Trees"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Special Protection Area (SPA)",
+              "type": "string"
+            },
+            "overlaps": {
+              "const": false,
+              "type": "boolean"
+            },
+            "value": {
+              "const": "designated.SPA",
+              "type": "string"
+            }
+          },
+          "required": [
+            "description",
+            "overlaps",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "category": {
+              "enum": [
+                "Ecology",
+                "Flooding",
+                "General policy",
+                "Heritage and conservation",
+                "Trees"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "UNESCO World Heritage Site or buffer zone",
+              "type": "string"
+            },
+            "overlaps": {
+              "const": false,
+              "type": "boolean"
+            },
+            "value": {
+              "const": "designated.WHS",
+              "type": "string"
+            }
+          },
+          "required": [
+            "description",
+            "overlaps",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "category": {
+              "enum": [
+                "Ecology",
+                "Flooding",
+                "General policy",
+                "Heritage and conservation",
+                "Trees"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Flood Risk Zone",
+              "type": "string"
+            },
+            "overlaps": {
+              "const": false,
+              "type": "boolean"
+            },
+            "value": {
+              "const": "flood",
+              "type": "string"
+            }
+          },
+          "required": [
+            "description",
+            "overlaps",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "category": {
+              "enum": [
+                "Ecology",
+                "Flooding",
+                "General policy",
+                "Heritage and conservation",
+                "Trees"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Flood Risk Zone 1 - Low risk",
+              "type": "string"
+            },
+            "overlaps": {
+              "const": false,
+              "type": "boolean"
+            },
+            "value": {
+              "const": "flood.zone.1",
+              "type": "string"
+            }
+          },
+          "required": [
+            "description",
+            "overlaps",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "category": {
+              "enum": [
+                "Ecology",
+                "Flooding",
+                "General policy",
+                "Heritage and conservation",
+                "Trees"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Flood Risk Zone 2 - Medium risk",
+              "type": "string"
+            },
+            "overlaps": {
+              "const": false,
+              "type": "boolean"
+            },
+            "value": {
+              "const": "flood.zone.2",
+              "type": "string"
+            }
+          },
+          "required": [
+            "description",
+            "overlaps",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "category": {
+              "enum": [
+                "Ecology",
+                "Flooding",
+                "General policy",
+                "Heritage and conservation",
+                "Trees"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Flood Risk Zone 3 - High risk",
+              "type": "string"
+            },
+            "overlaps": {
+              "const": false,
+              "type": "boolean"
+            },
+            "value": {
+              "const": "flood.zone.3",
+              "type": "string"
+            }
+          },
+          "required": [
+            "description",
+            "overlaps",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "category": {
+              "enum": [
+                "Ecology",
+                "Flooding",
+                "General policy",
+                "Heritage and conservation",
+                "Trees"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Listed Building",
+              "type": "string"
+            },
+            "overlaps": {
+              "const": false,
+              "type": "boolean"
+            },
+            "value": {
+              "const": "listed",
+              "type": "string"
+            }
+          },
+          "required": [
+            "description",
+            "overlaps",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "category": {
+              "enum": [
+                "Ecology",
+                "Flooding",
+                "General policy",
+                "Heritage and conservation",
+                "Trees"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Locally Listed Building",
+              "type": "string"
+            },
+            "overlaps": {
+              "const": false,
+              "type": "boolean"
+            },
+            "value": {
+              "const": "locallyListed",
+              "type": "string"
+            }
+          },
+          "required": [
+            "description",
+            "overlaps",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "category": {
+              "enum": [
+                "Ecology",
+                "Flooding",
+                "General policy",
+                "Heritage and conservation",
+                "Trees"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Site of a Scheduled Monument",
+              "type": "string"
+            },
+            "overlaps": {
+              "const": false,
+              "type": "boolean"
+            },
+            "value": {
+              "const": "monument",
+              "type": "string"
+            }
+          },
+          "required": [
+            "description",
+            "overlaps",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "category": {
+              "enum": [
+                "Ecology",
+                "Flooding",
+                "General policy",
+                "Heritage and conservation",
+                "Trees"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Ancient Semi-Natural Woodland (ASNW)",
+              "type": "string"
+            },
+            "overlaps": {
+              "const": false,
+              "type": "boolean"
+            },
+            "value": {
+              "const": "nature.ASNW",
+              "type": "string"
+            }
+          },
+          "required": [
+            "description",
+            "overlaps",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "category": {
+              "enum": [
+                "Ecology",
+                "Flooding",
+                "General policy",
+                "Heritage and conservation",
+                "Trees"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Special Area of Conservation (SAC)",
+              "type": "string"
+            },
+            "overlaps": {
+              "const": false,
+              "type": "boolean"
+            },
+            "value": {
+              "const": "nature.SAC",
+              "type": "string"
+            }
+          },
+          "required": [
+            "description",
+            "overlaps",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "category": {
+              "enum": [
+                "Ecology",
+                "Flooding",
+                "General policy",
+                "Heritage and conservation",
+                "Trees"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Site of Special Scientific Interest (SSSI)",
+              "type": "string"
+            },
+            "overlaps": {
+              "const": false,
+              "type": "boolean"
+            },
+            "value": {
+              "const": "nature.SSSI",
+              "type": "string"
+            }
+          },
+          "required": [
+            "description",
+            "overlaps",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "category": {
+              "enum": [
+                "Ecology",
+                "Flooding",
+                "General policy",
+                "Heritage and conservation",
+                "Trees"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Historic Park or Garden",
+              "type": "string"
+            },
+            "overlaps": {
+              "const": false,
+              "type": "boolean"
+            },
+            "value": {
+              "const": "registeredPark",
+              "type": "string"
+            }
+          },
+          "required": [
+            "description",
+            "overlaps",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "category": {
+              "enum": [
+                "Ecology",
+                "Flooding",
+                "General policy",
+                "Heritage and conservation",
+                "Trees"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Classified Road",
+              "type": "string"
+            },
+            "overlaps": {
+              "const": false,
+              "type": "boolean"
+            },
+            "value": {
+              "const": "road.classified",
+              "type": "string"
+            }
+          },
+          "required": [
+            "description",
+            "overlaps",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "category": {
+              "enum": [
+                "Ecology",
+                "Flooding",
+                "General policy",
+                "Heritage and conservation",
+                "Trees"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Tree Preservation Order (TPO) or zone",
+              "type": "string"
+            },
+            "overlaps": {
+              "const": false,
+              "type": "boolean"
+            },
+            "value": {
+              "const": "tpo",
+              "type": "string"
+            }
+          },
+          "required": [
+            "description",
+            "overlaps",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "category": {
+              "enum": [
+                "Ecology",
+                "Flooding",
+                "General policy",
+                "Heritage and conservation",
+                "Trees"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Article 4 Direction area",
               "type": "string"
             },
             "entities": {
-              "items": {
-                "type": "string"
-              },
-              "type": "array"
+              "anyOf": [
+                {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "description": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "source": {
+                        "$ref": "#/definitions/URL"
+                      }
+                    },
+                    "required": [
+                      "name"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                {
+                  "maxItems": 0,
+                  "minItems": 0,
+                  "type": "array"
+                }
+              ]
             },
             "overlaps": {
               "const": true,
               "type": "boolean"
             },
             "value": {
+              "const": "article4",
+              "type": "string"
+            }
+          },
+          "required": [
+            "description",
+            "entities",
+            "overlaps",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "category": {
+              "enum": [
+                "Ecology",
+                "Flooding",
+                "General policy",
+                "Heritage and conservation",
+                "Trees"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Central Activities Zone (CAZ)",
+              "type": "string"
+            },
+            "entities": {
+              "anyOf": [
+                {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "description": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "source": {
+                        "$ref": "#/definitions/URL"
+                      }
+                    },
+                    "required": [
+                      "name"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                {
+                  "maxItems": 0,
+                  "minItems": 0,
+                  "type": "array"
+                }
+              ]
+            },
+            "overlaps": {
+              "const": true,
+              "type": "boolean"
+            },
+            "value": {
+              "const": "article4.caz",
+              "type": "string"
+            }
+          },
+          "required": [
+            "description",
+            "entities",
+            "overlaps",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "category": {
+              "enum": [
+                "Ecology",
+                "Flooding",
+                "General policy",
+                "Heritage and conservation",
+                "Trees"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Designated land",
+              "type": "string"
+            },
+            "entities": {
+              "anyOf": [
+                {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "description": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "source": {
+                        "$ref": "#/definitions/URL"
+                      }
+                    },
+                    "required": [
+                      "name"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                {
+                  "maxItems": 0,
+                  "minItems": 0,
+                  "type": "array"
+                }
+              ]
+            },
+            "overlaps": {
+              "const": true,
+              "type": "boolean"
+            },
+            "value": {
+              "const": "designated",
+              "type": "string"
+            }
+          },
+          "required": [
+            "description",
+            "entities",
+            "overlaps",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "category": {
+              "enum": [
+                "Ecology",
+                "Flooding",
+                "General policy",
+                "Heritage and conservation",
+                "Trees"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Area of Outstanding Natural Beauty (AONB)",
+              "type": "string"
+            },
+            "entities": {
+              "anyOf": [
+                {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "description": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "source": {
+                        "$ref": "#/definitions/URL"
+                      }
+                    },
+                    "required": [
+                      "name"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                {
+                  "maxItems": 0,
+                  "minItems": 0,
+                  "type": "array"
+                }
+              ]
+            },
+            "overlaps": {
+              "const": true,
+              "type": "boolean"
+            },
+            "value": {
+              "const": "designated.AONB",
+              "type": "string"
+            }
+          },
+          "required": [
+            "description",
+            "entities",
+            "overlaps",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "category": {
+              "enum": [
+                "Ecology",
+                "Flooding",
+                "General policy",
+                "Heritage and conservation",
+                "Trees"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Conservation Area",
+              "type": "string"
+            },
+            "entities": {
+              "anyOf": [
+                {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "description": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "source": {
+                        "$ref": "#/definitions/URL"
+                      }
+                    },
+                    "required": [
+                      "name"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                {
+                  "maxItems": 0,
+                  "minItems": 0,
+                  "type": "array"
+                }
+              ]
+            },
+            "overlaps": {
+              "const": true,
+              "type": "boolean"
+            },
+            "value": {
+              "const": "designated.conservationArea",
+              "type": "string"
+            }
+          },
+          "required": [
+            "description",
+            "entities",
+            "overlaps",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "category": {
+              "enum": [
+                "Ecology",
+                "Flooding",
+                "General policy",
+                "Heritage and conservation",
+                "Trees"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "National Park",
+              "type": "string"
+            },
+            "entities": {
+              "anyOf": [
+                {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "description": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "source": {
+                        "$ref": "#/definitions/URL"
+                      }
+                    },
+                    "required": [
+                      "name"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                {
+                  "maxItems": 0,
+                  "minItems": 0,
+                  "type": "array"
+                }
+              ]
+            },
+            "overlaps": {
+              "const": true,
+              "type": "boolean"
+            },
+            "value": {
+              "const": "designated.nationalPark",
+              "type": "string"
+            }
+          },
+          "required": [
+            "description",
+            "entities",
+            "overlaps",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "category": {
+              "enum": [
+                "Ecology",
+                "Flooding",
+                "General policy",
+                "Heritage and conservation",
+                "Trees"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "National Park - Broads",
+              "type": "string"
+            },
+            "entities": {
+              "anyOf": [
+                {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "description": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "source": {
+                        "$ref": "#/definitions/URL"
+                      }
+                    },
+                    "required": [
+                      "name"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                {
+                  "maxItems": 0,
+                  "minItems": 0,
+                  "type": "array"
+                }
+              ]
+            },
+            "overlaps": {
+              "const": true,
+              "type": "boolean"
+            },
+            "value": {
+              "const": "designated.nationalPark.broads",
+              "type": "string"
+            }
+          },
+          "required": [
+            "description",
+            "entities",
+            "overlaps",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "category": {
+              "enum": [
+                "Ecology",
+                "Flooding",
+                "General policy",
+                "Heritage and conservation",
+                "Trees"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Special Protection Area (SPA)",
+              "type": "string"
+            },
+            "entities": {
+              "anyOf": [
+                {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "description": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "source": {
+                        "$ref": "#/definitions/URL"
+                      }
+                    },
+                    "required": [
+                      "name"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                {
+                  "maxItems": 0,
+                  "minItems": 0,
+                  "type": "array"
+                }
+              ]
+            },
+            "overlaps": {
+              "const": true,
+              "type": "boolean"
+            },
+            "value": {
+              "const": "designated.SPA",
+              "type": "string"
+            }
+          },
+          "required": [
+            "description",
+            "entities",
+            "overlaps",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "category": {
+              "enum": [
+                "Ecology",
+                "Flooding",
+                "General policy",
+                "Heritage and conservation",
+                "Trees"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "UNESCO World Heritage Site or buffer zone",
+              "type": "string"
+            },
+            "entities": {
+              "anyOf": [
+                {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "description": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "source": {
+                        "$ref": "#/definitions/URL"
+                      }
+                    },
+                    "required": [
+                      "name"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                {
+                  "maxItems": 0,
+                  "minItems": 0,
+                  "type": "array"
+                }
+              ]
+            },
+            "overlaps": {
+              "const": true,
+              "type": "boolean"
+            },
+            "value": {
+              "const": "designated.WHS",
+              "type": "string"
+            }
+          },
+          "required": [
+            "description",
+            "entities",
+            "overlaps",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "category": {
+              "enum": [
+                "Ecology",
+                "Flooding",
+                "General policy",
+                "Heritage and conservation",
+                "Trees"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Flood Risk Zone",
+              "type": "string"
+            },
+            "entities": {
+              "anyOf": [
+                {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "description": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "source": {
+                        "$ref": "#/definitions/URL"
+                      }
+                    },
+                    "required": [
+                      "name"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                {
+                  "maxItems": 0,
+                  "minItems": 0,
+                  "type": "array"
+                }
+              ]
+            },
+            "overlaps": {
+              "const": true,
+              "type": "boolean"
+            },
+            "value": {
+              "const": "flood",
+              "type": "string"
+            }
+          },
+          "required": [
+            "description",
+            "entities",
+            "overlaps",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "category": {
+              "enum": [
+                "Ecology",
+                "Flooding",
+                "General policy",
+                "Heritage and conservation",
+                "Trees"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Flood Risk Zone 1 - Low risk",
+              "type": "string"
+            },
+            "entities": {
+              "anyOf": [
+                {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "description": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "source": {
+                        "$ref": "#/definitions/URL"
+                      }
+                    },
+                    "required": [
+                      "name"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                {
+                  "maxItems": 0,
+                  "minItems": 0,
+                  "type": "array"
+                }
+              ]
+            },
+            "overlaps": {
+              "const": true,
+              "type": "boolean"
+            },
+            "value": {
+              "const": "flood.zone.1",
+              "type": "string"
+            }
+          },
+          "required": [
+            "description",
+            "entities",
+            "overlaps",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "category": {
+              "enum": [
+                "Ecology",
+                "Flooding",
+                "General policy",
+                "Heritage and conservation",
+                "Trees"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Flood Risk Zone 2 - Medium risk",
+              "type": "string"
+            },
+            "entities": {
+              "anyOf": [
+                {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "description": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "source": {
+                        "$ref": "#/definitions/URL"
+                      }
+                    },
+                    "required": [
+                      "name"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                {
+                  "maxItems": 0,
+                  "minItems": 0,
+                  "type": "array"
+                }
+              ]
+            },
+            "overlaps": {
+              "const": true,
+              "type": "boolean"
+            },
+            "value": {
+              "const": "flood.zone.2",
+              "type": "string"
+            }
+          },
+          "required": [
+            "description",
+            "entities",
+            "overlaps",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "category": {
+              "enum": [
+                "Ecology",
+                "Flooding",
+                "General policy",
+                "Heritage and conservation",
+                "Trees"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Flood Risk Zone 3 - High risk",
+              "type": "string"
+            },
+            "entities": {
+              "anyOf": [
+                {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "description": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "source": {
+                        "$ref": "#/definitions/URL"
+                      }
+                    },
+                    "required": [
+                      "name"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                {
+                  "maxItems": 0,
+                  "minItems": 0,
+                  "type": "array"
+                }
+              ]
+            },
+            "overlaps": {
+              "const": true,
+              "type": "boolean"
+            },
+            "value": {
+              "const": "flood.zone.3",
+              "type": "string"
+            }
+          },
+          "required": [
+            "description",
+            "entities",
+            "overlaps",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "category": {
+              "enum": [
+                "Ecology",
+                "Flooding",
+                "General policy",
+                "Heritage and conservation",
+                "Trees"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Listed Building",
+              "type": "string"
+            },
+            "entities": {
+              "anyOf": [
+                {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "description": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "source": {
+                        "$ref": "#/definitions/URL"
+                      }
+                    },
+                    "required": [
+                      "name"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                {
+                  "maxItems": 0,
+                  "minItems": 0,
+                  "type": "array"
+                }
+              ]
+            },
+            "overlaps": {
+              "const": true,
+              "type": "boolean"
+            },
+            "value": {
+              "const": "listed",
+              "type": "string"
+            }
+          },
+          "required": [
+            "description",
+            "entities",
+            "overlaps",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "category": {
+              "enum": [
+                "Ecology",
+                "Flooding",
+                "General policy",
+                "Heritage and conservation",
+                "Trees"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Locally Listed Building",
+              "type": "string"
+            },
+            "entities": {
+              "anyOf": [
+                {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "description": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "source": {
+                        "$ref": "#/definitions/URL"
+                      }
+                    },
+                    "required": [
+                      "name"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                {
+                  "maxItems": 0,
+                  "minItems": 0,
+                  "type": "array"
+                }
+              ]
+            },
+            "overlaps": {
+              "const": true,
+              "type": "boolean"
+            },
+            "value": {
+              "const": "locallyListed",
+              "type": "string"
+            }
+          },
+          "required": [
+            "description",
+            "entities",
+            "overlaps",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "category": {
+              "enum": [
+                "Ecology",
+                "Flooding",
+                "General policy",
+                "Heritage and conservation",
+                "Trees"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Site of a Scheduled Monument",
+              "type": "string"
+            },
+            "entities": {
+              "anyOf": [
+                {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "description": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "source": {
+                        "$ref": "#/definitions/URL"
+                      }
+                    },
+                    "required": [
+                      "name"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                {
+                  "maxItems": 0,
+                  "minItems": 0,
+                  "type": "array"
+                }
+              ]
+            },
+            "overlaps": {
+              "const": true,
+              "type": "boolean"
+            },
+            "value": {
+              "const": "monument",
+              "type": "string"
+            }
+          },
+          "required": [
+            "description",
+            "entities",
+            "overlaps",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "category": {
+              "enum": [
+                "Ecology",
+                "Flooding",
+                "General policy",
+                "Heritage and conservation",
+                "Trees"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Ancient Semi-Natural Woodland (ASNW)",
+              "type": "string"
+            },
+            "entities": {
+              "anyOf": [
+                {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "description": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "source": {
+                        "$ref": "#/definitions/URL"
+                      }
+                    },
+                    "required": [
+                      "name"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                {
+                  "maxItems": 0,
+                  "minItems": 0,
+                  "type": "array"
+                }
+              ]
+            },
+            "overlaps": {
+              "const": true,
+              "type": "boolean"
+            },
+            "value": {
+              "const": "nature.ASNW",
+              "type": "string"
+            }
+          },
+          "required": [
+            "description",
+            "entities",
+            "overlaps",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "category": {
+              "enum": [
+                "Ecology",
+                "Flooding",
+                "General policy",
+                "Heritage and conservation",
+                "Trees"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Special Area of Conservation (SAC)",
+              "type": "string"
+            },
+            "entities": {
+              "anyOf": [
+                {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "description": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "source": {
+                        "$ref": "#/definitions/URL"
+                      }
+                    },
+                    "required": [
+                      "name"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                {
+                  "maxItems": 0,
+                  "minItems": 0,
+                  "type": "array"
+                }
+              ]
+            },
+            "overlaps": {
+              "const": true,
+              "type": "boolean"
+            },
+            "value": {
+              "const": "nature.SAC",
+              "type": "string"
+            }
+          },
+          "required": [
+            "description",
+            "entities",
+            "overlaps",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "category": {
+              "enum": [
+                "Ecology",
+                "Flooding",
+                "General policy",
+                "Heritage and conservation",
+                "Trees"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Site of Special Scientific Interest (SSSI)",
+              "type": "string"
+            },
+            "entities": {
+              "anyOf": [
+                {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "description": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "source": {
+                        "$ref": "#/definitions/URL"
+                      }
+                    },
+                    "required": [
+                      "name"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                {
+                  "maxItems": 0,
+                  "minItems": 0,
+                  "type": "array"
+                }
+              ]
+            },
+            "overlaps": {
+              "const": true,
+              "type": "boolean"
+            },
+            "value": {
+              "const": "nature.SSSI",
+              "type": "string"
+            }
+          },
+          "required": [
+            "description",
+            "entities",
+            "overlaps",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "category": {
+              "enum": [
+                "Ecology",
+                "Flooding",
+                "General policy",
+                "Heritage and conservation",
+                "Trees"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Historic Park or Garden",
+              "type": "string"
+            },
+            "entities": {
+              "anyOf": [
+                {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "description": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "source": {
+                        "$ref": "#/definitions/URL"
+                      }
+                    },
+                    "required": [
+                      "name"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                {
+                  "maxItems": 0,
+                  "minItems": 0,
+                  "type": "array"
+                }
+              ]
+            },
+            "overlaps": {
+              "const": true,
+              "type": "boolean"
+            },
+            "value": {
+              "const": "registeredPark",
+              "type": "string"
+            }
+          },
+          "required": [
+            "description",
+            "entities",
+            "overlaps",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "category": {
+              "enum": [
+                "Ecology",
+                "Flooding",
+                "General policy",
+                "Heritage and conservation",
+                "Trees"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Classified Road",
+              "type": "string"
+            },
+            "entities": {
+              "anyOf": [
+                {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "description": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "source": {
+                        "$ref": "#/definitions/URL"
+                      }
+                    },
+                    "required": [
+                      "name"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                {
+                  "maxItems": 0,
+                  "minItems": 0,
+                  "type": "array"
+                }
+              ]
+            },
+            "overlaps": {
+              "const": true,
+              "type": "boolean"
+            },
+            "value": {
+              "const": "road.classified",
+              "type": "string"
+            }
+          },
+          "required": [
+            "description",
+            "entities",
+            "overlaps",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "category": {
+              "enum": [
+                "Ecology",
+                "Flooding",
+                "General policy",
+                "Heritage and conservation",
+                "Trees"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Tree Preservation Order (TPO) or zone",
+              "type": "string"
+            },
+            "entities": {
+              "anyOf": [
+                {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "description": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "source": {
+                        "$ref": "#/definitions/URL"
+                      }
+                    },
+                    "required": [
+                      "name"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                {
+                  "maxItems": 0,
+                  "minItems": 0,
+                  "type": "array"
+                }
+              ]
+            },
+            "overlaps": {
+              "const": true,
+              "type": "boolean"
+            },
+            "value": {
+              "const": "tpo",
               "type": "string"
             }
           },
@@ -13241,9 +15368,6 @@
               "type": "string"
             }
           },
-          "required": [
-            "start"
-          ],
           "type": "object"
         },
         "description": {
@@ -13257,33 +15381,6 @@
             "$ref": "#/definitions/ProjectType"
           },
           "type": "array"
-        },
-        "retro": {
-          "additionalProperties": false,
-          "properties": {
-            "date": {
-              "additionalProperties": false,
-              "properties": {
-                "completion": {
-                  "format": "date-time",
-                  "type": "string"
-                },
-                "start": {
-                  "format": "date-time",
-                  "type": "string"
-                }
-              },
-              "required": [
-                "start",
-                "completion"
-              ],
-              "type": "object"
-            }
-          },
-          "required": [
-            "date"
-          ],
-          "type": "object"
         }
       },
       "required": [
