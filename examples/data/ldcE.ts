@@ -325,6 +325,7 @@ export const validLDCE: Schema = {
           squareMetres: 2993.67,
         },
       },
+      date: {},
     },
   },
   result: [

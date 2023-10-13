@@ -235,6 +235,14 @@ export const validLDCP: Schema = {
           squareMetres: 1418.26,
         },
       },
+      date: {},
+      details: {
+        extend: {
+          area: {
+            squareMetres: 24,
+          },
+        },
+      },
     },
   },
   result: [

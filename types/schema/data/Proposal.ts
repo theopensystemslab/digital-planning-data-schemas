@@ -77,7 +77,7 @@ export interface LondonDetails extends BaseDetails {
       onStreet?: VehicleParkingCount;
       offStreet?: VehicleParkingCount;
     };
-    motorcyles?: {
+    motorcycles?: {
       count: {
         existing: number;
         proposed: number;
