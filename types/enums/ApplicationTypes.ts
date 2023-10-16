@@ -48,6 +48,7 @@ export const ApplicationTypes = {
   'pa.part20.classZA':
     'Prior Approval - Demolish buildings and build homes in their place',
   pp: 'Planning Permission',
-  'pp.full.householder': 'Planning Permission',
-  'pp.full.householder.retro': 'Planning Permission - Retrospective',
+  'pp.full.householder': 'Planning Permission - Full householder',
+  'pp.full.householder.retro':
+    'Planning Permission - Full householder retrospective',
 };
