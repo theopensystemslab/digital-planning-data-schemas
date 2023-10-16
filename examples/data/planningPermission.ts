@@ -5,7 +5,7 @@ export const validPlanningPermission: Schema = {
     application: {
       type: {
         value: 'pp.full.householder',
-        description: 'Planning Permission',
+        description: 'Planning Permission - Full householder',
       },
       fee: {
         calculated: 206,
@@ -221,7 +221,7 @@ export const validPlanningPermission: Schema = {
       projectType: [
         {
           value: 'extend.roof.dormer',
-          description: 'Add roof dormers',
+          description: 'Add a roof dormer',
         },
       ],
       description:
