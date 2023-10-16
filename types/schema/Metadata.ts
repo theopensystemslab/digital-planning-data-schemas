@@ -7,7 +7,6 @@ export interface Metadata {
    */
   service: {
     flowId: UUID | string; // @todo temp fix for failing UUID validation, sort out and tighten
-    publishedFlowId: number;
     name: string;
     owner: string;
     url: URL;

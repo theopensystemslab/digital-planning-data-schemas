@@ -2510,16 +2510,12 @@
             "owner": {
               "type": "string"
             },
-            "publishedFlowId": {
-              "type": "number"
-            },
             "url": {
               "$ref": "#/definitions/URL"
             }
           },
           "required": [
             "flowId",
-            "publishedFlowId",
             "name",
             "owner",
             "url"
