@@ -301,6 +301,14 @@
           "hectares": 0.141826,
           "squareMetres": 1418.26
         }
+      },
+      "date": {},
+      "details": {
+        "extend": {
+          "area": {
+            "squareMetres": 24
+          }
+        }
       }
     }
   },

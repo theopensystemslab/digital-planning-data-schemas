@@ -2179,7 +2179,7 @@
               ],
               "type": "object"
             },
-            "motorcyles": {
+            "motorcycles": {
               "additionalProperties": false,
               "properties": {
                 "count": {
