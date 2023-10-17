@@ -13,7 +13,7 @@ incremented for features.
 
 ### Changed
 - Adjusted shape of `data.property.constraints.planning` and added a `PlanningConstraint` definition ([#50](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/50))
-- Added more granular values to the `ProjectType` definition ([#55](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/55/files))
+- Added more granular values to the `ProjectType` definition ([#55](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/55))
 - Improved examples, especially `data.proposal.details` ([#54](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/54))
 - Minor naming and organisational adjustments throughout based on early feedback
 
