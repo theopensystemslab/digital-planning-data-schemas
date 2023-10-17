@@ -20,6 +20,9 @@ incremented for features.
 ### Fixed
 - Corrected usage of JSON Schema `Date` format ([#52](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/52))
 
+### Removed 
+- Dropped `metadata.service.publishedFlowId`, as this will always be inferrable from `flowId` and the session's dates ([#57](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/57))
+
 ## [0.1.0] - 2023-10-04
 
 ### Added
