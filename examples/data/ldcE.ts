@@ -1604,7 +1604,6 @@ export const validLDCE: Schema = {
   metadata: {
     service: {
       flowId: '824628b2-deeb-48b0-92b1-2ca7f3b17163',
-      publishedFlowId: 1,
       name: 'Apply for a lawful development certificate',
       owner: 'Buckinghamshire',
       url: 'https://www.editor.planx.dev/buckinghamshire/apply-for-a-lawful-development-certificate/preview',

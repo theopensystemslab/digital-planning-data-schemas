@@ -1698,7 +1698,6 @@ export const validPlanningPermission: Schema = {
   metadata: {
     service: {
       flowId: '01e38c5d-e701-4e44-acdc-4d6b5cc3b854',
-      publishedFlowId: 1,
       name: 'Apply for planning permission',
       owner: 'Lambeth',
       url: 'https://www.editor.planx.dev/lambeth/apply-for-planning-permission/preview',
