@@ -26,6 +26,7 @@ export const FileTypes = {
   'proposal.document.councilTaxBill': 'Council tax bill',
   'proposal.document.declaration': 'Statuatory declaration',
   'proposal.document.designAndAccess': 'Design and Access Statement',
+  'proposal.document.fireSafety': 'Fire safety report',
   'proposal.document.floodRisk': 'Flood risk assessment',
   'proposal.document.heritageStatement': 'Heritage Statement',
   'proposal.document.noise': 'Noise assessment',

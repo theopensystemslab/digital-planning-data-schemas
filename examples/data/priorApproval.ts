@@ -1032,7 +1032,6 @@ export const validPriorApproval: Schema = {
   metadata: {
     service: {
       flowId: 'c6628103-c648-4663-81e1-bfa0a1a18340',
-      publishedFlowId: 1,
       name: 'Apply for prior approval',
       owner: 'Southwark',
       url: 'https://www.editor.planx.dev/southwark/apply-for-prior-approval/preview',
