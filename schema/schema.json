@@ -2431,6 +2431,10 @@
               "$ref": "#/definitions/GeoJSON"
             }
           },
+          "required": [
+            "site",
+            "area"
+          ],
           "type": "object"
         },
         "constraints": {
@@ -16765,6 +16769,10 @@
               "$ref": "#/definitions/GeoJSON"
             }
           },
+          "required": [
+            "site",
+            "area"
+          ],
           "type": "object"
         },
         "date": {
@@ -17584,6 +17592,10 @@
               "$ref": "#/definitions/GeoJSON"
             }
           },
+          "required": [
+            "site",
+            "area"
+          ],
           "type": "object"
         },
         "constraints": {

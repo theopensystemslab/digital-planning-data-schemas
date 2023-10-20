@@ -18,8 +18,8 @@ export interface UKProperty {
   localAuthorityDistrict: string[];
   type: PropertyType;
   boundary?: {
-    site?: GeoJSON;
-    area?: Area;
+    site: GeoJSON;
+    area: Area;
   };
   constraints?: {
     planning: PlanningConstraint[];

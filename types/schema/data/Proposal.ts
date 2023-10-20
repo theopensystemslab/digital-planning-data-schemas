@@ -10,8 +10,8 @@ export interface Proposal {
   projectType: ProjectType[];
   description: string;
   boundary?: {
-    site?: GeoJSON;
-    area?: Area;
+    site: GeoJSON;
+    area: Area;
   };
   date?: {
     start?: Date;
