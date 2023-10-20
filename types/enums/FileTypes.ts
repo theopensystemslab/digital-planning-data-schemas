@@ -2,19 +2,19 @@
  * Values of `file.type`
  */
 export const FileTypes = {
-  'property.drawing.elevation': 'Elevation plan - existing',
+  'property.drawing.elevation': 'Elevations - existing',
   'property.drawing.floorPlan': 'Floor plan - existing',
   'property.drawing.roofPlan': 'Roof plan - existing',
-  'property.drawing.section': 'Section - existing',
+  'property.drawing.section': 'Sections - existing',
   'property.drawing.sitePlan': 'Site plan - existing',
   'property.drawing.usePlan': 'Use plan - existing',
   'property.photograph': 'Photographs',
-  'property.site.locationPlan': 'Location plan',
-  'proposal.drawing.elevation': 'Elevation plan - proposed',
+  'proposal.drawing.elevation': 'Elevations - proposed',
   'proposal.drawing.floorPlan': 'Floor plan - proposed',
+  'proposal.drawing.locationPlan': 'Location plan',
   'proposal.drawing.other': 'Other - drawing',
   'proposal.drawing.roofPlan': 'Roof plan - proposed',
-  'proposal.drawing.section': 'Section - proposed',
+  'proposal.drawing.section': 'Sections - proposed',
   'proposal.drawing.sitePlan': 'Site plan - proposed',
   'proposal.drawing.unitPlan': 'Unit plan - proposed',
   'proposal.drawing.usePlan': 'Use plan - proposed',
@@ -38,5 +38,6 @@ export const FileTypes = {
   'proposal.document.transport': 'Transport assessment',
   'proposal.document.utility.bill': 'Utility bill',
   'proposal.photograph': 'Photographs',
+  'proposal.photograph.evidence': 'Photographs - evidence',
   'proposal.visualisation': 'Visualisations',
 };

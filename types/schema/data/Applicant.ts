@@ -13,7 +13,7 @@ export type Applicant = BaseApplicant | Agent;
  */
 export interface BaseApplicant {
   type: 'individual' | 'company' | 'charity' | 'public' | 'parishCouncil';
-  interest?: 'owner.sole' | 'owner.co' | 'tenant' | 'occupier';
+  interest?: 'owner.sole' | 'owner.co' | 'tenant' | 'occupier' | 'other';
   ownership?: {
     certificate: 'a' | 'b' | 'c' | 'd';
     noticeGiven?: boolean;

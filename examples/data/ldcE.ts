@@ -1567,7 +1567,7 @@ export const validLDCE: Schema = {
       type: [
         {
           value: 'proposal.drawing.elevation',
-          description: 'Elevation plan - proposed',
+          description: 'Elevations - proposed',
         },
       ],
     },
