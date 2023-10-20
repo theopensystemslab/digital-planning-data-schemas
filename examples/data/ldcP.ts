@@ -1082,7 +1082,7 @@ export const validLDCP: Schema = {
       type: [
         {
           value: 'property.drawing.elevation',
-          description: 'Elevation plan - existing',
+          description: 'Elevations - existing',
         },
       ],
     },
@@ -1100,7 +1100,7 @@ export const validLDCP: Schema = {
       type: [
         {
           value: 'proposal.drawing.elevation',
-          description: 'Elevation plan - proposed',
+          description: 'Elevations - proposed',
         },
       ],
     },

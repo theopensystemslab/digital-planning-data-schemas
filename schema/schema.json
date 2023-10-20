@@ -66,7 +66,8 @@
             "owner.sole",
             "owner.co",
             "tenant",
-            "occupier"
+            "occupier",
+            "other"
           ],
           "type": "string"
         },
@@ -912,7 +913,8 @@
             "owner.sole",
             "owner.co",
             "tenant",
-            "occupier"
+            "occupier",
+            "other"
           ],
           "type": "string"
         },
@@ -1076,7 +1078,7 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Elevation plan - existing",
+              "const": "Elevations - existing",
               "type": "string"
             },
             "value": {
@@ -1130,7 +1132,7 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Section - existing",
+              "const": "Sections - existing",
               "type": "string"
             },
             "value": {
@@ -1202,25 +1204,7 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Location plan",
-              "type": "string"
-            },
-            "value": {
-              "const": "property.site.locationPlan",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "Elevation plan - proposed",
+              "const": "Elevations - proposed",
               "type": "string"
             },
             "value": {
@@ -1243,6 +1227,24 @@
             },
             "value": {
               "const": "proposal.drawing.floorPlan",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Location plan",
+              "type": "string"
+            },
+            "value": {
+              "const": "proposal.drawing.locationPlan",
               "type": "string"
             }
           },
@@ -1292,7 +1294,7 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Section - proposed",
+              "const": "Sections - proposed",
               "type": "string"
             },
             "value": {
@@ -1693,6 +1695,24 @@
             },
             "value": {
               "const": "proposal.photograph",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Photographs - evidence",
+              "type": "string"
+            },
+            "value": {
+              "const": "proposal.photograph.evidence",
               "type": "string"
             }
           },

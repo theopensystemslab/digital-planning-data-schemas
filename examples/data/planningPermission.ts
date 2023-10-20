@@ -1673,11 +1673,11 @@ export const validPlanningPermission: Schema = {
       type: [
         {
           value: 'property.drawing.elevation',
-          description: 'Elevation plan - existing',
+          description: 'Elevations - existing',
         },
         {
           value: 'proposal.drawing.elevation',
-          description: 'Elevation plan - proposed',
+          description: 'Elevations - proposed',
         },
       ],
     },
