@@ -1,6 +1,7 @@
+import {GeoJSON} from 'geojson';
 import {ProjectTypes} from '../../enums/ProjectTypes';
 import {VehicleParking} from '../../enums/VehicleParking';
-import {Area, Date, GeoJSON} from '../../utils';
+import {Area, Date} from '../../utils';
 
 /**
  * @id #Proposal

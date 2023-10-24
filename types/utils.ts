@@ -27,11 +27,6 @@ export type DateTime = string;
 export type Date = string;
 
 /**
- * @id #GeoJSON
- */
-export type GeoJSON = Record<string, any>;
-
-/**
  * @id #Area
  */
 export type Area = {

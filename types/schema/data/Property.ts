@@ -1,6 +1,7 @@
+import {GeoJSON} from 'geojson';
 import {PlanningConstraints} from '../../enums/PlanningConstraints';
 import {PropertyTypes} from '../../enums/PropertyTypes';
-import {Area, GeoJSON, URL} from '../../utils';
+import {Area, URL} from '../../utils';
 
 /**
  * @id #Property
