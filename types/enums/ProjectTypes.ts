@@ -2,6 +2,7 @@
  * Values of `data.proposal.projectType`
  */
 export const ProjectTypes = {
+  alter: 'Alter a building',
   'alter.balcony': 'Add or alter a balcony',
   'alter.bayWindow': 'Add or remove a bay window',
   'alter.bayWindow.add': 'Add a bay window',
@@ -124,7 +125,7 @@ export const ProjectTypes = {
   'alter.swimmingPool.indoor': 'Install an indoor swimming pool',
   'alter.swimmingPool.outdoor': 'Install an outdoor swimming pool',
   'alter.trees': 'Changes to trees or hedges',
-  changeOfUse: 'Convert a building to a different use',
+  changeOfUse: 'Change the use of a building',
   'changeofUse.annexe':
     'Convert part of the property into a  granny flat (residential annexe)',
   'changeOfUse.caravans': 'Use a caravan or mobile home on the property',
@@ -143,6 +144,7 @@ export const ProjectTypes = {
   'demolish.outbuildings': 'Demolish an outbuilding (such as a garage or barn)',
   'demolish.part': 'Demolish part of a building (such as an extension)',
   'demolish.replace': 'Demolish a building and build homes in its place',
+  extend: 'Extend a building or add an outbuilding',
   'extend.basement': 'Add a basement extension',
   'extend.basement.extend': 'Enlarge a basement',
   'extend.basement.lightwell': 'Add a lightwell',
@@ -197,7 +199,7 @@ export const ProjectTypes = {
   'internal.staircases': 'Alter internal staircases',
   'internal.walls': 'Alter internal walls',
   'internal.windows.openings': 'Alter internal window openings',
-  new: 'Another type of building',
+  new: 'Add another type of building',
   'new.agriculture': 'Agricultural buildings',
   'new.agriculture.glassHouse': 'Agricultural buildings - glass house',
   'new.agriculture.mining': 'Agricultural buildings - mining',
@@ -217,6 +219,7 @@ export const ProjectTypes = {
   'new.temporaryStructure':
     'Erect a temporary structure for historic visitor attractions and listed buildings',
   'new.warehouse': 'Storage or distribution premises',
+  unit: 'Change of units',
   'unit.merge': 'Convert two or more properties into one',
   'unit.subdivide': 'Convert a home or part of a home into flats',
 };
