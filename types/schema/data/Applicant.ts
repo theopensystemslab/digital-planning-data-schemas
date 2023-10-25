@@ -14,18 +14,24 @@ export type Applicant = BaseApplicant | Agent;
 export interface BaseApplicant {
   type: 'individual' | 'company' | 'charity' | 'public' | 'parishCouncil';
   interest?: 'owner.sole' | 'owner.co' | 'tenant' | 'occupier' | 'other';
-  ownership?: {
-    certificate: 'a' | 'b' | 'c' | 'd';
-    noticeGiven?: boolean;
-    owners?: {
-      name: string;
-      address: AddressInput | string;
-      noticeDate?: Date;
-    }[];
-  };
+  ownership?: Ownership;
   contact: UserContact;
   address: UserAddress;
   siteContact: SiteContact;
+}
+
+/**
+ * @id #Ownership
+ * @description Information about the ownership certificate and owners, if different than the applicant
+ */
+export interface Ownership {
+  certificate: 'a' | 'b' | 'c' | 'd';
+  noticeGiven?: boolean;
+  owners?: {
+    name: string;
+    address: AddressInput | string;
+    noticeDate?: Date;
+  }[];
 }
 
 /**

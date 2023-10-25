@@ -14,11 +14,17 @@ export interface Proposal {
     site: GeoJSON;
     area: Area;
   };
-  date?: {
-    start?: Date;
-    completion?: Date;
-  };
+  date?: ProposalDates;
   details?: ProposalDetails;
+}
+
+/**
+ * @id #ProposalDates
+ * @description When the proposed works will start and be completed by, not required for all application types
+ */
+export interface ProposalDates {
+  start?: Date;
+  completion?: Date;
 }
 
 /**
@@ -41,6 +47,10 @@ export interface BaseDetails {
   };
 }
 
+/**
+ * @id #LondonDetails
+ * @description Proposal details for project sites within the Greater London Authority (GLA) area
+ */
 export interface LondonDetails extends BaseDetails {
   vehicleParking: {
     type: VehicleParking[];

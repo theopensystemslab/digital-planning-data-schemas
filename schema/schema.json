@@ -72,54 +72,7 @@
           "type": "string"
         },
         "ownership": {
-          "additionalProperties": false,
-          "properties": {
-            "certificate": {
-              "enum": [
-                "a",
-                "b",
-                "c",
-                "d"
-              ],
-              "type": "string"
-            },
-            "noticeGiven": {
-              "type": "boolean"
-            },
-            "owners": {
-              "items": {
-                "additionalProperties": false,
-                "properties": {
-                  "address": {
-                    "anyOf": [
-                      {
-                        "$ref": "#/definitions/AddressInput"
-                      },
-                      {
-                        "type": "string"
-                      }
-                    ]
-                  },
-                  "name": {
-                    "type": "string"
-                  },
-                  "noticeDate": {
-                    "$ref": "#/definitions/Date"
-                  }
-                },
-                "required": [
-                  "name",
-                  "address"
-                ],
-                "type": "object"
-              },
-              "type": "array"
-            }
-          },
-          "required": [
-            "certificate"
-          ],
-          "type": "object"
+          "$ref": "#/definitions/Ownership"
         },
         "siteContact": {
           "$ref": "#/definitions/SiteContact"
@@ -162,39 +115,7 @@
       "description": "Information about this planning application",
       "properties": {
         "declaration": {
-          "additionalProperties": false,
-          "properties": {
-            "accurate": {
-              "type": "boolean"
-            },
-            "connection": {
-              "additionalProperties": false,
-              "properties": {
-                "description": {
-                  "type": "string"
-                },
-                "value": {
-                  "enum": [
-                    "employee",
-                    "relation.employee",
-                    "electedMember",
-                    "relation.electedMember",
-                    "none"
-                  ],
-                  "type": "string"
-                }
-              },
-              "required": [
-                "value"
-              ],
-              "type": "object"
-            }
-          },
-          "required": [
-            "accurate",
-            "connection"
-          ],
-          "type": "object"
+          "$ref": "#/definitions/ApplicationDeclaration"
         },
         "fee": {
           "$ref": "#/definitions/ApplicationFee"
@@ -210,6 +131,43 @@
         "type",
         "fee",
         "declaration"
+      ],
+      "type": "object"
+    },
+    "ApplicationDeclaration": {
+      "$id": "#ApplicationDeclaration",
+      "additionalProperties": false,
+      "description": "Declarations about the accuracy of this application and any personal connections to the receiving authority",
+      "properties": {
+        "accurate": {
+          "type": "boolean"
+        },
+        "connection": {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "type": "string"
+            },
+            "value": {
+              "enum": [
+                "employee",
+                "relation.employee",
+                "electedMember",
+                "relation.electedMember",
+                "none"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "value"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "accurate",
+        "connection"
       ],
       "type": "object"
     },
@@ -940,54 +898,7 @@
           "type": "string"
         },
         "ownership": {
-          "additionalProperties": false,
-          "properties": {
-            "certificate": {
-              "enum": [
-                "a",
-                "b",
-                "c",
-                "d"
-              ],
-              "type": "string"
-            },
-            "noticeGiven": {
-              "type": "boolean"
-            },
-            "owners": {
-              "items": {
-                "additionalProperties": false,
-                "properties": {
-                  "address": {
-                    "anyOf": [
-                      {
-                        "$ref": "#/definitions/AddressInput"
-                      },
-                      {
-                        "type": "string"
-                      }
-                    ]
-                  },
-                  "name": {
-                    "type": "string"
-                  },
-                  "noticeDate": {
-                    "$ref": "#/definitions/Date"
-                  }
-                },
-                "required": [
-                  "name",
-                  "address"
-                ],
-                "type": "object"
-              },
-              "type": "array"
-            }
-          },
-          "required": [
-            "certificate"
-          ],
-          "type": "object"
+          "$ref": "#/definitions/Ownership"
         },
         "siteContact": {
           "$ref": "#/definitions/SiteContact"
@@ -1965,7 +1876,9 @@
       "type": "object"
     },
     "LondonDetails": {
+      "$id": "#LondonDetails",
       "additionalProperties": false,
+      "description": "Proposal details for project sites within the Greater London Authority (GLA) area",
       "properties": {
         "extend": {
           "additionalProperties": false,
@@ -2605,7 +2518,7 @@
     "LondonProperty": {
       "$id": "#LondonProperty",
       "additionalProperties": false,
-      "description": "Property details for sites within London",
+      "description": "Property details for sites within the Greater London Authority (GLA) area",
       "properties": {
         "EPC": {
           "additionalProperties": false,
@@ -2676,6 +2589,7 @@
           "type": "array"
         },
         "region": {
+          "const": "London",
           "type": "string"
         },
         "titleNumber": {
@@ -2949,6 +2863,58 @@
         "usrn",
         "x",
         "y"
+      ],
+      "type": "object"
+    },
+    "Ownership": {
+      "$id": "#Ownership",
+      "additionalProperties": false,
+      "description": "Information about the ownership certificate and owners, if different than the applicant",
+      "properties": {
+        "certificate": {
+          "enum": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ],
+          "type": "string"
+        },
+        "noticeGiven": {
+          "type": "boolean"
+        },
+        "owners": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "address": {
+                "anyOf": [
+                  {
+                    "$ref": "#/definitions/AddressInput"
+                  },
+                  {
+                    "type": "string"
+                  }
+                ]
+              },
+              "name": {
+                "type": "string"
+              },
+              "noticeDate": {
+                "$ref": "#/definitions/Date"
+              }
+            },
+            "required": [
+              "name",
+              "address"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "certificate"
       ],
       "type": "object"
     },
@@ -17193,16 +17159,7 @@
           "type": "object"
         },
         "date": {
-          "additionalProperties": false,
-          "properties": {
-            "completion": {
-              "$ref": "#/definitions/Date"
-            },
-            "start": {
-              "$ref": "#/definitions/Date"
-            }
-          },
-          "type": "object"
+          "$ref": "#/definitions/ProposalDates"
         },
         "description": {
           "type": "string"
@@ -17221,6 +17178,20 @@
         "projectType",
         "description"
       ],
+      "type": "object"
+    },
+    "ProposalDates": {
+      "$id": "#ProposalDates",
+      "additionalProperties": false,
+      "description": "When the proposed works will start and be completed by, not required for all application types",
+      "properties": {
+        "completion": {
+          "$ref": "#/definitions/Date"
+        },
+        "start": {
+          "$ref": "#/definitions/Date"
+        }
+      },
       "type": "object"
     },
     "ProposalDetails": {
@@ -18037,7 +18008,7 @@
           "type": "array"
         },
         "region": {
-          "type": "string"
+          "$ref": "#/definitions/UKRegion"
         },
         "type": {
           "$ref": "#/definitions/PropertyType"
@@ -18050,6 +18021,22 @@
         "type"
       ],
       "type": "object"
+    },
+    "UKRegion": {
+      "$id": "#UKRegion",
+      "description": "UK regions sourced from planning.data.gov.uk/dataset/region, where London is a proxy for the Greater London Authority (GLA) area",
+      "enum": [
+        "North East",
+        "North West",
+        "Yorkshire and The Humber",
+        "East Midlands",
+        "West Midlands",
+        "East of England",
+        "London",
+        "South East",
+        "South West"
+      ],
+      "type": "string"
     },
     "URL": {
       "format": "uri",
