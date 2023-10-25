@@ -1,7 +1,7 @@
 # Digital Planning Data schemas
 This repository contains data specifications to describe Digital Planning services developed by [Open Digital Planning](https://opendigitalplanning.org/). Each specification is communicated via a [JSON Schema](https://json-schema.org/) document.
 
-Our initial specification defines data structures, rules, and validation logic for planning applications - including Lawful Development Certificate, Prior Approval, and Planning Permission services - that are being designed and submitted via [PlanX](https://www.planx.uk/). 
+Our initial specification defines data structures, rules, and validation logic for **planning applications** - including Lawful Development Certificate, Prior Approval, and Planning Permission services - that are being designed and submitted via [PlanX](https://www.planx.uk/). 
 
 Digital Planning Data schemas aim to encourage more interoperability and consistency between systems by offering a central, version controlled specification for documenting and validating planning data. 
 
