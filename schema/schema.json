@@ -222,6 +222,7 @@
           "additionalProperties": false,
           "properties": {
             "govPay": {
+              "description": "GOV.UK Pay payment reference number",
               "type": "string"
             }
           },
@@ -264,7 +265,7 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Lawful Development Certificate - Proposed",
+              "const": "Lawful Development Certificate - Proposed use",
               "type": "string"
             },
             "value": {
@@ -282,11 +283,47 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Lawful Development Certificate - Existing",
+              "const": "Lawful Development Certificate - Existing use",
               "type": "string"
             },
             "value": {
               "const": "ldc.existing",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Lawful Development Certificate - Continue an existing use",
+              "type": "string"
+            },
+            "value": {
+              "const": "ldc.existing.regularise",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Lawful Development Certificate - Lawful not to comply with a condition or limitation",
+              "type": "string"
+            },
+            "value": {
+              "const": "ldc.condition",
               "type": "string"
             }
           },
@@ -1104,6 +1141,24 @@
     "FileType": {
       "$id": "#FileType",
       "anyOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Evidence for application fee exemption - disability",
+              "type": "string"
+            },
+            "value": {
+              "const": "applicant.disability.evidence",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
         {
           "additionalProperties": false,
           "properties": {
@@ -2539,6 +2594,7 @@
           "required": [
             "known"
           ],
+          "title": "Energy Performance Certificate",
           "type": "object"
         },
         "address": {
@@ -2583,6 +2639,7 @@
           "type": "object"
         },
         "localAuthorityDistrict": {
+          "description": "Current and historic UK Local Authority Districts that contain this address sourced from planning.data.gov.uk/dataset/local-authority-district",
           "items": {
             "type": "string"
           },
@@ -2618,6 +2675,7 @@
       "required": [
         "EPC",
         "address",
+        "constraints",
         "localAuthorityDistrict",
         "region",
         "titleNumber",
@@ -2806,9 +2864,11 @@
       "description": "Address information for sites with a known address sourced from Ordnance Survey AddressBase Premium",
       "properties": {
         "latitude": {
+          "description": "Latitude coordinate in EPSG:4326 (WGS84)",
           "type": "number"
         },
         "longitude": {
+          "description": "Longitude coordinate in EPSG:4326 (WGS84)",
           "type": "number"
         },
         "organisation": {
@@ -2837,15 +2897,21 @@
           "type": "string"
         },
         "uprn": {
+          "maxLength": 12,
+          "title": "Unique Property Reference Number",
           "type": "string"
         },
         "usrn": {
+          "maxLength": 8,
+          "title": "Unique Street Reference Number",
           "type": "string"
         },
         "x": {
+          "description": "Easting coordinate in British National Grid (OSGB36)",
           "type": "number"
         },
         "y": {
+          "description": "Northing coordinate in British National Grid (OSGB36)",
           "type": "number"
         }
       },
@@ -17212,9 +17278,11 @@
       "description": "Address information for sites without a known Unique Property Reference Number (UPRN)",
       "properties": {
         "latitude": {
+          "description": "Latitude coordinate in EPSG:4326 (WGS84)",
           "type": "number"
         },
         "longitude": {
+          "description": "Longitude coordinate in EPSG:4326 (WGS84)",
           "type": "number"
         },
         "source": {
@@ -17225,9 +17293,11 @@
           "type": "string"
         },
         "x": {
+          "description": "Easting coordinate in British National Grid (OSGB36)",
           "type": "number"
         },
         "y": {
+          "description": "Northing coordinate in British National Grid (OSGB36)",
           "type": "number"
         }
       },
@@ -18002,6 +18072,7 @@
           "type": "object"
         },
         "localAuthorityDistrict": {
+          "description": "Current and historic UK Local Authority Districts that contain this address sourced from planning.data.gov.uk/dataset/local-authority-district",
           "items": {
             "type": "string"
           },
@@ -18018,13 +18089,14 @@
         "address",
         "region",
         "localAuthorityDistrict",
-        "type"
+        "type",
+        "constraints"
       ],
       "type": "object"
     },
     "UKRegion": {
       "$id": "#UKRegion",
-      "description": "UK regions sourced from planning.data.gov.uk/dataset/region, where London is a proxy for the Greater London Authority (GLA) area",
+      "description": "The UK region that contains this address sourced from planning.data.gov.uk/dataset/region, where London is a proxy for the Greater London Authority (GLA) area",
       "enum": [
         "North East",
         "North West",
@@ -18619,7 +18691,7 @@
       "description": "Vehicle parking types"
     }
   },
-  "description": "The root schema for an application generated by a digital planning service",
+  "description": "The root specification for a planning application in England generated by a digital planning service",
   "properties": {
     "data": {
       "additionalProperties": false,

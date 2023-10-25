@@ -11,7 +11,7 @@ export type Property = UKProperty | LondonProperty;
 
 /**
  * @id #UKRegion
- * @description UK regions sourced from planning.data.gov.uk/dataset/region, where London is a proxy for the Greater London Authority (GLA) area
+ * @description The UK region that contains this address sourced from planning.data.gov.uk/dataset/region, where London is a proxy for the Greater London Authority (GLA) area
  */
 export type UKRegion =
   | 'North East'
@@ -31,13 +31,16 @@ export type UKRegion =
 export interface UKProperty {
   address: ProposedAddress | OSAddress;
   region: UKRegion;
+  /**
+   * @description Current and historic UK Local Authority Districts that contain this address sourced from planning.data.gov.uk/dataset/local-authority-district
+   */
   localAuthorityDistrict: string[];
   type: PropertyType;
   boundary?: {
     site: GeoJSON;
     area: Area;
   };
-  constraints?: {
+  constraints: {
     planning: PlanningConstraint[];
   };
 }
@@ -52,6 +55,9 @@ export interface LondonProperty extends UKProperty {
     known: 'Yes' | 'No';
     number?: string;
   };
+  /**
+   * @title Energy Performance Certificate
+   */
   EPC: {
     known:
       | 'Yes'
@@ -68,9 +74,21 @@ export interface LondonProperty extends UKProperty {
  */
 export interface SiteAddress {
   title: string;
+  /**
+   * @description Easting coordinate in British National Grid (OSGB36)
+   */
   x: number;
+  /**
+   * @description Northing coordinate in British National Grid (OSGB36)
+   */
   y: number;
+  /**
+   * @description Latitude coordinate in EPSG:4326 (WGS84)
+   */
   latitude: number;
+  /**
+   * @description Longitude coordinate in EPSG:4326 (WGS84)
+   */
   longitude: number;
 }
 
@@ -87,7 +105,15 @@ export interface ProposedAddress extends SiteAddress {
  * @description Address information for sites with a known address sourced from Ordnance Survey AddressBase Premium
  */
 export interface OSAddress extends SiteAddress {
+  /**
+   * @title Unique Property Reference Number
+   * @maxLength 12
+   */
   uprn: string;
+  /**
+   * @title Unique Street Reference Number
+   * @maxLength 8
+   */
   usrn: string;
   pao: string;
   street: string;

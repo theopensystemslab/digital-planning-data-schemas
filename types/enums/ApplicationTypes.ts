@@ -3,8 +3,12 @@
  */
 export const ApplicationTypes = {
   ldc: 'Lawful Development Certificate',
-  'ldc.proposed': 'Lawful Development Certificate - Proposed',
-  'ldc.existing': 'Lawful Development Certificate - Existing',
+  'ldc.proposed': 'Lawful Development Certificate - Proposed use',
+  'ldc.existing': 'Lawful Development Certificate - Existing use',
+  'ldc.existing.regularise':
+    'Lawful Development Certificate - Continue an existing use',
+  'ldc.condition':
+    'Lawful Development Certificate - Lawful not to comply with a condition or limitation',
   pa: 'Prior Approval',
   'pa.part1.classA': 'Prior Approval - Larger extension to a house',
   'pa.part1.classAA': 'Prior Approval - Adding storeys to a house',
@@ -48,7 +52,7 @@ export const ApplicationTypes = {
   'pa.part20.classZA':
     'Prior Approval - Demolish buildings and build homes in their place',
   pp: 'Planning Permission',
-  'pp.full.householder': 'Planning Permission - Full householder',
+  'pp.full.householder': 'Planning Permission - Full householder', // "Planning permission for a home"
   'pp.full.householder.retro':
-    'Planning Permission - Full householder retrospective',
+    'Planning Permission - Full householder retrospective', // "Retrospective planning permission for a home"
 };

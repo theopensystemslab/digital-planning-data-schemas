@@ -2,6 +2,8 @@
  * Values of `file.type`
  */
 export const FileTypes = {
+  'applicant.disability.evidence':
+    'Evidence for application fee exemption - disability',
   'property.drawing.elevation': 'Elevations - existing',
   'property.drawing.floorPlan': 'Floor plan - existing',
   'property.drawing.roofPlan': 'Roof plan - existing',

@@ -20,7 +20,7 @@ export interface ApplicationFee {
   calculated: number;
   payable: number;
   exemption: {
-    disability: boolean; // @todo add application.fee.exemption.disability.reason & applicant.disability.evidence (file)
+    disability: boolean; // @todo add application.fee.exemption.disability.reason
     resubmission: boolean; // @todo add application.resubmission.original.applicationReference & application.resubmission.originalReference.appeal
   };
   reduction: {
@@ -29,8 +29,10 @@ export interface ApplicationFee {
     sports: boolean;
   };
   reference?: {
-    // @todo require when payable > 0
-    govPay: string;
+    /**
+     * @description GOV.UK Pay payment reference number
+     */
+    govPay: string; // @todo require when payable > 0
   };
 }
 
