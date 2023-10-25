@@ -18008,7 +18008,7 @@
           "type": "array"
         },
         "region": {
-          "type": "string"
+          "$ref": "#/definitions/UKRegion"
         },
         "type": {
           "$ref": "#/definitions/PropertyType"
@@ -18021,6 +18021,22 @@
         "type"
       ],
       "type": "object"
+    },
+    "UKRegion": {
+      "$id": "#UKRegion",
+      "description": "UK regions sourced from planning.data.gov.uk/dataset/region, where \"London\" is a proxy for the Greater London Authority (GLA) area",
+      "enum": [
+        "North East",
+        "North West",
+        "Yorkshire and The Humber",
+        "East Midlands",
+        "West Midlands",
+        "East of England",
+        "London",
+        "South East",
+        "South West"
+      ],
+      "type": "string"
     },
     "URL": {
       "format": "uri",

@@ -10,12 +10,27 @@ import {Area, URL} from '../../utils';
 export type Property = UKProperty | LondonProperty;
 
 /**
+ * @id #UKRegion
+ * @description UK regions sourced from planning.data.gov.uk/dataset/region, where "London" is a proxy for the Greater London Authority (GLA) area
+ */
+export type UKRegion =
+  | 'North East'
+  | 'North West'
+  | 'Yorkshire and The Humber'
+  | 'East Midlands'
+  | 'West Midlands'
+  | 'East of England'
+  | 'London'
+  | 'South East'
+  | 'South West';
+
+/**
  * @id #UKProperty
  * @description Property details for sites anywhere in the UK
  */
 export interface UKProperty {
   address: ProposedAddress | OSAddress;
-  region: string;
+  region: UKRegion;
   localAuthorityDistrict: string[];
   type: PropertyType;
   boundary?: {
@@ -32,7 +47,7 @@ export interface UKProperty {
  * @description Property details for sites within the Greater London Authority (GLA) area
  */
 export interface LondonProperty extends UKProperty {
-  region: 'London';
+  region: Extract<UKRegion, 'London'>;
   titleNumber: {
     known: 'Yes' | 'No';
     number?: string;
