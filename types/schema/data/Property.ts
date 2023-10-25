@@ -11,7 +11,7 @@ export type Property = UKProperty | LondonProperty;
 
 /**
  * @id #UKRegion
- * @description UK regions sourced from planning.data.gov.uk/dataset/region, where "London" is a proxy for the Greater London Authority (GLA) area
+ * @description UK regions sourced from planning.data.gov.uk/dataset/region, where London is a proxy for the Greater London Authority (GLA) area
  */
 export type UKRegion =
   | 'North East'
