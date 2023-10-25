@@ -29,9 +29,10 @@ export interface UKProperty {
 
 /**
  * @id #LondonProperty
- * @description Property details for sites within London
+ * @description Property details for sites within the Greater London Authority (GLA) area
  */
 export interface LondonProperty extends UKProperty {
+  region: 'London';
   titleNumber: {
     known: 'Yes' | 'No';
     number?: string;

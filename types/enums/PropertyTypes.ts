@@ -1,5 +1,5 @@
 /**
- * Values of `data.property.type`
+ * Values of `data.property.type`, derived from Basic Land and Property Unit (BLPU) classification codes
  */
 export const PropertyTypes = {
   commercial: 'Commercial',

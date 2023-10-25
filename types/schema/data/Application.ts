@@ -8,18 +8,7 @@ import {Date} from '../../utils';
 export interface Application {
   type: ApplicationType;
   fee: ApplicationFee;
-  declaration: {
-    accurate: boolean;
-    connection: {
-      value:
-        | 'employee'
-        | 'relation.employee'
-        | 'electedMember'
-        | 'relation.electedMember'
-        | 'none';
-      description?: string;
-    };
-  };
+  declaration: ApplicationDeclaration;
   preApp?: PreApplication;
 }
 
@@ -42,6 +31,23 @@ export interface ApplicationFee {
   reference?: {
     // @todo require when payable > 0
     govPay: string;
+  };
+}
+
+/**
+ * @id #ApplicationDeclaration
+ * @description Declarations about the accuracy of this application and any personal connections to the receiving authority
+ */
+export interface ApplicationDeclaration {
+  accurate: boolean;
+  connection: {
+    value:
+      | 'employee'
+      | 'relation.employee'
+      | 'electedMember'
+      | 'relation.electedMember'
+      | 'none';
+    description?: string;
   };
 }
 
