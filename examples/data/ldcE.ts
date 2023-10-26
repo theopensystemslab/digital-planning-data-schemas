@@ -5,7 +5,7 @@ export const validLDCE: Schema = {
     application: {
       type: {
         value: 'ldc.existing',
-        description: 'Lawful Development Certificate - Existing',
+        description: 'Lawful Development Certificate - Existing use',
       },
       fee: {
         calculated: 206,
