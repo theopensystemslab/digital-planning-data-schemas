@@ -32,16 +32,13 @@ export const validLDCP: Schema = {
     },
     applicant: {
       type: 'individual',
-      contact: {
-        name: {
-          first: 'Enid',
-          last: 'Blyton',
-        },
-        email: 'famousfive@example.com',
-        phone: {
-          primary: '05555 555 555',
-        },
-        company: {},
+      name: {
+        first: 'Enid',
+        last: 'Blyton',
+      },
+      email: 'famousfive@example.com',
+      phone: {
+        primary: '05555 555 555',
       },
       address: {
         sameAsSiteAddress: true,

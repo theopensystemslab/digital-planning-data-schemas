@@ -3,10 +3,10 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "additionalProperties": false,
   "definitions": {
-    "AddressInput": {
-      "$id": "#AddressInput",
+    "Address": {
+      "$id": "#Address",
       "additionalProperties": false,
-      "description": "Address information for a personal contact not necessarily associated with the site",
+      "description": "Address information for a person associated with this application not at the property address",
       "properties": {
         "country": {
           "type": "string"
@@ -37,7 +37,7 @@
     "Agent": {
       "$id": "#Agent",
       "additionalProperties": false,
-      "description": "Information about the user who completed the application on behalf of someone else",
+      "description": "Information about the agent or proxy who completed the application on behalf of someone else",
       "properties": {
         "address": {
           "$ref": "#/definitions/UserAddress"
@@ -46,20 +46,77 @@
           "additionalProperties": false,
           "properties": {
             "address": {
-              "$ref": "#/definitions/AddressInput"
+              "$ref": "#/definitions/Address"
             },
-            "contact": {
-              "$ref": "#/definitions/UserContact"
+            "company": {
+              "additionalProperties": false,
+              "properties": {
+                "name": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name"
+              ],
+              "type": "object"
+            },
+            "email": {
+              "$ref": "#/definitions/Email"
+            },
+            "name": {
+              "additionalProperties": false,
+              "properties": {
+                "first": {
+                  "type": "string"
+                },
+                "last": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "first",
+                "last"
+              ],
+              "type": "object"
+            },
+            "phone": {
+              "additionalProperties": false,
+              "properties": {
+                "primary": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "primary"
+              ],
+              "type": "object"
             }
           },
           "required": [
-            "contact",
+            "name",
+            "email",
+            "phone",
             "address"
           ],
           "type": "object"
         },
-        "contact": {
-          "$ref": "#/definitions/UserContact"
+        "company": {
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "name"
+          ],
+          "type": "object"
+        },
+        "email": {
+          "$ref": "#/definitions/Email"
         },
         "interest": {
           "enum": [
@@ -71,8 +128,39 @@
           ],
           "type": "string"
         },
+        "name": {
+          "additionalProperties": false,
+          "properties": {
+            "first": {
+              "type": "string"
+            },
+            "last": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "first",
+            "last"
+          ],
+          "type": "object"
+        },
         "ownership": {
           "$ref": "#/definitions/Ownership"
+        },
+        "phone": {
+          "additionalProperties": false,
+          "properties": {
+            "primary": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "primary"
+          ],
+          "type": "object"
         },
         "siteContact": {
           "$ref": "#/definitions/SiteContact"
@@ -91,7 +179,9 @@
       "required": [
         "address",
         "agent",
-        "contact",
+        "email",
+        "name",
+        "phone",
         "siteContact",
         "type"
       ],
@@ -921,8 +1011,20 @@
         "address": {
           "$ref": "#/definitions/UserAddress"
         },
-        "contact": {
-          "$ref": "#/definitions/UserContact"
+        "company": {
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "name"
+          ],
+          "type": "object"
+        },
+        "email": {
+          "$ref": "#/definitions/Email"
         },
         "interest": {
           "enum": [
@@ -934,8 +1036,39 @@
           ],
           "type": "string"
         },
+        "name": {
+          "additionalProperties": false,
+          "properties": {
+            "first": {
+              "type": "string"
+            },
+            "last": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "first",
+            "last"
+          ],
+          "type": "object"
+        },
         "ownership": {
           "$ref": "#/definitions/Ownership"
+        },
+        "phone": {
+          "additionalProperties": false,
+          "properties": {
+            "primary": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "primary"
+          ],
+          "type": "object"
         },
         "siteContact": {
           "$ref": "#/definitions/SiteContact"
@@ -953,7 +1086,9 @@
       },
       "required": [
         "type",
-        "contact",
+        "name",
+        "email",
+        "phone",
         "address",
         "siteContact"
       ],
@@ -2935,7 +3070,7 @@
     "Ownership": {
       "$id": "#Ownership",
       "additionalProperties": false,
-      "description": "Information about the ownership certificate and owners, if different than the applicant",
+      "description": "Information about the ownership certificate and property owners, if different than the applicant",
       "properties": {
         "certificate": {
           "enum": [
@@ -2956,7 +3091,7 @@
               "address": {
                 "anyOf": [
                   {
-                    "$ref": "#/definitions/AddressInput"
+                    "$ref": "#/definitions/Address"
                   },
                   {
                     "type": "string"
@@ -18163,7 +18298,7 @@
     "UserAddressNotSameSite": {
       "$id": "#UserAddressNotSameSite",
       "additionalProperties": false,
-      "description": "Address information for an applicant with contact information that differs from the site address",
+      "description": "Address information for an applicant with contact information that differs from the property address",
       "properties": {
         "country": {
           "type": "string"
@@ -18193,62 +18328,6 @@
         "postcode",
         "sameAsSiteAddress",
         "town"
-      ],
-      "type": "object"
-    },
-    "UserContact": {
-      "$id": "#UserContact",
-      "additionalProperties": false,
-      "description": "Contact information for any user",
-      "properties": {
-        "company": {
-          "additionalProperties": false,
-          "properties": {
-            "name": {
-              "type": "string"
-            }
-          },
-          "type": "object"
-        },
-        "email": {
-          "$ref": "#/definitions/Email"
-        },
-        "name": {
-          "additionalProperties": false,
-          "properties": {
-            "first": {
-              "type": "string"
-            },
-            "last": {
-              "type": "string"
-            },
-            "title": {
-              "type": "string"
-            }
-          },
-          "required": [
-            "first",
-            "last"
-          ],
-          "type": "object"
-        },
-        "phone": {
-          "additionalProperties": false,
-          "properties": {
-            "primary": {
-              "type": "string"
-            }
-          },
-          "required": [
-            "primary"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "name",
-        "email",
-        "phone"
       ],
       "type": "object"
     },

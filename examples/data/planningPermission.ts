@@ -35,16 +35,13 @@ export const validPlanningPermission: Schema = {
     },
     applicant: {
       type: 'individual',
-      contact: {
-        name: {
-          first: 'David',
-          last: 'Bowie',
-        },
-        email: 'ziggy@example.com',
-        phone: {
-          primary: 'Not provided by agent',
-        },
-        company: {},
+      name: {
+        first: 'David',
+        last: 'Bowie',
+      },
+      email: 'ziggy@example.com',
+      phone: {
+        primary: 'Not provided by agent',
       },
       address: {
         sameAsSiteAddress: true,
@@ -57,16 +54,13 @@ export const validPlanningPermission: Schema = {
         certificate: 'a',
       },
       agent: {
-        contact: {
-          name: {
-            first: 'Ziggy',
-            last: 'Stardust',
-          },
-          email: 'ziggy@example.com',
-          phone: {
-            primary: '01100 0110 0011',
-          },
-          company: {},
+        name: {
+          first: 'Ziggy',
+          last: 'Stardust',
+        },
+        email: 'ziggy@example.com',
+        phone: {
+          primary: '01100 0110 0011',
         },
         address: {
           line1: '40 Stansfield Road',

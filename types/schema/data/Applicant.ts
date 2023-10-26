@@ -13,43 +13,6 @@ export type Applicant = BaseApplicant | Agent;
  */
 export interface BaseApplicant {
   type: 'individual' | 'company' | 'charity' | 'public' | 'parishCouncil';
-  interest?: 'owner.sole' | 'owner.co' | 'tenant' | 'occupier' | 'other';
-  ownership?: Ownership;
-  contact: UserContact;
-  address: UserAddress;
-  siteContact: SiteContact;
-}
-
-/**
- * @id #Ownership
- * @description Information about the ownership certificate and owners, if different than the applicant
- */
-export interface Ownership {
-  certificate: 'a' | 'b' | 'c' | 'd';
-  noticeGiven?: boolean;
-  owners?: {
-    name: string;
-    address: AddressInput | string;
-    noticeDate?: Date;
-  }[];
-}
-
-/**
- * @id #Agent
- * @description Information about the user who completed the application on behalf of someone else
- */
-export interface Agent extends BaseApplicant {
-  agent: {
-    contact: UserContact;
-    address: AddressInput;
-  };
-}
-
-/**
- * @id #UserContact
- * @description Contact information for any user
- */
-export interface UserContact {
   name: {
     title?: string;
     first: string;
@@ -60,15 +23,55 @@ export interface UserContact {
     primary: string; // @todo only require for BaseApplicant OR Agent, not both
   };
   company?: {
-    name?: string;
+    name: string;
+  };
+  address: UserAddress;
+  interest?: 'owner.sole' | 'owner.co' | 'tenant' | 'occupier' | 'other';
+  ownership?: Ownership;
+  siteContact: SiteContact;
+}
+
+/**
+ * @id #Ownership
+ * @description Information about the ownership certificate and property owners, if different than the applicant
+ */
+export interface Ownership {
+  certificate: 'a' | 'b' | 'c' | 'd';
+  noticeGiven?: boolean;
+  owners?: {
+    name: string;
+    address: Address | string;
+    noticeDate?: Date;
+  }[];
+}
+
+/**
+ * @id #Agent
+ * @description Information about the agent or proxy who completed the application on behalf of someone else
+ */
+export interface Agent extends BaseApplicant {
+  agent: {
+    name: {
+      title?: string;
+      first: string;
+      last: string;
+    };
+    email: Email;
+    phone: {
+      primary: string;
+    };
+    company?: {
+      name: string;
+    };
+    address: Address;
   };
 }
 
 /**
- * @id #AddressInput
- * @description Address information for a personal contact not necessarily associated with the site
+ * @id #Address
+ * @description Address information for a person associated with this application not at the property address
  */
-export interface AddressInput {
+export interface Address {
   line1: string;
   line2?: string;
   town: string;
@@ -85,9 +88,9 @@ export type UserAddress = {sameAsSiteAddress: true} | UserAddressNotSameSite;
 
 /**
  * @id #UserAddressNotSameSite
- * @description Address information for an applicant with contact information that differs from the site address
+ * @description Address information for an applicant with contact information that differs from the property address
  */
-export interface UserAddressNotSameSite extends AddressInput {
+export interface UserAddressNotSameSite extends Address {
   sameAsSiteAddress: false;
 }
 

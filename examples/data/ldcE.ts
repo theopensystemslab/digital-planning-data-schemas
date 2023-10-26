@@ -35,16 +35,13 @@ export const validLDCE: Schema = {
     },
     applicant: {
       type: 'individual',
-      contact: {
-        name: {
-          first: 'Roald',
-          last: 'Dahl',
-        },
-        email: 'f.fox@boggischickenshed.com',
-        phone: {
-          primary: 'Not provided by agent',
-        },
-        company: {},
+      name: {
+        first: 'Roald',
+        last: 'Dahl',
+      },
+      email: 'f.fox@boggischickenshed.com',
+      phone: {
+        primary: 'Not provided by agent',
       },
       address: {
         sameAsSiteAddress: true,
@@ -72,16 +69,13 @@ export const validLDCE: Schema = {
         ],
       },
       agent: {
-        contact: {
-          name: {
-            first: 'F',
-            last: 'Fox',
-          },
-          email: 'f.fox@boggischickenshed.com',
-          phone: {
-            primary: '0234 567 8910',
-          },
-          company: {},
+        name: {
+          first: 'F',
+          last: 'Fox',
+        },
+        email: 'f.fox@boggischickenshed.com',
+        phone: {
+          primary: '0234 567 8910',
         },
         address: {
           line1: 'The Tree',
