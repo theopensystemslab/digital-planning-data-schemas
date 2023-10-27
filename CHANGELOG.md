@@ -9,6 +9,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 The minor version will be incremented upon a breaking change and the patch version will be
 incremented for features.
 
+## [0.1.2] - 2023-10-27
+
+### Changed
+- Updated GeoJSON type definition to use NPM's `@types/geojson` ([#59](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/59))
+- Adjusted shape of `data.applicant` & `data.applicant.agent` contact details ([#62](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/62))
+- Improved annotations and documentation throughout ([#60](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/60), [#61](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/61))
+
 ## [0.1.1] - 2023-10-17
 
 ### Changed
