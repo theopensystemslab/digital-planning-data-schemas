@@ -37,18 +37,16 @@ export const validPriorApproval: Schema = {
     },
     applicant: {
       type: 'company',
-      contact: {
-        name: {
-          first: 'William',
-          last: 'Shakespeare',
-        },
-        email: 'thebard@example.com',
-        phone: {
-          primary: '2830407283',
-        },
-        company: {
-          name: "Lord Chamberlain's Men",
-        },
+      name: {
+        first: 'William',
+        last: 'Shakespeare',
+      },
+      email: 'thebard@example.com',
+      phone: {
+        primary: '2830407283',
+      },
+      company: {
+        name: "Lord Chamberlain's Men",
       },
       address: {
         sameAsSiteAddress: true,

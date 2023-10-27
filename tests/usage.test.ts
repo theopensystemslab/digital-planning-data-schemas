@@ -43,7 +43,7 @@ describe("parsing using the 'ajv' library", () => {
   examplesToTest.forEach(example => {
     test(`accepts a valid example: ${example.data.application.type.description}`, () => {
       // addFormats() is required for types UUID, email, datetime etc
-      const ajv = addFormats(new Ajv());
+      const ajv = addFormats(new Ajv({allowUnionTypes: true}));
       const validate = ajv.compile(generatedSchema);
       const isValid = validate(example);
 
