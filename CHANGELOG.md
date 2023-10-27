@@ -12,7 +12,7 @@ incremented for features.
 ## [0.1.2] - 2023-10-27
 
 ### Changed
-- Updated GeoJSON type to directly reference https://www.npmjs.com/package/@types/geojson ([#59](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/59))
+- Updated GeoJSON type definition to use NPM's `@types/geojson` ([#59](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/59))
 - Adjusted shape of `data.applicant` & `data.applicant.agent` contact details ([#62](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/62))
 - Improved annotations and documentation throughout ([#60](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/60), [#61](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/61))
 
