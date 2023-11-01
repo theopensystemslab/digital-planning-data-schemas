@@ -161,12 +161,18 @@ type PlanningConstraintMap = {
 type BasePlanningConstraint =
   PlanningConstraintMap[keyof PlanningConstraintMap];
 
-type NonOverlappingPlanningConstraint = {
-  overlaps: false;
+/**
+ * @description A planning constraint that does not intersect with the proposed site, per the DE-9IM spatial relationship definition of intersects or manually answered by the user
+ */
+type NonIntersectingPlanningConstraint = {
+  intersects: false;
 } & BasePlanningConstraint;
 
-type OverlappingPlanningConstraint = {
-  overlaps: true;
+/**
+ * @description A planning constraint that does intersect with the proposed site, per the DE-9IM spatial relationship definition of intersects or manually answered by the user
+ */
+type IntersectingPlanningConstraint = {
+  intersects: true;
   entities:
     | {
         name: string;
@@ -178,8 +184,8 @@ type OverlappingPlanningConstraint = {
 
 /**
  * @id #PlanningConstraint
- * @description Planning constraints that overlap with the property site boundary determined by spatial queries against Planning Data (planning.data.gov.uk) and Ordnance Survey
+ * @description Planning constraints that intersect with the proposed site determined by spatial queries against Planning Data (planning.data.gov.uk) and Ordnance Survey
  */
 export type PlanningConstraint =
-  | NonOverlappingPlanningConstraint
-  | OverlappingPlanningConstraint;
+  | NonIntersectingPlanningConstraint
+  | IntersectingPlanningConstraint;
