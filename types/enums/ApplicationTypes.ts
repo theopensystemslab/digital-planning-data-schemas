@@ -41,6 +41,8 @@ export const ApplicationTypes = {
   'pa.part11.classB': 'Prior Approval - Demolish a building',
   'pa.part14.classJ': 'Prior Approval - Install or change solar panels',
   'pa.part16.classA': 'Prior Approval - Install telecommunications equipment',
+  'pa.part18.classA':
+    'Prior Approval - Specific Acts of Parliament or Local Orders',
   'pa.part20.classA':
     'Prior Approval - Build homes on a detached blocks of flats',
   'pa.part20.classAA':
