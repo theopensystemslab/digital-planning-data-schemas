@@ -805,6 +805,24 @@
           "additionalProperties": false,
           "properties": {
             "description": {
+              "const": "Prior Approval - Specific Acts of Parliament or Local Orders",
+              "type": "string"
+            },
+            "value": {
+              "const": "pa.part18.classA",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
               "const": "Prior Approval - Build homes on a detached blocks of flats",
               "type": "string"
             },
