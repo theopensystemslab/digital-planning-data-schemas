@@ -1,14 +1,14 @@
 import {DateTime, URL, UUID} from './../utils';
 
-/**
- * @id #DigitalPlanningMetadata
- * @description Details of the digital planning service which sent the application
- */
 export interface Metadata {
+  /**
+   * @id #DigitalPlanningMetadata
+   * @description Details of the digital planning service which sent the application
+   */
   service: {
-    flowId: UUID;
+    flowId: UUID | string; // @todo temp fix for failing UUID validation, sort out and tighten
     name: string;
-    organisation: string;
+    owner: string;
     url: URL;
   };
   session: {
@@ -16,7 +16,7 @@ export interface Metadata {
      * @default PlanX
      */
     source: 'PlanX';
-    id: UUID;
+    id: UUID | string;
     createdAt: DateTime;
     submittedAt?: DateTime;
   };

@@ -1,4 +1,4 @@
-import { URL } from './../utils';
+import {URL} from './../utils';
 
 /**
  * @id #Responses
