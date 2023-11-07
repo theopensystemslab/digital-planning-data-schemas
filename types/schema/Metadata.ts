@@ -1,26 +1,37 @@
 import {DateTime, URL, UUID} from './../utils';
 
-export interface Metadata {
+/**
+ * @id #DigitalPlanningMetadata
+ * @description Details of the digital planning service which sent this application
+ */
+export type Metadata = BaseMetadata | PlanxMetadata;
+
+/**
+ * @id #BaseMetadata
+ * @description Minimum metadata expected for any application
+ */
+export interface BaseMetadata {
   /**
-   * @id #DigitalPlanningMetadata
-   * @description Details of the digital planning service which sent the application
+   * @default PlanX
    */
+  source: 'PlanX';
+  organisation: string; // @todo align to DLUHC Planning Application API curie
+  /**
+   * @description Unique identifier for this application
+   */
+  id: UUID; // @todo align to DLUHC Planning Application API reference
+  createdAt: DateTime;
+  schema: URL;
+}
+
+/**
+ * @id #PlanxMetadata
+ * @description Additional metadata associated with applications submitted via PlanX
+ */
+export interface PlanxMetadata extends BaseMetadata {
   service: {
-    flowId: UUID | string; // @todo temp fix for failing UUID validation, sort out and tighten
-    name: string;
-    owner: string;
+    flowId: UUID;
     url: URL;
   };
-  session: {
-    /**
-     * @default PlanX
-     */
-    source: 'PlanX';
-    id: UUID | string;
-    createdAt: DateTime;
-    submittedAt?: DateTime;
-  };
-  schema: {
-    url: URL;
-  };
+  submittedAt?: DateTime;
 }

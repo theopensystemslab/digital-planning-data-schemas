@@ -1157,6 +1157,39 @@
       },
       "type": "object"
     },
+    "BaseMetadata": {
+      "$id": "#BaseMetadata",
+      "additionalProperties": false,
+      "description": "Minimum metadata expected for any application",
+      "properties": {
+        "createdAt": {
+          "$ref": "#/definitions/DateTime"
+        },
+        "id": {
+          "$ref": "#/definitions/UUID",
+          "description": "Unique identifier for this application"
+        },
+        "organisation": {
+          "type": "string"
+        },
+        "schema": {
+          "$ref": "#/definitions/URL"
+        },
+        "source": {
+          "const": "PlanX",
+          "default": "PlanX",
+          "type": "string"
+        }
+      },
+      "required": [
+        "source",
+        "organisation",
+        "id",
+        "createdAt",
+        "schema"
+      ],
+      "type": "object"
+    },
     "Date": {
       "format": "date",
       "type": "string"
@@ -2837,92 +2870,16 @@
       "type": "object"
     },
     "Metadata": {
-      "additionalProperties": false,
-      "properties": {
-        "schema": {
-          "additionalProperties": false,
-          "properties": {
-            "url": {
-              "$ref": "#/definitions/URL"
-            }
-          },
-          "required": [
-            "url"
-          ],
-          "type": "object"
+      "$id": "#DigitalPlanningMetadata",
+      "anyOf": [
+        {
+          "$ref": "#/definitions/BaseMetadata"
         },
-        "service": {
-          "$id": "#DigitalPlanningMetadata",
-          "additionalProperties": false,
-          "description": "Details of the digital planning service which sent the application",
-          "properties": {
-            "flowId": {
-              "anyOf": [
-                {
-                  "$ref": "#/definitions/UUID"
-                },
-                {
-                  "type": "string"
-                }
-              ]
-            },
-            "name": {
-              "type": "string"
-            },
-            "owner": {
-              "type": "string"
-            },
-            "url": {
-              "$ref": "#/definitions/URL"
-            }
-          },
-          "required": [
-            "flowId",
-            "name",
-            "owner",
-            "url"
-          ],
-          "type": "object"
-        },
-        "session": {
-          "additionalProperties": false,
-          "properties": {
-            "createdAt": {
-              "$ref": "#/definitions/DateTime"
-            },
-            "id": {
-              "anyOf": [
-                {
-                  "$ref": "#/definitions/UUID"
-                },
-                {
-                  "type": "string"
-                }
-              ]
-            },
-            "source": {
-              "const": "PlanX",
-              "default": "PlanX",
-              "type": "string"
-            },
-            "submittedAt": {
-              "$ref": "#/definitions/DateTime"
-            }
-          },
-          "required": [
-            "source",
-            "id",
-            "createdAt"
-          ],
-          "type": "object"
+        {
+          "$ref": "#/definitions/PlanxMetadata"
         }
-      },
-      "required": [
-        "service",
-        "session",
-        "schema"
       ],
-      "type": "object"
+      "description": "Details of the digital planning service which sent this application"
     },
     "MultiLineString": {
       "additionalProperties": false,
@@ -5276,6 +5233,59 @@
         }
       ],
       "description": "Planning constraints that overlap with the property site boundary determined by spatial queries against Planning Data (planning.data.gov.uk) and Ordnance Survey"
+    },
+    "PlanxMetadata": {
+      "$id": "#PlanxMetadata",
+      "additionalProperties": false,
+      "description": "Additional metadata associated with applications submitted via PlanX",
+      "properties": {
+        "createdAt": {
+          "$ref": "#/definitions/DateTime"
+        },
+        "id": {
+          "$ref": "#/definitions/UUID",
+          "description": "Unique identifier for this application"
+        },
+        "organisation": {
+          "type": "string"
+        },
+        "schema": {
+          "$ref": "#/definitions/URL"
+        },
+        "service": {
+          "additionalProperties": false,
+          "properties": {
+            "flowId": {
+              "$ref": "#/definitions/UUID"
+            },
+            "url": {
+              "$ref": "#/definitions/URL"
+            }
+          },
+          "required": [
+            "flowId",
+            "url"
+          ],
+          "type": "object"
+        },
+        "source": {
+          "const": "PlanX",
+          "default": "PlanX",
+          "type": "string"
+        },
+        "submittedAt": {
+          "$ref": "#/definitions/DateTime"
+        }
+      },
+      "required": [
+        "createdAt",
+        "id",
+        "organisation",
+        "schema",
+        "service",
+        "source"
+      ],
+      "type": "object"
     },
     "Point": {
       "additionalProperties": false,
