@@ -2857,14 +2857,7 @@
           "description": "Details of the digital planning service which sent the application",
           "properties": {
             "flowId": {
-              "anyOf": [
-                {
-                  "$ref": "#/definitions/UUID"
-                },
-                {
-                  "type": "string"
-                }
-              ]
+              "$ref": "#/definitions/UUID"
             },
             "name": {
               "type": "string"
@@ -2891,14 +2884,7 @@
               "$ref": "#/definitions/DateTime"
             },
             "id": {
-              "anyOf": [
-                {
-                  "$ref": "#/definitions/UUID"
-                },
-                {
-                  "type": "string"
-                }
-              ]
+              "$ref": "#/definitions/UUID"
             },
             "source": {
               "const": "PlanX",
@@ -17507,9 +17493,12 @@
                 "type": "string"
               },
               "url": {
-                "type": "string"
+                "$ref": "#/definitions/URL"
               }
             },
+            "required": [
+              "text"
+            ],
             "type": "object"
           },
           "type": "array"
