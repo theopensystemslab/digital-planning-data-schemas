@@ -805,6 +805,24 @@
           "additionalProperties": false,
           "properties": {
             "description": {
+              "const": "Prior Approval - Specific Acts of Parliament or Local Orders",
+              "type": "string"
+            },
+            "value": {
+              "const": "pa.part18.classA",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
               "const": "Prior Approval - Build homes on a detached blocks of flats",
               "type": "string"
             },
@@ -2839,14 +2857,7 @@
           "description": "Details of the digital planning service which sent the application",
           "properties": {
             "flowId": {
-              "anyOf": [
-                {
-                  "$ref": "#/definitions/UUID"
-                },
-                {
-                  "type": "string"
-                }
-              ]
+              "$ref": "#/definitions/UUID"
             },
             "name": {
               "type": "string"
@@ -2873,14 +2884,7 @@
               "$ref": "#/definitions/DateTime"
             },
             "id": {
-              "anyOf": [
-                {
-                  "$ref": "#/definitions/UUID"
-                },
-                {
-                  "type": "string"
-                }
-              ]
+              "$ref": "#/definitions/UUID"
             },
             "source": {
               "const": "PlanX",
@@ -5353,6 +5357,14 @@
         "summary"
       ],
       "type": "object"
+    },
+    "PreAssessment": {
+      "$id": "#PreAssessment",
+      "description": "The result of the application based on information provided by the applicant, prior to assessment by a planning officer. Results are determined by flags corresponding to responses; each application can have up to one result per flagset",
+      "items": {
+        "$ref": "#/definitions/ResultFlag"
+      },
+      "type": "array"
     },
     "ProjectType": {
       "$id": "#ProjectType",
@@ -17499,9 +17511,12 @@
                 "type": "string"
               },
               "url": {
-                "type": "string"
+                "$ref": "#/definitions/URL"
               }
             },
+            "required": [
+              "text"
+            ],
             "type": "object"
           },
           "type": "array"
@@ -17560,14 +17575,6 @@
       "description": "The ordered list of questions, answers, and their metadata for the application",
       "items": {
         "$ref": "#/definitions/QuestionAndResponses"
-      },
-      "type": "array"
-    },
-    "Result": {
-      "$id": "#Result",
-      "description": "The result of the application. Results are determined by flags corresponding to responses; each application can have up to one result per flagset",
-      "items": {
-        "$ref": "#/definitions/ResultFlag"
       },
       "type": "array"
     },
@@ -18819,19 +18826,18 @@
     "metadata": {
       "$ref": "#/definitions/Metadata"
     },
+    "preAssessment": {
+      "$ref": "#/definitions/PreAssessment"
+    },
     "responses": {
       "$ref": "#/definitions/Responses"
-    },
-    "result": {
-      "$ref": "#/definitions/Result"
     }
   },
   "required": [
     "data",
-    "result",
-    "metadata",
     "responses",
-    "files"
+    "files",
+    "metadata"
   ],
   "title": "Digital Planning Application",
   "type": "object"

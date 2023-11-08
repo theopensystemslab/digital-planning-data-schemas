@@ -322,7 +322,7 @@ export const validLDCE: Schema = {
       date: {},
     },
   },
-  result: [
+  preAssessment: [
     {
       value: 'Planning permission / Immune',
       description:

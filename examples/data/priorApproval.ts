@@ -263,7 +263,7 @@ export const validPriorApproval: Schema = {
       },
     },
   },
-  result: [
+  preAssessment: [
     {
       value: 'Planning permission / Prior approval',
       description:

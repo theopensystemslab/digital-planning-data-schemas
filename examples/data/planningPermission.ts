@@ -405,7 +405,7 @@ export const validPlanningPermission: Schema = {
       },
     },
   },
-  result: [],
+  preAssessment: [],
   responses: [
     {
       question: 'Is the property in Lambeth?',
