@@ -1,12 +1,12 @@
-import {Result} from './schema/Result';
+import {File} from './schema/File';
 import {Metadata} from './schema/Metadata';
+import {PreAssessment} from './schema/PreAssessment';
 import {Responses} from './schema/Responses';
 import {Applicant} from './schema/data/Applicant';
 import {Application} from './schema/data/Application';
 import {Property} from './schema/data/Property';
 import {Proposal} from './schema/data/Proposal';
 import {User} from './schema/data/User';
-import {File} from './schema/File';
 
 /**
  * @title Digital Planning Application
@@ -20,8 +20,8 @@ export interface Schema {
     property: Property;
     proposal: Proposal;
   };
-  result: Result;
-  metadata: Metadata;
+  preAssessment?: PreAssessment;
   responses: Responses;
   files: File[];
+  metadata: Metadata;
 }

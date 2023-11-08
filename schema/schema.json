@@ -5372,6 +5372,14 @@
       ],
       "type": "object"
     },
+    "PreAssessment": {
+      "$id": "#PreAssessment",
+      "description": "The result of the application based on information provided by the applicant, prior to assessment by a planning officer. Results are determined by flags corresponding to responses; each application can have up to one result per flagset",
+      "items": {
+        "$ref": "#/definitions/ResultFlag"
+      },
+      "type": "array"
+    },
     "ProjectType": {
       "$id": "#ProjectType",
       "anyOf": [
@@ -17517,9 +17525,12 @@
                 "type": "string"
               },
               "url": {
-                "type": "string"
+                "$ref": "#/definitions/URL"
               }
             },
+            "required": [
+              "text"
+            ],
             "type": "object"
           },
           "type": "array"
@@ -17578,14 +17589,6 @@
       "description": "The ordered list of questions, answers, and their metadata for the application",
       "items": {
         "$ref": "#/definitions/QuestionAndResponses"
-      },
-      "type": "array"
-    },
-    "Result": {
-      "$id": "#Result",
-      "description": "The result of the application. Results are determined by flags corresponding to responses; each application can have up to one result per flagset",
-      "items": {
-        "$ref": "#/definitions/ResultFlag"
       },
       "type": "array"
     },
@@ -18837,19 +18840,18 @@
     "metadata": {
       "$ref": "#/definitions/Metadata"
     },
+    "preAssessment": {
+      "$ref": "#/definitions/PreAssessment"
+    },
     "responses": {
       "$ref": "#/definitions/Responses"
-    },
-    "result": {
-      "$ref": "#/definitions/Result"
     }
   },
   "required": [
     "data",
-    "result",
-    "metadata",
     "responses",
-    "files"
+    "files",
+    "metadata"
   ],
   "title": "Digital Planning Application",
   "type": "object"

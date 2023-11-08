@@ -242,7 +242,7 @@ export const validLDCP: Schema = {
       },
     },
   },
-  result: [
+  preAssessment: [
     {
       value: 'Planning permission / Permitted development',
       description:
