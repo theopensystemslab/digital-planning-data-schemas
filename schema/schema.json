@@ -1157,6 +1157,34 @@
       },
       "type": "object"
     },
+    "BaseMetadata": {
+      "$id": "#BaseMetadata",
+      "additionalProperties": false,
+      "description": "Minimum metadata expected for any application",
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/UUID",
+          "description": "Unique identifier for this application"
+        },
+        "organisation": {
+          "description": "UK Local Authority that this application is being submitted to",
+          "type": "string"
+        },
+        "schema": {
+          "$ref": "#/definitions/URL"
+        },
+        "submittedAt": {
+          "$ref": "#/definitions/DateTime"
+        }
+      },
+      "required": [
+        "organisation",
+        "id",
+        "submittedAt",
+        "schema"
+      ],
+      "type": "object"
+    },
     "Date": {
       "format": "date",
       "type": "string"
@@ -2837,78 +2865,16 @@
       "type": "object"
     },
     "Metadata": {
-      "additionalProperties": false,
-      "properties": {
-        "schema": {
-          "additionalProperties": false,
-          "properties": {
-            "url": {
-              "$ref": "#/definitions/URL"
-            }
-          },
-          "required": [
-            "url"
-          ],
-          "type": "object"
+      "$id": "#DigitalPlanningMetadata",
+      "anyOf": [
+        {
+          "$ref": "#/definitions/BaseMetadata"
         },
-        "service": {
-          "$id": "#DigitalPlanningMetadata",
-          "additionalProperties": false,
-          "description": "Details of the digital planning service which sent the application",
-          "properties": {
-            "flowId": {
-              "$ref": "#/definitions/UUID"
-            },
-            "name": {
-              "type": "string"
-            },
-            "owner": {
-              "type": "string"
-            },
-            "url": {
-              "$ref": "#/definitions/URL"
-            }
-          },
-          "required": [
-            "flowId",
-            "name",
-            "owner",
-            "url"
-          ],
-          "type": "object"
-        },
-        "session": {
-          "additionalProperties": false,
-          "properties": {
-            "createdAt": {
-              "$ref": "#/definitions/DateTime"
-            },
-            "id": {
-              "$ref": "#/definitions/UUID"
-            },
-            "source": {
-              "const": "PlanX",
-              "default": "PlanX",
-              "type": "string"
-            },
-            "submittedAt": {
-              "$ref": "#/definitions/DateTime"
-            }
-          },
-          "required": [
-            "source",
-            "id",
-            "createdAt"
-          ],
-          "type": "object"
+        {
+          "$ref": "#/definitions/PlanXMetadata"
         }
-      },
-      "required": [
-        "service",
-        "session",
-        "schema"
       ],
-      "type": "object"
+      "description": "Details of the digital planning service which sent this application"
     },
     "MultiLineString": {
       "additionalProperties": false,
@@ -3120,6 +3086,56 @@
       },
       "required": [
         "certificate"
+      ],
+      "type": "object"
+    },
+    "PlanXMetadata": {
+      "$id": "#PlanXMetadata",
+      "additionalProperties": false,
+      "description": "Additional metadata associated with applications submitted via PlanX",
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/UUID",
+          "description": "Unique identifier for this application"
+        },
+        "organisation": {
+          "description": "UK Local Authority that this application is being submitted to",
+          "type": "string"
+        },
+        "schema": {
+          "$ref": "#/definitions/URL"
+        },
+        "service": {
+          "additionalProperties": false,
+          "properties": {
+            "flowId": {
+              "$ref": "#/definitions/UUID"
+            },
+            "url": {
+              "$ref": "#/definitions/URL"
+            }
+          },
+          "required": [
+            "flowId",
+            "url"
+          ],
+          "type": "object"
+        },
+        "source": {
+          "const": "PlanX",
+          "type": "string"
+        },
+        "submittedAt": {
+          "$ref": "#/definitions/DateTime"
+        }
+      },
+      "required": [
+        "id",
+        "organisation",
+        "schema",
+        "service",
+        "source",
+        "submittedAt"
       ],
       "type": "object"
     },
