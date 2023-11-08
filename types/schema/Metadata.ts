@@ -4,7 +4,7 @@ import {DateTime, URL, UUID} from './../utils';
  * @id #DigitalPlanningMetadata
  * @description Details of the digital planning service which sent this application
  */
-export type Metadata = BaseMetadata | PlanxMetadata;
+export type Metadata = BaseMetadata | PlanXMetadata;
 
 /**
  * @id #BaseMetadata
@@ -12,26 +12,25 @@ export type Metadata = BaseMetadata | PlanxMetadata;
  */
 export interface BaseMetadata {
   /**
-   * @default PlanX
+   * @description UK Local Authority that this application is being submitted to
    */
-  source: 'PlanX';
   organisation: string; // @todo align to DLUHC Planning Application API curie
   /**
    * @description Unique identifier for this application
    */
   id: UUID; // @todo align to DLUHC Planning Application API reference
-  createdAt: DateTime;
+  submittedAt: DateTime;
   schema: URL;
 }
 
 /**
- * @id #PlanxMetadata
+ * @id #PlanXMetadata
  * @description Additional metadata associated with applications submitted via PlanX
  */
-export interface PlanxMetadata extends BaseMetadata {
+export interface PlanXMetadata extends BaseMetadata {
+  source: 'PlanX';
   service: {
     flowId: UUID;
     url: URL;
   };
-  submittedAt?: DateTime;
 }

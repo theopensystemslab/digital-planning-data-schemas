@@ -1112,14 +1112,13 @@ export const validLDCP: Schema = {
     },
   ],
   metadata: {
-    source: 'PlanX',
     organisation: 'Buckinghamshire',
     id: '8da51c5b-a2a0-4386-a15d-29d66f9c121c',
+    source: 'PlanX',
     service: {
       flowId: '824628b2-deeb-48b0-92b1-2ca7f3b17163',
       url: 'https://www.editor.planx.dev/buckinghamshire/apply-for-a-lawful-development-certificate/preview',
     },
-    createdAt: '2023-10-01 00:00:00',
     submittedAt: '2023-10-02 00:00:00',
     schema:
       'https://theopensystemslab.github.io/digital-planning-data-schemas/v0.0.1/schema.json',

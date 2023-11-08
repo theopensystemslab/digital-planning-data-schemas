@@ -1028,14 +1028,13 @@ export const validPriorApproval: Schema = {
     },
   ],
   metadata: {
-    source: 'PlanX',
     organisation: 'Southwark',
     id: 'b18c301b-9d44-4c6c-8d27-5b5bf33c570b',
+    source: 'PlanX',
     service: {
       flowId: 'c6628103-c648-4663-81e1-bfa0a1a18340',
       url: 'https://www.editor.planx.dev/southwark/apply-for-prior-approval/preview',
     },
-    createdAt: '2023-10-01 00:00:00',
     submittedAt: '2023-10-02 00:00:00',
     schema:
       'https://theopensystemslab.github.io/digital-planning-data-schemas/v0.0.1/schema.json',

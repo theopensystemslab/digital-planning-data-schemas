@@ -1162,30 +1162,25 @@
       "additionalProperties": false,
       "description": "Minimum metadata expected for any application",
       "properties": {
-        "createdAt": {
-          "$ref": "#/definitions/DateTime"
-        },
         "id": {
           "$ref": "#/definitions/UUID",
           "description": "Unique identifier for this application"
         },
         "organisation": {
+          "description": "UK Local Authority that this application is being submitted to",
           "type": "string"
         },
         "schema": {
           "$ref": "#/definitions/URL"
         },
-        "source": {
-          "const": "PlanX",
-          "default": "PlanX",
-          "type": "string"
+        "submittedAt": {
+          "$ref": "#/definitions/DateTime"
         }
       },
       "required": [
-        "source",
         "organisation",
         "id",
-        "createdAt",
+        "submittedAt",
         "schema"
       ],
       "type": "object"
@@ -2876,7 +2871,7 @@
           "$ref": "#/definitions/BaseMetadata"
         },
         {
-          "$ref": "#/definitions/PlanxMetadata"
+          "$ref": "#/definitions/PlanXMetadata"
         }
       ],
       "description": "Details of the digital planning service which sent this application"
@@ -3091,6 +3086,56 @@
       },
       "required": [
         "certificate"
+      ],
+      "type": "object"
+    },
+    "PlanXMetadata": {
+      "$id": "#PlanXMetadata",
+      "additionalProperties": false,
+      "description": "Additional metadata associated with applications submitted via PlanX",
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/UUID",
+          "description": "Unique identifier for this application"
+        },
+        "organisation": {
+          "description": "UK Local Authority that this application is being submitted to",
+          "type": "string"
+        },
+        "schema": {
+          "$ref": "#/definitions/URL"
+        },
+        "service": {
+          "additionalProperties": false,
+          "properties": {
+            "flowId": {
+              "$ref": "#/definitions/UUID"
+            },
+            "url": {
+              "$ref": "#/definitions/URL"
+            }
+          },
+          "required": [
+            "flowId",
+            "url"
+          ],
+          "type": "object"
+        },
+        "source": {
+          "const": "PlanX",
+          "type": "string"
+        },
+        "submittedAt": {
+          "$ref": "#/definitions/DateTime"
+        }
+      },
+      "required": [
+        "id",
+        "organisation",
+        "schema",
+        "service",
+        "source",
+        "submittedAt"
       ],
       "type": "object"
     },
@@ -5233,59 +5278,6 @@
         }
       ],
       "description": "Planning constraints that overlap with the property site boundary determined by spatial queries against Planning Data (planning.data.gov.uk) and Ordnance Survey"
-    },
-    "PlanxMetadata": {
-      "$id": "#PlanxMetadata",
-      "additionalProperties": false,
-      "description": "Additional metadata associated with applications submitted via PlanX",
-      "properties": {
-        "createdAt": {
-          "$ref": "#/definitions/DateTime"
-        },
-        "id": {
-          "$ref": "#/definitions/UUID",
-          "description": "Unique identifier for this application"
-        },
-        "organisation": {
-          "type": "string"
-        },
-        "schema": {
-          "$ref": "#/definitions/URL"
-        },
-        "service": {
-          "additionalProperties": false,
-          "properties": {
-            "flowId": {
-              "$ref": "#/definitions/UUID"
-            },
-            "url": {
-              "$ref": "#/definitions/URL"
-            }
-          },
-          "required": [
-            "flowId",
-            "url"
-          ],
-          "type": "object"
-        },
-        "source": {
-          "const": "PlanX",
-          "default": "PlanX",
-          "type": "string"
-        },
-        "submittedAt": {
-          "$ref": "#/definitions/DateTime"
-        }
-      },
-      "required": [
-        "createdAt",
-        "id",
-        "organisation",
-        "schema",
-        "service",
-        "source"
-      ],
-      "type": "object"
     },
     "Point": {
       "additionalProperties": false,

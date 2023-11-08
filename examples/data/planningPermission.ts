@@ -1690,14 +1690,13 @@ export const validPlanningPermission: Schema = {
     },
   ],
   metadata: {
-    source: 'PlanX',
     organisation: 'Lambeth',
     id: '81bcaa0f-baf5-4573-ba0a-ea868c573faf',
+    source: 'PlanX',
     service: {
       flowId: '01e38c5d-e701-4e44-acdc-4d6b5cc3b854',
       url: 'https://www.editor.planx.dev/lambeth/apply-for-planning-permission/preview',
     },
-    createdAt: '2023-10-01 00:00:00',
     submittedAt: '2023-10-02 00:00:00',
     schema:
       'https://theopensystemslab.github.io/digital-planning-data-schemas/v0.0.1/schema.json',
