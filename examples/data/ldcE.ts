@@ -151,34 +151,12 @@ export const validLDCE: Schema = {
           squareMetres: 2993.67,
         },
       },
-      constraints: {
-        planning: [
-          {
-            value: 'tpo',
-            description: 'Tree Preservation Order (TPO) or zone',
-            intersects: false,
-          },
+      planning: {
+        source: 'https://api.editor.planx.dev/gis/buckinghamshire?geom=test',
+        designations: [
           {
             value: 'listed',
             description: 'Listed Building',
-            intersects: false,
-          },
-          {
-            value: 'article4',
-            description: 'Article 4 Direction area',
-            intersects: true,
-            entities: [
-              {
-                name: 'Whole District excluding the Town of Chesham - Poultry production.',
-                description:
-                  'Bucks County Council Town and Country Planning Act 1947 Town and Country Planning General Development Order 1950. Re Whole District excluding the Town of Chesham. In relation to poultry production.',
-                source: 'https://www.planning.data.gov.uk/entity/7010002192',
-              },
-            ],
-          },
-          {
-            value: 'article4.caz',
-            description: 'Central Activities Zone (CAZ)',
             intersects: false,
           },
           {
@@ -251,6 +229,31 @@ export const validLDCE: Schema = {
           {
             value: 'road.classified',
             description: 'Classified Road',
+            intersects: false,
+          },
+        ],
+        orders: [
+          {
+            value: 'article4',
+            description: 'Article 4 Direction area',
+            intersects: true,
+            entities: [
+              {
+                name: 'Whole District excluding the Town of Chesham - Poultry production.',
+                description:
+                  'Bucks County Council Town and Country Planning Act 1947 Town and Country Planning General Development Order 1950. Re Whole District excluding the Town of Chesham. In relation to poultry production.',
+                source: 'https://www.planning.data.gov.uk/entity/7010002192',
+              },
+            ],
+          },
+          {
+            value: 'article4.caz',
+            description: 'Central Activities Zone (CAZ)',
+            intersects: false,
+          },
+          {
+            value: 'tpo',
+            description: 'Tree Preservation Order (TPO) or zone',
             intersects: false,
           },
         ],

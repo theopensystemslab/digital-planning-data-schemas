@@ -1,5 +1,8 @@
 import {GeoJSON} from 'geojson';
-import {PlanningConstraints} from '../../enums/PlanningConstraints';
+import {
+  PlanningDesignations,
+  PlanningOrders,
+} from '../../enums/PlanningConstraints';
 import {PropertyTypes} from '../../enums/PropertyTypes';
 import {Area, URL} from '../../utils';
 
@@ -40,8 +43,22 @@ export interface UKProperty {
     site: GeoJSON;
     area: Area;
   };
-  constraints: {
-    planning: PlanningConstraint[];
+  /**
+   * @description Planning constraints and policies that intersect with this site and may impact or restrict development
+   */
+  planning?: {
+    /**
+     * @description An open API request or website that explains how these constraints were sourced
+     */
+    source: URL;
+    designations?: PlanningDesignation[];
+    orders?: PlanningOrder[];
+    conditions?: PlanningConstraint[];
+    guidance?: PlanningConstraint[];
+    plans?: {
+      local: PlanningConstraint[];
+      neighbourhood: PlanningConstraint[];
+    };
   };
 }
 
@@ -141,51 +158,109 @@ type PropertyTypeMap = {
  */
 export type PropertyType = PropertyTypeMap[keyof PropertyTypeMap];
 
-type PlanningConstraintKeys = keyof typeof PlanningConstraints;
+type PlanningDesigationKeys = keyof typeof PlanningDesignations;
 
-type GenericPlanningConstraint<TKey extends PlanningConstraintKeys> = {
+type GenericPlanningDesignation<TKey extends PlanningDesigationKeys> = {
   value: TKey;
-  description: (typeof PlanningConstraints)[TKey];
-  category?:
-    | 'Ecology'
-    | 'Flooding'
-    | 'General policy'
-    | 'Heritage and conservation'
-    | 'Trees';
+  description: (typeof PlanningDesignations)[TKey];
 };
 
-type PlanningConstraintMap = {
-  [K in PlanningConstraintKeys]: GenericPlanningConstraint<K>;
+type PlanningDesignationMap = {
+  [K in PlanningDesigationKeys]: GenericPlanningDesignation<K>;
 };
 
-type BasePlanningConstraint =
-  PlanningConstraintMap[keyof PlanningConstraintMap];
+type BasePlanningDesignation =
+  PlanningDesignationMap[keyof PlanningDesignationMap];
 
 /**
- * @description A planning constraint that does not intersect with the proposed site, per the DE-9IM spatial relationship definition of intersects or manually answered by the user
+ * @description A planning designation that does not intersect with the proposed site, per the DE-9IM spatial relationship definition of intersects
+ */
+type NonIntersectingPlanningDesignation = {
+  intersects: false;
+} & BasePlanningDesignation;
+
+/**
+ * @description A planning designation that does intersect with the proposed site, per the DE-9IM spatial relationship definition of intersects
+ */
+type IntersectingPlanningDesignation = {
+  intersects: true;
+  entities: Entity[] | [];
+} & BasePlanningDesignation;
+
+/**
+ * @id #PlanningDesignation
+ * @description Planning designations that may intersect with the proposed site determined by spatial queries against Planning Data (planning.data.gov.uk) and Ordnance Survey
+ */
+export type PlanningDesignation =
+  | NonIntersectingPlanningDesignation
+  | IntersectingPlanningDesignation;
+
+type PlanningOrderKeys = keyof typeof PlanningOrders;
+
+type GenericPlanningOrder<TKey extends PlanningOrderKeys> = {
+  value: TKey;
+  description: (typeof PlanningOrders)[TKey];
+};
+
+type PlanningOrderMap = {
+  [K in PlanningOrderKeys]: GenericPlanningOrder<K>;
+};
+
+type BasePlanningOrder = PlanningOrderMap[keyof PlanningOrderMap];
+
+/**
+ * @description A planning order that does not intersect with the proposed site, per the DE-9IM spatial relationship definition of intersects
+ */
+type NonIntersectingPlanningOrder = {
+  intersects: false;
+} & BasePlanningOrder;
+
+/**
+ * @description A planning order that does intersect with the proposed site, per the DE-9IM spatial relationship definition of intersects
+ */
+type IntersectingPlanningOrder = {
+  intersects: true;
+  entities: Entity[] | [];
+} & BasePlanningOrder;
+
+/**
+ * @id #PlanningOrder
+ * @description Planning orders that may intersect with the proposed site determined by spatial queries against Planning Data (planning.data.gov.uk) and Ordnance Survey
+ */
+export type PlanningOrder =
+  | NonIntersectingPlanningOrder
+  | IntersectingPlanningOrder;
+
+type BasePlanningConstraint = {
+  value: string;
+  description: string;
+};
+
+/**
+ * @description A planning constraint that does not intersect with the proposed site, per the DE-9IM spatial relationship definition of intersects
  */
 type NonIntersectingPlanningConstraint = {
   intersects: false;
 } & BasePlanningConstraint;
 
 /**
- * @description A planning constraint that does intersect with the proposed site, per the DE-9IM spatial relationship definition of intersects or manually answered by the user
+ * @description A planning constraint that does intersect with the proposed site, per the DE-9IM spatial relationship definition of intersects
  */
 type IntersectingPlanningConstraint = {
   intersects: true;
-  entities:
-    | {
-        name: string;
-        description?: string;
-        source?: URL;
-      }[]
-    | [];
+  entities: Entity[] | [];
 } & BasePlanningConstraint;
 
 /**
  * @id #PlanningConstraint
- * @description Planning constraints that intersect with the proposed site determined by spatial queries against Planning Data (planning.data.gov.uk) and Ordnance Survey
+ * @description Planning constraints that intersect with the proposed site
  */
 export type PlanningConstraint =
   | NonIntersectingPlanningConstraint
   | IntersectingPlanningConstraint;
+
+type Entity = {
+  name: string;
+  description?: string;
+  source?: URL;
+};

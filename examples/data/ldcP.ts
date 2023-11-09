@@ -95,21 +95,12 @@ export const validLDCP: Schema = {
           squareMetres: 1418.26,
         },
       },
-      constraints: {
-        planning: [
-          {
-            value: 'tpo',
-            description: 'Tree Preservation Order (TPO) or zone',
-            intersects: false,
-          },
+      planning: {
+        source: 'https://api.editor.planx.dev/gis/buckinghamshire?geom=test',
+        designations: [
           {
             value: 'listed',
             description: 'Listed Building',
-            intersects: false,
-          },
-          {
-            value: 'article4',
-            description: 'Article 4 Direction area',
             intersects: false,
           },
           {
@@ -173,11 +164,6 @@ export const validLDCP: Schema = {
             intersects: false,
           },
           {
-            value: 'article4.caz',
-            description: 'Central Activities Zone (CAZ)',
-            intersects: false,
-          },
-          {
             value: 'designated.nationalPark.broads',
             description: 'National Park - Broads',
             intersects: false,
@@ -185,6 +171,23 @@ export const validLDCP: Schema = {
           {
             value: 'road.classified',
             description: 'Classified Road',
+            intersects: false,
+          },
+        ],
+        orders: [
+          {
+            value: 'article4',
+            description: 'Article 4 Direction area',
+            intersects: false,
+          },
+          {
+            value: 'article4.caz',
+            description: 'Central Activities Zone (CAZ)',
+            intersects: false,
+          },
+          {
+            value: 'tpo',
+            description: 'Tree Preservation Order (TPO) or zone',
             intersects: false,
           },
         ],

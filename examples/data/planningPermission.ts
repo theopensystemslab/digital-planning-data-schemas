@@ -110,21 +110,12 @@ export const validPlanningPermission: Schema = {
           squareMetres: 125.92,
         },
       },
-      constraints: {
-        planning: [
-          {
-            value: 'tpo',
-            description: 'Tree Preservation Order (TPO) or zone',
-            intersects: false,
-          },
+      planning: {
+        source: 'https://api.editor.planx.dev/gis/lambeth?geom=test',
+        designations: [
           {
             value: 'listed',
             description: 'Listed Building',
-            intersects: false,
-          },
-          {
-            value: 'article4',
-            description: 'Article 4 Direction area',
             intersects: false,
           },
           {
@@ -178,11 +169,6 @@ export const validPlanningPermission: Schema = {
             intersects: false,
           },
           {
-            value: 'article4.caz',
-            description: 'Central Activities Zone (CAZ)',
-            intersects: false,
-          },
-          {
             value: 'designated.nationalPark',
             description: 'National Park',
             intersects: false,
@@ -200,6 +186,23 @@ export const validPlanningPermission: Schema = {
           {
             value: 'road.classified',
             description: 'Classified Road',
+            intersects: false,
+          },
+        ],
+        orders: [
+          {
+            value: 'article4',
+            description: 'Article 4 Direction area',
+            intersects: false,
+          },
+          {
+            value: 'article4.caz',
+            description: 'Central Activities Zone (CAZ)',
+            intersects: false,
+          },
+          {
+            value: 'tpo',
+            description: 'Tree Preservation Order (TPO) or zone',
             intersects: false,
           },
         ],
