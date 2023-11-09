@@ -98,22 +98,85 @@ export const validPriorApproval: Schema = {
           squareMetres: 1527.57,
         },
       },
-      constraints: {
-        planning: [
-          {
-            value: 'tpo',
-            description: 'Tree Preservation Order (TPO) or zone',
-            overlaps: false,
-          },
+      planning: {
+        source: 'https://api.editor.planx.dev/gis/southwark?geom=test',
+        designations: [
           {
             value: 'listed',
             description: 'Listed Building',
-            overlaps: false,
+            intersects: false,
           },
+          {
+            value: 'monument',
+            description: 'Site of a Scheduled Monument',
+            intersects: false,
+          },
+          {
+            value: 'designated',
+            description: 'Designated land',
+            intersects: false,
+          },
+          {
+            value: 'nature.SAC',
+            description: 'Special Area of Conservation (SAC)',
+            intersects: false,
+          },
+          {
+            value: 'nature.ASNW',
+            description: 'Ancient Semi-Natural Woodland (ASNW)',
+            intersects: false,
+          },
+          {
+            value: 'nature.SSSI',
+            description: 'Site of Special Scientific Interest (SSSI)',
+            intersects: false,
+          },
+          {
+            value: 'locallyListed',
+            description: 'Locally Listed Building',
+            intersects: false,
+          },
+          {
+            value: 'designated.SPA',
+            description: 'Special Protection Area (SPA)',
+            intersects: false,
+          },
+          {
+            value: 'designated.WHS',
+            description: 'UNESCO World Heritage Site or buffer zone',
+            intersects: false,
+          },
+          {
+            value: 'registeredPark',
+            description: 'Historic Park or Garden',
+            intersects: false,
+          },
+          {
+            value: 'designated.AONB',
+            description: 'Area of Outstanding Natural Beauty (AONB)',
+            intersects: false,
+          },
+          {
+            value: 'designated.conservationArea',
+            description: 'Conservation Area',
+            intersects: false,
+          },
+          {
+            value: 'designated.nationalPark.broads',
+            description: 'National Park - Broads',
+            intersects: false,
+          },
+          {
+            value: 'road.classified',
+            description: 'Classified Road',
+            intersects: false,
+          },
+        ],
+        orders: [
           {
             value: 'article4',
             description: 'Article 4 Direction area',
-            overlaps: true,
+            intersects: true,
             entities: [
               {
                 name: 'Central Activities Zone',
@@ -148,75 +211,15 @@ export const validPriorApproval: Schema = {
             ],
           },
           {
-            value: 'monument',
-            description: 'Site of a Scheduled Monument',
-            overlaps: false,
-          },
-          {
-            value: 'designated',
-            description: 'Designated land',
-            overlaps: false,
-          },
-          {
-            value: 'nature.SAC',
-            description: 'Special Area of Conservation (SAC)',
-            overlaps: false,
-          },
-          {
-            value: 'nature.ASNW',
-            description: 'Ancient Semi-Natural Woodland (ASNW)',
-            overlaps: false,
-          },
-          {
-            value: 'nature.SSSI',
-            description: 'Site of Special Scientific Interest (SSSI)',
-            overlaps: false,
-          },
-          {
-            value: 'locallyListed',
-            description: 'Locally Listed Building',
-            overlaps: false,
-          },
-          {
-            value: 'designated.SPA',
-            description: 'Special Protection Area (SPA)',
-            overlaps: false,
-          },
-          {
-            value: 'designated.WHS',
-            description: 'UNESCO World Heritage Site or buffer zone',
-            overlaps: false,
-          },
-          {
-            value: 'registeredPark',
-            description: 'Historic Park or Garden',
-            overlaps: false,
-          },
-          {
-            value: 'designated.AONB',
-            description: 'Area of Outstanding Natural Beauty (AONB)',
-            overlaps: false,
-          },
-          {
             value: 'article4.caz',
             description: 'Central Activities Zone (CAZ)',
-            overlaps: true,
+            intersects: true,
             entities: [],
           },
           {
-            value: 'designated.conservationArea',
-            description: 'Conservation Area',
-            overlaps: false,
-          },
-          {
-            value: 'designated.nationalPark.broads',
-            description: 'National Park - Broads',
-            overlaps: false,
-          },
-          {
-            value: 'road.classified',
-            description: 'Classified Road',
-            overlaps: false,
+            value: 'tpo',
+            description: 'Tree Preservation Order (TPO) or zone',
+            intersects: false,
           },
         ],
       },
