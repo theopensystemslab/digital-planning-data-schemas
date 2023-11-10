@@ -99,7 +99,8 @@ export const validPriorApproval: Schema = {
         },
       },
       planning: {
-        source: 'https://api.editor.planx.dev/gis/southwark?geom=test',
+        source:
+          'https://api.editor.planx.dev/gis/southwark?geom=POLYGON+%28%28-0.0967472791671659+51.50830340605074%2C+-0.09676337242125525+51.50830507546084%2C+-0.09689748287199977+51.50831926544436%2C+-0.09693503379820824+51.50790775412855%2C+-0.09666681289671919+51.50789439872946%2C+-0.09645719784644384+51.507889747624404%2C+-0.09639290535660058+51.50828278342658%2C+-0.0967472791671659+51.50830340605074%29%29&analytics=false&sessionId=b18c301b-9d44-4c6c-8d27-5b5bf33c570b',
         designations: [
           {
             value: 'listed',
@@ -276,62 +277,28 @@ export const validPriorApproval: Schema = {
   responses: [
     {
       question: 'Is the property in Southwark?',
-      responses: [
-        {
-          value: 'Yes',
-        },
-      ],
-      metadata: {
-        autoAnswered: true,
-        sectionName: 'The property',
-      },
+      responses: [{value: 'Yes'}],
+      metadata: {autoAnswered: true, sectionName: 'The property'},
     },
     {
       question: 'What type of property is it?',
-      responses: [
-        {
-          value: 'Something else',
-        },
-      ],
-      metadata: {
-        autoAnswered: true,
-        sectionName: 'The property',
-      },
+      responses: [{value: 'Something else'}],
+      metadata: {autoAnswered: true, sectionName: 'The property'},
     },
     {
       question: 'Which of these best describes the use of the property?',
-      responses: [
-        {
-          value: 'Leisure and sport',
-        },
-      ],
-      metadata: {
-        autoAnswered: true,
-        sectionName: 'The property',
-      },
+      responses: [{value: 'Leisure and sport'}],
+      metadata: {autoAnswered: true, sectionName: 'The property'},
     },
     {
       question: 'What type of leisure property is it?',
-      responses: [
-        {
-          value: 'Entertainment',
-        },
-      ],
-      metadata: {
-        autoAnswered: true,
-        sectionName: 'The property',
-      },
+      responses: [{value: 'Entertainment'}],
+      metadata: {autoAnswered: true, sectionName: 'The property'},
     },
     {
       question: 'Have the works already started?',
-      responses: [
-        {
-          value: 'No',
-        },
-      ],
-      metadata: {
-        sectionName: 'About the project',
-      },
+      responses: [{value: 'No'}],
+      metadata: {sectionName: 'About the project'},
     },
     {
       question: 'Describe the project.',
@@ -341,57 +308,36 @@ export const validPriorApproval: Schema = {
             'Addition of solar panels in order to power the globe with green energy.',
         },
       ],
-      metadata: {
-        sectionName: 'About the project',
-      },
+      metadata: {sectionName: 'About the project'},
     },
     {
       question: 'What type of property is it?',
-      responses: [
-        {
-          value: 'Commercial building',
-        },
-      ],
-      metadata: {
-        autoAnswered: true,
-        sectionName: 'About the project',
-      },
+      responses: [{value: 'Commercial building'}],
+      metadata: {autoAnswered: true, sectionName: 'About the project'},
     },
     {
       question: 'What type of property is it?',
-      responses: [
-        {
-          value: 'Neither a house nor a flat',
-        },
-      ],
-      metadata: {
-        autoAnswered: true,
-        sectionName: 'About the project',
-      },
+      responses: [{value: 'Neither a house nor a flat'}],
+      metadata: {autoAnswered: true, sectionName: 'About the project'},
     },
     {
       question: 'What do you want to install?',
-      responses: [
-        {
-          value: 'Solar photovoltaics (PV)',
-        },
-      ],
-      metadata: {
-        sectionName: 'About the project',
-      },
+      responses: [{value: 'Solar photovoltaics (PV)'}],
+      metadata: {sectionName: 'About the project'},
     },
     {
       question:
         'Are there any other locations where the equipment could be installed?',
-      responses: [
-        {
-          value: 'Yes',
-        },
-      ],
+      responses: [{value: 'Yes'}],
       metadata: {
         policyRefs: [
           {
-            text: 'The Town and Country Planning (General Permitted Development) (England) Order 2015 Schedule 2, Part 14, Class A\nThe Town and Country Planning (General Permitted Development) (England) Order 2015 Schedule 2, Part 14, Class K',
+            text: 'The Town and Country Planning (General Permitted Development) (England) Order 2015 Schedule 2, Part 14, Class A',
+            url: 'https://www.legislation.gov.uk/uksi/2015/596/schedule/2/part/14/crossheading/class-a-installation-or-alteration-etc-of-solar-equipment-on-domestic-premises',
+          },
+          {
+            text: 'The Town and Country Planning (General Permitted Development) (England) Order 2015 Schedule 2, Part 14, Class K',
+            url: 'https://www.legislation.gov.uk/uksi/2015/596/schedule/2/part/14/crossheading/class-k-installation-or-alteration-etc-of-standalone-solar-equipment-on-nondomestic-premises',
           },
         ],
         sectionName: 'About the project',
@@ -403,15 +349,14 @@ export const validPriorApproval: Schema = {
       responses: [
         {
           value: 'No',
-          metadata: {
-            flags: ['Planning permission / Permitted development'],
-          },
+          metadata: {flags: ['Planning permission / Permitted development']},
         },
       ],
       metadata: {
         policyRefs: [
           {
             text: 'The Town and Country Planning (General Permitted Development) (England) Order 2015 Schedule 2, Part 14, Class A',
+            url: 'https://www.legislation.gov.uk/uksi/2015/596/schedule/2/part/14/crossheading/class-a-installation-or-alteration-etc-of-solar-equipment-on-domestic-premises',
           },
         ],
         sectionName: 'About the project',
@@ -422,9 +367,7 @@ export const validPriorApproval: Schema = {
       responses: [
         {
           value: 'No',
-          metadata: {
-            flags: ['Planning permission / Permitted development'],
-          },
+          metadata: {flags: ['Planning permission / Permitted development']},
         },
       ],
       metadata: {
@@ -432,6 +375,7 @@ export const validPriorApproval: Schema = {
         policyRefs: [
           {
             text: 'The Town and Country Planning (General Permitted Development) (England) Order 2015 Schedule 2, Part 14, Class J',
+            url: 'https://www.legislation.gov.uk/uksi/2015/596/schedule/2/part/14/crossheading/class-j-installation-or-alteration-etc-of-solar-equipment-on-nondomestic-premises',
           },
         ],
         sectionName: 'About the project',
@@ -442,9 +386,7 @@ export const validPriorApproval: Schema = {
       responses: [
         {
           value: 'No',
-          metadata: {
-            flags: ['Planning permission / Permitted development'],
-          },
+          metadata: {flags: ['Planning permission / Permitted development']},
         },
       ],
       metadata: {
@@ -452,6 +394,7 @@ export const validPriorApproval: Schema = {
         policyRefs: [
           {
             text: 'The Town and Country Planning (General Permitted Development) (England) Order 2015 Schedule 2, Part 14, Class J',
+            url: 'https://www.legislation.gov.uk/uksi/2015/596/schedule/2/part/14/crossheading/class-j-installation-or-alteration-etc-of-solar-equipment-on-nondomestic-premises',
           },
         ],
         sectionName: 'About the project',
@@ -459,38 +402,23 @@ export const validPriorApproval: Schema = {
     },
     {
       question: 'Where are the new solar panels?',
-      responses: [
-        {
-          value: 'On roofs',
-        },
-      ],
-      metadata: {
-        sectionName: 'About the project',
-      },
+      responses: [{value: 'On roofs'}],
+      metadata: {sectionName: 'About the project'},
     },
     {
       question: 'What type of roofs are they?',
-      responses: [
-        {
-          value: 'Both pitched and flat',
-        },
-      ],
-      metadata: {
-        sectionName: 'About the project',
-      },
+      responses: [{value: 'Both pitched and flat'}],
+      metadata: {sectionName: 'About the project'},
     },
     {
       question: 'Is the property in a conservation area?',
-      responses: [
-        {
-          value: 'No',
-        },
-      ],
+      responses: [{value: 'No'}],
       metadata: {
         autoAnswered: true,
         policyRefs: [
           {
-            text: '[The Town and Country Planning (General Permitted Development) (England) Order 2015 S.2.P.14. .A.1 (c)](https://www.legislation.gov.uk/uksi/2015/596/schedule/2/part/14)',
+            text: 'The Town and Country Planning (General Permitted Development) (England) Order 2015 S.2.P.14. .A.1 (c)',
+            url: 'https://www.legislation.gov.uk/uksi/2015/596/schedule/2/part/14',
           },
         ],
         sectionName: 'About the project',
@@ -498,16 +426,13 @@ export const validPriorApproval: Schema = {
     },
     {
       question: 'Is the property in a world heritage site?',
-      responses: [
-        {
-          value: 'No',
-        },
-      ],
+      responses: [{value: 'No'}],
       metadata: {
         autoAnswered: true,
         policyRefs: [
           {
             text: 'The Town and Country Planning (General Permitted Development) (England) Order 2015 Schedule 2, Part 14, Class A.1 (c)',
+            url: 'https://www.legislation.gov.uk/uksi/2015/596/schedule/2/part/14',
           },
         ],
         sectionName: 'About the project',
@@ -519,15 +444,14 @@ export const validPriorApproval: Schema = {
       responses: [
         {
           value: '0.2m or less',
-          metadata: {
-            flags: ['Planning permission / Permitted development'],
-          },
+          metadata: {flags: ['Planning permission / Permitted development']},
         },
       ],
       metadata: {
         policyRefs: [
           {
             text: 'The Town and Country Planning (General Permitted Development) (England) Order 2015 Schedule 2, Part 14, Class J',
+            url: 'https://www.legislation.gov.uk/uksi/2015/596/schedule/2/part/14',
           },
         ],
         sectionName: 'About the project',
@@ -538,15 +462,14 @@ export const validPriorApproval: Schema = {
       responses: [
         {
           value: '1m or less higher than the roof',
-          metadata: {
-            flags: ['Planning permission / Permitted development'],
-          },
+          metadata: {flags: ['Planning permission / Permitted development']},
         },
       ],
       metadata: {
         policyRefs: [
           {
             text: 'The Town and Country Planning (General Permitted Development) (England) Order 2015 Schedule 2, Part 14, Class A',
+            url: 'https://www.legislation.gov.uk/uksi/2015/596/schedule/2/part/14',
           },
         ],
         sectionName: 'About the project',
@@ -557,15 +480,14 @@ export const validPriorApproval: Schema = {
       responses: [
         {
           value: '1m or more from the edge of the roof',
-          metadata: {
-            flags: ['Planning permission / Permitted development'],
-          },
+          metadata: {flags: ['Planning permission / Permitted development']},
         },
       ],
       metadata: {
         policyRefs: [
           {
             text: 'The Town and Country Planning (General Permitted Development) (England) Order 2015 Schedule 2, Part 14, Class J',
+            url: 'https://www.legislation.gov.uk/uksi/2015/596/schedule/2/part/14',
           },
         ],
         sectionName: 'About the project',
@@ -573,29 +495,22 @@ export const validPriorApproval: Schema = {
     },
     {
       question: 'What do you want to install?',
-      responses: [
-        {
-          value: 'Solar photovoltaics (PV)',
-        },
-      ],
-      metadata: {
-        sectionName: 'About the project',
-      },
+      responses: [{value: 'Solar photovoltaics (PV)'}],
+      metadata: {sectionName: 'About the project'},
     },
     {
       question: 'What is the total capacity of all solar photovoltaics (PV)?',
       responses: [
         {
           value: 'Between 50kW and 1,000kW (1 MW)',
-          metadata: {
-            flags: ['Planning permission / Prior approval'],
-          },
+          metadata: {flags: ['Planning permission / Prior approval']},
         },
       ],
       metadata: {
         policyRefs: [
           {
             text: 'The Town and Country Planning (General Permitted Development) (England) Order 2015 Schedule 2, Part 14, Class J.3',
+            url: 'https://www.legislation.gov.uk/uksi/2015/596/schedule/2/part/14',
           },
         ],
         sectionName: 'About the project',
@@ -606,15 +521,18 @@ export const validPriorApproval: Schema = {
       responses: [
         {
           value: 'OK',
-          metadata: {
-            flags: ['Planning permission / Permitted development'],
-          },
+          metadata: {flags: ['Planning permission / Permitted development']},
         },
       ],
       metadata: {
         policyRefs: [
           {
-            text: 'The Town and Country Planning (General Permitted Development) (England) Order 2015 Schedule 2, Part 14, Class AThe Town and Country Planning (General Permitted Development) (England) Order 2015 Schedule 2, Part 14, Class K',
+            text: 'The Town and Country Planning (General Permitted Development) (England) Order 2015 Schedule 2, Part 14, Class A',
+            url: 'https://www.legislation.gov.uk/uksi/2015/596/schedule/2/part/14/crossheading/class-a-installation-or-alteration-etc-of-solar-equipment-on-domestic-premises',
+          },
+          {
+            text: 'The Town and Country Planning (General Permitted Development) (England) Order 2015 Schedule 2, Part 14, Class K',
+            url: 'https://www.legislation.gov.uk/uksi/2015/596/schedule/2/part/14/crossheading/class-k-installation-or-alteration-etc-of-standalone-solar-equipment-on-nondomestic-premises',
           },
         ],
         sectionName: 'About the project',
@@ -622,95 +540,43 @@ export const validPriorApproval: Schema = {
     },
     {
       question: 'What type of property is it?',
-      responses: [
-        {
-          value: 'Another use',
-        },
-      ],
-      metadata: {
-        sectionName: 'About the project',
-      },
+      responses: [{value: 'Another use'}],
+      metadata: {sectionName: 'About the project'},
     },
     {
       question: 'Select your project',
-      responses: [
-        {
-          value: 'Install solar panels',
-        },
-      ],
-      metadata: {
-        sectionName: 'About the project',
-      },
+      responses: [{value: 'Install solar panels'}],
+      metadata: {sectionName: 'About the project'},
     },
     {
       question: 'What type of application is being applied for?',
-      responses: [
-        {
-          value: 'Part 14 Class J',
-        },
-      ],
-      metadata: {
-        autoAnswered: true,
-        sectionName: 'About the project',
-      },
+      responses: [{value: 'Part 14 Class J'}],
+      metadata: {autoAnswered: true, sectionName: 'About the project'},
     },
     {
       question: 'Is the property subject to any Article 4 directions?',
-      responses: [
-        {
-          value: 'Yes',
-        },
-      ],
-      metadata: {
-        autoAnswered: true,
-        sectionName: 'About the project',
-      },
+      responses: [{value: 'Yes'}],
+      metadata: {autoAnswered: true, sectionName: 'About the project'},
     },
     {
       question: 'List all the changes involved in the project',
-      responses: [
-        {
-          value: 'Install solar panels',
-        },
-      ],
-      metadata: {
-        autoAnswered: true,
-        sectionName: 'About the project',
-      },
+      responses: [{value: 'Install solar panels'}],
+      metadata: {autoAnswered: true, sectionName: 'About the project'},
     },
     {
       question: 'What type of prior approval application is it?',
-      responses: [
-        {
-          value: 'Install or change solar panels',
-        },
-      ],
-      metadata: {
-        autoAnswered: true,
-        sectionName: 'About the project',
-      },
+      responses: [{value: 'Install or change solar panels'}],
+      metadata: {autoAnswered: true, sectionName: 'About the project'},
     },
     {
       question: 'Are you applying on behalf of someone else?',
-      responses: [
-        {
-          value: 'No',
-        },
-      ],
-      metadata: {
-        sectionName: 'About you',
-      },
+      responses: [{value: 'No'}],
+      metadata: {sectionName: 'About you'},
     },
     {
       question: 'Which of these best describes you?',
-      responses: [
-        {
-          value: 'Company',
-        },
-      ],
-      metadata: {
-        sectionName: 'About you',
-      },
+      responses: [{value: 'Company'}],
+      metadata: {sectionName: 'About you'},
     },
     {
       question: 'Your contact details',
@@ -720,163 +586,84 @@ export const validPriorApproval: Schema = {
             "Mr William Shakespeare Lord Chamberlain's Men 2830407283 thebard@example.com",
         },
       ],
-      metadata: {
-        sectionName: 'About you',
-      },
+      metadata: {sectionName: 'About you'},
     },
     {
       question: 'Is your contact address the same as the property address?',
-      responses: [
-        {
-          value: 'Yes',
-        },
-      ],
-      metadata: {
-        sectionName: 'About you',
-      },
+      responses: [{value: 'Yes'}],
+      metadata: {sectionName: 'About you'},
     },
     {
       question:
         'We may need to visit the site to assess your application. If we do, who should we contact to arrange the visit?',
-      responses: [
-        {
-          value: 'Me, the applicant',
-        },
-      ],
-      metadata: {
-        sectionName: 'About you',
-      },
+      responses: [{value: 'Me, the applicant'}],
+      metadata: {sectionName: 'About you'},
     },
     {
       question: 'What type of prior approval application is it?',
-      responses: [
-        {
-          value: 'Install or change solar panels',
-        },
-      ],
-      metadata: {
-        autoAnswered: true,
-        sectionName: 'Upload drawings',
-      },
+      responses: [{value: 'Install or change solar panels'}],
+      metadata: {autoAnswered: true, sectionName: 'Upload drawings'},
     },
     {
       question: 'Where will the solar panels be installed?',
-      responses: [
-        {
-          value: 'On roofs',
-        },
-      ],
-      metadata: {
-        autoAnswered: true,
-        sectionName: 'Upload drawings',
-      },
+      responses: [{value: 'On roofs'}],
+      metadata: {autoAnswered: true, sectionName: 'Upload drawings'},
     },
     {
       question:
         'Your planning officer will need to check how far the solar panels stick out beyond the surface of the roof. What do you have that shows this?',
-      responses: [
-        {
-          value: "Manufacturer's specification document",
-        },
-      ],
-      metadata: {
-        sectionName: 'Upload drawings',
-      },
+      responses: [{value: "Manufacturer's specification document"}],
+      metadata: {sectionName: 'Upload drawings'},
     },
     {
       question: 'Do you want to upload any photographs?',
-      responses: [
-        {
-          value: 'No',
-        },
-      ],
-      metadata: {
-        sectionName: 'Upload drawings',
-      },
+      responses: [{value: 'No'}],
+      metadata: {sectionName: 'Upload drawings'},
     },
     {
       question:
         'Would you like to upload any additional drawings, documents or images?',
-      responses: [
-        {
-          value: 'No',
-        },
-      ],
-      metadata: {
-        sectionName: 'Upload drawings',
-      },
+      responses: [{value: 'No'}],
+      metadata: {sectionName: 'Upload drawings'},
     },
     {
       question: 'What type of planning application are you making?',
-      responses: [
-        {
-          value: 'Prior approval',
-        },
-      ],
-      metadata: {
-        autoAnswered: true,
-        sectionName: 'Check your application',
-      },
+      responses: [{value: 'Prior approval'}],
+      metadata: {autoAnswered: true, sectionName: 'Check your application'},
     },
     {
       question: 'What type of prior approval application is it?',
-      responses: [
-        {
-          value: 'Install or change solar panels',
-        },
-      ],
-      metadata: {
-        autoAnswered: true,
-        sectionName: 'Check your application',
-      },
+      responses: [{value: 'Install or change solar panels'}],
+      metadata: {autoAnswered: true, sectionName: 'Check your application'},
     },
     {
       question: 'Is the property a home?',
-      responses: [
-        {
-          value: 'No',
-        },
-      ],
-      metadata: {
-        autoAnswered: true,
-        sectionName: 'Check your application',
-      },
+      responses: [{value: 'No'}],
+      metadata: {autoAnswered: true, sectionName: 'Check your application'},
     },
     {
       question: 'What type of changes does the project involve?',
-      responses: [
-        {
-          value: 'Alteration',
-        },
-      ],
-      metadata: {
-        autoAnswered: true,
-        sectionName: 'Check your application',
-      },
+      responses: [{value: 'Alteration'}],
+      metadata: {autoAnswered: true, sectionName: 'Check your application'},
     },
     {
       question: 'Are the public allowed to access the building?',
-      responses: [
-        {
-          value: 'Yes',
-        },
-      ],
-      metadata: {
-        sectionName: 'Check your application',
-      },
+      responses: [{value: 'Yes'}],
+      metadata: {sectionName: 'Check your application'},
     },
     {
       question:
         'Is the sole purpose of the project to provide disabled access to (or within) the building?',
-      responses: [
-        {
-          value: 'No',
-        },
-      ],
+      responses: [{value: 'No'}],
       metadata: {
         policyRefs: [
           {
-            text: 'The Town and Country Planning (Fees for Applications, Deemed Applications, Requests and Site Visits) (England) Regulations 2012, Regulation 14 &amp;  Regulation 4 (1)(b)',
+            text: 'The Town and Country Planning (Fees for Applications, Deemed Applications, Requests and Site Visits) (England) Regulations 2012, Regulation 14',
+            url: 'https://www.legislation.gov.uk/uksi/2012/2920/regulation/14',
+          },
+          {
+            text: 'Regulation 4 (1)(b)',
+            url: 'https://www.legislation.gov.uk/uksi/2012/2920/regulation/4',
           },
         ],
         sectionName: 'Check your application',
@@ -884,53 +671,29 @@ export const validPriorApproval: Schema = {
     },
     {
       question: 'What type of prior approval application is it?',
-      responses: [
-        {
-          value: 'Install or change solar panels',
-        },
-      ],
-      metadata: {
-        autoAnswered: true,
-        sectionName: 'Check your application',
-      },
+      responses: [{value: 'Install or change solar panels'}],
+      metadata: {autoAnswered: true, sectionName: 'Check your application'},
     },
     {
       question: 'Does the application qualify for a disability exemption?',
-      responses: [
-        {
-          value: 'No',
-        },
-      ],
-      metadata: {
-        autoAnswered: true,
-        sectionName: 'Check your application',
-      },
+      responses: [{value: 'No'}],
+      metadata: {autoAnswered: true, sectionName: 'Check your application'},
     },
     {
       question: 'Does the application qualify for a resubmission exemption?',
-      responses: [
-        {
-          value: 'No',
-        },
-      ],
-      metadata: {
-        autoAnswered: true,
-        sectionName: 'Check your application',
-      },
+      responses: [{value: 'No'}],
+      metadata: {autoAnswered: true, sectionName: 'Check your application'},
     },
     {
       question:
         'Does the application qualify to the same-day-planning-application exemption?',
-      responses: [
-        {
-          value: 'No',
-        },
-      ],
+      responses: [{value: 'No'}],
       metadata: {
         autoAnswered: true,
         policyRefs: [
           {
             text: 'The Town and Country Planning (Fees for Applications, Deemed Applications, Requests and Site Visits) (England) Regulations 2012, Regulation 14',
+            url: 'https://www.legislation.gov.uk/uksi/2012/2920/regulation/14',
           },
         ],
         sectionName: 'Check your application',
@@ -938,15 +701,8 @@ export const validPriorApproval: Schema = {
     },
     {
       question: 'Which Local Planning authority is it?',
-      responses: [
-        {
-          value: 'Southwark',
-        },
-      ],
-      metadata: {
-        autoAnswered: true,
-        sectionName: 'Check your application',
-      },
+      responses: [{value: 'Southwark'}],
+      metadata: {autoAnswered: true, sectionName: 'Check your application'},
     },
     {
       question: 'Describe your connection',
@@ -956,9 +712,7 @@ export const validPriorApproval: Schema = {
             'I think the King is but a man, as I am. The violet smells to him as it doth to me. The element shows to him as it doth to me. All his senses have but human conditions. His ceremonies laid by, in his nakedness he appears but a man.',
         },
       ],
-      metadata: {
-        sectionName: 'Check your application',
-      },
+      metadata: {sectionName: 'Check your application'},
     },
     {
       question: 'Connections with Southwark Council',
@@ -968,9 +722,7 @@ export const validPriorApproval: Schema = {
             'I am related to, or partnered with, an elected member for Southwark Council',
         },
       ],
-      metadata: {
-        sectionName: 'Check your application',
-      },
+      metadata: {sectionName: 'Check your application'},
     },
     {
       question: 'I confirm that:',
@@ -980,34 +732,18 @@ export const validPriorApproval: Schema = {
             'The information contained in this application is truthful, accurate and complete, to the best of my knowledge',
         },
       ],
-      metadata: {
-        sectionName: 'Check your application',
-      },
+      metadata: {sectionName: 'Check your application'},
     },
     {
       question: 'Which Local Planning authority is it?',
-      responses: [
-        {
-          value: 'Southwark',
-        },
-      ],
-      metadata: {
-        autoAnswered: true,
-        sectionName: 'Pay and submit',
-      },
+      responses: [{value: 'Southwark'}],
+      metadata: {autoAnswered: true, sectionName: 'Pay and submit'},
     },
     {
       question:
         'What type of prior approval application is it?application.type',
-      responses: [
-        {
-          value: 'Install or change solar panels',
-        },
-      ],
-      metadata: {
-        autoAnswered: true,
-        sectionName: 'Pay and submit',
-      },
+      responses: [{value: 'Install or change solar panels'}],
+      metadata: {autoAnswered: true, sectionName: 'Pay and submit'},
     },
   ],
   files: [
@@ -1031,7 +767,7 @@ export const validPriorApproval: Schema = {
     },
   ],
   metadata: {
-    organisation: 'Southwark',
+    organisation: 'southwark',
     id: 'b18c301b-9d44-4c6c-8d27-5b5bf33c570b',
     source: 'PlanX',
     service: {
@@ -1040,6 +776,6 @@ export const validPriorApproval: Schema = {
     },
     submittedAt: '2023-10-02 00:00:00',
     schema:
-      'https://theopensystemslab.github.io/digital-planning-data-schemas/v0.0.1/schema.json',
+      'https://theopensystemslab.github.io/digital-planning-data-schemas/@next/schema.json',
   },
 };

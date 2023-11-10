@@ -126,21 +126,12 @@
           "squareMetres": 1418.26
         }
       },
-      "constraints": {
-        "planning": [
-          {
-            "value": "tpo",
-            "description": "Tree Preservation Order (TPO) or zone",
-            "intersects": false
-          },
+      "planning": {
+        "source": "https://api.editor.planx.dev/gis/buckinghamshire?geom=POLYGON+%28%28-0.646633654832832+51.61556919642334%2C+-0.6466296315193095+51.61554504700152%2C+-0.6465049088001171+51.61551173743314%2C+-0.6464512646198194+51.61522027766699%2C+-0.6463131308555524+51.61522943785954%2C+-0.6463037431240002+51.61520695374722%2C+-0.6462487578391951+51.615222775901515%2C+-0.6462393701076429+51.61520861923739%2C+-0.6459456682205124+51.615292726412235%2C+-0.6460489332675857+51.61561499701554%2C+-0.646633654832832+51.61556919642334%29%29&analytics=false&sessionId=8da51c5b-a2a0-4386-a15d-29d66f9c121c",
+        "designations": [
           {
             "value": "listed",
             "description": "Listed Building",
-            "intersects": false
-          },
-          {
-            "value": "article4",
-            "description": "Article 4 Direction area",
             "intersects": false
           },
           {
@@ -204,11 +195,6 @@
             "intersects": false
           },
           {
-            "value": "article4.caz",
-            "description": "Central Activities Zone (CAZ)",
-            "intersects": false
-          },
-          {
             "value": "designated.nationalPark.broads",
             "description": "National Park - Broads",
             "intersects": false
@@ -216,6 +202,23 @@
           {
             "value": "road.classified",
             "description": "Classified Road",
+            "intersects": false
+          }
+        ],
+        "orders": [
+          {
+            "value": "article4",
+            "description": "Article 4 Direction area",
+            "intersects": false
+          },
+          {
+            "value": "article4.caz",
+            "description": "Central Activities Zone (CAZ)",
+            "intersects": false
+          },
+          {
+            "value": "tpo",
+            "description": "Tree Preservation Order (TPO) or zone",
             "intersects": false
           }
         ]
@@ -309,7 +312,7 @@
       }
     }
   },
-  "result": [
+  "preAssessment": [
     {
       "value": "Planning permission / Permitted development",
       "description": "It looks like the proposed changes may fall within the rules for Permitted Development and therefore would not need planning permission."
@@ -326,7 +329,12 @@
       "metadata": {
         "policyRefs": [
           {
-            "text": "Town and Country Planning Act 1990 (Section 55), The Town and Country Planning (General Permitted Development) (England) Order 2015"
+            "text": "Town and Country Planning Act 1990 (Section 55)",
+            "url": "https://www.legislation.gov.uk/ukpga/1990/8/section/55"
+          },
+          {
+            "text": "The Town and Country Planning (General Permitted Development) (England) Order 2015",
+            "url": "https://www.legislation.gov.uk/uksi/2015/596/contents"
           }
         ]
       }
@@ -342,7 +350,8 @@
         "autoAnswered": true,
         "policyRefs": [
           {
-            "text": "The Town and Country Planning (General Permitted Development) (England) Order 2015"
+            "text": "The Town and Country Planning (General Permitted Development) (England) Order 2015",
+            "url": "https://www.legislation.gov.uk/uksi/2015/596/contents/made"
           }
         ]
       }
@@ -386,7 +395,8 @@
       "metadata": {
         "policyRefs": [
           {
-            "text": "The Town and Country Planning (General Permitted Development) (England) Order 2015, Schedule 2, Part 1, Class A"
+            "text": "The Town and Country Planning (General Permitted Development) (England) Order 2015, Schedule 2, Part 1, Class A",
+            "url": "https://www.legislation.gov.uk/uksi/2015/596/schedule/2/part/1"
           }
         ]
       }
@@ -406,7 +416,8 @@
       "metadata": {
         "policyRefs": [
           {
-            "text": "The Town and Country Planning (General Permitted Development) (England) Order 2015 Schedule 2, Part 1, Class 1 A."
+            "text": "The Town and Country Planning (General Permitted Development) (England) Order 2015 Schedule 2, Part 1, Class 1 A.",
+            "url": "https://www.legislation.gov.uk/uksi/2015/596/schedule/2/part/1"
           }
         ]
       }
@@ -421,7 +432,8 @@
       "metadata": {
         "policyRefs": [
           {
-            "text": "The Town and Country Planning (General Permitted Development) (England) Order 2015 Section 2, Part 1, Class A"
+            "text": "The Town and Country Planning (General Permitted Development) (England) Order 2015 Section 2, Part 1, Class A",
+            "url": "https://www.legislation.gov.uk/uksi/2015/596/schedule/2/part/1"
           }
         ]
       }
@@ -447,7 +459,8 @@
       "metadata": {
         "policyRefs": [
           {
-            "text": "General Permitted Development Order 2015, Technical guidance (PDF)"
+            "text": "General Permitted Development Order 2015, Technical guidance",
+            "url": "https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/830643/190910_Tech_Guide_for_publishing.pdf"
           }
         ]
       }
@@ -500,7 +513,8 @@
       "metadata": {
         "policyRefs": [
           {
-            "text": "The Town and Country Planning (General Permitted Development) (England) Order 2015 Schedule 2, Part 1, Class A.1 (f)(i)"
+            "text": "The Town and Country Planning (General Permitted Development) (England) Order 2015 Schedule 2, Part 1, Class A.1 (f)(i)",
+            "url": "https://www.legislation.gov.uk/uksi/2015/596/schedule/2/part/1"
           }
         ]
       }
@@ -529,7 +543,8 @@
       "metadata": {
         "policyRefs": [
           {
-            "text": "The Town and Country Planning (General Permitted Development) (England) Order 2015 Schedule 2, Part 1, Class A"
+            "text": "The Town and Country Planning (General Permitted Development) (England) Order 2015 Schedule 2, Part 1, Class A",
+            "url": "https://www.legislation.gov.uk/uksi/2015/596/schedule/2/part/1"
           }
         ]
       }
@@ -560,7 +575,8 @@
       "metadata": {
         "policyRefs": [
           {
-            "text": "The Town and Country Planning (General Permitted Development) (England) Order 2015 Schedule 2, Part 1, Class A"
+            "text": "The Town and Country Planning (General Permitted Development) (England) Order 2015 Schedule 2, Part 1, Class A",
+            "url": "https://www.legislation.gov.uk/uksi/2015/596/schedule/2/part/1"
           }
         ]
       }
@@ -707,7 +723,8 @@
         "autoAnswered": true,
         "policyRefs": [
           {
-            "text": "Greater London Authority Act 1999"
+            "text": "Greater London Authority Act 1999",
+            "url": "https://www.legislation.gov.uk/ukpga/1999/29/section/346"
           }
         ]
       }
@@ -733,7 +750,8 @@
       "metadata": {
         "policyRefs": [
           {
-            "text": "The Town and Country Planning (Development Management Procedure) (England) Order 2015"
+            "text": "The Town and Country Planning (Development Management Procedure) (England) Order 2015",
+            "url": "https://www.legislation.gov.uk/uksi/2015/595/article/39/made"
           }
         ]
       }
@@ -859,7 +877,8 @@
       "metadata": {
         "policyRefs": [
           {
-            "text": "The Town and Country Planning (Fees for Applications, Deemed Applications, Requests and Site Visits) (England) Regulations 2012 Schedule 1, Part 2"
+            "text": "The Town and Country Planning (Fees for Applications, Deemed Applications, Requests and Site Visits) (England) Regulations 2012 Schedule 1, Part 2",
+            "url": "https://www.legislation.gov.uk/uksi/2012/2920/contents"
           }
         ]
       }
@@ -907,7 +926,20 @@
       "metadata": {
         "policyRefs": [
           {
-            "text": "The Town and Country Planning (Fees for Applications, Deemed Applications, Requests and Site Visits) (England) Regulations 2012, Regulation 14UK Statutory Instruments 2012 No. 2920 Regulation 4, Equalities Act 2010, Section 6 Children Act 1989, Part 3"
+            "text": "The Town and Country Planning (Fees for Applications, Deemed Applications, Requests and Site Visits) (England) Regulations 2012, Regulation 14",
+            "url": "https://www.legislation.gov.uk/uksi/2012/2920/regulation/14"
+          },
+          {
+            "text": "UK Statutory Instruments 2012 No. 2920 Regulation 4",
+            "url": "https://www.legislation.gov.uk/uksi/2012/2920/regulation/4/made"
+          },
+          {
+            "text": "Equalities Act 2010, Section 6",
+            "url": "https://www.legislation.gov.uk/ukpga/2010/15/section/6"
+          },
+          {
+            "text": "Children Act 1989, Part 3",
+            "url": "https://www.legislation.gov.uk/ukpga/1989/41/part/III"
           }
         ]
       }
@@ -922,7 +954,8 @@
       "metadata": {
         "policyRefs": [
           {
-            "text": "The Town and Country Planning (Fees for Applications, Deemed Applications, Requests and Site Visits) (England) Regulations 2012, Regulation 9"
+            "text": "The Town and Country Planning (Fees for Applications, Deemed Applications, Requests and Site Visits) (England) Regulations 2012, Regulation 9",
+            "url": "https://www.legislation.gov.uk/uksi/2012/2920/regulation/9"
           }
         ]
       }
@@ -937,7 +970,8 @@
       "metadata": {
         "policyRefs": [
           {
-            "text": "The Town and Country Planning (Fees for Applications, Deemed Applications, Requests and Site Visits) (England) Regulations 2012, Regulation 8"
+            "text": "The Town and Country Planning (Fees for Applications, Deemed Applications, Requests and Site Visits) (England) Regulations 2012, Regulation 8",
+            "url": "https://www.legislation.gov.uk/uksi/2012/2920/regulation/8"
           }
         ]
       }
@@ -972,7 +1006,8 @@
       "metadata": {
         "policyRefs": [
           {
-            "text": "The Town and Country Planning (Fees for Applications, Deemed Applications, Requests and Site Visits) (England) Regulations 2012, Regulation 14"
+            "text": "The Town and Country Planning (Fees for Applications, Deemed Applications, Requests and Site Visits) (England) Regulations 2012, Regulation 14",
+            "url": "https://www.legislation.gov.uk/uksi/2012/2920/regulation/14"
           }
         ]
       }
@@ -996,7 +1031,8 @@
       "metadata": {
         "policyRefs": [
           {
-            "text": "UK Statutory Instruments 2012 No. 2920 Regulation 8"
+            "text": "UK Statutory Instruments 2012 No. 2920 Regulation 8",
+            "url": "https://www.legislation.gov.uk/uksi/2012/2920/regulation/8/made"
           }
         ]
       }
@@ -1174,20 +1210,14 @@
     }
   ],
   "metadata": {
+    "organisation": "buckinghamshire",
+    "id": "8da51c5b-a2a0-4386-a15d-29d66f9c121c",
+    "source": "PlanX",
     "service": {
       "flowId": "824628b2-deeb-48b0-92b1-2ca7f3b17163",
-      "name": "Apply for a lawful development certificate",
-      "owner": "Buckinghamshire",
       "url": "https://www.editor.planx.dev/buckinghamshire/apply-for-a-lawful-development-certificate/preview"
     },
-    "session": {
-      "source": "PlanX",
-      "id": "8da51c5b-a2a0-4386-a15d-29d66f9c121c",
-      "createdAt": "2023-10-01 00:00:00",
-      "submittedAt": "2023-10-02 00:00:00"
-    },
-    "schema": {
-      "url": "https://theopensystemslab.github.io/digital-planning-data-schemas/v0.0.1/schema.json"
-    }
+    "submittedAt": "2023-10-02 00:00:00",
+    "schema": "https://theopensystemslab.github.io/digital-planning-data-schemas/@next/schema.json"
   }
 }

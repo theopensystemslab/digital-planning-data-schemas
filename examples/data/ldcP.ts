@@ -96,7 +96,8 @@ export const validLDCP: Schema = {
         },
       },
       planning: {
-        source: 'https://api.editor.planx.dev/gis/buckinghamshire?geom=test',
+        source:
+          'https://api.editor.planx.dev/gis/buckinghamshire?geom=POLYGON+%28%28-0.646633654832832+51.61556919642334%2C+-0.6466296315193095+51.61554504700152%2C+-0.6465049088001171+51.61551173743314%2C+-0.6464512646198194+51.61522027766699%2C+-0.6463131308555524+51.61522943785954%2C+-0.6463037431240002+51.61520695374722%2C+-0.6462487578391951+51.615222775901515%2C+-0.6462393701076429+51.61520861923739%2C+-0.6459456682205124+51.615292726412235%2C+-0.6460489332675857+51.61561499701554%2C+-0.646633654832832+51.61556919642334%29%29&analytics=false&sessionId=8da51c5b-a2a0-4386-a15d-29d66f9c121c',
         designations: [
           {
             value: 'listed',
@@ -255,75 +256,56 @@ export const validLDCP: Schema = {
   responses: [
     {
       question: 'List the changes involved in the project',
-      responses: [
-        {
-          value: 'Add a rear or side extension (or conservatory)',
-        },
-      ],
+      responses: [{value: 'Add a rear or side extension (or conservatory)'}],
       metadata: {
         policyRefs: [
           {
-            text: 'Town and Country Planning Act 1990 (Section 55), The Town and Country Planning (General Permitted Development) (England) Order 2015',
+            text: 'Town and Country Planning Act 1990 (Section 55)',
+            url: 'https://www.legislation.gov.uk/ukpga/1990/8/section/55',
+          },
+          {
+            text: 'The Town and Country Planning (General Permitted Development) (England) Order 2015',
+            url: 'https://www.legislation.gov.uk/uksi/2015/596/contents',
           },
         ],
       },
     },
     {
       question: 'What type of property is it?',
-      responses: [
-        {
-          value: 'House',
-        },
-      ],
+      responses: [{value: 'House'}],
       metadata: {
         autoAnswered: true,
         policyRefs: [
           {
             text: 'The Town and Country Planning (General Permitted Development) (England) Order 2015',
+            url: 'https://www.legislation.gov.uk/uksi/2015/596/contents/made',
           },
         ],
       },
     },
     {
       question: 'What type of house is it?',
-      responses: [
-        {
-          value: 'Detached',
-        },
-      ],
-      metadata: {
-        autoAnswered: true,
-      },
+      responses: [{value: 'Detached'}],
+      metadata: {autoAnswered: true},
     },
     {
       question: 'How many storeys does the original house have?',
-      responses: [
-        {
-          value: '2 or more',
-        },
-      ],
+      responses: [{value: '2 or more'}],
       metadata: {},
     },
     {
       question: 'Does the original house have a projection to the rear?',
-      responses: [
-        {
-          value: 'No',
-        },
-      ],
+      responses: [{value: 'No'}],
       metadata: {},
     },
     {
       question: 'Was the house always a house?',
-      responses: [
-        {
-          value: 'Yes, it was built as a house',
-        },
-      ],
+      responses: [{value: 'Yes, it was built as a house'}],
       metadata: {
         policyRefs: [
           {
             text: 'The Town and Country Planning (General Permitted Development) (England) Order 2015, Schedule 2, Part 1, Class A',
+            url: 'https://www.legislation.gov.uk/uksi/2015/596/schedule/2/part/1',
           },
         ],
       },
@@ -333,92 +315,61 @@ export const validLDCP: Schema = {
       responses: [
         {
           value: 'Yes, it was built before 2020',
-          metadata: {
-            flags: ['Planning permission / Permitted development'],
-          },
+          metadata: {flags: ['Planning permission / Permitted development']},
         },
       ],
       metadata: {
         policyRefs: [
           {
             text: 'The Town and Country Planning (General Permitted Development) (England) Order 2015 Schedule 2, Part 1, Class 1 A.',
+            url: 'https://www.legislation.gov.uk/uksi/2015/596/schedule/2/part/1',
           },
         ],
       },
     },
     {
       question: 'How many storeys does the extension have?',
-      responses: [
-        {
-          value: '1 storey',
-        },
-      ],
+      responses: [{value: '1 storey'}],
       metadata: {
         policyRefs: [
           {
             text: 'The Town and Country Planning (General Permitted Development) (England) Order 2015 Section 2, Part 1, Class A',
+            url: 'https://www.legislation.gov.uk/uksi/2015/596/schedule/2/part/1',
           },
         ],
       },
     },
     {
       question: 'Does the original house have a projection to the rear?',
-      responses: [
-        {
-          value: 'No',
-        },
-      ],
-      metadata: {
-        autoAnswered: true,
-      },
+      responses: [{value: 'No'}],
+      metadata: {autoAnswered: true},
     },
     {
       question: 'Which of these best describes your project?',
-      responses: [
-        {
-          value: 'Rear only',
-        },
-      ],
+      responses: [{value: 'Rear only'}],
       metadata: {
         policyRefs: [
           {
-            text: 'General Permitted Development Order 2015, Technical guidance (PDF)',
+            text: 'General Permitted Development Order 2015, Technical guidance',
+            url: 'https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/830643/190910_Tech_Guide_for_publishing.pdf',
           },
         ],
       },
     },
     {
       question: 'Is the property on designated land?',
-      responses: [
-        {
-          value: 'No',
-        },
-      ],
-      metadata: {
-        autoAnswered: true,
-      },
+      responses: [{value: 'No'}],
+      metadata: {autoAnswered: true},
     },
     {
       question: 'Is the property a site of special scientific interest?',
-      responses: [
-        {
-          value: 'No',
-        },
-      ],
-      metadata: {
-        autoAnswered: true,
-      },
+      responses: [{value: 'No'}],
+      metadata: {autoAnswered: true},
     },
     {
       question: 'What type of house is it?',
-      responses: [
-        {
-          value: 'Detached',
-        },
-      ],
-      metadata: {
-        autoAnswered: true,
-      },
+      responses: [{value: 'Detached'}],
+      metadata: {autoAnswered: true},
     },
     {
       question:
@@ -426,26 +377,21 @@ export const validLDCP: Schema = {
       responses: [
         {
           value: 'Less than 4m',
-          metadata: {
-            flags: ['Planning permission / Permitted development'],
-          },
+          metadata: {flags: ['Planning permission / Permitted development']},
         },
       ],
       metadata: {
         policyRefs: [
           {
             text: 'The Town and Country Planning (General Permitted Development) (England) Order 2015 Schedule 2, Part 1, Class A.1 (f)(i)',
+            url: 'https://www.legislation.gov.uk/uksi/2015/596/schedule/2/part/1',
           },
         ],
       },
     },
     {
       question: 'What is the shortest distance to the property boundary?',
-      responses: [
-        {
-          value: '2m or more',
-        },
-      ],
+      responses: [{value: '2m or more'}],
       metadata: {},
     },
     {
@@ -454,29 +400,22 @@ export const validLDCP: Schema = {
       responses: [
         {
           value: 'Yes',
-          metadata: {
-            flags: ['Planning permission / Permitted development'],
-          },
+          metadata: {flags: ['Planning permission / Permitted development']},
         },
       ],
       metadata: {
         policyRefs: [
           {
             text: 'The Town and Country Planning (General Permitted Development) (England) Order 2015 Schedule 2, Part 1, Class A',
+            url: 'https://www.legislation.gov.uk/uksi/2015/596/schedule/2/part/1',
           },
         ],
       },
     },
     {
       question: 'Is the property on designated land?',
-      responses: [
-        {
-          value: 'No',
-        },
-      ],
-      metadata: {
-        autoAnswered: true,
-      },
+      responses: [{value: 'No'}],
+      metadata: {autoAnswered: true},
     },
     {
       question:
@@ -484,382 +423,234 @@ export const validLDCP: Schema = {
       responses: [
         {
           value: '50% or less of the available area around the original house',
-          metadata: {
-            flags: ['Planning permission / Permitted development'],
-          },
+          metadata: {flags: ['Planning permission / Permitted development']},
         },
       ],
       metadata: {
         policyRefs: [
           {
             text: 'The Town and Country Planning (General Permitted Development) (England) Order 2015 Schedule 2, Part 1, Class A',
+            url: 'https://www.legislation.gov.uk/uksi/2015/596/schedule/2/part/1',
           },
         ],
       },
     },
     {
       question: 'What types of changes does the project involve?',
-      responses: [
-        {
-          value: 'Extension',
-        },
-      ],
-      metadata: {
-        autoAnswered: true,
-      },
+      responses: [{value: 'Extension'}],
+      metadata: {autoAnswered: true},
     },
     {
       question:
         'Have you already told us that you are doing works to a tree or hedge?',
-      responses: [
-        {
-          value: 'No',
-        },
-      ],
-      metadata: {
-        autoAnswered: true,
-      },
+      responses: [{value: 'No'}],
+      metadata: {autoAnswered: true},
     },
     {
       question: 'Are there any protected trees on the property?',
-      responses: [
-        {
-          value: 'No',
-        },
-      ],
-      metadata: {
-        autoAnswered: true,
-      },
+      responses: [{value: 'No'}],
+      metadata: {autoAnswered: true},
     },
     {
       question: 'Is the site in a conservation area?',
       responses: [
         {
           value: 'No',
-          metadata: {
-            flags: ['Works to trees & hedges / Not required'],
-          },
+          metadata: {flags: ['Works to trees & hedges / Not required']},
         },
       ],
-      metadata: {
-        autoAnswered: true,
-      },
+      metadata: {autoAnswered: true},
     },
     {
       question: 'What are you applying about?',
-      responses: [
-        {
-          value: 'Proposed changes I want to make in the future',
-        },
-      ],
-      metadata: {
-        autoAnswered: true,
-      },
+      responses: [{value: 'Proposed changes I want to make in the future'}],
+      metadata: {autoAnswered: true},
     },
     {
       question: 'What do the works involve?',
-      responses: [
-        {
-          value: 'Works to extend a property',
-        },
-      ],
-      metadata: {
-        autoAnswered: true,
-      },
+      responses: [{value: 'Works to extend a property'}],
+      metadata: {autoAnswered: true},
     },
     {
       question: 'What does the project involve?',
-      responses: [
-        {
-          value: 'Add a rear or side extension (or conservatory)',
-        },
-      ],
-      metadata: {
-        autoAnswered: true,
-      },
+      responses: [{value: 'Add a rear or side extension (or conservatory)'}],
+      metadata: {autoAnswered: true},
     },
     {
       question:
         'How much is the internal floor area of the property increasing by?',
-      responses: [
-        {
-          value: '24',
-        },
-      ],
+      responses: [{value: '24'}],
       metadata: {},
     },
     {
       question: 'Is it a residential property?',
-      responses: [
-        {
-          value: 'Yes',
-        },
-      ],
-      metadata: {
-        autoAnswered: true,
-      },
+      responses: [{value: 'Yes'}],
+      metadata: {autoAnswered: true},
     },
     {
       question: 'Do the changes involve the creation of any new homes?',
-      responses: [
-        {
-          value: 'No',
-        },
-      ],
+      responses: [{value: 'No'}],
       metadata: {},
     },
     {
       question:
         'Do the changes involve creating any new bedrooms or bathrooms?',
-      responses: [
-        {
-          value: 'No',
-        },
-      ],
+      responses: [{value: 'No'}],
       metadata: {},
     },
     {
       question: 'Do the changes involve the creation of any new homes?',
-      responses: [
-        {
-          value: 'No',
-        },
-      ],
-      metadata: {
-        autoAnswered: true,
-      },
+      responses: [{value: 'No'}],
+      metadata: {autoAnswered: true},
     },
     {
       question: 'Is the property in the Greater London Authority area?',
-      responses: [
-        {
-          value: 'No',
-        },
-      ],
+      responses: [{value: 'No'}],
       metadata: {
         autoAnswered: true,
         policyRefs: [
           {
             text: 'Greater London Authority Act 1999',
+            url: 'https://www.legislation.gov.uk/ukpga/1999/29/section/346',
           },
         ],
       },
     },
     {
       question: 'Which of these best describes you?',
-      responses: [
-        {
-          value: 'Applicant',
-        },
-      ],
-      metadata: {
-        autoAnswered: true,
-      },
+      responses: [{value: 'Applicant'}],
+      metadata: {autoAnswered: true},
     },
     {
       question: 'Which of these best describes your interest in the land?',
-      responses: [
-        {
-          value: 'Sole owner',
-        },
-      ],
+      responses: [{value: 'Sole owner'}],
       metadata: {
         policyRefs: [
           {
             text: 'The Town and Country Planning (Development Management Procedure) (England) Order 2015',
+            url: 'https://www.legislation.gov.uk/uksi/2015/595/article/39/made',
           },
         ],
       },
     },
     {
       question: 'What types of changes does the project involve?',
-      responses: [
-        {
-          value: 'Extension',
-        },
-      ],
-      metadata: {
-        autoAnswered: true,
-      },
+      responses: [{value: 'Extension'}],
+      metadata: {autoAnswered: true},
     },
     {
       question:
         'Does the work involve any alterations to ground or floor levels?',
-      responses: [
-        {
-          value: 'No',
-        },
-      ],
+      responses: [{value: 'No'}],
       metadata: {},
     },
     {
       question: 'Would you like to upload any photographs?',
-      responses: [
-        {
-          value: 'No',
-        },
-      ],
+      responses: [{value: 'No'}],
       metadata: {},
     },
     {
       question: 'What types of extension are being added?',
-      responses: [
-        {
-          value: 'Rear or side',
-        },
-      ],
-      metadata: {
-        autoAnswered: true,
-      },
+      responses: [{value: 'Rear or side'}],
+      metadata: {autoAnswered: true},
     },
     {
       question: 'Do you also want to add existing internal floor plans?',
-      responses: [
-        {
-          value: 'No',
-        },
-      ],
+      responses: [{value: 'No'}],
       metadata: {},
     },
     {
       question:
         'Is the roof of the extension already shown on another set of drawings?',
-      responses: [
-        {
-          value: 'No',
-        },
-      ],
+      responses: [{value: 'No'}],
       metadata: {},
     },
     {
       question:
         'Would you like to upload any additional drawings, documents or images?',
-      responses: [
-        {
-          value: 'No',
-        },
-      ],
+      responses: [{value: 'No'}],
       metadata: {},
     },
     {
       question: 'What type of planning application are you making?',
-      responses: [
-        {
-          value: 'Lawful Development Certificate',
-        },
-      ],
-      metadata: {
-        autoAnswered: true,
-      },
+      responses: [{value: 'Lawful Development Certificate'}],
+      metadata: {autoAnswered: true},
     },
     {
       question: 'What type of changes are you applying for?',
-      responses: [
-        {
-          value: 'Proposed changes',
-        },
-      ],
-      metadata: {
-        autoAnswered: true,
-      },
+      responses: [{value: 'Proposed changes'}],
+      metadata: {autoAnswered: true},
     },
     {
       question: 'Is the property a home?',
-      responses: [
-        {
-          value: 'Yes',
-        },
-      ],
-      metadata: {
-        autoAnswered: true,
-      },
+      responses: [{value: 'Yes'}],
+      metadata: {autoAnswered: true},
     },
     {
       question: 'What types of changes does the application relate to?',
-      responses: [
-        {
-          value: 'Extension',
-        },
-      ],
-      metadata: {
-        autoAnswered: true,
-      },
+      responses: [{value: 'Extension'}],
+      metadata: {autoAnswered: true},
     },
     {
       question: 'How many homes does this application relate to?',
-      responses: [
-        {
-          value: '1',
-        },
-      ],
+      responses: [{value: '1'}],
       metadata: {
         policyRefs: [
           {
             text: 'The Town and Country Planning (Fees for Applications, Deemed Applications, Requests and Site Visits) (England) Regulations 2012 Schedule 1, Part 2',
+            url: 'https://www.legislation.gov.uk/uksi/2012/2920/contents',
           },
         ],
       },
     },
     {
       question: 'What type of extension is it?',
-      responses: [
-        {
-          value: 'Rear or side extension',
-        },
-      ],
-      metadata: {
-        autoAnswered: true,
-      },
+      responses: [{value: 'Rear or side extension'}],
+      metadata: {autoAnswered: true},
     },
     {
       question: 'Is the property a home?',
-      responses: [
-        {
-          value: 'Yes',
-        },
-      ],
-      metadata: {
-        autoAnswered: true,
-      },
+      responses: [{value: 'Yes'}],
+      metadata: {autoAnswered: true},
     },
     {
       question: 'What works does the project involve?',
-      responses: [
-        {
-          value: 'Extension',
-        },
-      ],
-      metadata: {
-        autoAnswered: true,
-      },
+      responses: [{value: 'Extension'}],
+      metadata: {autoAnswered: true},
     },
     {
       question:
         'Is the sole purpose of the project to support the needs of a disabled resident?',
-      responses: [
-        {
-          value: 'No',
-        },
-      ],
+      responses: [{value: 'No'}],
       metadata: {
         policyRefs: [
           {
-            text: 'The Town and Country Planning (Fees for Applications, Deemed Applications, Requests and Site Visits) (England) Regulations 2012, Regulation 14UK Statutory Instruments 2012 No. 2920 Regulation 4, Equalities Act 2010, Section 6 Children Act 1989, Part 3',
+            text: 'The Town and Country Planning (Fees for Applications, Deemed Applications, Requests and Site Visits) (England) Regulations 2012, Regulation 14',
+            url: 'https://www.legislation.gov.uk/uksi/2012/2920/regulation/14',
+          },
+          {
+            text: 'UK Statutory Instruments 2012 No. 2920 Regulation 4',
+            url: 'https://www.legislation.gov.uk/uksi/2012/2920/regulation/4/made',
+          },
+          {
+            text: 'Equalities Act 2010, Section 6',
+            url: 'https://www.legislation.gov.uk/ukpga/2010/15/section/6',
+          },
+          {
+            text: 'Children Act 1989, Part 3',
+            url: 'https://www.legislation.gov.uk/ukpga/1989/41/part/III',
           },
         ],
       },
     },
     {
       question: 'Is this application a resubmission?',
-      responses: [
-        {
-          value: 'Yes',
-        },
-      ],
+      responses: [{value: 'Yes'}],
       metadata: {
         policyRefs: [
           {
             text: 'The Town and Country Planning (Fees for Applications, Deemed Applications, Requests and Site Visits) (England) Regulations 2012, Regulation 9',
+            url: 'https://www.legislation.gov.uk/uksi/2012/2920/regulation/9',
           },
         ],
       },
@@ -867,177 +658,102 @@ export const validLDCP: Schema = {
     {
       question:
         'Is this the first time you have resubmitted an application for this site?',
-      responses: [
-        {
-          value: 'Yes',
-        },
-      ],
+      responses: [{value: 'Yes'}],
       metadata: {
         policyRefs: [
           {
             text: 'The Town and Country Planning (Fees for Applications, Deemed Applications, Requests and Site Visits) (England) Regulations 2012, Regulation 8',
+            url: 'https://www.legislation.gov.uk/uksi/2012/2920/regulation/8',
           },
         ],
       },
     },
     {
       question: 'What type of application is this?',
-      responses: [
-        {
-          value: 'Lawful Development Certificate',
-        },
-      ],
-      metadata: {
-        autoAnswered: true,
-      },
+      responses: [{value: 'Lawful Development Certificate'}],
+      metadata: {autoAnswered: true},
     },
     {
       question: "What was the original application's reference number?",
-      responses: [
-        {
-          value: 'M8AG1C F4R4WAY TR33',
-        },
-      ],
+      responses: [{value: 'M8AG1C F4R4WAY TR33'}],
       metadata: {},
     },
     {
       question:
         'To qualify for a fee exemption, the proposed works must be of a similar description to the original application',
-      responses: [
-        {
-          value: 'I understand',
-        },
-      ],
+      responses: [{value: 'I understand'}],
       metadata: {
         policyRefs: [
           {
             text: 'The Town and Country Planning (Fees for Applications, Deemed Applications, Requests and Site Visits) (England) Regulations 2012, Regulation 14',
+            url: 'https://www.legislation.gov.uk/uksi/2012/2920/regulation/14',
           },
         ],
       },
     },
     {
       question: 'What was the result of the original application?',
-      responses: [
-        {
-          value: 'Withdrawn',
-        },
-      ],
+      responses: [{value: 'Withdrawn'}],
       metadata: {},
     },
     {
       question: 'When did you submit the original application?',
-      responses: [
-        {
-          value: 'Within the last 12 months',
-        },
-      ],
+      responses: [{value: 'Within the last 12 months'}],
       metadata: {
         policyRefs: [
           {
-            text: 'UK Statutory Instruments 2012 No. 2920 Regulation 8',
+            text: 'UK Statutory Instruments 2012 No. 2920 Regulation 8',
+            url: 'https://www.legislation.gov.uk/uksi/2012/2920/regulation/8/made',
           },
         ],
       },
     },
     {
       question: 'Does the application qualify for a disability exemption?',
-      responses: [
-        {
-          value: 'No',
-        },
-      ],
-      metadata: {
-        autoAnswered: true,
-      },
+      responses: [{value: 'No'}],
+      metadata: {autoAnswered: true},
     },
     {
       question: 'Does the application qualify for a resubmission exemption?',
-      responses: [
-        {
-          value: 'Yes',
-        },
-      ],
-      metadata: {
-        autoAnswered: true,
-      },
+      responses: [{value: 'Yes'}],
+      metadata: {autoAnswered: true},
     },
     {
       question:
         'Did you get any pre-application advice before making this application?',
-      responses: [
-        {
-          value: 'No',
-        },
-      ],
+      responses: [{value: 'No'}],
       metadata: {},
     },
     {
       question:
         'What local planning authority is this application being sent to?',
-      responses: [
-        {
-          value: 'South Buckinghamshire',
-        },
-      ],
-      metadata: {
-        autoAnswered: true,
-      },
+      responses: [{value: 'South Buckinghamshire'}],
+      metadata: {autoAnswered: true},
     },
     {
       question: 'What type of application is it?',
-      responses: [
-        {
-          value: 'Lawful Development Certificate',
-        },
-      ],
-      metadata: {
-        autoAnswered: true,
-      },
+      responses: [{value: 'Lawful Development Certificate'}],
+      metadata: {autoAnswered: true},
     },
     {
       question: 'What type of works are you applying about?',
-      responses: [
-        {
-          value: 'Proposed',
-        },
-      ],
-      metadata: {
-        autoAnswered: true,
-      },
+      responses: [{value: 'Proposed'}],
+      metadata: {autoAnswered: true},
     },
     {
       question: "What is the applicant's interest in the land?",
-      responses: [
-        {
-          value: 'Owner',
-        },
-      ],
-      metadata: {
-        autoAnswered: true,
-      },
+      responses: [{value: 'Owner'}],
+      metadata: {autoAnswered: true},
     },
     {
       question: "What is the user's role?",
-      responses: [
-        {
-          value: 'Applicant',
-        },
-      ],
-      metadata: {
-        autoAnswered: true,
-      },
+      responses: [{value: 'Applicant'}],
+      metadata: {autoAnswered: true},
     },
     {
       question: "What is the applicant's declared connections?",
-      responses: [
-        {
-          value: 'None',
-        },
-      ],
-      metadata: {
-        autoAnswered: true,
-      },
+      responses: [{value: 'None'}],
+      metadata: {autoAnswered: true},
     },
   ],
   files: [
@@ -1115,7 +831,7 @@ export const validLDCP: Schema = {
     },
   ],
   metadata: {
-    organisation: 'Buckinghamshire',
+    organisation: 'buckinghamshire',
     id: '8da51c5b-a2a0-4386-a15d-29d66f9c121c',
     source: 'PlanX',
     service: {
@@ -1124,6 +840,6 @@ export const validLDCP: Schema = {
     },
     submittedAt: '2023-10-02 00:00:00',
     schema:
-      'https://theopensystemslab.github.io/digital-planning-data-schemas/v0.0.1/schema.json',
+      'https://theopensystemslab.github.io/digital-planning-data-schemas/@next/schema.json',
   },
 };
