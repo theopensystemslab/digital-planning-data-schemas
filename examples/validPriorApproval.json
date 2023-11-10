@@ -117,49 +117,13 @@
           "squareMetres": 1527.57
         }
       },
-      "constraints": {
-        "planning": [
-          {
-            "value": "tpo",
-            "description": "Tree Preservation Order (TPO) or zone",
-            "intersects": false
-          },
+      "planning": {
+        "source": "https://api.editor.planx.dev/gis/southwark?geom=POLYGON+%28%28-0.0967472791671659+51.50830340605074%2C+-0.09676337242125525+51.50830507546084%2C+-0.09689748287199977+51.50831926544436%2C+-0.09693503379820824+51.50790775412855%2C+-0.09666681289671919+51.50789439872946%2C+-0.09645719784644384+51.507889747624404%2C+-0.09639290535660058+51.50828278342658%2C+-0.0967472791671659+51.50830340605074%29%29&analytics=false&sessionId=b18c301b-9d44-4c6c-8d27-5b5bf33c570b",
+        "designations": [
           {
             "value": "listed",
             "description": "Listed Building",
             "intersects": false
-          },
-          {
-            "value": "article4",
-            "description": "Article 4 Direction area",
-            "intersects": true,
-            "entities": [
-              {
-                "name": "Central Activities Zone",
-                "description": "Change of use from offices to dwelling houses is restricted",
-                "source": "https://www.planning.data.gov.uk/entity/7010000942"
-              },
-              {
-                "name": "Central Activities Zone",
-                "description": "Demolition of commercial buildings and construction of new dwellinghouses is restricted",
-                "source": "https://www.planning.data.gov.uk/entity/7010000944"
-              },
-              {
-                "name": "Bankside and Borough District Town Centre",
-                "description": "Demolition of commercial buildings and construction of new dwellinghouses is restricted",
-                "source": "https://www.planning.data.gov.uk/entity/7010001042"
-              },
-              {
-                "name": "Central Activities Zone",
-                "description": "Change of use from Class E to residential is restricted",
-                "source": "https://www.planning.data.gov.uk/entity/7010001055"
-              },
-              {
-                "name": "Bankside and Borough District Town Centre",
-                "description": "Change of use from Class E to residential is restricted",
-                "source": "https://www.planning.data.gov.uk/entity/7010001153"
-              }
-            ]
           },
           {
             "value": "monument",
@@ -212,12 +176,6 @@
             "intersects": false
           },
           {
-            "value": "article4.caz",
-            "description": "Central Activities Zone (CAZ)",
-            "intersects": true,
-            "entities": []
-          },
-          {
             "value": "designated.conservationArea",
             "description": "Conservation Area",
             "intersects": false
@@ -230,6 +188,51 @@
           {
             "value": "road.classified",
             "description": "Classified Road",
+            "intersects": false
+          }
+        ],
+        "orders": [
+          {
+            "value": "article4",
+            "description": "Article 4 Direction area",
+            "intersects": true,
+            "entities": [
+              {
+                "name": "Central Activities Zone",
+                "description": "Change of use from offices to dwelling houses is restricted",
+                "source": "https://www.planning.data.gov.uk/entity/7010000942"
+              },
+              {
+                "name": "Central Activities Zone",
+                "description": "Demolition of commercial buildings and construction of new dwellinghouses is restricted",
+                "source": "https://www.planning.data.gov.uk/entity/7010000944"
+              },
+              {
+                "name": "Bankside and Borough District Town Centre",
+                "description": "Demolition of commercial buildings and construction of new dwellinghouses is restricted",
+                "source": "https://www.planning.data.gov.uk/entity/7010001042"
+              },
+              {
+                "name": "Central Activities Zone",
+                "description": "Change of use from Class E to residential is restricted",
+                "source": "https://www.planning.data.gov.uk/entity/7010001055"
+              },
+              {
+                "name": "Bankside and Borough District Town Centre",
+                "description": "Change of use from Class E to residential is restricted",
+                "source": "https://www.planning.data.gov.uk/entity/7010001153"
+              }
+            ]
+          },
+          {
+            "value": "article4.caz",
+            "description": "Central Activities Zone (CAZ)",
+            "intersects": true,
+            "entities": []
+          },
+          {
+            "value": "tpo",
+            "description": "Tree Preservation Order (TPO) or zone",
             "intersects": false
           }
         ]
@@ -302,7 +305,7 @@
       }
     }
   },
-  "result": [
+  "preAssessment": [
     {
       "value": "Planning permission / Prior approval",
       "description": "It looks like the proposed changes do not require planning permission, however the applicant must apply for Prior Approval before proceeding."
@@ -424,7 +427,12 @@
       "metadata": {
         "policyRefs": [
           {
-            "text": "The Town and Country Planning (General Permitted Development) (England) Order 2015 Schedule 2, Part 14, Class A\nThe Town and Country Planning (General Permitted Development) (England) Order 2015 Schedule 2, Part 14, Class K"
+            "text": "The Town and Country Planning (General Permitted Development) (England) Order 2015 Schedule 2, Part 14, Class A",
+            "url": "https://www.legislation.gov.uk/uksi/2015/596/schedule/2/part/14/crossheading/class-a-installation-or-alteration-etc-of-solar-equipment-on-domestic-premises"
+          },
+          {
+            "text": "The Town and Country Planning (General Permitted Development) (England) Order 2015 Schedule 2, Part 14, Class K",
+            "url": "https://www.legislation.gov.uk/uksi/2015/596/schedule/2/part/14/crossheading/class-k-installation-or-alteration-etc-of-standalone-solar-equipment-on-nondomestic-premises"
           }
         ],
         "sectionName": "About the project"
@@ -445,7 +453,8 @@
       "metadata": {
         "policyRefs": [
           {
-            "text": "The Town and Country Planning (General Permitted Development) (England) Order 2015 Schedule 2, Part 14, Class A"
+            "text": "The Town and Country Planning (General Permitted Development) (England) Order 2015 Schedule 2, Part 14, Class A",
+            "url": "https://www.legislation.gov.uk/uksi/2015/596/schedule/2/part/14/crossheading/class-a-installation-or-alteration-etc-of-solar-equipment-on-domestic-premises"
           }
         ],
         "sectionName": "About the project"
@@ -467,7 +476,8 @@
         "autoAnswered": true,
         "policyRefs": [
           {
-            "text": "The Town and Country Planning (General Permitted Development) (England) Order 2015 Schedule 2, Part 14, Class J"
+            "text": "The Town and Country Planning (General Permitted Development) (England) Order 2015 Schedule 2, Part 14, Class J",
+            "url": "https://www.legislation.gov.uk/uksi/2015/596/schedule/2/part/14/crossheading/class-j-installation-or-alteration-etc-of-solar-equipment-on-nondomestic-premises"
           }
         ],
         "sectionName": "About the project"
@@ -489,7 +499,8 @@
         "autoAnswered": true,
         "policyRefs": [
           {
-            "text": "The Town and Country Planning (General Permitted Development) (England) Order 2015 Schedule 2, Part 14, Class J"
+            "text": "The Town and Country Planning (General Permitted Development) (England) Order 2015 Schedule 2, Part 14, Class J",
+            "url": "https://www.legislation.gov.uk/uksi/2015/596/schedule/2/part/14/crossheading/class-j-installation-or-alteration-etc-of-solar-equipment-on-nondomestic-premises"
           }
         ],
         "sectionName": "About the project"
@@ -528,7 +539,8 @@
         "autoAnswered": true,
         "policyRefs": [
           {
-            "text": "[The Town and Country Planning (General Permitted Development) (England) Order 2015 S.2.P.14. .A.1 (c)](https://www.legislation.gov.uk/uksi/2015/596/schedule/2/part/14)"
+            "text": "The Town and Country Planning (General Permitted Development) (England) Order 2015 S.2.P.14. .A.1 (c)",
+            "url": "https://www.legislation.gov.uk/uksi/2015/596/schedule/2/part/14"
           }
         ],
         "sectionName": "About the project"
@@ -545,7 +557,8 @@
         "autoAnswered": true,
         "policyRefs": [
           {
-            "text": "The Town and Country Planning (General Permitted Development) (England) Order 2015 Schedule 2, Part 14, Class A.1 (c)"
+            "text": "The Town and Country Planning (General Permitted Development) (England) Order 2015 Schedule 2, Part 14, Class A.1 (c)",
+            "url": "https://www.legislation.gov.uk/uksi/2015/596/schedule/2/part/14"
           }
         ],
         "sectionName": "About the project"
@@ -566,7 +579,8 @@
       "metadata": {
         "policyRefs": [
           {
-            "text": "The Town and Country Planning (General Permitted Development) (England) Order 2015 Schedule 2, Part 14, Class J"
+            "text": "The Town and Country Planning (General Permitted Development) (England) Order 2015 Schedule 2, Part 14, Class J",
+            "url": "https://www.legislation.gov.uk/uksi/2015/596/schedule/2/part/14"
           }
         ],
         "sectionName": "About the project"
@@ -587,7 +601,8 @@
       "metadata": {
         "policyRefs": [
           {
-            "text": "The Town and Country Planning (General Permitted Development) (England) Order 2015 Schedule 2, Part 14, Class A"
+            "text": "The Town and Country Planning (General Permitted Development) (England) Order 2015 Schedule 2, Part 14, Class A",
+            "url": "https://www.legislation.gov.uk/uksi/2015/596/schedule/2/part/14"
           }
         ],
         "sectionName": "About the project"
@@ -608,7 +623,8 @@
       "metadata": {
         "policyRefs": [
           {
-            "text": "The Town and Country Planning (General Permitted Development) (England) Order 2015 Schedule 2, Part 14, Class J"
+            "text": "The Town and Country Planning (General Permitted Development) (England) Order 2015 Schedule 2, Part 14, Class J",
+            "url": "https://www.legislation.gov.uk/uksi/2015/596/schedule/2/part/14"
           }
         ],
         "sectionName": "About the project"
@@ -640,7 +656,8 @@
       "metadata": {
         "policyRefs": [
           {
-            "text": "The Town and Country Planning (General Permitted Development) (England) Order 2015 Schedule 2, Part 14, Class J.3"
+            "text": "The Town and Country Planning (General Permitted Development) (England) Order 2015 Schedule 2, Part 14, Class J.3",
+            "url": "https://www.legislation.gov.uk/uksi/2015/596/schedule/2/part/14"
           }
         ],
         "sectionName": "About the project"
@@ -661,7 +678,12 @@
       "metadata": {
         "policyRefs": [
           {
-            "text": "The Town and Country Planning (General Permitted Development) (England) Order 2015 Schedule 2, Part 14, Class AThe Town and Country Planning (General Permitted Development) (England) Order 2015 Schedule 2, Part 14, Class K"
+            "text": "The Town and Country Planning (General Permitted Development) (England) Order 2015 Schedule 2, Part 14, Class A",
+            "url": "https://www.legislation.gov.uk/uksi/2015/596/schedule/2/part/14/crossheading/class-a-installation-or-alteration-etc-of-solar-equipment-on-domestic-premises"
+          },
+          {
+            "text": "The Town and Country Planning (General Permitted Development) (England) Order 2015 Schedule 2, Part 14, Class K",
+            "url": "https://www.legislation.gov.uk/uksi/2015/596/schedule/2/part/14/crossheading/class-k-installation-or-alteration-etc-of-standalone-solar-equipment-on-nondomestic-premises"
           }
         ],
         "sectionName": "About the project"
@@ -918,7 +940,12 @@
       "metadata": {
         "policyRefs": [
           {
-            "text": "The Town and Country Planning (Fees for Applications, Deemed Applications, Requests and Site Visits) (England) Regulations 2012, Regulation 14 &amp;  Regulation 4 (1)(b)"
+            "text": "The Town and Country Planning (Fees for Applications, Deemed Applications, Requests and Site Visits) (England) Regulations 2012, Regulation 14",
+            "url": "https://www.legislation.gov.uk/uksi/2012/2920/regulation/14"
+          },
+          {
+            "text": "Regulation 4 (1)(b)",
+            "url": "https://www.legislation.gov.uk/uksi/2012/2920/regulation/4"
           }
         ],
         "sectionName": "Check your application"
@@ -971,7 +998,8 @@
         "autoAnswered": true,
         "policyRefs": [
           {
-            "text": "The Town and Country Planning (Fees for Applications, Deemed Applications, Requests and Site Visits) (England) Regulations 2012, Regulation 14"
+            "text": "The Town and Country Planning (Fees for Applications, Deemed Applications, Requests and Site Visits) (England) Regulations 2012, Regulation 14",
+            "url": "https://www.legislation.gov.uk/uksi/2012/2920/regulation/14"
           }
         ],
         "sectionName": "Check your application"
@@ -1068,20 +1096,14 @@
     }
   ],
   "metadata": {
+    "organisation": "southwark",
+    "id": "b18c301b-9d44-4c6c-8d27-5b5bf33c570b",
+    "source": "PlanX",
     "service": {
       "flowId": "c6628103-c648-4663-81e1-bfa0a1a18340",
-      "name": "Apply for prior approval",
-      "owner": "Southwark",
       "url": "https://www.editor.planx.dev/southwark/apply-for-prior-approval/preview"
     },
-    "session": {
-      "source": "PlanX",
-      "id": "b18c301b-9d44-4c6c-8d27-5b5bf33c570b",
-      "createdAt": "2023-10-01 00:00:00",
-      "submittedAt": "2023-10-02 00:00:00"
-    },
-    "schema": {
-      "url": "https://theopensystemslab.github.io/digital-planning-data-schemas/v0.0.1/schema.json"
-    }
+    "submittedAt": "2023-10-02 00:00:00",
+    "schema": "https://theopensystemslab.github.io/digital-planning-data-schemas/@next/schema.json"
   }
 }

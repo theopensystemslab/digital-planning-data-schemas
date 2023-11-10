@@ -123,21 +123,12 @@
           "squareMetres": 125.92
         }
       },
-      "constraints": {
-        "planning": [
-          {
-            "value": "tpo",
-            "description": "Tree Preservation Order (TPO) or zone",
-            "intersects": false
-          },
+      "planning": {
+        "source": "https://api.editor.planx.dev/gis/lambeth?geom=POLYGON+%28%28-0.1186569035053321+51.465703531871384%2C+-0.1185938715934822+51.465724418998775%2C+-0.1184195280075143+51.46552473766957%2C+-0.11848390102387167+51.4655038504508%2C+-0.1186569035053321+51.465703531871384%29%29&analytics=false&sessionId=81bcaa0f-baf5-4573-ba0a-ea868c573faf",
+        "designations": [
           {
             "value": "listed",
             "description": "Listed Building",
-            "intersects": false
-          },
-          {
-            "value": "article4",
-            "description": "Article 4 Direction area",
             "intersects": false
           },
           {
@@ -191,11 +182,6 @@
             "intersects": false
           },
           {
-            "value": "article4.caz",
-            "description": "Central Activities Zone (CAZ)",
-            "intersects": false
-          },
-          {
             "value": "designated.nationalPark",
             "description": "National Park",
             "intersects": false
@@ -213,6 +199,23 @@
           {
             "value": "road.classified",
             "description": "Classified Road",
+            "intersects": false
+          }
+        ],
+        "orders": [
+          {
+            "value": "article4",
+            "description": "Article 4 Direction area",
+            "intersects": false
+          },
+          {
+            "value": "article4.caz",
+            "description": "Central Activities Zone (CAZ)",
+            "intersects": false
+          },
+          {
+            "value": "tpo",
+            "description": "Tree Preservation Order (TPO) or zone",
             "intersects": false
           }
         ]
@@ -434,7 +437,7 @@
       }
     }
   },
-  "result": [],
+  "preAssessment": [],
   "responses": [
     {
       "question": "Is the property in Lambeth?",
@@ -584,7 +587,8 @@
       "metadata": {
         "policyRefs": [
           {
-            "text": "The Town and Country Planning (Development Management Procedure) (England) 2015 (as amended)"
+            "text": "The Town and Country Planning (Development Management Procedure) (England) 2015 (as amended)",
+            "url": "http://www.legislation.gov.uk/uksi/2015/595/article/7/made"
           }
         ],
         "sectionName": "About the project"
@@ -600,7 +604,8 @@
       "metadata": {
         "policyRefs": [
           {
-            "text": "The Town and Country Planning (Development Management Procedure) (England) 2015 (as amended)"
+            "text": "The Town and Country Planning (Development Management Procedure) (England) 2015 (as amended)",
+            "url": "http://www.legislation.gov.uk/uksi/2015/595/article/7/made"
           }
         ],
         "sectionName": "About the project"
@@ -616,7 +621,8 @@
       "metadata": {
         "policyRefs": [
           {
-            "text": "The Town and Country Planning (Development Management Procedure) (England) 2015 (as amended)"
+            "text": "The Town and Country Planning (Development Management Procedure) (England) 2015 (as amended)",
+            "url": "http://www.legislation.gov.uk/uksi/2015/595/article/7/made"
           }
         ],
         "sectionName": "About the project"
@@ -632,7 +638,8 @@
       "metadata": {
         "policyRefs": [
           {
-            "text": "The Town and Country Planning (Development Management Procedure) (England) 2015 (as amended)"
+            "text": "The Town and Country Planning (Development Management Procedure) (England) 2015 (as amended)",
+            "url": "http://www.legislation.gov.uk/uksi/2015/595/article/7/made"
           }
         ],
         "sectionName": "About the project"
@@ -648,7 +655,8 @@
       "metadata": {
         "policyRefs": [
           {
-            "text": "The Town and Country Planning (Development Management Procedure) (England) 2015 (as amended)"
+            "text": "The Town and Country Planning (Development Management Procedure) (England) 2015 (as amended)",
+            "url": "http://www.legislation.gov.uk/uksi/2015/595/article/7/made"
           }
         ],
         "sectionName": "About the project"
@@ -664,7 +672,8 @@
       "metadata": {
         "policyRefs": [
           {
-            "text": "The Town and Country Planning (Development Management Procedure) (England) 2015 (as amended)"
+            "text": "The Town and Country Planning (Development Management Procedure) (England) 2015 (as amended)",
+            "url": "http://www.legislation.gov.uk/uksi/2015/595/article/7/made"
           }
         ],
         "sectionName": "About the project"
@@ -680,7 +689,8 @@
       "metadata": {
         "policyRefs": [
           {
-            "text": "The Town and Country Planning (Development Management Procedure) (England) 2015 (as amended)"
+            "text": "The Town and Country Planning (Development Management Procedure) (England) 2015 (as amended)",
+            "url": "http://www.legislation.gov.uk/uksi/2015/595/article/7/made"
           }
         ],
         "sectionName": "About the project"
@@ -696,7 +706,8 @@
       "metadata": {
         "policyRefs": [
           {
-            "text": "The Town and Country Planning (Development Management Procedure) (England) 2015 (as amended)"
+            "text": "The Town and Country Planning (Development Management Procedure) (England) 2015 (as amended)",
+            "url": "http://www.legislation.gov.uk/uksi/2015/595/article/7/made"
           }
         ],
         "sectionName": "About the project"
@@ -712,7 +723,8 @@
       "metadata": {
         "policyRefs": [
           {
-            "text": "The Town and Country Planning (Development Management Procedure) (England) 2015 (as amended)"
+            "text": "The Town and Country Planning (Development Management Procedure) (England) 2015 (as amended)",
+            "url": "http://www.legislation.gov.uk/uksi/2015/595/article/7/made"
           }
         ],
         "sectionName": "About the project"
@@ -728,7 +740,8 @@
       "metadata": {
         "policyRefs": [
           {
-            "text": "The Town and Country Planning (Development Management Procedure) (England) 2015 (as amended)"
+            "text": "The Town and Country Planning (Development Management Procedure) (England) 2015 (as amended)",
+            "url": "http://www.legislation.gov.uk/uksi/2015/595/article/7/made"
           }
         ],
         "sectionName": "About the project"
@@ -778,7 +791,8 @@
       "metadata": {
         "policyRefs": [
           {
-            "text": "Greater London Authority Act 1999"
+            "text": "Greater London Authority Act 1999",
+            "url": "https://www.legislation.gov.uk/ukpga/1999/29/section/346"
           }
         ],
         "sectionName": "About the project"
@@ -805,7 +819,8 @@
       "metadata": {
         "policyRefs": [
           {
-            "text": "Greater London Authority Act 1999"
+            "text": "Greater London Authority Act 1999",
+            "url": "https://www.legislation.gov.uk/ukpga/1999/29/section/346"
           }
         ],
         "sectionName": "About the project"
@@ -822,7 +837,8 @@
         "autoAnswered": true,
         "policyRefs": [
           {
-            "text": "Greater London Authority Act 1999"
+            "text": "Greater London Authority Act 1999",
+            "url": "https://www.legislation.gov.uk/ukpga/1999/29/section/346"
           }
         ],
         "sectionName": "About the project"
@@ -838,7 +854,8 @@
       "metadata": {
         "policyRefs": [
           {
-            "text": "Greater London Authority Act 1999"
+            "text": "Greater London Authority Act 1999",
+            "url": "https://www.legislation.gov.uk/ukpga/1999/29/section/346"
           }
         ],
         "sectionName": "About the project"
@@ -854,7 +871,8 @@
       "metadata": {
         "policyRefs": [
           {
-            "text": "Greater London Authority Act 1999"
+            "text": "Greater London Authority Act 1999",
+            "url": "https://www.legislation.gov.uk/ukpga/1999/29/section/346"
           }
         ],
         "sectionName": "About the project"
@@ -873,7 +891,8 @@
       "metadata": {
         "policyRefs": [
           {
-            "text": "Greater London Authority Act 1999"
+            "text": "Greater London Authority Act 1999",
+            "url": "https://www.legislation.gov.uk/ukpga/1999/29/section/346"
           }
         ],
         "sectionName": "About the project"
@@ -911,7 +930,8 @@
       "metadata": {
         "policyRefs": [
           {
-            "text": "Greater London Authority Act 1999"
+            "text": "Greater London Authority Act 1999",
+            "url": "https://www.legislation.gov.uk/ukpga/1999/29/section/346"
           }
         ],
         "sectionName": "About the project"
@@ -927,7 +947,8 @@
       "metadata": {
         "policyRefs": [
           {
-            "text": "Greater London Authority Act 1999"
+            "text": "Greater London Authority Act 1999",
+            "url": "https://www.legislation.gov.uk/ukpga/1999/29/section/346"
           }
         ],
         "sectionName": "About the project"
@@ -943,7 +964,8 @@
       "metadata": {
         "policyRefs": [
           {
-            "text": "Greater London Authority Act 1999"
+            "text": "Greater London Authority Act 1999",
+            "url": "https://www.legislation.gov.uk/ukpga/1999/29/section/346"
           }
         ],
         "sectionName": "About the project"
@@ -959,7 +981,8 @@
       "metadata": {
         "policyRefs": [
           {
-            "text": "Greater London Authority Act 1999"
+            "text": "Greater London Authority Act 1999",
+            "url": "https://www.legislation.gov.uk/ukpga/1999/29/section/346"
           }
         ],
         "sectionName": "About the project"
@@ -975,7 +998,8 @@
       "metadata": {
         "policyRefs": [
           {
-            "text": "Greater London Authority Act 1999"
+            "text": "Greater London Authority Act 1999",
+            "url": "https://www.legislation.gov.uk/ukpga/1999/29/section/346"
           }
         ],
         "sectionName": "About the project"
@@ -991,7 +1015,8 @@
       "metadata": {
         "policyRefs": [
           {
-            "text": "Greater London Authority Act 1999"
+            "text": "Greater London Authority Act 1999",
+            "url": "https://www.legislation.gov.uk/ukpga/1999/29/section/346"
           }
         ],
         "sectionName": "About the project"
@@ -1020,7 +1045,8 @@
         "autoAnswered": true,
         "policyRefs": [
           {
-            "text": "The Town and Country Planning (Development Management Procedure) (England) 2015 (as amended)"
+            "text": "The Town and Country Planning (Development Management Procedure) (England) 2015 (as amended",
+            "url": "http://www.legislation.gov.uk/uksi/2015/595/article/7/made"
           }
         ],
         "sectionName": "About the project"
@@ -1217,7 +1243,8 @@
       "metadata": {
         "policyRefs": [
           {
-            "text": "The Town and Country Planning (Development Management Procedure) (England) Order 2015"
+            "text": "The Town and Country Planning (Development Management Procedure) (England) Order 2015",
+            "url": "https://www.legislation.gov.uk/uksi/2015/595/article/39/made"
           }
         ],
         "sectionName": "About you"
@@ -1303,7 +1330,20 @@
       "metadata": {
         "policyRefs": [
           {
-            "text": "The Town and Country Planning (Fees for Applications, Deemed Applications, Requests and Site Visits) (England) Regulations 2012, Regulation 14UK Statutory Instruments 2012 No. 2920 Regulation 4, Equalities Act 2010, Section 6 Children Act 1989, Part 3"
+            "text": "The Town and Country Planning (Fees for Applications, Deemed Applications, Requests and Site Visits) (England) Regulations 2012, Regulation 14",
+            "url": "https://www.legislation.gov.uk/uksi/2012/2920/regulation/14"
+          },
+          {
+            "text": "UK Statutory Instruments 2012 No. 2920 Regulation 4",
+            "url": "https://www.legislation.gov.uk/uksi/2012/2920/regulation/4/made"
+          },
+          {
+            "text": "Equalities Act 2010, Section 6",
+            "url": "https://www.legislation.gov.uk/ukpga/2010/15/section/6"
+          },
+          {
+            "text": "Children Act 1989, Part 3",
+            "url": "https://www.legislation.gov.uk/ukpga/1989/41/part/III"
           }
         ],
         "sectionName": "About this application"
@@ -1355,7 +1395,8 @@
       "metadata": {
         "policyRefs": [
           {
-            "text": "The Town and Country Planning (Fees for Applications, Deemed Applications, Requests and Site Visits) (England) Regulations 2012, Regulation 9"
+            "text": "The Town and Country Planning (Fees for Applications, Deemed Applications, Requests and Site Visits) (England) Regulations 2012, Regulation 9",
+            "url": "https://www.legislation.gov.uk/uksi/2012/2920/regulation/9"
           }
         ],
         "sectionName": "About this application"
@@ -1396,7 +1437,8 @@
         "autoAnswered": true,
         "policyRefs": [
           {
-            "text": "The Town and Country Planning (Fees for Applications, Deemed Applications, Requests and Site Visits) (England) Regulations 2012 Chapter 2, Paragraph 3"
+            "text": "The Town and Country Planning (Fees for Applications, Deemed Applications, Requests and Site Visits) (England) Regulations 2012 Chapter 2, Paragraph 3",
+            "url": "https://www.legislation.gov.uk/uksi/2012/2920/schedule/1"
           }
         ],
         "sectionName": "About this application"
@@ -1413,7 +1455,8 @@
         "autoAnswered": true,
         "policyRefs": [
           {
-            "text": "The Town and Country Planning (Fees for Applications, Deemed Applications, Requests and Site Visits) (England) Regulations 2012 - Regulation 11"
+            "text": "The Town and Country Planning (Fees for Applications, Deemed Applications, Requests and Site Visits) (England) Regulations 2012 - Regulation 11",
+            "url": "https://www.legislation.gov.uk/uksi/2012/2920/regulation/11"
           }
         ],
         "sectionName": "About this application"
@@ -1429,7 +1472,8 @@
       "metadata": {
         "policyRefs": [
           {
-            "text": "The Town and Country Planning (Fees for Applications, Deemed Applications, Requests and Site Visits) (England) Regulations 2012 Chapter 2, Paragraph 10"
+            "text": "The Town and Country Planning (Fees for Applications, Deemed Applications, Requests and Site Visits) (England) Regulations 2012 Chapter 2, Paragraph 10",
+            "url": "https://www.legislation.gov.uk/uksi/2012/2920/schedule/1"
           }
         ],
         "sectionName": "About this application"
@@ -1458,7 +1502,8 @@
         "autoAnswered": true,
         "policyRefs": [
           {
-            "text": "The Town and Country Planning (Fees for Applications, Deemed Applications, Requests and Site Visits) (England) Regulations 2012 - Regulation 11"
+            "text": "The Town and Country Planning (Fees for Applications, Deemed Applications, Requests and Site Visits) (England) Regulations 2012 - Regulation 11",
+            "url": "https://www.legislation.gov.uk/uksi/2012/2920/regulation/11"
           }
         ],
         "sectionName": "About this application"
@@ -1475,7 +1520,8 @@
         "autoAnswered": true,
         "policyRefs": [
           {
-            "text": "The Town and Country Planning (Fees for Applications, Deemed Applications, Requests and Site Visits) (England) Regulations 2012 Chapter 2, Paragraph 10"
+            "text": "The Town and Country Planning (Fees for Applications, Deemed Applications, Requests and Site Visits) (England) Regulations 2012 Chapter 2, Paragraph 10",
+            "url": "https://www.legislation.gov.uk/uksi/2012/2920/schedule/1"
           }
         ],
         "sectionName": "About this application"
@@ -1521,7 +1567,8 @@
         "autoAnswered": true,
         "policyRefs": [
           {
-            "text": "The Community Infrastructure Levy Regulations 2010, Regulation 42"
+            "text": "The Community Infrastructure Levy Regulations 2010, Regulation 42",
+            "url": "https://www.legislation.gov.uk/uksi/2010/948/regulation/42"
           }
         ],
         "sectionName": "About this application"
@@ -1543,7 +1590,8 @@
         "autoAnswered": true,
         "policyRefs": [
           {
-            "text": "The Community Infrastructure Levy Regulations 2010, Regulation 42"
+            "text": "The Community Infrastructure Levy Regulations 2010, Regulation 42",
+            "url": "https://www.legislation.gov.uk/uksi/2010/948/regulation/42"
           }
         ],
         "sectionName": "About this application"
@@ -1711,20 +1759,14 @@
     }
   ],
   "metadata": {
+    "organisation": "lambeth",
+    "id": "81bcaa0f-baf5-4573-ba0a-ea868c573faf",
+    "source": "PlanX",
     "service": {
       "flowId": "01e38c5d-e701-4e44-acdc-4d6b5cc3b854",
-      "name": "Apply for planning permission",
-      "owner": "Lambeth",
       "url": "https://www.editor.planx.dev/lambeth/apply-for-planning-permission/preview"
     },
-    "session": {
-      "source": "PlanX",
-      "id": "81bcaa0f-baf5-4573-ba0a-ea868c573faf",
-      "createdAt": "2023-10-01 00:00:00",
-      "submittedAt": "2023-10-02 00:00:00"
-    },
-    "schema": {
-      "url": "https://theopensystemslab.github.io/digital-planning-data-schemas/v0.0.1/schema.json"
-    }
+    "submittedAt": "2023-10-02 00:00:00",
+    "schema": "https://theopensystemslab.github.io/digital-planning-data-schemas/@next/schema.json"
   }
 }
