@@ -96,9 +96,26 @@ export const validLDCP: Schema = {
         },
       },
       planning: {
-        source:
+        source: [
           'https://api.editor.planx.dev/gis/buckinghamshire?geom=POLYGON+%28%28-0.646633654832832+51.61556919642334%2C+-0.6466296315193095+51.61554504700152%2C+-0.6465049088001171+51.61551173743314%2C+-0.6464512646198194+51.61522027766699%2C+-0.6463131308555524+51.61522943785954%2C+-0.6463037431240002+51.61520695374722%2C+-0.6462487578391951+51.615222775901515%2C+-0.6462393701076429+51.61520861923739%2C+-0.6459456682205124+51.615292726412235%2C+-0.6460489332675857+51.61561499701554%2C+-0.646633654832832+51.61556919642334%29%29&analytics=false&sessionId=8da51c5b-a2a0-4386-a15d-29d66f9c121c',
+          'https://api.editor.planx.dev/roads?usrn=35200844',
+        ],
         designations: [
+          {
+            value: 'article4',
+            description: 'Article 4 Direction area',
+            intersects: false,
+          },
+          {
+            value: 'article4.caz',
+            description: 'Central Activities Zone (CAZ)',
+            intersects: false,
+          },
+          {
+            value: 'tpo',
+            description: 'Tree Preservation Order (TPO) or zone',
+            intersects: false,
+          },
           {
             value: 'listed',
             description: 'Listed Building',
@@ -172,23 +189,6 @@ export const validLDCP: Schema = {
           {
             value: 'road.classified',
             description: 'Classified Road',
-            intersects: false,
-          },
-        ],
-        orders: [
-          {
-            value: 'article4',
-            description: 'Article 4 Direction area',
-            intersects: false,
-          },
-          {
-            value: 'article4.caz',
-            description: 'Central Activities Zone (CAZ)',
-            intersects: false,
-          },
-          {
-            value: 'tpo',
-            description: 'Tree Preservation Order (TPO) or zone',
             intersects: false,
           },
         ],

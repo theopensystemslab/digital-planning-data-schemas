@@ -111,9 +111,26 @@ export const validPlanningPermission: Schema = {
         },
       },
       planning: {
-        source:
+        source: [
           'https://api.editor.planx.dev/gis/lambeth?geom=POLYGON+%28%28-0.1186569035053321+51.465703531871384%2C+-0.1185938715934822+51.465724418998775%2C+-0.1184195280075143+51.46552473766957%2C+-0.11848390102387167+51.4655038504508%2C+-0.1186569035053321+51.465703531871384%29%29&analytics=false&sessionId=81bcaa0f-baf5-4573-ba0a-ea868c573faf',
+          'https://api.editor.planx.dev/roads?usrn=21901294',
+        ],
         designations: [
+          {
+            value: 'article4',
+            description: 'Article 4 Direction area',
+            intersects: false,
+          },
+          {
+            value: 'article4.caz',
+            description: 'Central Activities Zone (CAZ)',
+            intersects: false,
+          },
+          {
+            value: 'tpo',
+            description: 'Tree Preservation Order (TPO) or zone',
+            intersects: false,
+          },
           {
             value: 'listed',
             description: 'Listed Building',
@@ -187,23 +204,6 @@ export const validPlanningPermission: Schema = {
           {
             value: 'road.classified',
             description: 'Classified Road',
-            intersects: false,
-          },
-        ],
-        orders: [
-          {
-            value: 'article4',
-            description: 'Article 4 Direction area',
-            intersects: false,
-          },
-          {
-            value: 'article4.caz',
-            description: 'Central Activities Zone (CAZ)',
-            intersects: false,
-          },
-          {
-            value: 'tpo',
-            description: 'Tree Preservation Order (TPO) or zone',
             intersects: false,
           },
         ],

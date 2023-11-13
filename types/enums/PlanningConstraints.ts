@@ -2,6 +2,8 @@
  * Values for `data.property.planning.designations`
  */
 export const PlanningDesignations = {
+  article4: 'Article 4 Direction area',
+  'article4.caz': 'Central Activities Zone (CAZ)',
   designated: 'Designated land',
   'designated.AONB': 'Area of Outstanding Natural Beauty (AONB)',
   'designated.conservationArea': 'Conservation Area',
@@ -21,13 +23,5 @@ export const PlanningDesignations = {
   'nature.SSSI': 'Site of Special Scientific Interest (SSSI)',
   registeredPark: 'Historic Park or Garden',
   'road.classified': 'Classified Road',
-};
-
-/**
- * Values for `data.property.planning.orders`
- */
-export const PlanningOrders = {
-  article4: 'Article 4 Direction area',
-  'article4.caz': 'Central Activities Zone (CAZ)',
   tpo: 'Tree Preservation Order (TPO) or zone',
 };
