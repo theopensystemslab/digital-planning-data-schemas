@@ -1,8 +1,5 @@
 import {GeoJSON} from 'geojson';
-import {
-  PlanningDesignations,
-  PlanningOrders,
-} from '../../enums/PlanningConstraints';
+import {PlanningDesignations} from '../../enums/PlanningConstraints';
 import {PropertyTypes} from '../../enums/PropertyTypes';
 import {Area, URL} from '../../utils';
 
@@ -48,11 +45,10 @@ export interface UKProperty {
    */
   planning?: {
     /**
-     * @description An open API request or website that explains how these constraints were sourced
+     * @description A list of open data requests or websites that explain how these constraints were sourced
      */
-    source: URL;
+    sources: URL[];
     designations?: PlanningDesignation[];
-    orders?: PlanningOrder[];
     conditions?: PlanningConstraint[];
     guidance?: PlanningConstraint[];
     plans?: {
@@ -194,42 +190,6 @@ type IntersectingPlanningDesignation = {
 export type PlanningDesignation =
   | NonIntersectingPlanningDesignation
   | IntersectingPlanningDesignation;
-
-type PlanningOrderKeys = keyof typeof PlanningOrders;
-
-type GenericPlanningOrder<TKey extends PlanningOrderKeys> = {
-  value: TKey;
-  description: (typeof PlanningOrders)[TKey];
-};
-
-type PlanningOrderMap = {
-  [K in PlanningOrderKeys]: GenericPlanningOrder<K>;
-};
-
-type BasePlanningOrder = PlanningOrderMap[keyof PlanningOrderMap];
-
-/**
- * @description A planning order that does not intersect with the proposed site, per the DE-9IM spatial relationship definition of intersects
- */
-type NonIntersectingPlanningOrder = {
-  intersects: false;
-} & BasePlanningOrder;
-
-/**
- * @description A planning order that does intersect with the proposed site, per the DE-9IM spatial relationship definition of intersects
- */
-type IntersectingPlanningOrder = {
-  intersects: true;
-  entities: Entity[] | [];
-} & BasePlanningOrder;
-
-/**
- * @id #PlanningOrder
- * @description Planning orders that may intersect with the proposed site determined by spatial queries against Planning Data (planning.data.gov.uk) and Ordnance Survey
- */
-export type PlanningOrder =
-  | NonIntersectingPlanningOrder
-  | IntersectingPlanningOrder;
 
 type BasePlanningConstraint = {
   value: string;

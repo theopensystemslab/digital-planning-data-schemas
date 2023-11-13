@@ -118,8 +118,54 @@
         }
       },
       "planning": {
-        "source": "https://api.editor.planx.dev/gis/southwark?geom=POLYGON+%28%28-0.0967472791671659+51.50830340605074%2C+-0.09676337242125525+51.50830507546084%2C+-0.09689748287199977+51.50831926544436%2C+-0.09693503379820824+51.50790775412855%2C+-0.09666681289671919+51.50789439872946%2C+-0.09645719784644384+51.507889747624404%2C+-0.09639290535660058+51.50828278342658%2C+-0.0967472791671659+51.50830340605074%29%29&analytics=false&sessionId=b18c301b-9d44-4c6c-8d27-5b5bf33c570b",
+        "sources": [
+          "https://api.editor.planx.dev/gis/southwark?geom=POLYGON+%28%28-0.0967472791671659+51.50830340605074%2C+-0.09676337242125525+51.50830507546084%2C+-0.09689748287199977+51.50831926544436%2C+-0.09693503379820824+51.50790775412855%2C+-0.09666681289671919+51.50789439872946%2C+-0.09645719784644384+51.507889747624404%2C+-0.09639290535660058+51.50828278342658%2C+-0.0967472791671659+51.50830340605074%29%29&analytics=false&sessionId=b18c301b-9d44-4c6c-8d27-5b5bf33c570b",
+          "https://api.editor.planx.dev/roads?usrn=22503078"
+        ],
         "designations": [
+          {
+            "value": "article4",
+            "description": "Article 4 Direction area",
+            "intersects": true,
+            "entities": [
+              {
+                "name": "Central Activities Zone",
+                "description": "Change of use from offices to dwelling houses is restricted",
+                "source": "https://www.planning.data.gov.uk/entity/7010000942"
+              },
+              {
+                "name": "Central Activities Zone",
+                "description": "Demolition of commercial buildings and construction of new dwellinghouses is restricted",
+                "source": "https://www.planning.data.gov.uk/entity/7010000944"
+              },
+              {
+                "name": "Bankside and Borough District Town Centre",
+                "description": "Demolition of commercial buildings and construction of new dwellinghouses is restricted",
+                "source": "https://www.planning.data.gov.uk/entity/7010001042"
+              },
+              {
+                "name": "Central Activities Zone",
+                "description": "Change of use from Class E to residential is restricted",
+                "source": "https://www.planning.data.gov.uk/entity/7010001055"
+              },
+              {
+                "name": "Bankside and Borough District Town Centre",
+                "description": "Change of use from Class E to residential is restricted",
+                "source": "https://www.planning.data.gov.uk/entity/7010001153"
+              }
+            ]
+          },
+          {
+            "value": "article4.caz",
+            "description": "Central Activities Zone (CAZ)",
+            "intersects": true,
+            "entities": []
+          },
+          {
+            "value": "tpo",
+            "description": "Tree Preservation Order (TPO) or zone",
+            "intersects": false
+          },
           {
             "value": "listed",
             "description": "Listed Building",
@@ -188,51 +234,6 @@
           {
             "value": "road.classified",
             "description": "Classified Road",
-            "intersects": false
-          }
-        ],
-        "orders": [
-          {
-            "value": "article4",
-            "description": "Article 4 Direction area",
-            "intersects": true,
-            "entities": [
-              {
-                "name": "Central Activities Zone",
-                "description": "Change of use from offices to dwelling houses is restricted",
-                "source": "https://www.planning.data.gov.uk/entity/7010000942"
-              },
-              {
-                "name": "Central Activities Zone",
-                "description": "Demolition of commercial buildings and construction of new dwellinghouses is restricted",
-                "source": "https://www.planning.data.gov.uk/entity/7010000944"
-              },
-              {
-                "name": "Bankside and Borough District Town Centre",
-                "description": "Demolition of commercial buildings and construction of new dwellinghouses is restricted",
-                "source": "https://www.planning.data.gov.uk/entity/7010001042"
-              },
-              {
-                "name": "Central Activities Zone",
-                "description": "Change of use from Class E to residential is restricted",
-                "source": "https://www.planning.data.gov.uk/entity/7010001055"
-              },
-              {
-                "name": "Bankside and Borough District Town Centre",
-                "description": "Change of use from Class E to residential is restricted",
-                "source": "https://www.planning.data.gov.uk/entity/7010001153"
-              }
-            ]
-          },
-          {
-            "value": "article4.caz",
-            "description": "Central Activities Zone (CAZ)",
-            "intersects": true,
-            "entities": []
-          },
-          {
-            "value": "tpo",
-            "description": "Tree Preservation Order (TPO) or zone",
             "intersects": false
           }
         ]
