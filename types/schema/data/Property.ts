@@ -47,7 +47,7 @@ export interface UKProperty {
     /**
      * @description A list of open data requests or websites that explain how these constraints were sourced
      */
-    source: URL[];
+    sources: URL[];
     designations?: PlanningDesignation[];
     conditions?: PlanningConstraint[];
     guidance?: PlanningConstraint[];

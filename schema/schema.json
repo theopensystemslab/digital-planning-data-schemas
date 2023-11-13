@@ -2855,7 +2855,7 @@
               ],
               "type": "object"
             },
-            "source": {
+            "sources": {
               "description": "A list of open data requests or websites that explain how these constraints were sourced",
               "items": {
                 "$ref": "#/definitions/URL"
@@ -2864,7 +2864,7 @@
             }
           },
           "required": [
-            "source"
+            "sources"
           ],
           "type": "object"
         },
@@ -17957,7 +17957,7 @@
               ],
               "type": "object"
             },
-            "source": {
+            "sources": {
               "description": "A list of open data requests or websites that explain how these constraints were sourced",
               "items": {
                 "$ref": "#/definitions/URL"
@@ -17966,7 +17966,7 @@
             }
           },
           "required": [
-            "source"
+            "sources"
           ],
           "type": "object"
         },
