@@ -12,9 +12,10 @@ export type Metadata = BaseMetadata | PlanXMetadata;
  */
 export interface BaseMetadata {
   /**
-   * @description UK Local Authority that this application is being submitted to
+   * @description The reference code for the organisation responsible for processing this planning application, sourced from planning.data.gov.uk/dataset/local-authority
+   * @maxLength 4
    */
-  organisation: string; // @todo align to DLUHC Planning Application API curie
+  organisation: string;
   /**
    * @description Unique identifier for this application
    */

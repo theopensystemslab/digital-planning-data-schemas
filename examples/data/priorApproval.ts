@@ -767,7 +767,7 @@ export const validPriorApproval: Schema = {
     },
   ],
   metadata: {
-    organisation: 'southwark',
+    organisation: 'SWK',
     id: 'b18c301b-9d44-4c6c-8d27-5b5bf33c570b',
     source: 'PlanX',
     service: {

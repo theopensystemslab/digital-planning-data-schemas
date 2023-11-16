@@ -1227,7 +1227,7 @@ export const validLDCE: Schema = {
     },
   ],
   metadata: {
-    organisation: 'buckinghamshire',
+    organisation: 'BKM',
     id: '95f90e21-93f5-4761-90b3-815c673e041f',
     source: 'PlanX',
     service: {
