@@ -49,9 +49,12 @@ export const ProjectTypes = {
   'alter.equipment.wind': 'Install a wind turbine',
   'alter.facades': 'Change the material or colour of the external walls',
   'alter.facades.paint': 'Paint the facade',
+  'alter.facades.insulation': 'External wall insulation',
   'alter.facades.rear':
     'Change the material or colour of the external walls to the rear of the building',
   'alter.facades.reclad': 'Change the cladding of the facade',
+  'alter.facades.repair':
+    'Repair, clean or replace parts of the external walls',
   'alter.highways':
     'Changes to a public road, pavement or path (including drop kerb)',
   'alter.highways.access': 'Create a point of access to a highway',

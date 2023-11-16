@@ -1174,7 +1174,7 @@ export const validLDCE: Schema = {
       type: [
         {
           value: 'proposal.photograph',
-          description: 'Photographs',
+          description: 'Photographs - proposed',
         },
       ],
     },

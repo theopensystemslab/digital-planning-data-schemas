@@ -45,7 +45,31 @@ export interface BaseDetails {
       dwellings?: number;
     };
   };
+  materials?: {
+    boundaryWalls?: MaterialsDescription;
+    chimneysAndFlues?: MaterialsDescription;
+    decks?: MaterialsDescription;
+    doors?: MaterialsDescription;
+    facades?: MaterialsDescription;
+    fence?: MaterialsDescription;
+    gate?: MaterialsDescription;
+    gutters?: MaterialsDescription;
+    hardSurfaces?: MaterialsDescription;
+    roof?: MaterialsDescription;
+    rooflights?: MaterialsDescription;
+    soilPipes?: MaterialsDescription;
+    windows?: MaterialsAppearance;
+  };
 }
+
+type MaterialsDescription = {
+  existing: string;
+  proposed: string;
+};
+
+type MaterialsAppearance = {
+  appearance: 'similar' | 'different';
+};
 
 /**
  * @id #LondonDetails
