@@ -9,6 +9,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 The minor version will be incremented upon a breaking change and the patch version will be
 incremented for features.
 
+## [0.2.0] - 2023-11-17
+
+### Breaking
+- Renamed `result` to `preAssessment` and made optional, as applications from sources other than Planx are unlikely to provide this ([#66](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/66))
+
+### Added
+- Added `url` to `policyRefs` under `responses` ([#67](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/67))
+- Added additional values to `ApplicationTypes` data dictionary ([#65](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/65), [#72](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/72))
+
+### Changed
+- Simplified `metadata` overall and updated `organisation` to align to Planning Data local authority reference codes ([#68](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/68), [#71](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/71))
+- Adjusted shape of `data.property.planning` to better capture existing `designations` and their `sources`, and illustrate future scope including `conditions` and more ([#64](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/64), [#70](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/70))
+
 ## [0.1.2] - 2023-10-27
 
 ### Changed
