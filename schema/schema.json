@@ -980,6 +980,42 @@
             "description"
           ],
           "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Planning Permission - Major application",
+              "type": "string"
+            },
+            "value": {
+              "const": "pp.full.major",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Planning Permission - Minor application",
+              "type": "string"
+            },
+            "value": {
+              "const": "pp.full.minor",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
         }
       ],
       "description": "Planning application types"
