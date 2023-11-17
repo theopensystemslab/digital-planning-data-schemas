@@ -1203,7 +1203,8 @@
           "description": "Unique identifier for this application"
         },
         "organisation": {
-          "description": "UK Local Authority that this application is being submitted to",
+          "description": "The reference code for the organisation responsible for processing this planning application, sourced from planning.data.gov.uk/dataset/local-authority",
+          "maxLength": 4,
           "type": "string"
         },
         "schema": {
@@ -3176,7 +3177,8 @@
           "description": "Unique identifier for this application"
         },
         "organisation": {
-          "description": "UK Local Authority that this application is being submitted to",
+          "description": "The reference code for the organisation responsible for processing this planning application, sourced from planning.data.gov.uk/dataset/local-authority",
+          "maxLength": 4,
           "type": "string"
         },
         "schema": {

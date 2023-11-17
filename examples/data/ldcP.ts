@@ -831,7 +831,7 @@ export const validLDCP: Schema = {
     },
   ],
   metadata: {
-    organisation: 'buckinghamshire',
+    organisation: 'BKM',
     id: '8da51c5b-a2a0-4386-a15d-29d66f9c121c',
     source: 'PlanX',
     service: {
