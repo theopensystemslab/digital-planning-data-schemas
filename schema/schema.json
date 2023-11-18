@@ -1163,6 +1163,220 @@
           ],
           "type": "object"
         },
+        "materials": {
+          "additionalProperties": false,
+          "properties": {
+            "boundaryWalls": {
+              "additionalProperties": false,
+              "properties": {
+                "existing": {
+                  "type": "string"
+                },
+                "proposed": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "existing",
+                "proposed"
+              ],
+              "type": "object"
+            },
+            "chimneysAndFlues": {
+              "additionalProperties": false,
+              "properties": {
+                "existing": {
+                  "type": "string"
+                },
+                "proposed": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "existing",
+                "proposed"
+              ],
+              "type": "object"
+            },
+            "decks": {
+              "additionalProperties": false,
+              "properties": {
+                "existing": {
+                  "type": "string"
+                },
+                "proposed": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "existing",
+                "proposed"
+              ],
+              "type": "object"
+            },
+            "doors": {
+              "additionalProperties": false,
+              "properties": {
+                "existing": {
+                  "type": "string"
+                },
+                "proposed": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "existing",
+                "proposed"
+              ],
+              "type": "object"
+            },
+            "facades": {
+              "additionalProperties": false,
+              "properties": {
+                "existing": {
+                  "type": "string"
+                },
+                "proposed": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "existing",
+                "proposed"
+              ],
+              "type": "object"
+            },
+            "fence": {
+              "additionalProperties": false,
+              "properties": {
+                "existing": {
+                  "type": "string"
+                },
+                "proposed": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "existing",
+                "proposed"
+              ],
+              "type": "object"
+            },
+            "gate": {
+              "additionalProperties": false,
+              "properties": {
+                "existing": {
+                  "type": "string"
+                },
+                "proposed": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "existing",
+                "proposed"
+              ],
+              "type": "object"
+            },
+            "gutters": {
+              "additionalProperties": false,
+              "properties": {
+                "existing": {
+                  "type": "string"
+                },
+                "proposed": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "existing",
+                "proposed"
+              ],
+              "type": "object"
+            },
+            "hardSurfaces": {
+              "additionalProperties": false,
+              "properties": {
+                "existing": {
+                  "type": "string"
+                },
+                "proposed": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "existing",
+                "proposed"
+              ],
+              "type": "object"
+            },
+            "roof": {
+              "additionalProperties": false,
+              "properties": {
+                "existing": {
+                  "type": "string"
+                },
+                "proposed": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "existing",
+                "proposed"
+              ],
+              "type": "object"
+            },
+            "rooflights": {
+              "additionalProperties": false,
+              "properties": {
+                "existing": {
+                  "type": "string"
+                },
+                "proposed": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "existing",
+                "proposed"
+              ],
+              "type": "object"
+            },
+            "soilPipes": {
+              "additionalProperties": false,
+              "properties": {
+                "existing": {
+                  "type": "string"
+                },
+                "proposed": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "existing",
+                "proposed"
+              ],
+              "type": "object"
+            },
+            "windows": {
+              "additionalProperties": false,
+              "properties": {
+                "appearance": {
+                  "enum": [
+                    "similar",
+                    "different"
+                  ],
+                  "type": "string"
+                }
+              },
+              "required": [
+                "appearance"
+              ],
+              "type": "object"
+            }
+          },
+          "type": "object"
+        },
         "new": {
           "additionalProperties": false,
           "properties": {
@@ -1489,7 +1703,7 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Photographs",
+              "const": "Photographs - existing",
               "type": "string"
             },
             "value": {
@@ -1615,6 +1829,24 @@
           "additionalProperties": false,
           "properties": {
             "description": {
+              "const": "Sketch plan",
+              "type": "string"
+            },
+            "value": {
+              "const": "proposal.drawing.sketchPlan",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
               "const": "Site plan - proposed",
               "type": "string"
             },
@@ -1656,6 +1888,24 @@
             },
             "value": {
               "const": "proposal.drawing.usePlan",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Arboriculturist report",
+              "type": "string"
+            },
+            "value": {
+              "const": "proposal.document.arboriculturistReport",
               "type": "string"
             }
           },
@@ -1903,11 +2153,47 @@
           "additionalProperties": false,
           "properties": {
             "description": {
+              "const": "Subsidence report",
+              "type": "string"
+            },
+            "value": {
+              "const": "proposal.document.subsidenceReport",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
               "const": "Sunlight and daylight report",
               "type": "string"
             },
             "value": {
               "const": "proposal.document.sunAndDaylight",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Technical evidence",
+              "type": "string"
+            },
+            "value": {
+              "const": "proposal.document.technicalEvidence",
               "type": "string"
             }
           },
@@ -1975,6 +2261,24 @@
           "additionalProperties": false,
           "properties": {
             "description": {
+              "const": "Tree condition report",
+              "type": "string"
+            },
+            "value": {
+              "const": "proposal.document.treeConditionReport",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
               "const": "Utility bill",
               "type": "string"
             },
@@ -1993,7 +2297,7 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Photographs",
+              "const": "Photographs - proposed",
               "type": "string"
             },
             "value": {
@@ -2163,6 +2467,220 @@
           "required": [
             "area"
           ],
+          "type": "object"
+        },
+        "materials": {
+          "additionalProperties": false,
+          "properties": {
+            "boundaryWalls": {
+              "additionalProperties": false,
+              "properties": {
+                "existing": {
+                  "type": "string"
+                },
+                "proposed": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "existing",
+                "proposed"
+              ],
+              "type": "object"
+            },
+            "chimneysAndFlues": {
+              "additionalProperties": false,
+              "properties": {
+                "existing": {
+                  "type": "string"
+                },
+                "proposed": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "existing",
+                "proposed"
+              ],
+              "type": "object"
+            },
+            "decks": {
+              "additionalProperties": false,
+              "properties": {
+                "existing": {
+                  "type": "string"
+                },
+                "proposed": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "existing",
+                "proposed"
+              ],
+              "type": "object"
+            },
+            "doors": {
+              "additionalProperties": false,
+              "properties": {
+                "existing": {
+                  "type": "string"
+                },
+                "proposed": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "existing",
+                "proposed"
+              ],
+              "type": "object"
+            },
+            "facades": {
+              "additionalProperties": false,
+              "properties": {
+                "existing": {
+                  "type": "string"
+                },
+                "proposed": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "existing",
+                "proposed"
+              ],
+              "type": "object"
+            },
+            "fence": {
+              "additionalProperties": false,
+              "properties": {
+                "existing": {
+                  "type": "string"
+                },
+                "proposed": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "existing",
+                "proposed"
+              ],
+              "type": "object"
+            },
+            "gate": {
+              "additionalProperties": false,
+              "properties": {
+                "existing": {
+                  "type": "string"
+                },
+                "proposed": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "existing",
+                "proposed"
+              ],
+              "type": "object"
+            },
+            "gutters": {
+              "additionalProperties": false,
+              "properties": {
+                "existing": {
+                  "type": "string"
+                },
+                "proposed": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "existing",
+                "proposed"
+              ],
+              "type": "object"
+            },
+            "hardSurfaces": {
+              "additionalProperties": false,
+              "properties": {
+                "existing": {
+                  "type": "string"
+                },
+                "proposed": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "existing",
+                "proposed"
+              ],
+              "type": "object"
+            },
+            "roof": {
+              "additionalProperties": false,
+              "properties": {
+                "existing": {
+                  "type": "string"
+                },
+                "proposed": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "existing",
+                "proposed"
+              ],
+              "type": "object"
+            },
+            "rooflights": {
+              "additionalProperties": false,
+              "properties": {
+                "existing": {
+                  "type": "string"
+                },
+                "proposed": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "existing",
+                "proposed"
+              ],
+              "type": "object"
+            },
+            "soilPipes": {
+              "additionalProperties": false,
+              "properties": {
+                "existing": {
+                  "type": "string"
+                },
+                "proposed": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "existing",
+                "proposed"
+              ],
+              "type": "object"
+            },
+            "windows": {
+              "additionalProperties": false,
+              "properties": {
+                "appearance": {
+                  "enum": [
+                    "similar",
+                    "different"
+                  ],
+                  "type": "string"
+                }
+              },
+              "required": [
+                "appearance"
+              ],
+              "type": "object"
+            }
+          },
           "type": "object"
         },
         "new": {
@@ -5955,6 +6473,24 @@
           "additionalProperties": false,
           "properties": {
             "description": {
+              "const": "External wall insulation",
+              "type": "string"
+            },
+            "value": {
+              "const": "alter.facades.insulation",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
               "const": "Change the material or colour of the external walls to the rear of the building",
               "type": "string"
             },
@@ -5978,6 +6514,24 @@
             },
             "value": {
               "const": "alter.facades.reclad",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Repair, clean or replace parts of the external walls",
+              "type": "string"
+            },
+            "value": {
+              "const": "alter.facades.repair",
               "type": "string"
             }
           },
