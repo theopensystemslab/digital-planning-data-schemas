@@ -9,6 +9,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 The minor version will be incremented upon a breaking change and the patch version will be
 incremented for features.
 
+## [0.2.1] - 2023-11-28
+
+### Changed
+- `date-time` format is now supplemented by a regex pattern to restrict to the RFC3339 ISO format ([#75](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/75))
+
 ## [0.2.0] - 2023-11-17
 
 ### Breaking
