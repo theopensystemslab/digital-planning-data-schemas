@@ -1256,7 +1256,7 @@ export const validPlanningPermission: Schema = {
       flowId: '01e38c5d-e701-4e44-acdc-4d6b5cc3b854',
       url: 'https://www.editor.planx.dev/lambeth/apply-for-planning-permission/preview',
     },
-    submittedAt: '2023-10-02 00:00:00',
+    submittedAt: '2023-10-02T00:00:00.00Z',
     schema:
       'https://theopensystemslab.github.io/digital-planning-data-schemas/@next/schema.json',
   },
