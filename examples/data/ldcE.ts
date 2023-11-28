@@ -1234,7 +1234,7 @@ export const validLDCE: Schema = {
       flowId: '824628b2-deeb-48b0-92b1-2ca7f3b17163',
       url: 'https://www.editor.planx.dev/buckinghamshire/apply-for-a-lawful-development-certificate/preview',
     },
-    submittedAt: '2023-10-02T00:00:00.000Z',
+    submittedAt: '2023-10-02t00:00:00z',
     schema:
       'https://theopensystemslab.github.io/digital-planning-data-schemas/@next/schema.json',
   },

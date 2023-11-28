@@ -774,7 +774,7 @@ export const validPriorApproval: Schema = {
       flowId: 'c6628103-c648-4663-81e1-bfa0a1a18340',
       url: 'https://www.editor.planx.dev/southwark/apply-for-prior-approval/preview',
     },
-    submittedAt: '2023-10-02T00:00:00.000Z',
+    submittedAt: '2023-10-02T00:00:00Z',
     schema:
       'https://theopensystemslab.github.io/digital-planning-data-schemas/@next/schema.json',
   },
