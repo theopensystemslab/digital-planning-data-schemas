@@ -1,0 +1,15 @@
+version: 2
+updates:
+  - package-ecosystem: "npm" # use this yaml value when package manager is 'pnpm'
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    reviewers:
+      - "theopensystemslab/planx"
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule: 
+      interval: "monthly"
+    reviewers:
+      - "theopensystemslab/planx"
