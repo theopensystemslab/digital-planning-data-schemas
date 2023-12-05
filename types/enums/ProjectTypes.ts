@@ -59,6 +59,7 @@ export const ProjectTypes = {
   'alter.highways.access': 'Create a point of access to a highway',
   'alter.highways.access.unclassified':
     'Create a point of access to an unclassified road',
+  'alter.highways.dropKerb': 'Changes to a dropped kerb',
   'alter.highways.droppedKerb': 'Changes to a dropped kerb',
   'alter.highways.droppedKerb.add': 'Add a dropped kerb',
   'alter.highways.droppedKerb.remove': 'Remove a dropped kerb',
@@ -74,14 +75,14 @@ export const ProjectTypes = {
     'Add new doorways to the rear of the building',
   'alter.openings.add.door.side':
     'Add new doorways to the side of the building',
-  'alter.openings.add.window': 'Add one or more new windows',
-  'alter.openings.add.window.front':
+  'alter.openings.add.windows': 'Add one or more new windows',
+  'alter.openings.add.windows.front':
     'Add new windows to the front of the building',
-  'alter.openings.add.window.high': 'Add new windows 1.7m up or higher',
-  'alter.openings.add.window.rear':
+  'alter.openings.add.windows.high': 'Add new windows 1.7m up or higher',
+  'alter.openings.add.windows.rear':
     'Add new windows to the rear of the building',
-  'alter.openings.add.window.shutters': 'Add new shutters to windows',
-  'alter.openings.add.window.side':
+  'alter.openings.add.windows.shutters': 'Add new shutters to windows',
+  'alter.openings.add.windows.side':
     'Add new windows to the side of the building',
   'alter.openings.alter': 'Change the size of doorways or windows',
   'alter.openings.alter.convert.doorToWindow':
@@ -131,6 +132,7 @@ export const ProjectTypes = {
   'changeofUse.annexe':
     'Convert part of the property into a  granny flat (residential annexe)',
   'changeOfUse.caravans': 'Use a caravan or mobile home on the property',
+  'changeOfUse.extension': 'Convert an extension',
   'changeOfUse.garage': 'Convert a garage',
   'changeOfUse.let.part': 'Let a part of the property',
   'changeOfUse.let.whole': 'Let the property',
@@ -143,6 +145,7 @@ export const ProjectTypes = {
   demolish: 'Demolish a building',
   'demolish.boundary': 'Demolish a fence, gate or boundary wall',
   'demolish.full': 'Demolish a building',
+  'demolish.outbuilding': 'Demolish an outbuilding (such as a garage or barn)',
   'demolish.outbuildings': 'Demolish an outbuilding (such as a garage or barn)',
   'demolish.part': 'Demolish part of a building (such as an extension)',
   'demolish.replace': 'Demolish a building and build homes in its place',
@@ -190,7 +193,7 @@ export const ProjectTypes = {
   'extend.roof.dormer.rear': 'Add a roof dormer to the rear of the building',
   'extend.roof.dormer.side': 'Add a roof dormer to the side of the building',
   'extend.roof.hipToGable': 'Hip-to-gable roof enlargement',
-  'exend.roof.newStorey': 'Add one or more new storeys',
+  'extend.roof.newStorey': 'Add one or more new storeys',
   'extend.upperStorey': 'Add an upper storey extension',
   internal: 'Internal building works, such as change the internal layout',
   'internal.doorways': 'Alter internal doors',
