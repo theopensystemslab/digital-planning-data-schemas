@@ -36,6 +36,9 @@ export interface UKProperty {
    */
   localAuthorityDistrict: string[];
   type: PropertyType;
+  /**
+   * @description HM Land Registry Index polygon for this property, commonly referred to as the blue line boundary, sourced from planning.data.gov.uk/dataset/title-boundary
+   */
   boundary?: {
     site: GeoJSON;
     area: Area;

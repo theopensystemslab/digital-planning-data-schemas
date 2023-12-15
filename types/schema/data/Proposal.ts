@@ -10,6 +10,9 @@ import {Area, Date} from '../../utils';
 export interface Proposal {
   projectType: ProjectType[];
   description: string;
+  /**
+   * @description Location plan boundary proposed by the user, commonly referred to as the red line boundary
+   */
   boundary?: {
     site: GeoJSON;
     area: Area;
