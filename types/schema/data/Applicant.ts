@@ -38,6 +38,7 @@ export interface BaseApplicant {
 export interface Ownership {
   certificate: 'a' | 'b' | 'c' | 'd';
   noticeGiven?: boolean;
+  noticeReason?: string;
   owners?: {
     name: string;
     address: Address | string;
