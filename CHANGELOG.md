@@ -9,6 +9,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 The minor version will be incremented upon a breaking change and the patch version will be
 incremented for features.
 
+## [0.2.2] - 2023-12-15
+
+### Added
+- Added new optional text property `data.applicant.ownership.noticeReason` ([#89](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/89))
+
+### Changed
+- Added a number of additional supported `ProjectTypes` ([#88](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/88))
+- Updated descriptions for `data.property.boundary` and `data.proposal.boundary` fields ([#89](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/89))
+
 ## [0.2.1] - 2023-11-28
 
 ### Changed
