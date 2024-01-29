@@ -9,6 +9,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 The minor version will be incremented upon a breaking change and the patch version will be
 incremented for features.
 
+## [0.2.3] - 2024-01-29
+
+### Added 
+- Added additional `PlanningDesignations` ([#99](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/99))
+- Added additional `ApplicationTypes`. Stay tuned for expanded example payloads in the next release! ([#98](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/98))
+
 ## [0.2.2] - 2023-12-15
 
 ### Added
