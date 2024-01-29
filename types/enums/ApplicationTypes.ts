@@ -2,6 +2,10 @@
  * Values of `data.application.type`
  */
 export const ApplicationTypes = {
+  advertConsent: 'Consent to display an advertisement',
+  hazardousSubstanceConsent:
+    'Consent to move and dispose of hazardous substances',
+  hedgerowRemovalNotice: 'Notice to remove a hedge',
   ldc: 'Lawful Development Certificate',
   'ldc.proposed': 'Lawful Development Certificate - Proposed use',
   'ldc.existing': 'Lawful Development Certificate - Existing use',
@@ -9,6 +13,9 @@ export const ApplicationTypes = {
     'Lawful Development Certificate - Continue an existing use',
   'ldc.condition':
     'Lawful Development Certificate - Lawful not to comply with a condition or limitation',
+  listed: 'Consent to do works to a Listed Building',
+  nonMaterialAmendment:
+    'Consent to make small changes to a project with Planning Permission',
   pa: 'Prior Approval',
   'pa.part1.classA': 'Prior Approval - Larger extension to a house',
   'pa.part1.classAA': 'Prior Approval - Adding storeys to a house',
@@ -20,6 +27,8 @@ export const ApplicationTypes = {
     'Prior Approval - Convert a commercial building into a home or homes',
   'pa.part3.classN':
     'Prior Approval - Convert a casino or amusement arcade into a home or homes',
+  'pa.part3.classPA':
+    'Prior Approval - Convert a light industrial building into a home',
   'pa.part3.classQ':
     'Prior Approval - Convert an agricultural building into a home',
   'pa.part3.classR':
@@ -30,6 +39,8 @@ export const ApplicationTypes = {
     'Prior Approval - Convert a commercial building to a school',
   'pa.part4.classBB': 'Prior Approval - Put up a temporary structure',
   'pa.part4.classE': 'Prior Approval - Use a building or land to shoot a film',
+  'pa.part6':
+    'Prior Approval - Alter or add new buildings to agricultural or forestry sites',
   'pa.part6.classA':
     'Prior Approval - Build new agricultural buildings on a unit of 5 hectares or more',
   'pa.part6.classB':
@@ -53,10 +64,36 @@ export const ApplicationTypes = {
   'pa.part20.classAD': 'Prior Approval - Build homes on detached houses',
   'pa.part20.classZA':
     'Prior Approval - Demolish buildings and build homes in their place',
+  pip: 'Permission in Principle - Consent for the principle of a project with less than 1,000 square metres floor area on a site of less than 1 hectare',
+  'pip.technicalDetails':
+    'Permission in Principle - Approval of technical details',
   pp: 'Planning Permission',
+  'pp.full':
+    'Planning Permission for development, including all householder, minor, and major applications',
+  'pp.full.advertConsent':
+    'Full Planning Permission and consent to display an advert',
+  'pp.full.demolition':
+    'Full Planning Permission including demolition in a Conservation Area',
   'pp.full.householder': 'Planning Permission - Full householder',
+  'pp.full.householder.listed':
+    'Planning Permission - Full householder with consent to do works to a Listed Building',
   'pp.full.householder.retro':
     'Planning Permission - Full householder retrospective',
   'pp.full.major': 'Planning Permission - Major application',
   'pp.full.minor': 'Planning Permission - Minor application',
+  'pp.full.minor.listed':
+    'Planning Permission - Minor application and consent to do works to a Listed Building',
+  'pp.mineralExtraction':
+    'Planning Permission - Consent to extract minerals and related development, such as temporary buildings and roads',
+  'pp.onshoreExtractionOilAndGas':
+    'Planning Permission - Consent to extract oil and gas',
+  'pp.outline': 'Planning permission - Outline for proposed development',
+  'pp.outline.allReserved':
+    'Outline Planning Permission - Consent for the principle of a project witholding all details',
+  'pp.outline.reservedMatters':
+    'Outline Planning Permission - Approval of reserved matters',
+  'pp.outline.someReserved':
+    'Outline Planning Permission - Consent for the principle of a project specifying some details',
+  treeWorksConsent:
+    'Consent to carry out works to a tree in a Conservation Area or with a Tree Preservation Order',
 };

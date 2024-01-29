@@ -337,6 +337,60 @@
           "additionalProperties": false,
           "properties": {
             "description": {
+              "const": "Consent to display an advertisement",
+              "type": "string"
+            },
+            "value": {
+              "const": "advertConsent",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Consent to move and dispose of hazardous substances",
+              "type": "string"
+            },
+            "value": {
+              "const": "hazardousSubstanceConsent",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Notice to remove a hedge",
+              "type": "string"
+            },
+            "value": {
+              "const": "hedgerowRemovalNotice",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
               "const": "Lawful Development Certificate",
               "type": "string"
             },
@@ -414,6 +468,42 @@
             },
             "value": {
               "const": "ldc.condition",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Consent to do works to a Listed Building",
+              "type": "string"
+            },
+            "value": {
+              "const": "listed",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Consent to make small changes to a project with Planning Permission",
+              "type": "string"
+            },
+            "value": {
+              "const": "nonMaterialAmendment",
               "type": "string"
             }
           },
@@ -553,6 +643,24 @@
           "additionalProperties": false,
           "properties": {
             "description": {
+              "const": "Prior Approval - Convert a light industrial building into a home",
+              "type": "string"
+            },
+            "value": {
+              "const": "pa.part3.classPA",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
               "const": "Prior Approval - Convert an agricultural building into a home",
               "type": "string"
             },
@@ -648,6 +756,24 @@
             },
             "value": {
               "const": "pa.part4.classE",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Prior Approval - Alter or add new buildings to agricultural or forestry sites",
+              "type": "string"
+            },
+            "value": {
+              "const": "pa.part6",
               "type": "string"
             }
           },
@@ -931,6 +1057,42 @@
           "additionalProperties": false,
           "properties": {
             "description": {
+              "const": "Permission in Principle - Consent for the principle of a project with less than 1,000 square metres floor area on a site of less than 1 hectare",
+              "type": "string"
+            },
+            "value": {
+              "const": "pip",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Permission in Principle - Approval of technical details",
+              "type": "string"
+            },
+            "value": {
+              "const": "pip.technicalDetails",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
               "const": "Planning Permission",
               "type": "string"
             },
@@ -949,11 +1111,83 @@
           "additionalProperties": false,
           "properties": {
             "description": {
+              "const": "Planning Permission for development, including all householder, minor, and major applications",
+              "type": "string"
+            },
+            "value": {
+              "const": "pp.full",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Full Planning Permission and consent to display an advert",
+              "type": "string"
+            },
+            "value": {
+              "const": "pp.full.advertConsent",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Full Planning Permission including demolition in a Conservation Area",
+              "type": "string"
+            },
+            "value": {
+              "const": "pp.full.demolition",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
               "const": "Planning Permission - Full householder",
               "type": "string"
             },
             "value": {
               "const": "pp.full.householder",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Planning Permission - Full householder with consent to do works to a Listed Building",
+              "type": "string"
+            },
+            "value": {
+              "const": "pp.full.householder.listed",
               "type": "string"
             }
           },
@@ -1008,6 +1242,150 @@
             },
             "value": {
               "const": "pp.full.minor",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Planning Permission - Minor application and consent to do works to a Listed Building",
+              "type": "string"
+            },
+            "value": {
+              "const": "pp.full.minor.listed",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Planning Permission - Consent to extract minerals and related development, such as temporary buildings and roads",
+              "type": "string"
+            },
+            "value": {
+              "const": "pp.mineralExtraction",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Planning Permission - Consent to extract oil and gas",
+              "type": "string"
+            },
+            "value": {
+              "const": "pp.onshoreExtractionOilAndGas",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Planning permission - Outline for proposed development",
+              "type": "string"
+            },
+            "value": {
+              "const": "pp.outline",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Outline Planning Permission - Consent for the principle of a project witholding all details",
+              "type": "string"
+            },
+            "value": {
+              "const": "pp.outline.allReserved",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Outline Planning Permission - Approval of reserved matters",
+              "type": "string"
+            },
+            "value": {
+              "const": "pp.outline.reservedMatters",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Outline Planning Permission - Consent for the principle of a project specifying some details",
+              "type": "string"
+            },
+            "value": {
+              "const": "pp.outline.someReserved",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Consent to carry out works to a tree in a Conservation Area or with a Tree Preservation Order",
+              "type": "string"
+            },
+            "value": {
+              "const": "treeWorksConsent",
               "type": "string"
             }
           },
@@ -3360,6 +3738,29 @@
               "additionalProperties": false,
               "properties": {
                 "description": {
+                  "const": "Brownfield site",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "brownfieldSite",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
                   "const": "Designated land",
                   "type": "string"
                 },
@@ -3415,6 +3816,29 @@
                 },
                 "value": {
                   "const": "designated.conservationArea",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Green Belt",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "designated.greenBelt",
                   "type": "string"
                 }
               },
@@ -3691,6 +4115,29 @@
                 },
                 "value": {
                   "const": "nature.ASNW",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Ramsar site",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "nature.ramsarSite",
                   "type": "string"
                 }
               },
@@ -3933,6 +4380,60 @@
               "additionalProperties": false,
               "properties": {
                 "description": {
+                  "const": "Brownfield site",
+                  "type": "string"
+                },
+                "entities": {
+                  "anyOf": [
+                    {
+                      "items": {
+                        "additionalProperties": false,
+                        "properties": {
+                          "description": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "source": {
+                            "$ref": "#/definitions/URL"
+                          }
+                        },
+                        "required": [
+                          "name"
+                        ],
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    {
+                      "maxItems": 0,
+                      "minItems": 0,
+                      "type": "array"
+                    }
+                  ]
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "brownfieldSite",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "entities",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
                   "const": "Designated land",
                   "type": "string"
                 },
@@ -4080,6 +4581,60 @@
                 },
                 "value": {
                   "const": "designated.conservationArea",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "entities",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Green Belt",
+                  "type": "string"
+                },
+                "entities": {
+                  "anyOf": [
+                    {
+                      "items": {
+                        "additionalProperties": false,
+                        "properties": {
+                          "description": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "source": {
+                            "$ref": "#/definitions/URL"
+                          }
+                        },
+                        "required": [
+                          "name"
+                        ],
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    {
+                      "maxItems": 0,
+                      "minItems": 0,
+                      "type": "array"
+                    }
+                  ]
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "designated.greenBelt",
                   "type": "string"
                 }
               },
@@ -4728,6 +5283,60 @@
                 },
                 "value": {
                   "const": "nature.ASNW",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "entities",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Ramsar site",
+                  "type": "string"
+                },
+                "entities": {
+                  "anyOf": [
+                    {
+                      "items": {
+                        "additionalProperties": false,
+                        "properties": {
+                          "description": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "source": {
+                            "$ref": "#/definitions/URL"
+                          }
+                        },
+                        "required": [
+                          "name"
+                        ],
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    {
+                      "maxItems": 0,
+                      "minItems": 0,
+                      "type": "array"
+                    }
+                  ]
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "nature.ramsarSite",
                   "type": "string"
                 }
               },
