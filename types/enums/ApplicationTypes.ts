@@ -64,8 +64,9 @@ export const ApplicationTypes = {
   'pa.part20.classAD': 'Prior Approval - Build homes on detached houses',
   'pa.part20.classZA':
     'Prior Approval - Demolish buildings and build homes in their place',
-  pip: 'Permission in Principle - Consent for the principle of a broad project about less than 1,000 square metres floor area on a site less than 1 hectare',
-  'pip.technicalDetails': 'Permission in Principle - Provide technical details',
+  pip: 'Permission in Principle - Consent for the principle of a project with less than 1,000 square metres floor area on a site of less than 1 hectare',
+  'pip.technicalDetails':
+    'Permission in Principle - Approval of technical details',
   pp: 'Planning Permission',
   'pp.full':
     'Planning Permission for development, including all householder, minor, and major applications',
@@ -86,12 +87,13 @@ export const ApplicationTypes = {
     'Planning Permission - Consent to extract minerals and related development, such as temporary buildings and roads',
   'pp.onshoreExtractionOilAndGas':
     'Planning Permission - Consent to extract oil and gas',
+  'pp.outline': 'Planning permission - Outline for proposed development',
   'pp.outline.allReserved':
-    'Planning Permission - Consent for the principle of a project witholding all details',
+    'Outline Planning Permission - Consent for the principle of a project witholding all details',
   'pp.outline.reservedMatters':
-    'Planning Permission - Approval of reserved matters',
+    'Outline Planning Permission - Approval of reserved matters',
   'pp.outline.someReserved':
-    'Planning Permission - Consent for the principle of a project specifying some details',
+    'Outline Planning Permission - Consent for the principle of a project specifying some details',
   treeWorksConsent:
     'Consent to carry out works to a tree in a Conservation Area or with a Tree Preservation Order',
 };
