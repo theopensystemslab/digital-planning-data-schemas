@@ -1173,8 +1173,8 @@ export const validLDCE: Schema = {
       name: 'https://api.editor.planx.dev/file/private/r34zxe3x/RoaldDahlHut.jpg',
       type: [
         {
-          value: 'proposal.photograph',
-          description: 'Photographs',
+          value: 'photographs.proposed',
+          description: 'Photographs - proposed',
         },
       ],
     },
@@ -1182,7 +1182,7 @@ export const validLDCE: Schema = {
       name: 'https://api.editor.planx.dev/file/private/kopklkj9/Site%20plan.pdf',
       type: [
         {
-          value: 'proposal.drawing.sitePlan',
+          value: 'sitePlan.proposed',
           description: 'Site plan - proposed',
         },
       ],
@@ -1191,7 +1191,7 @@ export const validLDCE: Schema = {
       name: 'https://api.editor.planx.dev/file/private/u2vjw69h/Elevations.pdf',
       type: [
         {
-          value: 'proposal.drawing.elevation',
+          value: 'elevations.proposed',
           description: 'Elevations - proposed',
         },
       ],
@@ -1200,7 +1200,7 @@ export const validLDCE: Schema = {
       name: 'https://api.editor.planx.dev/file/private/gbaur05c/Plan.pdf',
       type: [
         {
-          value: 'proposal.drawing.floorPlan',
+          value: 'floorPlan.proposed',
           description: 'Floor plan - proposed',
         },
       ],
@@ -1209,8 +1209,8 @@ export const validLDCE: Schema = {
       name: 'https://api.editor.planx.dev/file/private/4vhzu4c5/Roald-Dahl-letter-one-use.pdf',
       type: [
         {
-          value: 'proposal.document.other.evidence',
-          description: 'Other - correspondence',
+          value: 'otherEvidence',
+          description: 'Other - evidence or correspondence',
         },
       ],
       description: 'Nothing really, this is just a test. ',
@@ -1219,7 +1219,7 @@ export const validLDCE: Schema = {
       name: 'https://api.editor.planx.dev/file/private/uz72iu40/Test%20document.pdf',
       type: [
         {
-          value: 'proposal.document.construction.invoice',
+          value: 'constructionInvoice',
           description: 'Construction invoice',
         },
       ],
