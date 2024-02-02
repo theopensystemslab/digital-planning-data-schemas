@@ -761,7 +761,7 @@ export const validLDCP: Schema = {
       name: 'https://api.editor.planx.dev/file/private/ha2qdn2z/RoofPlan.pdf',
       type: [
         {
-          value: 'property.drawing.roofPlan',
+          value: 'roofPlan.existing',
           description: 'Roof plan - existing',
         },
       ],
@@ -770,7 +770,7 @@ export const validLDCP: Schema = {
       name: 'https://api.editor.planx.dev/file/private/3u00rjyw/Site%20plan.pdf',
       type: [
         {
-          value: 'property.drawing.sitePlan',
+          value: 'sitePlan.existing',
           description: 'Site plan - existing',
         },
       ],
@@ -779,7 +779,7 @@ export const validLDCP: Schema = {
       name: 'https://api.editor.planx.dev/file/private/g92g9w65/RoofPlan.pdf',
       type: [
         {
-          value: 'proposal.drawing.roofPlan',
+          value: 'roofPlan.proposed',
           description: 'Roof plan - proposed',
         },
       ],
@@ -788,7 +788,7 @@ export const validLDCP: Schema = {
       name: 'https://api.editor.planx.dev/file/private/i7tag96k/Site%20plan.pdf',
       type: [
         {
-          value: 'proposal.drawing.sitePlan',
+          value: 'sitePlan.proposed',
           description: 'Site plan - proposed',
         },
       ],
@@ -797,7 +797,7 @@ export const validLDCP: Schema = {
       name: 'https://api.editor.planx.dev/file/private/tw50m88n/Elevations.pdf',
       type: [
         {
-          value: 'property.drawing.elevation',
+          value: 'elevations.existing',
           description: 'Elevations - existing',
         },
       ],
@@ -806,7 +806,7 @@ export const validLDCP: Schema = {
       name: 'https://api.editor.planx.dev/file/private/diahn9ft/Plan.pdf',
       type: [
         {
-          value: 'property.drawing.floorPlan',
+          value: 'floorPlan.existing',
           description: 'Floor plan - existing',
         },
       ],
@@ -815,7 +815,7 @@ export const validLDCP: Schema = {
       name: 'https://api.editor.planx.dev/file/private/0rpf43jj/Elevations.pdf',
       type: [
         {
-          value: 'proposal.drawing.elevation',
+          value: 'elevations.proposed',
           description: 'Elevations - proposed',
         },
       ],
@@ -824,7 +824,7 @@ export const validLDCP: Schema = {
       name: 'https://api.editor.planx.dev/file/private/iio7ok5g/Plan.pdf',
       type: [
         {
-          value: 'proposal.drawing.floorPlan',
+          value: 'floorPlan.proposed',
           description: 'Floor plan - proposed',
         },
       ],

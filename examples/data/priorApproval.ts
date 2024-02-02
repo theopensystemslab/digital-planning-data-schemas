@@ -740,8 +740,7 @@ export const validPriorApproval: Schema = {
       metadata: {autoAnswered: true, sectionName: 'Pay and submit'},
     },
     {
-      question:
-        'What type of prior approval application is it?application.type',
+      question: 'What type of prior approval application is it?',
       responses: [{value: 'Install or change solar panels'}],
       metadata: {autoAnswered: true, sectionName: 'Pay and submit'},
     },
@@ -751,7 +750,7 @@ export const validPriorApproval: Schema = {
       name: 'https://api.editor.planx.dev/file/private/vab4d0k6/Test%20document.pdf',
       type: [
         {
-          value: 'proposal.drawing.other',
+          value: 'otherDrawing',
           description: 'Other - drawing',
         },
       ],
@@ -760,7 +759,7 @@ export const validPriorApproval: Schema = {
       name: 'https://api.editor.planx.dev/file/private/es3w6dgi/Elevations.pdf',
       type: [
         {
-          value: 'proposal.drawing.sitePlan',
+          value: 'sitePlan.proposed',
           description: 'Site plan - proposed',
         },
       ],

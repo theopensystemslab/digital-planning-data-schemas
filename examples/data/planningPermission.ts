@@ -1199,11 +1199,11 @@ export const validPlanningPermission: Schema = {
       name: 'https://api.editor.planx.dev/file/private/vg0av01p/RoofPlan.pdf',
       type: [
         {
-          value: 'property.drawing.roofPlan',
+          value: 'roofPlan.existing',
           description: 'Roof plan - existing',
         },
         {
-          value: 'proposal.drawing.roofPlan',
+          value: 'roofPlan.proposed',
           description: 'Roof plan - proposed',
         },
       ],
@@ -1212,11 +1212,11 @@ export const validPlanningPermission: Schema = {
       name: 'https://api.editor.planx.dev/file/private/ka97yl2c/Site%20plan.pdf',
       type: [
         {
-          value: 'property.drawing.sitePlan',
+          value: 'sitePlan.existing',
           description: 'Site plan - existing',
         },
         {
-          value: 'proposal.drawing.sitePlan',
+          value: 'sitePlan.proposed',
           description: 'Site plan - proposed',
         },
       ],
@@ -1225,11 +1225,11 @@ export const validPlanningPermission: Schema = {
       name: 'https://api.editor.planx.dev/file/private/osprppqo/Elevations.pdf',
       type: [
         {
-          value: 'property.drawing.elevation',
+          value: 'elevations.existing',
           description: 'Elevations - existing',
         },
         {
-          value: 'proposal.drawing.elevation',
+          value: 'elevations.proposed',
           description: 'Elevations - proposed',
         },
       ],
@@ -1238,11 +1238,11 @@ export const validPlanningPermission: Schema = {
       name: 'https://api.editor.planx.dev/file/private/cri3ziaj/Plan.pdf',
       type: [
         {
-          value: 'property.drawing.floorPlan',
+          value: 'floorPlan.existing',
           description: 'Floor plan - existing',
         },
         {
-          value: 'proposal.drawing.floorPlan',
+          value: 'floorPlan.proposed',
           description: 'Floor plan - proposed',
         },
       ],

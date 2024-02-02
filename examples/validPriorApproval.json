@@ -1064,7 +1064,7 @@
       }
     },
     {
-      "question": "What type of prior approval application is it?application.type",
+      "question": "What type of prior approval application is it?",
       "responses": [
         {
           "value": "Install or change solar panels"
@@ -1081,7 +1081,7 @@
       "name": "https://api.editor.planx.dev/file/private/vab4d0k6/Test%20document.pdf",
       "type": [
         {
-          "value": "proposal.drawing.other",
+          "value": "otherDrawing",
           "description": "Other - drawing"
         }
       ]
@@ -1090,7 +1090,7 @@
       "name": "https://api.editor.planx.dev/file/private/es3w6dgi/Elevations.pdf",
       "type": [
         {
-          "value": "proposal.drawing.sitePlan",
+          "value": "sitePlan.proposed",
           "description": "Site plan - proposed"
         }
       ]
