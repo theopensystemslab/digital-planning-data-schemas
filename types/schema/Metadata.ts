@@ -1,4 +1,5 @@
 import {DateTime, URL, UUID} from './../utils';
+import {FileType} from './File';
 
 /**
  * @id #DigitalPlanningMetadata
@@ -25,6 +26,16 @@ export interface BaseMetadata {
 }
 
 /**
+ * @id #RequestedFiles
+ * @description File types requested by this service. Schema["files"] will be a subset of this list based on the user's journey through the service.
+ */
+export interface RequestedFiles {
+  required: FileType[];
+  recommended: FileType[];
+  optional: FileType[];
+}
+
+/**
  * @id #PlanXMetadata
  * @description Additional metadata associated with applications submitted via PlanX
  */
@@ -33,5 +44,6 @@ export interface PlanXMetadata extends BaseMetadata {
   service: {
     flowId: UUID;
     url: URL;
+    files: RequestedFiles;
   };
 }
