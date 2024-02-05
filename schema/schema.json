@@ -4068,7 +4068,7 @@
                   "type": "boolean"
                 },
                 "value": {
-                  "const": "listed.gradeI",
+                  "const": "listed.grade.I",
                   "type": "string"
                 }
               },
@@ -4091,7 +4091,7 @@
                   "type": "boolean"
                 },
                 "value": {
-                  "const": "listed.gradeII",
+                  "const": "listed.grade.II",
                   "type": "string"
                 }
               },
@@ -4114,7 +4114,7 @@
                   "type": "boolean"
                 },
                 "value": {
-                  "const": "listed.gradeII*",
+                  "const": "listed.grade.II*",
                   "type": "string"
                 }
               },
@@ -5243,7 +5243,7 @@
                   "type": "boolean"
                 },
                 "value": {
-                  "const": "listed.gradeI",
+                  "const": "listed.grade.I",
                   "type": "string"
                 }
               },
@@ -5297,7 +5297,7 @@
                   "type": "boolean"
                 },
                 "value": {
-                  "const": "listed.gradeII",
+                  "const": "listed.grade.II",
                   "type": "string"
                 }
               },
@@ -5351,7 +5351,7 @@
                   "type": "boolean"
                 },
                 "value": {
-                  "const": "listed.gradeII*",
+                  "const": "listed.grade.II*",
                   "type": "string"
                 }
               },
