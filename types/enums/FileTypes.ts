@@ -63,7 +63,7 @@ export const FileTypes = {
   'sitePlan.proposed': 'Site plan - proposed',
   sketchPlan: 'Sketch plan',
   statementOfCommunityInvolvement: 'Statement of community involvement',
-  statuatoryDeclaration: 'Statuatory declaration',
+  statutoryDeclaration: 'Statutory declaration',
   storageTreatmentAndWasteDisposalDetails:
     'Details of storage treatment or disposal of waste',
   streetScene: 'Street scene drawing',
