@@ -2769,11 +2769,11 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Statuatory declaration",
+              "const": "Statutory declaration",
               "type": "string"
             },
             "value": {
-              "const": "statuatoryDeclaration",
+              "const": "statutoryDeclaration",
               "type": "string"
             }
           },
