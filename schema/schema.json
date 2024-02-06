@@ -4381,6 +4381,13 @@
         "service": {
           "additionalProperties": false,
           "properties": {
+            "files": {
+              "description": "File types requested by this service. Schema['files'] will be a subset of this list based on the user's journey through the service.",
+              "items": {
+                "$ref": "#/definitions/RequestedFile"
+              },
+              "type": "array"
+            },
             "flowId": {
               "$ref": "#/definitions/UUID"
             },
@@ -4390,7 +4397,8 @@
           },
           "required": [
             "flowId",
-            "url"
+            "url",
+            "files"
           ],
           "type": "object"
         },
@@ -20272,6 +20280,2253 @@
         }
       },
       "type": "object"
+    },
+    "RequestedFile": {
+      "$id": "#RequestedFiles",
+      "anyOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Affordable housing statement",
+              "type": "string"
+            },
+            "value": {
+              "const": "affordableHousingStatement",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Arboriculturist report",
+              "type": "string"
+            },
+            "value": {
+              "const": "arboriculturistReport",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Bank statement",
+              "type": "string"
+            },
+            "value": {
+              "const": "bankStatement",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Basement impact statement",
+              "type": "string"
+            },
+            "value": {
+              "const": "basementImpactStatement",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Bio-aerosol assessment",
+              "type": "string"
+            },
+            "value": {
+              "const": "bioaerosolAssessment",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Birdstrike risk management plan",
+              "type": "string"
+            },
+            "value": {
+              "const": "birdstrikeRiskManagementPlan",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Borehole or trial pit analysis",
+              "type": "string"
+            },
+            "value": {
+              "const": "boreholeOrTrialPitAnalysis",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Building control certificate",
+              "type": "string"
+            },
+            "value": {
+              "const": "buildingControlCertificate",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Structural or building condition survey",
+              "type": "string"
+            },
+            "value": {
+              "const": "conditionSurvey",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Construction invoice",
+              "type": "string"
+            },
+            "value": {
+              "const": "constructionInvoice",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Contamination report",
+              "type": "string"
+            },
+            "value": {
+              "const": "contaminationReport",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Council tax bill",
+              "type": "string"
+            },
+            "value": {
+              "const": "councilTaxBill",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Crime prevention strategy",
+              "type": "string"
+            },
+            "value": {
+              "const": "crimePreventionStrategy",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Design and Access Statement",
+              "type": "string"
+            },
+            "value": {
+              "const": "designAndAccessStatement",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Evidence for application fee exemption - disability",
+              "type": "string"
+            },
+            "value": {
+              "const": "disabilityExemptionEvidence",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Ecology report",
+              "type": "string"
+            },
+            "value": {
+              "const": "ecologyReport",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Elevations - existing",
+              "type": "string"
+            },
+            "value": {
+              "const": "elevations.existing",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Elevations - proposed",
+              "type": "string"
+            },
+            "value": {
+              "const": "elevations.proposed",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Scheme for mitigation and monitoring of emissions (dust, odour and vibrations)",
+              "type": "string"
+            },
+            "value": {
+              "const": "emissionsMitigationAndMonitoringScheme",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Energy statement",
+              "type": "string"
+            },
+            "value": {
+              "const": "energyStatement",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Environmental Impact Assessment (EIA)",
+              "type": "string"
+            },
+            "value": {
+              "const": "environmentalImpactAssessment",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Fire safety report",
+              "type": "string"
+            },
+            "value": {
+              "const": "fireSafetyReport",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Flood risk assessment (FRA)",
+              "type": "string"
+            },
+            "value": {
+              "const": "floodRiskAssessment",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Floor plan - existing",
+              "type": "string"
+            },
+            "value": {
+              "const": "floorPlan.existing",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Floor plan - proposed",
+              "type": "string"
+            },
+            "value": {
+              "const": "floorPlan.proposed",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Foul drainage assessment",
+              "type": "string"
+            },
+            "value": {
+              "const": "foulDrainageAssessment",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Geodiversity assessment",
+              "type": "string"
+            },
+            "value": {
+              "const": "geodiversityAssessment",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Heritage Statement",
+              "type": "string"
+            },
+            "value": {
+              "const": "heritageStatement",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Hydrological and hydrogeological assessment",
+              "type": "string"
+            },
+            "value": {
+              "const": "hydrologicalAssessment",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Hydrology report",
+              "type": "string"
+            },
+            "value": {
+              "const": "hydrologyReport",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Internal elevations",
+              "type": "string"
+            },
+            "value": {
+              "const": "internalElevations",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Internal sections",
+              "type": "string"
+            },
+            "value": {
+              "const": "internalSections",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Land contamination assessment",
+              "type": "string"
+            },
+            "value": {
+              "const": "landContaminationAssessment",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Landscape and visual impact assessment (LVIA)",
+              "type": "string"
+            },
+            "value": {
+              "const": "landscapeAndVisualImpactAssessment",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Landscape strategy or landscape plan",
+              "type": "string"
+            },
+            "value": {
+              "const": "landscapeStrategy",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Lighting assessment",
+              "type": "string"
+            },
+            "value": {
+              "const": "lightingAssessment",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Details of litter, vermin and bird control",
+              "type": "string"
+            },
+            "value": {
+              "const": "litterVerminAndBirdControlDetails",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Location plan",
+              "type": "string"
+            },
+            "value": {
+              "const": "locationPlan",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Minerals and waste assessment",
+              "type": "string"
+            },
+            "value": {
+              "const": "mineralsAndWasteAssessment",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "New dwellings schedule",
+              "type": "string"
+            },
+            "value": {
+              "const": "newDwellingsSchedule",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Noise assessment",
+              "type": "string"
+            },
+            "value": {
+              "const": "noiseAssessment",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Open space assessment",
+              "type": "string"
+            },
+            "value": {
+              "const": "openSpaceAssessment",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Other - document",
+              "type": "string"
+            },
+            "value": {
+              "const": "otherDocument",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Other - drawing",
+              "type": "string"
+            },
+            "value": {
+              "const": "otherDrawing",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Other - evidence or correspondence",
+              "type": "string"
+            },
+            "value": {
+              "const": "otherEvidence",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Parking plan",
+              "type": "string"
+            },
+            "value": {
+              "const": "parkingPlan",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Photographs - existing",
+              "type": "string"
+            },
+            "value": {
+              "const": "photographs.existing",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Photographs - proposed",
+              "type": "string"
+            },
+            "value": {
+              "const": "photographs.proposed",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Planning statement",
+              "type": "string"
+            },
+            "value": {
+              "const": "planningStatement",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Roof plan - existing",
+              "type": "string"
+            },
+            "value": {
+              "const": "roofPlan.existing",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Roof plan - proposed",
+              "type": "string"
+            },
+            "value": {
+              "const": "roofPlan.proposed",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Sections - existing",
+              "type": "string"
+            },
+            "value": {
+              "const": "sections.existing",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Sections - proposed",
+              "type": "string"
+            },
+            "value": {
+              "const": "sections.proposed",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Site plan - existing",
+              "type": "string"
+            },
+            "value": {
+              "const": "sitePlan.existing",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Site plan - proposed",
+              "type": "string"
+            },
+            "value": {
+              "const": "sitePlan.proposed",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Sketch plan",
+              "type": "string"
+            },
+            "value": {
+              "const": "sketchPlan",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Statement of community involvement",
+              "type": "string"
+            },
+            "value": {
+              "const": "statementOfCommunityInvolvement",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Statuatory declaration",
+              "type": "string"
+            },
+            "value": {
+              "const": "statuatoryDeclaration",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Details of storage treatment or disposal of waste",
+              "type": "string"
+            },
+            "value": {
+              "const": "storageTreatmentAndWasteDisposalDetails",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Street scene drawing",
+              "type": "string"
+            },
+            "value": {
+              "const": "streetScene",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Subsidence report",
+              "type": "string"
+            },
+            "value": {
+              "const": "subsidenceReport",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Sunlight and daylight report",
+              "type": "string"
+            },
+            "value": {
+              "const": "sunlightAndDaylightReport",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Sustainability statement",
+              "type": "string"
+            },
+            "value": {
+              "const": "sustainabilityStatement",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Technical evidence",
+              "type": "string"
+            },
+            "value": {
+              "const": "technicalEvidence",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Tenancy agreement",
+              "type": "string"
+            },
+            "value": {
+              "const": "tenancyAgreement",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Tenancy invoice",
+              "type": "string"
+            },
+            "value": {
+              "const": "tenancyInvoice",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Town centre uses - Impact assessment",
+              "type": "string"
+            },
+            "value": {
+              "const": "townCentreImpactAssessment",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Town centre uses - Sequential assessment",
+              "type": "string"
+            },
+            "value": {
+              "const": "townCentreSequentialAssessment",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Transport assessment",
+              "type": "string"
+            },
+            "value": {
+              "const": "transportAssessment",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Travel plan",
+              "type": "string"
+            },
+            "value": {
+              "const": "travelPlan",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Tree canopy calculator",
+              "type": "string"
+            },
+            "value": {
+              "const": "treeCanopyCalculator",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Tree condition report",
+              "type": "string"
+            },
+            "value": {
+              "const": "treeConditionReport",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Trees report",
+              "type": "string"
+            },
+            "value": {
+              "const": "treesReport",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Unit plan - existing",
+              "type": "string"
+            },
+            "value": {
+              "const": "unitPlan.existing",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Unit plan - proposed",
+              "type": "string"
+            },
+            "value": {
+              "const": "unitPlan.proposed",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Use plan - existing",
+              "type": "string"
+            },
+            "value": {
+              "const": "usePlan.existing",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Use plan - proposed",
+              "type": "string"
+            },
+            "value": {
+              "const": "usePlan.proposed",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Utility bill",
+              "type": "string"
+            },
+            "value": {
+              "const": "utilitiesBill",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Utilities statement",
+              "type": "string"
+            },
+            "value": {
+              "const": "utilitiesStatement",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Ventilation or extraction statement",
+              "type": "string"
+            },
+            "value": {
+              "const": "ventilationStatement",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Visualisations",
+              "type": "string"
+            },
+            "value": {
+              "const": "visualisations",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Waste and recycling strategy",
+              "type": "string"
+            },
+            "value": {
+              "const": "wasteAndRecyclingStrategy",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "required",
+                "recommended",
+                "optional"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "const": "Water environment assessment",
+              "type": "string"
+            },
+            "value": {
+              "const": "waterEnvironmentAssessment",
+              "type": "string"
+            }
+          },
+          "required": [
+            "condition",
+            "description",
+            "value"
+          ],
+          "type": "object"
+        }
+      ],
+      "description": "File type with an attached condition"
     },
     "Response": {
       "additionalProperties": false,

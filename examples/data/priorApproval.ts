@@ -772,21 +772,18 @@ export const validPriorApproval: Schema = {
     service: {
       flowId: 'c6628103-c648-4663-81e1-bfa0a1a18340',
       url: 'https://www.editor.planx.dev/southwark/apply-for-prior-approval/preview',
-      files: {
-        required: [
-          {
-            value: 'otherDrawing',
-            description: 'Other - drawing',
-          },
-        ],
-        recommended: [],
-        optional: [
-          {
-            value: 'sitePlan.proposed',
-            description: 'Site plan - proposed',
-          },
-        ],
-      },
+      files: [
+        {
+          value: 'otherDrawing',
+          description: 'Other - drawing',
+          condition: 'required',
+        },
+        {
+          value: 'sitePlan.proposed',
+          description: 'Site plan - proposed',
+          condition: 'optional',
+        },
+      ],
     },
     submittedAt: '2023-10-02T00:00:00Z',
     schema:

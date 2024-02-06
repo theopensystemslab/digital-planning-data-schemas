@@ -1233,42 +1233,44 @@ export const validLDCE: Schema = {
     service: {
       flowId: '824628b2-deeb-48b0-92b1-2ca7f3b17163',
       url: 'https://www.editor.planx.dev/buckinghamshire/apply-for-a-lawful-development-certificate/preview',
-      files: {
-        required: [
-          {
-            value: 'photographs.proposed',
-            description: 'Photographs - proposed',
-          },
-          {
-            value: 'sitePlan.proposed',
-            description: 'Site plan - proposed',
-          },
+      files: [
+        {
+          value: 'photographs.proposed',
+          description: 'Photographs - proposed',
+          condition: 'required',
+        },
+        {
+          value: 'sitePlan.proposed',
+          description: 'Site plan - proposed',
+          condition: 'required',
+        },
 
-          {
-            value: 'elevations.proposed',
-            description: 'Elevations - proposed',
-          },
-          {
-            value: 'floorPlan.proposed',
-            description: 'Floor plan - proposed',
-          },
-          {
-            value: 'floorPlan.proposed',
-            description: 'Floor plan - proposed',
-          },
-        ],
-        recommended: [
-          {
-            value: 'otherEvidence',
-            description: 'Other - evidence or correspondence',
-          },
-          {
-            value: 'constructionInvoice',
-            description: 'Construction invoice',
-          },
-        ],
-        optional: [],
-      },
+        {
+          value: 'elevations.proposed',
+          description: 'Elevations - proposed',
+          condition: 'required',
+        },
+        {
+          value: 'floorPlan.proposed',
+          description: 'Floor plan - proposed',
+          condition: 'recommended',
+        },
+        {
+          value: 'floorPlan.proposed',
+          description: 'Floor plan - proposed',
+          condition: 'optional',
+        },
+        {
+          value: 'otherEvidence',
+          description: 'Other - evidence or correspondence',
+          condition: 'optional',
+        },
+        {
+          value: 'constructionInvoice',
+          description: 'Construction invoice',
+          condition: 'optional',
+        },
+      ],
     },
     submittedAt: '2023-10-02t00:00:00z',
     schema:

@@ -26,14 +26,17 @@ export interface BaseMetadata {
 }
 
 /**
- * @id #RequestedFiles
- * @description File types requested by this service. Schema["files"] will be a subset of this list based on the user's journey through the service.
+ * @id #FileCondition
  */
-export interface RequestedFiles {
-  required: FileType[];
-  recommended: FileType[];
-  optional: FileType[];
-}
+export type FileCondition = {
+  condition: 'required' | 'recommended' | 'optional';
+};
+
+/**
+ * @id #RequestedFiles
+ * @description File type with an attached condition
+ */
+export type RequestedFile = FileType & FileCondition;
 
 /**
  * @id #PlanXMetadata
@@ -44,6 +47,9 @@ export interface PlanXMetadata extends BaseMetadata {
   service: {
     flowId: UUID;
     url: URL;
-    files: RequestedFiles;
+    /**
+     * @description File types requested by this service. Schema['files'] will be a subset of this list based on the user's journey through the service.
+     */
+    files: RequestedFile[];
   };
 }

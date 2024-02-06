@@ -837,44 +837,48 @@ export const validLDCP: Schema = {
     service: {
       flowId: '824628b2-deeb-48b0-92b1-2ca7f3b17163',
       url: 'https://www.editor.planx.dev/buckinghamshire/apply-for-a-lawful-development-certificate/preview',
-      files: {
-        required: [
-          {
-            value: 'roofPlan.existing',
-            description: 'Roof plan - existing',
-          },
-          {
-            value: 'sitePlan.existing',
-            description: 'Site plan - existing',
-          },
-          {
-            value: 'roofPlan.proposed',
-            description: 'Roof plan - proposed',
-          },
-          {
-            value: 'sitePlan.proposed',
-            description: 'Site plan - proposed',
-          },
-          {
-            value: 'elevations.existing',
-            description: 'Elevations - existing',
-          },
-          {
-            value: 'floorPlan.existing',
-            description: 'Floor plan - existing',
-          },
-          {
-            value: 'elevations.proposed',
-            description: 'Elevations - proposed',
-          },
-          {
-            value: 'floorPlan.proposed',
-            description: 'Floor plan - proposed',
-          },
-        ],
-        recommended: [],
-        optional: [],
-      },
+      files: [
+        {
+          value: 'roofPlan.existing',
+          description: 'Roof plan - existing',
+          condition: 'required',
+        },
+        {
+          value: 'sitePlan.existing',
+          description: 'Site plan - existing',
+          condition: 'required',
+        },
+        {
+          value: 'roofPlan.proposed',
+          description: 'Roof plan - proposed',
+          condition: 'required',
+        },
+        {
+          value: 'sitePlan.proposed',
+          description: 'Site plan - proposed',
+          condition: 'required',
+        },
+        {
+          value: 'elevations.existing',
+          description: 'Elevations - existing',
+          condition: 'required',
+        },
+        {
+          value: 'floorPlan.existing',
+          description: 'Floor plan - existing',
+          condition: 'recommended',
+        },
+        {
+          value: 'elevations.proposed',
+          description: 'Elevations - proposed',
+          condition: 'recommended',
+        },
+        {
+          value: 'floorPlan.proposed',
+          description: 'Floor plan - proposed',
+          condition: 'recommended',
+        },
+      ],
     },
     submittedAt: '2023-10-02T00:00:00+01:00',
     schema:

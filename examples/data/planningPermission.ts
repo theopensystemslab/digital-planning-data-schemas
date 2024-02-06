@@ -1255,45 +1255,48 @@ export const validPlanningPermission: Schema = {
     service: {
       flowId: '01e38c5d-e701-4e44-acdc-4d6b5cc3b854',
       url: 'https://www.editor.planx.dev/lambeth/apply-for-planning-permission/preview',
-      files: {
-        required: [
-          {
-            value: 'roofPlan.existing',
-            description: 'Roof plan - existing',
-          },
-          {
-            value: 'roofPlan.proposed',
-            description: 'Roof plan - proposed',
-          },
-          {
-            value: 'sitePlan.existing',
-            description: 'Site plan - existing',
-          },
-          {
-            value: 'sitePlan.proposed',
-            description: 'Site plan - proposed',
-          },
-          {
-            value: 'elevations.existing',
-            description: 'Elevations - existing',
-          },
-          {
-            value: 'elevations.proposed',
-            description: 'Elevations - proposed',
-          },
-        ],
-        recommended: [
-          {
-            value: 'floorPlan.existing',
-            description: 'Floor plan - existing',
-          },
-          {
-            value: 'floorPlan.proposed',
-            description: 'Floor plan - proposed',
-          },
-        ],
-        optional: [],
-      },
+      files: [
+        {
+          value: 'roofPlan.existing',
+          description: 'Roof plan - existing',
+          condition: 'required',
+        },
+        {
+          value: 'roofPlan.proposed',
+          description: 'Roof plan - proposed',
+          condition: 'required',
+        },
+        {
+          value: 'sitePlan.existing',
+          description: 'Site plan - existing',
+          condition: 'required',
+        },
+        {
+          value: 'sitePlan.proposed',
+          description: 'Site plan - proposed',
+          condition: 'recommended',
+        },
+        {
+          value: 'elevations.existing',
+          description: 'Elevations - existing',
+          condition: 'recommended',
+        },
+        {
+          value: 'elevations.proposed',
+          description: 'Elevations - proposed',
+          condition: 'recommended',
+        },
+        {
+          value: 'floorPlan.existing',
+          description: 'Floor plan - existing',
+          condition: 'recommended',
+        },
+        {
+          value: 'floorPlan.proposed',
+          description: 'Floor plan - proposed',
+          condition: 'recommended',
+        },
+      ],
     },
     submittedAt: '2023-10-02T00:00:00.00Z',
     schema:
