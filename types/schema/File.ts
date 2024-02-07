@@ -26,3 +26,14 @@ type FileTypeMap = {
  * @description Types of planning documents and drawings
  */
 export type FileType = FileTypeMap[keyof FileTypeMap];
+
+/**
+ * @id #FileCondition
+ */
+export type FileCondition = 'required' | 'recommended' | 'optional';
+
+/**
+ * @id #RequestedFileType
+ * @description Types of planning documents and drawings, with an attached condition as presented to the applicant
+ */
+export type RequestedFileType = FileType & {condition: FileCondition};

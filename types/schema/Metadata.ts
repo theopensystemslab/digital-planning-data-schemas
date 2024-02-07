@@ -1,5 +1,5 @@
 import {DateTime, URL, UUID} from './../utils';
-import {FileType} from './File';
+import {RequestedFileType} from './File';
 
 /**
  * @id #DigitalPlanningMetadata
@@ -26,19 +26,6 @@ export interface BaseMetadata {
 }
 
 /**
- * @id #FileCondition
- */
-export type FileCondition = {
-  condition: 'required' | 'recommended' | 'optional';
-};
-
-/**
- * @id #RequestedFiles
- * @description File type with an attached condition
- */
-export type RequestedFile = FileType & FileCondition;
-
-/**
  * @id #PlanXMetadata
  * @description Additional metadata associated with applications submitted via PlanX
  */
@@ -50,6 +37,6 @@ export interface PlanXMetadata extends BaseMetadata {
     /**
      * @description File types requested by this service. Schema['files'] will be a subset of this list based on the user's journey through the service.
      */
-    files: RequestedFile[];
+    files: RequestedFileType[];
   };
 }

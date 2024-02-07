@@ -1736,6 +1736,15 @@
       ],
       "type": "object"
     },
+    "FileCondition": {
+      "$id": "#FileCondition",
+      "enum": [
+        "required",
+        "recommended",
+        "optional"
+      ],
+      "type": "string"
+    },
     "FileType": {
       "$id": "#FileType",
       "anyOf": [
@@ -4384,7 +4393,7 @@
             "files": {
               "description": "File types requested by this service. Schema['files'] will be a subset of this list based on the user's journey through the service.",
               "items": {
-                "$ref": "#/definitions/RequestedFile"
+                "$ref": "#/definitions/RequestedFileType"
               },
               "type": "array"
             },
@@ -20281,19 +20290,14 @@
       },
       "type": "object"
     },
-    "RequestedFile": {
-      "$id": "#RequestedFiles",
+    "RequestedFileType": {
+      "$id": "#RequestedFileType",
       "anyOf": [
         {
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Affordable housing statement",
@@ -20315,12 +20319,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Arboriculturist report",
@@ -20342,12 +20341,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Bank statement",
@@ -20369,12 +20363,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Basement impact statement",
@@ -20396,12 +20385,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Bio-aerosol assessment",
@@ -20423,12 +20407,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Birdstrike risk management plan",
@@ -20450,12 +20429,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Borehole or trial pit analysis",
@@ -20477,12 +20451,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Building control certificate",
@@ -20504,12 +20473,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Structural or building condition survey",
@@ -20531,12 +20495,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Construction invoice",
@@ -20558,12 +20517,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Contamination report",
@@ -20585,12 +20539,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Council tax bill",
@@ -20612,12 +20561,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Crime prevention strategy",
@@ -20639,12 +20583,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Design and Access Statement",
@@ -20666,12 +20605,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Evidence for application fee exemption - disability",
@@ -20693,12 +20627,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Ecology report",
@@ -20720,12 +20649,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Elevations - existing",
@@ -20747,12 +20671,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Elevations - proposed",
@@ -20774,12 +20693,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Scheme for mitigation and monitoring of emissions (dust, odour and vibrations)",
@@ -20801,12 +20715,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Energy statement",
@@ -20828,12 +20737,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Environmental Impact Assessment (EIA)",
@@ -20855,12 +20759,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Fire safety report",
@@ -20882,12 +20781,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Flood risk assessment (FRA)",
@@ -20909,12 +20803,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Floor plan - existing",
@@ -20936,12 +20825,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Floor plan - proposed",
@@ -20963,12 +20847,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Foul drainage assessment",
@@ -20990,12 +20869,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Geodiversity assessment",
@@ -21017,12 +20891,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Heritage Statement",
@@ -21044,12 +20913,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Hydrological and hydrogeological assessment",
@@ -21071,12 +20935,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Hydrology report",
@@ -21098,12 +20957,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Internal elevations",
@@ -21125,12 +20979,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Internal sections",
@@ -21152,12 +21001,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Land contamination assessment",
@@ -21179,12 +21023,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Landscape and visual impact assessment (LVIA)",
@@ -21206,12 +21045,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Landscape strategy or landscape plan",
@@ -21233,12 +21067,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Lighting assessment",
@@ -21260,12 +21089,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Details of litter, vermin and bird control",
@@ -21287,12 +21111,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Location plan",
@@ -21314,12 +21133,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Minerals and waste assessment",
@@ -21341,12 +21155,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "New dwellings schedule",
@@ -21368,12 +21177,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Noise assessment",
@@ -21395,12 +21199,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Open space assessment",
@@ -21422,12 +21221,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Other - document",
@@ -21449,12 +21243,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Other - drawing",
@@ -21476,12 +21265,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Other - evidence or correspondence",
@@ -21503,12 +21287,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Parking plan",
@@ -21530,12 +21309,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Photographs - existing",
@@ -21557,12 +21331,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Photographs - proposed",
@@ -21584,12 +21353,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Planning statement",
@@ -21611,12 +21375,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Roof plan - existing",
@@ -21638,12 +21397,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Roof plan - proposed",
@@ -21665,12 +21419,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Sections - existing",
@@ -21692,12 +21441,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Sections - proposed",
@@ -21719,12 +21463,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Site plan - existing",
@@ -21746,12 +21485,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Site plan - proposed",
@@ -21773,12 +21507,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Sketch plan",
@@ -21800,12 +21529,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Statement of community involvement",
@@ -21827,12 +21551,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Statuatory declaration",
@@ -21854,12 +21573,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Details of storage treatment or disposal of waste",
@@ -21881,12 +21595,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Street scene drawing",
@@ -21908,12 +21617,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Subsidence report",
@@ -21935,12 +21639,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Sunlight and daylight report",
@@ -21962,12 +21661,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Sustainability statement",
@@ -21989,12 +21683,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Technical evidence",
@@ -22016,12 +21705,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Tenancy agreement",
@@ -22043,12 +21727,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Tenancy invoice",
@@ -22070,12 +21749,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Town centre uses - Impact assessment",
@@ -22097,12 +21771,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Town centre uses - Sequential assessment",
@@ -22124,12 +21793,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Transport assessment",
@@ -22151,12 +21815,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Travel plan",
@@ -22178,12 +21837,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Tree canopy calculator",
@@ -22205,12 +21859,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Tree condition report",
@@ -22232,12 +21881,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Trees report",
@@ -22259,12 +21903,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Unit plan - existing",
@@ -22286,12 +21925,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Unit plan - proposed",
@@ -22313,12 +21947,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Use plan - existing",
@@ -22340,12 +21969,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Use plan - proposed",
@@ -22367,12 +21991,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Utility bill",
@@ -22394,12 +22013,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Utilities statement",
@@ -22421,12 +22035,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Ventilation or extraction statement",
@@ -22448,12 +22057,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Visualisations",
@@ -22475,12 +22079,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Waste and recycling strategy",
@@ -22502,12 +22101,7 @@
           "additionalProperties": false,
           "properties": {
             "condition": {
-              "enum": [
-                "required",
-                "recommended",
-                "optional"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/FileCondition"
             },
             "description": {
               "const": "Water environment assessment",
@@ -22526,7 +22120,7 @@
           "type": "object"
         }
       ],
-      "description": "File type with an attached condition"
+      "description": "Types of planning documents and drawings, with an attached condition as presented to the applicant"
     },
     "Response": {
       "additionalProperties": false,
