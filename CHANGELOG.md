@@ -15,7 +15,7 @@ incremented for features.
 - Renamed and added additional `FileTypes` ([#100](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/100), [#108](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/108))
 
 ### Added
-- Added `metadata.files` to communicate all required, recommended, and optional files requested from the user based on their responses to reference during assessment ([#110](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/110))
+- Added `service.metadata.files` to communicate all required, recommended, and optional files requested from the user based on their responses to reference during assessment ([#110](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/110))
 - Added additional `PlanningDesignations` ([#106](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/106))
 
 ## [0.2.3] - 2024-01-29
