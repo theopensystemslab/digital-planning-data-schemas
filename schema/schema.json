@@ -2319,6 +2319,42 @@
           "additionalProperties": false,
           "properties": {
             "description": {
+              "const": "Joiner's report",
+              "type": "string"
+            },
+            "value": {
+              "const": "joinersReport",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Joinery section report",
+              "type": "string"
+            },
+            "value": {
+              "const": "joinerySections",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
               "const": "Land contamination assessment",
               "type": "string"
             },
@@ -3133,7 +3169,7 @@
               "type": "string"
             },
             "value": {
-              "const": "utilitiesBill",
+              "const": "utilityBill",
               "type": "string"
             }
           },

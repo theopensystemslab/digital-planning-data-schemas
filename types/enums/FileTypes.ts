@@ -36,6 +36,8 @@ export const FileTypes = {
   hydrologyReport: 'Hydrology report',
   internalElevations: 'Internal elevations',
   internalSections: 'Internal sections',
+  joinersReport: "Joiner's report",
+  joinerySections: 'Joinery section report',
   landContaminationAssessment: 'Land contamination assessment',
   landscapeAndVisualImpactAssessment:
     'Landscape and visual impact assessment (LVIA)',
@@ -84,7 +86,7 @@ export const FileTypes = {
   'unitPlan.proposed': 'Unit plan - proposed',
   'usePlan.existing': 'Use plan - existing',
   'usePlan.proposed': 'Use plan - proposed',
-  utilitiesBill: 'Utility bill',
+  utilityBill: 'Utility bill',
   utilitiesStatement: 'Utilities statement',
   ventilationStatement: 'Ventilation or extraction statement',
   visualisations: 'Visualisations',
