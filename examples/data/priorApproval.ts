@@ -779,13 +779,13 @@ export const validPriorApproval: Schema = {
             description: 'Other - drawing',
           },
         ],
-        recommended: [],
-        optional: [
+        recommended: [
           {
             value: 'sitePlan.proposed',
             description: 'Site plan - proposed',
           },
         ],
+        optional: [],
       },
     },
     submittedAt: '2023-10-02T00:00:00Z',

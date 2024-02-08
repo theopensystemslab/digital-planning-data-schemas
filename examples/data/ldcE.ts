@@ -1243,7 +1243,6 @@ export const validLDCE: Schema = {
             value: 'sitePlan.proposed',
             description: 'Site plan - proposed',
           },
-
           {
             value: 'elevations.proposed',
             description: 'Elevations - proposed',
