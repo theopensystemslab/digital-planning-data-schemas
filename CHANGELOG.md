@@ -9,6 +9,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 The minor version will be incremented upon a breaking change and the patch version will be
 incremented for features.
 
+## [0.3.0] - 2024-02-08
+
+### Breaking
+- Renamed and added additional `FileTypes` ([#100](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/100), [#108](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/108), [#112](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/112))
+
+### Added
+- Added `service.metadata.files` to communicate all required, recommended, and optional files requested from the user based on their responses for reference during assessment ([#110](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/110))
+- Added additional `PlanningDesignations` ([#106](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/106))
+
 ## [0.2.3] - 2024-01-29
 
 ### Added 
