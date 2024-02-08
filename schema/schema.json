@@ -4381,6 +4381,9 @@
         "service": {
           "additionalProperties": false,
           "properties": {
+            "files": {
+              "$ref": "#/definitions/RequestedFiles"
+            },
             "flowId": {
               "$ref": "#/definitions/UUID"
             },
@@ -4390,7 +4393,8 @@
           },
           "required": [
             "flowId",
-            "url"
+            "url",
+            "files"
           ],
           "type": "object"
         },
@@ -20502,6 +20506,37 @@
           "type": "string"
         }
       },
+      "type": "object"
+    },
+    "RequestedFiles": {
+      "$id": "#RequestedFiles",
+      "additionalProperties": false,
+      "description": "File types requested by this service. Schema[\"files\"] will be a subset of this list based on the user's journey through the service.",
+      "properties": {
+        "optional": {
+          "items": {
+            "$ref": "#/definitions/FileType"
+          },
+          "type": "array"
+        },
+        "recommended": {
+          "items": {
+            "$ref": "#/definitions/FileType"
+          },
+          "type": "array"
+        },
+        "required": {
+          "items": {
+            "$ref": "#/definitions/FileType"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "required",
+        "recommended",
+        "optional"
+      ],
       "type": "object"
     },
     "Response": {
