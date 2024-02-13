@@ -187,6 +187,40 @@
       ],
       "type": "object"
     },
+    "AnyProviderMetadata": {
+      "$id": "#AnyProviderMetadata",
+      "additionalProperties": false,
+      "description": "Base metadata associated with applications submitted via any provider",
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/UUID",
+          "description": "Unique identifier for this application"
+        },
+        "organisation": {
+          "description": "The reference code for the organisation responsible for processing this planning application, sourced from planning.data.gov.uk/dataset/local-authority",
+          "maxLength": 4,
+          "type": "string"
+        },
+        "schema": {
+          "$ref": "#/definitions/URL"
+        },
+        "source": {
+          "const": "Any",
+          "type": "string"
+        },
+        "submittedAt": {
+          "$ref": "#/definitions/DateTime"
+        }
+      },
+      "required": [
+        "id",
+        "organisation",
+        "schema",
+        "source",
+        "submittedAt"
+      ],
+      "type": "object"
+    },
     "Applicant": {
       "$id": "#Applicant",
       "anyOf": [
@@ -1569,35 +1603,6 @@
           "type": "object"
         }
       },
-      "type": "object"
-    },
-    "BaseMetadata": {
-      "$id": "#BaseMetadata",
-      "additionalProperties": false,
-      "description": "Minimum metadata expected for any application",
-      "properties": {
-        "id": {
-          "$ref": "#/definitions/UUID",
-          "description": "Unique identifier for this application"
-        },
-        "organisation": {
-          "description": "The reference code for the organisation responsible for processing this planning application, sourced from planning.data.gov.uk/dataset/local-authority",
-          "maxLength": 4,
-          "type": "string"
-        },
-        "schema": {
-          "$ref": "#/definitions/URL"
-        },
-        "submittedAt": {
-          "$ref": "#/definitions/DateTime"
-        }
-      },
-      "required": [
-        "organisation",
-        "id",
-        "submittedAt",
-        "schema"
-      ],
       "type": "object"
     },
     "Date": {
@@ -4173,7 +4178,7 @@
       "$id": "#DigitalPlanningMetadata",
       "anyOf": [
         {
-          "$ref": "#/definitions/BaseMetadata"
+          "$ref": "#/definitions/AnyProviderMetadata"
         },
         {
           "$ref": "#/definitions/PlanXMetadata"

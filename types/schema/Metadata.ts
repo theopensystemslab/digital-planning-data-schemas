@@ -5,7 +5,7 @@ import {FileType} from './File';
  * @id #DigitalPlanningMetadata
  * @description Details of the digital planning service which sent this application
  */
-export type Metadata = BaseMetadata | PlanXMetadata;
+export type Metadata = AnyProviderMetadata | PlanXMetadata;
 
 /**
  * @id #BaseMetadata
@@ -23,6 +23,14 @@ export interface BaseMetadata {
   id: UUID; // @todo align to DLUHC Planning Application API reference
   submittedAt: DateTime;
   schema: URL;
+}
+
+/**
+ * @id #AnyProviderMetadata
+ * @description Base metadata associated with applications submitted via any provider
+ */
+export interface AnyProviderMetadata extends BaseMetadata {
+  source: 'Any';
 }
 
 /**
