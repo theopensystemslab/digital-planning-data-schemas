@@ -1588,6 +1588,9 @@
         "schema": {
           "$ref": "#/definitions/URL"
         },
+        "source": {
+          "type": "string"
+        },
         "submittedAt": {
           "$ref": "#/definitions/DateTime"
         }
@@ -1596,7 +1599,8 @@
         "organisation",
         "id",
         "submittedAt",
-        "schema"
+        "schema",
+        "source"
       ],
       "type": "object"
     },

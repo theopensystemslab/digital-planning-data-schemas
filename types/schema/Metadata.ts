@@ -23,6 +23,7 @@ export interface BaseMetadata {
   id: UUID; // @todo align to DLUHC Planning Application API reference
   submittedAt: DateTime;
   schema: URL;
+  source: string;
 }
 
 /**
