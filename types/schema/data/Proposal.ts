@@ -61,20 +61,52 @@ export interface BaseDetails {
     asbestosAffected?: boolean;
   };
   access?: {
-    type?: [
+    type: [
       | 'vehicle'
       | 'parking'
       | 'newRoad'
       | 'rightsOfWay.newPublic'
       | 'rightsOfWay.changeOfUse',
     ];
-    description?: string;
+    description: string;
+    /**
+     * @description Is the property accessible from public land?
+     */
+    public?: boolean;
   };
   trees?: {
     /**
-     * @description Will trees or hedges be cut down or pruned?
+     * @description Are trees or hedges being cut down or pruned?
      */
     affected?: boolean;
+  };
+  utilities?: {
+    /**
+     * @description Is the development building over existing utilities?
+     */
+    buildOver?: boolean;
+    foulSewageDisposal?: {
+      type: ['sewer' | 'tank' | 'plant' | 'pit'];
+      description: string;
+    };
+  };
+  flood?: {
+    surfaceWaterDisposal?: {
+      type: [
+        'drainageSystem' | 'soakaway' | 'sewer' | 'watercourse' | 'pondOrLake',
+      ];
+      description: string;
+    };
+  };
+  ecology?: {
+    /**
+     * @description Is the development housing livestock?
+     */
+    livestock?: boolean;
+    /**
+     * @description Are known species inhabiting the site?
+     */
+    otherSpecies?: boolean;
   };
 }
 

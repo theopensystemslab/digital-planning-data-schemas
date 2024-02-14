@@ -1563,6 +1563,72 @@
     "BaseDetails": {
       "additionalProperties": false,
       "properties": {
+        "access": {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "type": "string"
+            },
+            "public": {
+              "description": "Is the property accessible from public land?",
+              "type": "boolean"
+            },
+            "type": {
+              "items": {
+                "enum": [
+                  "vehicle",
+                  "parking",
+                  "newRoad",
+                  "rightsOfWay.newPublic",
+                  "rightsOfWay.changeOfUse"
+                ],
+                "type": "string"
+              },
+              "maxItems": 1,
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "type",
+            "description"
+          ],
+          "type": "object"
+        },
+        "demolish": {
+          "additionalProperties": false,
+          "properties": {
+            "asbestosAffected": {
+              "description": "Are materials containing asbestos affected by the demolition?",
+              "type": "boolean"
+            },
+            "dangerousStructure": {
+              "description": "Is a dangerous structure being demolished?",
+              "type": "boolean"
+            },
+            "reason": {
+              "type": "string"
+            },
+            "remediationPlan": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
+        "ecology": {
+          "additionalProperties": false,
+          "properties": {
+            "livestock": {
+              "description": "Is the development housing livestock?",
+              "type": "boolean"
+            },
+            "otherSpecies": {
+              "description": "Are known species inhabiting the site?",
+              "type": "boolean"
+            }
+          },
+          "type": "object"
+        },
         "extend": {
           "additionalProperties": false,
           "properties": {
@@ -1573,6 +1639,40 @@
           "required": [
             "area"
           ],
+          "type": "object"
+        },
+        "flood": {
+          "additionalProperties": false,
+          "properties": {
+            "surfaceWaterDisposal": {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "type": "string"
+                },
+                "type": {
+                  "items": {
+                    "enum": [
+                      "drainageSystem",
+                      "soakaway",
+                      "sewer",
+                      "watercourse",
+                      "pondOrLake"
+                    ],
+                    "type": "string"
+                  },
+                  "maxItems": 1,
+                  "minItems": 1,
+                  "type": "array"
+                }
+              },
+              "required": [
+                "type",
+                "description"
+              ],
+              "type": "object"
+            }
+          },
           "type": "object"
         },
         "new": {
@@ -1600,6 +1700,53 @@
           "required": [
             "area"
           ],
+          "type": "object"
+        },
+        "trees": {
+          "additionalProperties": false,
+          "properties": {
+            "affected": {
+              "description": "Are trees or hedges being cut down or pruned?",
+              "type": "boolean"
+            }
+          },
+          "type": "object"
+        },
+        "utilities": {
+          "additionalProperties": false,
+          "properties": {
+            "buildOver": {
+              "description": "Is the development building over existing utilities?",
+              "type": "boolean"
+            },
+            "foulSewageDisposal": {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "type": "string"
+                },
+                "type": {
+                  "items": {
+                    "enum": [
+                      "sewer",
+                      "tank",
+                      "plant",
+                      "pit"
+                    ],
+                    "type": "string"
+                  },
+                  "maxItems": 1,
+                  "minItems": 1,
+                  "type": "array"
+                }
+              },
+              "required": [
+                "type",
+                "description"
+              ],
+              "type": "object"
+            }
+          },
           "type": "object"
         }
       },
@@ -3098,6 +3245,24 @@
           "additionalProperties": false,
           "properties": {
             "description": {
+              "const": "Tree survey",
+              "type": "string"
+            },
+            "value": {
+              "const": "treeSurvey",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
               "const": "Unit plan - existing",
               "type": "string"
             },
@@ -3384,6 +3549,72 @@
       "additionalProperties": false,
       "description": "Proposal details for project sites within the Greater London Authority (GLA) area",
       "properties": {
+        "access": {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "type": "string"
+            },
+            "public": {
+              "description": "Is the property accessible from public land?",
+              "type": "boolean"
+            },
+            "type": {
+              "items": {
+                "enum": [
+                  "vehicle",
+                  "parking",
+                  "newRoad",
+                  "rightsOfWay.newPublic",
+                  "rightsOfWay.changeOfUse"
+                ],
+                "type": "string"
+              },
+              "maxItems": 1,
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "type",
+            "description"
+          ],
+          "type": "object"
+        },
+        "demolish": {
+          "additionalProperties": false,
+          "properties": {
+            "asbestosAffected": {
+              "description": "Are materials containing asbestos affected by the demolition?",
+              "type": "boolean"
+            },
+            "dangerousStructure": {
+              "description": "Is a dangerous structure being demolished?",
+              "type": "boolean"
+            },
+            "reason": {
+              "type": "string"
+            },
+            "remediationPlan": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
+        "ecology": {
+          "additionalProperties": false,
+          "properties": {
+            "livestock": {
+              "description": "Is the development housing livestock?",
+              "type": "boolean"
+            },
+            "otherSpecies": {
+              "description": "Are known species inhabiting the site?",
+              "type": "boolean"
+            }
+          },
+          "type": "object"
+        },
         "extend": {
           "additionalProperties": false,
           "properties": {
@@ -3394,6 +3625,40 @@
           "required": [
             "area"
           ],
+          "type": "object"
+        },
+        "flood": {
+          "additionalProperties": false,
+          "properties": {
+            "surfaceWaterDisposal": {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "type": "string"
+                },
+                "type": {
+                  "items": {
+                    "enum": [
+                      "drainageSystem",
+                      "soakaway",
+                      "sewer",
+                      "watercourse",
+                      "pondOrLake"
+                    ],
+                    "type": "string"
+                  },
+                  "maxItems": 1,
+                  "minItems": 1,
+                  "type": "array"
+                }
+              },
+              "required": [
+                "type",
+                "description"
+              ],
+              "type": "object"
+            }
+          },
           "type": "object"
         },
         "new": {
@@ -3421,6 +3686,53 @@
           "required": [
             "area"
           ],
+          "type": "object"
+        },
+        "trees": {
+          "additionalProperties": false,
+          "properties": {
+            "affected": {
+              "description": "Are trees or hedges being cut down or pruned?",
+              "type": "boolean"
+            }
+          },
+          "type": "object"
+        },
+        "utilities": {
+          "additionalProperties": false,
+          "properties": {
+            "buildOver": {
+              "description": "Is the development building over existing utilities?",
+              "type": "boolean"
+            },
+            "foulSewageDisposal": {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "type": "string"
+                },
+                "type": {
+                  "items": {
+                    "enum": [
+                      "sewer",
+                      "tank",
+                      "plant",
+                      "pit"
+                    ],
+                    "type": "string"
+                  },
+                  "maxItems": 1,
+                  "minItems": 1,
+                  "type": "array"
+                }
+              },
+              "required": [
+                "type",
+                "description"
+              ],
+              "type": "object"
+            }
+          },
           "type": "object"
         },
         "vehicleParking": {
