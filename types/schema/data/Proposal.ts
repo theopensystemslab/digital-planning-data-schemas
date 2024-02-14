@@ -48,6 +48,34 @@ export interface BaseDetails {
       dwellings?: number;
     };
   };
+  demolish?: {
+    reason?: string;
+    remediationPlan?: string;
+    /**
+     * @description Is a dangerous structure being demolished?
+     */
+    dangerousStructure?: boolean;
+    /**
+     * @description Are materials containing asbestos affected by the demolition?
+     */
+    asbestosAffected?: boolean;
+  };
+  access?: {
+    type?: [
+      | 'vehicle'
+      | 'parking'
+      | 'newRoad'
+      | 'rightsOfWay.newPublic'
+      | 'rightsOfWay.changeOfUse',
+    ];
+    description?: string;
+  };
+  trees?: {
+    /**
+     * @description Will trees or hedges be cut down or pruned?
+     */
+    affected?: boolean;
+  };
 }
 
 /**

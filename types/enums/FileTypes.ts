@@ -82,6 +82,7 @@ export const FileTypes = {
   treeCanopyCalculator: 'Tree canopy calculator',
   treeConditionReport: 'Tree condition report',
   treesReport: 'Trees report',
+  treeSurvey: 'Tree survey',
   'unitPlan.existing': 'Unit plan - existing',
   'unitPlan.proposed': 'Unit plan - proposed',
   'usePlan.existing': 'Use plan - existing',
