@@ -166,7 +166,10 @@ export const validLDCE: Schema = {
                 name: 'Whole District excluding the Town of Chesham - Poultry production.',
                 description:
                   'Bucks County Council Town and Country Planning Act 1947 Town and Country Planning General Development Order 1950. Re Whole District excluding the Town of Chesham. In relation to poultry production.',
-                source: 'https://www.planning.data.gov.uk/entity/7010002192',
+                source: {
+                  text: 'Planning Data',
+                  url: 'https://www.planning.data.gov.uk/entity/7010002192',
+                },
               },
             ],
           },
@@ -238,7 +241,10 @@ export const validLDCE: Schema = {
             entities: [
               {
                 name: 'Chilterns',
-                source: 'https://www.planning.data.gov.uk/entity/1000005',
+                source: {
+                  text: 'Planning Data',
+                  url: 'https://www.planning.data.gov.uk/entity/1000005',
+                },
               },
             ],
           },
