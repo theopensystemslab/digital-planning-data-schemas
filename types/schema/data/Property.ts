@@ -225,5 +225,14 @@ export type PlanningConstraint =
 type Entity = {
   name: string;
   description?: string;
-  source?: URL;
+  source: PlanningDataSource | OSRoadsSource;
+};
+
+type PlanningDataSource = {
+  text: 'Planning Data';
+  url: URL;
+};
+
+type OSRoadsSource = {
+  text: 'Ordnance Survey MasterMap Highways';
 };
