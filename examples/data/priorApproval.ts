@@ -113,31 +113,46 @@ export const validPriorApproval: Schema = {
                 name: 'Central Activities Zone',
                 description:
                   'Change of use from offices to dwelling houses is restricted',
-                source: 'https://www.planning.data.gov.uk/entity/7010000942',
+                source: {
+                  text: 'Planning Data',
+                  url: 'https://www.planning.data.gov.uk/entity/7010000942',
+                },
               },
               {
                 name: 'Central Activities Zone',
                 description:
                   'Demolition of commercial buildings and construction of new dwellinghouses is restricted',
-                source: 'https://www.planning.data.gov.uk/entity/7010000944',
+                source: {
+                  text: 'Planning Data',
+                  url: 'https://www.planning.data.gov.uk/entity/7010000944',
+                },
               },
               {
                 name: 'Bankside and Borough District Town Centre',
                 description:
                   'Demolition of commercial buildings and construction of new dwellinghouses is restricted',
-                source: 'https://www.planning.data.gov.uk/entity/7010001042',
+                source: {
+                  text: 'Planning Data',
+                  url: 'https://www.planning.data.gov.uk/entity/7010001042',
+                },
               },
               {
                 name: 'Central Activities Zone',
                 description:
                   'Change of use from Class E to residential is restricted',
-                source: 'https://www.planning.data.gov.uk/entity/7010001055',
+                source: {
+                  text: 'Planning Data',
+                  url: 'https://www.planning.data.gov.uk/entity/7010001055',
+                },
               },
               {
                 name: 'Bankside and Borough District Town Centre',
                 description:
                   'Change of use from Class E to residential is restricted',
-                source: 'https://www.planning.data.gov.uk/entity/7010001153',
+                source: {
+                  text: 'Planning Data',
+                  url: 'https://www.planning.data.gov.uk/entity/7010001153',
+                },
               },
             ],
           },

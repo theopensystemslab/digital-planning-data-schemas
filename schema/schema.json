@@ -4502,11 +4502,43 @@
                         "type": "string"
                       },
                       "source": {
-                        "$ref": "#/definitions/URL"
+                        "anyOf": [
+                          {
+                            "additionalProperties": false,
+                            "properties": {
+                              "text": {
+                                "const": "Planning Data",
+                                "type": "string"
+                              },
+                              "url": {
+                                "$ref": "#/definitions/URL"
+                              }
+                            },
+                            "required": [
+                              "text",
+                              "url"
+                            ],
+                            "type": "object"
+                          },
+                          {
+                            "additionalProperties": false,
+                            "properties": {
+                              "text": {
+                                "const": "Ordnance Survey MasterMap Highways",
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "text"
+                            ],
+                            "type": "object"
+                          }
+                        ]
                       }
                     },
                     "required": [
-                      "name"
+                      "name",
+                      "source"
                     ],
                     "type": "object"
                   },
@@ -5212,11 +5244,43 @@
                             "type": "string"
                           },
                           "source": {
-                            "$ref": "#/definitions/URL"
+                            "anyOf": [
+                              {
+                                "additionalProperties": false,
+                                "properties": {
+                                  "text": {
+                                    "const": "Planning Data",
+                                    "type": "string"
+                                  },
+                                  "url": {
+                                    "$ref": "#/definitions/URL"
+                                  }
+                                },
+                                "required": [
+                                  "text",
+                                  "url"
+                                ],
+                                "type": "object"
+                              },
+                              {
+                                "additionalProperties": false,
+                                "properties": {
+                                  "text": {
+                                    "const": "Ordnance Survey MasterMap Highways",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "text"
+                                ],
+                                "type": "object"
+                              }
+                            ]
                           }
                         },
                         "required": [
-                          "name"
+                          "name",
+                          "source"
                         ],
                         "type": "object"
                       },
@@ -5266,11 +5330,43 @@
                             "type": "string"
                           },
                           "source": {
-                            "$ref": "#/definitions/URL"
+                            "anyOf": [
+                              {
+                                "additionalProperties": false,
+                                "properties": {
+                                  "text": {
+                                    "const": "Planning Data",
+                                    "type": "string"
+                                  },
+                                  "url": {
+                                    "$ref": "#/definitions/URL"
+                                  }
+                                },
+                                "required": [
+                                  "text",
+                                  "url"
+                                ],
+                                "type": "object"
+                              },
+                              {
+                                "additionalProperties": false,
+                                "properties": {
+                                  "text": {
+                                    "const": "Ordnance Survey MasterMap Highways",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "text"
+                                ],
+                                "type": "object"
+                              }
+                            ]
                           }
                         },
                         "required": [
-                          "name"
+                          "name",
+                          "source"
                         ],
                         "type": "object"
                       },
@@ -5320,11 +5416,43 @@
                             "type": "string"
                           },
                           "source": {
-                            "$ref": "#/definitions/URL"
+                            "anyOf": [
+                              {
+                                "additionalProperties": false,
+                                "properties": {
+                                  "text": {
+                                    "const": "Planning Data",
+                                    "type": "string"
+                                  },
+                                  "url": {
+                                    "$ref": "#/definitions/URL"
+                                  }
+                                },
+                                "required": [
+                                  "text",
+                                  "url"
+                                ],
+                                "type": "object"
+                              },
+                              {
+                                "additionalProperties": false,
+                                "properties": {
+                                  "text": {
+                                    "const": "Ordnance Survey MasterMap Highways",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "text"
+                                ],
+                                "type": "object"
+                              }
+                            ]
                           }
                         },
                         "required": [
-                          "name"
+                          "name",
+                          "source"
                         ],
                         "type": "object"
                       },
@@ -5374,11 +5502,43 @@
                             "type": "string"
                           },
                           "source": {
-                            "$ref": "#/definitions/URL"
+                            "anyOf": [
+                              {
+                                "additionalProperties": false,
+                                "properties": {
+                                  "text": {
+                                    "const": "Planning Data",
+                                    "type": "string"
+                                  },
+                                  "url": {
+                                    "$ref": "#/definitions/URL"
+                                  }
+                                },
+                                "required": [
+                                  "text",
+                                  "url"
+                                ],
+                                "type": "object"
+                              },
+                              {
+                                "additionalProperties": false,
+                                "properties": {
+                                  "text": {
+                                    "const": "Ordnance Survey MasterMap Highways",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "text"
+                                ],
+                                "type": "object"
+                              }
+                            ]
                           }
                         },
                         "required": [
-                          "name"
+                          "name",
+                          "source"
                         ],
                         "type": "object"
                       },
@@ -5428,11 +5588,43 @@
                             "type": "string"
                           },
                           "source": {
-                            "$ref": "#/definitions/URL"
+                            "anyOf": [
+                              {
+                                "additionalProperties": false,
+                                "properties": {
+                                  "text": {
+                                    "const": "Planning Data",
+                                    "type": "string"
+                                  },
+                                  "url": {
+                                    "$ref": "#/definitions/URL"
+                                  }
+                                },
+                                "required": [
+                                  "text",
+                                  "url"
+                                ],
+                                "type": "object"
+                              },
+                              {
+                                "additionalProperties": false,
+                                "properties": {
+                                  "text": {
+                                    "const": "Ordnance Survey MasterMap Highways",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "text"
+                                ],
+                                "type": "object"
+                              }
+                            ]
                           }
                         },
                         "required": [
-                          "name"
+                          "name",
+                          "source"
                         ],
                         "type": "object"
                       },
@@ -5482,11 +5674,43 @@
                             "type": "string"
                           },
                           "source": {
-                            "$ref": "#/definitions/URL"
+                            "anyOf": [
+                              {
+                                "additionalProperties": false,
+                                "properties": {
+                                  "text": {
+                                    "const": "Planning Data",
+                                    "type": "string"
+                                  },
+                                  "url": {
+                                    "$ref": "#/definitions/URL"
+                                  }
+                                },
+                                "required": [
+                                  "text",
+                                  "url"
+                                ],
+                                "type": "object"
+                              },
+                              {
+                                "additionalProperties": false,
+                                "properties": {
+                                  "text": {
+                                    "const": "Ordnance Survey MasterMap Highways",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "text"
+                                ],
+                                "type": "object"
+                              }
+                            ]
                           }
                         },
                         "required": [
-                          "name"
+                          "name",
+                          "source"
                         ],
                         "type": "object"
                       },
@@ -5536,11 +5760,43 @@
                             "type": "string"
                           },
                           "source": {
-                            "$ref": "#/definitions/URL"
+                            "anyOf": [
+                              {
+                                "additionalProperties": false,
+                                "properties": {
+                                  "text": {
+                                    "const": "Planning Data",
+                                    "type": "string"
+                                  },
+                                  "url": {
+                                    "$ref": "#/definitions/URL"
+                                  }
+                                },
+                                "required": [
+                                  "text",
+                                  "url"
+                                ],
+                                "type": "object"
+                              },
+                              {
+                                "additionalProperties": false,
+                                "properties": {
+                                  "text": {
+                                    "const": "Ordnance Survey MasterMap Highways",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "text"
+                                ],
+                                "type": "object"
+                              }
+                            ]
                           }
                         },
                         "required": [
-                          "name"
+                          "name",
+                          "source"
                         ],
                         "type": "object"
                       },
@@ -5590,11 +5846,43 @@
                             "type": "string"
                           },
                           "source": {
-                            "$ref": "#/definitions/URL"
+                            "anyOf": [
+                              {
+                                "additionalProperties": false,
+                                "properties": {
+                                  "text": {
+                                    "const": "Planning Data",
+                                    "type": "string"
+                                  },
+                                  "url": {
+                                    "$ref": "#/definitions/URL"
+                                  }
+                                },
+                                "required": [
+                                  "text",
+                                  "url"
+                                ],
+                                "type": "object"
+                              },
+                              {
+                                "additionalProperties": false,
+                                "properties": {
+                                  "text": {
+                                    "const": "Ordnance Survey MasterMap Highways",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "text"
+                                ],
+                                "type": "object"
+                              }
+                            ]
                           }
                         },
                         "required": [
-                          "name"
+                          "name",
+                          "source"
                         ],
                         "type": "object"
                       },
@@ -5644,11 +5932,43 @@
                             "type": "string"
                           },
                           "source": {
-                            "$ref": "#/definitions/URL"
+                            "anyOf": [
+                              {
+                                "additionalProperties": false,
+                                "properties": {
+                                  "text": {
+                                    "const": "Planning Data",
+                                    "type": "string"
+                                  },
+                                  "url": {
+                                    "$ref": "#/definitions/URL"
+                                  }
+                                },
+                                "required": [
+                                  "text",
+                                  "url"
+                                ],
+                                "type": "object"
+                              },
+                              {
+                                "additionalProperties": false,
+                                "properties": {
+                                  "text": {
+                                    "const": "Ordnance Survey MasterMap Highways",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "text"
+                                ],
+                                "type": "object"
+                              }
+                            ]
                           }
                         },
                         "required": [
-                          "name"
+                          "name",
+                          "source"
                         ],
                         "type": "object"
                       },
@@ -5698,11 +6018,43 @@
                             "type": "string"
                           },
                           "source": {
-                            "$ref": "#/definitions/URL"
+                            "anyOf": [
+                              {
+                                "additionalProperties": false,
+                                "properties": {
+                                  "text": {
+                                    "const": "Planning Data",
+                                    "type": "string"
+                                  },
+                                  "url": {
+                                    "$ref": "#/definitions/URL"
+                                  }
+                                },
+                                "required": [
+                                  "text",
+                                  "url"
+                                ],
+                                "type": "object"
+                              },
+                              {
+                                "additionalProperties": false,
+                                "properties": {
+                                  "text": {
+                                    "const": "Ordnance Survey MasterMap Highways",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "text"
+                                ],
+                                "type": "object"
+                              }
+                            ]
                           }
                         },
                         "required": [
-                          "name"
+                          "name",
+                          "source"
                         ],
                         "type": "object"
                       },
@@ -5752,11 +6104,43 @@
                             "type": "string"
                           },
                           "source": {
-                            "$ref": "#/definitions/URL"
+                            "anyOf": [
+                              {
+                                "additionalProperties": false,
+                                "properties": {
+                                  "text": {
+                                    "const": "Planning Data",
+                                    "type": "string"
+                                  },
+                                  "url": {
+                                    "$ref": "#/definitions/URL"
+                                  }
+                                },
+                                "required": [
+                                  "text",
+                                  "url"
+                                ],
+                                "type": "object"
+                              },
+                              {
+                                "additionalProperties": false,
+                                "properties": {
+                                  "text": {
+                                    "const": "Ordnance Survey MasterMap Highways",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "text"
+                                ],
+                                "type": "object"
+                              }
+                            ]
                           }
                         },
                         "required": [
-                          "name"
+                          "name",
+                          "source"
                         ],
                         "type": "object"
                       },
@@ -5806,11 +6190,43 @@
                             "type": "string"
                           },
                           "source": {
-                            "$ref": "#/definitions/URL"
+                            "anyOf": [
+                              {
+                                "additionalProperties": false,
+                                "properties": {
+                                  "text": {
+                                    "const": "Planning Data",
+                                    "type": "string"
+                                  },
+                                  "url": {
+                                    "$ref": "#/definitions/URL"
+                                  }
+                                },
+                                "required": [
+                                  "text",
+                                  "url"
+                                ],
+                                "type": "object"
+                              },
+                              {
+                                "additionalProperties": false,
+                                "properties": {
+                                  "text": {
+                                    "const": "Ordnance Survey MasterMap Highways",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "text"
+                                ],
+                                "type": "object"
+                              }
+                            ]
                           }
                         },
                         "required": [
-                          "name"
+                          "name",
+                          "source"
                         ],
                         "type": "object"
                       },
@@ -5860,11 +6276,43 @@
                             "type": "string"
                           },
                           "source": {
-                            "$ref": "#/definitions/URL"
+                            "anyOf": [
+                              {
+                                "additionalProperties": false,
+                                "properties": {
+                                  "text": {
+                                    "const": "Planning Data",
+                                    "type": "string"
+                                  },
+                                  "url": {
+                                    "$ref": "#/definitions/URL"
+                                  }
+                                },
+                                "required": [
+                                  "text",
+                                  "url"
+                                ],
+                                "type": "object"
+                              },
+                              {
+                                "additionalProperties": false,
+                                "properties": {
+                                  "text": {
+                                    "const": "Ordnance Survey MasterMap Highways",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "text"
+                                ],
+                                "type": "object"
+                              }
+                            ]
                           }
                         },
                         "required": [
-                          "name"
+                          "name",
+                          "source"
                         ],
                         "type": "object"
                       },
@@ -5914,11 +6362,43 @@
                             "type": "string"
                           },
                           "source": {
-                            "$ref": "#/definitions/URL"
+                            "anyOf": [
+                              {
+                                "additionalProperties": false,
+                                "properties": {
+                                  "text": {
+                                    "const": "Planning Data",
+                                    "type": "string"
+                                  },
+                                  "url": {
+                                    "$ref": "#/definitions/URL"
+                                  }
+                                },
+                                "required": [
+                                  "text",
+                                  "url"
+                                ],
+                                "type": "object"
+                              },
+                              {
+                                "additionalProperties": false,
+                                "properties": {
+                                  "text": {
+                                    "const": "Ordnance Survey MasterMap Highways",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "text"
+                                ],
+                                "type": "object"
+                              }
+                            ]
                           }
                         },
                         "required": [
-                          "name"
+                          "name",
+                          "source"
                         ],
                         "type": "object"
                       },
@@ -5968,11 +6448,43 @@
                             "type": "string"
                           },
                           "source": {
-                            "$ref": "#/definitions/URL"
+                            "anyOf": [
+                              {
+                                "additionalProperties": false,
+                                "properties": {
+                                  "text": {
+                                    "const": "Planning Data",
+                                    "type": "string"
+                                  },
+                                  "url": {
+                                    "$ref": "#/definitions/URL"
+                                  }
+                                },
+                                "required": [
+                                  "text",
+                                  "url"
+                                ],
+                                "type": "object"
+                              },
+                              {
+                                "additionalProperties": false,
+                                "properties": {
+                                  "text": {
+                                    "const": "Ordnance Survey MasterMap Highways",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "text"
+                                ],
+                                "type": "object"
+                              }
+                            ]
                           }
                         },
                         "required": [
-                          "name"
+                          "name",
+                          "source"
                         ],
                         "type": "object"
                       },
@@ -6022,11 +6534,43 @@
                             "type": "string"
                           },
                           "source": {
-                            "$ref": "#/definitions/URL"
+                            "anyOf": [
+                              {
+                                "additionalProperties": false,
+                                "properties": {
+                                  "text": {
+                                    "const": "Planning Data",
+                                    "type": "string"
+                                  },
+                                  "url": {
+                                    "$ref": "#/definitions/URL"
+                                  }
+                                },
+                                "required": [
+                                  "text",
+                                  "url"
+                                ],
+                                "type": "object"
+                              },
+                              {
+                                "additionalProperties": false,
+                                "properties": {
+                                  "text": {
+                                    "const": "Ordnance Survey MasterMap Highways",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "text"
+                                ],
+                                "type": "object"
+                              }
+                            ]
                           }
                         },
                         "required": [
-                          "name"
+                          "name",
+                          "source"
                         ],
                         "type": "object"
                       },
@@ -6076,11 +6620,43 @@
                             "type": "string"
                           },
                           "source": {
-                            "$ref": "#/definitions/URL"
+                            "anyOf": [
+                              {
+                                "additionalProperties": false,
+                                "properties": {
+                                  "text": {
+                                    "const": "Planning Data",
+                                    "type": "string"
+                                  },
+                                  "url": {
+                                    "$ref": "#/definitions/URL"
+                                  }
+                                },
+                                "required": [
+                                  "text",
+                                  "url"
+                                ],
+                                "type": "object"
+                              },
+                              {
+                                "additionalProperties": false,
+                                "properties": {
+                                  "text": {
+                                    "const": "Ordnance Survey MasterMap Highways",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "text"
+                                ],
+                                "type": "object"
+                              }
+                            ]
                           }
                         },
                         "required": [
-                          "name"
+                          "name",
+                          "source"
                         ],
                         "type": "object"
                       },
@@ -6130,11 +6706,43 @@
                             "type": "string"
                           },
                           "source": {
-                            "$ref": "#/definitions/URL"
+                            "anyOf": [
+                              {
+                                "additionalProperties": false,
+                                "properties": {
+                                  "text": {
+                                    "const": "Planning Data",
+                                    "type": "string"
+                                  },
+                                  "url": {
+                                    "$ref": "#/definitions/URL"
+                                  }
+                                },
+                                "required": [
+                                  "text",
+                                  "url"
+                                ],
+                                "type": "object"
+                              },
+                              {
+                                "additionalProperties": false,
+                                "properties": {
+                                  "text": {
+                                    "const": "Ordnance Survey MasterMap Highways",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "text"
+                                ],
+                                "type": "object"
+                              }
+                            ]
                           }
                         },
                         "required": [
-                          "name"
+                          "name",
+                          "source"
                         ],
                         "type": "object"
                       },
@@ -6184,11 +6792,43 @@
                             "type": "string"
                           },
                           "source": {
-                            "$ref": "#/definitions/URL"
+                            "anyOf": [
+                              {
+                                "additionalProperties": false,
+                                "properties": {
+                                  "text": {
+                                    "const": "Planning Data",
+                                    "type": "string"
+                                  },
+                                  "url": {
+                                    "$ref": "#/definitions/URL"
+                                  }
+                                },
+                                "required": [
+                                  "text",
+                                  "url"
+                                ],
+                                "type": "object"
+                              },
+                              {
+                                "additionalProperties": false,
+                                "properties": {
+                                  "text": {
+                                    "const": "Ordnance Survey MasterMap Highways",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "text"
+                                ],
+                                "type": "object"
+                              }
+                            ]
                           }
                         },
                         "required": [
-                          "name"
+                          "name",
+                          "source"
                         ],
                         "type": "object"
                       },
@@ -6238,11 +6878,43 @@
                             "type": "string"
                           },
                           "source": {
-                            "$ref": "#/definitions/URL"
+                            "anyOf": [
+                              {
+                                "additionalProperties": false,
+                                "properties": {
+                                  "text": {
+                                    "const": "Planning Data",
+                                    "type": "string"
+                                  },
+                                  "url": {
+                                    "$ref": "#/definitions/URL"
+                                  }
+                                },
+                                "required": [
+                                  "text",
+                                  "url"
+                                ],
+                                "type": "object"
+                              },
+                              {
+                                "additionalProperties": false,
+                                "properties": {
+                                  "text": {
+                                    "const": "Ordnance Survey MasterMap Highways",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "text"
+                                ],
+                                "type": "object"
+                              }
+                            ]
                           }
                         },
                         "required": [
-                          "name"
+                          "name",
+                          "source"
                         ],
                         "type": "object"
                       },
@@ -6292,11 +6964,43 @@
                             "type": "string"
                           },
                           "source": {
-                            "$ref": "#/definitions/URL"
+                            "anyOf": [
+                              {
+                                "additionalProperties": false,
+                                "properties": {
+                                  "text": {
+                                    "const": "Planning Data",
+                                    "type": "string"
+                                  },
+                                  "url": {
+                                    "$ref": "#/definitions/URL"
+                                  }
+                                },
+                                "required": [
+                                  "text",
+                                  "url"
+                                ],
+                                "type": "object"
+                              },
+                              {
+                                "additionalProperties": false,
+                                "properties": {
+                                  "text": {
+                                    "const": "Ordnance Survey MasterMap Highways",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "text"
+                                ],
+                                "type": "object"
+                              }
+                            ]
                           }
                         },
                         "required": [
-                          "name"
+                          "name",
+                          "source"
                         ],
                         "type": "object"
                       },
@@ -6346,11 +7050,43 @@
                             "type": "string"
                           },
                           "source": {
-                            "$ref": "#/definitions/URL"
+                            "anyOf": [
+                              {
+                                "additionalProperties": false,
+                                "properties": {
+                                  "text": {
+                                    "const": "Planning Data",
+                                    "type": "string"
+                                  },
+                                  "url": {
+                                    "$ref": "#/definitions/URL"
+                                  }
+                                },
+                                "required": [
+                                  "text",
+                                  "url"
+                                ],
+                                "type": "object"
+                              },
+                              {
+                                "additionalProperties": false,
+                                "properties": {
+                                  "text": {
+                                    "const": "Ordnance Survey MasterMap Highways",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "text"
+                                ],
+                                "type": "object"
+                              }
+                            ]
                           }
                         },
                         "required": [
-                          "name"
+                          "name",
+                          "source"
                         ],
                         "type": "object"
                       },
@@ -6400,11 +7136,43 @@
                             "type": "string"
                           },
                           "source": {
-                            "$ref": "#/definitions/URL"
+                            "anyOf": [
+                              {
+                                "additionalProperties": false,
+                                "properties": {
+                                  "text": {
+                                    "const": "Planning Data",
+                                    "type": "string"
+                                  },
+                                  "url": {
+                                    "$ref": "#/definitions/URL"
+                                  }
+                                },
+                                "required": [
+                                  "text",
+                                  "url"
+                                ],
+                                "type": "object"
+                              },
+                              {
+                                "additionalProperties": false,
+                                "properties": {
+                                  "text": {
+                                    "const": "Ordnance Survey MasterMap Highways",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "text"
+                                ],
+                                "type": "object"
+                              }
+                            ]
                           }
                         },
                         "required": [
-                          "name"
+                          "name",
+                          "source"
                         ],
                         "type": "object"
                       },
@@ -6454,11 +7222,43 @@
                             "type": "string"
                           },
                           "source": {
-                            "$ref": "#/definitions/URL"
+                            "anyOf": [
+                              {
+                                "additionalProperties": false,
+                                "properties": {
+                                  "text": {
+                                    "const": "Planning Data",
+                                    "type": "string"
+                                  },
+                                  "url": {
+                                    "$ref": "#/definitions/URL"
+                                  }
+                                },
+                                "required": [
+                                  "text",
+                                  "url"
+                                ],
+                                "type": "object"
+                              },
+                              {
+                                "additionalProperties": false,
+                                "properties": {
+                                  "text": {
+                                    "const": "Ordnance Survey MasterMap Highways",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "text"
+                                ],
+                                "type": "object"
+                              }
+                            ]
                           }
                         },
                         "required": [
-                          "name"
+                          "name",
+                          "source"
                         ],
                         "type": "object"
                       },
@@ -6508,11 +7308,43 @@
                             "type": "string"
                           },
                           "source": {
-                            "$ref": "#/definitions/URL"
+                            "anyOf": [
+                              {
+                                "additionalProperties": false,
+                                "properties": {
+                                  "text": {
+                                    "const": "Planning Data",
+                                    "type": "string"
+                                  },
+                                  "url": {
+                                    "$ref": "#/definitions/URL"
+                                  }
+                                },
+                                "required": [
+                                  "text",
+                                  "url"
+                                ],
+                                "type": "object"
+                              },
+                              {
+                                "additionalProperties": false,
+                                "properties": {
+                                  "text": {
+                                    "const": "Ordnance Survey MasterMap Highways",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "text"
+                                ],
+                                "type": "object"
+                              }
+                            ]
                           }
                         },
                         "required": [
-                          "name"
+                          "name",
+                          "source"
                         ],
                         "type": "object"
                       },
@@ -6562,11 +7394,43 @@
                             "type": "string"
                           },
                           "source": {
-                            "$ref": "#/definitions/URL"
+                            "anyOf": [
+                              {
+                                "additionalProperties": false,
+                                "properties": {
+                                  "text": {
+                                    "const": "Planning Data",
+                                    "type": "string"
+                                  },
+                                  "url": {
+                                    "$ref": "#/definitions/URL"
+                                  }
+                                },
+                                "required": [
+                                  "text",
+                                  "url"
+                                ],
+                                "type": "object"
+                              },
+                              {
+                                "additionalProperties": false,
+                                "properties": {
+                                  "text": {
+                                    "const": "Ordnance Survey MasterMap Highways",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "text"
+                                ],
+                                "type": "object"
+                              }
+                            ]
                           }
                         },
                         "required": [
-                          "name"
+                          "name",
+                          "source"
                         ],
                         "type": "object"
                       },
@@ -6616,11 +7480,43 @@
                             "type": "string"
                           },
                           "source": {
-                            "$ref": "#/definitions/URL"
+                            "anyOf": [
+                              {
+                                "additionalProperties": false,
+                                "properties": {
+                                  "text": {
+                                    "const": "Planning Data",
+                                    "type": "string"
+                                  },
+                                  "url": {
+                                    "$ref": "#/definitions/URL"
+                                  }
+                                },
+                                "required": [
+                                  "text",
+                                  "url"
+                                ],
+                                "type": "object"
+                              },
+                              {
+                                "additionalProperties": false,
+                                "properties": {
+                                  "text": {
+                                    "const": "Ordnance Survey MasterMap Highways",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "text"
+                                ],
+                                "type": "object"
+                              }
+                            ]
                           }
                         },
                         "required": [
-                          "name"
+                          "name",
+                          "source"
                         ],
                         "type": "object"
                       },
@@ -6670,11 +7566,43 @@
                             "type": "string"
                           },
                           "source": {
-                            "$ref": "#/definitions/URL"
+                            "anyOf": [
+                              {
+                                "additionalProperties": false,
+                                "properties": {
+                                  "text": {
+                                    "const": "Planning Data",
+                                    "type": "string"
+                                  },
+                                  "url": {
+                                    "$ref": "#/definitions/URL"
+                                  }
+                                },
+                                "required": [
+                                  "text",
+                                  "url"
+                                ],
+                                "type": "object"
+                              },
+                              {
+                                "additionalProperties": false,
+                                "properties": {
+                                  "text": {
+                                    "const": "Ordnance Survey MasterMap Highways",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "text"
+                                ],
+                                "type": "object"
+                              }
+                            ]
                           }
                         },
                         "required": [
-                          "name"
+                          "name",
+                          "source"
                         ],
                         "type": "object"
                       },
