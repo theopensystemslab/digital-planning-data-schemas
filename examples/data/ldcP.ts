@@ -875,6 +875,42 @@ export const validLDCP: Schema = {
         recommended: [],
         optional: [],
       },
+      fees: {
+        calculated: [
+          {
+            description:
+              'The plannning fee for an application for a Certificate of Lawfulness relating to the proposed alteration or extension of a single home is £129',
+            policyRefs: [
+              {
+                text: 'UK Stuatory Instruments 2023 No. 1197',
+                url: 'https://www.legislation.gov.uk/uksi/2023/1197/made',
+              },
+            ],
+          },
+        ],
+        payable: [
+          {
+            description:
+              'If the proposed works (to either a home or within the curtilage of a home) is for the sole purpose of providing either: a means of access to (or within) the dwellinghouse for a disabled resident (current or future); providing facilities that are designed to ensure the disabled persons safety, health or comfort; or providing disabled access to a public building. Then no planning fee will be payable for this application.',
+            policyRefs: [
+              {
+                text: 'UK Statutory Instruments 2012 No. 2920 Regulation 4',
+                url: 'https://www.legislation.gov.uk/uksi/2012/2920/regulation/4/made',
+              },
+            ],
+          },
+          {
+            description:
+              'In the case of an application that is the first resubmission of an application on the same site that is similar in character and description, no planning fee is payable.',
+            policyRefs: [
+              {
+                text: 'UK Statutory Instruments 2012 No. 2920 Regulation 8',
+                url: 'https://www.legislation.gov.uk/uksi/2012/2920/regulation/8/made',
+              },
+            ],
+          },
+        ],
+      },
     },
     submittedAt: '2023-10-02T00:00:00+01:00',
     schema:

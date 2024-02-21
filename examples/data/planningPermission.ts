@@ -1294,6 +1294,10 @@ export const validPlanningPermission: Schema = {
         ],
         optional: [],
       },
+      fees: {
+        calculated: [],
+        payable: [],
+      },
     },
     submittedAt: '2023-10-02T00:00:00.00Z',
     schema:

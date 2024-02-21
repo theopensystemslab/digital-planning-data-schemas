@@ -1274,6 +1274,10 @@ export const validLDCE: Schema = {
         ],
         optional: [],
       },
+      fees: {
+        calculated: [],
+        payable: [],
+      },
     },
     submittedAt: '2023-10-02t00:00:00z',
     schema:

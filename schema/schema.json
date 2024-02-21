@@ -1605,6 +1605,38 @@
       },
       "type": "object"
     },
+    "CalculateMetadata": {
+      "$id": "#CalculateMetadata",
+      "additionalProperties": false,
+      "description": "Metadata associated with PlanX Calculate components used to determine fees throughout a service",
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "policyRefs": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "text": {
+                "type": "string"
+              },
+              "url": {
+                "$ref": "#/definitions/URL"
+              }
+            },
+            "required": [
+              "text"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "description"
+      ],
+      "type": "object"
+    },
     "Date": {
       "format": "date",
       "type": "string"
@@ -1714,6 +1746,30 @@
       "required": [
         "features",
         "type"
+      ],
+      "type": "object"
+    },
+    "FeesExplanation": {
+      "$id": "#FeesExplanation",
+      "additionalProperties": false,
+      "description": "An explanation, including policy references, of the calculated and payable fees associated with this application",
+      "properties": {
+        "calculated": {
+          "items": {
+            "$ref": "#/definitions/CalculateMetadata"
+          },
+          "type": "array"
+        },
+        "payable": {
+          "items": {
+            "$ref": "#/definitions/CalculateMetadata"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "calculated",
+        "payable"
       ],
       "type": "object"
     },
@@ -4422,6 +4478,9 @@
         "service": {
           "additionalProperties": false,
           "properties": {
+            "fees": {
+              "$ref": "#/definitions/FeesExplanation"
+            },
             "files": {
               "$ref": "#/definitions/RequestedFiles"
             },
@@ -4435,7 +4494,8 @@
           "required": [
             "flowId",
             "url",
-            "files"
+            "files",
+            "fees"
           ],
           "type": "object"
         },
@@ -21102,7 +21162,7 @@
     "RequestedFiles": {
       "$id": "#RequestedFiles",
       "additionalProperties": false,
-      "description": "File types requested by this service. Schema[\"files\"] will be a subset of this list based on the user's journey through the service.",
+      "description": "File types requested by this service. Schema[\"files\"] will be a subset of this list based on the user's journey through the service",
       "properties": {
         "optional": {
           "items": {
