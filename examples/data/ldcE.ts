@@ -280,7 +280,7 @@ export const validLDCE: Schema = {
     proposal: {
       projectType: [
         {
-          value: 'extend.outbuildings.studio',
+          value: 'extend.outbuilding.studio',
           description: 'Add an outbuilding - studio',
         },
       ],
