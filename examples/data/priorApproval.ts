@@ -8,11 +8,11 @@ export const validPriorApproval: Schema = {
         description: 'Prior Approval - Install or change solar panels',
       },
       fee: {
-        calculated: 96,
-        payable: 96,
+        calculated: 120,
+        payable: 120,
         exemption: {
-          disability: true,
-          resubmission: true,
+          disability: false,
+          resubmission: false,
         },
         reduction: {
           sports: false,
@@ -803,8 +803,28 @@ export const validPriorApproval: Schema = {
         optional: [],
       },
       fee: {
-        calculated: [],
-        payable: [],
+        calculated: [
+          {
+            description: '',
+            policyRefs: [
+              {
+                text: 'The Town and Country Planning (Fees for Applications, Deemed Applications, Requests and Site Visits) (England) (Amendment) Regulations 2023',
+                url: 'https://www.legislation.gov.uk/uksi/2023/1197/made',
+              },
+            ],
+          },
+        ],
+        payable: [
+          {
+            description: '',
+            policyRefs: [
+              {
+                text: 'The Town and Country Planning (Fees for Applications, Deemed Applications, Requests and Site Visits) (England) (Amendment) Regulations 2023',
+                url: 'https://www.legislation.gov.uk/uksi/2023/1197/made',
+              },
+            ],
+          },
+        ],
       },
     },
     submittedAt: '2023-10-02T00:00:00Z',
