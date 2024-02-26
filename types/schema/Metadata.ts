@@ -54,10 +54,10 @@ export interface CalculateMetadata {
 }
 
 /**
- * @id #FeesExplanation
+ * @id #FeeExplanation
  * @description An explanation, including policy references, of the calculated and payable fees associated with this application
  */
-export interface FeesExplanation {
+export interface FeeExplanation {
   calculated: CalculateMetadata[];
   payable: CalculateMetadata[];
 }
@@ -72,6 +72,6 @@ export interface PlanXMetadata extends BaseMetadata {
     flowId: UUID;
     url: URL;
     files: RequestedFiles;
-    fees: FeesExplanation;
+    fee: FeeExplanation;
   };
 }

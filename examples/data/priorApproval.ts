@@ -802,7 +802,7 @@ export const validPriorApproval: Schema = {
         ],
         optional: [],
       },
-      fees: {
+      fee: {
         calculated: [],
         payable: [],
       },

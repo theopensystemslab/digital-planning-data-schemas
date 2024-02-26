@@ -1274,7 +1274,7 @@ export const validLDCE: Schema = {
         ],
         optional: [],
       },
-      fees: {
+      fee: {
         calculated: [],
         payable: [],
       },

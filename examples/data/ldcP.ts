@@ -8,7 +8,7 @@ export const validLDCP: Schema = {
         description: 'Lawful Development Certificate - Proposed use',
       },
       fee: {
-        calculated: 103,
+        calculated: 129,
         payable: 0,
         exemption: {
           disability: true,
@@ -875,7 +875,7 @@ export const validLDCP: Schema = {
         recommended: [],
         optional: [],
       },
-      fees: {
+      fee: {
         calculated: [
           {
             description:
@@ -891,7 +891,7 @@ export const validLDCP: Schema = {
         payable: [
           {
             description:
-              'If the proposed works (to either a home or within the curtilage of a home) is for the sole purpose of providing either: a means of access to (or within) the dwellinghouse for a disabled resident (current or future); providing facilities that are designed to ensure the disabled persons safety, health or comfort; or providing disabled access to a public building. Then no planning fee will be payable for this application.',
+              'If the proposed works (to either a home or within the curtilage of a home) is for the sole purpose of - providing either a means of access to (or within) the dwellinghouse for a disabled resident (current or future); providing facilities that are designed to ensure the disabled persons safety, health or comfort; or providing disabled access to a public building - then no planning fee will be payable for this application.',
             policyRefs: [
               {
                 text: 'UK Statutory Instruments 2012 No. 2920 Regulation 4',

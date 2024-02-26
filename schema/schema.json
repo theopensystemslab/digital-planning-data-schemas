@@ -1749,8 +1749,8 @@
       ],
       "type": "object"
     },
-    "FeesExplanation": {
-      "$id": "#FeesExplanation",
+    "FeeExplanation": {
+      "$id": "#FeeExplanation",
       "additionalProperties": false,
       "description": "An explanation, including policy references, of the calculated and payable fees associated with this application",
       "properties": {
@@ -4478,8 +4478,8 @@
         "service": {
           "additionalProperties": false,
           "properties": {
-            "fees": {
-              "$ref": "#/definitions/FeesExplanation"
+            "fee": {
+              "$ref": "#/definitions/FeeExplanation"
             },
             "files": {
               "$ref": "#/definitions/RequestedFiles"
@@ -4495,7 +4495,7 @@
             "flowId",
             "url",
             "files",
-            "fees"
+            "fee"
           ],
           "type": "object"
         },

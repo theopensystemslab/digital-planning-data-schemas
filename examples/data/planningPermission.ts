@@ -1294,7 +1294,7 @@ export const validPlanningPermission: Schema = {
         ],
         optional: [],
       },
-      fees: {
+      fee: {
         calculated: [],
         payable: [],
       },
