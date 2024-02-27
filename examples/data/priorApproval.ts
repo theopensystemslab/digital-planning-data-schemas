@@ -203,7 +203,7 @@ export const validPriorApproval: Schema = {
             intersects: false,
           },
           {
-            value: 'designated.SPA',
+            value: 'nature.SPA',
             description: 'Special Protection Area (SPA)',
             intersects: false,
           },
