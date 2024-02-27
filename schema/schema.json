@@ -4717,29 +4717,6 @@
               "additionalProperties": false,
               "properties": {
                 "description": {
-                  "const": "Green Belt",
-                  "type": "string"
-                },
-                "intersects": {
-                  "const": false,
-                  "type": "boolean"
-                },
-                "value": {
-                  "const": "designated.greenBelt",
-                  "type": "string"
-                }
-              },
-              "required": [
-                "description",
-                "intersects",
-                "value"
-              ],
-              "type": "object"
-            },
-            {
-              "additionalProperties": false,
-              "properties": {
-                "description": {
                   "const": "National Park",
                   "type": "string"
                 },
@@ -4772,29 +4749,6 @@
                 },
                 "value": {
                   "const": "designated.nationalPark.broads",
-                  "type": "string"
-                }
-              },
-              "required": [
-                "description",
-                "intersects",
-                "value"
-              ],
-              "type": "object"
-            },
-            {
-              "additionalProperties": false,
-              "properties": {
-                "description": {
-                  "const": "Special Protection Area (SPA)",
-                  "type": "string"
-                },
-                "intersects": {
-                  "const": false,
-                  "type": "boolean"
-                },
-                "value": {
-                  "const": "designated.SPA",
                   "type": "string"
                 }
               },
@@ -4910,6 +4864,29 @@
                 },
                 "value": {
                   "const": "flood.zone.3",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Green Belt",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "greenBelt",
                   "type": "string"
                 }
               },
@@ -5117,6 +5094,29 @@
                 },
                 "value": {
                   "const": "nature.SAC",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Special Protection Area (SPA)",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "nature.SPA",
                   "type": "string"
                 }
               },
@@ -5744,92 +5744,6 @@
               "additionalProperties": false,
               "properties": {
                 "description": {
-                  "const": "Green Belt",
-                  "type": "string"
-                },
-                "entities": {
-                  "anyOf": [
-                    {
-                      "items": {
-                        "additionalProperties": false,
-                        "properties": {
-                          "description": {
-                            "type": "string"
-                          },
-                          "name": {
-                            "type": "string"
-                          },
-                          "source": {
-                            "anyOf": [
-                              {
-                                "additionalProperties": false,
-                                "properties": {
-                                  "text": {
-                                    "const": "Planning Data",
-                                    "type": "string"
-                                  },
-                                  "url": {
-                                    "$ref": "#/definitions/URL"
-                                  }
-                                },
-                                "required": [
-                                  "text",
-                                  "url"
-                                ],
-                                "type": "object"
-                              },
-                              {
-                                "additionalProperties": false,
-                                "properties": {
-                                  "text": {
-                                    "const": "Ordnance Survey MasterMap Highways",
-                                    "type": "string"
-                                  }
-                                },
-                                "required": [
-                                  "text"
-                                ],
-                                "type": "object"
-                              }
-                            ]
-                          }
-                        },
-                        "required": [
-                          "name",
-                          "source"
-                        ],
-                        "type": "object"
-                      },
-                      "type": "array"
-                    },
-                    {
-                      "maxItems": 0,
-                      "minItems": 0,
-                      "type": "array"
-                    }
-                  ]
-                },
-                "intersects": {
-                  "const": true,
-                  "type": "boolean"
-                },
-                "value": {
-                  "const": "designated.greenBelt",
-                  "type": "string"
-                }
-              },
-              "required": [
-                "description",
-                "entities",
-                "intersects",
-                "value"
-              ],
-              "type": "object"
-            },
-            {
-              "additionalProperties": false,
-              "properties": {
-                "description": {
                   "const": "National Park",
                   "type": "string"
                 },
@@ -5987,92 +5901,6 @@
                 },
                 "value": {
                   "const": "designated.nationalPark.broads",
-                  "type": "string"
-                }
-              },
-              "required": [
-                "description",
-                "entities",
-                "intersects",
-                "value"
-              ],
-              "type": "object"
-            },
-            {
-              "additionalProperties": false,
-              "properties": {
-                "description": {
-                  "const": "Special Protection Area (SPA)",
-                  "type": "string"
-                },
-                "entities": {
-                  "anyOf": [
-                    {
-                      "items": {
-                        "additionalProperties": false,
-                        "properties": {
-                          "description": {
-                            "type": "string"
-                          },
-                          "name": {
-                            "type": "string"
-                          },
-                          "source": {
-                            "anyOf": [
-                              {
-                                "additionalProperties": false,
-                                "properties": {
-                                  "text": {
-                                    "const": "Planning Data",
-                                    "type": "string"
-                                  },
-                                  "url": {
-                                    "$ref": "#/definitions/URL"
-                                  }
-                                },
-                                "required": [
-                                  "text",
-                                  "url"
-                                ],
-                                "type": "object"
-                              },
-                              {
-                                "additionalProperties": false,
-                                "properties": {
-                                  "text": {
-                                    "const": "Ordnance Survey MasterMap Highways",
-                                    "type": "string"
-                                  }
-                                },
-                                "required": [
-                                  "text"
-                                ],
-                                "type": "object"
-                              }
-                            ]
-                          }
-                        },
-                        "required": [
-                          "name",
-                          "source"
-                        ],
-                        "type": "object"
-                      },
-                      "type": "array"
-                    },
-                    {
-                      "maxItems": 0,
-                      "minItems": 0,
-                      "type": "array"
-                    }
-                  ]
-                },
-                "intersects": {
-                  "const": true,
-                  "type": "boolean"
-                },
-                "value": {
-                  "const": "designated.SPA",
                   "type": "string"
                 }
               },
@@ -6503,6 +6331,92 @@
                 },
                 "value": {
                   "const": "flood.zone.3",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "entities",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Green Belt",
+                  "type": "string"
+                },
+                "entities": {
+                  "anyOf": [
+                    {
+                      "items": {
+                        "additionalProperties": false,
+                        "properties": {
+                          "description": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "source": {
+                            "anyOf": [
+                              {
+                                "additionalProperties": false,
+                                "properties": {
+                                  "text": {
+                                    "const": "Planning Data",
+                                    "type": "string"
+                                  },
+                                  "url": {
+                                    "$ref": "#/definitions/URL"
+                                  }
+                                },
+                                "required": [
+                                  "text",
+                                  "url"
+                                ],
+                                "type": "object"
+                              },
+                              {
+                                "additionalProperties": false,
+                                "properties": {
+                                  "text": {
+                                    "const": "Ordnance Survey MasterMap Highways",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "text"
+                                ],
+                                "type": "object"
+                              }
+                            ]
+                          }
+                        },
+                        "required": [
+                          "name",
+                          "source"
+                        ],
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    {
+                      "maxItems": 0,
+                      "minItems": 0,
+                      "type": "array"
+                    }
+                  ]
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "greenBelt",
                   "type": "string"
                 }
               },
@@ -7277,6 +7191,92 @@
                 },
                 "value": {
                   "const": "nature.SAC",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "entities",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Special Protection Area (SPA)",
+                  "type": "string"
+                },
+                "entities": {
+                  "anyOf": [
+                    {
+                      "items": {
+                        "additionalProperties": false,
+                        "properties": {
+                          "description": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "source": {
+                            "anyOf": [
+                              {
+                                "additionalProperties": false,
+                                "properties": {
+                                  "text": {
+                                    "const": "Planning Data",
+                                    "type": "string"
+                                  },
+                                  "url": {
+                                    "$ref": "#/definitions/URL"
+                                  }
+                                },
+                                "required": [
+                                  "text",
+                                  "url"
+                                ],
+                                "type": "object"
+                              },
+                              {
+                                "additionalProperties": false,
+                                "properties": {
+                                  "text": {
+                                    "const": "Ordnance Survey MasterMap Highways",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "text"
+                                ],
+                                "type": "object"
+                              }
+                            ]
+                          }
+                        },
+                        "required": [
+                          "name",
+                          "source"
+                        ],
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    {
+                      "maxItems": 0,
+                      "minItems": 0,
+                      "type": "array"
+                    }
+                  ]
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "nature.SPA",
                   "type": "string"
                 }
               },
