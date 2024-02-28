@@ -9,6 +9,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 The minor version will be incremented upon a breaking change and the patch version will be
 incremented for features.
 
+## [0.4.0] - 2024-02-28
+
+### Breaking
+- Renamed two `PlanningDesignation` values that were previously incorrectly categorised as "designated land" ([#125](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/122))
+- Removed duplicated "outbuildings" entries, now using singular "outbuilding" only, from `ProjectTypes` ([#123](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/123))
+- Updated type `data.property.planning.designations.source` to include `text` & `url` ([#122](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/122))
+- Updated `metadata.source` as requirement for any provider, not only PlanX ([#119](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/119))
+
+### Fixed
+- Adjusted build scripts so that generated examples in `/dist` have correct version numbers ([#114](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/114), [#115](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/115))
+
 ## [0.3.0] - 2024-02-08
 
 ### Breaking
