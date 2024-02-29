@@ -89,6 +89,7 @@ export const FileTypes = {
   utilityBill: 'Utility bill',
   utilitiesStatement: 'Utilities statement',
   ventilationStatement: 'Ventilation or extraction statement',
+  viabilityAppraisal: 'Viability Appraisal',
   visualisations: 'Visualisations',
   wasteAndRecyclingStrategy: 'Waste and recycling strategy',
   waterEnvironmentAssessment: 'Water environment assessment',
