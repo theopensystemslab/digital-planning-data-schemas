@@ -1,5 +1,7 @@
 import {Schema} from '../../types/Schema';
 
+const version = process.env['VERSION'] || '@next';
+
 export const validPlanningPermission: Schema = {
   data: {
     application: {
@@ -1296,7 +1298,6 @@ export const validPlanningPermission: Schema = {
       },
     },
     submittedAt: '2023-10-02T00:00:00.00Z',
-    schema:
-      'https://theopensystemslab.github.io/digital-planning-data-schemas/@next/schema.json',
+    schema: `https://theopensystemslab.github.io/digital-planning-data-schemas/${version}/schema.json`,
   },
 };
