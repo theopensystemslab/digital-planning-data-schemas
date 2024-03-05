@@ -131,27 +131,42 @@
               {
                 "name": "Central Activities Zone",
                 "description": "Change of use from offices to dwelling houses is restricted",
-                "source": "https://www.planning.data.gov.uk/entity/7010000942"
+                "source": {
+                  "text": "Planning Data",
+                  "url": "https://www.planning.data.gov.uk/entity/7010000942"
+                }
               },
               {
                 "name": "Central Activities Zone",
                 "description": "Demolition of commercial buildings and construction of new dwellinghouses is restricted",
-                "source": "https://www.planning.data.gov.uk/entity/7010000944"
+                "source": {
+                  "text": "Planning Data",
+                  "url": "https://www.planning.data.gov.uk/entity/7010000944"
+                }
               },
               {
                 "name": "Bankside and Borough District Town Centre",
                 "description": "Demolition of commercial buildings and construction of new dwellinghouses is restricted",
-                "source": "https://www.planning.data.gov.uk/entity/7010001042"
+                "source": {
+                  "text": "Planning Data",
+                  "url": "https://www.planning.data.gov.uk/entity/7010001042"
+                }
               },
               {
                 "name": "Central Activities Zone",
                 "description": "Change of use from Class E to residential is restricted",
-                "source": "https://www.planning.data.gov.uk/entity/7010001055"
+                "source": {
+                  "text": "Planning Data",
+                  "url": "https://www.planning.data.gov.uk/entity/7010001055"
+                }
               },
               {
                 "name": "Bankside and Borough District Town Centre",
                 "description": "Change of use from Class E to residential is restricted",
-                "source": "https://www.planning.data.gov.uk/entity/7010001153"
+                "source": {
+                  "text": "Planning Data",
+                  "url": "https://www.planning.data.gov.uk/entity/7010001153"
+                }
               }
             ]
           },
@@ -202,7 +217,7 @@
             "intersects": false
           },
           {
-            "value": "designated.SPA",
+            "value": "nature.SPA",
             "description": "Special Protection Area (SPA)",
             "intersects": false
           },
@@ -1102,7 +1117,22 @@
     "source": "PlanX",
     "service": {
       "flowId": "c6628103-c648-4663-81e1-bfa0a1a18340",
-      "url": "https://www.editor.planx.dev/southwark/apply-for-prior-approval/preview"
+      "url": "https://www.editor.planx.dev/southwark/apply-for-prior-approval/preview",
+      "files": {
+        "required": [
+          {
+            "value": "otherDrawing",
+            "description": "Other - drawing"
+          }
+        ],
+        "recommended": [
+          {
+            "value": "sitePlan.proposed",
+            "description": "Site plan - proposed"
+          }
+        ],
+        "optional": []
+      }
     },
     "submittedAt": "2023-10-02T00:00:00Z",
     "schema": "https://theopensystemslab.github.io/digital-planning-data-schemas/@next/schema.json"

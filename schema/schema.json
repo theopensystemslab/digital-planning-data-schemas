@@ -3224,6 +3224,24 @@
           "additionalProperties": false,
           "properties": {
             "description": {
+              "const": "Viability Appraisal",
+              "type": "string"
+            },
+            "value": {
+              "const": "viabilityAppraisal",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
               "const": "Visualisations",
               "type": "string"
             },

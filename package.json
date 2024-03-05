@@ -7,7 +7,7 @@
     "build": "pnpm build-schema:dist && pnpm build-json-examples",
     "build-json-examples": "pnpm ts-node scripts/build-json-examples.ts",
     "build-schema:dev": "pnpm ts-json-schema-generator --path 'types/**/*.ts' --out 'schema/schema.json' --type Schema --id @next --no-top-ref",
-    "build-schema:dist": "pnpm ts-json-schema-generator --path 'types/**/*.ts' --out 'schema/schema.json' --type Schema --id $VERSION --no-top-ref",
+    "build-schema:dist": "pnpm ts-json-schema-generator --path 'types/**/*.ts' --out 'schema/schema.json' --type Schema --id \"${VERSION:-@next}\" --no-top-ref",
     "lint": "gts lint",
     "check": "tsc --noEmit",
     "fix": "gts fix",
