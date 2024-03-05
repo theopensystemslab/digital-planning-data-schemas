@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
+pnpm build-json-examples
+pnpm build-schema:dev
 pnpm check && pnpm fix
 git add .
