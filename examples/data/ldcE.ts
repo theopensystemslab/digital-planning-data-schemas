@@ -1,5 +1,7 @@
 import {Schema} from '../../types/Schema';
 
+const version = process.env['VERSION'] || '@next';
+
 export const validLDCE: Schema = {
   data: {
     application: {
@@ -220,7 +222,7 @@ export const validLDCE: Schema = {
             intersects: false,
           },
           {
-            value: 'designated.SPA',
+            value: 'nature.SPA',
             description: 'Special Protection Area (SPA)',
             intersects: false,
           },
@@ -1302,7 +1304,6 @@ export const validLDCE: Schema = {
       },
     },
     submittedAt: '2023-10-02t00:00:00z',
-    schema:
-      'https://theopensystemslab.github.io/digital-planning-data-schemas/@next/schema.json',
+    schema: `https://theopensystemslab.github.io/digital-planning-data-schemas/${version}/schema.json`,
   },
 };
