@@ -1748,6 +1748,24 @@
           "additionalProperties": false,
           "properties": {
             "description": {
+              "const": "Access roads rights of way details",
+              "type": "string"
+            },
+            "value": {
+              "const": "accessRoadsRightsOfWayDetails",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
               "const": "Affordable housing statement",
               "type": "string"
             },
