@@ -49,8 +49,8 @@ export interface RequestedFiles {
  * @description Metadata associated with PlanX Calculate components used to determine fees throughout a service
  */
 export interface CalculateMetadata {
-  description: string;
-  policyRefs: QuestionMetaData['policyRefs'];
+  description?: string;
+  policyRefs?: QuestionMetaData['policyRefs'];
 }
 
 /**

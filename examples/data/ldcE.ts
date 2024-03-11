@@ -1283,7 +1283,7 @@ export const validLDCE: Schema = {
               'The planning fee for an application for a Certificate of Lawfulness relating to existing alterations or extensions of a single home is £258.',
             policyRefs: [
               {
-                text: 'https://www.legislation.gov.uk/uksi/2023/1197/made',
+                text: 'UK Stuatory Instruments 2023 No. 1197',
                 url: 'https://www.legislation.gov.uk/uksi/2023/1197/made',
               },
             ],
@@ -1295,7 +1295,7 @@ export const validLDCE: Schema = {
               'The planning fee for an application for a Certificate of Lawfulness relating to existing alterations or extensions of a single home is £258.',
             policyRefs: [
               {
-                text: 'https://www.legislation.gov.uk/uksi/2023/1197/made',
+                text: 'UK Stuatory Instruments 2023 No. 1197',
                 url: 'https://www.legislation.gov.uk/uksi/2023/1197/made',
               },
             ],

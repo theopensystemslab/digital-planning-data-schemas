@@ -1632,9 +1632,6 @@
           "type": "array"
         }
       },
-      "required": [
-        "description"
-      ],
       "type": "object"
     },
     "Date": {

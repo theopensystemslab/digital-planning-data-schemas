@@ -1303,7 +1303,7 @@ export const validPlanningPermission: Schema = {
               'The fee to apply for planning permission to alter or extend a single home is £258.',
             policyRefs: [
               {
-                text: 'https://www.legislation.gov.uk/uksi/2023/1197/made',
+                text: 'UK Stuatory Instruments 2023 No. 1197',
                 url: 'https://www.legislation.gov.uk/uksi/2023/1197/made',
               },
             ],
@@ -1315,7 +1315,7 @@ export const validPlanningPermission: Schema = {
               'The fee to apply for planning permission to alter or extend a single home is £258.',
             policyRefs: [
               {
-                text: 'https://www.legislation.gov.uk/uksi/2023/1197/made',
+                text: 'UK Stuatory Instruments 2023 No. 1197',
                 url: 'https://www.legislation.gov.uk/uksi/2023/1197/made',
               },
             ],

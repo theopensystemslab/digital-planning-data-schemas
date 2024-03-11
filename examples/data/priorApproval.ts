@@ -807,7 +807,6 @@ export const validPriorApproval: Schema = {
       fee: {
         calculated: [
           {
-            description: '',
             policyRefs: [
               {
                 text: 'The Town and Country Planning (Fees for Applications, Deemed Applications, Requests and Site Visits) (England) (Amendment) Regulations 2023',
@@ -818,7 +817,6 @@ export const validPriorApproval: Schema = {
         ],
         payable: [
           {
-            description: '',
             policyRefs: [
               {
                 text: 'The Town and Country Planning (Fees for Applications, Deemed Applications, Requests and Site Visits) (England) (Amendment) Regulations 2023',
