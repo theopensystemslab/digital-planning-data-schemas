@@ -1748,7 +1748,7 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Access roads rights of way details",
+              "const": "Details of impact on access, roads, and rights of way",
               "type": "string"
             },
             "value": {
