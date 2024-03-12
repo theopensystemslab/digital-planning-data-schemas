@@ -6,16 +6,16 @@
         "description": "Planning Permission - Full householder"
       },
       "fee": {
-        "calculated": 206,
-        "payable": 206,
+        "calculated": 258,
+        "payable": 258,
         "exemption": {
-          "disability": true,
-          "resubmission": true
+          "disability": false,
+          "resubmission": false
         },
         "reduction": {
-          "sports": true,
-          "parishCouncil": true,
-          "alternative": true
+          "sports": false,
+          "parishCouncil": false,
+          "alternative": false
         },
         "reference": {
           "govPay": "sandbox-ref-456"
@@ -1804,6 +1804,30 @@
           }
         ],
         "optional": []
+      },
+      "fee": {
+        "calculated": [
+          {
+            "description": "The fee to apply for planning permission to alter or extend a single home is £258.",
+            "policyRefs": [
+              {
+                "text": "UK Stuatory Instruments 2023 No. 1197",
+                "url": "https://www.legislation.gov.uk/uksi/2023/1197/made"
+              }
+            ]
+          }
+        ],
+        "payable": [
+          {
+            "description": "The fee to apply for planning permission to alter or extend a single home is £258.",
+            "policyRefs": [
+              {
+                "text": "UK Stuatory Instruments 2023 No. 1197",
+                "url": "https://www.legislation.gov.uk/uksi/2023/1197/made"
+              }
+            ]
+          }
+        ]
       }
     },
     "submittedAt": "2023-10-02T00:00:00.00Z",
