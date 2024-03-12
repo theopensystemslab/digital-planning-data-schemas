@@ -4098,6 +4098,10 @@
           },
           "type": "array"
         },
+        "materials": {
+          "$ref": "#/definitions/Materials",
+          "description": "Details about the existing materials"
+        },
         "planning": {
           "additionalProperties": false,
           "description": "Planning constraints and policies that intersect with this site and may impact or restrict development",
@@ -4190,6 +4194,36 @@
         "titleNumber",
         "type"
       ],
+      "type": "object"
+    },
+    "Materials": {
+      "additionalProperties": false,
+      "properties": {
+        "boundary": {
+          "type": "string"
+        },
+        "door": {
+          "type": "string"
+        },
+        "lighting": {
+          "type": "string"
+        },
+        "other": {
+          "type": "string"
+        },
+        "roof": {
+          "type": "string"
+        },
+        "surface": {
+          "type": "string"
+        },
+        "wall": {
+          "type": "string"
+        },
+        "window": {
+          "type": "string"
+        }
+      },
       "type": "object"
     },
     "Metadata": {
@@ -20980,6 +21014,10 @@
         "details": {
           "$ref": "#/definitions/ProposalDetails"
         },
+        "materials": {
+          "$ref": "#/definitions/Materials",
+          "description": "Details about the proposed materials"
+        },
         "projectType": {
           "items": {
             "$ref": "#/definitions/ProjectType"
@@ -21836,6 +21874,10 @@
             "type": "string"
           },
           "type": "array"
+        },
+        "materials": {
+          "$ref": "#/definitions/Materials",
+          "description": "Details about the existing materials"
         },
         "planning": {
           "additionalProperties": false,
