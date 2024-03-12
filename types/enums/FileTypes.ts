@@ -2,6 +2,8 @@
  * Values of `file.type`
  */
 export const FileTypes = {
+  accessRoadsRightsOfWayDetails:
+    'Details of impact on access, roads, and rights of way',
   affordableHousingStatement: 'Affordable housing statement',
   arboriculturistReport: 'Arboriculturist report',
   bankStatement: 'Bank statement',
