@@ -4098,15 +4098,7 @@
           "type": "object"
         },
         "details": {
-          "$id": "#PropertyDetails",
-          "additionalProperties": false,
-          "description": "Details about the property as it currently exists",
-          "properties": {
-            "materials": {
-              "$ref": "#/definitions/Materials"
-            }
-          },
-          "type": "object"
+          "$ref": "#/definitions/PropertyDetails"
         },
         "localAuthorityDistrict": {
           "description": "Current and historic UK Local Authority Districts that contain this address sourced from planning.data.gov.uk/dataset/local-authority-district",
@@ -12637,6 +12629,17 @@
         }
       ],
       "description": "Information about the site where the works will happen"
+    },
+    "PropertyDetails": {
+      "$id": "#PropertyDetails",
+      "additionalProperties": false,
+      "description": "Details about the property as it currently exists",
+      "properties": {
+        "materials": {
+          "$ref": "#/definitions/Materials"
+        }
+      },
+      "type": "object"
     },
     "PropertyType": {
       "$id": "#PropertyType",
@@ -21878,15 +21881,7 @@
           "type": "object"
         },
         "details": {
-          "$id": "#PropertyDetails",
-          "additionalProperties": false,
-          "description": "Details about the property as it currently exists",
-          "properties": {
-            "materials": {
-              "$ref": "#/definitions/Materials"
-            }
-          },
-          "type": "object"
+          "$ref": "#/definitions/PropertyDetails"
         },
         "localAuthorityDistrict": {
           "description": "Current and historic UK Local Authority Districts that contain this address sourced from planning.data.gov.uk/dataset/local-authority-district",
