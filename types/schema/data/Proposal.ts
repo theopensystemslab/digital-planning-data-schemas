@@ -20,10 +20,6 @@ export interface Proposal {
   };
   date?: ProposalDates;
   details?: ProposalDetails;
-  /**
-   * @description Details about the proposed materials
-   */
-  materials?: Materials;
 }
 
 /**
@@ -53,6 +49,7 @@ export interface BaseDetails {
       dwellings?: number;
     };
   };
+  materials?: Materials;
 }
 
 /**

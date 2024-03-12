@@ -61,9 +61,12 @@ export interface UKProperty {
     };
   };
   /**
-   * @description Details about the existing materials
+   * @id #PropertyDetails
+   * @description Details about the property as it currently exists
    */
-  materials?: Materials;
+  details?: {
+    materials?: Materials;
+  };
 }
 
 /**

@@ -1575,6 +1575,9 @@
           ],
           "type": "object"
         },
+        "materials": {
+          "$ref": "#/definitions/Materials"
+        },
         "new": {
           "additionalProperties": false,
           "properties": {
@@ -3414,6 +3417,9 @@
           ],
           "type": "object"
         },
+        "materials": {
+          "$ref": "#/definitions/Materials"
+        },
         "new": {
           "additionalProperties": false,
           "properties": {
@@ -4091,16 +4097,23 @@
           ],
           "type": "object"
         },
+        "details": {
+          "$id": "#PropertyDetails",
+          "additionalProperties": false,
+          "description": "Details about the property as it currently exists",
+          "properties": {
+            "materials": {
+              "$ref": "#/definitions/Materials"
+            }
+          },
+          "type": "object"
+        },
         "localAuthorityDistrict": {
           "description": "Current and historic UK Local Authority Districts that contain this address sourced from planning.data.gov.uk/dataset/local-authority-district",
           "items": {
             "type": "string"
           },
           "type": "array"
-        },
-        "materials": {
-          "$ref": "#/definitions/Materials",
-          "description": "Details about the existing materials"
         },
         "planning": {
           "additionalProperties": false,
@@ -21014,10 +21027,6 @@
         "details": {
           "$ref": "#/definitions/ProposalDetails"
         },
-        "materials": {
-          "$ref": "#/definitions/Materials",
-          "description": "Details about the proposed materials"
-        },
         "projectType": {
           "items": {
             "$ref": "#/definitions/ProjectType"
@@ -21868,16 +21877,23 @@
           ],
           "type": "object"
         },
+        "details": {
+          "$id": "#PropertyDetails",
+          "additionalProperties": false,
+          "description": "Details about the property as it currently exists",
+          "properties": {
+            "materials": {
+              "$ref": "#/definitions/Materials"
+            }
+          },
+          "type": "object"
+        },
         "localAuthorityDistrict": {
           "description": "Current and historic UK Local Authority Districts that contain this address sourced from planning.data.gov.uk/dataset/local-authority-district",
           "items": {
             "type": "string"
           },
           "type": "array"
-        },
-        "materials": {
-          "$ref": "#/definitions/Materials",
-          "description": "Details about the existing materials"
         },
         "planning": {
           "additionalProperties": false,
