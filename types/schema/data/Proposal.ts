@@ -2,6 +2,7 @@ import {GeoJSON} from 'geojson';
 import {ProjectTypes} from '../../enums/ProjectTypes';
 import {VehicleParking} from '../../enums/VehicleParking';
 import {Area, Date} from '../../utils';
+import {Materials} from './shared';
 
 /**
  * @id #Proposal
@@ -48,6 +49,7 @@ export interface BaseDetails {
       dwellings?: number;
     };
   };
+  materials?: Materials;
 }
 
 /**

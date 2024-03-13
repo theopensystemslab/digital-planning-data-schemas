@@ -2,6 +2,7 @@ import {GeoJSON} from 'geojson';
 import {PlanningDesignations} from '../../enums/PlanningConstraints';
 import {PropertyTypes} from '../../enums/PropertyTypes';
 import {Area, URL} from '../../utils';
+import {Materials} from './shared';
 
 /**
  * @id #Property
@@ -59,7 +60,16 @@ export interface UKProperty {
       neighbourhood: PlanningConstraint[];
     };
   };
+  details?: PropertyDetails;
 }
+
+/**
+ * @id #PropertyDetails
+ * @description Details about the property as it currently exists
+ */
+export type PropertyDetails = {
+  materials?: Materials;
+};
 
 /**
  * @id #LondonProperty

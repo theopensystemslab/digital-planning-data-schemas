@@ -1578,6 +1578,9 @@
           ],
           "type": "object"
         },
+        "materials": {
+          "$ref": "#/definitions/Materials"
+        },
         "new": {
           "additionalProperties": false,
           "properties": {
@@ -3510,6 +3513,9 @@
           ],
           "type": "object"
         },
+        "materials": {
+          "$ref": "#/definitions/Materials"
+        },
         "new": {
           "additionalProperties": false,
           "properties": {
@@ -4187,6 +4193,9 @@
           ],
           "type": "object"
         },
+        "details": {
+          "$ref": "#/definitions/PropertyDetails"
+        },
         "localAuthorityDistrict": {
           "description": "Current and historic UK Local Authority Districts that contain this address sourced from planning.data.gov.uk/dataset/local-authority-district",
           "items": {
@@ -4286,6 +4295,36 @@
         "titleNumber",
         "type"
       ],
+      "type": "object"
+    },
+    "Materials": {
+      "additionalProperties": false,
+      "properties": {
+        "boundary": {
+          "type": "string"
+        },
+        "door": {
+          "type": "string"
+        },
+        "lighting": {
+          "type": "string"
+        },
+        "other": {
+          "type": "string"
+        },
+        "roof": {
+          "type": "string"
+        },
+        "surface": {
+          "type": "string"
+        },
+        "wall": {
+          "type": "string"
+        },
+        "window": {
+          "type": "string"
+        }
+      },
       "type": "object"
     },
     "Metadata": {
@@ -12690,6 +12729,17 @@
         }
       ],
       "description": "Information about the site where the works will happen"
+    },
+    "PropertyDetails": {
+      "$id": "#PropertyDetails",
+      "additionalProperties": false,
+      "description": "Details about the property as it currently exists",
+      "properties": {
+        "materials": {
+          "$ref": "#/definitions/Materials"
+        }
+      },
+      "type": "object"
     },
     "PropertyType": {
       "$id": "#PropertyType",
@@ -21929,6 +21979,9 @@
             "area"
           ],
           "type": "object"
+        },
+        "details": {
+          "$ref": "#/definitions/PropertyDetails"
         },
         "localAuthorityDistrict": {
           "description": "Current and historic UK Local Authority Districts that contain this address sourced from planning.data.gov.uk/dataset/local-authority-district",
