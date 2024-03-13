@@ -238,6 +238,9 @@
       "additionalProperties": false,
       "description": "Information about this planning application",
       "properties": {
+        "CIL": {
+          "$ref": "#/definitions/CommunityInfrastructureLevy"
+        },
         "declaration": {
           "$ref": "#/definitions/ApplicationDeclaration"
         },
@@ -1632,6 +1635,28 @@
           "type": "array"
         }
       },
+      "type": "object"
+    },
+    "CommunityInfrastructureLevy": {
+      "$id": "#CommunityInfrastructureLevy",
+      "additionalProperties": false,
+      "description": "Details about the Community Infrastructure Levy planning charge, if applicable",
+      "properties": {
+        "result": {
+          "enum": [
+            "exempt.annexe",
+            "exempt.extension",
+            "exempt.selfBuild",
+            "liable",
+            "relief.charity",
+            "relief.socialHousing"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "result"
+      ],
       "type": "object"
     },
     "Date": {

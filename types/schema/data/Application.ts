@@ -10,6 +10,7 @@ export interface Application {
   fee: ApplicationFee;
   declaration: ApplicationDeclaration;
   preApp?: PreApplication;
+  CIL?: CommunityInfrastructureLevy;
 }
 
 /**
@@ -62,6 +63,20 @@ export interface PreApplication {
   date: Date;
   officer: string;
   summary: string;
+}
+
+/**
+ * @id #CommunityInfrastructureLevy
+ * @description Details about the Community Infrastructure Levy planning charge, if applicable
+ */
+export interface CommunityInfrastructureLevy {
+  result:
+    | 'exempt.annexe'
+    | 'exempt.extension'
+    | 'exempt.selfBuild'
+    | 'liable'
+    | 'relief.charity'
+    | 'relief.socialHousing';
 }
 
 type ApplicationTypeKeys = keyof typeof ApplicationTypes;
