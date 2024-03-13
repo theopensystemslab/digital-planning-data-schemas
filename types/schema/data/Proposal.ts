@@ -1,6 +1,5 @@
 import {GeoJSON} from 'geojson';
 import {ProjectTypes} from '../../enums/ProjectTypes';
-import {VehicleParking} from '../../enums/VehicleParking';
 import {Area, Date} from '../../utils';
 import {Materials} from './shared';
 
@@ -57,74 +56,25 @@ export interface BaseDetails {
  * @description Proposal details for project sites within the Greater London Authority (GLA) area
  */
 export interface LondonDetails extends BaseDetails {
-  vehicleParking: {
-    type: VehicleParking[];
-    cars?: {
-      count: {
-        existing: number;
-        proposed: number;
-      };
-      onStreet?: {
-        count: {
-          existing: number;
-          proposed: number;
-        };
-        club?: VehicleParkingCount;
-        disabled?: VehicleParkingCount;
-        other?: VehicleParkingCount;
-        residents?: VehicleParkingCount;
-      };
-      offStreet?: {
-        count: {
-          existing: number;
-          proposed: number;
-        };
-        club?: VehicleParkingCount;
-        disabled?: VehicleParkingCount;
-        other?: VehicleParkingCount;
-        residents?: VehicleParkingCount;
-      };
-    };
-    vans?: {
-      count: {
-        existing: number;
-        proposed: number;
-      };
-      onStreet?: VehicleParkingCount;
-      offStreet?: VehicleParkingCount;
-    };
-    motorcycles?: {
-      count: {
-        existing: number;
-        proposed: number;
-      };
-      onStreet?: VehicleParkingCount;
-      offStreet?: VehicleParkingCount;
-    };
-    bicycles?: {
-      count: {
-        existing: number;
-        proposed: number;
-      };
-      onStreet?: VehicleParkingCount;
-      offStreet?: VehicleParkingCount;
-    };
-    buses?: {
-      count: {
-        existing: number;
-        proposed: number;
-      };
-      onStreet?: VehicleParkingCount;
-      offStreet?: VehicleParkingCount;
-    };
+  /**
+   * @description Proposed parking spaces
+   */
+  parking?: {
+    cars?: ProposedCount;
+    vans?: ProposedCount;
+    motorcycles?: ProposedCount;
+    cycles?: ProposedCount;
+    buses?: ProposedCount;
+    disabled?: ProposedCount;
+    carClub?: ProposedCount;
+    offStreet?: {residential: ProposedCount};
+    other?: ProposedCount;
   };
 }
 
-type VehicleParkingCount = {
-  count: {
-    existing: number;
-    proposed: number;
-  };
+type ProposedCount = {
+  count: number;
+  difference: number;
 };
 
 type ProjectTypeKeys = keyof typeof ProjectTypes;
@@ -143,20 +93,3 @@ type ProjectTypeMap = {
  * @description Planning project types
  */
 export type ProjectType = ProjectTypeMap[keyof ProjectTypeMap];
-
-type VehicleParkingKeys = keyof typeof VehicleParking;
-
-type GenericVehicleParking<TKey extends VehicleParkingKeys> = {
-  value: TKey;
-  description: (typeof VehicleParking)[TKey];
-};
-
-type VehicleParkingMap = {
-  [K in VehicleParkingKeys]: GenericVehicleParking<K>;
-};
-
-/**
- * @id #VehicleParking
- * @description Vehicle parking types
- */
-export type VehicleParking = VehicleParkingMap[keyof VehicleParkingMap];

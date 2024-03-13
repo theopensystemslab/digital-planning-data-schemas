@@ -92,7 +92,24 @@ export interface LondonProperty extends UKProperty {
       | 'No';
     number?: string;
   };
+  socialLandlord?: boolean;
+  /**
+   * @description Existing parking spaces
+   */
+  parking?: {
+    cars?: ExistingCount;
+    vans?: ExistingCount;
+    motorcycles?: ExistingCount;
+    cycles?: ExistingCount;
+    buses?: ExistingCount;
+    disabled?: ExistingCount;
+    carClub?: ExistingCount;
+    offStreet?: {residential: ExistingCount};
+    other?: ExistingCount;
+  };
 }
+
+type ExistingCount = {count: number};
 
 /**
  * @id #SiteAddress

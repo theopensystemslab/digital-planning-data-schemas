@@ -235,31 +235,15 @@
     },
     "Application": {
       "$id": "#Application",
-      "additionalProperties": false,
-      "description": "Information about this planning application",
-      "properties": {
-        "CIL": {
-          "$ref": "#/definitions/CommunityInfrastructureLevy"
+      "anyOf": [
+        {
+          "$ref": "#/definitions/BaseApplication"
         },
-        "declaration": {
-          "$ref": "#/definitions/ApplicationDeclaration"
-        },
-        "fee": {
-          "$ref": "#/definitions/ApplicationFee"
-        },
-        "preApp": {
-          "$ref": "#/definitions/PreApplication"
-        },
-        "type": {
-          "$ref": "#/definitions/ApplicationType"
+        {
+          "$ref": "#/definitions/LondonApplication"
         }
-      },
-      "required": [
-        "type",
-        "fee",
-        "declaration"
       ],
-      "type": "object"
+      "description": "Information about this planning application"
     },
     "ApplicationDeclaration": {
       "$id": "#ApplicationDeclaration",
@@ -1202,6 +1186,24 @@
           "additionalProperties": false,
           "properties": {
             "description": {
+              "const": "Full Planning Permission - Fast track for the purposes of Affordable Housing",
+              "type": "string"
+            },
+            "value": {
+              "const": "pp.full.fastTrack.affordable",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
               "const": "Planning Permission - Full householder",
               "type": "string"
             },
@@ -1560,6 +1562,32 @@
         "phone",
         "address",
         "siteContact"
+      ],
+      "type": "object"
+    },
+    "BaseApplication": {
+      "additionalProperties": false,
+      "properties": {
+        "CIL": {
+          "$ref": "#/definitions/CommunityInfrastructureLevy"
+        },
+        "declaration": {
+          "$ref": "#/definitions/ApplicationDeclaration"
+        },
+        "fee": {
+          "$ref": "#/definitions/ApplicationFee"
+        },
+        "preApp": {
+          "$ref": "#/definitions/PreApplication"
+        },
+        "type": {
+          "$ref": "#/definitions/ApplicationType"
+        }
+      },
+      "required": [
+        "type",
+        "fee",
+        "declaration"
       ],
       "type": "object"
     },
@@ -3470,6 +3498,26 @@
       ],
       "type": "object"
     },
+    "LeadDeveloper": {
+      "additionalProperties": false,
+      "properties": {
+        "companyRegistrationNumber": {
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "ukCompany",
+            "overseasCompany",
+            "none"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "type"
+      ],
+      "type": "object"
+    },
     "LineString": {
       "additionalProperties": false,
       "description": "LineString geometry object. https://tools.ietf.org/html/rfc7946#section-3.1.4",
@@ -3492,6 +3540,40 @@
       },
       "required": [
         "coordinates",
+        "type"
+      ],
+      "type": "object"
+    },
+    "LondonApplication": {
+      "$id": "#LondonApplication",
+      "additionalProperties": false,
+      "description": "Application details for project sites within the Greater London Authority (GLA) area",
+      "properties": {
+        "CIL": {
+          "$ref": "#/definitions/CommunityInfrastructureLevy"
+        },
+        "declaration": {
+          "$ref": "#/definitions/ApplicationDeclaration"
+        },
+        "fee": {
+          "$ref": "#/definitions/ApplicationFee"
+        },
+        "leadDeveloper": {
+          "$ref": "#/definitions/LeadDeveloper"
+        },
+        "preApp": {
+          "$ref": "#/definitions/PreApplication"
+        },
+        "type": {
+          "$ref": "#/definitions/ApplicationType"
+        },
+        "vacantBuildingCredit": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "declaration",
+        "fee",
         "type"
       ],
       "type": "object"
@@ -3543,156 +3625,39 @@
           ],
           "type": "object"
         },
-        "vehicleParking": {
+        "parking": {
           "additionalProperties": false,
+          "description": "Proposed parking spaces",
           "properties": {
-            "bicycles": {
-              "additionalProperties": false,
-              "properties": {
-                "count": {
-                  "additionalProperties": false,
-                  "properties": {
-                    "existing": {
-                      "type": "number"
-                    },
-                    "proposed": {
-                      "type": "number"
-                    }
-                  },
-                  "required": [
-                    "existing",
-                    "proposed"
-                  ],
-                  "type": "object"
-                },
-                "offStreet": {
-                  "additionalProperties": false,
-                  "properties": {
-                    "count": {
-                      "additionalProperties": false,
-                      "properties": {
-                        "existing": {
-                          "type": "number"
-                        },
-                        "proposed": {
-                          "type": "number"
-                        }
-                      },
-                      "required": [
-                        "existing",
-                        "proposed"
-                      ],
-                      "type": "object"
-                    }
-                  },
-                  "required": [
-                    "count"
-                  ],
-                  "type": "object"
-                },
-                "onStreet": {
-                  "additionalProperties": false,
-                  "properties": {
-                    "count": {
-                      "additionalProperties": false,
-                      "properties": {
-                        "existing": {
-                          "type": "number"
-                        },
-                        "proposed": {
-                          "type": "number"
-                        }
-                      },
-                      "required": [
-                        "existing",
-                        "proposed"
-                      ],
-                      "type": "object"
-                    }
-                  },
-                  "required": [
-                    "count"
-                  ],
-                  "type": "object"
-                }
-              },
-              "required": [
-                "count"
-              ],
-              "type": "object"
-            },
             "buses": {
               "additionalProperties": false,
               "properties": {
                 "count": {
-                  "additionalProperties": false,
-                  "properties": {
-                    "existing": {
-                      "type": "number"
-                    },
-                    "proposed": {
-                      "type": "number"
-                    }
-                  },
-                  "required": [
-                    "existing",
-                    "proposed"
-                  ],
-                  "type": "object"
+                  "type": "number"
                 },
-                "offStreet": {
-                  "additionalProperties": false,
-                  "properties": {
-                    "count": {
-                      "additionalProperties": false,
-                      "properties": {
-                        "existing": {
-                          "type": "number"
-                        },
-                        "proposed": {
-                          "type": "number"
-                        }
-                      },
-                      "required": [
-                        "existing",
-                        "proposed"
-                      ],
-                      "type": "object"
-                    }
-                  },
-                  "required": [
-                    "count"
-                  ],
-                  "type": "object"
-                },
-                "onStreet": {
-                  "additionalProperties": false,
-                  "properties": {
-                    "count": {
-                      "additionalProperties": false,
-                      "properties": {
-                        "existing": {
-                          "type": "number"
-                        },
-                        "proposed": {
-                          "type": "number"
-                        }
-                      },
-                      "required": [
-                        "existing",
-                        "proposed"
-                      ],
-                      "type": "object"
-                    }
-                  },
-                  "required": [
-                    "count"
-                  ],
-                  "type": "object"
+                "difference": {
+                  "type": "number"
                 }
               },
               "required": [
-                "count"
+                "count",
+                "difference"
+              ],
+              "type": "object"
+            },
+            "carClub": {
+              "additionalProperties": false,
+              "properties": {
+                "count": {
+                  "type": "number"
+                },
+                "difference": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "count",
+                "difference"
               ],
               "type": "object"
             },
@@ -3700,274 +3665,47 @@
               "additionalProperties": false,
               "properties": {
                 "count": {
-                  "additionalProperties": false,
-                  "properties": {
-                    "existing": {
-                      "type": "number"
-                    },
-                    "proposed": {
-                      "type": "number"
-                    }
-                  },
-                  "required": [
-                    "existing",
-                    "proposed"
-                  ],
-                  "type": "object"
+                  "type": "number"
                 },
-                "offStreet": {
-                  "additionalProperties": false,
-                  "properties": {
-                    "club": {
-                      "additionalProperties": false,
-                      "properties": {
-                        "count": {
-                          "additionalProperties": false,
-                          "properties": {
-                            "existing": {
-                              "type": "number"
-                            },
-                            "proposed": {
-                              "type": "number"
-                            }
-                          },
-                          "required": [
-                            "existing",
-                            "proposed"
-                          ],
-                          "type": "object"
-                        }
-                      },
-                      "required": [
-                        "count"
-                      ],
-                      "type": "object"
-                    },
-                    "count": {
-                      "additionalProperties": false,
-                      "properties": {
-                        "existing": {
-                          "type": "number"
-                        },
-                        "proposed": {
-                          "type": "number"
-                        }
-                      },
-                      "required": [
-                        "existing",
-                        "proposed"
-                      ],
-                      "type": "object"
-                    },
-                    "disabled": {
-                      "additionalProperties": false,
-                      "properties": {
-                        "count": {
-                          "additionalProperties": false,
-                          "properties": {
-                            "existing": {
-                              "type": "number"
-                            },
-                            "proposed": {
-                              "type": "number"
-                            }
-                          },
-                          "required": [
-                            "existing",
-                            "proposed"
-                          ],
-                          "type": "object"
-                        }
-                      },
-                      "required": [
-                        "count"
-                      ],
-                      "type": "object"
-                    },
-                    "other": {
-                      "additionalProperties": false,
-                      "properties": {
-                        "count": {
-                          "additionalProperties": false,
-                          "properties": {
-                            "existing": {
-                              "type": "number"
-                            },
-                            "proposed": {
-                              "type": "number"
-                            }
-                          },
-                          "required": [
-                            "existing",
-                            "proposed"
-                          ],
-                          "type": "object"
-                        }
-                      },
-                      "required": [
-                        "count"
-                      ],
-                      "type": "object"
-                    },
-                    "residents": {
-                      "additionalProperties": false,
-                      "properties": {
-                        "count": {
-                          "additionalProperties": false,
-                          "properties": {
-                            "existing": {
-                              "type": "number"
-                            },
-                            "proposed": {
-                              "type": "number"
-                            }
-                          },
-                          "required": [
-                            "existing",
-                            "proposed"
-                          ],
-                          "type": "object"
-                        }
-                      },
-                      "required": [
-                        "count"
-                      ],
-                      "type": "object"
-                    }
-                  },
-                  "required": [
-                    "count"
-                  ],
-                  "type": "object"
-                },
-                "onStreet": {
-                  "additionalProperties": false,
-                  "properties": {
-                    "club": {
-                      "additionalProperties": false,
-                      "properties": {
-                        "count": {
-                          "additionalProperties": false,
-                          "properties": {
-                            "existing": {
-                              "type": "number"
-                            },
-                            "proposed": {
-                              "type": "number"
-                            }
-                          },
-                          "required": [
-                            "existing",
-                            "proposed"
-                          ],
-                          "type": "object"
-                        }
-                      },
-                      "required": [
-                        "count"
-                      ],
-                      "type": "object"
-                    },
-                    "count": {
-                      "additionalProperties": false,
-                      "properties": {
-                        "existing": {
-                          "type": "number"
-                        },
-                        "proposed": {
-                          "type": "number"
-                        }
-                      },
-                      "required": [
-                        "existing",
-                        "proposed"
-                      ],
-                      "type": "object"
-                    },
-                    "disabled": {
-                      "additionalProperties": false,
-                      "properties": {
-                        "count": {
-                          "additionalProperties": false,
-                          "properties": {
-                            "existing": {
-                              "type": "number"
-                            },
-                            "proposed": {
-                              "type": "number"
-                            }
-                          },
-                          "required": [
-                            "existing",
-                            "proposed"
-                          ],
-                          "type": "object"
-                        }
-                      },
-                      "required": [
-                        "count"
-                      ],
-                      "type": "object"
-                    },
-                    "other": {
-                      "additionalProperties": false,
-                      "properties": {
-                        "count": {
-                          "additionalProperties": false,
-                          "properties": {
-                            "existing": {
-                              "type": "number"
-                            },
-                            "proposed": {
-                              "type": "number"
-                            }
-                          },
-                          "required": [
-                            "existing",
-                            "proposed"
-                          ],
-                          "type": "object"
-                        }
-                      },
-                      "required": [
-                        "count"
-                      ],
-                      "type": "object"
-                    },
-                    "residents": {
-                      "additionalProperties": false,
-                      "properties": {
-                        "count": {
-                          "additionalProperties": false,
-                          "properties": {
-                            "existing": {
-                              "type": "number"
-                            },
-                            "proposed": {
-                              "type": "number"
-                            }
-                          },
-                          "required": [
-                            "existing",
-                            "proposed"
-                          ],
-                          "type": "object"
-                        }
-                      },
-                      "required": [
-                        "count"
-                      ],
-                      "type": "object"
-                    }
-                  },
-                  "required": [
-                    "count"
-                  ],
-                  "type": "object"
+                "difference": {
+                  "type": "number"
                 }
               },
               "required": [
-                "count"
+                "count",
+                "difference"
+              ],
+              "type": "object"
+            },
+            "cycles": {
+              "additionalProperties": false,
+              "properties": {
+                "count": {
+                  "type": "number"
+                },
+                "difference": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "count",
+                "difference"
+              ],
+              "type": "object"
+            },
+            "disabled": {
+              "additionalProperties": false,
+              "properties": {
+                "count": {
+                  "type": "number"
+                },
+                "difference": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "count",
+                "difference"
               ],
               "type": "object"
             },
@@ -3975,168 +3713,79 @@
               "additionalProperties": false,
               "properties": {
                 "count": {
+                  "type": "number"
+                },
+                "difference": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "count",
+                "difference"
+              ],
+              "type": "object"
+            },
+            "offStreet": {
+              "additionalProperties": false,
+              "properties": {
+                "residential": {
                   "additionalProperties": false,
                   "properties": {
-                    "existing": {
+                    "count": {
                       "type": "number"
                     },
-                    "proposed": {
+                    "difference": {
                       "type": "number"
                     }
                   },
                   "required": [
-                    "existing",
-                    "proposed"
-                  ],
-                  "type": "object"
-                },
-                "offStreet": {
-                  "additionalProperties": false,
-                  "properties": {
-                    "count": {
-                      "additionalProperties": false,
-                      "properties": {
-                        "existing": {
-                          "type": "number"
-                        },
-                        "proposed": {
-                          "type": "number"
-                        }
-                      },
-                      "required": [
-                        "existing",
-                        "proposed"
-                      ],
-                      "type": "object"
-                    }
-                  },
-                  "required": [
-                    "count"
-                  ],
-                  "type": "object"
-                },
-                "onStreet": {
-                  "additionalProperties": false,
-                  "properties": {
-                    "count": {
-                      "additionalProperties": false,
-                      "properties": {
-                        "existing": {
-                          "type": "number"
-                        },
-                        "proposed": {
-                          "type": "number"
-                        }
-                      },
-                      "required": [
-                        "existing",
-                        "proposed"
-                      ],
-                      "type": "object"
-                    }
-                  },
-                  "required": [
-                    "count"
+                    "count",
+                    "difference"
                   ],
                   "type": "object"
                 }
               },
               "required": [
-                "count"
+                "residential"
               ],
               "type": "object"
             },
-            "type": {
-              "items": {
-                "$ref": "#/definitions/VehicleParking"
+            "other": {
+              "additionalProperties": false,
+              "properties": {
+                "count": {
+                  "type": "number"
+                },
+                "difference": {
+                  "type": "number"
+                }
               },
-              "type": "array"
+              "required": [
+                "count",
+                "difference"
+              ],
+              "type": "object"
             },
             "vans": {
               "additionalProperties": false,
               "properties": {
                 "count": {
-                  "additionalProperties": false,
-                  "properties": {
-                    "existing": {
-                      "type": "number"
-                    },
-                    "proposed": {
-                      "type": "number"
-                    }
-                  },
-                  "required": [
-                    "existing",
-                    "proposed"
-                  ],
-                  "type": "object"
+                  "type": "number"
                 },
-                "offStreet": {
-                  "additionalProperties": false,
-                  "properties": {
-                    "count": {
-                      "additionalProperties": false,
-                      "properties": {
-                        "existing": {
-                          "type": "number"
-                        },
-                        "proposed": {
-                          "type": "number"
-                        }
-                      },
-                      "required": [
-                        "existing",
-                        "proposed"
-                      ],
-                      "type": "object"
-                    }
-                  },
-                  "required": [
-                    "count"
-                  ],
-                  "type": "object"
-                },
-                "onStreet": {
-                  "additionalProperties": false,
-                  "properties": {
-                    "count": {
-                      "additionalProperties": false,
-                      "properties": {
-                        "existing": {
-                          "type": "number"
-                        },
-                        "proposed": {
-                          "type": "number"
-                        }
-                      },
-                      "required": [
-                        "existing",
-                        "proposed"
-                      ],
-                      "type": "object"
-                    }
-                  },
-                  "required": [
-                    "count"
-                  ],
-                  "type": "object"
+                "difference": {
+                  "type": "number"
                 }
               },
               "required": [
-                "count"
+                "count",
+                "difference"
               ],
               "type": "object"
             }
           },
-          "required": [
-            "type"
-          ],
           "type": "object"
         }
       },
-      "required": [
-        "vehicleParking"
-      ],
       "type": "object"
     },
     "LondonProperty": {
@@ -4203,6 +3852,130 @@
           },
           "type": "array"
         },
+        "parking": {
+          "additionalProperties": false,
+          "description": "Existing parking spaces",
+          "properties": {
+            "buses": {
+              "additionalProperties": false,
+              "properties": {
+                "count": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "count"
+              ],
+              "type": "object"
+            },
+            "carClub": {
+              "additionalProperties": false,
+              "properties": {
+                "count": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "count"
+              ],
+              "type": "object"
+            },
+            "cars": {
+              "additionalProperties": false,
+              "properties": {
+                "count": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "count"
+              ],
+              "type": "object"
+            },
+            "cycles": {
+              "additionalProperties": false,
+              "properties": {
+                "count": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "count"
+              ],
+              "type": "object"
+            },
+            "disabled": {
+              "additionalProperties": false,
+              "properties": {
+                "count": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "count"
+              ],
+              "type": "object"
+            },
+            "motorcycles": {
+              "additionalProperties": false,
+              "properties": {
+                "count": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "count"
+              ],
+              "type": "object"
+            },
+            "offStreet": {
+              "additionalProperties": false,
+              "properties": {
+                "residential": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "count": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "count"
+                  ],
+                  "type": "object"
+                }
+              },
+              "required": [
+                "residential"
+              ],
+              "type": "object"
+            },
+            "other": {
+              "additionalProperties": false,
+              "properties": {
+                "count": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "count"
+              ],
+              "type": "object"
+            },
+            "vans": {
+              "additionalProperties": false,
+              "properties": {
+                "count": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "count"
+              ],
+              "type": "object"
+            }
+          },
+          "type": "object"
+        },
         "planning": {
           "additionalProperties": false,
           "description": "Planning constraints and policies that intersect with this site and may impact or restrict development",
@@ -4263,6 +4036,9 @@
         "region": {
           "const": "London",
           "type": "string"
+        },
+        "socialLandlord": {
+          "type": "boolean"
         },
         "titleNumber": {
           "additionalProperties": false,
@@ -22163,444 +21939,6 @@
         "town"
       ],
       "type": "object"
-    },
-    "VehicleParking": {
-      "$id": "#VehicleParking",
-      "anyOf": [
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "Cars",
-              "type": "string"
-            },
-            "value": {
-              "const": "cars",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "Off-street parking for cars",
-              "type": "string"
-            },
-            "value": {
-              "const": "cars.offStreet",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "Off-street parking for a car club",
-              "type": "string"
-            },
-            "value": {
-              "const": "cars.offStreet.club",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "Off-street disabled parking",
-              "type": "string"
-            },
-            "value": {
-              "const": "cars.offStreet.disabled",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "Off-street parking for non-residents",
-              "type": "string"
-            },
-            "value": {
-              "const": "cars.offStreet.other",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "Off-street parking for residents only",
-              "type": "string"
-            },
-            "value": {
-              "const": "cars.offStreet.residents",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "On-street parking for cars",
-              "type": "string"
-            },
-            "value": {
-              "const": "cars.onStreet",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "On-street parking for a car club",
-              "type": "string"
-            },
-            "value": {
-              "const": "cars.onStreet.club",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "On-street disabled parking",
-              "type": "string"
-            },
-            "value": {
-              "const": "cars.onStreet.disabled",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "On-street parking for non-residents",
-              "type": "string"
-            },
-            "value": {
-              "const": "cars.onStreet.other",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "On-street parking for residents only",
-              "type": "string"
-            },
-            "value": {
-              "const": "cars.onStreet.residents",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "Vans",
-              "type": "string"
-            },
-            "value": {
-              "const": "vans",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "Off-street parking for vans",
-              "type": "string"
-            },
-            "value": {
-              "const": "vans.offStreet",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "On-street parking for vans",
-              "type": "string"
-            },
-            "value": {
-              "const": "vans.onStreet",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "Motorcycles",
-              "type": "string"
-            },
-            "value": {
-              "const": "motorcycles",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "Off-street parking for motorcycles",
-              "type": "string"
-            },
-            "value": {
-              "const": "motorcycles.offStreet",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "On-street parking for motorcycles",
-              "type": "string"
-            },
-            "value": {
-              "const": "motorcycles.onStreet",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "Bicycles",
-              "type": "string"
-            },
-            "value": {
-              "const": "bicycles",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "Off-street parking for bicycles",
-              "type": "string"
-            },
-            "value": {
-              "const": "bicycles.offStreet",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "On-street parking for bicycles",
-              "type": "string"
-            },
-            "value": {
-              "const": "bicycles.onStreet",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "Buses",
-              "type": "string"
-            },
-            "value": {
-              "const": "buses",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "Off-street parking for buses",
-              "type": "string"
-            },
-            "value": {
-              "const": "buses.offStreet",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "On-street parking for buses",
-              "type": "string"
-            },
-            "value": {
-              "const": "buses.onStreet",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "None",
-              "type": "string"
-            },
-            "value": {
-              "const": "none",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        }
-      ],
-      "description": "Vehicle parking types"
     }
   },
   "description": "The root specification for a planning application in England generated by a digital planning service",
