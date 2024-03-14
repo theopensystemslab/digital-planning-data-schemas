@@ -216,6 +216,12 @@ export const validPlanningPermission: Schema = {
         value: 'residential.dwelling.house.terrace',
         description: 'Terrace',
       },
+      titleNumber: {
+        known: 'No',
+      },
+      EPC: {
+        known: 'No',
+      },
       parking: {
         cars: {
           count: 1,
@@ -260,21 +266,19 @@ export const validPlanningPermission: Schema = {
         start: '2024-05-01',
         completion: '2024-05-02',
       },
-      details: {
-        extend: {
-          area: {
-            squareMetres: 45,
-          },
+      extend: {
+        area: {
+          squareMetres: 45,
         },
-        parking: {
-          cars: {
-            count: 1,
-            difference: 0,
-          },
-          cycles: {
-            count: 2,
-            difference: 0,
-          },
+      },
+      parking: {
+        cars: {
+          count: 1,
+          difference: 0,
+        },
+        cycles: {
+          count: 2,
+          difference: 0,
         },
       },
     },

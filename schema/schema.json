@@ -1591,9 +1591,32 @@
       ],
       "type": "object"
     },
-    "BaseDetails": {
+    "BaseProposal": {
       "additionalProperties": false,
       "properties": {
+        "boundary": {
+          "additionalProperties": false,
+          "description": "Location plan boundary proposed by the user, commonly referred to as the red line boundary",
+          "properties": {
+            "area": {
+              "$ref": "#/definitions/Area"
+            },
+            "site": {
+              "$ref": "#/definitions/GeoJSON"
+            }
+          },
+          "required": [
+            "site",
+            "area"
+          ],
+          "type": "object"
+        },
+        "date": {
+          "$ref": "#/definitions/ProposalDates"
+        },
+        "description": {
+          "type": "string"
+        },
         "extend": {
           "additionalProperties": false,
           "properties": {
@@ -1607,7 +1630,8 @@
           "type": "object"
         },
         "materials": {
-          "$ref": "#/definitions/Materials"
+          "$ref": "#/definitions/Materials",
+          "description": "Proposed materials, if applicable to projectType"
         },
         "new": {
           "additionalProperties": false,
@@ -1635,8 +1659,18 @@
             "area"
           ],
           "type": "object"
+        },
+        "projectType": {
+          "items": {
+            "$ref": "#/definitions/ProjectType"
+          },
+          "type": "array"
         }
       },
+      "required": [
+        "projectType",
+        "description"
+      ],
       "type": "object"
     },
     "CalculateMetadata": {
@@ -3578,216 +3612,6 @@
       ],
       "type": "object"
     },
-    "LondonDetails": {
-      "$id": "#LondonDetails",
-      "additionalProperties": false,
-      "description": "Proposal details for project sites within the Greater London Authority (GLA) area",
-      "properties": {
-        "extend": {
-          "additionalProperties": false,
-          "properties": {
-            "area": {
-              "$ref": "#/definitions/Area"
-            }
-          },
-          "required": [
-            "area"
-          ],
-          "type": "object"
-        },
-        "materials": {
-          "$ref": "#/definitions/Materials"
-        },
-        "new": {
-          "additionalProperties": false,
-          "properties": {
-            "area": {
-              "$ref": "#/definitions/Area"
-            },
-            "count": {
-              "additionalProperties": false,
-              "properties": {
-                "bathrooms": {
-                  "type": "number"
-                },
-                "bedrooms": {
-                  "type": "number"
-                },
-                "dwellings": {
-                  "type": "number"
-                }
-              },
-              "type": "object"
-            }
-          },
-          "required": [
-            "area"
-          ],
-          "type": "object"
-        },
-        "parking": {
-          "additionalProperties": false,
-          "description": "Proposed parking spaces",
-          "properties": {
-            "buses": {
-              "additionalProperties": false,
-              "properties": {
-                "count": {
-                  "type": "number"
-                },
-                "difference": {
-                  "type": "number"
-                }
-              },
-              "required": [
-                "count",
-                "difference"
-              ],
-              "type": "object"
-            },
-            "carClub": {
-              "additionalProperties": false,
-              "properties": {
-                "count": {
-                  "type": "number"
-                },
-                "difference": {
-                  "type": "number"
-                }
-              },
-              "required": [
-                "count",
-                "difference"
-              ],
-              "type": "object"
-            },
-            "cars": {
-              "additionalProperties": false,
-              "properties": {
-                "count": {
-                  "type": "number"
-                },
-                "difference": {
-                  "type": "number"
-                }
-              },
-              "required": [
-                "count",
-                "difference"
-              ],
-              "type": "object"
-            },
-            "cycles": {
-              "additionalProperties": false,
-              "properties": {
-                "count": {
-                  "type": "number"
-                },
-                "difference": {
-                  "type": "number"
-                }
-              },
-              "required": [
-                "count",
-                "difference"
-              ],
-              "type": "object"
-            },
-            "disabled": {
-              "additionalProperties": false,
-              "properties": {
-                "count": {
-                  "type": "number"
-                },
-                "difference": {
-                  "type": "number"
-                }
-              },
-              "required": [
-                "count",
-                "difference"
-              ],
-              "type": "object"
-            },
-            "motorcycles": {
-              "additionalProperties": false,
-              "properties": {
-                "count": {
-                  "type": "number"
-                },
-                "difference": {
-                  "type": "number"
-                }
-              },
-              "required": [
-                "count",
-                "difference"
-              ],
-              "type": "object"
-            },
-            "offStreet": {
-              "additionalProperties": false,
-              "properties": {
-                "residential": {
-                  "additionalProperties": false,
-                  "properties": {
-                    "count": {
-                      "type": "number"
-                    },
-                    "difference": {
-                      "type": "number"
-                    }
-                  },
-                  "required": [
-                    "count",
-                    "difference"
-                  ],
-                  "type": "object"
-                }
-              },
-              "required": [
-                "residential"
-              ],
-              "type": "object"
-            },
-            "other": {
-              "additionalProperties": false,
-              "properties": {
-                "count": {
-                  "type": "number"
-                },
-                "difference": {
-                  "type": "number"
-                }
-              },
-              "required": [
-                "count",
-                "difference"
-              ],
-              "type": "object"
-            },
-            "vans": {
-              "additionalProperties": false,
-              "properties": {
-                "count": {
-                  "type": "number"
-                },
-                "difference": {
-                  "type": "number"
-                }
-              },
-              "required": [
-                "count",
-                "difference"
-              ],
-              "type": "object"
-            }
-          },
-          "type": "object"
-        }
-      },
-      "type": "object"
-    },
     "LondonProperty": {
       "$id": "#LondonProperty",
       "additionalProperties": false,
@@ -3842,9 +3666,6 @@
           ],
           "type": "object"
         },
-        "details": {
-          "$ref": "#/definitions/PropertyDetails"
-        },
         "localAuthorityDistrict": {
           "description": "Current and historic UK Local Authority Districts that contain this address sourced from planning.data.gov.uk/dataset/local-authority-district",
           "items": {
@@ -3852,9 +3673,11 @@
           },
           "type": "array"
         },
+        "materials": {
+          "$ref": "#/definitions/Materials"
+        },
         "parking": {
           "additionalProperties": false,
-          "description": "Existing parking spaces",
           "properties": {
             "buses": {
               "additionalProperties": false,
@@ -4073,6 +3896,448 @@
       ],
       "type": "object"
     },
+    "LondonProposal": {
+      "$id": "#LondonProposal",
+      "additionalProperties": false,
+      "description": "Proposal details for project sites within the Greater London Authority (GLA) area",
+      "properties": {
+        "boundary": {
+          "additionalProperties": false,
+          "description": "Location plan boundary proposed by the user, commonly referred to as the red line boundary",
+          "properties": {
+            "area": {
+              "$ref": "#/definitions/Area"
+            },
+            "site": {
+              "$ref": "#/definitions/GeoJSON"
+            }
+          },
+          "required": [
+            "site",
+            "area"
+          ],
+          "type": "object"
+        },
+        "charging": {
+          "additionalProperties": false,
+          "description": "Electric vehicle charing points",
+          "properties": {
+            "active": {
+              "additionalProperties": false,
+              "properties": {
+                "count": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "count"
+              ],
+              "type": "object"
+            },
+            "passive": {
+              "additionalProperties": false,
+              "properties": {
+                "count": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "count"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "active",
+            "passive"
+          ],
+          "type": "object"
+        },
+        "cost": {
+          "additionalProperties": false,
+          "description": "Project cost",
+          "properties": {
+            "projected": {
+              "enum": [
+                "2m",
+                "2mTo100m",
+                "100m"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "projected"
+          ],
+          "type": "object"
+        },
+        "date": {
+          "$ref": "#/definitions/ProposalDates"
+        },
+        "description": {
+          "type": "string"
+        },
+        "extend": {
+          "additionalProperties": false,
+          "properties": {
+            "area": {
+              "$ref": "#/definitions/Area"
+            }
+          },
+          "required": [
+            "area"
+          ],
+          "type": "object"
+        },
+        "materials": {
+          "$ref": "#/definitions/Materials",
+          "description": "Proposed materials, if applicable to projectType"
+        },
+        "nature": {
+          "additionalProperties": false,
+          "properties": {
+            "openSpaces": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "access": {
+                    "enum": [
+                      "restricted",
+                      "unrestricted"
+                    ],
+                    "type": "string"
+                  },
+                  "area": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "hectares": {
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "hectares"
+                    ],
+                    "type": "object"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "impact": {
+                    "enum": [
+                      "loss",
+                      "gain",
+                      "change"
+                    ],
+                    "type": "string"
+                  },
+                  "swap": {
+                    "description": "Whether the open space change involves a land swap",
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "impact",
+                  "description",
+                  "access",
+                  "area",
+                  "swap"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "protectedSpaces": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "access": {
+                    "enum": [
+                      "restricted",
+                      "unrestricted"
+                    ],
+                    "type": "string"
+                  },
+                  "area": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "hectares": {
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "hectares"
+                    ],
+                    "type": "object"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "impact": {
+                    "enum": [
+                      "loss",
+                      "gain",
+                      "change"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "impact",
+                  "description",
+                  "access",
+                  "area"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        },
+        "new": {
+          "additionalProperties": false,
+          "properties": {
+            "area": {
+              "$ref": "#/definitions/Area"
+            },
+            "count": {
+              "additionalProperties": false,
+              "properties": {
+                "bathrooms": {
+                  "type": "number"
+                },
+                "bedrooms": {
+                  "type": "number"
+                },
+                "dwellings": {
+                  "type": "number"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "required": [
+            "area"
+          ],
+          "type": "object"
+        },
+        "newBuildings": {
+          "$ref": "#/definitions/NewBuildingsOrStoreys",
+          "description": "Creating new buildings"
+        },
+        "newStoreys": {
+          "$ref": "#/definitions/NewBuildingsOrStoreys",
+          "description": "Increasing the height of existing buildings"
+        },
+        "parking": {
+          "additionalProperties": false,
+          "description": "Proposed parking spaces",
+          "properties": {
+            "buses": {
+              "additionalProperties": false,
+              "properties": {
+                "count": {
+                  "type": "number"
+                },
+                "difference": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "count",
+                "difference"
+              ],
+              "type": "object"
+            },
+            "carClub": {
+              "additionalProperties": false,
+              "properties": {
+                "count": {
+                  "type": "number"
+                },
+                "difference": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "count",
+                "difference"
+              ],
+              "type": "object"
+            },
+            "cars": {
+              "additionalProperties": false,
+              "properties": {
+                "count": {
+                  "type": "number"
+                },
+                "difference": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "count",
+                "difference"
+              ],
+              "type": "object"
+            },
+            "cycles": {
+              "additionalProperties": false,
+              "properties": {
+                "count": {
+                  "type": "number"
+                },
+                "difference": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "count",
+                "difference"
+              ],
+              "type": "object"
+            },
+            "disabled": {
+              "additionalProperties": false,
+              "properties": {
+                "count": {
+                  "type": "number"
+                },
+                "difference": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "count",
+                "difference"
+              ],
+              "type": "object"
+            },
+            "motorcycles": {
+              "additionalProperties": false,
+              "properties": {
+                "count": {
+                  "type": "number"
+                },
+                "difference": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "count",
+                "difference"
+              ],
+              "type": "object"
+            },
+            "offStreet": {
+              "additionalProperties": false,
+              "properties": {
+                "residential": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "count": {
+                      "type": "number"
+                    },
+                    "difference": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "count",
+                    "difference"
+                  ],
+                  "type": "object"
+                }
+              },
+              "required": [
+                "residential"
+              ],
+              "type": "object"
+            },
+            "other": {
+              "additionalProperties": false,
+              "properties": {
+                "count": {
+                  "type": "number"
+                },
+                "difference": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "count",
+                "difference"
+              ],
+              "type": "object"
+            },
+            "vans": {
+              "additionalProperties": false,
+              "properties": {
+                "count": {
+                  "type": "number"
+                },
+                "difference": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "count",
+                "difference"
+              ],
+              "type": "object"
+            }
+          },
+          "type": "object"
+        },
+        "projectType": {
+          "items": {
+            "$ref": "#/definitions/ProjectType"
+          },
+          "type": "array"
+        },
+        "schemeName": {
+          "type": "string"
+        },
+        "water": {
+          "additionalProperties": false,
+          "description": "Water management",
+          "properties": {
+            "grey": {
+              "description": "Whether the proposal includes grey water re-use",
+              "type": "boolean"
+            },
+            "rain": {
+              "description": "Whether the proposal includes rain water harvesting",
+              "type": "boolean"
+            },
+            "usage": {
+              "additionalProperties": false,
+              "description": "Internal residential water usage",
+              "properties": {
+                "litresPerPersonPerDay": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "litresPerPersonPerDay"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "usage",
+            "rain",
+            "grey"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "description",
+        "projectType"
+      ],
+      "type": "object"
+    },
     "Materials": {
       "additionalProperties": false,
       "properties": {
@@ -4199,6 +4464,48 @@
       "required": [
         "coordinates",
         "type"
+      ],
+      "type": "object"
+    },
+    "NewBuildingsOrStoreys": {
+      "$id": "#NewBuildingsOrStoreys",
+      "additionalProperties": false,
+      "description": "Details about creating new buildings or increasing the height of existing buildings",
+      "properties": {
+        "buildings": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "height": {
+                "additionalProperties": false,
+                "properties": {
+                  "metres": {
+                    "type": "number"
+                  }
+                },
+                "required": [
+                  "metres"
+                ],
+                "type": "object"
+              },
+              "storeys": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "height",
+              "storeys"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "count": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "count"
       ],
       "type": "object"
     },
@@ -12505,17 +12812,6 @@
         }
       ],
       "description": "Information about the site where the works will happen"
-    },
-    "PropertyDetails": {
-      "$id": "#PropertyDetails",
-      "additionalProperties": false,
-      "description": "Details about the property as it currently exists",
-      "properties": {
-        "materials": {
-          "$ref": "#/definitions/Materials"
-        }
-      },
-      "type": "object"
     },
     "PropertyType": {
       "$id": "#PropertyType",
@@ -20877,47 +21173,15 @@
     },
     "Proposal": {
       "$id": "#Proposal",
-      "additionalProperties": false,
-      "description": "Information about the proposed works and any changes to the property",
-      "properties": {
-        "boundary": {
-          "additionalProperties": false,
-          "description": "Location plan boundary proposed by the user, commonly referred to as the red line boundary",
-          "properties": {
-            "area": {
-              "$ref": "#/definitions/Area"
-            },
-            "site": {
-              "$ref": "#/definitions/GeoJSON"
-            }
-          },
-          "required": [
-            "site",
-            "area"
-          ],
-          "type": "object"
+      "anyOf": [
+        {
+          "$ref": "#/definitions/BaseProposal"
         },
-        "date": {
-          "$ref": "#/definitions/ProposalDates"
-        },
-        "description": {
-          "type": "string"
-        },
-        "details": {
-          "$ref": "#/definitions/ProposalDetails"
-        },
-        "projectType": {
-          "items": {
-            "$ref": "#/definitions/ProjectType"
-          },
-          "type": "array"
+        {
+          "$ref": "#/definitions/LondonProposal"
         }
-      },
-      "required": [
-        "projectType",
-        "description"
       ],
-      "type": "object"
+      "description": "Information about the proposed works and any changes to the property"
     },
     "ProposalDates": {
       "$id": "#ProposalDates",
@@ -20932,18 +21196,6 @@
         }
       },
       "type": "object"
-    },
-    "ProposalDetails": {
-      "$id": "#ProposalDetails",
-      "anyOf": [
-        {
-          "$ref": "#/definitions/BaseDetails"
-        },
-        {
-          "$ref": "#/definitions/LondonDetails"
-        }
-      ],
-      "description": "Details about the changes being proposed"
     },
     "ProposedAddress": {
       "$id": "#ProposedAddress",
@@ -21756,15 +22008,15 @@
           ],
           "type": "object"
         },
-        "details": {
-          "$ref": "#/definitions/PropertyDetails"
-        },
         "localAuthorityDistrict": {
           "description": "Current and historic UK Local Authority Districts that contain this address sourced from planning.data.gov.uk/dataset/local-authority-district",
           "items": {
             "type": "string"
           },
           "type": "array"
+        },
+        "materials": {
+          "$ref": "#/definitions/Materials"
         },
         "planning": {
           "additionalProperties": false,

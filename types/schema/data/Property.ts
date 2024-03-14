@@ -60,16 +60,8 @@ export interface UKProperty {
       neighbourhood: PlanningConstraint[];
     };
   };
-  details?: PropertyDetails;
-}
-
-/**
- * @id #PropertyDetails
- * @description Details about the property as it currently exists
- */
-export type PropertyDetails = {
   materials?: Materials;
-};
+}
 
 /**
  * @id #LondonProperty
@@ -93,9 +85,6 @@ export interface LondonProperty extends UKProperty {
     number?: string;
   };
   socialLandlord?: boolean;
-  /**
-   * @description Existing parking spaces
-   */
   parking?: {
     cars?: ExistingCount;
     vans?: ExistingCount;
