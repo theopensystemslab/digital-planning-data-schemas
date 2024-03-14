@@ -2225,6 +2225,24 @@
           "additionalProperties": false,
           "properties": {
             "description": {
+              "const": "External materials details",
+              "type": "string"
+            },
+            "value": {
+              "const": "externalMaterialsDetails",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
               "const": "Fire safety report",
               "type": "string"
             },
@@ -3130,6 +3148,42 @@
             },
             "value": {
               "const": "travelPlan",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Location of trees and hedges",
+              "type": "string"
+            },
+            "value": {
+              "const": "treeAndHedgeLocation",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Removed or pruned trees and hedges",
+              "type": "string"
+            },
+            "value": {
+              "const": "treeAndHedgeRemovedOrPruned",
               "type": "string"
             }
           },
