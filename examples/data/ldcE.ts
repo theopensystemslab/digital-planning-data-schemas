@@ -1178,35 +1178,20 @@ export const validLDCE: Schema = {
   ],
   files: [
     {
-      name: 'https://api.editor.planx.dev/file/private/r34zxe3x/RoaldDahlHut.jpg',
+      name: 'https://api.editor.planx.dev/file/private/tbp4kiba/myPlans.pdf',
       type: [
         {
           value: 'photographs.proposed',
           description: 'Photographs - proposed',
         },
-      ],
-    },
-    {
-      name: 'https://api.editor.planx.dev/file/private/kopklkj9/Site%20plan.pdf',
-      type: [
         {
           value: 'sitePlan.proposed',
           description: 'Site plan - proposed',
         },
-      ],
-    },
-    {
-      name: 'https://api.editor.planx.dev/file/private/u2vjw69h/Elevations.pdf',
-      type: [
         {
           value: 'elevations.proposed',
           description: 'Elevations - proposed',
         },
-      ],
-    },
-    {
-      name: 'https://api.editor.planx.dev/file/private/gbaur05c/Plan.pdf',
-      type: [
         {
           value: 'floorPlan.proposed',
           description: 'Floor plan - proposed',
@@ -1214,7 +1199,7 @@ export const validLDCE: Schema = {
       ],
     },
     {
-      name: 'https://api.editor.planx.dev/file/private/4vhzu4c5/Roald-Dahl-letter-one-use.pdf',
+      name: 'https://api.editor.planx.dev/file/private/vyyogkcf/correspondence.pdf',
       type: [
         {
           value: 'otherEvidence',
@@ -1224,7 +1209,7 @@ export const validLDCE: Schema = {
       description: 'Nothing really, this is just a test. ',
     },
     {
-      name: 'https://api.editor.planx.dev/file/private/uz72iu40/Test%20document.pdf',
+      name: 'https://api.editor.planx.dev/file/private/97ltnrxr/invoice.pdf',
       type: [
         {
           value: 'constructionInvoice',

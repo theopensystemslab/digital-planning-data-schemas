@@ -764,7 +764,7 @@ export const validPriorApproval: Schema = {
   ],
   files: [
     {
-      name: 'https://api.editor.planx.dev/file/private/vab4d0k6/Test%20document.pdf',
+      name: 'https://api.editor.planx.dev/file/private/5w5v8s8z/other.pdf',
       type: [
         {
           value: 'otherDrawing',
@@ -773,7 +773,7 @@ export const validPriorApproval: Schema = {
       ],
     },
     {
-      name: 'https://api.editor.planx.dev/file/private/es3w6dgi/Elevations.pdf',
+      name: 'https://api.editor.planx.dev/file/private/tbp4kiba/myPlans.pdf',
       type: [
         {
           value: 'sitePlan.proposed',

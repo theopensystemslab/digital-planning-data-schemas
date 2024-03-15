@@ -1198,7 +1198,7 @@ export const validPlanningPermission: Schema = {
   ],
   files: [
     {
-      name: 'https://api.editor.planx.dev/file/private/vg0av01p/RoofPlan.pdf',
+      name: 'https://api.editor.planx.dev/file/private/tbp4kiba/myPlans.pdf',
       type: [
         {
           value: 'roofPlan.existing',
@@ -1211,7 +1211,7 @@ export const validPlanningPermission: Schema = {
       ],
     },
     {
-      name: 'https://api.editor.planx.dev/file/private/ka97yl2c/Site%20plan.pdf',
+      name: 'https://api.editor.planx.dev/file/private/5w5v8s8z/other.pdf',
       type: [
         {
           value: 'sitePlan.existing',
@@ -1224,7 +1224,7 @@ export const validPlanningPermission: Schema = {
       ],
     },
     {
-      name: 'https://api.editor.planx.dev/file/private/osprppqo/Elevations.pdf',
+      name: 'https://api.editor.planx.dev/file/private/7nrefxnn/elevations.pdf',
       type: [
         {
           value: 'elevations.existing',
@@ -1237,7 +1237,7 @@ export const validPlanningPermission: Schema = {
       ],
     },
     {
-      name: 'https://api.editor.planx.dev/file/private/cri3ziaj/Plan.pdf',
+      name: 'https://api.editor.planx.dev/file/private/311w2id6/floor_plans.pdf',
       type: [
         {
           value: 'floorPlan.existing',
