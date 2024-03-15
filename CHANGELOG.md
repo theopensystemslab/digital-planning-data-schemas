@@ -9,6 +9,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 The minor version will be incremented upon a breaking change and the patch version will be
 incremented for features.
 
+## [0.4.1] - 2024-03-15
+
+### Added
+- Added `service.metadata.fees` to communicate how the application fees were calculated, including policy references ([#124](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/124))
+- Added a number of new `FileTypes` ([#137](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/137), [#133](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/133), [#128](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/128))
+- Added type definitons to describe `CommunityInfrastructureLevy` planning charges on applicable applications ([#135](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/135))
+- Added type definitions to describe existing & proposed `Materials` for applicable project types ([#134](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/134))
+
+### Fixed
+- Improved GitHub Action & CI workflows to ensure schema.json and examples are building as expected on `main` and in `dist` releases ([#132](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/132), [#131](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/131))
+- Updated expired file URLs in example payloads ([#139](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/139))
+
 ## [0.4.0] - 2024-02-28
 
 ### Breaking
