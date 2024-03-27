@@ -5,12 +5,23 @@ import {Date} from '../../utils';
  * @id #Application
  * @description Information about this planning application
  */
-export interface Application {
+export type Application = BaseApplication | LondonApplication;
+
+export interface BaseApplication {
   type: ApplicationType;
   fee: ApplicationFee;
   declaration: ApplicationDeclaration;
   preApp?: PreApplication;
   CIL?: CommunityInfrastructureLevy;
+}
+
+/**
+ * @id #LondonApplication
+ * @description Application details for project sites within the Greater London Authority (GLA) area
+ */
+export interface LondonApplication extends BaseApplication {
+  vacantBuildingCredit?: boolean;
+  leadDeveloper?: LeadDeveloper;
 }
 
 /**
@@ -77,6 +88,11 @@ export interface CommunityInfrastructureLevy {
     | 'liable'
     | 'relief.charity'
     | 'relief.socialHousing';
+}
+
+export interface LeadDeveloper {
+  type: 'ukCompany' | 'overseasCompany' | 'none';
+  companyRegistrationNumber?: string;
 }
 
 type ApplicationTypeKeys = keyof typeof ApplicationTypes;

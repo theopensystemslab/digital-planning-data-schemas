@@ -216,6 +216,20 @@ export const validPlanningPermission: Schema = {
         value: 'residential.dwelling.house.terrace',
         description: 'Terrace',
       },
+      titleNumber: {
+        known: 'No',
+      },
+      EPC: {
+        known: 'No',
+      },
+      parking: {
+        cars: {
+          count: 1,
+        },
+        cycles: {
+          count: 2,
+        },
+      },
     },
     proposal: {
       projectType: [
@@ -252,161 +266,19 @@ export const validPlanningPermission: Schema = {
         start: '2024-05-01',
         completion: '2024-05-02',
       },
-      details: {
-        extend: {
-          area: {
-            squareMetres: 45,
-          },
+      extend: {
+        area: {
+          squareMetres: 45,
         },
-        vehicleParking: {
-          type: [
-            {
-              value: 'cars.offStreet.residents',
-              description: 'Off-street parking for residents only',
-            },
-            {
-              value: 'bicycles.offStreet',
-              description: 'Off-street parking for bicycles',
-            },
-          ],
-          cars: {
-            count: {
-              existing: 1,
-              proposed: 1,
-            },
-            offStreet: {
-              count: {
-                existing: 0,
-                proposed: 0,
-              },
-              club: {
-                count: {
-                  existing: 0,
-                  proposed: 0,
-                },
-              },
-              disabled: {
-                count: {
-                  existing: 0,
-                  proposed: 0,
-                },
-              },
-              other: {
-                count: {
-                  existing: 0,
-                  proposed: 0,
-                },
-              },
-              residents: {
-                count: {
-                  existing: 1,
-                  proposed: 1,
-                },
-              },
-            },
-            onStreet: {
-              count: {
-                existing: 0,
-                proposed: 0,
-              },
-              club: {
-                count: {
-                  existing: 0,
-                  proposed: 0,
-                },
-              },
-              disabled: {
-                count: {
-                  existing: 0,
-                  proposed: 0,
-                },
-              },
-              other: {
-                count: {
-                  existing: 0,
-                  proposed: 0,
-                },
-              },
-              residents: {
-                count: {
-                  existing: 0,
-                  proposed: 0,
-                },
-              },
-            },
-          },
-          vans: {
-            count: {
-              existing: 0,
-              proposed: 0,
-            },
-            offStreet: {
-              count: {
-                existing: 0,
-                proposed: 0,
-              },
-            },
-            onStreet: {
-              count: {
-                existing: 0,
-                proposed: 0,
-              },
-            },
-          },
-          motorcycles: {
-            count: {
-              existing: 0,
-              proposed: 0,
-            },
-            offStreet: {
-              count: {
-                existing: 0,
-                proposed: 0,
-              },
-            },
-            onStreet: {
-              count: {
-                existing: 0,
-                proposed: 0,
-              },
-            },
-          },
-          bicycles: {
-            count: {
-              existing: 2,
-              proposed: 2,
-            },
-            offStreet: {
-              count: {
-                existing: 2,
-                proposed: 2,
-              },
-            },
-            onStreet: {
-              count: {
-                existing: 0,
-                proposed: 0,
-              },
-            },
-          },
-          buses: {
-            count: {
-              existing: 0,
-              proposed: 0,
-            },
-            offStreet: {
-              count: {
-                existing: 0,
-                proposed: 0,
-              },
-            },
-            onStreet: {
-              count: {
-                existing: 0,
-                proposed: 0,
-              },
-            },
-          },
+      },
+      parking: {
+        cars: {
+          count: 1,
+          difference: 0,
+        },
+        cycles: {
+          count: 2,
+          difference: 0,
         },
       },
     },

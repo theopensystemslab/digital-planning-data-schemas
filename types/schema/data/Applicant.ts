@@ -18,9 +18,9 @@ export interface BaseApplicant {
     first: string;
     last: string;
   };
-  email: Email; // @todo only require for BaseApplicant OR Agent, not both
+  email: Email;
   phone: {
-    primary: string; // @todo only require for BaseApplicant OR Agent, not both
+    primary: string;
   };
   company?: {
     name: string;
