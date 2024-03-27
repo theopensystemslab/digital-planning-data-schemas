@@ -46,14 +46,6 @@ jobs:
           mkdir -p "$GITHUB_WORKSPACE/v${{ steps.version_check.outputs.version }}/examples"
           mv examples/*.json "$GITHUB_WORKSPACE/v${{ steps.version_check.outputs.version }}/examples"
 
-      - name: Find and Replace @next with VERSION in /examples
-        uses: jacobtomlinson/gha-find-replace@v3
-        with:
-          find: "@next"
-          replace: "v${{ steps.version_check.outputs.version }}"
-          include: "$GITHUB_WORKSPACE/v${{ steps.version_check.outputs.version }}/examples"
-          regex: false
-
       - name: Checkout Dist Branch
         if: steps.version_check.outputs.changed == 'true'
         run: |
