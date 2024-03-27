@@ -1,4 +1,9 @@
 import {GeoJSON} from 'geojson';
+import {
+  OpenSpaceTypes,
+  OpenSpaceDesignations,
+  ProtectedSpaceDesignations,
+} from '../../enums/Nature';
 import {ProjectTypes} from '../../enums/ProjectTypes';
 import {Area, Date} from '../../utils';
 import {Materials} from './shared';
@@ -79,13 +84,14 @@ export interface LondonProposal extends BaseProposal {
     passive: {count: number};
   };
   /**
-   * @descrption Changes that result in the loss, gain, or change of use of natural spaces
+   * @description Changes that result in the loss, gain, or change of use of natural spaces
    */
   nature?: {
     openSpaces?: {
       impact: 'loss' | 'gain' | 'change';
       description: string;
-      // @todo add type & designation from enums/Nature
+      type: OpenSpaceType;
+      designation: OpenSpaceDesignation;
       access: 'restricted' | 'unrestricted';
       area: {hectares: number};
       /**
@@ -96,7 +102,7 @@ export interface LondonProposal extends BaseProposal {
     protectedSpaces?: {
       impact: 'loss' | 'gain' | 'change';
       description: string;
-      // @todo add designation from enums/Nature
+      designation: ProtectedSpaceDesgination;
       access: 'restricted' | 'unrestricted';
       area: {hectares: number};
     }[];
@@ -162,3 +168,58 @@ type ProjectTypeMap = {
  * @description Planning project types
  */
 export type ProjectType = ProjectTypeMap[keyof ProjectTypeMap];
+
+type OpenSpaceTypeKeys = keyof typeof OpenSpaceTypes;
+
+type GenericOpenSpaceType<TKey extends OpenSpaceTypeKeys> = {
+  value: TKey;
+  description: (typeof OpenSpaceTypes)[TKey];
+};
+
+type OpenSpaceTypeMap = {
+  [K in OpenSpaceTypeKeys]: GenericOpenSpaceType<K>;
+};
+
+/**
+ * @id #OpenSpaceType
+ * @description Types of natural open spaces
+ */
+export type OpenSpaceType = OpenSpaceTypeMap[keyof OpenSpaceTypeMap];
+
+type OpenSpaceDesignationKeys = keyof typeof OpenSpaceDesignations;
+
+type GenericOpenSpaceDesignation<TKey extends OpenSpaceDesignationKeys> = {
+  value: TKey;
+  description: (typeof OpenSpaceDesignations)[TKey];
+};
+
+type OpenSpaceDesignationMap = {
+  [K in OpenSpaceDesignationKeys]: GenericOpenSpaceDesignation<K>;
+};
+
+/**
+ * @id #OpenSpaceDesignation
+ * @description Designations of natural open spaces
+ */
+export type OpenSpaceDesignation =
+  OpenSpaceDesignationMap[keyof OpenSpaceDesignationMap];
+
+type ProtectedSpaceDesignationKeys = keyof typeof ProtectedSpaceDesignations;
+
+type GenericProtectedSpaceDesignation<
+  TKey extends ProtectedSpaceDesignationKeys,
+> = {
+  value: TKey;
+  description: (typeof ProtectedSpaceDesignations)[TKey];
+};
+
+type ProtectedSpaceDesignationMap = {
+  [K in ProtectedSpaceDesignationKeys]: GenericProtectedSpaceDesignation<K>;
+};
+
+/**
+ * @id #ProtectedSpaceDesignation
+ * @description Designations of natural protected spaces
+ */
+export type ProtectedSpaceDesgination =
+  ProtectedSpaceDesignationMap[keyof ProtectedSpaceDesignationMap];

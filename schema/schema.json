@@ -3995,6 +3995,7 @@
         },
         "nature": {
           "additionalProperties": false,
+          "description": "Changes that result in the loss, gain, or change of use of natural spaces",
           "properties": {
             "openSpaces": {
               "items": {
@@ -4022,6 +4023,9 @@
                   "description": {
                     "type": "string"
                   },
+                  "designation": {
+                    "$ref": "#/definitions/OpenSpaceDesignation"
+                  },
                   "impact": {
                     "enum": [
                       "loss",
@@ -4033,11 +4037,16 @@
                   "swap": {
                     "description": "Whether the open space change involves a land swap",
                     "type": "boolean"
+                  },
+                  "type": {
+                    "$ref": "#/definitions/OpenSpaceType"
                   }
                 },
                 "required": [
                   "impact",
                   "description",
+                  "type",
+                  "designation",
                   "access",
                   "area",
                   "swap"
@@ -4072,6 +4081,9 @@
                   "description": {
                     "type": "string"
                   },
+                  "designation": {
+                    "$ref": "#/definitions/ProtectedSpaceDesgination"
+                  },
                   "impact": {
                     "enum": [
                       "loss",
@@ -4084,6 +4096,7 @@
                 "required": [
                   "impact",
                   "description",
+                  "designation",
                   "access",
                   "area"
                 ],
@@ -4582,6 +4595,342 @@
         "y"
       ],
       "type": "object"
+    },
+    "OpenSpaceDesignation": {
+      "$id": "#OpenSpaceDesignation",
+      "anyOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Green Belt",
+              "type": "string"
+            },
+            "value": {
+              "const": "greenBelt",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Metropolitan Open Land",
+              "type": "string"
+            },
+            "value": {
+              "const": "metropolitan",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Local Open Spaces",
+              "type": "string"
+            },
+            "value": {
+              "const": "local",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Other designation",
+              "type": "string"
+            },
+            "value": {
+              "const": "other",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Not designated",
+              "type": "string"
+            },
+            "value": {
+              "const": "none",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        }
+      ],
+      "description": "Designations of natural open spaces"
+    },
+    "OpenSpaceType": {
+      "$id": "#OpenSpaceType",
+      "anyOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Parks and gardens",
+              "type": "string"
+            },
+            "value": {
+              "const": "park",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Natural and semi-natural",
+              "type": "string"
+            },
+            "value": {
+              "const": "natural",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Green corridors",
+              "type": "string"
+            },
+            "value": {
+              "const": "greenCorridor",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Outdoor sports facilities",
+              "type": "string"
+            },
+            "value": {
+              "const": "sport",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Amenity",
+              "type": "string"
+            },
+            "value": {
+              "const": "amenity",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Provision for children and young people",
+              "type": "string"
+            },
+            "value": {
+              "const": "children",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Allotments, community gardens and city farms",
+              "type": "string"
+            },
+            "value": {
+              "const": "allotment",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Cemeteries, churchyards and other burial grounds",
+              "type": "string"
+            },
+            "value": {
+              "const": "burial",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Countryside in urban fringe areas",
+              "type": "string"
+            },
+            "value": {
+              "const": "fringe",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Civic spaces",
+              "type": "string"
+            },
+            "value": {
+              "const": "civic",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Brownfield land",
+              "type": "string"
+            },
+            "value": {
+              "const": "brownfield",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Non-residential institution grounds or gardens",
+              "type": "string"
+            },
+            "value": {
+              "const": "nonResidential",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Residential gardens",
+              "type": "string"
+            },
+            "value": {
+              "const": "residential",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        }
+      ],
+      "description": "Types of natural open spaces"
     },
     "Ownership": {
       "$id": "#Ownership",
@@ -21235,6 +21584,138 @@
         "y"
       ],
       "type": "object"
+    },
+    "ProtectedSpaceDesgination": {
+      "$id": "#ProtectedSpaceDesignation",
+      "anyOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Sites of Special Scientific Interest",
+              "type": "string"
+            },
+            "value": {
+              "const": "SSSI",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Local Nature Reserve",
+              "type": "string"
+            },
+            "value": {
+              "const": "localReserve",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Site of Metropolitan Importance",
+              "type": "string"
+            },
+            "value": {
+              "const": "metropolitan",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Site of Borough Grade 1 Importance",
+              "type": "string"
+            },
+            "value": {
+              "const": "boroughGradeOne",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Site of Borough Grade 2 Importance",
+              "type": "string"
+            },
+            "value": {
+              "const": "boroughGradeTwo",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Site of Local Importance",
+              "type": "string"
+            },
+            "value": {
+              "const": "local",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Not designated",
+              "type": "string"
+            },
+            "value": {
+              "const": "none",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        }
+      ],
+      "description": "Designations of natural protected spaces"
     },
     "QuestionAndResponses": {
       "additionalProperties": false,
