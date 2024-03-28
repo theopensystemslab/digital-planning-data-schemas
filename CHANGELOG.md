@@ -9,6 +9,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 The minor version will be incremented upon a breaking change and the patch version will be
 incremented for features.
 
+## [0.5.0] - 2024-03-28
+
+### Breaking
+- Updated `data.proposal.vehicleParking` to `data.property.parking` & `data.proposal.parking` to better align to Greater London Authority legislation for capturing existing count, proposed count, and difference in number of parking spaces per type of vehicle. Additionally drops `data.proposal.details` heirarchy, as this organisation wasn't meaningful in any policy context ([#136](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/136))
+
+### Added
+- Added change of use of land projects to supported `ProjectTypes` ([#142](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/142))
+
 ## [0.4.1] - 2024-03-15
 
 ### Added
