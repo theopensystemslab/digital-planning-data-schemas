@@ -74,6 +74,8 @@ export const ApplicationTypes = {
     'Full Planning Permission and consent to display an advert',
   'pp.full.demolition':
     'Full Planning Permission including demolition in a Conservation Area',
+  'pp.full.fastTrack.affordable':
+    'Full Planning Permission - Fast track for the purposes of Affordable Housing',
   'pp.full.householder': 'Planning Permission - Full householder',
   'pp.full.householder.listed':
     'Planning Permission - Full householder with consent to do works to a Listed Building',

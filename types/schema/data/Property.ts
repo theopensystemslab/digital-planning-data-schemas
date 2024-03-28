@@ -60,16 +60,8 @@ export interface UKProperty {
       neighbourhood: PlanningConstraint[];
     };
   };
-  details?: PropertyDetails;
-}
-
-/**
- * @id #PropertyDetails
- * @description Details about the property as it currently exists
- */
-export type PropertyDetails = {
   materials?: Materials;
-};
+}
 
 /**
  * @id #LondonProperty
@@ -92,7 +84,21 @@ export interface LondonProperty extends UKProperty {
       | 'No';
     number?: string;
   };
+  socialLandlord?: boolean;
+  parking?: {
+    cars?: ExistingCount;
+    vans?: ExistingCount;
+    motorcycles?: ExistingCount;
+    cycles?: ExistingCount;
+    buses?: ExistingCount;
+    disabled?: ExistingCount;
+    carClub?: ExistingCount;
+    offStreet?: {residential: ExistingCount};
+    other?: ExistingCount;
+  };
 }
+
+type ExistingCount = {count: number};
 
 /**
  * @id #SiteAddress

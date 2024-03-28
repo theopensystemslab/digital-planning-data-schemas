@@ -235,31 +235,15 @@
     },
     "Application": {
       "$id": "#Application",
-      "additionalProperties": false,
-      "description": "Information about this planning application",
-      "properties": {
-        "CIL": {
-          "$ref": "#/definitions/CommunityInfrastructureLevy"
+      "anyOf": [
+        {
+          "$ref": "#/definitions/BaseApplication"
         },
-        "declaration": {
-          "$ref": "#/definitions/ApplicationDeclaration"
-        },
-        "fee": {
-          "$ref": "#/definitions/ApplicationFee"
-        },
-        "preApp": {
-          "$ref": "#/definitions/PreApplication"
-        },
-        "type": {
-          "$ref": "#/definitions/ApplicationType"
+        {
+          "$ref": "#/definitions/LondonApplication"
         }
-      },
-      "required": [
-        "type",
-        "fee",
-        "declaration"
       ],
-      "type": "object"
+      "description": "Information about this planning application"
     },
     "ApplicationDeclaration": {
       "$id": "#ApplicationDeclaration",
@@ -1202,6 +1186,24 @@
           "additionalProperties": false,
           "properties": {
             "description": {
+              "const": "Full Planning Permission - Fast track for the purposes of Affordable Housing",
+              "type": "string"
+            },
+            "value": {
+              "const": "pp.full.fastTrack.affordable",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
               "const": "Planning Permission - Full householder",
               "type": "string"
             },
@@ -1563,9 +1565,58 @@
       ],
       "type": "object"
     },
-    "BaseDetails": {
+    "BaseApplication": {
       "additionalProperties": false,
       "properties": {
+        "CIL": {
+          "$ref": "#/definitions/CommunityInfrastructureLevy"
+        },
+        "declaration": {
+          "$ref": "#/definitions/ApplicationDeclaration"
+        },
+        "fee": {
+          "$ref": "#/definitions/ApplicationFee"
+        },
+        "preApp": {
+          "$ref": "#/definitions/PreApplication"
+        },
+        "type": {
+          "$ref": "#/definitions/ApplicationType"
+        }
+      },
+      "required": [
+        "type",
+        "fee",
+        "declaration"
+      ],
+      "type": "object"
+    },
+    "BaseProposal": {
+      "additionalProperties": false,
+      "properties": {
+        "boundary": {
+          "additionalProperties": false,
+          "description": "Location plan boundary proposed by the user, commonly referred to as the red line boundary",
+          "properties": {
+            "area": {
+              "$ref": "#/definitions/Area"
+            },
+            "site": {
+              "$ref": "#/definitions/GeoJSON"
+            }
+          },
+          "required": [
+            "site",
+            "area"
+          ],
+          "type": "object"
+        },
+        "date": {
+          "$ref": "#/definitions/ProposalDates"
+        },
+        "description": {
+          "type": "string"
+        },
         "extend": {
           "additionalProperties": false,
           "properties": {
@@ -1579,7 +1630,8 @@
           "type": "object"
         },
         "materials": {
-          "$ref": "#/definitions/Materials"
+          "$ref": "#/definitions/Materials",
+          "description": "Proposed materials, if applicable to projectType"
         },
         "new": {
           "additionalProperties": false,
@@ -1607,8 +1659,18 @@
             "area"
           ],
           "type": "object"
+        },
+        "projectType": {
+          "items": {
+            "$ref": "#/definitions/ProjectType"
+          },
+          "type": "array"
         }
       },
+      "required": [
+        "projectType",
+        "description"
+      ],
       "type": "object"
     },
     "CalculateMetadata": {
@@ -3524,6 +3586,26 @@
       ],
       "type": "object"
     },
+    "LeadDeveloper": {
+      "additionalProperties": false,
+      "properties": {
+        "companyRegistrationNumber": {
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "ukCompany",
+            "overseasCompany",
+            "none"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "type"
+      ],
+      "type": "object"
+    },
     "LineString": {
       "additionalProperties": false,
       "description": "LineString geometry object. https://tools.ietf.org/html/rfc7946#section-3.1.4",
@@ -3550,646 +3632,37 @@
       ],
       "type": "object"
     },
-    "LondonDetails": {
-      "$id": "#LondonDetails",
+    "LondonApplication": {
+      "$id": "#LondonApplication",
       "additionalProperties": false,
-      "description": "Proposal details for project sites within the Greater London Authority (GLA) area",
+      "description": "Application details for project sites within the Greater London Authority (GLA) area",
       "properties": {
-        "extend": {
-          "additionalProperties": false,
-          "properties": {
-            "area": {
-              "$ref": "#/definitions/Area"
-            }
-          },
-          "required": [
-            "area"
-          ],
-          "type": "object"
+        "CIL": {
+          "$ref": "#/definitions/CommunityInfrastructureLevy"
         },
-        "materials": {
-          "$ref": "#/definitions/Materials"
+        "declaration": {
+          "$ref": "#/definitions/ApplicationDeclaration"
         },
-        "new": {
-          "additionalProperties": false,
-          "properties": {
-            "area": {
-              "$ref": "#/definitions/Area"
-            },
-            "count": {
-              "additionalProperties": false,
-              "properties": {
-                "bathrooms": {
-                  "type": "number"
-                },
-                "bedrooms": {
-                  "type": "number"
-                },
-                "dwellings": {
-                  "type": "number"
-                }
-              },
-              "type": "object"
-            }
-          },
-          "required": [
-            "area"
-          ],
-          "type": "object"
+        "fee": {
+          "$ref": "#/definitions/ApplicationFee"
         },
-        "vehicleParking": {
-          "additionalProperties": false,
-          "properties": {
-            "bicycles": {
-              "additionalProperties": false,
-              "properties": {
-                "count": {
-                  "additionalProperties": false,
-                  "properties": {
-                    "existing": {
-                      "type": "number"
-                    },
-                    "proposed": {
-                      "type": "number"
-                    }
-                  },
-                  "required": [
-                    "existing",
-                    "proposed"
-                  ],
-                  "type": "object"
-                },
-                "offStreet": {
-                  "additionalProperties": false,
-                  "properties": {
-                    "count": {
-                      "additionalProperties": false,
-                      "properties": {
-                        "existing": {
-                          "type": "number"
-                        },
-                        "proposed": {
-                          "type": "number"
-                        }
-                      },
-                      "required": [
-                        "existing",
-                        "proposed"
-                      ],
-                      "type": "object"
-                    }
-                  },
-                  "required": [
-                    "count"
-                  ],
-                  "type": "object"
-                },
-                "onStreet": {
-                  "additionalProperties": false,
-                  "properties": {
-                    "count": {
-                      "additionalProperties": false,
-                      "properties": {
-                        "existing": {
-                          "type": "number"
-                        },
-                        "proposed": {
-                          "type": "number"
-                        }
-                      },
-                      "required": [
-                        "existing",
-                        "proposed"
-                      ],
-                      "type": "object"
-                    }
-                  },
-                  "required": [
-                    "count"
-                  ],
-                  "type": "object"
-                }
-              },
-              "required": [
-                "count"
-              ],
-              "type": "object"
-            },
-            "buses": {
-              "additionalProperties": false,
-              "properties": {
-                "count": {
-                  "additionalProperties": false,
-                  "properties": {
-                    "existing": {
-                      "type": "number"
-                    },
-                    "proposed": {
-                      "type": "number"
-                    }
-                  },
-                  "required": [
-                    "existing",
-                    "proposed"
-                  ],
-                  "type": "object"
-                },
-                "offStreet": {
-                  "additionalProperties": false,
-                  "properties": {
-                    "count": {
-                      "additionalProperties": false,
-                      "properties": {
-                        "existing": {
-                          "type": "number"
-                        },
-                        "proposed": {
-                          "type": "number"
-                        }
-                      },
-                      "required": [
-                        "existing",
-                        "proposed"
-                      ],
-                      "type": "object"
-                    }
-                  },
-                  "required": [
-                    "count"
-                  ],
-                  "type": "object"
-                },
-                "onStreet": {
-                  "additionalProperties": false,
-                  "properties": {
-                    "count": {
-                      "additionalProperties": false,
-                      "properties": {
-                        "existing": {
-                          "type": "number"
-                        },
-                        "proposed": {
-                          "type": "number"
-                        }
-                      },
-                      "required": [
-                        "existing",
-                        "proposed"
-                      ],
-                      "type": "object"
-                    }
-                  },
-                  "required": [
-                    "count"
-                  ],
-                  "type": "object"
-                }
-              },
-              "required": [
-                "count"
-              ],
-              "type": "object"
-            },
-            "cars": {
-              "additionalProperties": false,
-              "properties": {
-                "count": {
-                  "additionalProperties": false,
-                  "properties": {
-                    "existing": {
-                      "type": "number"
-                    },
-                    "proposed": {
-                      "type": "number"
-                    }
-                  },
-                  "required": [
-                    "existing",
-                    "proposed"
-                  ],
-                  "type": "object"
-                },
-                "offStreet": {
-                  "additionalProperties": false,
-                  "properties": {
-                    "club": {
-                      "additionalProperties": false,
-                      "properties": {
-                        "count": {
-                          "additionalProperties": false,
-                          "properties": {
-                            "existing": {
-                              "type": "number"
-                            },
-                            "proposed": {
-                              "type": "number"
-                            }
-                          },
-                          "required": [
-                            "existing",
-                            "proposed"
-                          ],
-                          "type": "object"
-                        }
-                      },
-                      "required": [
-                        "count"
-                      ],
-                      "type": "object"
-                    },
-                    "count": {
-                      "additionalProperties": false,
-                      "properties": {
-                        "existing": {
-                          "type": "number"
-                        },
-                        "proposed": {
-                          "type": "number"
-                        }
-                      },
-                      "required": [
-                        "existing",
-                        "proposed"
-                      ],
-                      "type": "object"
-                    },
-                    "disabled": {
-                      "additionalProperties": false,
-                      "properties": {
-                        "count": {
-                          "additionalProperties": false,
-                          "properties": {
-                            "existing": {
-                              "type": "number"
-                            },
-                            "proposed": {
-                              "type": "number"
-                            }
-                          },
-                          "required": [
-                            "existing",
-                            "proposed"
-                          ],
-                          "type": "object"
-                        }
-                      },
-                      "required": [
-                        "count"
-                      ],
-                      "type": "object"
-                    },
-                    "other": {
-                      "additionalProperties": false,
-                      "properties": {
-                        "count": {
-                          "additionalProperties": false,
-                          "properties": {
-                            "existing": {
-                              "type": "number"
-                            },
-                            "proposed": {
-                              "type": "number"
-                            }
-                          },
-                          "required": [
-                            "existing",
-                            "proposed"
-                          ],
-                          "type": "object"
-                        }
-                      },
-                      "required": [
-                        "count"
-                      ],
-                      "type": "object"
-                    },
-                    "residents": {
-                      "additionalProperties": false,
-                      "properties": {
-                        "count": {
-                          "additionalProperties": false,
-                          "properties": {
-                            "existing": {
-                              "type": "number"
-                            },
-                            "proposed": {
-                              "type": "number"
-                            }
-                          },
-                          "required": [
-                            "existing",
-                            "proposed"
-                          ],
-                          "type": "object"
-                        }
-                      },
-                      "required": [
-                        "count"
-                      ],
-                      "type": "object"
-                    }
-                  },
-                  "required": [
-                    "count"
-                  ],
-                  "type": "object"
-                },
-                "onStreet": {
-                  "additionalProperties": false,
-                  "properties": {
-                    "club": {
-                      "additionalProperties": false,
-                      "properties": {
-                        "count": {
-                          "additionalProperties": false,
-                          "properties": {
-                            "existing": {
-                              "type": "number"
-                            },
-                            "proposed": {
-                              "type": "number"
-                            }
-                          },
-                          "required": [
-                            "existing",
-                            "proposed"
-                          ],
-                          "type": "object"
-                        }
-                      },
-                      "required": [
-                        "count"
-                      ],
-                      "type": "object"
-                    },
-                    "count": {
-                      "additionalProperties": false,
-                      "properties": {
-                        "existing": {
-                          "type": "number"
-                        },
-                        "proposed": {
-                          "type": "number"
-                        }
-                      },
-                      "required": [
-                        "existing",
-                        "proposed"
-                      ],
-                      "type": "object"
-                    },
-                    "disabled": {
-                      "additionalProperties": false,
-                      "properties": {
-                        "count": {
-                          "additionalProperties": false,
-                          "properties": {
-                            "existing": {
-                              "type": "number"
-                            },
-                            "proposed": {
-                              "type": "number"
-                            }
-                          },
-                          "required": [
-                            "existing",
-                            "proposed"
-                          ],
-                          "type": "object"
-                        }
-                      },
-                      "required": [
-                        "count"
-                      ],
-                      "type": "object"
-                    },
-                    "other": {
-                      "additionalProperties": false,
-                      "properties": {
-                        "count": {
-                          "additionalProperties": false,
-                          "properties": {
-                            "existing": {
-                              "type": "number"
-                            },
-                            "proposed": {
-                              "type": "number"
-                            }
-                          },
-                          "required": [
-                            "existing",
-                            "proposed"
-                          ],
-                          "type": "object"
-                        }
-                      },
-                      "required": [
-                        "count"
-                      ],
-                      "type": "object"
-                    },
-                    "residents": {
-                      "additionalProperties": false,
-                      "properties": {
-                        "count": {
-                          "additionalProperties": false,
-                          "properties": {
-                            "existing": {
-                              "type": "number"
-                            },
-                            "proposed": {
-                              "type": "number"
-                            }
-                          },
-                          "required": [
-                            "existing",
-                            "proposed"
-                          ],
-                          "type": "object"
-                        }
-                      },
-                      "required": [
-                        "count"
-                      ],
-                      "type": "object"
-                    }
-                  },
-                  "required": [
-                    "count"
-                  ],
-                  "type": "object"
-                }
-              },
-              "required": [
-                "count"
-              ],
-              "type": "object"
-            },
-            "motorcycles": {
-              "additionalProperties": false,
-              "properties": {
-                "count": {
-                  "additionalProperties": false,
-                  "properties": {
-                    "existing": {
-                      "type": "number"
-                    },
-                    "proposed": {
-                      "type": "number"
-                    }
-                  },
-                  "required": [
-                    "existing",
-                    "proposed"
-                  ],
-                  "type": "object"
-                },
-                "offStreet": {
-                  "additionalProperties": false,
-                  "properties": {
-                    "count": {
-                      "additionalProperties": false,
-                      "properties": {
-                        "existing": {
-                          "type": "number"
-                        },
-                        "proposed": {
-                          "type": "number"
-                        }
-                      },
-                      "required": [
-                        "existing",
-                        "proposed"
-                      ],
-                      "type": "object"
-                    }
-                  },
-                  "required": [
-                    "count"
-                  ],
-                  "type": "object"
-                },
-                "onStreet": {
-                  "additionalProperties": false,
-                  "properties": {
-                    "count": {
-                      "additionalProperties": false,
-                      "properties": {
-                        "existing": {
-                          "type": "number"
-                        },
-                        "proposed": {
-                          "type": "number"
-                        }
-                      },
-                      "required": [
-                        "existing",
-                        "proposed"
-                      ],
-                      "type": "object"
-                    }
-                  },
-                  "required": [
-                    "count"
-                  ],
-                  "type": "object"
-                }
-              },
-              "required": [
-                "count"
-              ],
-              "type": "object"
-            },
-            "type": {
-              "items": {
-                "$ref": "#/definitions/VehicleParking"
-              },
-              "type": "array"
-            },
-            "vans": {
-              "additionalProperties": false,
-              "properties": {
-                "count": {
-                  "additionalProperties": false,
-                  "properties": {
-                    "existing": {
-                      "type": "number"
-                    },
-                    "proposed": {
-                      "type": "number"
-                    }
-                  },
-                  "required": [
-                    "existing",
-                    "proposed"
-                  ],
-                  "type": "object"
-                },
-                "offStreet": {
-                  "additionalProperties": false,
-                  "properties": {
-                    "count": {
-                      "additionalProperties": false,
-                      "properties": {
-                        "existing": {
-                          "type": "number"
-                        },
-                        "proposed": {
-                          "type": "number"
-                        }
-                      },
-                      "required": [
-                        "existing",
-                        "proposed"
-                      ],
-                      "type": "object"
-                    }
-                  },
-                  "required": [
-                    "count"
-                  ],
-                  "type": "object"
-                },
-                "onStreet": {
-                  "additionalProperties": false,
-                  "properties": {
-                    "count": {
-                      "additionalProperties": false,
-                      "properties": {
-                        "existing": {
-                          "type": "number"
-                        },
-                        "proposed": {
-                          "type": "number"
-                        }
-                      },
-                      "required": [
-                        "existing",
-                        "proposed"
-                      ],
-                      "type": "object"
-                    }
-                  },
-                  "required": [
-                    "count"
-                  ],
-                  "type": "object"
-                }
-              },
-              "required": [
-                "count"
-              ],
-              "type": "object"
-            }
-          },
-          "required": [
-            "type"
-          ],
-          "type": "object"
+        "leadDeveloper": {
+          "$ref": "#/definitions/LeadDeveloper"
+        },
+        "preApp": {
+          "$ref": "#/definitions/PreApplication"
+        },
+        "type": {
+          "$ref": "#/definitions/ApplicationType"
+        },
+        "vacantBuildingCredit": {
+          "type": "boolean"
         }
       },
       "required": [
-        "vehicleParking"
+        "declaration",
+        "fee",
+        "type"
       ],
       "type": "object"
     },
@@ -4247,15 +3720,138 @@
           ],
           "type": "object"
         },
-        "details": {
-          "$ref": "#/definitions/PropertyDetails"
-        },
         "localAuthorityDistrict": {
           "description": "Current and historic UK Local Authority Districts that contain this address sourced from planning.data.gov.uk/dataset/local-authority-district",
           "items": {
             "type": "string"
           },
           "type": "array"
+        },
+        "materials": {
+          "$ref": "#/definitions/Materials"
+        },
+        "parking": {
+          "additionalProperties": false,
+          "properties": {
+            "buses": {
+              "additionalProperties": false,
+              "properties": {
+                "count": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "count"
+              ],
+              "type": "object"
+            },
+            "carClub": {
+              "additionalProperties": false,
+              "properties": {
+                "count": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "count"
+              ],
+              "type": "object"
+            },
+            "cars": {
+              "additionalProperties": false,
+              "properties": {
+                "count": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "count"
+              ],
+              "type": "object"
+            },
+            "cycles": {
+              "additionalProperties": false,
+              "properties": {
+                "count": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "count"
+              ],
+              "type": "object"
+            },
+            "disabled": {
+              "additionalProperties": false,
+              "properties": {
+                "count": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "count"
+              ],
+              "type": "object"
+            },
+            "motorcycles": {
+              "additionalProperties": false,
+              "properties": {
+                "count": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "count"
+              ],
+              "type": "object"
+            },
+            "offStreet": {
+              "additionalProperties": false,
+              "properties": {
+                "residential": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "count": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "count"
+                  ],
+                  "type": "object"
+                }
+              },
+              "required": [
+                "residential"
+              ],
+              "type": "object"
+            },
+            "other": {
+              "additionalProperties": false,
+              "properties": {
+                "count": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "count"
+              ],
+              "type": "object"
+            },
+            "vans": {
+              "additionalProperties": false,
+              "properties": {
+                "count": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "count"
+              ],
+              "type": "object"
+            }
+          },
+          "type": "object"
         },
         "planning": {
           "additionalProperties": false,
@@ -4318,6 +3914,9 @@
           "const": "London",
           "type": "string"
         },
+        "socialLandlord": {
+          "type": "boolean"
+        },
         "titleNumber": {
           "additionalProperties": false,
           "properties": {
@@ -4348,6 +3947,461 @@
         "region",
         "titleNumber",
         "type"
+      ],
+      "type": "object"
+    },
+    "LondonProposal": {
+      "$id": "#LondonProposal",
+      "additionalProperties": false,
+      "description": "Proposal details for project sites within the Greater London Authority (GLA) area",
+      "properties": {
+        "boundary": {
+          "additionalProperties": false,
+          "description": "Location plan boundary proposed by the user, commonly referred to as the red line boundary",
+          "properties": {
+            "area": {
+              "$ref": "#/definitions/Area"
+            },
+            "site": {
+              "$ref": "#/definitions/GeoJSON"
+            }
+          },
+          "required": [
+            "site",
+            "area"
+          ],
+          "type": "object"
+        },
+        "charging": {
+          "additionalProperties": false,
+          "description": "Electric vehicle charing points",
+          "properties": {
+            "active": {
+              "additionalProperties": false,
+              "properties": {
+                "count": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "count"
+              ],
+              "type": "object"
+            },
+            "passive": {
+              "additionalProperties": false,
+              "properties": {
+                "count": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "count"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "active",
+            "passive"
+          ],
+          "type": "object"
+        },
+        "cost": {
+          "additionalProperties": false,
+          "description": "Project cost",
+          "properties": {
+            "projected": {
+              "enum": [
+                "2m",
+                "2mTo100m",
+                "100m"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "projected"
+          ],
+          "type": "object"
+        },
+        "date": {
+          "$ref": "#/definitions/ProposalDates"
+        },
+        "description": {
+          "type": "string"
+        },
+        "extend": {
+          "additionalProperties": false,
+          "properties": {
+            "area": {
+              "$ref": "#/definitions/Area"
+            }
+          },
+          "required": [
+            "area"
+          ],
+          "type": "object"
+        },
+        "materials": {
+          "$ref": "#/definitions/Materials",
+          "description": "Proposed materials, if applicable to projectType"
+        },
+        "nature": {
+          "additionalProperties": false,
+          "description": "Changes that result in the loss, gain, or change of use of natural spaces",
+          "properties": {
+            "openSpaces": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "access": {
+                    "enum": [
+                      "restricted",
+                      "unrestricted"
+                    ],
+                    "type": "string"
+                  },
+                  "area": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "hectares": {
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "hectares"
+                    ],
+                    "type": "object"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "designation": {
+                    "$ref": "#/definitions/OpenSpaceDesignation"
+                  },
+                  "impact": {
+                    "enum": [
+                      "loss",
+                      "gain",
+                      "change"
+                    ],
+                    "type": "string"
+                  },
+                  "swap": {
+                    "description": "Whether the open space change involves a land swap",
+                    "type": "boolean"
+                  },
+                  "type": {
+                    "$ref": "#/definitions/OpenSpaceType"
+                  }
+                },
+                "required": [
+                  "impact",
+                  "description",
+                  "type",
+                  "designation",
+                  "access",
+                  "area",
+                  "swap"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "protectedSpaces": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "access": {
+                    "enum": [
+                      "restricted",
+                      "unrestricted"
+                    ],
+                    "type": "string"
+                  },
+                  "area": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "hectares": {
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "hectares"
+                    ],
+                    "type": "object"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "designation": {
+                    "$ref": "#/definitions/ProtectedSpaceDesgination"
+                  },
+                  "impact": {
+                    "enum": [
+                      "loss",
+                      "gain",
+                      "change"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "impact",
+                  "description",
+                  "designation",
+                  "access",
+                  "area"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        },
+        "new": {
+          "additionalProperties": false,
+          "properties": {
+            "area": {
+              "$ref": "#/definitions/Area"
+            },
+            "count": {
+              "additionalProperties": false,
+              "properties": {
+                "bathrooms": {
+                  "type": "number"
+                },
+                "bedrooms": {
+                  "type": "number"
+                },
+                "dwellings": {
+                  "type": "number"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "required": [
+            "area"
+          ],
+          "type": "object"
+        },
+        "newBuildings": {
+          "$ref": "#/definitions/NewBuildingsOrStoreys",
+          "description": "Creating new buildings"
+        },
+        "newStoreys": {
+          "$ref": "#/definitions/NewBuildingsOrStoreys",
+          "description": "Increasing the height of existing buildings"
+        },
+        "parking": {
+          "additionalProperties": false,
+          "description": "Proposed parking spaces",
+          "properties": {
+            "buses": {
+              "additionalProperties": false,
+              "properties": {
+                "count": {
+                  "type": "number"
+                },
+                "difference": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "count",
+                "difference"
+              ],
+              "type": "object"
+            },
+            "carClub": {
+              "additionalProperties": false,
+              "properties": {
+                "count": {
+                  "type": "number"
+                },
+                "difference": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "count",
+                "difference"
+              ],
+              "type": "object"
+            },
+            "cars": {
+              "additionalProperties": false,
+              "properties": {
+                "count": {
+                  "type": "number"
+                },
+                "difference": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "count",
+                "difference"
+              ],
+              "type": "object"
+            },
+            "cycles": {
+              "additionalProperties": false,
+              "properties": {
+                "count": {
+                  "type": "number"
+                },
+                "difference": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "count",
+                "difference"
+              ],
+              "type": "object"
+            },
+            "disabled": {
+              "additionalProperties": false,
+              "properties": {
+                "count": {
+                  "type": "number"
+                },
+                "difference": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "count",
+                "difference"
+              ],
+              "type": "object"
+            },
+            "motorcycles": {
+              "additionalProperties": false,
+              "properties": {
+                "count": {
+                  "type": "number"
+                },
+                "difference": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "count",
+                "difference"
+              ],
+              "type": "object"
+            },
+            "offStreet": {
+              "additionalProperties": false,
+              "properties": {
+                "residential": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "count": {
+                      "type": "number"
+                    },
+                    "difference": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "count",
+                    "difference"
+                  ],
+                  "type": "object"
+                }
+              },
+              "required": [
+                "residential"
+              ],
+              "type": "object"
+            },
+            "other": {
+              "additionalProperties": false,
+              "properties": {
+                "count": {
+                  "type": "number"
+                },
+                "difference": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "count",
+                "difference"
+              ],
+              "type": "object"
+            },
+            "vans": {
+              "additionalProperties": false,
+              "properties": {
+                "count": {
+                  "type": "number"
+                },
+                "difference": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "count",
+                "difference"
+              ],
+              "type": "object"
+            }
+          },
+          "type": "object"
+        },
+        "projectType": {
+          "items": {
+            "$ref": "#/definitions/ProjectType"
+          },
+          "type": "array"
+        },
+        "schemeName": {
+          "type": "string"
+        },
+        "water": {
+          "additionalProperties": false,
+          "description": "Water management",
+          "properties": {
+            "grey": {
+              "description": "Whether the proposal includes grey water re-use",
+              "type": "boolean"
+            },
+            "rain": {
+              "description": "Whether the proposal includes rain water harvesting",
+              "type": "boolean"
+            },
+            "usage": {
+              "additionalProperties": false,
+              "description": "Internal residential water usage",
+              "properties": {
+                "litresPerPersonPerDay": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "litresPerPersonPerDay"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "usage",
+            "rain",
+            "grey"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "description",
+        "projectType"
       ],
       "type": "object"
     },
@@ -4480,6 +4534,48 @@
       ],
       "type": "object"
     },
+    "NewBuildingsOrStoreys": {
+      "$id": "#NewBuildingsOrStoreys",
+      "additionalProperties": false,
+      "description": "Details about creating new buildings or increasing the height of existing buildings",
+      "properties": {
+        "buildings": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "height": {
+                "additionalProperties": false,
+                "properties": {
+                  "metres": {
+                    "type": "number"
+                  }
+                },
+                "required": [
+                  "metres"
+                ],
+                "type": "object"
+              },
+              "storeys": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "height",
+              "storeys"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "count": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "count"
+      ],
+      "type": "object"
+    },
     "OSAddress": {
       "$id": "#OSAddress",
       "additionalProperties": false,
@@ -4553,6 +4649,342 @@
         "y"
       ],
       "type": "object"
+    },
+    "OpenSpaceDesignation": {
+      "$id": "#OpenSpaceDesignation",
+      "anyOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Green Belt",
+              "type": "string"
+            },
+            "value": {
+              "const": "greenBelt",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Metropolitan Open Land",
+              "type": "string"
+            },
+            "value": {
+              "const": "metropolitan",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Local Open Spaces",
+              "type": "string"
+            },
+            "value": {
+              "const": "local",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Other designation",
+              "type": "string"
+            },
+            "value": {
+              "const": "other",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Not designated",
+              "type": "string"
+            },
+            "value": {
+              "const": "none",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        }
+      ],
+      "description": "Designations of natural open spaces"
+    },
+    "OpenSpaceType": {
+      "$id": "#OpenSpaceType",
+      "anyOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Parks and gardens",
+              "type": "string"
+            },
+            "value": {
+              "const": "park",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Natural and semi-natural",
+              "type": "string"
+            },
+            "value": {
+              "const": "natural",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Green corridors",
+              "type": "string"
+            },
+            "value": {
+              "const": "greenCorridor",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Outdoor sports facilities",
+              "type": "string"
+            },
+            "value": {
+              "const": "sport",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Amenity",
+              "type": "string"
+            },
+            "value": {
+              "const": "amenity",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Provision for children and young people",
+              "type": "string"
+            },
+            "value": {
+              "const": "children",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Allotments, community gardens and city farms",
+              "type": "string"
+            },
+            "value": {
+              "const": "allotment",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Cemeteries, churchyards and other burial grounds",
+              "type": "string"
+            },
+            "value": {
+              "const": "burial",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Countryside in urban fringe areas",
+              "type": "string"
+            },
+            "value": {
+              "const": "fringe",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Civic spaces",
+              "type": "string"
+            },
+            "value": {
+              "const": "civic",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Brownfield land",
+              "type": "string"
+            },
+            "value": {
+              "const": "brownfield",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Non-residential institution grounds or gardens",
+              "type": "string"
+            },
+            "value": {
+              "const": "nonResidential",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Residential gardens",
+              "type": "string"
+            },
+            "value": {
+              "const": "residential",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        }
+      ],
+      "description": "Types of natural open spaces"
     },
     "Ownership": {
       "$id": "#Ownership",
@@ -12837,17 +13269,6 @@
         }
       ],
       "description": "Information about the site where the works will happen"
-    },
-    "PropertyDetails": {
-      "$id": "#PropertyDetails",
-      "additionalProperties": false,
-      "description": "Details about the property as it currently exists",
-      "properties": {
-        "materials": {
-          "$ref": "#/definitions/Materials"
-        }
-      },
-      "type": "object"
     },
     "PropertyType": {
       "$id": "#PropertyType",
@@ -21209,47 +21630,15 @@
     },
     "Proposal": {
       "$id": "#Proposal",
-      "additionalProperties": false,
-      "description": "Information about the proposed works and any changes to the property",
-      "properties": {
-        "boundary": {
-          "additionalProperties": false,
-          "description": "Location plan boundary proposed by the user, commonly referred to as the red line boundary",
-          "properties": {
-            "area": {
-              "$ref": "#/definitions/Area"
-            },
-            "site": {
-              "$ref": "#/definitions/GeoJSON"
-            }
-          },
-          "required": [
-            "site",
-            "area"
-          ],
-          "type": "object"
+      "anyOf": [
+        {
+          "$ref": "#/definitions/BaseProposal"
         },
-        "date": {
-          "$ref": "#/definitions/ProposalDates"
-        },
-        "description": {
-          "type": "string"
-        },
-        "details": {
-          "$ref": "#/definitions/ProposalDetails"
-        },
-        "projectType": {
-          "items": {
-            "$ref": "#/definitions/ProjectType"
-          },
-          "type": "array"
+        {
+          "$ref": "#/definitions/LondonProposal"
         }
-      },
-      "required": [
-        "projectType",
-        "description"
       ],
-      "type": "object"
+      "description": "Information about the proposed works and any changes to the property"
     },
     "ProposalDates": {
       "$id": "#ProposalDates",
@@ -21264,18 +21653,6 @@
         }
       },
       "type": "object"
-    },
-    "ProposalDetails": {
-      "$id": "#ProposalDetails",
-      "anyOf": [
-        {
-          "$ref": "#/definitions/BaseDetails"
-        },
-        {
-          "$ref": "#/definitions/LondonDetails"
-        }
-      ],
-      "description": "Details about the changes being proposed"
     },
     "ProposedAddress": {
       "$id": "#ProposedAddress",
@@ -21315,6 +21692,138 @@
         "y"
       ],
       "type": "object"
+    },
+    "ProtectedSpaceDesgination": {
+      "$id": "#ProtectedSpaceDesignation",
+      "anyOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Sites of Special Scientific Interest",
+              "type": "string"
+            },
+            "value": {
+              "const": "SSSI",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Local Nature Reserve",
+              "type": "string"
+            },
+            "value": {
+              "const": "localReserve",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Site of Metropolitan Importance",
+              "type": "string"
+            },
+            "value": {
+              "const": "metropolitan",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Site of Borough Grade 1 Importance",
+              "type": "string"
+            },
+            "value": {
+              "const": "boroughGradeOne",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Site of Borough Grade 2 Importance",
+              "type": "string"
+            },
+            "value": {
+              "const": "boroughGradeTwo",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Site of Local Importance",
+              "type": "string"
+            },
+            "value": {
+              "const": "local",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Not designated",
+              "type": "string"
+            },
+            "value": {
+              "const": "none",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        }
+      ],
+      "description": "Designations of natural protected spaces"
     },
     "QuestionAndResponses": {
       "additionalProperties": false,
@@ -22088,15 +22597,15 @@
           ],
           "type": "object"
         },
-        "details": {
-          "$ref": "#/definitions/PropertyDetails"
-        },
         "localAuthorityDistrict": {
           "description": "Current and historic UK Local Authority Districts that contain this address sourced from planning.data.gov.uk/dataset/local-authority-district",
           "items": {
             "type": "string"
           },
           "type": "array"
+        },
+        "materials": {
+          "$ref": "#/definitions/Materials"
         },
         "planning": {
           "additionalProperties": false,
@@ -22271,444 +22780,6 @@
         "town"
       ],
       "type": "object"
-    },
-    "VehicleParking": {
-      "$id": "#VehicleParking",
-      "anyOf": [
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "Cars",
-              "type": "string"
-            },
-            "value": {
-              "const": "cars",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "Off-street parking for cars",
-              "type": "string"
-            },
-            "value": {
-              "const": "cars.offStreet",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "Off-street parking for a car club",
-              "type": "string"
-            },
-            "value": {
-              "const": "cars.offStreet.club",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "Off-street disabled parking",
-              "type": "string"
-            },
-            "value": {
-              "const": "cars.offStreet.disabled",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "Off-street parking for non-residents",
-              "type": "string"
-            },
-            "value": {
-              "const": "cars.offStreet.other",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "Off-street parking for residents only",
-              "type": "string"
-            },
-            "value": {
-              "const": "cars.offStreet.residents",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "On-street parking for cars",
-              "type": "string"
-            },
-            "value": {
-              "const": "cars.onStreet",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "On-street parking for a car club",
-              "type": "string"
-            },
-            "value": {
-              "const": "cars.onStreet.club",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "On-street disabled parking",
-              "type": "string"
-            },
-            "value": {
-              "const": "cars.onStreet.disabled",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "On-street parking for non-residents",
-              "type": "string"
-            },
-            "value": {
-              "const": "cars.onStreet.other",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "On-street parking for residents only",
-              "type": "string"
-            },
-            "value": {
-              "const": "cars.onStreet.residents",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "Vans",
-              "type": "string"
-            },
-            "value": {
-              "const": "vans",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "Off-street parking for vans",
-              "type": "string"
-            },
-            "value": {
-              "const": "vans.offStreet",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "On-street parking for vans",
-              "type": "string"
-            },
-            "value": {
-              "const": "vans.onStreet",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "Motorcycles",
-              "type": "string"
-            },
-            "value": {
-              "const": "motorcycles",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "Off-street parking for motorcycles",
-              "type": "string"
-            },
-            "value": {
-              "const": "motorcycles.offStreet",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "On-street parking for motorcycles",
-              "type": "string"
-            },
-            "value": {
-              "const": "motorcycles.onStreet",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "Bicycles",
-              "type": "string"
-            },
-            "value": {
-              "const": "bicycles",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "Off-street parking for bicycles",
-              "type": "string"
-            },
-            "value": {
-              "const": "bicycles.offStreet",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "On-street parking for bicycles",
-              "type": "string"
-            },
-            "value": {
-              "const": "bicycles.onStreet",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "Buses",
-              "type": "string"
-            },
-            "value": {
-              "const": "buses",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "Off-street parking for buses",
-              "type": "string"
-            },
-            "value": {
-              "const": "buses.offStreet",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "On-street parking for buses",
-              "type": "string"
-            },
-            "value": {
-              "const": "buses.onStreet",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "None",
-              "type": "string"
-            },
-            "value": {
-              "const": "none",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        }
-      ],
-      "description": "Vehicle parking types"
     }
   },
   "description": "The root specification for a planning application in England generated by a digital planning service",
