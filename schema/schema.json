@@ -13187,6 +13187,24 @@
           "additionalProperties": false,
           "properties": {
             "description": {
+              "const": "Do not add or change a dropped kerb",
+              "type": "string"
+            },
+            "value": {
+              "const": "not.dropKerb",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
               "const": "Change of units",
               "type": "string"
             },

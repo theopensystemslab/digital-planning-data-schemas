@@ -306,6 +306,7 @@ export const ProjectTypes = {
   not: 'Negate a project type',
   'not.alter.replace': 'Do not add or change windows or doors',
   'not.alter.rooflight': 'Do not add or change a rooflight',
+  'not.dropKerb': 'Do not add or change a dropped kerb',
   unit: 'Change of units',
   'unit.merge': 'Convert two or more properties into one',
   'unit.subdivide': 'Convert a home or part of a home into flats',
