@@ -11355,7 +11355,7 @@
               "type": "string"
             },
             "value": {
-              "const": "changeofUse.annexe",
+              "const": "changeOfUse.annexe",
               "type": "string"
             }
           },
@@ -13174,6 +13174,24 @@
             },
             "value": {
               "const": "not.alter.rooflight",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Do not add or change a dropped kerb",
+              "type": "string"
+            },
+            "value": {
+              "const": "not.dropKerb",
               "type": "string"
             }
           },
