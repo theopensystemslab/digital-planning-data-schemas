@@ -196,7 +196,7 @@ export const ProjectTypes = {
   'alter.trees.tree.prune': 'Prune trees',
   'alter.trees.tree.remove': 'Remove trees',
   changeOfUse: 'Change the use of a building',
-  'changeofUse.annexe':
+  'changeOfUse.annexe':
     'Convert part of the property into a  granny flat (residential annexe)',
   'changeOfUse.caravans': 'Use a caravan or mobile home on the property',
   'changeOfUse.extension': 'Convert an extension',
@@ -306,6 +306,7 @@ export const ProjectTypes = {
   not: 'Negate a project type',
   'not.alter.replace': 'Do not add or change windows or doors',
   'not.alter.rooflight': 'Do not add or change a rooflight',
+  'not.dropKerb': 'Do not add or change a dropped kerb',
   unit: 'Change of units',
   'unit.merge': 'Convert two or more properties into one',
   'unit.subdivide': 'Convert a home or part of a home into flats',
