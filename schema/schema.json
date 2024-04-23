@@ -8777,6 +8777,222 @@
           "additionalProperties": false,
           "properties": {
             "description": {
+              "const": "Change the material of a fence, wall or gate",
+              "type": "string"
+            },
+            "value": {
+              "const": "alter.changeOfMaterials.boundary",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Change the material of chimneys",
+              "type": "string"
+            },
+            "value": {
+              "const": "alter.changeOfMaterials.chimney",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Change the material of external doors",
+              "type": "string"
+            },
+            "value": {
+              "const": "alter.changeOfMaterials.externalDoors",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Change the material of external walls",
+              "type": "string"
+            },
+            "value": {
+              "const": "alter.changeOfMaterials.externalWalls",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Change the material of floors",
+              "type": "string"
+            },
+            "value": {
+              "const": "alter.changeOfMaterials.floors",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Change the material of vehicle access or hardstanding",
+              "type": "string"
+            },
+            "value": {
+              "const": "alter.changeOfMaterials.hardstanding",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Change the material of internal doors",
+              "type": "string"
+            },
+            "value": {
+              "const": "alter.changeOfMaterials.internalDoors",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Change the material of internal walls",
+              "type": "string"
+            },
+            "value": {
+              "const": "alter.changeOfMaterials.internalWalls",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Change the material of something else",
+              "type": "string"
+            },
+            "value": {
+              "const": "alter.changeOfMaterials.other",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Change the material of rainwater goods",
+              "type": "string"
+            },
+            "value": {
+              "const": "alter.changeOfMaterials.rainwaterGoods",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Change the material of roof coverings",
+              "type": "string"
+            },
+            "value": {
+              "const": "alter.changeOfMaterials.roofCovering",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Change the material of windows",
+              "type": "string"
+            },
+            "value": {
+              "const": "alter.changeOfMaterials.windows",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
               "const": "Change chimneys",
               "type": "string"
             },
@@ -11621,11 +11837,83 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Demolish a building",
+              "const": "Total demolition of a building",
               "type": "string"
             },
             "value": {
               "const": "demolish.full",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Demolish internal walls",
+              "type": "string"
+            },
+            "value": {
+              "const": "demolish.internal",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Demolish a listed building",
+              "type": "string"
+            },
+            "value": {
+              "const": "demolish.listed",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Total demolition of a isted building",
+              "type": "string"
+            },
+            "value": {
+              "const": "demolish.listed.full",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Demolish part of a listed building",
+              "type": "string"
+            },
+            "value": {
+              "const": "demolish.listed.part",
               "type": "string"
             }
           },
@@ -11644,6 +11932,42 @@
             },
             "value": {
               "const": "demolish.outbuilding",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Total demolition of an outbuilding (such as a garage or barn)",
+              "type": "string"
+            },
+            "value": {
+              "const": "demolish.outbuilding.full",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Demolish part of an outbuilding (such as a garage or barn)",
+              "type": "string"
+            },
+            "value": {
+              "const": "demolish.outbuilding.part",
               "type": "string"
             }
           },
@@ -13192,6 +13516,60 @@
             },
             "value": {
               "const": "not.dropKerb",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Repairs",
+              "type": "string"
+            },
+            "value": {
+              "const": "repair",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Repair the historic fabric",
+              "type": "string"
+            },
+            "value": {
+              "const": "repair.historicFabric",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Other project type",
+              "type": "string"
+            },
+            "value": {
+              "const": "other",
               "type": "string"
             }
           },
