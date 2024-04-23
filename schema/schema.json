@@ -9569,6 +9569,24 @@
           "additionalProperties": false,
           "properties": {
             "description": {
+              "const": "Install plant equipment or machinery",
+              "type": "string"
+            },
+            "value": {
+              "const": "alter.industrial.plant",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
               "const": "Changes to internal walls or layout",
               "type": "string"
             },
@@ -12976,6 +12994,24 @@
             },
             "value": {
               "const": "new.industrial",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "New waste disposal facilities",
+              "type": "string"
+            },
+            "value": {
+              "const": "new.industrial.waste",
               "type": "string"
             }
           },
