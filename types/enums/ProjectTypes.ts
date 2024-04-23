@@ -24,6 +24,26 @@ export const ProjectTypes = {
   'alter.boundary.replace.gate': 'Replace a gate',
   'alter.boundary.replace.wall': 'Replace a wall',
   'alter.cables': 'Install underground cables',
+  'alter.changeOfMaterials.boundary':
+    'Change the material of a fence, wall or gate',
+  'alter.changeOfMaterials.chimney': 'Change the material of chimneys',
+  'alter.changeOfMaterials.externalDoors':
+    'Change the material of external doors',
+  'alter.changeOfMaterials.externalWalls':
+    'Change the material of external walls',
+  'alter.changeOfMaterials.floors': 'Change the material of floors',
+  'alter.changeOfMaterials.hardstanding':
+    'Change the material of vehicle access or hardstanding',
+  'alter.changeOfMaterials.internalDoors':
+    'Change the material of internal doors',
+  'alter.changeOfMaterials.internalWalls':
+    'Change the material of internal walls',
+  'alter.changeOfMaterials.other': 'Change the material of something else',
+  'alter.changeOfMaterials.rainwaterGoods':
+    'Change the material of rainwater goods',
+  'alter.changeOfMaterials.roofCovering':
+    'Change the material of roof coverings',
+  'alter.changeOfMaterials.windows': 'Change the material of windows',
   'alter.chimneys': 'Change chimneys',
   'alter.chimneys.add': 'Add a chimney',
   'alter.chimneys.replace': 'Replace a chimney',
@@ -213,8 +233,16 @@ export const ProjectTypes = {
   'changeOfUse.workFromHome': 'Work from home',
   demolish: 'Demolish a building',
   'demolish.boundary': 'Demolish a fence, gate or boundary wall',
-  'demolish.full': 'Demolish a building',
+  'demolish.full': 'Total demolition of a building',
+  'demolish.internal': 'Demolish internal walls',
+  'demolish.listed': 'Demolish a listed building',
+  'demolish.listed.full': 'Total demolition of a isted building',
+  'demolish.listed.part': 'Demolish part of a listed building',
   'demolish.outbuilding': 'Demolish an outbuilding (such as a garage or barn)',
+  'demolish.outbuilding.full':
+    'Total demolition of an outbuilding (such as a garage or barn)',
+  'demolish.outbuilding.part':
+    'Demolish part of an outbuilding (such as a garage or barn)',
   'demolish.part': 'Demolish part of a building (such as an extension)',
   'demolish.part.conservatory': 'Demolish part of a conservatory',
   'demolish.replace': 'Demolish a building and build homes in its place',
@@ -307,6 +335,9 @@ export const ProjectTypes = {
   'not.alter.replace': 'Do not add or change windows or doors',
   'not.alter.rooflight': 'Do not add or change a rooflight',
   'not.dropKerb': 'Do not add or change a dropped kerb',
+  repair: 'Repairs',
+  'repair.historicFabric': 'Repair the historic fabric',
+  other: 'Other project type',
   unit: 'Change of units',
   'unit.merge': 'Convert two or more properties into one',
   'unit.subdivide': 'Convert a home or part of a home into flats',
