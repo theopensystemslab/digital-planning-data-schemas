@@ -1420,6 +1420,150 @@
           "additionalProperties": false,
           "properties": {
             "description": {
+              "const": "Planning permission - Outline for proposed development (minor)",
+              "type": "string"
+            },
+            "value": {
+              "const": "pp.outline.minor",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Outline Planning Permission - Consent for the principle of a project witholding all details (minor)",
+              "type": "string"
+            },
+            "value": {
+              "const": "pp.outline.minor.allReserved",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Outline Planning Permission - Approval of reserved matters (minor)",
+              "type": "string"
+            },
+            "value": {
+              "const": "pp.outline.minor.reservedMatters",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Outline Planning Permission - Consent for the principle of a project specifying some details (minor)",
+              "type": "string"
+            },
+            "value": {
+              "const": "pp.outline.minor.someReserved",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Planning permission - Outline for proposed development (major)",
+              "type": "string"
+            },
+            "value": {
+              "const": "pp.outline.major",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Outline Planning Permission - Consent for the principle of a project witholding all details (major)",
+              "type": "string"
+            },
+            "value": {
+              "const": "pp.outline.major.allReserved",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Outline Planning Permission - Approval of reserved matters (major)",
+              "type": "string"
+            },
+            "value": {
+              "const": "pp.outline.major.reservedMatters",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Outline Planning Permission - Consent for the principle of a project specifying some details (major)",
+              "type": "string"
+            },
+            "value": {
+              "const": "pp.outline.major.someReserved",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
               "const": "Consent to carry out works to a tree in a Conservation Area or with a Tree Preservation Order",
               "type": "string"
             },

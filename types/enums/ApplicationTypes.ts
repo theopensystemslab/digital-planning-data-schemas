@@ -96,6 +96,22 @@ export const ApplicationTypes = {
     'Outline Planning Permission - Approval of reserved matters',
   'pp.outline.someReserved':
     'Outline Planning Permission - Consent for the principle of a project specifying some details',
+  'pp.outline.minor':
+    'Planning permission - Outline for proposed development (minor)',
+  'pp.outline.minor.allReserved':
+    'Outline Planning Permission - Consent for the principle of a project witholding all details (minor)',
+  'pp.outline.minor.reservedMatters':
+    'Outline Planning Permission - Approval of reserved matters (minor)',
+  'pp.outline.minor.someReserved':
+    'Outline Planning Permission - Consent for the principle of a project specifying some details (minor)',
+  'pp.outline.major':
+    'Planning permission - Outline for proposed development (major)',
+  'pp.outline.major.allReserved':
+    'Outline Planning Permission - Consent for the principle of a project witholding all details (major)',
+  'pp.outline.major.reservedMatters':
+    'Outline Planning Permission - Approval of reserved matters (major)',
+  'pp.outline.major.someReserved':
+    'Outline Planning Permission - Consent for the principle of a project specifying some details (major)',
   treeWorksConsent:
     'Consent to carry out works to a tree in a Conservation Area or with a Tree Preservation Order',
 };
