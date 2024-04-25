@@ -102,7 +102,7 @@ export interface LondonProposal extends BaseProposal {
     protectedSpaces?: {
       impact: 'loss' | 'gain' | 'change';
       description: string;
-      designation: ProtectedSpaceDesgination;
+      designation: ProtectedSpaceDesignation;
       access: 'restricted' | 'unrestricted';
       area: {hectares: number};
     }[];
@@ -221,5 +221,5 @@ type ProtectedSpaceDesignationMap = {
  * @id #ProtectedSpaceDesignation
  * @description Designations of natural protected spaces
  */
-export type ProtectedSpaceDesgination =
+export type ProtectedSpaceDesignation =
   ProtectedSpaceDesignationMap[keyof ProtectedSpaceDesignationMap];
