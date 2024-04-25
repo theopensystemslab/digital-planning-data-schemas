@@ -4280,7 +4280,7 @@
                     "type": "string"
                   },
                   "designation": {
-                    "$ref": "#/definitions/ProtectedSpaceDesgination"
+                    "$ref": "#/definitions/ProtectedSpaceDesignation"
                   },
                   "impact": {
                     "enum": [
@@ -22251,7 +22251,7 @@
       ],
       "type": "object"
     },
-    "ProtectedSpaceDesgination": {
+    "ProtectedSpaceDesignation": {
       "$id": "#ProtectedSpaceDesignation",
       "anyOf": [
         {
