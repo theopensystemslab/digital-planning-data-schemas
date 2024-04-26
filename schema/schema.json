@@ -1564,11 +1564,47 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Consent to carry out works to a tree in a Conservation Area or with a Tree Preservation Order",
+              "const": "Works to trees",
               "type": "string"
             },
             "value": {
-              "const": "treeWorksConsent",
+              "const": "wtt",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Works to trees - Consent to carry out works to a tree with a Tree Preservation Order",
+              "type": "string"
+            },
+            "value": {
+              "const": "wtt.consent",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Works to trees - Notification of proposed works to a tree in a Conservation Area",
+              "type": "string"
+            },
+            "value": {
+              "const": "wtt.notice",
               "type": "string"
             }
           },
