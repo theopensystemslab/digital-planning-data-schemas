@@ -1,12 +1,13 @@
 import Ajv from 'ajv';
 import addFormats from 'ajv-formats';
-import {Validator} from 'jsonschema';
-import {describe, expect, test} from 'vitest';
+import { Validator } from 'jsonschema';
+import { describe, expect, test } from 'vitest';
 
-import {validLDCE} from '../examples/data/ldcE';
-import {validLDCP} from '../examples/data/ldcP';
-import {validPlanningPermission} from '../examples/data/planningPermission';
-import {validPriorApproval} from '../examples/data/priorApproval';
+import { validLDCE } from '../examples/data/ldcE';
+import { validLDCP } from '../examples/data/ldcP';
+import { validListedBuildingConsent } from "../examples/data/listedBuildingConsent";
+import { validPlanningPermission } from '../examples/data/planningPermission';
+import { validPriorApproval } from '../examples/data/priorApproval';
 import generatedSchema from '../schema/schema.json';
 
 const examplesToTest = [
@@ -14,6 +15,7 @@ const examplesToTest = [
   validLDCP,
   validPriorApproval,
   validPlanningPermission,
+  validListedBuildingConsent,
 ];
 
 describe("parsing using the 'jsonschema' library", () => {
