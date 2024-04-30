@@ -40,6 +40,7 @@ export interface BaseProposal {
       dwellings?: number;
     };
   };
+  residentialUnits?: ResidentalUnits;
 }
 
 /**
@@ -223,3 +224,120 @@ type ProtectedSpaceDesignationMap = {
  */
 export type ProtectedSpaceDesignation =
   ProtectedSpaceDesignationMap[keyof ProtectedSpaceDesignationMap];
+
+/**
+ * @id #ResidentalUnits
+ * @description Residentail units associated with this proposal
+ */
+export interface ResidentalUnits {
+  proposed: TenureTypes;
+  existing: TenureTypes;
+  /**
+   * @description
+   * Net gain or loss of residential units
+   * Equates to proposed.count minus existing.count
+   * @type integer
+   */
+  difference: number;
+}
+
+/**
+ * @id #TenureTypes
+ * @description Breakdown of residential units by tenure type
+ */
+export interface TenureTypes {
+  marketHousing: UnitType;
+  socialAffordableRent: UnitType;
+  affordableHomeOwnership: UnitType;
+  starterHome: BaseUnitType;
+  selfBuild: BaseUnitType;
+  // TODO: Narrow this down
+  developmentType: string;
+  /**
+   * @description
+   * Total number across all tenure types
+   * Sum of all unitType.count values
+   * @type integer
+   */
+  count: number;
+}
+
+/**
+ * @id #UnitType
+ * @description Details of unit types, for this tenure type
+ */
+export type UnitType = BaseUnitType & AllUnitType;
+
+/**
+ * @id #BaseUnitType
+ */
+export interface BaseUnitType {
+  houses: Units;
+  flats: Units;
+  bedsits: Units;
+  other: Units;
+  count: number;
+}
+
+/**
+ * @id #AllUnitType
+ */
+export interface AllUnitType {
+  shelteredHousing: Units;
+  clusteredFlats: Units;
+}
+
+/**
+ * @id #Units
+ * @description Details of a specific unit type
+ */
+export type Units = KnownUnits | NotKnownUnits;
+
+/**
+ * @id #KnownUnits
+ * @description Details of a specific unit type, where the types and counts are known
+ */
+export interface KnownUnits {
+  /**
+   * @description The counts of units by number of bedrooms
+   * @example
+   * Our proposal may have 4 one bedroom houses of tenure type "starter home",
+   * and an 4 units of sheltered housing, with unknown bedroom counts
+   */
+  type: {
+    /**
+     * @type integer
+     */
+    oneBedroom: number;
+    /**
+     * @type integer
+     */
+    twoBedrooms: number;
+    /**
+     * @type integer
+     */
+    threeBedrooms: number;
+    /**
+     * @type integer
+     */
+    fourPlusBedrooms: number;
+    /**
+     * @type integer
+     * @description Count of units with an unknown number of bedrooms
+     */
+    unknownBedrooms: number;
+  };
+  /**
+   * @description Sum of all known units of this unit type
+   * @type integer
+   */
+  count: number;
+}
+
+/**
+ * @id #NotKnownUnits
+ * @description Represents a proposal where the details of specific unit type are not known
+ */
+export interface NotKnownUnits {
+  count: null;
+}

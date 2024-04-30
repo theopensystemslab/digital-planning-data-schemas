@@ -1809,11 +1809,43 @@
             "$ref": "#/definitions/ProjectType"
           },
           "type": "array"
+        },
+        "residentialUnits": {
+          "$ref": "#/definitions/ResidentalUnits"
         }
       },
       "required": [
         "projectType",
         "description"
+      ],
+      "type": "object"
+    },
+    "BaseUnitType": {
+      "$id": "#BaseUnitType",
+      "additionalProperties": false,
+      "properties": {
+        "bedsits": {
+          "$ref": "#/definitions/Units"
+        },
+        "count": {
+          "type": "number"
+        },
+        "flats": {
+          "$ref": "#/definitions/Units"
+        },
+        "houses": {
+          "$ref": "#/definitions/Units"
+        },
+        "other": {
+          "$ref": "#/definitions/Units"
+        }
+      },
+      "required": [
+        "houses",
+        "flats",
+        "bedsits",
+        "other",
+        "count"
       ],
       "type": "object"
     },
@@ -3730,6 +3762,52 @@
       ],
       "type": "object"
     },
+    "KnownUnits": {
+      "$id": "#KnownUnits",
+      "additionalProperties": false,
+      "description": "Details of a specific unit type, where the types and counts are known",
+      "properties": {
+        "count": {
+          "description": "Sum of all known units of this unit type",
+          "type": "number"
+        },
+        "type": {
+          "additionalProperties": false,
+          "description": "The counts of units by number of bedrooms",
+          "properties": {
+            "fourPlusBedrooms": {
+              "type": "number"
+            },
+            "oneBedroom": {
+              "type": "number"
+            },
+            "threeBedrooms": {
+              "type": "number"
+            },
+            "twoBedrooms": {
+              "type": "number"
+            },
+            "unknownBedrooms": {
+              "description": "Count of units with an unknown number of bedrooms",
+              "type": "number"
+            }
+          },
+          "required": [
+            "oneBedroom",
+            "twoBedrooms",
+            "threeBedrooms",
+            "fourPlusBedrooms",
+            "unknownBedrooms"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "type",
+        "count"
+      ],
+      "type": "object"
+    },
     "LeadDeveloper": {
       "additionalProperties": false,
       "properties": {
@@ -4506,6 +4584,9 @@
           },
           "type": "array"
         },
+        "residentialUnits": {
+          "$ref": "#/definitions/ResidentalUnits"
+        },
         "schemeName": {
           "type": "string"
         },
@@ -4713,6 +4794,20 @@
         },
         "count": {
           "type": "number"
+        }
+      },
+      "required": [
+        "count"
+      ],
+      "type": "object"
+    },
+    "NotKnownUnits": {
+      "$id": "#NotKnownUnits",
+      "additionalProperties": false,
+      "description": "Represents a proposal where the details of specific unit type are not known",
+      "properties": {
+        "count": {
+          "type": "null"
         }
       },
       "required": [
@@ -22473,6 +22568,29 @@
       ],
       "type": "object"
     },
+    "ResidentalUnits": {
+      "$id": "#ResidentalUnits",
+      "additionalProperties": false,
+      "description": "Residentail units associated with this proposal",
+      "properties": {
+        "difference": {
+          "description": "Net gain or loss of residential units\nEquates to proposed.count minus existing.count",
+          "type": "number"
+        },
+        "existing": {
+          "$ref": "#/definitions/TenureTypes"
+        },
+        "proposed": {
+          "$ref": "#/definitions/TenureTypes"
+        }
+      },
+      "required": [
+        "proposed",
+        "existing",
+        "difference"
+      ],
+      "type": "object"
+    },
     "Response": {
       "additionalProperties": false,
       "properties": {
@@ -23123,6 +23241,45 @@
       ],
       "type": "object"
     },
+    "TenureTypes": {
+      "$id": "#TenureTypes",
+      "additionalProperties": false,
+      "description": "Breakdown of residential units by tenure type",
+      "properties": {
+        "affordableHomeOwnership": {
+          "$ref": "#/definitions/UnitType"
+        },
+        "count": {
+          "description": "Total number across all tenure types\nSum of all unitType.count values",
+          "type": "number"
+        },
+        "developmentType": {
+          "type": "string"
+        },
+        "marketHousing": {
+          "$ref": "#/definitions/UnitType"
+        },
+        "selfBuild": {
+          "$ref": "#/definitions/BaseUnitType"
+        },
+        "socialAffordableRent": {
+          "$ref": "#/definitions/UnitType"
+        },
+        "starterHome": {
+          "$ref": "#/definitions/BaseUnitType"
+        }
+      },
+      "required": [
+        "marketHousing",
+        "socialAffordableRent",
+        "affordableHomeOwnership",
+        "starterHome",
+        "selfBuild",
+        "developmentType",
+        "count"
+      ],
+      "type": "object"
+    },
     "UKProperty": {
       "$id": "#UKProperty",
       "additionalProperties": false,
@@ -23261,6 +23418,56 @@
     "UUID": {
       "format": "uuid",
       "type": "string"
+    },
+    "UnitType": {
+      "$id": "#UnitType",
+      "additionalProperties": false,
+      "description": "Details of unit types, for this tenure type",
+      "properties": {
+        "bedsits": {
+          "$ref": "#/definitions/Units"
+        },
+        "clusteredFlats": {
+          "$ref": "#/definitions/Units"
+        },
+        "count": {
+          "type": "number"
+        },
+        "flats": {
+          "$ref": "#/definitions/Units"
+        },
+        "houses": {
+          "$ref": "#/definitions/Units"
+        },
+        "other": {
+          "$ref": "#/definitions/Units"
+        },
+        "shelteredHousing": {
+          "$ref": "#/definitions/Units"
+        }
+      },
+      "required": [
+        "bedsits",
+        "clusteredFlats",
+        "count",
+        "flats",
+        "houses",
+        "other",
+        "shelteredHousing"
+      ],
+      "type": "object"
+    },
+    "Units": {
+      "$id": "#Units",
+      "anyOf": [
+        {
+          "$ref": "#/definitions/KnownUnits"
+        },
+        {
+          "$ref": "#/definitions/NotKnownUnits"
+        }
+      ],
+      "description": "Details of a specific unit type"
     },
     "User": {
       "$id": "User",
