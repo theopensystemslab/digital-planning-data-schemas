@@ -60,6 +60,30 @@ export interface CalculateMetadata {
 export interface FeeExplanation {
   calculated: CalculateMetadata[];
   payable: CalculateMetadata[];
+  category?: {
+    one?: CalculateMetadata[];
+    oneToFour?: CalculateMetadata[];
+    oneToThirteen?: CalculateMetadata[];
+    two?: CalculateMetadata[];
+    twoToFour?: CalculateMetadata[];
+    three?: CalculateMetadata[];
+    four?: CalculateMetadata[];
+    five?: CalculateMetadata[];
+    fiveToThirteen?: CalculateMetadata[];
+    sixAndSeven?: CalculateMetadata[];
+    eight?: CalculateMetadata[];
+    nine?: CalculateMetadata[];
+    ten?: CalculateMetadata[];
+    eleven?: {
+      one: CalculateMetadata[];
+    };
+    twelve?: {
+      one?: CalculateMetadata[];
+      two?: CalculateMetadata[];
+    };
+    thirteen?: CalculateMetadata[];
+    fourteen?: CalculateMetadata[];
+  };
 }
 
 /**
