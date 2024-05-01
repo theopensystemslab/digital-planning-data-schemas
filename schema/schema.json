@@ -289,7 +289,84 @@
       "description": "The costs associated with this application",
       "properties": {
         "calculated": {
+          "description": "Total calculated fee in GBP",
           "type": "number"
+        },
+        "category": {
+          "additionalProperties": false,
+          "description": "Breakdown of calculated fee in GBP by category of development, based on the scales defined in The Town and Country Planning Regulations https://www.legislation.gov.uk/uksi/2012/2920/schedule/1/part/2",
+          "properties": {
+            "eight": {
+              "type": "number"
+            },
+            "eleven": {
+              "additionalProperties": false,
+              "properties": {
+                "one": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "one"
+              ],
+              "type": "object"
+            },
+            "five": {
+              "type": "number"
+            },
+            "fiveToThirteen": {
+              "type": "number"
+            },
+            "four": {
+              "type": "number"
+            },
+            "fourteen": {
+              "type": "number"
+            },
+            "nine": {
+              "type": "number"
+            },
+            "one": {
+              "type": "number"
+            },
+            "oneToFour": {
+              "type": "number"
+            },
+            "oneToThirteen": {
+              "type": "number"
+            },
+            "sixAndSeven": {
+              "type": "number"
+            },
+            "ten": {
+              "type": "number"
+            },
+            "thirteen": {
+              "type": "number"
+            },
+            "three": {
+              "type": "number"
+            },
+            "twelve": {
+              "additionalProperties": false,
+              "properties": {
+                "one": {
+                  "type": "number"
+                },
+                "two": {
+                  "type": "number"
+                }
+              },
+              "type": "object"
+            },
+            "two": {
+              "type": "number"
+            },
+            "twoToFour": {
+              "type": "number"
+            }
+          },
+          "type": "object"
         },
         "exemption": {
           "additionalProperties": false,
@@ -308,6 +385,7 @@
           "type": "object"
         },
         "payable": {
+          "description": "Total payable fee after any exemptions or reductions in GBP",
           "type": "number"
         },
         "reduction": {
@@ -2021,13 +2099,143 @@
     "FeeExplanation": {
       "$id": "#FeeExplanation",
       "additionalProperties": false,
-      "description": "An explanation, including policy references, of the calculated and payable fees associated with this application",
+      "description": "An explanation, including policy references, of the fees associated with this application",
       "properties": {
         "calculated": {
           "items": {
             "$ref": "#/definitions/CalculateMetadata"
           },
           "type": "array"
+        },
+        "category": {
+          "additionalProperties": false,
+          "description": "Breakdown of calculated fee by category of development, based on the scales defined in The Town and Country Planning Regulations https://www.legislation.gov.uk/uksi/2012/2920/schedule/1/part/2",
+          "properties": {
+            "eight": {
+              "items": {
+                "$ref": "#/definitions/CalculateMetadata"
+              },
+              "type": "array"
+            },
+            "eleven": {
+              "additionalProperties": false,
+              "properties": {
+                "one": {
+                  "items": {
+                    "$ref": "#/definitions/CalculateMetadata"
+                  },
+                  "type": "array"
+                }
+              },
+              "required": [
+                "one"
+              ],
+              "type": "object"
+            },
+            "five": {
+              "items": {
+                "$ref": "#/definitions/CalculateMetadata"
+              },
+              "type": "array"
+            },
+            "fiveToThirteen": {
+              "items": {
+                "$ref": "#/definitions/CalculateMetadata"
+              },
+              "type": "array"
+            },
+            "four": {
+              "items": {
+                "$ref": "#/definitions/CalculateMetadata"
+              },
+              "type": "array"
+            },
+            "fourteen": {
+              "items": {
+                "$ref": "#/definitions/CalculateMetadata"
+              },
+              "type": "array"
+            },
+            "nine": {
+              "items": {
+                "$ref": "#/definitions/CalculateMetadata"
+              },
+              "type": "array"
+            },
+            "one": {
+              "items": {
+                "$ref": "#/definitions/CalculateMetadata"
+              },
+              "type": "array"
+            },
+            "oneToFour": {
+              "items": {
+                "$ref": "#/definitions/CalculateMetadata"
+              },
+              "type": "array"
+            },
+            "oneToThirteen": {
+              "items": {
+                "$ref": "#/definitions/CalculateMetadata"
+              },
+              "type": "array"
+            },
+            "sixAndSeven": {
+              "items": {
+                "$ref": "#/definitions/CalculateMetadata"
+              },
+              "type": "array"
+            },
+            "ten": {
+              "items": {
+                "$ref": "#/definitions/CalculateMetadata"
+              },
+              "type": "array"
+            },
+            "thirteen": {
+              "items": {
+                "$ref": "#/definitions/CalculateMetadata"
+              },
+              "type": "array"
+            },
+            "three": {
+              "items": {
+                "$ref": "#/definitions/CalculateMetadata"
+              },
+              "type": "array"
+            },
+            "twelve": {
+              "additionalProperties": false,
+              "properties": {
+                "one": {
+                  "items": {
+                    "$ref": "#/definitions/CalculateMetadata"
+                  },
+                  "type": "array"
+                },
+                "two": {
+                  "items": {
+                    "$ref": "#/definitions/CalculateMetadata"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            },
+            "two": {
+              "items": {
+                "$ref": "#/definitions/CalculateMetadata"
+              },
+              "type": "array"
+            },
+            "twoToFour": {
+              "items": {
+                "$ref": "#/definitions/CalculateMetadata"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
         },
         "payable": {
           "items": {

@@ -29,8 +29,41 @@ export interface LondonApplication extends BaseApplication {
  * @description The costs associated with this application
  */
 export interface ApplicationFee {
+  /**
+   * @description Total calculated fee in GBP
+   */
   calculated: number;
+  /**
+   * @description Total payable fee after any exemptions or reductions in GBP
+   */
   payable: number;
+  /**
+   * @description Breakdown of calculated fee in GBP by category of development, based on the scales defined in The Town and Country Planning Regulations https://www.legislation.gov.uk/uksi/2012/2920/schedule/1/part/2
+   */
+  category?: {
+    one?: number;
+    oneToFour?: number;
+    oneToThirteen?: number;
+    two?: number;
+    twoToFour?: number;
+    three?: number;
+    four?: number;
+    five?: number;
+    fiveToThirteen?: number;
+    sixAndSeven?: number;
+    eight?: number;
+    nine?: number;
+    ten?: number;
+    eleven?: {
+      one: number;
+    };
+    twelve?: {
+      one?: number;
+      two?: number;
+    };
+    thirteen?: number;
+    fourteen?: number;
+  };
   exemption: {
     disability: boolean; // @todo add application.fee.exemption.disability.reason
     resubmission: boolean; // @todo add application.resubmission.original.applicationReference & application.resubmission.originalReference.appeal
