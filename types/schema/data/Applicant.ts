@@ -48,10 +48,6 @@ export interface Ownership {
    */
   agriculturalTenants?: boolean;
   /**
-   * @description Do you know the names and addresses of all owners and agricultural tenants?
-   */
-  ownerKnown?: 'all' | 'some' | 'none';
-  /**
    * @description Has requisite notice been given to all the known owners and agricultural tenants?
    */
   noticeGiven?: boolean;
@@ -67,6 +63,10 @@ export interface Ownership {
     date?: Date;
     newspaperName?: string;
   };
+  /**
+   * @description Do you know the names and addresses of all owners and agricultural tenants?
+   */
+  ownersKnown?: 'all' | 'some' | 'none';
   /**
    * @description Names and addresses of all known owners and agricultural tenants
    */

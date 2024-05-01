@@ -5225,15 +5225,6 @@
         "noticeReason": {
           "type": "string"
         },
-        "ownerKnown": {
-          "description": "Do you know the names and addresses of all owners and agricultural tenants?",
-          "enum": [
-            "all",
-            "some",
-            "none"
-          ],
-          "type": "string"
-        },
         "owners": {
           "description": "Names and addresses of all known owners and agricultural tenants",
           "items": {
@@ -5263,6 +5254,15 @@
             "type": "object"
           },
           "type": "array"
+        },
+        "ownersKnown": {
+          "description": "Do you know the names and addresses of all owners and agricultural tenants?",
+          "enum": [
+            "all",
+            "some",
+            "none"
+          ],
+          "type": "string"
         }
       },
       "required": [
