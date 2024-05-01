@@ -5174,6 +5174,7 @@
       "description": "Information about the ownership certificate and property owners, if different than the applicant",
       "properties": {
         "agriculturalTenants": {
+          "description": "Does the land have any agricultural tenants?",
           "type": "boolean"
         },
         "certificate": {

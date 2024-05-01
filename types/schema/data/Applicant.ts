@@ -44,7 +44,7 @@ export interface BaseApplicant {
 export interface Ownership {
   certificate: 'a' | 'b' | 'c' | 'd';
   /**
-   * @desscription Does the land have any agricultural tenants?
+   * @description Does the land have any agricultural tenants?
    */
   agriculturalTenants?: boolean;
   /**
