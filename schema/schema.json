@@ -120,6 +120,7 @@
         },
         "interest": {
           "enum": [
+            "owner",
             "owner.sole",
             "owner.co",
             "tenant",
@@ -1679,6 +1680,7 @@
         },
         "interest": {
           "enum": [
+            "owner",
             "owner.sole",
             "owner.co",
             "tenant",
@@ -5171,6 +5173,10 @@
       "additionalProperties": false,
       "description": "Information about the ownership certificate and property owners, if different than the applicant",
       "properties": {
+        "agriculturalTenants": {
+          "description": "Does the land have any agricultural tenants?",
+          "type": "boolean"
+        },
         "certificate": {
           "enum": [
             "a",
@@ -5180,13 +5186,47 @@
           ],
           "type": "string"
         },
+        "declaration": {
+          "additionalProperties": false,
+          "description": "Declaration of the accuracy of the ownership certificate, including reasonable steps taken to find all owners and publish notice",
+          "properties": {
+            "accurate": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "accurate"
+          ],
+          "type": "object"
+        },
         "noticeGiven": {
+          "description": "Has requisite notice been given to all the known owners and agricultural tenants?",
           "type": "boolean"
+        },
+        "noticePublished": {
+          "additionalProperties": false,
+          "description": "Has a notice of the application been published in a newspaper circulating in the area where the land is situated?",
+          "properties": {
+            "date": {
+              "$ref": "#/definitions/Date"
+            },
+            "newspaperName": {
+              "type": "string"
+            },
+            "status": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "status"
+          ],
+          "type": "object"
         },
         "noticeReason": {
           "type": "string"
         },
         "owners": {
+          "description": "Names and addresses of all known owners and agricultural tenants",
           "items": {
             "additionalProperties": false,
             "properties": {
@@ -5214,6 +5254,15 @@
             "type": "object"
           },
           "type": "array"
+        },
+        "ownersKnown": {
+          "description": "Do you know the names and addresses of all owners and agricultural tenants?",
+          "enum": [
+            "all",
+            "some",
+            "none"
+          ],
+          "type": "string"
         }
       },
       "required": [
