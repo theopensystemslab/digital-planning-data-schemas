@@ -38,7 +38,7 @@ export interface ApplicationFee {
    */
   payable: number;
   /**
-   * @descrtion Breakdown of calculated fee by UK Planning Fee category (** TODO add docs **)
+   * @description Breakdown of calculated fee in GBP by category of development, based on the scales defined in The Town and Country Planning Regulations https://www.legislation.gov.uk/uksi/2012/2920/schedule/1/part/2
    */
   category?: {
     one?: number;

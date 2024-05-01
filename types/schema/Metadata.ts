@@ -55,11 +55,14 @@ export interface CalculateMetadata {
 
 /**
  * @id #FeeExplanation
- * @description An explanation, including policy references, of the calculated and payable fees associated with this application
+ * @description An explanation, including policy references, of the fees associated with this application
  */
 export interface FeeExplanation {
   calculated: CalculateMetadata[];
   payable: CalculateMetadata[];
+  /**
+   * @description Breakdown of calculated fee by category of development, based on the scales defined in The Town and Country Planning Regulations https://www.legislation.gov.uk/uksi/2012/2920/schedule/1/part/2
+   */
   category?: {
     one?: CalculateMetadata[];
     oneToFour?: CalculateMetadata[];
