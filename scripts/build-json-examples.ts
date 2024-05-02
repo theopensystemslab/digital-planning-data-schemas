@@ -2,6 +2,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 import {validLDCE} from '../examples/data/ldcE';
 import {validLDCP} from '../examples/data/ldcP';
+import {validListedBuildingConsent} from '../examples/data/listedBuildingConsent';
 import {validPlanningPermission} from '../examples/data/planningPermission';
 import {validPriorApproval} from '../examples/data/priorApproval';
 import {Schema} from '../types/Schema';
@@ -27,6 +28,10 @@ const examplesToConvert: Example[] = [
   {
     filename: 'validPlanningPermission',
     data: validPlanningPermission,
+  },
+  {
+    filename: 'validListedBuildingConsent',
+    data: validListedBuildingConsent,
   },
 ];
 
