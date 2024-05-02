@@ -4331,11 +4331,9 @@
         }
       },
       "required": [
-        "EPC",
         "address",
         "localAuthorityDistrict",
         "region",
-        "titleNumber",
         "type"
       ],
       "type": "object"
