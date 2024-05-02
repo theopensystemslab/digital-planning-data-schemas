@@ -69,14 +69,14 @@ export interface UKProperty {
  */
 export interface LondonProperty extends UKProperty {
   region: Extract<UKRegion, 'London'>;
-  titleNumber: {
+  titleNumber?: {
     known: 'Yes' | 'No';
     number?: string;
   };
   /**
    * @title Energy Performance Certificate
    */
-  EPC: {
+  EPC?: {
     known:
       | 'Yes'
       | 'Yes, but only some of the properties have one'

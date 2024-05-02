@@ -120,6 +120,7 @@
         },
         "interest": {
           "enum": [
+            "owner",
             "owner.sole",
             "owner.co",
             "tenant",
@@ -288,7 +289,84 @@
       "description": "The costs associated with this application",
       "properties": {
         "calculated": {
+          "description": "Total calculated fee in GBP",
           "type": "number"
+        },
+        "category": {
+          "additionalProperties": false,
+          "description": "Breakdown of calculated fee in GBP by category of development, based on the scales defined in The Town and Country Planning Regulations https://www.legislation.gov.uk/uksi/2012/2920/schedule/1/part/2",
+          "properties": {
+            "eight": {
+              "type": "number"
+            },
+            "eleven": {
+              "additionalProperties": false,
+              "properties": {
+                "one": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "one"
+              ],
+              "type": "object"
+            },
+            "five": {
+              "type": "number"
+            },
+            "fiveToThirteen": {
+              "type": "number"
+            },
+            "four": {
+              "type": "number"
+            },
+            "fourteen": {
+              "type": "number"
+            },
+            "nine": {
+              "type": "number"
+            },
+            "one": {
+              "type": "number"
+            },
+            "oneToFour": {
+              "type": "number"
+            },
+            "oneToThirteen": {
+              "type": "number"
+            },
+            "sixAndSeven": {
+              "type": "number"
+            },
+            "ten": {
+              "type": "number"
+            },
+            "thirteen": {
+              "type": "number"
+            },
+            "three": {
+              "type": "number"
+            },
+            "twelve": {
+              "additionalProperties": false,
+              "properties": {
+                "one": {
+                  "type": "number"
+                },
+                "two": {
+                  "type": "number"
+                }
+              },
+              "type": "object"
+            },
+            "two": {
+              "type": "number"
+            },
+            "twoToFour": {
+              "type": "number"
+            }
+          },
+          "type": "object"
         },
         "exemption": {
           "additionalProperties": false,
@@ -307,6 +385,7 @@
           "type": "object"
         },
         "payable": {
+          "description": "Total payable fee after any exemptions or reductions in GBP",
           "type": "number"
         },
         "reduction": {
@@ -1679,6 +1758,7 @@
         },
         "interest": {
           "enum": [
+            "owner",
             "owner.sole",
             "owner.co",
             "tenant",
@@ -2019,13 +2099,143 @@
     "FeeExplanation": {
       "$id": "#FeeExplanation",
       "additionalProperties": false,
-      "description": "An explanation, including policy references, of the calculated and payable fees associated with this application",
+      "description": "An explanation, including policy references, of the fees associated with this application",
       "properties": {
         "calculated": {
           "items": {
             "$ref": "#/definitions/CalculateMetadata"
           },
           "type": "array"
+        },
+        "category": {
+          "additionalProperties": false,
+          "description": "Breakdown of calculated fee by category of development, based on the scales defined in The Town and Country Planning Regulations https://www.legislation.gov.uk/uksi/2012/2920/schedule/1/part/2",
+          "properties": {
+            "eight": {
+              "items": {
+                "$ref": "#/definitions/CalculateMetadata"
+              },
+              "type": "array"
+            },
+            "eleven": {
+              "additionalProperties": false,
+              "properties": {
+                "one": {
+                  "items": {
+                    "$ref": "#/definitions/CalculateMetadata"
+                  },
+                  "type": "array"
+                }
+              },
+              "required": [
+                "one"
+              ],
+              "type": "object"
+            },
+            "five": {
+              "items": {
+                "$ref": "#/definitions/CalculateMetadata"
+              },
+              "type": "array"
+            },
+            "fiveToThirteen": {
+              "items": {
+                "$ref": "#/definitions/CalculateMetadata"
+              },
+              "type": "array"
+            },
+            "four": {
+              "items": {
+                "$ref": "#/definitions/CalculateMetadata"
+              },
+              "type": "array"
+            },
+            "fourteen": {
+              "items": {
+                "$ref": "#/definitions/CalculateMetadata"
+              },
+              "type": "array"
+            },
+            "nine": {
+              "items": {
+                "$ref": "#/definitions/CalculateMetadata"
+              },
+              "type": "array"
+            },
+            "one": {
+              "items": {
+                "$ref": "#/definitions/CalculateMetadata"
+              },
+              "type": "array"
+            },
+            "oneToFour": {
+              "items": {
+                "$ref": "#/definitions/CalculateMetadata"
+              },
+              "type": "array"
+            },
+            "oneToThirteen": {
+              "items": {
+                "$ref": "#/definitions/CalculateMetadata"
+              },
+              "type": "array"
+            },
+            "sixAndSeven": {
+              "items": {
+                "$ref": "#/definitions/CalculateMetadata"
+              },
+              "type": "array"
+            },
+            "ten": {
+              "items": {
+                "$ref": "#/definitions/CalculateMetadata"
+              },
+              "type": "array"
+            },
+            "thirteen": {
+              "items": {
+                "$ref": "#/definitions/CalculateMetadata"
+              },
+              "type": "array"
+            },
+            "three": {
+              "items": {
+                "$ref": "#/definitions/CalculateMetadata"
+              },
+              "type": "array"
+            },
+            "twelve": {
+              "additionalProperties": false,
+              "properties": {
+                "one": {
+                  "items": {
+                    "$ref": "#/definitions/CalculateMetadata"
+                  },
+                  "type": "array"
+                },
+                "two": {
+                  "items": {
+                    "$ref": "#/definitions/CalculateMetadata"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            },
+            "two": {
+              "items": {
+                "$ref": "#/definitions/CalculateMetadata"
+              },
+              "type": "array"
+            },
+            "twoToFour": {
+              "items": {
+                "$ref": "#/definitions/CalculateMetadata"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
         },
         "payable": {
           "items": {
@@ -4121,11 +4331,9 @@
         }
       },
       "required": [
-        "EPC",
         "address",
         "localAuthorityDistrict",
         "region",
-        "titleNumber",
         "type"
       ],
       "type": "object"
@@ -5171,6 +5379,10 @@
       "additionalProperties": false,
       "description": "Information about the ownership certificate and property owners, if different than the applicant",
       "properties": {
+        "agriculturalTenants": {
+          "description": "Does the land have any agricultural tenants?",
+          "type": "boolean"
+        },
         "certificate": {
           "enum": [
             "a",
@@ -5180,13 +5392,47 @@
           ],
           "type": "string"
         },
+        "declaration": {
+          "additionalProperties": false,
+          "description": "Declaration of the accuracy of the ownership certificate, including reasonable steps taken to find all owners and publish notice",
+          "properties": {
+            "accurate": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "accurate"
+          ],
+          "type": "object"
+        },
         "noticeGiven": {
+          "description": "Has requisite notice been given to all the known owners and agricultural tenants?",
           "type": "boolean"
+        },
+        "noticePublished": {
+          "additionalProperties": false,
+          "description": "Has a notice of the application been published in a newspaper circulating in the area where the land is situated?",
+          "properties": {
+            "date": {
+              "$ref": "#/definitions/Date"
+            },
+            "newspaperName": {
+              "type": "string"
+            },
+            "status": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "status"
+          ],
+          "type": "object"
         },
         "noticeReason": {
           "type": "string"
         },
         "owners": {
+          "description": "Names and addresses of all known owners and agricultural tenants",
           "items": {
             "additionalProperties": false,
             "properties": {
@@ -5214,6 +5460,15 @@
             "type": "object"
           },
           "type": "array"
+        },
+        "ownersKnown": {
+          "description": "Do you know the names and addresses of all owners and agricultural tenants?",
+          "enum": [
+            "all",
+            "some",
+            "none"
+          ],
+          "type": "string"
         }
       },
       "required": [
