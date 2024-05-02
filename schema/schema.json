@@ -430,6 +430,21 @@
       ],
       "type": "object"
     },
+    "ApplicationFeeNotApplicable": {
+      "$id": "#ApplicationFeeNotApplicable",
+      "additionalProperties": false,
+      "description": "An indicator that an application fee does not apply to this application type or journey",
+      "properties": {
+        "notApplicable": {
+          "const": true,
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "notApplicable"
+      ],
+      "type": "object"
+    },
     "ApplicationType": {
       "$id": "#ApplicationType",
       "anyOf": [
@@ -1835,7 +1850,14 @@
           "$ref": "#/definitions/ApplicationDeclaration"
         },
         "fee": {
-          "$ref": "#/definitions/ApplicationFee"
+          "anyOf": [
+            {
+              "$ref": "#/definitions/ApplicationFee"
+            },
+            {
+              "$ref": "#/definitions/ApplicationFeeNotApplicable"
+            }
+          ]
         },
         "preApp": {
           "$ref": "#/definitions/PreApplication"
@@ -2247,6 +2269,21 @@
       "required": [
         "calculated",
         "payable"
+      ],
+      "type": "object"
+    },
+    "FeeExplanationNotApplicable": {
+      "$id": "#FeeExplanationNotApplicable",
+      "additionalProperties": false,
+      "description": "An indicator that an application fee does not apply to this application type or journey, therefore there is not an explanation of how it was calculated",
+      "properties": {
+        "notApplicable": {
+          "const": true,
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "notApplicable"
       ],
       "type": "object"
     },
@@ -4034,7 +4071,14 @@
           "$ref": "#/definitions/ApplicationDeclaration"
         },
         "fee": {
-          "$ref": "#/definitions/ApplicationFee"
+          "anyOf": [
+            {
+              "$ref": "#/definitions/ApplicationFee"
+            },
+            {
+              "$ref": "#/definitions/ApplicationFeeNotApplicable"
+            }
+          ]
         },
         "leadDeveloper": {
           "$ref": "#/definitions/LeadDeveloper"
@@ -5497,7 +5541,14 @@
           "additionalProperties": false,
           "properties": {
             "fee": {
-              "$ref": "#/definitions/FeeExplanation"
+              "anyOf": [
+                {
+                  "$ref": "#/definitions/FeeExplanation"
+                },
+                {
+                  "$ref": "#/definitions/FeeExplanationNotApplicable"
+                }
+              ]
             },
             "files": {
               "$ref": "#/definitions/RequestedFiles"
