@@ -288,17 +288,7 @@ export const validListedBuildingConsent: Schema = {
         description: 'Consent to do works to a Listed Building',
       },
       fee: {
-        calculated: 0,
-        payable: 0,
-        exemption: {
-          disability: false,
-          resubmission: false,
-        },
-        reduction: {
-          sports: false,
-          parishCouncil: false,
-          alternative: false,
-        },
+        notApplicable: true,
       },
       declaration: {
         accurate: true,
@@ -322,11 +312,11 @@ export const validListedBuildingConsent: Schema = {
         },
         {
           value: 'alter.changeOfMaterials.floors',
-          description: 'Change the materials of floors',
+          description: 'Change the material of floors',
         },
         {
           value: 'alter.changeOfMaterials.internalWalls',
-          description: 'Change the materials of internal walls',
+          description: 'Change the material of internal walls',
         },
       ],
       description: 'Remove an internal wall and construct a puppet theatre',
@@ -1197,8 +1187,7 @@ export const validListedBuildingConsent: Schema = {
         ],
       },
       fee: {
-        calculated: [],
-        payable: [],
+        notApplicable: true,
       },
     },
     schema: `https://theopensystemslab.github.io/digital-planning-data-schemas/${version}/schema.json`,
