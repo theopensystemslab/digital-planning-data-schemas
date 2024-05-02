@@ -29,10 +29,37 @@ export const validListedBuildingConsent: Schema = {
         email: 'gonzo@muppets.org',
         phone: '987654321',
       },
+      interest: 'owner.sole',
       ownership: {
         certificate: 'b',
-        noticeGiven: false,
-        owners: [],
+        noticeGiven: true,
+        agriculturalTenants: true,
+        ownersKnown: 'all',
+        owners: [
+          {
+            name: 'Rowlf the Dog',
+            address: {
+              line1: '123 Sesame Street',
+              town: 'New York City',
+              postcode: '10023',
+              country: 'USA',
+            },
+            noticeDate: '2024-04-01',
+          },
+          {
+            name: 'Rizzo the Rat',
+            address: {
+              line1: '123 Sesame Street',
+              town: 'New York City',
+              postcode: '10023',
+              country: 'USA',
+            },
+            noticeDate: '2024-04-01',
+          },
+        ],
+        declaration: {
+          accurate: true,
+        },
       },
     },
     property: {
@@ -77,22 +104,7 @@ export const validListedBuildingConsent: Schema = {
             value: 'listed',
             description: 'Listed Building',
             intersects: true,
-            entities: [
-              {
-                name: 'NUMBERS 50 AND 51 AND ATTACHED AREA WALLS AND BALUSTRADE',
-                source: {
-                  text: 'Planning Data',
-                  url: 'https://www.planning.data.gov.uk/entity/31535771',
-                },
-              },
-              {
-                name: '(South side) Nos.50 AND 51 and attached area walls & balustrade',
-                source: {
-                  text: 'Planning Data',
-                  url: 'https://www.planning.data.gov.uk/entity/42115931',
-                },
-              },
-            ],
+            entities: [],
           },
           {
             value: 'article4',
@@ -173,7 +185,22 @@ export const validListedBuildingConsent: Schema = {
             value: 'listed.grade.II',
             description: 'Listed Building - Grade II',
             intersects: true,
-            entities: [],
+            entities: [
+              {
+                name: 'NUMBERS 50 AND 51 AND ATTACHED AREA WALLS AND BALUSTRADE',
+                source: {
+                  text: 'Planning Data',
+                  url: 'https://www.planning.data.gov.uk/entity/31535771',
+                },
+              },
+              {
+                name: '(South side) Nos.50 AND 51 and attached area walls & balustrade',
+                source: {
+                  text: 'Planning Data',
+                  url: 'https://www.planning.data.gov.uk/entity/42115931',
+                },
+              },
+            ],
           },
           {
             value: 'listed.grade.II*',
@@ -253,12 +280,6 @@ export const validListedBuildingConsent: Schema = {
           hectares: 0.017536000000000003,
           squareMetres: 175.36,
         },
-      },
-      titleNumber: {
-        known: 'No',
-      },
-      EPC: {
-        known: 'No',
       },
     },
     application: {
@@ -1177,7 +1198,7 @@ export const validListedBuildingConsent: Schema = {
       },
       fee: {
         calculated: [],
-        payable: [{}],
+        payable: [],
       },
     },
     schema: `https://theopensystemslab.github.io/digital-planning-data-schemas/${version}/schema.json`,
