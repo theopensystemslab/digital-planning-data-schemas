@@ -54,6 +54,14 @@ export interface CalculateMetadata {
 }
 
 /**
+ * @id #FeeExplanationNotApplicable
+ * @description An indicator that an application fee does not apply to this application type or journey, therefore there is not an explanation of how it was calculated
+ */
+export interface FeeExplanationNotApplicable {
+  notApplicable: true;
+}
+
+/**
  * @id #FeeExplanation
  * @description An explanation, including policy references, of the fees associated with this application
  */
@@ -99,6 +107,6 @@ export interface PlanXMetadata extends BaseMetadata {
     flowId: UUID;
     url: URL;
     files: RequestedFiles;
-    fee: FeeExplanation;
+    fee: FeeExplanation | FeeExplanationNotApplicable;
   };
 }

@@ -9,7 +9,7 @@ export type Application = BaseApplication | LondonApplication;
 
 export interface BaseApplication {
   type: ApplicationType;
-  fee: ApplicationFee;
+  fee: ApplicationFee | ApplicationFeeNotApplicable;
   declaration: ApplicationDeclaration;
   preApp?: PreApplication;
   CIL?: CommunityInfrastructureLevy;
@@ -22,6 +22,14 @@ export interface BaseApplication {
 export interface LondonApplication extends BaseApplication {
   vacantBuildingCredit?: boolean;
   leadDeveloper?: LeadDeveloper;
+}
+
+/**
+ * @id #ApplicationFeeNotApplicable
+ * @description An indicator that an application fee does not apply to this application type or journey
+ */
+export interface ApplicationFeeNotApplicable {
+  notApplicable: true;
 }
 
 /**
