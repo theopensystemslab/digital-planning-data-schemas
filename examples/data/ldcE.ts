@@ -12,6 +12,9 @@ export const validLDCE: Schema = {
       fee: {
         calculated: 258,
         payable: 258,
+        category: {
+          sixAndSeven: 258,
+        },
         exemption: {
           disability: false,
           resubmission: false,
@@ -1262,13 +1265,27 @@ export const validLDCE: Schema = {
         optional: [],
       },
       fee: {
+        category: {
+          sixAndSeven: [
+            {
+              description:
+                'The planning fee for an application for a Certificate of Lawfulness relating to existing alterations or extensions of a single home is £258.',
+              policyRefs: [
+                {
+                  text: 'UK Statutory Instruments 2023 No. 1197',
+                  url: 'https://www.legislation.gov.uk/uksi/2023/1197/made',
+                },
+              ],
+            },
+          ],
+        },
         calculated: [
           {
             description:
               'The planning fee for an application for a Certificate of Lawfulness relating to existing alterations or extensions of a single home is £258.',
             policyRefs: [
               {
-                text: 'UK Stuatory Instruments 2023 No. 1197',
+                text: 'UK Statutory Instruments 2023 No. 1197',
                 url: 'https://www.legislation.gov.uk/uksi/2023/1197/made',
               },
             ],
@@ -1280,7 +1297,7 @@ export const validLDCE: Schema = {
               'The planning fee for an application for a Certificate of Lawfulness relating to existing alterations or extensions of a single home is £258.',
             policyRefs: [
               {
-                text: 'UK Stuatory Instruments 2023 No. 1197',
+                text: 'UK Statutory Instruments 2023 No. 1197',
                 url: 'https://www.legislation.gov.uk/uksi/2023/1197/made',
               },
             ],

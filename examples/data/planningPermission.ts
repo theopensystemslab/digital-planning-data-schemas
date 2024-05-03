@@ -12,6 +12,9 @@ export const validPlanningPermission: Schema = {
       fee: {
         calculated: 258,
         payable: 258,
+        category: {
+          sixAndSeven: 258,
+        },
         exemption: {
           disability: false,
           resubmission: false,
@@ -1169,13 +1172,27 @@ export const validPlanningPermission: Schema = {
         optional: [],
       },
       fee: {
+        category: {
+          sixAndSeven: [
+            {
+              description:
+                'The fee to apply for planning permission to alter or extend a single home is £258.',
+              policyRefs: [
+                {
+                  text: 'UK Statutory Instruments 2023 No. 1197',
+                  url: 'https://www.legislation.gov.uk/uksi/2023/1197/made',
+                },
+              ],
+            },
+          ],
+        },
         calculated: [
           {
             description:
               'The fee to apply for planning permission to alter or extend a single home is £258.',
             policyRefs: [
               {
-                text: 'UK Stuatory Instruments 2023 No. 1197',
+                text: 'UK Statutory Instruments 2023 No. 1197',
                 url: 'https://www.legislation.gov.uk/uksi/2023/1197/made',
               },
             ],
@@ -1187,7 +1204,7 @@ export const validPlanningPermission: Schema = {
               'The fee to apply for planning permission to alter or extend a single home is £258.',
             policyRefs: [
               {
-                text: 'UK Stuatory Instruments 2023 No. 1197',
+                text: 'UK Statutory Instruments 2023 No. 1197',
                 url: 'https://www.legislation.gov.uk/uksi/2023/1197/made',
               },
             ],
