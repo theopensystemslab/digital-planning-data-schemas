@@ -73,14 +73,10 @@ export interface FeeExplanation {
    */
   category?: {
     one?: CalculateMetadata[];
-    oneToFour?: CalculateMetadata[];
-    oneToThirteen?: CalculateMetadata[];
     two?: CalculateMetadata[];
-    twoToFour?: CalculateMetadata[];
     three?: CalculateMetadata[];
     four?: CalculateMetadata[];
     five?: CalculateMetadata[];
-    fiveToThirteen?: CalculateMetadata[];
     sixAndSeven?: CalculateMetadata[];
     eight?: CalculateMetadata[];
     nine?: CalculateMetadata[];
