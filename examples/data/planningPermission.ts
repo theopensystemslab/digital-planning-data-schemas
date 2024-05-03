@@ -54,9 +54,13 @@ export const validPlanningPermission: Schema = {
       siteContact: {
         role: 'proxy',
       },
-      interest: 'owner.sole',
       ownership: {
+        interest: 'owner.sole',
         certificate: 'a',
+        agriculturalTenants: false,
+        declaration: {
+          accurate: true,
+        },
       },
       agent: {
         name: {

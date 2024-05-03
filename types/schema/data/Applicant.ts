@@ -26,13 +26,6 @@ export interface BaseApplicant {
     name: string;
   };
   address: UserAddress;
-  interest?:
-    | 'owner'
-    | 'owner.sole'
-    | 'owner.co'
-    | 'tenant'
-    | 'occupier'
-    | 'other';
   ownership?: Ownership;
   siteContact: SiteContact;
 }
@@ -42,7 +35,14 @@ export interface BaseApplicant {
  * @description Information about the ownership certificate and property owners, if different than the applicant
  */
 export interface Ownership {
-  certificate: 'a' | 'b' | 'c' | 'd';
+  interest?:
+    | 'owner'
+    | 'owner.sole'
+    | 'owner.co'
+    | 'tenant'
+    | 'occupier'
+    | 'other';
+  certificate?: 'a' | 'b' | 'c' | 'd';
   /**
    * @description Does the land have any agricultural tenants?
    */
@@ -51,10 +51,6 @@ export interface Ownership {
    * @description Has requisite notice been given to all the known owners and agricultural tenants?
    */
   noticeGiven?: boolean;
-  /**
-   * @descrpition Reason requisite notice has not been given, if applicable
-   */
-  noticeReason?: string;
   /**
    * @description Has a notice of the application been published in a newspaper circulating in the area where the land is situated?
    */
@@ -68,18 +64,21 @@ export interface Ownership {
    */
   ownersKnown?: 'all' | 'some' | 'none';
   /**
-   * @description Names and addresses of all known owners and agricultural tenants
+   * @description Names and addresses of all known owners and agricultural tenants, including date of notice or reason requisite notice has not been given, if applicable
    */
   owners?: {
+    interest?: 'owner' | 'tenant' | 'occupier' | 'other';
     name: string;
     address: Address | string;
+    noticeGiven?: boolean;
     noticeDate?: Date;
+    noNoticeReason?: string;
   }[];
   /**
    * @description Declaration of the accuracy of the ownership certificate, including reasonable steps taken to find all owners and publish notice
    */
   declaration?: {
-    accurate: boolean;
+    accurate: true;
   };
 }
 
