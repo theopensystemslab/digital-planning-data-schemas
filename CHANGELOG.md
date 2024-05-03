@@ -18,7 +18,7 @@ incremented for features.
 
 ### Added
 - Added a `validListedBuildingConsent` example payload ([#158](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/158))
-- Added `data.application.fee.category` to communicate breakdown of total calculated fee by category of development ([#157](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/157/files))
+- Added `data.application.fee.category` to communicate breakdown of total calculated fee by category of development ([#157](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/157/files), [#167](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/167))
 - Added union type definition `ApplicationFeeNotApplicable` to signal when a specific application type or journey does not have any associated costs, rather than displaying `data.application.fee.payable = 0` ([#165](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/165))
 
 ### Changed
