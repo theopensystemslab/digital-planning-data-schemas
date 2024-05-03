@@ -101,7 +101,7 @@ export interface ApplicationFee {
        */
       one?: number;
       /**
-       * @description Categorgy 12(2) - Change of use to home
+       * @description Category 12(2) - Change of use to home
        */
       two?: number;
     };

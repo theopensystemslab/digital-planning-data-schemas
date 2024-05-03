@@ -358,7 +358,7 @@
                   "type": "number"
                 },
                 "two": {
-                  "description": "Categorgy 12(2) - Change of use to home",
+                  "description": "Category 12(2) - Change of use to home",
                   "type": "number"
                 }
               },
