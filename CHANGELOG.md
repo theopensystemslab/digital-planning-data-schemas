@@ -13,6 +13,7 @@ incremented for features.
 
 ### Breaking
 - Updated `ApplicationTypes` related to Works to Trees (`wtt`) to reflect legal distinction of consent & notification ([#150](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/150))
+- Updated `data.applicant.interest` to `data.applicant.ownership.interest` for better service alignment ([#168](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/168))
 - Updated all `LondonProperty` subfields to be optional, as not all application types are subject to the extra Greater London Authority reporting requirements ([#164](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/164))
 - Fixed a typo in the `ProtectedSpaceDesignation` type ([#155](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/155))
 
@@ -24,7 +25,7 @@ incremented for features.
 ### Changed
 - Split Outline application types in Minor & Major to better align to legislation ([#151](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/151))
 - Updated `ProjectTypes` to reflect Listed Building Consent and Minor & Major Planning Permission journeys ([#152](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/152), [#153](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/153))
-- Updated `Ownership` type definition to capture information about agricultural tenants and a discrete declaration of accuracy related to notifying any owners ([#159](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/159))
+- Updated `Ownership` type definition to capture more information about agricultural tenants and a discrete declaration of accuracy related to notifying any owners ([#159](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/159))
 - Upgraded a number of technical dependencies via Dependabot
 
 ## [0.5.0] - 2024-03-28
