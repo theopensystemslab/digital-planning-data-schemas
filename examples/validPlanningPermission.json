@@ -50,9 +50,13 @@
       "siteContact": {
         "role": "proxy"
       },
-      "interest": "owner.sole",
       "ownership": {
-        "certificate": "a"
+        "interest": "owner.sole",
+        "certificate": "a",
+        "agriculturalTenants": false,
+        "declaration": {
+          "accurate": true
+        }
       },
       "agent": {
         "name": {

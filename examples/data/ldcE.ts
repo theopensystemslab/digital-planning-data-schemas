@@ -54,22 +54,21 @@ export const validLDCE: Schema = {
       siteContact: {
         role: 'applicant',
       },
-      interest: 'owner.co',
       ownership: {
-        certificate: 'b',
-        noticeGiven: true,
+        interest: 'occupier',
         owners: [
           {
+            interest: 'owner',
             name: 'Matilda Wormwood',
             address: {
               town: 'Reading',
               line1: '9, Library Way',
               line2: '',
               county: '',
-              country: '',
+              country: 'UK',
               postcode: 'L1T3R8Y',
             },
-            noticeDate: '1988-04-01',
+            noticeGiven: true,
           },
         ],
       },

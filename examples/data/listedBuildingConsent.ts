@@ -29,8 +29,8 @@ export const validListedBuildingConsent: Schema = {
         email: 'gonzo@muppets.org',
         phone: '987654321',
       },
-      interest: 'owner.sole',
       ownership: {
+        interest: 'owner.sole',
         certificate: 'b',
         noticeGiven: true,
         agriculturalTenants: true,

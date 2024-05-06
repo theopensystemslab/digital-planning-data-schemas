@@ -26,13 +26,6 @@ export interface BaseApplicant {
     name: string;
   };
   address: UserAddress;
-  interest?:
-    | 'owner'
-    | 'owner.sole'
-    | 'owner.co'
-    | 'tenant'
-    | 'occupier'
-    | 'other';
   ownership?: Ownership;
   siteContact: SiteContact;
 }
@@ -42,7 +35,14 @@ export interface BaseApplicant {
  * @description Information about the ownership certificate and property owners, if different than the applicant
  */
 export interface Ownership {
-  certificate: 'a' | 'b' | 'c' | 'd';
+  interest?:
+    | 'owner'
+    | 'owner.sole'
+    | 'owner.co'
+    | 'tenant'
+    | 'occupier'
+    | 'other';
+  certificate?: 'a' | 'b' | 'c' | 'd';
   /**
    * @description Does the land have any agricultural tenants?
    */
@@ -51,10 +51,6 @@ export interface Ownership {
    * @description Has requisite notice been given to all the known owners and agricultural tenants?
    */
   noticeGiven?: boolean;
-  /**
-   * @descrpition Reason requisite notice has not been given, if applicable
-   */
-  noticeReason?: string;
   /**
    * @description Has a notice of the application been published in a newspaper circulating in the area where the land is situated?
    */
@@ -67,20 +63,40 @@ export interface Ownership {
    * @description Do you know the names and addresses of all owners and agricultural tenants?
    */
   ownersKnown?: 'all' | 'some' | 'none';
-  /**
-   * @description Names and addresses of all known owners and agricultural tenants
-   */
-  owners?: {
-    name: string;
-    address: Address | string;
-    noticeDate?: Date;
-  }[];
+  owners?: Owners[];
   /**
    * @description Declaration of the accuracy of the ownership certificate, including reasonable steps taken to find all owners and publish notice
    */
   declaration?: {
-    accurate: boolean;
+    accurate: true;
   };
+}
+
+/**
+ * @id #Owners
+ * @description Names and addresses of all known owners and agricultural tenants, including confirmation or date of notice, or reason requisite notice has not been given if applicable
+ */
+export type Owners = OwnersNoticeGiven | OwnersNoNoticeGiven | OwnersNoticeDate;
+
+export interface BaseOwners {
+  name: string;
+  address: Address | string;
+  interest?: 'owner' | 'tenant' | 'occupier' | 'other';
+}
+
+// LDC requires `noticeGiven`, and `noNoticeReason` if false
+export interface OwnersNoticeGiven extends BaseOwners {
+  noticeGiven: true;
+}
+
+export interface OwnersNoNoticeGiven extends BaseOwners {
+  noticeGiven: false;
+  noNoticeReason: string;
+}
+
+// PP & LBC require `noticeDate`
+export interface OwnersNoticeDate extends BaseOwners {
+  noticeDate: Date;
 }
 
 /**

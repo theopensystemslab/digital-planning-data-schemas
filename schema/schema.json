@@ -118,17 +118,6 @@
         "email": {
           "$ref": "#/definitions/Email"
         },
-        "interest": {
-          "enum": [
-            "owner",
-            "owner.sole",
-            "owner.co",
-            "tenant",
-            "occupier",
-            "other"
-          ],
-          "type": "string"
-        },
         "name": {
           "additionalProperties": false,
           "properties": {
@@ -1773,17 +1762,6 @@
         },
         "email": {
           "$ref": "#/definitions/Email"
-        },
-        "interest": {
-          "enum": [
-            "owner",
-            "owner.sole",
-            "owner.co",
-            "tenant",
-            "occupier",
-            "other"
-          ],
-          "type": "string"
         },
         "name": {
           "additionalProperties": false,
@@ -5397,6 +5375,135 @@
       ],
       "description": "Types of natural open spaces"
     },
+    "Owners": {
+      "$id": "#Owners",
+      "anyOf": [
+        {
+          "$ref": "#/definitions/OwnersNoticeGiven"
+        },
+        {
+          "$ref": "#/definitions/OwnersNoNoticeGiven"
+        },
+        {
+          "$ref": "#/definitions/OwnersNoticeDate"
+        }
+      ],
+      "description": "Names and addresses of all known owners and agricultural tenants, including confirmation or date of notice, or reason requisite notice has not been given if applicable"
+    },
+    "OwnersNoNoticeGiven": {
+      "additionalProperties": false,
+      "properties": {
+        "address": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Address"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "interest": {
+          "enum": [
+            "owner",
+            "tenant",
+            "occupier",
+            "other"
+          ],
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "noNoticeReason": {
+          "type": "string"
+        },
+        "noticeGiven": {
+          "const": false,
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "address",
+        "name",
+        "noNoticeReason",
+        "noticeGiven"
+      ],
+      "type": "object"
+    },
+    "OwnersNoticeDate": {
+      "additionalProperties": false,
+      "properties": {
+        "address": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Address"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "interest": {
+          "enum": [
+            "owner",
+            "tenant",
+            "occupier",
+            "other"
+          ],
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "noticeDate": {
+          "$ref": "#/definitions/Date"
+        }
+      },
+      "required": [
+        "address",
+        "name",
+        "noticeDate"
+      ],
+      "type": "object"
+    },
+    "OwnersNoticeGiven": {
+      "additionalProperties": false,
+      "properties": {
+        "address": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Address"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "interest": {
+          "enum": [
+            "owner",
+            "tenant",
+            "occupier",
+            "other"
+          ],
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "noticeGiven": {
+          "const": true,
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "address",
+        "name",
+        "noticeGiven"
+      ],
+      "type": "object"
+    },
     "Ownership": {
       "$id": "#Ownership",
       "additionalProperties": false,
@@ -5420,6 +5527,7 @@
           "description": "Declaration of the accuracy of the ownership certificate, including reasonable steps taken to find all owners and publish notice",
           "properties": {
             "accurate": {
+              "const": true,
               "type": "boolean"
             }
           },
@@ -5427,6 +5535,17 @@
             "accurate"
           ],
           "type": "object"
+        },
+        "interest": {
+          "enum": [
+            "owner",
+            "owner.sole",
+            "owner.co",
+            "tenant",
+            "occupier",
+            "other"
+          ],
+          "type": "string"
         },
         "noticeGiven": {
           "description": "Has requisite notice been given to all the known owners and agricultural tenants?",
@@ -5451,36 +5570,9 @@
           ],
           "type": "object"
         },
-        "noticeReason": {
-          "type": "string"
-        },
         "owners": {
-          "description": "Names and addresses of all known owners and agricultural tenants",
           "items": {
-            "additionalProperties": false,
-            "properties": {
-              "address": {
-                "anyOf": [
-                  {
-                    "$ref": "#/definitions/Address"
-                  },
-                  {
-                    "type": "string"
-                  }
-                ]
-              },
-              "name": {
-                "type": "string"
-              },
-              "noticeDate": {
-                "$ref": "#/definitions/Date"
-              }
-            },
-            "required": [
-              "name",
-              "address"
-            ],
-            "type": "object"
+            "$ref": "#/definitions/Owners"
           },
           "type": "array"
         },
@@ -5494,9 +5586,6 @@
           "type": "string"
         }
       },
-      "required": [
-        "certificate"
-      ],
       "type": "object"
     },
     "PlanXMetadata": {

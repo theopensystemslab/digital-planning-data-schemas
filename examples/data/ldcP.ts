@@ -51,9 +51,8 @@ export const validLDCP: Schema = {
       siteContact: {
         role: 'applicant',
       },
-      interest: 'owner.sole',
       ownership: {
-        certificate: 'a',
+        interest: 'owner',
       },
     },
     property: {
