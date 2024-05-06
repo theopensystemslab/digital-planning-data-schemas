@@ -5375,6 +5375,135 @@
       ],
       "description": "Types of natural open spaces"
     },
+    "Owners": {
+      "$id": "#Owners",
+      "anyOf": [
+        {
+          "$ref": "#/definitions/OwnersNoticeGiven"
+        },
+        {
+          "$ref": "#/definitions/OwnersNoNoticeGiven"
+        },
+        {
+          "$ref": "#/definitions/OwnersNoticeDate"
+        }
+      ],
+      "description": "Names and addresses of all known owners and agricultural tenants, including confirmation or date of notice, or reason requisite notice has not been given if applicable"
+    },
+    "OwnersNoNoticeGiven": {
+      "additionalProperties": false,
+      "properties": {
+        "address": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Address"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "interest": {
+          "enum": [
+            "owner",
+            "tenant",
+            "occupier",
+            "other"
+          ],
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "noNoticeReason": {
+          "type": "string"
+        },
+        "noticeGiven": {
+          "const": false,
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "address",
+        "name",
+        "noNoticeReason",
+        "noticeGiven"
+      ],
+      "type": "object"
+    },
+    "OwnersNoticeDate": {
+      "additionalProperties": false,
+      "properties": {
+        "address": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Address"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "interest": {
+          "enum": [
+            "owner",
+            "tenant",
+            "occupier",
+            "other"
+          ],
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "noticeDate": {
+          "$ref": "#/definitions/Date"
+        }
+      },
+      "required": [
+        "address",
+        "name",
+        "noticeDate"
+      ],
+      "type": "object"
+    },
+    "OwnersNoticeGiven": {
+      "additionalProperties": false,
+      "properties": {
+        "address": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Address"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "interest": {
+          "enum": [
+            "owner",
+            "tenant",
+            "occupier",
+            "other"
+          ],
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "noticeGiven": {
+          "const": true,
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "address",
+        "name",
+        "noticeGiven"
+      ],
+      "type": "object"
+    },
     "Ownership": {
       "$id": "#Ownership",
       "additionalProperties": false,
@@ -5442,47 +5571,8 @@
           "type": "object"
         },
         "owners": {
-          "description": "Names and addresses of all known owners and agricultural tenants, including date of notice or reason requisite notice has not been given, if applicable",
           "items": {
-            "additionalProperties": false,
-            "properties": {
-              "address": {
-                "anyOf": [
-                  {
-                    "$ref": "#/definitions/Address"
-                  },
-                  {
-                    "type": "string"
-                  }
-                ]
-              },
-              "interest": {
-                "enum": [
-                  "owner",
-                  "tenant",
-                  "occupier",
-                  "other"
-                ],
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "noNoticeReason": {
-                "type": "string"
-              },
-              "noticeDate": {
-                "$ref": "#/definitions/Date"
-              },
-              "noticeGiven": {
-                "type": "boolean"
-              }
-            },
-            "required": [
-              "name",
-              "address"
-            ],
-            "type": "object"
+            "$ref": "#/definitions/Owners"
           },
           "type": "array"
         },
