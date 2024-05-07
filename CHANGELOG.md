@@ -9,6 +9,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 The minor version will be incremented upon a breaking change and the patch version will be
 incremented for features.
 
+## [0.6.0] - 2024-05-03
+
+### Breaking
+- Updated `ApplicationTypes` related to Works to Trees (`wtt`) to reflect legal distinction of consent & notification ([#150](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/150))
+- Updated `data.applicant.interest` to `data.applicant.ownership.interest` for better service alignment ([#168](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/168))
+- Updated all `LondonProperty` subfields to be optional, as not all application types are subject to the extra Greater London Authority reporting requirements ([#164](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/164))
+- Fixed a typo in the `ProtectedSpaceDesignation` type ([#155](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/155))
+
+### Added
+- Added a `validListedBuildingConsent` example payload ([#158](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/158))
+- Added `data.application.fee.category` to communicate breakdown of total calculated fee by category of development ([#157](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/157/files), [#167](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/167))
+- Added union type definition `ApplicationFeeNotApplicable` to signal when a specific application type or journey does not have any associated costs, rather than displaying `data.application.fee.payable = 0` ([#165](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/165))
+
+### Changed
+- Split Outline application types in Minor & Major to better align to legislation ([#151](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/151))
+- Updated `ProjectTypes` to reflect Listed Building Consent and Minor & Major Planning Permission journeys ([#152](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/152), [#153](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/153))
+- Updated `Ownership` type definition to capture more information about agricultural tenants and a discrete declaration of accuracy related to notifying any owners ([#159](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/159))
+- Upgraded a number of technical dependencies via Dependabot
+
 ## [0.5.0] - 2024-03-28
 
 ### Breaking
