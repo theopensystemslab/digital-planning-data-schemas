@@ -1,6 +1,6 @@
 {
   "name": "digital-planning-data-schemas",
-  "version": "0.6.0",
+  "version": "0.5.0",
   "description": "Digital Planning Data schemas",
   "main": "schema/schema.json",
   "scripts": {
