@@ -3,8 +3,8 @@
  */
 export const ApplicationTypes = {
   advertConsent: 'Consent to display an advertisement',
-  'amendment.minorMaterial':'Consent to make small (minor material) changes to a project with planning permission'
-  'amendment.nonMaterial': 'Consent to make small (non-material) changes to a project with planning permission'
+  'amendment.minorMaterial':'Consent to make small (minor material) changes to a project with planning permission',
+  'amendment.nonMaterial': 'Consent to make small (non-material) changes to a project with planning permission',
   hazardousSubstanceConsent:
     'Consent to move and dispose of hazardous substances',
   hedgerowRemovalNotice: 'Notice to remove a hedge',
