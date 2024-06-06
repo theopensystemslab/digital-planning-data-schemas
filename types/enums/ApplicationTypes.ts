@@ -3,6 +3,8 @@
  */
 export const ApplicationTypes = {
   advertConsent: 'Consent to display an advertisement',
+  'amendment.minorMaterial':'Consent to make small (minor material) changes to a project with planning permission'
+  'amendment.nonMaterial': 'Consent to make small (non-material) changes to a project with planning permission'
   hazardousSubstanceConsent:
     'Consent to move and dispose of hazardous substances',
   hedgerowRemovalNotice: 'Notice to remove a hedge',
@@ -14,8 +16,6 @@ export const ApplicationTypes = {
   'ldc.condition':
     'Lawful Development Certificate - Lawful not to comply with a condition or limitation',
   listed: 'Consent to do works to a Listed Building',
-  nonMaterialAmendment:
-    'Consent to make small changes to a project with Planning Permission',
   pa: 'Prior Approval',
   'pa.part1.classA': 'Prior Approval - Larger extension to a house',
   'pa.part1.classAA': 'Prior Approval - Adding storeys to a house',
