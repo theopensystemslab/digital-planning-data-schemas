@@ -462,7 +462,25 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Consent to make small (minor material) changes to a project with planning permission",
+              "const": "Consent to make small changes to a project with Planning Permission",
+              "type": "string"
+            },
+            "value": {
+              "const": "amendment",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Consent to make small (minor material) changes to a project with Planning Permission",
               "type": "string"
             },
             "value": {
@@ -480,7 +498,7 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Consent to make small (non-material) changes to a project with planning permission",
+              "const": "Consent to make small (non-material) changes to a project with Planning Permission",
               "type": "string"
             },
             "value": {
