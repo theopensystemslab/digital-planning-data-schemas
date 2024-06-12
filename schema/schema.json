@@ -4306,6 +4306,24 @@
           "$ref": "#/definitions/Materials",
           "description": "Existing materials, if applicable to proposal.projectType"
         },
+        "ownership": {
+          "additionalProperties": false,
+          "description": "Current ownership status of the land",
+          "properties": {
+            "status": {
+              "enum": [
+                "public",
+                "private",
+                "mixed"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "status"
+          ],
+          "type": "object"
+        },
         "parking": {
           "additionalProperties": false,
           "properties": {
@@ -4491,7 +4509,39 @@
           "type": "string"
         },
         "socialLandlord": {
-          "type": "boolean"
+          "anyOf": [
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "type": "string"
+                },
+                "status": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "status",
+                "description"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "status": {
+                  "const": false,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "status"
+              ],
+              "type": "object"
+            }
+          ],
+          "title": "Lead Registered Social Landlord"
         },
         "titleNumber": {
           "additionalProperties": false,
@@ -4544,6 +4594,7 @@
       "required": [
         "address",
         "localAuthorityDistrict",
+        "ownership",
         "region",
         "type"
       ],

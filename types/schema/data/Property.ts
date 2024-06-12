@@ -96,7 +96,16 @@ export interface LondonProperty extends UKProperty {
       | 'No';
     number?: string;
   };
-  socialLandlord?: boolean;
+  /**
+   * @title Lead Registered Social Landlord
+   */
+  socialLandlord?: {status: true; description: string} | {status: false};
+  /**
+   * @description Current ownership status of the land
+   */
+  ownership: {
+    status: 'public' | 'private' | 'mixed';
+  };
   parking?: {
     cars?: ExistingCount;
     vans?: ExistingCount;
