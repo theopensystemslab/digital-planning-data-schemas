@@ -4594,7 +4594,6 @@
       "required": [
         "address",
         "localAuthorityDistrict",
-        "ownership",
         "region",
         "type"
       ],

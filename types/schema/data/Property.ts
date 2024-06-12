@@ -103,7 +103,7 @@ export interface LondonProperty extends UKProperty {
   /**
    * @description Current ownership status of the land
    */
-  ownership: {
+  ownership?: {
     status: 'public' | 'private' | 'mixed';
   };
   parking?: {
