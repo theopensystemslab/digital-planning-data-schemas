@@ -17,6 +17,7 @@ export type Proposal = BaseProposal | LondonProposal;
 export interface BaseProposal {
   projectType: ProjectType[];
   description: string;
+  date?: ProposalDates;
   /**
    * @description Location plan boundary proposed by the user, commonly referred to as the red line boundary
    */
@@ -24,11 +25,57 @@ export interface BaseProposal {
     site: GeoJSON;
     area: Area;
   };
-  date?: ProposalDates;
   /**
    * @description Proposed materials, if applicable to projectType
    */
   materials?: Materials;
+  /**
+   * @desription Proposed pedestrian & vehicle access, roads and rights of way, if applicable to application.type
+   */
+  access?: {
+    affected?:
+      | 'vehicle'
+      | 'pedestrian'
+      | 'newRoad'
+      | 'rightsOfWay.newPublic'
+      | 'rightsOfWay.changes';
+  };
+  /**
+   * @description Proposed utilities, if applicable to application.type
+   */
+  utilities?: {
+    foulSewageDisposal?: 'sewer' | 'tank' | 'plant' | 'pit' | 'other';
+  };
+  /**
+   * @description Assessment of flood risk, if applicable to application.type
+   */
+  flood?: {
+    '20mFromWatercourse'?: boolean;
+    increasedRiskElsewhere?: boolean;
+    surfaceWaterDisposal?:
+      | 'drainageSystem'
+      | 'soakaway'
+      | 'sewer'
+      | 'watercourse'
+      | 'pondOrLake'
+      | 'other';
+  };
+  /**
+   * @description Details of biodiversity and geological conservation, if applicable to application.type
+   */
+  ecology?: {
+    speciesAffected?: 'site' | 'adjacent' | 'none';
+    featuresAffected?: 'site' | 'adjacent' | 'none';
+    conservationAffected?: 'site' | 'adjacent' | 'none';
+  };
+  /**
+   * @description Proposed land use, including storage of hazardous materials, if applicable to application.type
+   */
+  use?: {
+    description?: string;
+    contamination?: 'known' | 'suspected' | 'vulnerable';
+    storage?: string[];
+  };
   extend?: {
     area: Area;
   };

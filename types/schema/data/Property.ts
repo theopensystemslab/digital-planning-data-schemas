@@ -1,7 +1,7 @@
 import {GeoJSON} from 'geojson';
 import {PlanningDesignations} from '../../enums/PlanningConstraints';
 import {PropertyTypes} from '../../enums/PropertyTypes';
-import {Area, URL} from '../../utils';
+import {Area, Date, URL} from '../../utils';
 import {Materials} from './shared';
 
 /**
@@ -60,7 +60,19 @@ export interface UKProperty {
       neighbourhood: PlanningConstraint[];
     };
   };
+  /**
+   * @description Existing materials, if applicable to proposal.projectType
+   */
   materials?: Materials;
+  /**
+   * @description Existing land use, if applicable to application.type
+   */
+  use?: {
+    description: string;
+    vacant?: {
+      lastUseEndDate: Date;
+    };
+  };
 }
 
 /**

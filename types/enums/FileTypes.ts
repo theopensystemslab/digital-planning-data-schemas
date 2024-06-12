@@ -34,8 +34,10 @@ export const FileTypes = {
   'floorPlan.proposed': 'Floor plan - proposed',
   foulDrainageAssessment: 'Foul drainage assessment',
   geodiversityAssessment: 'Geodiversity assessment',
-  hedgerowsInformation: 'Plans showing the stretches of hedgerows to be removed',
-  'hedgerowsInformation.plantingDate': 'Evidence of the date of planting of the removed hedgerows',
+  hedgerowsInformation:
+    'Plans showing the stretches of hedgerows to be removed',
+  'hedgerowsInformation.plantingDate':
+    'Evidence of the date of planting of the removed hedgerows',
   heritageStatement: 'Heritage Statement',
   hydrologicalAssessment: 'Hydrological and hydrogeological assessment',
   hydrologyReport: 'Hydrology report',
@@ -62,7 +64,8 @@ export const FileTypes = {
   'photographs.existing': 'Photographs - existing',
   'photographs.proposed': 'Photographs - proposed',
   planningStatement: 'Planning statement',
-  relevantInformation: 'Information the applicant considers relevant to the application',
+  relevantInformation:
+    'Information the applicant considers relevant to the application',
   'roofPlan.existing': 'Roof plan - existing',
   'roofPlan.proposed': 'Roof plan - proposed',
   'sections.existing': 'Sections - existing',
