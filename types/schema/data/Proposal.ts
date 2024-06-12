@@ -1,9 +1,9 @@
 import {GeoJSON} from 'geojson';
 import {
-  OpenSpaceTypes,
-  OpenSpaceDesignations,
-  ProtectedSpaceDesignations,
-} from '../../enums/Nature';
+  GLAOpenSpaceTypes,
+  GLAOpenSpaceDesignations,
+} from '../../enums/OpenSpaces';
+import {GLAProtectedSpaceDesignations} from '../../enums/ProtectedSpaces';
 import {ProjectTypes} from '../../enums/ProjectTypes';
 import {Area, Date} from '../../utils';
 import {Materials} from './shared';
@@ -169,11 +169,11 @@ type ProjectTypeMap = {
  */
 export type ProjectType = ProjectTypeMap[keyof ProjectTypeMap];
 
-type OpenSpaceTypeKeys = keyof typeof OpenSpaceTypes;
+type OpenSpaceTypeKeys = keyof typeof GLAOpenSpaceTypes;
 
 type GenericOpenSpaceType<TKey extends OpenSpaceTypeKeys> = {
   value: TKey;
-  description: (typeof OpenSpaceTypes)[TKey];
+  description: (typeof GLAOpenSpaceTypes)[TKey];
 };
 
 type OpenSpaceTypeMap = {
@@ -186,11 +186,11 @@ type OpenSpaceTypeMap = {
  */
 export type OpenSpaceType = OpenSpaceTypeMap[keyof OpenSpaceTypeMap];
 
-type OpenSpaceDesignationKeys = keyof typeof OpenSpaceDesignations;
+type OpenSpaceDesignationKeys = keyof typeof GLAOpenSpaceDesignations;
 
 type GenericOpenSpaceDesignation<TKey extends OpenSpaceDesignationKeys> = {
   value: TKey;
-  description: (typeof OpenSpaceDesignations)[TKey];
+  description: (typeof GLAOpenSpaceDesignations)[TKey];
 };
 
 type OpenSpaceDesignationMap = {
@@ -204,13 +204,13 @@ type OpenSpaceDesignationMap = {
 export type OpenSpaceDesignation =
   OpenSpaceDesignationMap[keyof OpenSpaceDesignationMap];
 
-type ProtectedSpaceDesignationKeys = keyof typeof ProtectedSpaceDesignations;
+type ProtectedSpaceDesignationKeys = keyof typeof GLAProtectedSpaceDesignations;
 
 type GenericProtectedSpaceDesignation<
   TKey extends ProtectedSpaceDesignationKeys,
 > = {
   value: TKey;
-  description: (typeof ProtectedSpaceDesignations)[TKey];
+  description: (typeof GLAProtectedSpaceDesignations)[TKey];
 };
 
 type ProtectedSpaceDesignationMap = {

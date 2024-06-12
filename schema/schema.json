@@ -462,6 +462,42 @@
           "additionalProperties": false,
           "properties": {
             "description": {
+              "const": "Consent to make small (minor material) changes to a project with planning permission",
+              "type": "string"
+            },
+            "value": {
+              "const": "amendment.minorMaterial",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Consent to make small (non-material) changes to a project with planning permission",
+              "type": "string"
+            },
+            "value": {
+              "const": "amendment.nonMaterial",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
               "const": "Consent to move and dispose of hazardous substances",
               "type": "string"
             },
@@ -593,24 +629,6 @@
             },
             "value": {
               "const": "listed",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "Consent to make small changes to a project with Planning Permission",
-              "type": "string"
-            },
-            "value": {
-              "const": "nonMaterialAmendment",
               "type": "string"
             }
           },
@@ -2797,6 +2815,42 @@
           "additionalProperties": false,
           "properties": {
             "description": {
+              "const": "Plans showing the stretches of hedgerows to be removed",
+              "type": "string"
+            },
+            "value": {
+              "const": "hedgerowsInformation",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Evidence of the date of planting of the removed hedgerows",
+              "type": "string"
+            },
+            "value": {
+              "const": "hedgerowsInformation.plantingDate",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
               "const": "Heritage Statement",
               "type": "string"
             },
@@ -3216,6 +3270,24 @@
             },
             "value": {
               "const": "planningStatement",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Information the applicant considers relevant to the application",
+              "type": "string"
+            },
+            "value": {
+              "const": "relevantInformation",
               "type": "string"
             }
           },
@@ -5064,24 +5136,6 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Metropolitan Open Land",
-              "type": "string"
-            },
-            "value": {
-              "const": "metropolitan",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
               "const": "Local Open Spaces",
               "type": "string"
             },
@@ -5100,11 +5154,11 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Other designation",
+              "const": "Metropolitan Open Land",
               "type": "string"
             },
             "value": {
-              "const": "other",
+              "const": "metropolitan",
               "type": "string"
             }
           },
@@ -5131,6 +5185,24 @@
             "description"
           ],
           "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Other designation",
+              "type": "string"
+            },
+            "value": {
+              "const": "other",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
         }
       ],
       "description": "Designations of natural open spaces"
@@ -5142,65 +5214,11 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Parks and gardens",
+              "const": "Allotments, community gardens and city farms",
               "type": "string"
             },
             "value": {
-              "const": "park",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "Natural and semi-natural",
-              "type": "string"
-            },
-            "value": {
-              "const": "natural",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "Green corridors",
-              "type": "string"
-            },
-            "value": {
-              "const": "greenCorridor",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "Outdoor sports facilities",
-              "type": "string"
-            },
-            "value": {
-              "const": "sport",
+              "const": "allotment",
               "type": "string"
             }
           },
@@ -5232,29 +5250,11 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Provision for children and young people",
+              "const": "Brownfield land",
               "type": "string"
             },
             "value": {
-              "const": "children",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "Allotments, community gardens and city farms",
-              "type": "string"
-            },
-            "value": {
-              "const": "allotment",
+              "const": "brownfield",
               "type": "string"
             }
           },
@@ -5286,11 +5286,11 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Countryside in urban fringe areas",
+              "const": "Provision for children and young people",
               "type": "string"
             },
             "value": {
-              "const": "fringe",
+              "const": "children",
               "type": "string"
             }
           },
@@ -5322,11 +5322,47 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Brownfield land",
+              "const": "Countryside in urban fringe areas",
               "type": "string"
             },
             "value": {
-              "const": "brownfield",
+              "const": "fringe",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Green corridors",
+              "type": "string"
+            },
+            "value": {
+              "const": "greenCorridor",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Natural and semi-natural",
+              "type": "string"
+            },
+            "value": {
+              "const": "natural",
               "type": "string"
             }
           },
@@ -5358,11 +5394,47 @@
           "additionalProperties": false,
           "properties": {
             "description": {
+              "const": "Parks and gardens",
+              "type": "string"
+            },
+            "value": {
+              "const": "park",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
               "const": "Residential gardens",
               "type": "string"
             },
             "value": {
               "const": "residential",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Outdoor sports facilities",
+              "type": "string"
+            },
+            "value": {
+              "const": "sport",
               "type": "string"
             }
           },
@@ -22668,60 +22740,6 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Sites of Special Scientific Interest",
-              "type": "string"
-            },
-            "value": {
-              "const": "SSSI",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "Local Nature Reserve",
-              "type": "string"
-            },
-            "value": {
-              "const": "localReserve",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "Site of Metropolitan Importance",
-              "type": "string"
-            },
-            "value": {
-              "const": "metropolitan",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
               "const": "Site of Borough Grade 1 Importance",
               "type": "string"
             },
@@ -22776,11 +22794,65 @@
           "additionalProperties": false,
           "properties": {
             "description": {
+              "const": "Local Nature Reserve",
+              "type": "string"
+            },
+            "value": {
+              "const": "localReserve",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Site of Metropolitan Importance",
+              "type": "string"
+            },
+            "value": {
+              "const": "metropolitan",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
               "const": "Not designated",
               "type": "string"
             },
             "value": {
               "const": "none",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Sites of Special Scientific Interest",
+              "type": "string"
+            },
+            "value": {
+              "const": "SSSI",
               "type": "string"
             }
           },
