@@ -1,4 +1,3 @@
-import {GeoJSON} from 'geojson';
 import {
   OpenSpaceTypes,
   OpenSpaceDesignations,
@@ -6,7 +5,7 @@ import {
 } from '../../enums/Nature';
 import {ProjectTypes} from '../../enums/ProjectTypes';
 import {Area, Date} from '../../utils';
-import {Materials} from './shared';
+import {GeoBoundary, Materials} from './shared';
 
 /**
  * @id #Proposal
@@ -21,10 +20,7 @@ export interface BaseProposal {
   /**
    * @description Location plan boundary proposed by the user, commonly referred to as the red line boundary
    */
-  boundary?: {
-    site: GeoJSON;
-    area: Area;
-  };
+  boundary?: GeoBoundary;
   /**
    * @description Proposed materials, if applicable to projectType
    */

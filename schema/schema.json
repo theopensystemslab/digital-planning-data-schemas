@@ -1892,21 +1892,8 @@
           "type": "object"
         },
         "boundary": {
-          "additionalProperties": false,
-          "description": "Location plan boundary proposed by the user, commonly referred to as the red line boundary",
-          "properties": {
-            "area": {
-              "$ref": "#/definitions/Area"
-            },
-            "site": {
-              "$ref": "#/definitions/GeoJSON"
-            }
-          },
-          "required": [
-            "site",
-            "area"
-          ],
-          "type": "object"
+          "$ref": "#/definitions/GeoBoundary",
+          "description": "Location plan boundary proposed by the user, commonly referred to as the red line boundary"
         },
         "date": {
           "$ref": "#/definitions/ProposalDates"
@@ -2126,6 +2113,30 @@
       "format": "date-time",
       "pattern": "^([0-9]+)-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])[Tt]([01][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9]|60)(\\.[0-9]+)?(([Zz])|([\\+|\\-]([01][0-9]|2[0-3]):[0-5][0-9]))$",
       "type": "string"
+    },
+    "DesignAndAccessStatement": {
+      "additionalProperties": false,
+      "properties": {
+        "accessAndLayout": {
+          "type": "string"
+        },
+        "landscapingChanges": {
+          "type": "string"
+        },
+        "projectDescription": {
+          "type": "string"
+        },
+        "propertyDescription": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "propertyDescription",
+        "projectDescription",
+        "accessAndLayout",
+        "landscapingChanges"
+      ],
+      "type": "object"
     },
     "Email": {
       "format": "email",
@@ -4078,6 +4089,39 @@
       ],
       "description": "Types of planning documents and drawings"
     },
+    "FilesAsData": {
+      "$id": "#FilesAsData",
+      "additionalProperties": false,
+      "description": "File types that can optionally be provided by answering structured questions, rather than via document upload (see root `files` for uploads)",
+      "properties": {
+        "designAndAccessStatement": {
+          "$ref": "#/definitions/DesignAndAccessStatement"
+        },
+        "heritageStatement": {
+          "$ref": "#/definitions/HeritageStatement"
+        },
+        "locationPlan": {
+          "$ref": "#/definitions/GeoBoundary"
+        }
+      },
+      "type": "object"
+    },
+    "GeoBoundary": {
+      "additionalProperties": false,
+      "properties": {
+        "area": {
+          "$ref": "#/definitions/Area"
+        },
+        "site": {
+          "$ref": "#/definitions/GeoJSON"
+        }
+      },
+      "required": [
+        "site",
+        "area"
+      ],
+      "type": "object"
+    },
     "GeoJSON": {
       "anyOf": [
         {
@@ -4151,6 +4195,52 @@
       "required": [
         "geometries",
         "type"
+      ],
+      "type": "object"
+    },
+    "HeritageStatement": {
+      "additionalProperties": false,
+      "properties": {
+        "designated.WHS": {
+          "$ref": "#/definitions/HeritageStatementBase"
+        },
+        "designated.conservationArea": {
+          "$ref": "#/definitions/HeritageStatementBase"
+        },
+        "listed": {
+          "$ref": "#/definitions/HeritageStatementBase"
+        },
+        "monument": {
+          "$ref": "#/definitions/HeritageStatementBase"
+        }
+      },
+      "type": "object"
+    },
+    "HeritageStatementBase": {
+      "additionalProperties": false,
+      "properties": {
+        "designationDescription": {
+          "type": "string"
+        },
+        "improvements": {
+          "type": "string"
+        },
+        "managedImpact": {
+          "type": "string"
+        },
+        "projectDescpription": {
+          "type": "string"
+        },
+        "propertyDescription": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "designationDescription",
+        "propertyDescription",
+        "projectDescpription",
+        "managedImpact",
+        "improvements"
       ],
       "type": "object"
     },
@@ -4279,21 +4369,8 @@
           ]
         },
         "boundary": {
-          "additionalProperties": false,
-          "description": "HM Land Registry Index polygon for this property, commonly referred to as the blue line boundary, sourced from planning.data.gov.uk/dataset/title-boundary",
-          "properties": {
-            "area": {
-              "$ref": "#/definitions/Area"
-            },
-            "site": {
-              "$ref": "#/definitions/GeoJSON"
-            }
-          },
-          "required": [
-            "site",
-            "area"
-          ],
-          "type": "object"
+          "$ref": "#/definitions/GeoBoundary",
+          "description": "HM Land Registry Index polygon for this property, commonly referred to as the blue line boundary, sourced from planning.data.gov.uk/dataset/title-boundary"
         },
         "localAuthorityDistrict": {
           "description": "Current and historic UK Local Authority Districts that contain this address sourced from planning.data.gov.uk/dataset/local-authority-district",
@@ -4621,21 +4698,8 @@
           "type": "object"
         },
         "boundary": {
-          "additionalProperties": false,
-          "description": "Location plan boundary proposed by the user, commonly referred to as the red line boundary",
-          "properties": {
-            "area": {
-              "$ref": "#/definitions/Area"
-            },
-            "site": {
-              "$ref": "#/definitions/GeoJSON"
-            }
-          },
-          "required": [
-            "site",
-            "area"
-          ],
-          "type": "object"
+          "$ref": "#/definitions/GeoBoundary",
+          "description": "Location plan boundary proposed by the user, commonly referred to as the red line boundary"
         },
         "charging": {
           "additionalProperties": false,
@@ -23921,21 +23985,8 @@
           ]
         },
         "boundary": {
-          "additionalProperties": false,
-          "description": "HM Land Registry Index polygon for this property, commonly referred to as the blue line boundary, sourced from planning.data.gov.uk/dataset/title-boundary",
-          "properties": {
-            "area": {
-              "$ref": "#/definitions/Area"
-            },
-            "site": {
-              "$ref": "#/definitions/GeoJSON"
-            }
-          },
-          "required": [
-            "site",
-            "area"
-          ],
-          "type": "object"
+          "$ref": "#/definitions/GeoBoundary",
+          "description": "HM Land Registry Index polygon for this property, commonly referred to as the blue line boundary, sourced from planning.data.gov.uk/dataset/title-boundary"
         },
         "localAuthorityDistrict": {
           "description": "Current and historic UK Local Authority Districts that contain this address sourced from planning.data.gov.uk/dataset/local-authority-district",
@@ -24158,6 +24209,9 @@
         },
         "application": {
           "$ref": "#/definitions/Application"
+        },
+        "files": {
+          "$ref": "#/definitions/FilesAsData"
         },
         "property": {
           "$ref": "#/definitions/Property"

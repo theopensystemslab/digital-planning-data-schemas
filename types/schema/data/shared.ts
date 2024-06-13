@@ -1,3 +1,6 @@
+import {GeoJSON} from 'geojson';
+import {Area} from '../../utils';
+
 export type Materials = {
   boundary?: string;
   door?: string;
@@ -7,4 +10,9 @@ export type Materials = {
   wall?: string;
   window?: string;
   other?: string;
+};
+
+export type GeoBoundary = {
+  site: GeoJSON;
+  area: Area;
 };
