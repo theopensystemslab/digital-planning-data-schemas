@@ -1875,6 +1875,22 @@
     "BaseProposal": {
       "additionalProperties": false,
       "properties": {
+        "access": {
+          "additionalProperties": false,
+          "properties": {
+            "affected": {
+              "enum": [
+                "vehicle",
+                "pedestrian",
+                "newRoad",
+                "rightsOfWay.newPublic",
+                "rightsOfWay.changes"
+              ],
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
         "boundary": {
           "$ref": "#/definitions/GeoBoundary",
           "description": "Location plan boundary proposed by the user, commonly referred to as the red line boundary"
@@ -1884,6 +1900,37 @@
         },
         "description": {
           "type": "string"
+        },
+        "ecology": {
+          "additionalProperties": false,
+          "description": "Details of biodiversity and geological conservation, if applicable to application.type",
+          "properties": {
+            "conservationAffected": {
+              "enum": [
+                "site",
+                "adjacent",
+                "none"
+              ],
+              "type": "string"
+            },
+            "featuresAffected": {
+              "enum": [
+                "site",
+                "adjacent",
+                "none"
+              ],
+              "type": "string"
+            },
+            "speciesAffected": {
+              "enum": [
+                "site",
+                "adjacent",
+                "none"
+              ],
+              "type": "string"
+            }
+          },
+          "type": "object"
         },
         "extend": {
           "additionalProperties": false,
@@ -1895,6 +1942,30 @@
           "required": [
             "area"
           ],
+          "type": "object"
+        },
+        "flood": {
+          "additionalProperties": false,
+          "description": "Assessment of flood risk, if applicable to application.type",
+          "properties": {
+            "20mFromWatercourse": {
+              "type": "boolean"
+            },
+            "increasedRiskElsewhere": {
+              "type": "boolean"
+            },
+            "surfaceWaterDisposal": {
+              "enum": [
+                "drainageSystem",
+                "soakaway",
+                "sewer",
+                "watercourse",
+                "pondOrLake",
+                "other"
+              ],
+              "type": "string"
+            }
+          },
           "type": "object"
         },
         "materials": {
@@ -1933,6 +2004,47 @@
             "$ref": "#/definitions/ProjectType"
           },
           "type": "array"
+        },
+        "use": {
+          "additionalProperties": false,
+          "description": "Proposed land use, including storage of hazardous materials, if applicable to application.type",
+          "properties": {
+            "contamination": {
+              "enum": [
+                "known",
+                "suspected",
+                "vulnerable"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "storage": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        },
+        "utilities": {
+          "additionalProperties": false,
+          "description": "Proposed utilities, if applicable to application.type",
+          "properties": {
+            "foulSewageDisposal": {
+              "enum": [
+                "sewer",
+                "tank",
+                "plant",
+                "pit",
+                "other"
+              ],
+              "type": "string"
+            }
+          },
+          "type": "object"
         }
       },
       "required": [
@@ -4268,7 +4380,26 @@
           "type": "array"
         },
         "materials": {
-          "$ref": "#/definitions/Materials"
+          "$ref": "#/definitions/Materials",
+          "description": "Existing materials, if applicable to proposal.projectType"
+        },
+        "ownership": {
+          "additionalProperties": false,
+          "description": "Current ownership status of the land",
+          "properties": {
+            "status": {
+              "enum": [
+                "public",
+                "private",
+                "mixed"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "status"
+          ],
+          "type": "object"
         },
         "parking": {
           "additionalProperties": false,
@@ -4455,7 +4586,39 @@
           "type": "string"
         },
         "socialLandlord": {
-          "type": "boolean"
+          "anyOf": [
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "type": "string"
+                },
+                "status": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "status",
+                "description"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "status": {
+                  "const": false,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "status"
+              ],
+              "type": "object"
+            }
+          ],
+          "title": "Lead Registered Social Landlord"
         },
         "titleNumber": {
           "additionalProperties": false,
@@ -4478,6 +4641,31 @@
         },
         "type": {
           "$ref": "#/definitions/PropertyType"
+        },
+        "use": {
+          "additionalProperties": false,
+          "description": "Existing land use, if applicable to application.type",
+          "properties": {
+            "description": {
+              "type": "string"
+            },
+            "vacant": {
+              "additionalProperties": false,
+              "properties": {
+                "lastUseEndDate": {
+                  "$ref": "#/definitions/Date"
+                }
+              },
+              "required": [
+                "lastUseEndDate"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "description"
+          ],
+          "type": "object"
         }
       },
       "required": [
@@ -4493,6 +4681,22 @@
       "additionalProperties": false,
       "description": "Proposal details for project sites within the Greater London Authority (GLA) area",
       "properties": {
+        "access": {
+          "additionalProperties": false,
+          "properties": {
+            "affected": {
+              "enum": [
+                "vehicle",
+                "pedestrian",
+                "newRoad",
+                "rightsOfWay.newPublic",
+                "rightsOfWay.changes"
+              ],
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
         "boundary": {
           "$ref": "#/definitions/GeoBoundary",
           "description": "Location plan boundary proposed by the user, commonly referred to as the red line boundary"
@@ -4556,6 +4760,37 @@
         "description": {
           "type": "string"
         },
+        "ecology": {
+          "additionalProperties": false,
+          "description": "Details of biodiversity and geological conservation, if applicable to application.type",
+          "properties": {
+            "conservationAffected": {
+              "enum": [
+                "site",
+                "adjacent",
+                "none"
+              ],
+              "type": "string"
+            },
+            "featuresAffected": {
+              "enum": [
+                "site",
+                "adjacent",
+                "none"
+              ],
+              "type": "string"
+            },
+            "speciesAffected": {
+              "enum": [
+                "site",
+                "adjacent",
+                "none"
+              ],
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
         "extend": {
           "additionalProperties": false,
           "properties": {
@@ -4566,6 +4801,30 @@
           "required": [
             "area"
           ],
+          "type": "object"
+        },
+        "flood": {
+          "additionalProperties": false,
+          "description": "Assessment of flood risk, if applicable to application.type",
+          "properties": {
+            "20mFromWatercourse": {
+              "type": "boolean"
+            },
+            "increasedRiskElsewhere": {
+              "type": "boolean"
+            },
+            "surfaceWaterDisposal": {
+              "enum": [
+                "drainageSystem",
+                "soakaway",
+                "sewer",
+                "watercourse",
+                "pondOrLake",
+                "other"
+              ],
+              "type": "string"
+            }
+          },
           "type": "object"
         },
         "materials": {
@@ -4889,6 +5148,47 @@
         },
         "schemeName": {
           "type": "string"
+        },
+        "use": {
+          "additionalProperties": false,
+          "description": "Proposed land use, including storage of hazardous materials, if applicable to application.type",
+          "properties": {
+            "contamination": {
+              "enum": [
+                "known",
+                "suspected",
+                "vulnerable"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "storage": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        },
+        "utilities": {
+          "additionalProperties": false,
+          "description": "Proposed utilities, if applicable to application.type",
+          "properties": {
+            "foulSewageDisposal": {
+              "enum": [
+                "sewer",
+                "tank",
+                "plant",
+                "pit",
+                "other"
+              ],
+              "type": "string"
+            }
+          },
+          "type": "object"
         },
         "water": {
           "additionalProperties": false,
@@ -23696,7 +23996,8 @@
           "type": "array"
         },
         "materials": {
-          "$ref": "#/definitions/Materials"
+          "$ref": "#/definitions/Materials",
+          "description": "Existing materials, if applicable to proposal.projectType"
         },
         "planning": {
           "additionalProperties": false,
@@ -23760,6 +24061,31 @@
         },
         "type": {
           "$ref": "#/definitions/PropertyType"
+        },
+        "use": {
+          "additionalProperties": false,
+          "description": "Existing land use, if applicable to application.type",
+          "properties": {
+            "description": {
+              "type": "string"
+            },
+            "vacant": {
+              "additionalProperties": false,
+              "properties": {
+                "lastUseEndDate": {
+                  "$ref": "#/definitions/Date"
+                }
+              },
+              "required": [
+                "lastUseEndDate"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "description"
+          ],
+          "type": "object"
         }
       },
       "required": [

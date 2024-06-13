@@ -1,6 +1,6 @@
 import {PlanningDesignations} from '../../enums/PlanningConstraints';
 import {PropertyTypes} from '../../enums/PropertyTypes';
-import {URL} from '../../utils';
+import {Date, URL} from '../../utils';
 import {GeoBoundary, Materials} from './shared';
 
 /**
@@ -56,7 +56,19 @@ export interface UKProperty {
       neighbourhood: PlanningConstraint[];
     };
   };
+  /**
+   * @description Existing materials, if applicable to proposal.projectType
+   */
   materials?: Materials;
+  /**
+   * @description Existing land use, if applicable to application.type
+   */
+  use?: {
+    description: string;
+    vacant?: {
+      lastUseEndDate: Date;
+    };
+  };
 }
 
 /**
@@ -80,7 +92,16 @@ export interface LondonProperty extends UKProperty {
       | 'No';
     number?: string;
   };
-  socialLandlord?: boolean;
+  /**
+   * @title Lead Registered Social Landlord
+   */
+  socialLandlord?: {status: true; description: string} | {status: false};
+  /**
+   * @description Current ownership status of the land
+   */
+  ownership?: {
+    status: 'public' | 'private' | 'mixed';
+  };
   parking?: {
     cars?: ExistingCount;
     vans?: ExistingCount;
