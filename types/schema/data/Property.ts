@@ -1,8 +1,7 @@
-import {GeoJSON} from 'geojson';
 import {PlanningDesignations} from '../../enums/PlanningConstraints';
 import {PropertyTypes} from '../../enums/PropertyTypes';
-import {Area, URL} from '../../utils';
-import {Materials} from './shared';
+import {URL} from '../../utils';
+import {GeoBoundary, Materials} from './shared';
 
 /**
  * @id #Property
@@ -40,10 +39,7 @@ export interface UKProperty {
   /**
    * @description HM Land Registry Index polygon for this property, commonly referred to as the blue line boundary, sourced from planning.data.gov.uk/dataset/title-boundary
    */
-  boundary?: {
-    site: GeoJSON;
-    area: Area;
-  };
+  boundary?: GeoBoundary;
   /**
    * @description Planning constraints and policies that intersect with this site and may impact or restrict development
    */

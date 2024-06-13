@@ -4,6 +4,7 @@ import {PreAssessment} from './schema/PreAssessment';
 import {Responses} from './schema/Responses';
 import {Applicant} from './schema/data/Applicant';
 import {Application} from './schema/data/Application';
+import {FilesAsData} from './schema/data/Files';
 import {Property} from './schema/data/Property';
 import {Proposal} from './schema/data/Proposal';
 import {User} from './schema/data/User';
@@ -19,6 +20,7 @@ export interface Schema {
     applicant: Applicant;
     property: Property;
     proposal: Proposal;
+    files?: FilesAsData;
   };
   preAssessment?: PreAssessment;
   responses: Responses;
