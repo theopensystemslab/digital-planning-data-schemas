@@ -8,6 +8,7 @@ import {validLDCP} from '../examples/data/ldcP';
 import {validListedBuildingConsent} from '../examples/data/listedBuildingConsent';
 import {validPlanningPermission} from '../examples/data/planningPermission';
 import {validPriorApproval} from '../examples/data/priorApproval';
+import {priorApprovalLargerExtension} from './../examples/data/priorApproval-largerExtension';
 import generatedSchema from '../schema/schema.json';
 
 const examplesToTest = [
@@ -16,6 +17,7 @@ const examplesToTest = [
   validPriorApproval,
   validPlanningPermission,
   validListedBuildingConsent,
+  priorApprovalLargerExtension,
 ];
 
 describe("parsing using the 'jsonschema' library", () => {

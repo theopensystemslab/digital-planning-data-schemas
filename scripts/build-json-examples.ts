@@ -5,6 +5,7 @@ import {validLDCP} from '../examples/data/ldcP';
 import {validListedBuildingConsent} from '../examples/data/listedBuildingConsent';
 import {validPlanningPermission} from '../examples/data/planningPermission';
 import {validPriorApproval} from '../examples/data/priorApproval';
+import {priorApprovalLargerExtension} from '../examples/data/priorApproval-largerExtension';
 import {Schema} from '../types/Schema';
 
 interface Example {
@@ -32,6 +33,10 @@ const examplesToConvert: Example[] = [
   {
     filename: 'validListedBuildingConsent',
     data: validListedBuildingConsent,
+  },
+  {
+    filename: 'priorAproval-largerExtension',
+    data: priorApprovalLargerExtension,
   },
 ];
 
