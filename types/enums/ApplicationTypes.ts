@@ -12,6 +12,8 @@ export const ApplicationTypes = {
   hazardousSubstanceConsent:
     'Consent to move and dispose of hazardous substances',
   hedgerowRemovalNotice: 'Notice to remove a hedge',
+  landDrainageConsent:
+    'Consent to do works affecting ordinary watercourses or land drainage',
   ldc: 'Lawful Development Certificate',
   'ldc.proposed': 'Lawful Development Certificate - Proposed use',
   'ldc.existing': 'Lawful Development Certificate - Existing use',
@@ -41,7 +43,10 @@ export const ApplicationTypes = {
     'Prior Approval - Convert an agricultural building to a school',
   'pa.part3.classT':
     'Prior Approval - Convert a commercial building to a school',
+  'pa.part3.classV': 'Prior Approval - Part 3 Class V',
   'pa.part4.classBB': 'Prior Approval - Put up a temporary structure',
+  'pa.part4.classBC': 'Prior Approval - Part 4 Class BC',
+  'pa.part4.classCA': 'Prior Approval - Part 4 Class CA',
   'pa.part4.classE': 'Prior Approval - Use a building or land to shoot a film',
   'pa.part6':
     'Prior Approval - Alter or add new buildings to agricultural or forestry sites',
@@ -56,8 +61,12 @@ export const ApplicationTypes = {
   'pa.part11.classB': 'Prior Approval - Demolish a building',
   'pa.part14.classJ': 'Prior Approval - Install or change solar panels',
   'pa.part16.classA': 'Prior Approval - Install telecommunications equipment',
+  'pa.part17.classB': 'Prior Approval - Part 17 Class B',
+  'pa.part17.classC': 'Prior Approval - Part 17 Class C',
+  'pa.part17.classG': 'Prior Approval - Part 17 Class G',
   'pa.part18.classA':
     'Prior Approval - Specific Acts of Parliament or Local Orders',
+  'pa.part19.classTA': 'Prior Approval - Part 19 Class TA',
   'pa.part20.classA':
     'Prior Approval - Build homes on a detached blocks of flats',
   'pa.part20.classAA':
@@ -116,6 +125,7 @@ export const ApplicationTypes = {
     'Outline Planning Permission - Approval of reserved matters (major)',
   'pp.outline.major.someReserved':
     'Outline Planning Permission - Consent for the principle of a project specifying some details (major)',
+  rightsOfWayOrder: 'Rights of Way Order - Apply to move or close a path',
   wtt: 'Works to trees',
   'wtt.consent':
     'Works to trees - Consent to carry out works to a tree with a Tree Preservation Order',

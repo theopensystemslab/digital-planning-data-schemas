@@ -552,6 +552,24 @@
           "additionalProperties": false,
           "properties": {
             "description": {
+              "const": "Consent to do works affecting ordinary watercourses or land drainage",
+              "type": "string"
+            },
+            "value": {
+              "const": "landDrainageConsent",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
               "const": "Lawful Development Certificate",
               "type": "string"
             },
@@ -876,11 +894,65 @@
           "additionalProperties": false,
           "properties": {
             "description": {
+              "const": "Prior Approval - Part 3 Class V",
+              "type": "string"
+            },
+            "value": {
+              "const": "pa.part3.classV",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
               "const": "Prior Approval - Put up a temporary structure",
               "type": "string"
             },
             "value": {
               "const": "pa.part4.classBB",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Prior Approval - Part 4 Class BC",
+              "type": "string"
+            },
+            "value": {
+              "const": "pa.part4.classBC",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Prior Approval - Part 4 Class CA",
+              "type": "string"
+            },
+            "value": {
+              "const": "pa.part4.classCA",
               "type": "string"
             }
           },
@@ -1074,11 +1146,83 @@
           "additionalProperties": false,
           "properties": {
             "description": {
+              "const": "Prior Approval - Part 17 Class B",
+              "type": "string"
+            },
+            "value": {
+              "const": "pa.part17.classB",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Prior Approval - Part 17 Class C",
+              "type": "string"
+            },
+            "value": {
+              "const": "pa.part17.classC",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Prior Approval - Part 17 Class G",
+              "type": "string"
+            },
+            "value": {
+              "const": "pa.part17.classG",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
               "const": "Prior Approval - Specific Acts of Parliament or Local Orders",
               "type": "string"
             },
             "value": {
               "const": "pa.part18.classA",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Prior Approval - Part 19 Class TA",
+              "type": "string"
+            },
+            "value": {
+              "const": "pa.part19.classTA",
               "type": "string"
             }
           },
@@ -1673,6 +1817,24 @@
             },
             "value": {
               "const": "pp.outline.major.someReserved",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Rights of Way Order - Apply to move or close a path",
+              "type": "string"
+            },
+            "value": {
+              "const": "rightsOfWayOrder",
               "type": "string"
             }
           },
