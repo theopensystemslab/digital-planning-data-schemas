@@ -1830,6 +1830,24 @@
           "additionalProperties": false,
           "properties": {
             "description": {
+              "const": "Rights of Way Order - Apply to move or close a path",
+              "type": "string"
+            },
+            "value": {
+              "const": "rightsOfWayOrder",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
               "const": "Works to trees",
               "type": "string"
             },

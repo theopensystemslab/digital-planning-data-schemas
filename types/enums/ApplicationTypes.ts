@@ -125,6 +125,7 @@ export const ApplicationTypes = {
     'Outline Planning Permission - Approval of reserved matters (major)',
   'pp.outline.major.someReserved':
     'Outline Planning Permission - Consent for the principle of a project specifying some details (major)',
+  rightsOfWayOrder: 'Rights of Way Order - Apply to move or close a path',
   wtt: 'Works to trees',
   'wtt.consent':
     'Works to trees - Consent to carry out works to a tree with a Tree Preservation Order',
