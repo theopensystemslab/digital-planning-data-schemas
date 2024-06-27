@@ -1,8 +1,8 @@
-import {Schema} from '../../types/Schema';
+import {Schema} from '../../../types/Schema';
 
 const version = process.env['VERSION'] || '@next';
 
-export const validPlanningPermission: Schema = {
+export const planningPermissionFullHouseholder: Schema = {
   data: {
     application: {
       type: {

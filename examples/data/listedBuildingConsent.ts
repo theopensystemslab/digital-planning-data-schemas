@@ -2,7 +2,7 @@ import {Schema} from '../../types/Schema';
 
 const version = process.env['VERSION'] || '@next';
 
-export const validListedBuildingConsent: Schema = {
+export const listedBuildingConsent: Schema = {
   data: {
     user: {
       role: 'applicant',

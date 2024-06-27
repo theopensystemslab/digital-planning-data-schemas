@@ -1,8 +1,8 @@
-import {Schema} from '../../types/Schema';
+import {Schema} from '../../../types/Schema';
 
 const version = process.env['VERSION'] || '@next';
 
-export const validPriorApproval: Schema = {
+export const priorApprovalSolarPanels: Schema = {
   data: {
     application: {
       type: {

@@ -1,8 +1,8 @@
-import {Schema} from '../../types/Schema';
+import {Schema} from '../../../types/Schema';
 
 const version = process.env['VERSION'] || '@next';
 
-export const validLDCP: Schema = {
+export const lawfulDevelopmentCertificateProposed: Schema = {
   data: {
     application: {
       type: {

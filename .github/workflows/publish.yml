@@ -44,7 +44,7 @@ jobs:
           mv types/* "$GITHUB_WORKSPACE/v${{ steps.version_check.outputs.version }}/types"
 
           mkdir -p "$GITHUB_WORKSPACE/v${{ steps.version_check.outputs.version }}/examples"
-          mv examples/*.json "$GITHUB_WORKSPACE/v${{ steps.version_check.outputs.version }}/examples"
+          cp -r examples/**/*.json "$GITHUB_WORKSPACE/v${{ steps.version_check.outputs.version }}/examples"
 
       - name: Checkout Dist Branch
         if: steps.version_check.outputs.changed == 'true'
