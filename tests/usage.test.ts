@@ -3,19 +3,19 @@ import addFormats from 'ajv-formats';
 import {Validator} from 'jsonschema';
 import {describe, expect, test} from 'vitest';
 
-import {validLDCE} from '../examples/data/ldcE';
-import {validLDCP} from '../examples/data/ldcP';
-import {validListedBuildingConsent} from '../examples/data/listedBuildingConsent';
-import {validPlanningPermission} from '../examples/data/planningPermission';
-import {validPriorApproval} from '../examples/data/priorApproval';
+import {lawfulDevelopmentCertificateExisting} from '../examples/data/lawfulDevelopmentCertificate/existing';
+import {lawfulDevelopmentCertificateProposed} from '../examples/data/lawfulDevelopmentCertificate/proposed';
+import {listedBuildingConsent} from '../examples/data/listedBuildingConsent';
+import {planningPermissionFullHouseholder} from '../examples/data/planningPermission/fullHouseholder';
+import {priorApprovalSolarPanels} from '../examples/data/priorApproval/solarPanels';
 import generatedSchema from '../schema/schema.json';
 
 const examplesToTest = [
-  validLDCE,
-  validLDCP,
-  validPriorApproval,
-  validPlanningPermission,
-  validListedBuildingConsent,
+  lawfulDevelopmentCertificateExisting,
+  lawfulDevelopmentCertificateProposed,
+  listedBuildingConsent,
+  planningPermissionFullHouseholder,
+  priorApprovalSolarPanels,
 ];
 
 describe("parsing using the 'jsonschema' library", () => {

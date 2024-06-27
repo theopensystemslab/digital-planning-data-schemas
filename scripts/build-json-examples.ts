@@ -1,10 +1,10 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import {validLDCE} from '../examples/data/ldcE';
-import {validLDCP} from '../examples/data/ldcP';
-import {validListedBuildingConsent} from '../examples/data/listedBuildingConsent';
-import {validPlanningPermission} from '../examples/data/planningPermission';
-import {validPriorApproval} from '../examples/data/priorApproval';
+import {lawfulDevelopmentCertificateExisting} from '../examples/data/lawfulDevelopmentCertificate/existing';
+import {lawfulDevelopmentCertificateProposed} from '../examples/data/lawfulDevelopmentCertificate/proposed';
+import {listedBuildingConsent} from '../examples/data/listedBuildingConsent';
+import {planningPermissionFullHouseholder} from '../examples/data/planningPermission/fullHouseholder';
+import {priorApprovalSolarPanels} from '../examples/data/priorApproval/solarPanels';
 import {Schema} from '../types/Schema';
 
 interface Example {
@@ -14,24 +14,24 @@ interface Example {
 
 const examplesToConvert: Example[] = [
   {
-    filename: 'validLawfulDevelopmentCertificateExisting',
-    data: validLDCE,
+    filename: 'lawfulDevelopmentCertificate/existing',
+    data: lawfulDevelopmentCertificateExisting,
   },
   {
-    filename: 'validLawfulDevelopmentCertificateProposed',
-    data: validLDCP,
+    filename: 'lawfulDevelopmentCertificate/proposed',
+    data: lawfulDevelopmentCertificateProposed,
   },
   {
-    filename: 'validPriorApproval',
-    data: validPriorApproval,
+    filename: 'priorApproval/solarPanels',
+    data: priorApprovalSolarPanels,
   },
   {
-    filename: 'validPlanningPermission',
-    data: validPlanningPermission,
+    filename: 'planningPermission/fullHouseholder',
+    data: planningPermissionFullHouseholder,
   },
   {
-    filename: 'validListedBuildingConsent',
-    data: validListedBuildingConsent,
+    filename: 'listedBuildingConsent',
+    data: listedBuildingConsent,
   },
 ];
 
