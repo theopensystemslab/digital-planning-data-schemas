@@ -13,7 +13,7 @@ export const ApplicationTypes = {
     'Consent to move and dispose of hazardous substances',
   hedgerowRemovalNotice: 'Notice to remove a hedge',
   landDrainageConsent:
-    'Consent to do works on affecting ordinary watercourses or land drainage',
+    'Consent to do works affecting ordinary watercourses or land drainage',
   ldc: 'Lawful Development Certificate',
   'ldc.proposed': 'Lawful Development Certificate - Proposed use',
   'ldc.existing': 'Lawful Development Certificate - Existing use',

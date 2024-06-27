@@ -552,7 +552,7 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Consent to do works on affecting ordinary watercourses or land drainage",
+              "const": "Consent to do works affecting ordinary watercourses or land drainage",
               "type": "string"
             },
             "value": {
