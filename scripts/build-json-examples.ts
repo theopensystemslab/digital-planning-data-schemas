@@ -4,6 +4,7 @@ import {lawfulDevelopmentCertificateExisting} from '../examples/data/lawfulDevel
 import {lawfulDevelopmentCertificateProposed} from '../examples/data/lawfulDevelopmentCertificate/proposed';
 import {listedBuildingConsent} from '../examples/data/listedBuildingConsent';
 import {planningPermissionFullHouseholder} from '../examples/data/planningPermission/fullHouseholder';
+import {priorApprovalExtendUniversity} from '../examples/data/priorApproval/extendUniversity';
 import {priorApprovalSolarPanels} from '../examples/data/priorApproval/solarPanels';
 import {Schema} from '../types/Schema';
 
@@ -20,6 +21,10 @@ const examplesToConvert: Example[] = [
   {
     filename: 'lawfulDevelopmentCertificate/proposed',
     data: lawfulDevelopmentCertificateProposed,
+  },
+  {
+    filename: 'priorApproval/extendUniversity',
+    data: priorApprovalExtendUniversity,
   },
   {
     filename: 'priorApproval/solarPanels',
