@@ -291,6 +291,13 @@ export const priorApprovalExtendUniversity: Schema = {
           govPay: '90u259k4b9qh4tn2h220ui2um3',
         },
       },
+      leadDeveloper: {
+        type: 'ukCompany',
+        company: {
+          name: 'Fit For Cabbages Developments',
+          registrationNumber: '12345679ABC',
+        },
+      },
       declaration: {
         accurate: true,
         connection: {
@@ -388,6 +395,32 @@ export const priorApprovalExtendUniversity: Schema = {
           count: 0,
           difference: 0,
         },
+      },
+      schemeName: "Sir John Betjeman's New Extension",
+      utilities: {
+        internet: {
+          commercialUnits: {count: 1},
+          residentialUnits: {count: 0},
+        },
+        fire: {
+          suppression: true,
+        },
+      },
+      energy: {
+        type: ['solar'],
+        solar: {
+          capacity: {megawatts: 6},
+        },
+      },
+      urbanGreenFactor: {score: 2},
+      greenRoof: {
+        area: {squareMetres: 12},
+      },
+      waste: {
+        reuseRecycle: {percent: 0},
+      },
+      charging: {
+        active: {count: 3},
       },
     },
   },
@@ -1710,7 +1743,7 @@ export const priorApprovalExtendUniversity: Schema = {
     source: 'PlanX',
     service: {
       flowId: '3245f1f1-d044-4e73-a819-20a7ff730964',
-      url: 'https://editor.planx.uk/camden/apply-for-prior-approval/published',
+      url: 'https://editor.planx.dev/camden/apply-for-prior-approval/published',
       files: {
         required: [
           {
@@ -1763,29 +1796,8 @@ export const priorApprovalExtendUniversity: Schema = {
               '<p>This application does not qualify for any exemptions or reductions</p>',
           },
         ],
-        category: {
-          one: [],
-          two: [],
-          three: [],
-          four: [],
-          five: [],
-          sixAndSeven: [],
-          eight: [],
-          nine: [],
-          ten: [],
-          eleven: {
-            one: [],
-          },
-          twelve: {
-            one: [],
-            two: [],
-          },
-          thirteen: [],
-          fourteen: [],
-        },
       },
     },
-    schema:
-      'https://theopensystemslab.github.io/digital-planning-data-schemas/v0.6.0/schema.json',
+    schema: `https://theopensystemslab.github.io/digital-planning-data-schemas/${version}/schema.json`,
   },
 };
