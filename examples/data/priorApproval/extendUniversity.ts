@@ -210,6 +210,43 @@ export const priorApprovalExtendUniversity: Schema = {
           squareMetres: 117.62,
         },
       },
+      titleNumber: {
+        known: 'No',
+      },
+      EPC: {
+        known: 'The property does not have one',
+      },
+      parking: {
+        cars: {
+          count: 0,
+        },
+        vans: {
+          count: 0,
+        },
+        motorcycles: {
+          count: 0,
+        },
+        cycles: {
+          count: 5,
+        },
+        buses: {
+          count: 0,
+        },
+        disabled: {
+          count: 0,
+        },
+        carClub: {
+          count: 0,
+        },
+        offStreet: {
+          residential: {
+            count: 0,
+          },
+        },
+        other: {
+          count: 0,
+        },
+      },
     },
     application: {
       type: {
@@ -310,6 +347,46 @@ export const priorApprovalExtendUniversity: Schema = {
         area: {
           hectares: 0.011762,
           squareMetres: 117.62,
+        },
+      },
+      parking: {
+        cars: {
+          count: 0,
+          difference: 0,
+        },
+        vans: {
+          count: 0,
+          difference: 0,
+        },
+        motorcycles: {
+          count: 0,
+          difference: 0,
+        },
+        cycles: {
+          count: 8,
+          difference: 3,
+        },
+        buses: {
+          count: 0,
+          difference: 0,
+        },
+        disabled: {
+          count: 0,
+          difference: 0,
+        },
+        carClub: {
+          count: 0,
+          difference: 0,
+        },
+        offStreet: {
+          residential: {
+            count: 0,
+            difference: 0,
+          },
+        },
+        other: {
+          count: 0,
+          difference: 0,
         },
       },
     },
@@ -1629,11 +1706,11 @@ export const priorApprovalExtendUniversity: Schema = {
   metadata: {
     id: '7e147b04-0a8b-44fc-a249-c36ef6407f84',
     organisation: 'CMD',
-    submittedAt: '2024-06-28T11:01:04.096Z',
+    submittedAt: '2024-06-29T11:11:11.143Z',
     source: 'PlanX',
     service: {
       flowId: '3245f1f1-d044-4e73-a819-20a7ff730964',
-      url: 'https://editor.planx.dev/camden/apply-for-prior-approval/published',
+      url: 'https://editor.planx.uk/camden/apply-for-prior-approval/published',
       files: {
         required: [
           {
@@ -1686,6 +1763,26 @@ export const priorApprovalExtendUniversity: Schema = {
               '<p>This application does not qualify for any exemptions or reductions</p>',
           },
         ],
+        category: {
+          one: [],
+          two: [],
+          three: [],
+          four: [],
+          five: [],
+          sixAndSeven: [],
+          eight: [],
+          nine: [],
+          ten: [],
+          eleven: {
+            one: [],
+          },
+          twelve: {
+            one: [],
+            two: [],
+          },
+          thirteen: [],
+          fourteen: [],
+        },
       },
     },
     schema:
