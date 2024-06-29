@@ -291,6 +291,9 @@ export const priorApprovalConvertCommercialToHome: Schema = {
           count: 0,
         },
       },
+      occupation: {
+        status: 'vacant',
+      },
     },
     application: {
       type: {
@@ -335,6 +338,13 @@ export const priorApprovalConvertCommercialToHome: Schema = {
           govPay: 'p88epskokjikus74eafr36tfc1',
         },
       },
+      leadDeveloper: {
+        type: 'overseasCompany',
+        company: {
+          name: 'Impression Developments Inc.',
+          registrationNumber: '12345679ABC',
+        },
+      },
       declaration: {
         accurate: true,
         connection: {
@@ -351,6 +361,7 @@ export const priorApprovalConvertCommercialToHome: Schema = {
       ],
       description:
         'Change of use from my sunflower and art supplies shop into a home.',
+      schemeName: "Vincent's New Property Venture",
       date: {
         start: '2024-07-28',
         completion: '2035-07-28',
@@ -430,6 +441,29 @@ export const priorApprovalConvertCommercialToHome: Schema = {
           count: 0,
           difference: 0,
         },
+      },
+      energy: {
+        type: ['heatPump'],
+        heatPumps: {
+          capacity: {megawatts: 2},
+        },
+      },
+      greenRoof: {
+        area: {squareMetres: 0},
+      },
+      urbanGreeningFactor: {
+        score: 4,
+      },
+      utilities: {
+        gas: {connections: {count: 1}},
+        water: {connections: {count: 1}},
+        internet: {
+          residentialUnits: {count: 1},
+          commercialUnits: {count: 0},
+        },
+      },
+      waste: {
+        reuseRecycle: {percent: 2},
       },
     },
   },

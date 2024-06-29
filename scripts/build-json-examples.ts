@@ -1,9 +1,12 @@
 import * as fs from 'fs';
 import * as path from 'path';
+
 import {lawfulDevelopmentCertificateExisting} from '../examples/data/lawfulDevelopmentCertificate/existing';
 import {lawfulDevelopmentCertificateProposed} from '../examples/data/lawfulDevelopmentCertificate/proposed';
 import {listedBuildingConsent} from '../examples/data/listedBuildingConsent';
 import {planningPermissionFullHouseholder} from '../examples/data/planningPermission/fullHouseholder';
+import {priorApprovalBuildHomes} from '../examples/data/priorApproval/buildHomes';
+import {priorApprovalConvertCommercialToHome} from '../examples/data/priorApproval/convertCommercialToHome';
 import {priorApprovalExtendUniversity} from '../examples/data/priorApproval/extendUniversity';
 import {priorApprovalSolarPanels} from '../examples/data/priorApproval/solarPanels';
 import {Schema} from '../types/Schema';
@@ -29,6 +32,14 @@ const examplesToConvert: Example[] = [
   {
     filename: 'priorApproval/solarPanels',
     data: priorApprovalSolarPanels,
+  },
+  {
+    filename: 'priorApproval/buildHomes',
+    data: priorApprovalBuildHomes,
+  },
+  {
+    filename: 'priorApproval/convertCommercialToHome',
+    data: priorApprovalConvertCommercialToHome,
   },
   {
     filename: 'planningPermission/fullHouseholder',

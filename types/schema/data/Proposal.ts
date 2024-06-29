@@ -101,6 +101,9 @@ export interface BaseProposal {
       dwellings?: number;
     };
   };
+  newDwellings?: {
+    newBuild?: {count: number};
+  };
 }
 
 /**
@@ -189,7 +192,7 @@ export interface LondonProposal extends BaseProposal {
    * @description Proposed energy sources
    */
   energy?: {
-    type: 'communityOwned' | 'heatPump' | 'solar'[];
+    type: Array<'communityOwned' | 'heatPump' | 'solar'>;
     communityOwned?: {
       /** @description Proposed total capacity of any on-site community-owned energy generation in megawatts (mW) */
       capacity: {megawatts: number};
@@ -206,7 +209,7 @@ export interface LondonProposal extends BaseProposal {
   /**
    * @description Urban Greening Factor Score
    */
-  urbanGreenFactor?: {
+  urbanGreeningFactor?: {
     score: number;
   };
   /**

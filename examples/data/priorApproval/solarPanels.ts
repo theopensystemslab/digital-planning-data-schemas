@@ -49,10 +49,6 @@ export const priorApprovalSolarPanels: Schema = {
         description:
           'Bingo Hall / Cinema / Conference / Exhibition Centre / Theatre / Concert Hall',
       },
-      planning: {
-        sources: [],
-        designations: [],
-      },
       boundary: {
         site: {
           type: 'Feature',

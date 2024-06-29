@@ -412,7 +412,7 @@ export const priorApprovalExtendUniversity: Schema = {
           capacity: {megawatts: 6},
         },
       },
-      urbanGreenFactor: {score: 2},
+      urbanGreeningFactor: {score: 2},
       greenRoof: {
         area: {squareMetres: 12},
       },

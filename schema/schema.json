@@ -2215,6 +2215,24 @@
           ],
           "type": "object"
         },
+        "newDwellings": {
+          "additionalProperties": false,
+          "properties": {
+            "newBuild": {
+              "additionalProperties": false,
+              "properties": {
+                "count": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "count"
+              ],
+              "type": "object"
+            }
+          },
+          "type": "object"
+        },
         "projectType": {
           "items": {
             "$ref": "#/definitions/ProjectType"
@@ -4705,6 +4723,24 @@
           "$ref": "#/definitions/Materials",
           "description": "Existing materials, if applicable to proposal.projectType"
         },
+        "occupation": {
+          "additionalProperties": false,
+          "description": "Current occupation status of the property",
+          "properties": {
+            "status": {
+              "enum": [
+                "occupied",
+                "partVacant",
+                "vacant"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "status"
+          ],
+          "type": "object"
+        },
         "ownership": {
           "additionalProperties": false,
           "description": "Current ownership status of the land",
@@ -5180,23 +5216,15 @@
               "type": "object"
             },
             "type": {
-              "anyOf": [
-                {
-                  "const": "communityOwned",
-                  "type": "string"
-                },
-                {
-                  "const": "heatPump",
-                  "type": "string"
-                },
-                {
-                  "items": {
-                    "const": "solar",
-                    "type": "string"
-                  },
-                  "type": "array"
-                }
-              ]
+              "items": {
+                "enum": [
+                  "communityOwned",
+                  "heatPump",
+                  "solar"
+                ],
+                "type": "string"
+              },
+              "type": "array"
             }
           },
           "required": [
@@ -5402,6 +5430,24 @@
           "$ref": "#/definitions/NewBuildingsOrStoreys",
           "description": "Creating new buildings"
         },
+        "newDwellings": {
+          "additionalProperties": false,
+          "properties": {
+            "newBuild": {
+              "additionalProperties": false,
+              "properties": {
+                "count": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "count"
+              ],
+              "type": "object"
+            }
+          },
+          "type": "object"
+        },
         "newStoreys": {
           "$ref": "#/definitions/NewBuildingsOrStoreys",
           "description": "Increasing the height of existing buildings"
@@ -5575,7 +5621,7 @@
         "schemeName": {
           "type": "string"
         },
-        "urbanGreenFactor": {
+        "urbanGreeningFactor": {
           "additionalProperties": false,
           "description": "Urban Greening Factor Score",
           "properties": {

@@ -291,6 +291,9 @@ export const priorApprovalBuildHomes: Schema = {
           squareMetres: 1384.18,
         },
       },
+      newDwellings: {
+        newBuild: {count: 10},
+      },
     },
   },
   preAssessment: [
