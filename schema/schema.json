@@ -930,7 +930,7 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Prior Approval - Part 4 Class BC",
+              "const": "Prior Approval - Develop a temporary campsite",
               "type": "string"
             },
             "value": {
@@ -948,7 +948,7 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Prior Approval - Part 4 Class CA",
+              "const": "Prior Approval - Put temporary school buildings on vacant commercial land",
               "type": "string"
             },
             "value": {
@@ -1092,6 +1092,24 @@
           "additionalProperties": false,
           "properties": {
             "description": {
+              "const": "Prior Approval - Development of toll facilities",
+              "type": "string"
+            },
+            "value": {
+              "const": "pa.part9.classD",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
               "const": "Prior Approval - Demolish a building",
               "type": "string"
             },
@@ -1133,6 +1151,24 @@
             },
             "value": {
               "const": "pa.part16.classA",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Prior Approval - Coal mining",
+              "type": "string"
+            },
+            "value": {
+              "const": "pa.part17",
               "type": "string"
             }
           },
@@ -1200,7 +1236,7 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Prior Approval - Specific Acts of Parliament or Local Orders",
+              "const": "Prior Approval - Development under private acts or orders",
               "type": "string"
             },
             "value": {
@@ -1218,7 +1254,7 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Prior Approval - Part 19 Class TA",
+              "const": "Prior Approval - Development on a closed defence site",
               "type": "string"
             },
             "value": {
@@ -2179,6 +2215,24 @@
           ],
           "type": "object"
         },
+        "newDwellings": {
+          "additionalProperties": false,
+          "properties": {
+            "newBuild": {
+              "additionalProperties": false,
+              "properties": {
+                "count": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "count"
+              ],
+              "type": "object"
+            }
+          },
+          "type": "object"
+        },
         "projectType": {
           "items": {
             "$ref": "#/definitions/ProjectType"
@@ -2213,7 +2267,21 @@
           "additionalProperties": false,
           "description": "Proposed utilities, if applicable to application.type",
           "properties": {
+            "fire": {
+              "additionalProperties": false,
+              "description": "Whether the proposal introduces a fire suppression system",
+              "properties": {
+                "suppression": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "suppression"
+              ],
+              "type": "object"
+            },
             "foulSewageDisposal": {
+              "description": "Type of proposed foul sewage disposal",
               "enum": [
                 "sewer",
                 "tank",
@@ -2222,6 +2290,85 @@
                 "other"
               ],
               "type": "string"
+            },
+            "gas": {
+              "additionalProperties": false,
+              "description": "Count of new gas connections",
+              "properties": {
+                "connections": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "count": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "count"
+                  ],
+                  "type": "object"
+                }
+              },
+              "required": [
+                "connections"
+              ],
+              "type": "object"
+            },
+            "internet": {
+              "additionalProperties": false,
+              "description": "Count of new full fibre Internet connections",
+              "properties": {
+                "commercialUnits": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "count": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "count"
+                  ],
+                  "type": "object"
+                },
+                "residentialUnits": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "count": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "count"
+                  ],
+                  "type": "object"
+                }
+              },
+              "required": [
+                "commercialUnits",
+                "residentialUnits"
+              ],
+              "type": "object"
+            },
+            "water": {
+              "additionalProperties": false,
+              "description": "Count of new water connections",
+              "properties": {
+                "connections": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "count": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "count"
+                  ],
+                  "type": "object"
+                }
+              },
+              "required": [
+                "connections"
+              ],
+              "type": "object"
             }
           },
           "type": "object"
@@ -4427,8 +4574,21 @@
     "LeadDeveloper": {
       "additionalProperties": false,
       "properties": {
-        "companyRegistrationNumber": {
-          "type": "string"
+        "company": {
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "registrationNumber": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "name",
+            "registrationNumber"
+          ],
+          "type": "object"
         },
         "type": {
           "enum": [
@@ -4562,6 +4722,24 @@
         "materials": {
           "$ref": "#/definitions/Materials",
           "description": "Existing materials, if applicable to proposal.projectType"
+        },
+        "occupation": {
+          "additionalProperties": false,
+          "description": "Current occupation status of the property",
+          "properties": {
+            "status": {
+              "enum": [
+                "occupied",
+                "partVacant",
+                "vacant"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "status"
+          ],
+          "type": "object"
         },
         "ownership": {
           "additionalProperties": false,
@@ -4910,10 +5088,6 @@
               "type": "object"
             }
           },
-          "required": [
-            "active",
-            "passive"
-          ],
           "type": "object"
         },
         "cost": {
@@ -4971,6 +5145,93 @@
           },
           "type": "object"
         },
+        "energy": {
+          "additionalProperties": false,
+          "description": "Proposed energy sources",
+          "properties": {
+            "communityOwned": {
+              "additionalProperties": false,
+              "properties": {
+                "capacity": {
+                  "additionalProperties": false,
+                  "description": "Proposed total capacity of any on-site community-owned energy generation in megawatts (mW)",
+                  "properties": {
+                    "megawatts": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "megawatts"
+                  ],
+                  "type": "object"
+                }
+              },
+              "required": [
+                "capacity"
+              ],
+              "type": "object"
+            },
+            "heatPumps": {
+              "additionalProperties": false,
+              "properties": {
+                "capacity": {
+                  "additionalProperties": false,
+                  "description": "Proposed total capacity of any heat pumps in megawatts (mV)",
+                  "properties": {
+                    "megawatts": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "megawatts"
+                  ],
+                  "type": "object"
+                }
+              },
+              "required": [
+                "capacity"
+              ],
+              "type": "object"
+            },
+            "solar": {
+              "additionalProperties": false,
+              "properties": {
+                "capacity": {
+                  "additionalProperties": false,
+                  "description": "Proposed total capacity of any solar energy generation in megawatts (mV)",
+                  "properties": {
+                    "megawatts": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "megawatts"
+                  ],
+                  "type": "object"
+                }
+              },
+              "required": [
+                "capacity"
+              ],
+              "type": "object"
+            },
+            "type": {
+              "items": {
+                "enum": [
+                  "communityOwned",
+                  "heatPump",
+                  "solar"
+                ],
+                "type": "string"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "type"
+          ],
+          "type": "object"
+        },
         "extend": {
           "additionalProperties": false,
           "properties": {
@@ -5005,6 +5266,19 @@
               "type": "string"
             }
           },
+          "type": "object"
+        },
+        "greenRoof": {
+          "additionalProperties": false,
+          "description": "Green roof",
+          "properties": {
+            "area": {
+              "$ref": "#/definitions/Area"
+            }
+          },
+          "required": [
+            "area"
+          ],
           "type": "object"
         },
         "materials": {
@@ -5155,6 +5429,24 @@
         "newBuildings": {
           "$ref": "#/definitions/NewBuildingsOrStoreys",
           "description": "Creating new buildings"
+        },
+        "newDwellings": {
+          "additionalProperties": false,
+          "properties": {
+            "newBuild": {
+              "additionalProperties": false,
+              "properties": {
+                "count": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "count"
+              ],
+              "type": "object"
+            }
+          },
+          "type": "object"
         },
         "newStoreys": {
           "$ref": "#/definitions/NewBuildingsOrStoreys",
@@ -5329,6 +5621,19 @@
         "schemeName": {
           "type": "string"
         },
+        "urbanGreeningFactor": {
+          "additionalProperties": false,
+          "description": "Urban Greening Factor Score",
+          "properties": {
+            "score": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "score"
+          ],
+          "type": "object"
+        },
         "use": {
           "additionalProperties": false,
           "description": "Proposed land use, including storage of hazardous materials, if applicable to application.type",
@@ -5357,7 +5662,21 @@
           "additionalProperties": false,
           "description": "Proposed utilities, if applicable to application.type",
           "properties": {
+            "fire": {
+              "additionalProperties": false,
+              "description": "Whether the proposal introduces a fire suppression system",
+              "properties": {
+                "suppression": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "suppression"
+              ],
+              "type": "object"
+            },
             "foulSewageDisposal": {
+              "description": "Type of proposed foul sewage disposal",
               "enum": [
                 "sewer",
                 "tank",
@@ -5366,8 +5685,109 @@
                 "other"
               ],
               "type": "string"
+            },
+            "gas": {
+              "additionalProperties": false,
+              "description": "Count of new gas connections",
+              "properties": {
+                "connections": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "count": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "count"
+                  ],
+                  "type": "object"
+                }
+              },
+              "required": [
+                "connections"
+              ],
+              "type": "object"
+            },
+            "internet": {
+              "additionalProperties": false,
+              "description": "Count of new full fibre Internet connections",
+              "properties": {
+                "commercialUnits": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "count": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "count"
+                  ],
+                  "type": "object"
+                },
+                "residentialUnits": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "count": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "count"
+                  ],
+                  "type": "object"
+                }
+              },
+              "required": [
+                "commercialUnits",
+                "residentialUnits"
+              ],
+              "type": "object"
+            },
+            "water": {
+              "additionalProperties": false,
+              "description": "Count of new water connections",
+              "properties": {
+                "connections": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "count": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "count"
+                  ],
+                  "type": "object"
+                }
+              },
+              "required": [
+                "connections"
+              ],
+              "type": "object"
             }
           },
+          "type": "object"
+        },
+        "waste": {
+          "additionalProperties": false,
+          "description": "Waste management of demolition and construction materials",
+          "properties": {
+            "reuseRecycle": {
+              "additionalProperties": false,
+              "properties": {
+                "percent": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "percent"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "reuseRecycle"
+          ],
           "type": "object"
         },
         "water": {

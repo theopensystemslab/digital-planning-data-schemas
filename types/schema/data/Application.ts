@@ -175,7 +175,10 @@ export interface CommunityInfrastructureLevy {
 
 export interface LeadDeveloper {
   type: 'ukCompany' | 'overseasCompany' | 'none';
-  companyRegistrationNumber?: string;
+  company?: {
+    name: string;
+    registrationNumber: string;
+  };
 }
 
 type ApplicationTypeKeys = keyof typeof ApplicationTypes;

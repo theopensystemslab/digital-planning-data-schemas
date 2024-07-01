@@ -45,8 +45,9 @@ export const ApplicationTypes = {
     'Prior Approval - Convert a commercial building to a school',
   'pa.part3.classV': 'Prior Approval - Part 3 Class V',
   'pa.part4.classBB': 'Prior Approval - Put up a temporary structure',
-  'pa.part4.classBC': 'Prior Approval - Part 4 Class BC',
-  'pa.part4.classCA': 'Prior Approval - Part 4 Class CA',
+  'pa.part4.classBC': 'Prior Approval - Develop a temporary campsite',
+  'pa.part4.classCA':
+    'Prior Approval - Put temporary school buildings on vacant commercial land',
   'pa.part4.classE': 'Prior Approval - Use a building or land to shoot a film',
   'pa.part6':
     'Prior Approval - Alter or add new buildings to agricultural or forestry sites',
@@ -58,15 +59,17 @@ export const ApplicationTypes = {
   'pa.part7.classC': 'Prior Approval - Install click and collect facilities',
   'pa.part7.classM':
     'Prior Approval - Extend a school, college, university, prison or hospital',
+  'pa.part9.classD': 'Prior Approval - Development of toll facilities',
   'pa.part11.classB': 'Prior Approval - Demolish a building',
   'pa.part14.classJ': 'Prior Approval - Install or change solar panels',
   'pa.part16.classA': 'Prior Approval - Install telecommunications equipment',
+  'pa.part17': 'Prior Approval - Coal mining',
   'pa.part17.classB': 'Prior Approval - Part 17 Class B',
   'pa.part17.classC': 'Prior Approval - Part 17 Class C',
   'pa.part17.classG': 'Prior Approval - Part 17 Class G',
   'pa.part18.classA':
-    'Prior Approval - Specific Acts of Parliament or Local Orders',
-  'pa.part19.classTA': 'Prior Approval - Part 19 Class TA',
+    'Prior Approval - Development under private acts or orders',
+  'pa.part19.classTA': 'Prior Approval - Development on a closed defence site',
   'pa.part20.classA':
     'Prior Approval - Build homes on a detached blocks of flats',
   'pa.part20.classAA':

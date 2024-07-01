@@ -102,6 +102,12 @@ export interface LondonProperty extends UKProperty {
   ownership?: {
     status: 'public' | 'private' | 'mixed';
   };
+  /**
+   * @description Current occupation status of the property
+   */
+  occupation?: {
+    status: 'occupied' | 'partVacant' | 'vacant';
+  };
   parking?: {
     cars?: ExistingCount;
     vans?: ExistingCount;

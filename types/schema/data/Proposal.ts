@@ -40,7 +40,25 @@ export interface BaseProposal {
    * @description Proposed utilities, if applicable to application.type
    */
   utilities?: {
+    /** @description Type of proposed foul sewage disposal */
     foulSewageDisposal?: 'sewer' | 'tank' | 'plant' | 'pit' | 'other';
+    /** @description Count of new full fibre Internet connections */
+    internet?: {
+      commercialUnits: {count: number};
+      residentialUnits: {count: number};
+    };
+    /** @description Whether the proposal introduces a fire suppression system */
+    fire?: {
+      suppression: boolean;
+    };
+    /** @description Count of new gas connections */
+    gas?: {
+      connections: {count: number};
+    };
+    /** @description Count of new water connections */
+    water?: {
+      connections: {count: number};
+    };
   };
   /**
    * @description Assessment of flood risk, if applicable to application.type
@@ -83,6 +101,9 @@ export interface BaseProposal {
       dwellings?: number;
     };
   };
+  newDwellings?: {
+    newBuild?: {count: number};
+  };
 }
 
 /**
@@ -123,8 +144,8 @@ export interface LondonProposal extends BaseProposal {
    * @description Electric vehicle charing points
    */
   charging?: {
-    active: {count: number};
-    passive: {count: number};
+    active?: {count: number};
+    passive?: {count: number};
   };
   /**
    * @description Changes that result in the loss, gain, or change of use of natural spaces
@@ -166,6 +187,42 @@ export interface LondonProposal extends BaseProposal {
      * @description Whether the proposal includes grey water re-use
      */
     grey: boolean;
+  };
+  /**
+   * @description Proposed energy sources
+   */
+  energy?: {
+    type: Array<'communityOwned' | 'heatPump' | 'solar'>;
+    communityOwned?: {
+      /** @description Proposed total capacity of any on-site community-owned energy generation in megawatts (mW) */
+      capacity: {megawatts: number};
+    };
+    heatPumps?: {
+      /** @description Proposed total capacity of any heat pumps in megawatts (mV) */
+      capacity: {megawatts: number};
+    };
+    solar?: {
+      /** @description Proposed total capacity of any solar energy generation in megawatts (mV) */
+      capacity: {megawatts: number};
+    };
+  };
+  /**
+   * @description Urban Greening Factor Score
+   */
+  urbanGreeningFactor?: {
+    score: number;
+  };
+  /**
+   * @description Green roof
+   */
+  greenRoof?: {
+    area: Area;
+  };
+  /**
+   * @description Waste management of demolition and construction materials
+   */
+  waste?: {
+    reuseRecycle: {percent: number};
   };
 }
 
