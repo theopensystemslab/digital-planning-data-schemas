@@ -2239,6 +2239,42 @@
           },
           "type": "array"
         },
+        "units": {
+          "additionalProperties": false,
+          "properties": {
+            "residential": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "bedrooms": {
+                    "type": "number"
+                  },
+                  "development": {
+                    "type": "string"
+                  },
+                  "identicalUnits": {
+                    "type": "number"
+                  },
+                  "type": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "development",
+                  "type",
+                  "bedrooms",
+                  "identicalUnits"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "residential"
+          ],
+          "type": "object"
+        },
         "use": {
           "additionalProperties": false,
           "description": "Proposed land use, including storage of hazardous materials, if applicable to application.type",
@@ -5000,6 +5036,42 @@
         "type": {
           "$ref": "#/definitions/PropertyType"
         },
+        "units": {
+          "additionalProperties": false,
+          "properties": {
+            "residential": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "bedrooms": {
+                    "type": "number"
+                  },
+                  "identicalUnits": {
+                    "type": "number"
+                  },
+                  "tenure": {
+                    "type": "string"
+                  },
+                  "type": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "tenure",
+                  "type",
+                  "bedrooms",
+                  "identicalUnits"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "residential"
+          ],
+          "type": "object"
+        },
         "use": {
           "additionalProperties": false,
           "description": "Existing land use, if applicable to application.type",
@@ -5620,6 +5692,217 @@
         },
         "schemeName": {
           "type": "string"
+        },
+        "units": {
+          "additionalProperties": false,
+          "properties": {
+            "residential": {
+              "additionalProperties": false,
+              "properties": {
+                "new": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "area": {
+                        "$ref": "#/definitions/Area"
+                      },
+                      "bedrooms": {
+                        "type": "number"
+                      },
+                      "compliance": {
+                        "type": "string"
+                      },
+                      "development": {
+                        "type": "string"
+                      },
+                      "garden": {
+                        "type": "boolean"
+                      },
+                      "habitableRooms": {
+                        "type": "number"
+                      },
+                      "identicalUnits": {
+                        "type": "number"
+                      },
+                      "olderPersons": {
+                        "type": "boolean"
+                      },
+                      "provider": {
+                        "type": "string"
+                      },
+                      "sheltered": {
+                        "type": "boolean"
+                      },
+                      "tenure": {
+                        "type": "string"
+                      },
+                      "type": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "area",
+                      "bedrooms",
+                      "compliance",
+                      "development",
+                      "garden",
+                      "habitableRooms",
+                      "identicalUnits",
+                      "olderPersons",
+                      "provider",
+                      "sheltered",
+                      "tenure",
+                      "type"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                "rebuilt": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "area": {
+                        "$ref": "#/definitions/Area"
+                      },
+                      "bedrooms": {
+                        "type": "number"
+                      },
+                      "compliance": {
+                        "type": "string"
+                      },
+                      "development": {
+                        "type": "string"
+                      },
+                      "garden": {
+                        "type": "boolean"
+                      },
+                      "habitableRooms": {
+                        "type": "number"
+                      },
+                      "identicalUnits": {
+                        "type": "number"
+                      },
+                      "olderPersons": {
+                        "type": "boolean"
+                      },
+                      "provider": {
+                        "type": "string"
+                      },
+                      "sheltered": {
+                        "type": "boolean"
+                      },
+                      "tenure": {
+                        "type": "string"
+                      },
+                      "type": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "area",
+                      "bedrooms",
+                      "compliance",
+                      "development",
+                      "garden",
+                      "habitableRooms",
+                      "identicalUnits",
+                      "olderPersons",
+                      "provider",
+                      "sheltered",
+                      "tenure",
+                      "type"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                "removed": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "area": {
+                        "$ref": "#/definitions/Area"
+                      },
+                      "bedrooms": {
+                        "type": "number"
+                      },
+                      "compliance": {
+                        "type": "string"
+                      },
+                      "habitableRooms": {
+                        "type": "number"
+                      },
+                      "identicalUnits": {
+                        "type": "number"
+                      },
+                      "olderPersons": {
+                        "type": "boolean"
+                      },
+                      "provider": {
+                        "type": "string"
+                      },
+                      "sheltered": {
+                        "type": "boolean"
+                      },
+                      "tenure": {
+                        "type": "string"
+                      },
+                      "type": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "area",
+                      "bedrooms",
+                      "compliance",
+                      "habitableRooms",
+                      "identicalUnits",
+                      "olderPersons",
+                      "provider",
+                      "sheltered",
+                      "tenure",
+                      "type"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                "retained": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "bedrooms": {
+                        "type": "number"
+                      },
+                      "identicalUnits": {
+                        "type": "number"
+                      },
+                      "tenure": {
+                        "type": "string"
+                      },
+                      "type": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "bedrooms",
+                      "tenure",
+                      "type",
+                      "identicalUnits"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "required": [
+            "residential"
+          ],
+          "type": "object"
         },
         "urbanGreeningFactor": {
           "additionalProperties": false,
@@ -24661,6 +24944,42 @@
         },
         "type": {
           "$ref": "#/definitions/PropertyType"
+        },
+        "units": {
+          "additionalProperties": false,
+          "properties": {
+            "residential": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "bedrooms": {
+                    "type": "number"
+                  },
+                  "identicalUnits": {
+                    "type": "number"
+                  },
+                  "tenure": {
+                    "type": "string"
+                  },
+                  "type": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "tenure",
+                  "type",
+                  "bedrooms",
+                  "identicalUnits"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "residential"
+          ],
+          "type": "object"
         },
         "use": {
           "additionalProperties": false,

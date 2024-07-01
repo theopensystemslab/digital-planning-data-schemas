@@ -69,6 +69,14 @@ export interface UKProperty {
       lastUseEndDate: Date;
     };
   };
+  units?: {
+    residential: {
+      tenure: string; // enum
+      type: string; // enum
+      bedrooms: number;
+      identicalUnits: number;
+    }[];
+  };
 }
 
 /**

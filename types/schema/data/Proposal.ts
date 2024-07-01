@@ -104,13 +104,21 @@ export interface BaseProposal {
   newDwellings?: {
     newBuild?: {count: number};
   };
+  units?: {
+    residential: {
+      development: string; // enum
+      type: string; // enum
+      bedrooms: number;
+      identicalUnits: number;
+    }[];
+  };
 }
 
 /**
  * @id #LondonProposal
  * @description Proposal details for project sites within the Greater London Authority (GLA) area
  */
-export interface LondonProposal extends BaseProposal {
+export interface LondonProposal extends Omit<BaseProposal, 'units'> {
   schemeName?: string;
   /**
    * @description Proposed parking spaces
@@ -224,6 +232,14 @@ export interface LondonProposal extends BaseProposal {
   waste?: {
     reuseRecycle: {percent: number};
   };
+  units?: {
+    residential: {
+      new?: GLAGainedUnit[];
+      rebuilt?: GLAGainedUnit[];
+      removed?: GLALostUnit[];
+      retained?: GLARetainedUnit[];
+    };
+  };
 }
 
 type ProposedCount = {
@@ -323,3 +339,25 @@ type ProtectedSpaceDesignationMap = {
  */
 export type ProtectedSpaceDesignation =
   ProtectedSpaceDesignationMap[keyof ProtectedSpaceDesignationMap];
+
+interface GLARetainedUnit {
+  bedrooms: number;
+  tenure: string; // enum
+  type: string; // enum
+  identicalUnits: number;
+}
+
+interface GLALostUnit extends GLARetainedUnit {
+  habitableRooms: number;
+  compliance: string; // enum
+  provider: string; // enum
+  area: Area;
+  sheltered: boolean;
+  olderPersons: boolean;
+}
+
+interface GLAGainedUnit extends GLALostUnit {
+  development: string; // enum
+  garden: boolean;
+  sheltered: boolean;
+}
