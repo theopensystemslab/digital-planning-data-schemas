@@ -311,6 +311,7 @@ export const ProjectTypes = {
   'internal.staircases': 'Alter internal staircases',
   'internal.walls': 'Alter internal walls',
   'internal.windows.openings': 'Alter internal window openings',
+  maintain: 'Maintenance of an existing structure',
   new: 'Add a new separate building or self-contained units',
   'new.agriculture': 'New agricultural buildings',
   'new.agriculture.glassHouse': 'New agricultural buildings - glass house',
