@@ -2112,6 +2112,9 @@
           },
           "type": "object"
         },
+        "environmentalImpactDescription": {
+          "type": "string"
+        },
         "extend": {
           "additionalProperties": false,
           "properties": {
@@ -2185,6 +2188,58 @@
           },
           "type": "array"
         },
+        "structures": {
+          "additionalProperties": false,
+          "properties": {
+            "permanent": {
+              "additionalProperties": false,
+              "properties": {
+                "count": {
+                  "additionalProperties": false,
+                  "type": "object"
+                }
+              },
+              "required": [
+                "count"
+              ],
+              "type": "object"
+            },
+            "temporary": {
+              "additionalProperties": false,
+              "properties": {
+                "count": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "count"
+              ],
+              "type": "object"
+            },
+            "total": {
+              "type": "number"
+            },
+            "type": {
+              "enum": [
+                "bridge",
+                "catchpit",
+                "culvert",
+                "pipe",
+                "gully",
+                "headwall",
+                "manhole",
+                "weir",
+                "other"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "type",
+            "total"
+          ],
+          "type": "object"
+        },
         "use": {
           "additionalProperties": false,
           "description": "Proposed land use, including storage of hazardous materials, if applicable to application.type",
@@ -2224,6 +2279,30 @@
               "type": "string"
             }
           },
+          "type": "object"
+        },
+        "watercourse": {
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "type": {
+              "enum": [
+                "ditch",
+                "millStream",
+                "pond",
+                "river",
+                "streamOrBrook",
+                "other"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "name",
+            "type"
+          ],
           "type": "object"
         }
       },
@@ -3393,6 +3472,24 @@
             },
             "value": {
               "const": "mineralsAndWasteAssessment",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Information the authority considers necessary for the application",
+              "type": "string"
+            },
+            "value": {
+              "const": "necessaryInformation",
               "type": "string"
             }
           },
@@ -4971,6 +5068,9 @@
           },
           "type": "object"
         },
+        "environmentalImpactDescription": {
+          "type": "string"
+        },
         "extend": {
           "additionalProperties": false,
           "properties": {
@@ -5329,6 +5429,58 @@
         "schemeName": {
           "type": "string"
         },
+        "structures": {
+          "additionalProperties": false,
+          "properties": {
+            "permanent": {
+              "additionalProperties": false,
+              "properties": {
+                "count": {
+                  "additionalProperties": false,
+                  "type": "object"
+                }
+              },
+              "required": [
+                "count"
+              ],
+              "type": "object"
+            },
+            "temporary": {
+              "additionalProperties": false,
+              "properties": {
+                "count": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "count"
+              ],
+              "type": "object"
+            },
+            "total": {
+              "type": "number"
+            },
+            "type": {
+              "enum": [
+                "bridge",
+                "catchpit",
+                "culvert",
+                "pipe",
+                "gully",
+                "headwall",
+                "manhole",
+                "weir",
+                "other"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "type",
+            "total"
+          ],
+          "type": "object"
+        },
         "use": {
           "additionalProperties": false,
           "description": "Proposed land use, including storage of hazardous materials, if applicable to application.type",
@@ -5400,6 +5552,30 @@
             "usage",
             "rain",
             "grey"
+          ],
+          "type": "object"
+        },
+        "watercourse": {
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "type": {
+              "enum": [
+                "ditch",
+                "millStream",
+                "pond",
+                "river",
+                "streamOrBrook",
+                "other"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "name",
+            "type"
           ],
           "type": "object"
         }
@@ -14272,6 +14448,24 @@
             },
             "value": {
               "const": "internal.windows.openings",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Maintenance of an existing structure",
+              "type": "string"
+            },
+            "value": {
+              "const": "maintain",
               "type": "string"
             }
           },

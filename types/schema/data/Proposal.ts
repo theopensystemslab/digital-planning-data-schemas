@@ -83,6 +83,30 @@ export interface BaseProposal {
       dwellings?: number;
     };
   };
+  watercourse?: {
+    name: string;
+    type: 'ditch' | 'millStream' | 'pond' | 'river' | 'streamOrBrook' | 'other';
+  };
+  structures?: {
+    type:
+      | 'bridge'
+      | 'catchpit'
+      | 'culvert'
+      | 'pipe'
+      | 'gully'
+      | 'headwall'
+      | 'manhole'
+      | 'weir'
+      | 'other';
+    total: number;
+    permanent?: {
+      count: Number;
+    };
+    temporary?: {
+      count: number;
+    };
+  };
+  environmentalImpactDescription?: string;
 }
 
 /**
