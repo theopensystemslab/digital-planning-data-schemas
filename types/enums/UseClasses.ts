@@ -12,3 +12,20 @@ export const GLAUseClasses = {
   SG: 'Sui generis',
   unknown: 'Not known',
 };
+
+type GLAUseClassKeys = keyof typeof GLAUseClasses;
+
+type GenericGLAUseClass<TKey extends GLAUseClassKeys> = {
+  value: TKey;
+  description: (typeof GLAUseClasses)[TKey];
+};
+
+type GLAUseClassMap = {
+  [K in GLAUseClassKeys]: GenericGLAUseClass<K>;
+};
+
+/**
+ * @id #GLAUseClass
+ * @description Use classes tracked by the Greater London Authority (GLA)
+ */
+export type GLAUseClass = GLAUseClassMap[keyof GLAUseClassMap];

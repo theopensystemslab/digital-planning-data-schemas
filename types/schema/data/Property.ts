@@ -1,7 +1,9 @@
-import {PlanningDesignations} from '../../enums/PlanningConstraints';
-import {PropertyTypes} from '../../enums/PropertyTypes';
-import {Date, URL} from '../../utils';
-import {GeoBoundary, Materials} from './shared';
+import { PlanningDesignation } from '../../enums/PlanningConstraints';
+import { PropertyType } from '../../enums/PropertyTypes';
+import { UKResidentialUnitType } from "../../enums/ResidentialUnitTypes";
+import { UKTenureType } from "../../enums/TenureTypes";
+import { Date, URL } from '../../utils';
+import { Entity, GeoBoundary, Materials } from './shared';
 
 /**
  * @id #Property
@@ -71,8 +73,8 @@ export interface UKProperty {
   };
   units?: {
     residential: {
-      tenure: string; // enum
-      type: string; // enum
+      tenure: UKTenureType;
+      type: UKResidentialUnitType;
       bedrooms: number;
       identicalUnits: number;
     }[];
@@ -187,60 +189,6 @@ export interface OSAddress extends SiteAddress {
   source: 'Ordnance Survey';
 }
 
-type PropertyTypeKeys = keyof typeof PropertyTypes;
-
-type GenericPropertyType<TKey extends PropertyTypeKeys> = {
-  value: TKey;
-  description: (typeof PropertyTypes)[TKey];
-};
-
-type PropertyTypeMap = {
-  [K in PropertyTypeKeys]: GenericPropertyType<K>;
-};
-
-/**
- * @id #PropertyType
- * @description Property types derived from Basic Land and Property Unit (BLPU) classification codes
- */
-export type PropertyType = PropertyTypeMap[keyof PropertyTypeMap];
-
-type PlanningDesigationKeys = keyof typeof PlanningDesignations;
-
-type GenericPlanningDesignation<TKey extends PlanningDesigationKeys> = {
-  value: TKey;
-  description: (typeof PlanningDesignations)[TKey];
-};
-
-type PlanningDesignationMap = {
-  [K in PlanningDesigationKeys]: GenericPlanningDesignation<K>;
-};
-
-type BasePlanningDesignation =
-  PlanningDesignationMap[keyof PlanningDesignationMap];
-
-/**
- * @description A planning designation that does not intersect with the proposed site, per the DE-9IM spatial relationship definition of intersects
- */
-type NonIntersectingPlanningDesignation = {
-  intersects: false;
-} & BasePlanningDesignation;
-
-/**
- * @description A planning designation that does intersect with the proposed site, per the DE-9IM spatial relationship definition of intersects
- */
-type IntersectingPlanningDesignation = {
-  intersects: true;
-  entities: Entity[] | [];
-} & BasePlanningDesignation;
-
-/**
- * @id #PlanningDesignation
- * @description Planning designations that may intersect with the proposed site determined by spatial queries against Planning Data (planning.data.gov.uk) and Ordnance Survey
- */
-export type PlanningDesignation =
-  | NonIntersectingPlanningDesignation
-  | IntersectingPlanningDesignation;
-
 type BasePlanningConstraint = {
   value: string;
   description: string;
@@ -268,18 +216,3 @@ type IntersectingPlanningConstraint = {
 export type PlanningConstraint =
   | NonIntersectingPlanningConstraint
   | IntersectingPlanningConstraint;
-
-type Entity = {
-  name: string;
-  description?: string;
-  source: PlanningDataSource | OSRoadsSource;
-};
-
-type PlanningDataSource = {
-  text: 'Planning Data';
-  url: URL;
-};
-
-type OSRoadsSource = {
-  text: 'Ordnance Survey MasterMap Highways';
-};
