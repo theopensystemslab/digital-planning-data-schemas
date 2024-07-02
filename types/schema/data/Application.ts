@@ -1,4 +1,4 @@
-import { ApplicationType } from '../../enums/ApplicationTypes';
+import {ApplicationType} from '../../enums/ApplicationTypes';
 import {Date} from '../../utils';
 
 /**

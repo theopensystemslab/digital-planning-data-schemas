@@ -56,4 +56,3 @@ type OpenSpaceDesignationMap = {
  */
 export type OpenSpaceDesignation =
   OpenSpaceDesignationMap[keyof OpenSpaceDesignationMap];
-  

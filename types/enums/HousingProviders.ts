@@ -25,4 +25,5 @@ type GLAHousingProviderMap = {
  * @id #GLAHousingProvider
  * @description Housing provider categories tracked by the Greater London Authority (GLA)
  */
-export type GLAHousingProvider = GLAHousingProviderMap[keyof GLAHousingProviderMap];
+export type GLAHousingProvider =
+  GLAHousingProviderMap[keyof GLAHousingProviderMap];

@@ -2,10 +2,10 @@
  * Values of `data.proposal.units.residential`
  */
 export const BuildingRegulations = {
-  m42: "Part M4(2) of the Building Regulations 2010",
-  m432a: "Part M4(3)(2a) of the Building Regulations 2010",
-  m432b: "Part M4(3)(2b) of the Building Regulations 2010",
-  none: "None of these",
+  m42: 'Part M4(2) of the Building Regulations 2010',
+  m432a: 'Part M4(3)(2a) of the Building Regulations 2010',
+  m432b: 'Part M4(3)(2b) of the Building Regulations 2010',
+  none: 'None of these',
 };
 
 type BuildingRegulationKeys = keyof typeof BuildingRegulations;
@@ -23,4 +23,5 @@ type BuildingRegulationMap = {
  * @id #BuildingRegulation
  * @description Building regulations
  */
-export type BuildingRegulation = BuildingRegulationMap[keyof BuildingRegulationMap];
+export type BuildingRegulation =
+  BuildingRegulationMap[keyof BuildingRegulationMap];

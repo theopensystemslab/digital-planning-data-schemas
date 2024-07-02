@@ -42,7 +42,8 @@ type UKResidentialUnitTypeMap = {
  * @id #UKResidentialUnitType
  * @description Residential unit types tracked throughout the UK
  */
-export type UKResidentialUnitType = UKResidentialUnitTypeMap[keyof UKResidentialUnitTypeMap];
+export type UKResidentialUnitType =
+  UKResidentialUnitTypeMap[keyof UKResidentialUnitTypeMap];
 
 type GLAResidentialUnitTypeKeys = keyof typeof GLAResidentialUnitTypes;
 
@@ -59,4 +60,5 @@ type GLAResidentialUnitTypeMap = {
  * @id #GLAResidentialUnitType
  * @description Residential unit types tracked by the Greater London Authority (GLA)
  */
-export type GLAResidentialUnitType = GLAResidentialUnitTypeMap[keyof GLAResidentialUnitTypeMap];
+export type GLAResidentialUnitType =
+  GLAResidentialUnitTypeMap[keyof GLAResidentialUnitTypeMap];

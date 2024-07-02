@@ -1,4 +1,4 @@
-import { Entity } from "../schema/data/shared";
+import {Entity} from '../schema/data/shared';
 
 /**
  * Values for `data.property.planning.designations`

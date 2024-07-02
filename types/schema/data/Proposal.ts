@@ -1,16 +1,16 @@
-import { BuildingRegulation } from '../../enums/BuildingRegulations';
-import { DevelopmentType } from '../../enums/DevelopmentTypes';
-import { GLAHousingProvider } from "../../enums/HousingProviders";
+import {BuildingRegulation} from '../../enums/BuildingRegulations';
+import {DevelopmentType} from '../../enums/DevelopmentTypes';
+import {GLAHousingProvider} from '../../enums/HousingProviders';
+import {OpenSpaceDesignation, OpenSpaceType} from '../../enums/OpenSpaces';
+import {ProjectType} from '../../enums/ProjectTypes';
+import {ProtectedSpaceDesignation} from '../../enums/ProtectedSpaces';
 import {
-  OpenSpaceDesignation,
-  OpenSpaceType
-} from '../../enums/OpenSpaces';
-import { ProjectType } from '../../enums/ProjectTypes';
-import { ProtectedSpaceDesignation } from '../../enums/ProtectedSpaces';
-import { GLAResidentialUnitType, UKResidentialUnitType } from '../../enums/ResidentialUnitTypes';
-import { GLATenureType } from '../../enums/TenureTypes';
-import { Area, Date } from '../../utils';
-import { GeoBoundary, Materials } from './shared';
+  GLAResidentialUnitType,
+  UKResidentialUnitType,
+} from '../../enums/ResidentialUnitTypes';
+import {GLATenureType} from '../../enums/TenureTypes';
+import {Area, Date} from '../../utils';
+import {GeoBoundary, Materials} from './shared';
 
 /**
  * @id #Proposal

@@ -1,5 +1,5 @@
 import {GeoJSON} from 'geojson';
-import {Area} from '../../utils';
+import {Area, URL} from '../../utils';
 
 export type Materials = {
   boundary?: string;

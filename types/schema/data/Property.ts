@@ -1,9 +1,9 @@
-import { PlanningDesignation } from '../../enums/PlanningConstraints';
-import { PropertyType } from '../../enums/PropertyTypes';
-import { UKResidentialUnitType } from "../../enums/ResidentialUnitTypes";
-import { UKTenureType } from "../../enums/TenureTypes";
-import { Date, URL } from '../../utils';
-import { Entity, GeoBoundary, Materials } from './shared';
+import {PlanningDesignation} from '../../enums/PlanningConstraints';
+import {PropertyType} from '../../enums/PropertyTypes';
+import {UKResidentialUnitType} from '../../enums/ResidentialUnitTypes';
+import {UKTenureType} from '../../enums/TenureTypes';
+import {Date, URL} from '../../utils';
+import {Entity, GeoBoundary, Materials} from './shared';
 
 /**
  * @id #Property
