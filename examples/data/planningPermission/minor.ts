@@ -171,6 +171,9 @@ export const planningPermissionMinor: Schema = {
           },
         ],
       },
+      materials: {
+        boundary: 'black painted timber',
+      },
     },
     application: {
       type: {
@@ -260,6 +263,9 @@ export const planningPermissionMinor: Schema = {
           hectares: 0.069395,
           squareMetres: 693.95,
         },
+      },
+      materials: {
+        boundary: 'white painted timber',
       },
     },
   },
