@@ -7,6 +7,7 @@ import {lawfulDevelopmentCertificateExisting} from '../examples/data/lawfulDevel
 import {lawfulDevelopmentCertificateProposed} from '../examples/data/lawfulDevelopmentCertificate/proposed';
 import {listedBuildingConsent} from '../examples/data/listedBuildingConsent';
 import {planningPermissionFullHouseholder} from '../examples/data/planningPermission/fullHouseholder';
+import {planningPermissionMinor} from '../examples/data/planningPermission/minor';
 import {priorApprovalBuildHomes} from '../examples/data/priorApproval/buildHomes';
 import {priorApprovalConvertCommercialToHome} from '../examples/data/priorApproval/convertCommercialToHome';
 import {priorApprovalExtendUniversity} from '../examples/data/priorApproval/extendUniversity';
@@ -18,6 +19,7 @@ const examplesToTest = [
   lawfulDevelopmentCertificateProposed,
   listedBuildingConsent,
   planningPermissionFullHouseholder,
+  planningPermissionMinor,
   priorApprovalExtendUniversity,
   priorApprovalSolarPanels,
   priorApprovalBuildHomes,
