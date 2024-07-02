@@ -3553,6 +3553,24 @@
           "additionalProperties": false,
           "properties": {
             "description": {
+              "const": "Information the authority considers necessary for the application",
+              "type": "string"
+            },
+            "value": {
+              "const": "necessaryInformation",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
               "const": "New dwellings schedule",
               "type": "string"
             },

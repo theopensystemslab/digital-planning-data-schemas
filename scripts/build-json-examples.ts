@@ -10,6 +10,7 @@ import {priorApprovalConvertCommercialToHome} from '../examples/data/priorApprov
 import {priorApprovalExtendUniversity} from '../examples/data/priorApproval/extendUniversity';
 import {priorApprovalSolarPanels} from '../examples/data/priorApproval/solarPanels';
 import {Schema} from '../types/Schema';
+import {planningPermissionMinor} from '../examples/data/planningPermission/minor';
 
 interface Example {
   filename: string;
@@ -44,6 +45,10 @@ const examplesToConvert: Example[] = [
   {
     filename: 'planningPermission/fullHouseholder',
     data: planningPermissionFullHouseholder,
+  },
+  {
+    filename: 'planningPermission/minor',
+    data: planningPermissionMinor,
   },
   {
     filename: 'listedBuildingConsent',
