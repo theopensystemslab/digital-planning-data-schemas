@@ -269,6 +269,7 @@ export const planningPermissionMinor: Schema = {
         boundary: 'white painted timber',
       },
       units: {
+        total: 1,
         residential: [
           {
             type: {value: 'house', description: 'House'},

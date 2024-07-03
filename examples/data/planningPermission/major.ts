@@ -433,6 +433,7 @@ export const planningPermissionMajor: Schema = {
         surfaceWaterDisposal: 'drainageSystem',
       },
       units: {
+        total: 25,
         residential: [
           {
             type: {value: 'house', description: 'House'},
@@ -442,7 +443,7 @@ export const planningPermissionMajor: Schema = {
           },
           {
             type: {value: 'house', description: 'House'},
-            tenure: 'MH',
+            tenure: {value: 'MH', description: 'Market housing'},
             bedrooms: 4,
             identicalUnits: 5,
           },
@@ -457,7 +458,10 @@ export const planningPermissionMajor: Schema = {
           },
           {
             type: {value: 'house', description: 'House'},
-            tenure: 'SAIR',
+            tenure: {
+              value: 'SAIR',
+              description: 'Social, affordable or interim rent',
+            },
             bedrooms: 2,
             identicalUnits: 2,
           },

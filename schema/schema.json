@@ -23755,9 +23755,13 @@
             "type": "object"
           },
           "type": "array"
+        },
+        "total": {
+          "type": "number"
         }
       },
       "required": [
+        "total",
         "residential"
       ],
       "type": "object"

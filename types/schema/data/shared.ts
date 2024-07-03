@@ -35,6 +35,7 @@ type OSRoadsSource = {
 };
 
 export type ResidentialUnits = {
+  total: number;
   residential: {
     type: UKResidentialUnitType;
     tenure: UKTenureType;

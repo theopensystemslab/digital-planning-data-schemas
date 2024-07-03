@@ -286,6 +286,7 @@
         "boundary": "white painted timber"
       },
       "units": {
+        "total": 1,
         "residential": [
           {
             "type": {
