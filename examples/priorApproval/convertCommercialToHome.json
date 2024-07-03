@@ -468,6 +468,53 @@
           "difference": 0
         }
       },
+      "units": {
+        "residential": {
+          "rebuilt": [
+            {
+              "development": {
+                "value": "changeOfUse",
+                "description": "Change of use"
+              },
+              "type": {
+                "value": "terraced",
+                "description": "Terraced home"
+              },
+              "bedrooms": 3,
+              "habitableRooms": 7,
+              "area": {
+                "squareMetres": 300
+              },
+              "tenure": {
+                "value": "marketForRent",
+                "description": "Market for rent"
+              },
+              "provider": {
+                "value": "private",
+                "description": "Private"
+              },
+              "garden": false,
+              "sheltered": false,
+              "olderPersons": false,
+              "compliance": [
+                {
+                  "value": "m42",
+                  "description": "Part M4(2) of the Building Regulations 2010"
+                },
+                {
+                  "value": "m432a",
+                  "description": "Part M4(3)(2a) of the Building Regulations 2010"
+                },
+                {
+                  "value": "m432b",
+                  "description": "Part M4(3)(2b) of the Building Regulations 2010"
+                }
+              ],
+              "identicalUnits": 1
+            }
+          ]
+        }
+      },
       "energy": {
         "type": [
           "heatPump"
@@ -1573,7 +1620,7 @@
     "source": "PlanX",
     "service": {
       "flowId": "f3cae2c8-9a64-4ce1-8cef-8e6832ad383d",
-      "url": "https://editor.planx.uk/lambeth/apply-for-prior-approval/published",
+      "url": "https://editor.planx.dev/lambeth/apply-for-prior-approval/published",
       "files": {
         "required": [
           {

@@ -107,3 +107,20 @@ export const FileTypes = {
   wasteAndRecyclingStrategy: 'Waste and recycling strategy',
   waterEnvironmentAssessment: 'Water environment assessment',
 };
+
+type FileTypeKeys = keyof typeof FileTypes;
+
+type GenericFileType<TKey extends FileTypeKeys> = {
+  value: TKey;
+  description: (typeof FileTypes)[TKey];
+};
+
+type FileTypeMap = {
+  [K in FileTypeKeys]: GenericFileType<K>;
+};
+
+/**
+ * @id #FileType
+ * @description Types of planning documents and drawings
+ */
+export type FileType = FileTypeMap[keyof FileTypeMap];

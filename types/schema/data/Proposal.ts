@@ -1,11 +1,13 @@
-import {
-  GLAOpenSpaceTypes,
-  GLAOpenSpaceDesignations,
-} from '../../enums/OpenSpaces';
-import {GLAProtectedSpaceDesignations} from '../../enums/ProtectedSpaces';
-import {ProjectTypes} from '../../enums/ProjectTypes';
+import {BuildingRegulation} from '../../enums/BuildingRegulations';
+import {DevelopmentType} from '../../enums/DevelopmentTypes';
+import {GLAHousingProvider} from '../../enums/HousingProviders';
+import {OpenSpaceDesignation, OpenSpaceType} from '../../enums/OpenSpaces';
+import {ProjectType} from '../../enums/ProjectTypes';
+import {ProtectedSpaceDesignation} from '../../enums/ProtectedSpaces';
+import {GLAResidentialUnitType} from '../../enums/ResidentialUnitTypes';
+import {GLATenureType} from '../../enums/TenureTypes';
 import {Area, Date} from '../../utils';
-import {GeoBoundary, Materials} from './shared';
+import {GeoBoundary, Materials, ResidentialUnits} from './shared';
 
 /**
  * @id #Proposal
@@ -102,13 +104,14 @@ export interface BaseProposal {
   newDwellings?: {
     newBuild?: {count: number};
   };
+  units?: ResidentialUnits;
 }
 
 /**
  * @id #LondonProposal
  * @description Proposal details for project sites within the Greater London Authority (GLA) area
  */
-export interface LondonProposal extends BaseProposal {
+export interface LondonProposal extends Omit<BaseProposal, 'units'> {
   schemeName?: string;
   /**
    * @description Proposed parking spaces
@@ -222,6 +225,14 @@ export interface LondonProposal extends BaseProposal {
   waste?: {
     reuseRecycle: {percent: number};
   };
+  units?: {
+    residential: {
+      new?: GLAGainedUnit[];
+      rebuilt?: GLAGainedUnit[];
+      removed?: GLALostUnit[];
+      retained?: GLARetainedUnit[];
+    };
+  };
 }
 
 type ProposedCount = {
@@ -250,74 +261,23 @@ export interface ProposalDates {
   completion?: Date;
 }
 
-type ProjectTypeKeys = keyof typeof ProjectTypes;
+interface GLARetainedUnit {
+  bedrooms: number;
+  tenure: GLATenureType;
+  type: GLAResidentialUnitType;
+  identicalUnits: number;
+}
 
-type GenericProjectType<TKey extends ProjectTypeKeys> = {
-  value: TKey;
-  description: (typeof ProjectTypes)[TKey];
-};
+interface GLALostUnit extends GLARetainedUnit {
+  habitableRooms: number;
+  compliance: BuildingRegulation[];
+  provider: GLAHousingProvider;
+  area: Area;
+  sheltered: boolean;
+  olderPersons: boolean;
+}
 
-type ProjectTypeMap = {
-  [K in ProjectTypeKeys]: GenericProjectType<K>;
-};
-
-/**
- * @id #ProjectType
- * @description Planning project types
- */
-export type ProjectType = ProjectTypeMap[keyof ProjectTypeMap];
-
-type OpenSpaceTypeKeys = keyof typeof GLAOpenSpaceTypes;
-
-type GenericOpenSpaceType<TKey extends OpenSpaceTypeKeys> = {
-  value: TKey;
-  description: (typeof GLAOpenSpaceTypes)[TKey];
-};
-
-type OpenSpaceTypeMap = {
-  [K in OpenSpaceTypeKeys]: GenericOpenSpaceType<K>;
-};
-
-/**
- * @id #OpenSpaceType
- * @description Types of natural open spaces
- */
-export type OpenSpaceType = OpenSpaceTypeMap[keyof OpenSpaceTypeMap];
-
-type OpenSpaceDesignationKeys = keyof typeof GLAOpenSpaceDesignations;
-
-type GenericOpenSpaceDesignation<TKey extends OpenSpaceDesignationKeys> = {
-  value: TKey;
-  description: (typeof GLAOpenSpaceDesignations)[TKey];
-};
-
-type OpenSpaceDesignationMap = {
-  [K in OpenSpaceDesignationKeys]: GenericOpenSpaceDesignation<K>;
-};
-
-/**
- * @id #OpenSpaceDesignation
- * @description Designations of natural open spaces
- */
-export type OpenSpaceDesignation =
-  OpenSpaceDesignationMap[keyof OpenSpaceDesignationMap];
-
-type ProtectedSpaceDesignationKeys = keyof typeof GLAProtectedSpaceDesignations;
-
-type GenericProtectedSpaceDesignation<
-  TKey extends ProtectedSpaceDesignationKeys,
-> = {
-  value: TKey;
-  description: (typeof GLAProtectedSpaceDesignations)[TKey];
-};
-
-type ProtectedSpaceDesignationMap = {
-  [K in ProtectedSpaceDesignationKeys]: GenericProtectedSpaceDesignation<K>;
-};
-
-/**
- * @id #ProtectedSpaceDesignation
- * @description Designations of natural protected spaces
- */
-export type ProtectedSpaceDesignation =
-  ProtectedSpaceDesignationMap[keyof ProtectedSpaceDesignationMap];
+interface GLAGainedUnit extends GLALostUnit {
+  development: DevelopmentType;
+  garden: boolean;
+}
