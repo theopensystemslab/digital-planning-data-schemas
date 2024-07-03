@@ -54,6 +54,8 @@ export const FileTypes = {
     'Details of litter, vermin and bird control',
   locationPlan: 'Location plan',
   mineralsAndWasteAssessment: 'Minerals and waste assessment',
+  necessaryInformation:
+    'Information the authority considers necessary for the application',
   newDwellingsSchedule: 'New dwellings schedule',
   noiseAssessment: 'Noise assessment',
   openSpaceAssessment: 'Open space assessment',

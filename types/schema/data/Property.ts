@@ -1,9 +1,7 @@
 import {PlanningDesignation} from '../../enums/PlanningConstraints';
 import {PropertyType} from '../../enums/PropertyTypes';
-import {UKResidentialUnitType} from '../../enums/ResidentialUnitTypes';
-import {UKTenureType} from '../../enums/TenureTypes';
 import {Date, URL} from '../../utils';
-import {Entity, GeoBoundary, Materials} from './shared';
+import {Entity, GeoBoundary, Materials, ResidentialUnits} from './shared';
 
 /**
  * @id #Property
@@ -71,14 +69,7 @@ export interface UKProperty {
       lastUseEndDate: Date;
     };
   };
-  units?: {
-    residential: {
-      tenure: UKTenureType;
-      type: UKResidentialUnitType;
-      bedrooms: number;
-      identicalUnits: number;
-    }[];
-  };
+  units?: ResidentialUnits;
 }
 
 /**

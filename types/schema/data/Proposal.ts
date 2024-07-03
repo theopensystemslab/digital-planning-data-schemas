@@ -4,13 +4,10 @@ import {GLAHousingProvider} from '../../enums/HousingProviders';
 import {OpenSpaceDesignation, OpenSpaceType} from '../../enums/OpenSpaces';
 import {ProjectType} from '../../enums/ProjectTypes';
 import {ProtectedSpaceDesignation} from '../../enums/ProtectedSpaces';
-import {
-  GLAResidentialUnitType,
-  UKResidentialUnitType,
-} from '../../enums/ResidentialUnitTypes';
+import {GLAResidentialUnitType} from '../../enums/ResidentialUnitTypes';
 import {GLATenureType} from '../../enums/TenureTypes';
 import {Area, Date} from '../../utils';
-import {GeoBoundary, Materials} from './shared';
+import {GeoBoundary, Materials, ResidentialUnits} from './shared';
 
 /**
  * @id #Proposal
@@ -109,14 +106,7 @@ export interface BaseProposal {
   newDwellings?: {
     newBuild?: {count: number};
   };
-  units?: {
-    residential: {
-      development: DevelopmentType;
-      type: UKResidentialUnitType;
-      bedrooms: number;
-      identicalUnits: number;
-    }[];
-  };
+  units?: ResidentialUnits;
 }
 
 /**

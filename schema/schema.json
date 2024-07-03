@@ -2240,40 +2240,7 @@
           "type": "array"
         },
         "units": {
-          "additionalProperties": false,
-          "properties": {
-            "residential": {
-              "items": {
-                "additionalProperties": false,
-                "properties": {
-                  "bedrooms": {
-                    "type": "number"
-                  },
-                  "development": {
-                    "$ref": "#/definitions/DevelopmentType"
-                  },
-                  "identicalUnits": {
-                    "type": "number"
-                  },
-                  "type": {
-                    "$ref": "#/definitions/UKResidentialUnitType"
-                  }
-                },
-                "required": [
-                  "development",
-                  "type",
-                  "bedrooms",
-                  "identicalUnits"
-                ],
-                "type": "object"
-              },
-              "type": "array"
-            }
-          },
-          "required": [
-            "residential"
-          ],
-          "type": "object"
+          "$ref": "#/definitions/ResidentialUnits"
         },
         "use": {
           "additionalProperties": false,
@@ -3836,6 +3803,24 @@
             },
             "value": {
               "const": "mineralsAndWasteAssessment",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Information the authority considers necessary for the application",
+              "type": "string"
+            },
+            "value": {
+              "const": "necessaryInformation",
               "type": "string"
             }
           },
@@ -5945,40 +5930,7 @@
           "$ref": "#/definitions/PropertyType"
         },
         "units": {
-          "additionalProperties": false,
-          "properties": {
-            "residential": {
-              "items": {
-                "additionalProperties": false,
-                "properties": {
-                  "bedrooms": {
-                    "type": "number"
-                  },
-                  "identicalUnits": {
-                    "type": "number"
-                  },
-                  "tenure": {
-                    "$ref": "#/definitions/UKTenureType"
-                  },
-                  "type": {
-                    "$ref": "#/definitions/UKResidentialUnitType"
-                  }
-                },
-                "required": [
-                  "tenure",
-                  "type",
-                  "bedrooms",
-                  "identicalUnits"
-                ],
-                "type": "object"
-              },
-              "type": "array"
-            }
-          },
-          "required": [
-            "residential"
-          ],
-          "type": "object"
+          "$ref": "#/definitions/ResidentialUnits"
         },
         "use": {
           "additionalProperties": false,
@@ -23756,6 +23708,42 @@
       ],
       "type": "object"
     },
+    "ResidentialUnits": {
+      "additionalProperties": false,
+      "properties": {
+        "residential": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "bedrooms": {
+                "type": "number"
+              },
+              "identicalUnits": {
+                "type": "number"
+              },
+              "tenure": {
+                "$ref": "#/definitions/UKTenureType"
+              },
+              "type": {
+                "$ref": "#/definitions/UKResidentialUnitType"
+              }
+            },
+            "required": [
+              "type",
+              "tenure",
+              "bedrooms",
+              "identicalUnits"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "residential"
+      ],
+      "type": "object"
+    },
     "Response": {
       "additionalProperties": false,
       "properties": {
@@ -24500,40 +24488,7 @@
           "$ref": "#/definitions/PropertyType"
         },
         "units": {
-          "additionalProperties": false,
-          "properties": {
-            "residential": {
-              "items": {
-                "additionalProperties": false,
-                "properties": {
-                  "bedrooms": {
-                    "type": "number"
-                  },
-                  "identicalUnits": {
-                    "type": "number"
-                  },
-                  "tenure": {
-                    "$ref": "#/definitions/UKTenureType"
-                  },
-                  "type": {
-                    "$ref": "#/definitions/UKResidentialUnitType"
-                  }
-                },
-                "required": [
-                  "tenure",
-                  "type",
-                  "bedrooms",
-                  "identicalUnits"
-                ],
-                "type": "object"
-              },
-              "type": "array"
-            }
-          },
-          "required": [
-            "residential"
-          ],
-          "type": "object"
+          "$ref": "#/definitions/ResidentialUnits"
         },
         "use": {
           "additionalProperties": false,
