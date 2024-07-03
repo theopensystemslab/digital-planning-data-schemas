@@ -123,7 +123,6 @@ export const priorApprovalConvertCommercialToHome: Schema = {
             value: 'designated',
             description: 'Designated land',
             intersects: true,
-            entities: [],
           },
           {
             value: 'nature.SAC',
@@ -174,7 +173,6 @@ export const priorApprovalConvertCommercialToHome: Schema = {
             value: 'listed.grade.II',
             description: 'Listed Building - Grade II',
             intersects: true,
-            entities: [],
           },
           {
             value: 'listed.grade.II*',

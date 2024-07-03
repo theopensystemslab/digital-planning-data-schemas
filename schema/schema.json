@@ -7875,19 +7875,10 @@
               "type": "string"
             },
             "entities": {
-              "anyOf": [
-                {
-                  "items": {
-                    "$ref": "#/definitions/Entity"
-                  },
-                  "type": "array"
-                },
-                {
-                  "maxItems": 0,
-                  "minItems": 0,
-                  "type": "array"
-                }
-              ]
+              "items": {
+                "$ref": "#/definitions/Entity"
+              },
+              "type": "array"
             },
             "intersects": {
               "const": true,
@@ -8570,19 +8561,10 @@
                   "type": "string"
                 },
                 "entities": {
-                  "anyOf": [
-                    {
-                      "items": {
-                        "$ref": "#/definitions/Entity"
-                      },
-                      "type": "array"
-                    },
-                    {
-                      "maxItems": 0,
-                      "minItems": 0,
-                      "type": "array"
-                    }
-                  ]
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
                 },
                 "intersects": {
                   "const": true,
@@ -8595,7 +8577,6 @@
               },
               "required": [
                 "description",
-                "entities",
                 "intersects",
                 "value"
               ],
@@ -8609,19 +8590,10 @@
                   "type": "string"
                 },
                 "entities": {
-                  "anyOf": [
-                    {
-                      "items": {
-                        "$ref": "#/definitions/Entity"
-                      },
-                      "type": "array"
-                    },
-                    {
-                      "maxItems": 0,
-                      "minItems": 0,
-                      "type": "array"
-                    }
-                  ]
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
                 },
                 "intersects": {
                   "const": true,
@@ -8634,7 +8606,6 @@
               },
               "required": [
                 "description",
-                "entities",
                 "intersects",
                 "value"
               ],
@@ -8648,19 +8619,10 @@
                   "type": "string"
                 },
                 "entities": {
-                  "anyOf": [
-                    {
-                      "items": {
-                        "$ref": "#/definitions/Entity"
-                      },
-                      "type": "array"
-                    },
-                    {
-                      "maxItems": 0,
-                      "minItems": 0,
-                      "type": "array"
-                    }
-                  ]
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
                 },
                 "intersects": {
                   "const": true,
@@ -8673,7 +8635,6 @@
               },
               "required": [
                 "description",
-                "entities",
                 "intersects",
                 "value"
               ],
@@ -8687,19 +8648,10 @@
                   "type": "string"
                 },
                 "entities": {
-                  "anyOf": [
-                    {
-                      "items": {
-                        "$ref": "#/definitions/Entity"
-                      },
-                      "type": "array"
-                    },
-                    {
-                      "maxItems": 0,
-                      "minItems": 0,
-                      "type": "array"
-                    }
-                  ]
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
                 },
                 "intersects": {
                   "const": true,
@@ -8712,7 +8664,6 @@
               },
               "required": [
                 "description",
-                "entities",
                 "intersects",
                 "value"
               ],
@@ -8726,19 +8677,10 @@
                   "type": "string"
                 },
                 "entities": {
-                  "anyOf": [
-                    {
-                      "items": {
-                        "$ref": "#/definitions/Entity"
-                      },
-                      "type": "array"
-                    },
-                    {
-                      "maxItems": 0,
-                      "minItems": 0,
-                      "type": "array"
-                    }
-                  ]
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
                 },
                 "intersects": {
                   "const": true,
@@ -8751,7 +8693,6 @@
               },
               "required": [
                 "description",
-                "entities",
                 "intersects",
                 "value"
               ],
@@ -8765,19 +8706,10 @@
                   "type": "string"
                 },
                 "entities": {
-                  "anyOf": [
-                    {
-                      "items": {
-                        "$ref": "#/definitions/Entity"
-                      },
-                      "type": "array"
-                    },
-                    {
-                      "maxItems": 0,
-                      "minItems": 0,
-                      "type": "array"
-                    }
-                  ]
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
                 },
                 "intersects": {
                   "const": true,
@@ -8790,7 +8722,6 @@
               },
               "required": [
                 "description",
-                "entities",
                 "intersects",
                 "value"
               ],
@@ -8804,19 +8735,10 @@
                   "type": "string"
                 },
                 "entities": {
-                  "anyOf": [
-                    {
-                      "items": {
-                        "$ref": "#/definitions/Entity"
-                      },
-                      "type": "array"
-                    },
-                    {
-                      "maxItems": 0,
-                      "minItems": 0,
-                      "type": "array"
-                    }
-                  ]
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
                 },
                 "intersects": {
                   "const": true,
@@ -8829,7 +8751,6 @@
               },
               "required": [
                 "description",
-                "entities",
                 "intersects",
                 "value"
               ],
@@ -8843,19 +8764,10 @@
                   "type": "string"
                 },
                 "entities": {
-                  "anyOf": [
-                    {
-                      "items": {
-                        "$ref": "#/definitions/Entity"
-                      },
-                      "type": "array"
-                    },
-                    {
-                      "maxItems": 0,
-                      "minItems": 0,
-                      "type": "array"
-                    }
-                  ]
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
                 },
                 "intersects": {
                   "const": true,
@@ -8868,7 +8780,6 @@
               },
               "required": [
                 "description",
-                "entities",
                 "intersects",
                 "value"
               ],
@@ -8882,19 +8793,10 @@
                   "type": "string"
                 },
                 "entities": {
-                  "anyOf": [
-                    {
-                      "items": {
-                        "$ref": "#/definitions/Entity"
-                      },
-                      "type": "array"
-                    },
-                    {
-                      "maxItems": 0,
-                      "minItems": 0,
-                      "type": "array"
-                    }
-                  ]
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
                 },
                 "intersects": {
                   "const": true,
@@ -8907,7 +8809,6 @@
               },
               "required": [
                 "description",
-                "entities",
                 "intersects",
                 "value"
               ],
@@ -8921,19 +8822,10 @@
                   "type": "string"
                 },
                 "entities": {
-                  "anyOf": [
-                    {
-                      "items": {
-                        "$ref": "#/definitions/Entity"
-                      },
-                      "type": "array"
-                    },
-                    {
-                      "maxItems": 0,
-                      "minItems": 0,
-                      "type": "array"
-                    }
-                  ]
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
                 },
                 "intersects": {
                   "const": true,
@@ -8946,7 +8838,6 @@
               },
               "required": [
                 "description",
-                "entities",
                 "intersects",
                 "value"
               ],
@@ -8960,19 +8851,10 @@
                   "type": "string"
                 },
                 "entities": {
-                  "anyOf": [
-                    {
-                      "items": {
-                        "$ref": "#/definitions/Entity"
-                      },
-                      "type": "array"
-                    },
-                    {
-                      "maxItems": 0,
-                      "minItems": 0,
-                      "type": "array"
-                    }
-                  ]
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
                 },
                 "intersects": {
                   "const": true,
@@ -8985,7 +8867,6 @@
               },
               "required": [
                 "description",
-                "entities",
                 "intersects",
                 "value"
               ],
@@ -8999,19 +8880,10 @@
                   "type": "string"
                 },
                 "entities": {
-                  "anyOf": [
-                    {
-                      "items": {
-                        "$ref": "#/definitions/Entity"
-                      },
-                      "type": "array"
-                    },
-                    {
-                      "maxItems": 0,
-                      "minItems": 0,
-                      "type": "array"
-                    }
-                  ]
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
                 },
                 "intersects": {
                   "const": true,
@@ -9024,7 +8896,6 @@
               },
               "required": [
                 "description",
-                "entities",
                 "intersects",
                 "value"
               ],
@@ -9038,19 +8909,10 @@
                   "type": "string"
                 },
                 "entities": {
-                  "anyOf": [
-                    {
-                      "items": {
-                        "$ref": "#/definitions/Entity"
-                      },
-                      "type": "array"
-                    },
-                    {
-                      "maxItems": 0,
-                      "minItems": 0,
-                      "type": "array"
-                    }
-                  ]
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
                 },
                 "intersects": {
                   "const": true,
@@ -9063,7 +8925,6 @@
               },
               "required": [
                 "description",
-                "entities",
                 "intersects",
                 "value"
               ],
@@ -9077,19 +8938,10 @@
                   "type": "string"
                 },
                 "entities": {
-                  "anyOf": [
-                    {
-                      "items": {
-                        "$ref": "#/definitions/Entity"
-                      },
-                      "type": "array"
-                    },
-                    {
-                      "maxItems": 0,
-                      "minItems": 0,
-                      "type": "array"
-                    }
-                  ]
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
                 },
                 "intersects": {
                   "const": true,
@@ -9102,7 +8954,6 @@
               },
               "required": [
                 "description",
-                "entities",
                 "intersects",
                 "value"
               ],
@@ -9116,19 +8967,10 @@
                   "type": "string"
                 },
                 "entities": {
-                  "anyOf": [
-                    {
-                      "items": {
-                        "$ref": "#/definitions/Entity"
-                      },
-                      "type": "array"
-                    },
-                    {
-                      "maxItems": 0,
-                      "minItems": 0,
-                      "type": "array"
-                    }
-                  ]
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
                 },
                 "intersects": {
                   "const": true,
@@ -9141,7 +8983,6 @@
               },
               "required": [
                 "description",
-                "entities",
                 "intersects",
                 "value"
               ],
@@ -9155,19 +8996,10 @@
                   "type": "string"
                 },
                 "entities": {
-                  "anyOf": [
-                    {
-                      "items": {
-                        "$ref": "#/definitions/Entity"
-                      },
-                      "type": "array"
-                    },
-                    {
-                      "maxItems": 0,
-                      "minItems": 0,
-                      "type": "array"
-                    }
-                  ]
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
                 },
                 "intersects": {
                   "const": true,
@@ -9180,7 +9012,6 @@
               },
               "required": [
                 "description",
-                "entities",
                 "intersects",
                 "value"
               ],
@@ -9194,19 +9025,10 @@
                   "type": "string"
                 },
                 "entities": {
-                  "anyOf": [
-                    {
-                      "items": {
-                        "$ref": "#/definitions/Entity"
-                      },
-                      "type": "array"
-                    },
-                    {
-                      "maxItems": 0,
-                      "minItems": 0,
-                      "type": "array"
-                    }
-                  ]
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
                 },
                 "intersects": {
                   "const": true,
@@ -9219,7 +9041,6 @@
               },
               "required": [
                 "description",
-                "entities",
                 "intersects",
                 "value"
               ],
@@ -9233,19 +9054,10 @@
                   "type": "string"
                 },
                 "entities": {
-                  "anyOf": [
-                    {
-                      "items": {
-                        "$ref": "#/definitions/Entity"
-                      },
-                      "type": "array"
-                    },
-                    {
-                      "maxItems": 0,
-                      "minItems": 0,
-                      "type": "array"
-                    }
-                  ]
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
                 },
                 "intersects": {
                   "const": true,
@@ -9258,7 +9070,6 @@
               },
               "required": [
                 "description",
-                "entities",
                 "intersects",
                 "value"
               ],
@@ -9272,19 +9083,10 @@
                   "type": "string"
                 },
                 "entities": {
-                  "anyOf": [
-                    {
-                      "items": {
-                        "$ref": "#/definitions/Entity"
-                      },
-                      "type": "array"
-                    },
-                    {
-                      "maxItems": 0,
-                      "minItems": 0,
-                      "type": "array"
-                    }
-                  ]
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
                 },
                 "intersects": {
                   "const": true,
@@ -9297,7 +9099,6 @@
               },
               "required": [
                 "description",
-                "entities",
                 "intersects",
                 "value"
               ],
@@ -9311,19 +9112,10 @@
                   "type": "string"
                 },
                 "entities": {
-                  "anyOf": [
-                    {
-                      "items": {
-                        "$ref": "#/definitions/Entity"
-                      },
-                      "type": "array"
-                    },
-                    {
-                      "maxItems": 0,
-                      "minItems": 0,
-                      "type": "array"
-                    }
-                  ]
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
                 },
                 "intersects": {
                   "const": true,
@@ -9336,7 +9128,6 @@
               },
               "required": [
                 "description",
-                "entities",
                 "intersects",
                 "value"
               ],
@@ -9350,19 +9141,10 @@
                   "type": "string"
                 },
                 "entities": {
-                  "anyOf": [
-                    {
-                      "items": {
-                        "$ref": "#/definitions/Entity"
-                      },
-                      "type": "array"
-                    },
-                    {
-                      "maxItems": 0,
-                      "minItems": 0,
-                      "type": "array"
-                    }
-                  ]
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
                 },
                 "intersects": {
                   "const": true,
@@ -9375,7 +9157,6 @@
               },
               "required": [
                 "description",
-                "entities",
                 "intersects",
                 "value"
               ],
@@ -9389,19 +9170,10 @@
                   "type": "string"
                 },
                 "entities": {
-                  "anyOf": [
-                    {
-                      "items": {
-                        "$ref": "#/definitions/Entity"
-                      },
-                      "type": "array"
-                    },
-                    {
-                      "maxItems": 0,
-                      "minItems": 0,
-                      "type": "array"
-                    }
-                  ]
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
                 },
                 "intersects": {
                   "const": true,
@@ -9414,7 +9186,6 @@
               },
               "required": [
                 "description",
-                "entities",
                 "intersects",
                 "value"
               ],
@@ -9428,19 +9199,10 @@
                   "type": "string"
                 },
                 "entities": {
-                  "anyOf": [
-                    {
-                      "items": {
-                        "$ref": "#/definitions/Entity"
-                      },
-                      "type": "array"
-                    },
-                    {
-                      "maxItems": 0,
-                      "minItems": 0,
-                      "type": "array"
-                    }
-                  ]
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
                 },
                 "intersects": {
                   "const": true,
@@ -9453,7 +9215,6 @@
               },
               "required": [
                 "description",
-                "entities",
                 "intersects",
                 "value"
               ],
@@ -9467,19 +9228,10 @@
                   "type": "string"
                 },
                 "entities": {
-                  "anyOf": [
-                    {
-                      "items": {
-                        "$ref": "#/definitions/Entity"
-                      },
-                      "type": "array"
-                    },
-                    {
-                      "maxItems": 0,
-                      "minItems": 0,
-                      "type": "array"
-                    }
-                  ]
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
                 },
                 "intersects": {
                   "const": true,
@@ -9492,7 +9244,6 @@
               },
               "required": [
                 "description",
-                "entities",
                 "intersects",
                 "value"
               ],
@@ -9506,19 +9257,10 @@
                   "type": "string"
                 },
                 "entities": {
-                  "anyOf": [
-                    {
-                      "items": {
-                        "$ref": "#/definitions/Entity"
-                      },
-                      "type": "array"
-                    },
-                    {
-                      "maxItems": 0,
-                      "minItems": 0,
-                      "type": "array"
-                    }
-                  ]
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
                 },
                 "intersects": {
                   "const": true,
@@ -9531,7 +9273,6 @@
               },
               "required": [
                 "description",
-                "entities",
                 "intersects",
                 "value"
               ],
@@ -9545,19 +9286,10 @@
                   "type": "string"
                 },
                 "entities": {
-                  "anyOf": [
-                    {
-                      "items": {
-                        "$ref": "#/definitions/Entity"
-                      },
-                      "type": "array"
-                    },
-                    {
-                      "maxItems": 0,
-                      "minItems": 0,
-                      "type": "array"
-                    }
-                  ]
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
                 },
                 "intersects": {
                   "const": true,
@@ -9570,7 +9302,6 @@
               },
               "required": [
                 "description",
-                "entities",
                 "intersects",
                 "value"
               ],
@@ -9584,19 +9315,10 @@
                   "type": "string"
                 },
                 "entities": {
-                  "anyOf": [
-                    {
-                      "items": {
-                        "$ref": "#/definitions/Entity"
-                      },
-                      "type": "array"
-                    },
-                    {
-                      "maxItems": 0,
-                      "minItems": 0,
-                      "type": "array"
-                    }
-                  ]
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
                 },
                 "intersects": {
                   "const": true,
@@ -9609,7 +9331,6 @@
               },
               "required": [
                 "description",
-                "entities",
                 "intersects",
                 "value"
               ],
@@ -9623,19 +9344,10 @@
                   "type": "string"
                 },
                 "entities": {
-                  "anyOf": [
-                    {
-                      "items": {
-                        "$ref": "#/definitions/Entity"
-                      },
-                      "type": "array"
-                    },
-                    {
-                      "maxItems": 0,
-                      "minItems": 0,
-                      "type": "array"
-                    }
-                  ]
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
                 },
                 "intersects": {
                   "const": true,
@@ -9648,7 +9360,6 @@
               },
               "required": [
                 "description",
-                "entities",
                 "intersects",
                 "value"
               ],

@@ -101,8 +101,7 @@
           {
             "value": "listed",
             "description": "Listed Building",
-            "intersects": true,
-            "entities": []
+            "intersects": true
           },
           {
             "value": "article4",
@@ -131,8 +130,7 @@
           {
             "value": "designated",
             "description": "Designated land",
-            "intersects": true,
-            "entities": []
+            "intersects": true
           },
           {
             "value": "nature.SAC",

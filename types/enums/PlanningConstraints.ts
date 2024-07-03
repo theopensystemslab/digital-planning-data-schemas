@@ -60,7 +60,7 @@ type NonIntersectingPlanningDesignation = {
  */
 type IntersectingPlanningDesignation = {
   intersects: true;
-  entities: Entity[] | [];
+  entities?: Entity[];
 } & BasePlanningDesignation;
 
 /**
