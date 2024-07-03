@@ -3,63 +3,99 @@ import {BaseProposal} from '../../../types/schema/data/Proposal';
 
 const version = process.env['VERSION'] || '@next';
 
-export const planningPermissionMinor: Schema = {
+export const planningPermissionMajor: Schema = {
   data: {
     user: {
-      role: 'applicant',
+      role: 'agent',
     },
     applicant: {
-      type: 'individual',
+      type: 'company',
       name: {
-        first: 'Richard',
-        last: 'Gambier-Parry',
+        first: 'Mike',
+        last: 'McHouseface',
       },
-      email: 'richardgambierparry@secretmi6hq.ss',
+      email: 'mikemchouseface@housefacemike.com',
       phone: {
-        primary: '0123456789',
+        primary: '9876543210',
+      },
+      company: {
+        name: 'McHouseface Incorporated',
       },
       address: {
         sameAsSiteAddress: true,
       },
       siteContact: {
-        role: 'applicant',
+        role: 'other',
+        name: 'Kyle Keybearer',
+        email: 'kylewiththekeys@keysfromkyle.com',
+        phone: '543210',
       },
       ownership: {
-        interest: 'owner.sole',
-        certificate: 'a',
-        agriculturalTenants: false,
+        interest: 'other',
+        certificate: 'b',
+        noticeGiven: true,
+        ownersKnown: 'all',
+        owners: [
+          {
+            name: 'Agamemnon Agricullen',
+            address: {
+              town: 'Mycenae',
+              line1: 'Aggy Avenue',
+              line2: '',
+              county: '',
+              country: 'Greece',
+              postcode: '212 00',
+            },
+            noticeGiven: true,
+          },
+        ],
         declaration: {
           accurate: true,
+        },
+      },
+      agent: {
+        name: {
+          first: 'Andy',
+          last: 'Agent',
+        },
+        email: 'andytheagent@agncagency.com',
+        phone: {
+          primary: '0123456789',
+        },
+        company: {
+          name: 'AGNC Agency',
+        },
+        address: {
+          line1: 'Roady Road',
+          line2: '',
+          town: 'Towny Town',
+          county: '',
+          postcode: 'Cody Code',
+          country: '',
         },
       },
     },
     property: {
       address: {
-        latitude: 52.0003007,
-        longitude: -0.8271026,
-        x: 480616,
-        y: 234188,
-        title: 'WHADDON JUBILEE HALL, STOCK LANE, WHADDON',
-        source: 'Ordnance Survey',
-        uprn: '000766301871',
-        usrn: '1400167',
-        pao: 'WHADDON JUBILEE HALL',
-        street: 'STOCK LANE',
-        town: 'WHADDON',
-        postcode: 'MK17 0LS',
-        singleLine:
-          'WHADDON JUBILEE HALL, STOCK LANE, WHADDON, BUCKINGHAMSHIRE, MK17 0LS',
+        latitude: 51.51257224609594,
+        longitude: -0.5189885919643893,
+        x: 502869.8591151078,
+        y: 180333.4537434135,
+        title: 'House McHouseface Housing',
+        source: 'Proposed by applicant',
       },
-      localAuthorityDistrict: ['Aylesbury Vale', 'Buckinghamshire'],
+      localAuthorityDistrict: ['Buckinghamshire', 'South Bucks'],
       region: 'South East',
       type: {
-        value: 'commercial.community.hall',
-        description: 'Public / Village Hall / Other Community Facility',
+        value: 'other.unsupported',
+        description: 'Unsupported Site',
+      },
+      use: {
+        description: 'Vacant brownfield',
       },
       planning: {
         sources: [
-          'https://api.editor.planx.dev/gis/buckinghamshire?geom=POLYGON+%28%28-0.8271436393261123+52.00047292273189%2C+-0.8268579840660265+52.000354853531235%2C+-0.8271127939224412+52.00012862216494%2C+-0.8273246884346175+52.00021366547688%2C+-0.8272831141948866+52.000249994609476%2C+-0.8273608982563186+52.00027971842326%2C+-0.8271436393261123+52.00047292273189%29%29&sessionId=24ef1013-c18e-456a-bcc6-e7901ec86270',
-          'https://api.editor.planx.dev/roads?usrn=1400167',
+          'https://api.editor.planx.dev/gis/buckinghamshire?geom=POLYGON+%28%28-0.5202563671906586+51.51349326091676%2C+-0.5162271673824664+51.51342965453125%2C+-0.5160930726385158+51.5119189712527%2C+-0.5186025432309797+51.51150473816995%2C+-0.5192921685359919+51.51150076298916%2C+-0.5197391470751718+51.5115882253788%2C+-0.5204032314768795+51.51156039632619%2C+-0.5207544293552119+51.512609937924225%2C+-0.5202563671906586+51.51349326091676%29%29&sessionId=180da003-279d-40dc-b538-a616c8c2a700',
         ],
         designations: [
           {
@@ -90,7 +126,16 @@ export const planningPermissionMinor: Schema = {
           {
             value: 'greenBelt',
             description: 'Green Belt',
-            intersects: false,
+            intersects: true,
+            entities: [
+              {
+                name: 'Buckinghamshire',
+                source: {
+                  text: 'Planning Data',
+                  url: 'https://www.planning.data.gov.uk/entity/610030',
+                },
+              },
+            ],
           },
           {
             value: 'designated',
@@ -157,53 +202,157 @@ export const planningPermissionMinor: Schema = {
             description: 'National Park - Broads',
             intersects: false,
           },
-          {
-            value: 'road.classified',
-            description: 'Classified Road',
-            intersects: true,
-            entities: [
-              {
-                name: 'Stock Lane - Classified Unnumbered',
-                source: {
-                  text: 'Ordnance Survey MasterMap Highways',
-                },
-              },
-            ],
-          },
         ],
       },
-      materials: {
-        boundary: 'black painted timber',
+      boundary: {
+        site: {
+          type: 'Feature',
+          geometry: {
+            type: 'MultiPolygon',
+            coordinates: [
+              [
+                [
+                  [-0.525061, 51.514352],
+                  [-0.525278, 51.513929],
+                  [-0.525415, 51.513695],
+                  [-0.525716, 51.513284],
+                  [-0.52582, 51.513149],
+                  [-0.526395, 51.512578],
+                  [-0.526474, 51.512515],
+                  [-0.526452, 51.512518],
+                  [-0.526483, 51.512486],
+                  [-0.526068, 51.512397],
+                  [-0.523001, 51.511595],
+                  [-0.520218, 51.510925],
+                  [-0.517193, 51.51149],
+                  [-0.51608, 51.511659],
+                  [-0.512427, 51.512263],
+                  [-0.51294, 51.514283],
+                  [-0.51624, 51.514275],
+                  [-0.516107, 51.514586],
+                  [-0.515866, 51.514961],
+                  [-0.515496, 51.515608],
+                  [-0.515375, 51.515791],
+                  [-0.515233, 51.516085],
+                  [-0.515087, 51.516427],
+                  [-0.515002, 51.516564],
+                  [-0.51593, 51.51681],
+                  [-0.51572, 51.517065],
+                  [-0.515697, 51.517105],
+                  [-0.515076, 51.517944],
+                  [-0.517128, 51.518561],
+                  [-0.517376, 51.518606],
+                  [-0.517472, 51.518631],
+                  [-0.518067, 51.518889],
+                  [-0.518535, 51.519053],
+                  [-0.519212, 51.519268],
+                  [-0.519295, 51.519132],
+                  [-0.519332, 51.519087],
+                  [-0.519402, 51.519063],
+                  [-0.519778, 51.519074],
+                  [-0.519836, 51.51911],
+                  [-0.519794, 51.519233],
+                  [-0.519782, 51.519305],
+                  [-0.519782, 51.51938],
+                  [-0.519791, 51.519392],
+                  [-0.519814, 51.519401],
+                  [-0.520024, 51.519401],
+                  [-0.520946, 51.519346],
+                  [-0.521302, 51.519305],
+                  [-0.521431, 51.519302],
+                  [-0.521839, 51.519245],
+                  [-0.521818, 51.519184],
+                  [-0.521806, 51.519184],
+                  [-0.5218, 51.519164],
+                  [-0.521768, 51.519168],
+                  [-0.521645, 51.518838],
+                  [-0.52135, 51.518888],
+                  [-0.521321, 51.518816],
+                  [-0.521348, 51.518812],
+                  [-0.521338, 51.518785],
+                  [-0.522282, 51.518658],
+                  [-0.522348, 51.519178],
+                  [-0.522998, 51.519094],
+                  [-0.522932, 51.518675],
+                  [-0.523307, 51.518771],
+                  [-0.523838, 51.518729],
+                  [-0.523878, 51.518918],
+                  [-0.52392, 51.518914],
+                  [-0.523943, 51.519022],
+                  [-0.524932, 51.51886],
+                  [-0.52487, 51.518642],
+                  [-0.524794, 51.518432],
+                  [-0.524769, 51.518321],
+                  [-0.52465, 51.518036],
+                  [-0.524606, 51.517876],
+                  [-0.52459, 51.517846],
+                  [-0.524504, 51.517529],
+                  [-0.52444, 51.51722],
+                  [-0.524403, 51.517082],
+                  [-0.524459, 51.516655],
+                  [-0.524776, 51.515182],
+                  [-0.524921, 51.514691],
+                  [-0.524995, 51.514496],
+                  [-0.525061, 51.514352],
+                ],
+              ],
+            ],
+          },
+          properties: {
+            name: '',
+            entity: 12000001973,
+            prefix: 'title-boundary',
+            dataset: 'title-boundary',
+            'end-date': '',
+            typology: 'geography',
+            reference: '49708846',
+            'entry-date': '2024-05-06',
+            'start-date': '2011-01-11',
+            'organisation-entity': '13',
+          },
+        },
+        area: {
+          hectares: 59.48202,
+          squareMetres: 594820.2,
+        },
+      },
+      flood: {
+        '20mFromWatercourse': false,
+        increasedRiskElsewhere: false,
+      },
+      trees: {
+        present: false,
+        adjacent: true,
       },
     },
     application: {
       type: {
-        value: 'pp.full.minor',
-        description: 'Planning Permission - Minor application',
+        value: 'pp.full.major',
+        description: 'Planning Permission - Major application',
       },
       fee: {
-        calculated: 578,
-        payable: 578,
+        calculated: 2535,
+        payable: 2535,
         category: {
-          one: 0,
+          one: 578,
           two: 0,
           three: 0,
           four: 0,
           five: 0,
           sixAndSeven: 0,
-          eight: 0,
+          eight: 293,
           nine: 0,
           ten: 0,
           eleven: {
             one: 0,
-            two: 0,
+            two: 2535,
           },
           twelve: {
             one: 0,
             two: 0,
           },
           thirteen: 0,
-          fourteen: 578,
+          fourteen: 0,
         },
         exemption: {
           disability: false,
@@ -215,7 +364,7 @@ export const planningPermissionMinor: Schema = {
           alternative: false,
         },
         reference: {
-          govPay: 'j0pg5aq9slgp52n40k9b390u22',
+          govPay: 'oo7f1o1emrimo39j5tsg9utjge',
         },
       },
       declaration: {
@@ -225,22 +374,29 @@ export const planningPermissionMinor: Schema = {
         },
       },
       preApp: {
-        reference: '0123456789',
-        date: '2020-01-01',
-        officer: 'Pete the Planning Person',
+        reference: 'PP420',
+        date: '2024-05-01',
+        officer: 'Paul the Planner',
         summary: 'Not provided',
       },
     },
     proposal: {
       projectType: [
         {
-          value: 'changeOfUse',
-          description: 'Change the use of a building',
+          value: 'new.residential.dwelling',
+          description: 'Build new homes',
+        },
+        {
+          value: 'alter.surfaces.parking',
+          description: 'Add a driveway or parking area',
+        },
+        {
+          value: 'alter.highways.access',
+          description: 'Create a point of access to a highway',
         },
       ],
       description:
-        'Change of use from sui generis (top secret HQ of MI6 Section VIII) to home',
-      date: {},
+        'The erection of 25 private dwellinghouses and associated infrastructure on vacant brownfield site',
       boundary: {
         site: {
           type: 'Feature',
@@ -248,37 +404,66 @@ export const planningPermissionMinor: Schema = {
             type: 'Polygon',
             coordinates: [
               [
-                [-0.8271436393261123, 52.00047292273189],
-                [-0.8268579840660265, 52.000354853531235],
-                [-0.8271127939224412, 52.00012862216494],
-                [-0.8273246884346175, 52.00021366547688],
-                [-0.8272831141948866, 52.000249994609476],
-                [-0.8273608982563186, 52.00027971842326],
-                [-0.8271436393261123, 52.00047292273189],
+                [-0.5202563671906586, 51.51349326091676],
+                [-0.5162271673824664, 51.51342965453125],
+                [-0.5160930726385158, 51.5119189712527],
+                [-0.5186025432309797, 51.51150473816995],
+                [-0.5192921685359919, 51.51150076298916],
+                [-0.5197391470751718, 51.5115882253788],
+                [-0.5204032314768795, 51.51156039632619],
+                [-0.5207544293552119, 51.512609937924225],
+                [-0.5202563671906586, 51.51349326091676],
               ],
             ],
           },
           properties: null,
         },
         area: {
-          hectares: 0.069395,
-          squareMetres: 693.95,
+          hectares: 6.1751949999999995,
+          squareMetres: 61751.95,
         },
       },
-      materials: {
-        boundary: 'white painted timber',
+      access: {
+        affected: 'newRoad',
+      },
+      utilities: {
+        foulSewageDisposal: 'sewer',
+      },
+      flood: {
+        surfaceWaterDisposal: 'drainageSystem',
       },
       units: {
-        total: 1,
+        total: 25,
         residential: [
           {
             type: {value: 'house', description: 'House'},
-            tenure: {
-              value: 'selfCustomBuild',
-              description: 'Self-build and custom build',
-            },
+            tenure: {value: 'MH', description: 'Market housing'},
+            bedrooms: 3,
+            identicalUnits: 10,
+          },
+          {
+            type: {value: 'house', description: 'House'},
+            tenure: {value: 'MH', description: 'Market housing'},
             bedrooms: 4,
-            identicalUnits: 1,
+            identicalUnits: 5,
+          },
+          {
+            type: {value: 'flat', description: 'Flat'},
+            tenure: {
+              value: 'SAIR',
+              description: 'Social, affordable or interim rent',
+            },
+            bedrooms: 1,
+            identicalUnits: 8,
+          },
+          {
+            type: {value: 'house', description: 'House'},
+            tenure: {
+              value: 'SAIR',
+              description: 'Social, affordable or interim rent',
+            },
+            bedrooms: 2,
+            identicalUnits: 2,
           },
         ],
       } as BaseProposal['units'],
@@ -305,7 +490,6 @@ export const planningPermissionMinor: Schema = {
         },
       ],
       metadata: {
-        autoAnswered: true,
         sectionName: 'The property',
       },
     },
@@ -313,23 +497,32 @@ export const planningPermissionMinor: Schema = {
       question: 'Which of these best describes the use of the property?',
       responses: [
         {
-          value: 'Institutions and community buildings',
+          value: 'Other',
         },
       ],
       metadata: {
-        autoAnswered: true,
         sectionName: 'The property',
       },
     },
     {
-      question: 'What type of institutional building is it?',
+      question: 'What type of property is it?',
       responses: [
         {
-          value: 'Community hall',
+          value: 'No, none of these',
         },
       ],
       metadata: {
-        autoAnswered: true,
+        sectionName: 'The property',
+      },
+    },
+    {
+      question: 'What type of property is it?',
+      responses: [
+        {
+          value: 'Vacant land',
+        },
+      ],
+      metadata: {
         sectionName: 'The property',
       },
     },
@@ -358,33 +551,11 @@ export const planningPermissionMinor: Schema = {
       },
     },
     {
-      question: 'Are you applying on behalf of someone else?',
-      responses: [
-        {
-          value: 'No',
-        },
-      ],
-      metadata: {
-        sectionName: 'About you',
-      },
-    },
-    {
-      question: 'Which of these best describes you?',
-      responses: [
-        {
-          value: 'Private individual',
-        },
-      ],
-      metadata: {
-        sectionName: 'About you',
-      },
-    },
-    {
       question: 'Your contact details',
       responses: [
         {
           value:
-            'Richard Gambier-Parry 0123456789 richardgambierparry@secretmi6hq.ss',
+            'Andy Agent AGNC Agency 0123456789 andytheagent@agncagency.com',
         },
       ],
       metadata: {
@@ -392,7 +563,7 @@ export const planningPermissionMinor: Schema = {
       },
     },
     {
-      question: 'Is your contact address the same as the property address?',
+      question: 'Are you applying on behalf of someone else?',
       responses: [
         {
           value: 'Yes',
@@ -403,10 +574,55 @@ export const planningPermissionMinor: Schema = {
       },
     },
     {
-      question: 'Can a planning officer see the works from public land?',
+      question: 'Which of these best describes you?',
       responses: [
         {
-          value: "Yes, it's visible from the road or somewhere else",
+          value: 'Professional agent',
+        },
+      ],
+      metadata: {
+        sectionName: 'About you',
+      },
+    },
+    {
+      question: 'Your contact address',
+      responses: [
+        {
+          value: 'Roady Road, Towny Town, Cody Code',
+        },
+      ],
+      metadata: {
+        sectionName: 'About you',
+      },
+    },
+    {
+      question: 'Which of these best describes the applicant?',
+      responses: [
+        {
+          value: 'Company',
+        },
+      ],
+      metadata: {
+        sectionName: 'About you',
+      },
+    },
+    {
+      question: 'Name of the company',
+      responses: [
+        {
+          value: 'McHouseface Incorporated',
+        },
+      ],
+      metadata: {
+        sectionName: 'About you',
+      },
+    },
+    {
+      question: "Applicant's contact details",
+      responses: [
+        {
+          value:
+            'Mike McHouseface 9876543210 mikemchouseface@housefacemike.com',
         },
       ],
       metadata: {
@@ -415,10 +631,67 @@ export const planningPermissionMinor: Schema = {
     },
     {
       question:
-        'We may need to visit the site to assess your application. If we do, who should we contact to arrange the visit?',
+        "Is the applicant's contact address the same as the property address?",
       responses: [
         {
-          value: 'Me, the applicant',
+          value: 'No',
+        },
+      ],
+      metadata: {
+        sectionName: 'About you',
+      },
+    },
+    {
+      question: "Applicant's contact address",
+      responses: [
+        {
+          value: 'Posty Postlane, Postown, ABC 123',
+        },
+      ],
+      metadata: {
+        sectionName: 'About you',
+      },
+    },
+    {
+      question: 'Can a planning officer see the works from public land?',
+      responses: [
+        {
+          value: "No, to see the works you'd have to come onto the property",
+        },
+      ],
+      metadata: {
+        sectionName: 'About you',
+      },
+    },
+    {
+      question: 'Which of these best describes you?',
+      responses: [
+        {
+          value: 'Professional agent',
+        },
+      ],
+      metadata: {
+        autoAnswered: true,
+        sectionName: 'About you',
+      },
+    },
+    {
+      question: 'If we need to make a site visit, who should we contact?',
+      responses: [
+        {
+          value: 'Someone else',
+        },
+      ],
+      metadata: {
+        sectionName: 'About you',
+      },
+    },
+    {
+      question:
+        'Contact details of the person we should contact about a site visit',
+      responses: [
+        {
+          value: 'Kyle Keybearer 543210 kylewiththekeys@keysfromkyle.com',
         },
       ],
       metadata: {
@@ -441,7 +714,7 @@ export const planningPermissionMinor: Schema = {
       question: 'Which of these best describes you?',
       responses: [
         {
-          value: "I'm the applicant",
+          value: "I'm acting on the applicant's behalf",
         },
       ],
       metadata: {
@@ -450,24 +723,52 @@ export const planningPermissionMinor: Schema = {
       },
     },
     {
-      question: 'Are you the sole owner of the land?',
+      question: 'How many owners or agricultural tenants have been notified?',
       responses: [
         {
-          value: 'Yes',
+          value: '1',
         },
       ],
       metadata: {
-        policyRefs: [
-          {
-            text: 'Article 13 of the Town and Country Planning (Development Management Procedure) (England) Order 2015',
-            url: 'https://www.legislation.gov.uk/uksi/2015/595/article/13/made',
-          },
-        ],
         sectionName: 'About you',
       },
     },
     {
-      question: 'Does the land have any agricultural tenants?',
+      question: 'Full name of the notified owner or agricultural tenant',
+      responses: [
+        {
+          value: 'Agamemnon Agricullen',
+        },
+      ],
+      metadata: {
+        sectionName: 'About you',
+      },
+    },
+    {
+      question: 'Address of the notified owner or agricultural tenant',
+      responses: [
+        {
+          value: 'Aggy Avenue, Mycenae, 212 00, Greece',
+        },
+      ],
+      metadata: {
+        sectionName: 'About you',
+      },
+    },
+    {
+      question:
+        'Date on which notice was given to the owner or agricultural tenant',
+      responses: [
+        {
+          value: '2024-07-01',
+        },
+      ],
+      metadata: {
+        sectionName: 'About you',
+      },
+    },
+    {
+      question: 'Is the applicant the sole owner of the land?',
       responses: [
         {
           value: 'No',
@@ -484,10 +785,23 @@ export const planningPermissionMinor: Schema = {
       },
     },
     {
-      question: 'Certificate of ownership declaration - Certificate A',
+      question:
+        'Does the applicant know the names and addresses of all owners and agricultural tenants?',
       responses: [
         {
-          value: 'I certify the above',
+          value: 'Yes, all of them',
+        },
+      ],
+      metadata: {
+        sectionName: 'About you',
+      },
+    },
+    {
+      question:
+        'Has the applicant given requisite notice to all the owners and agricultural tenants?',
+      responses: [
+        {
+          value: 'Yes',
         },
       ],
       metadata: {
@@ -501,10 +815,31 @@ export const planningPermissionMinor: Schema = {
       },
     },
     {
+      question: 'Certificate of ownership declaration - Certificate B',
+      responses: [
+        {
+          value: 'I certify that the above is true',
+        },
+      ],
+      metadata: {
+        policyRefs: [
+          {
+            text: 'Article 13 of the Town and Country Planning (Development Management Procedure) (England) Order 2015',
+            url: 'https://www.legislation.gov.uk/uksi/2015/595/article/13/made',
+          },
+          {
+            text: 'Schedule 2 to the Town and Country Planning (Development Management Procedure (England) (Order) 2015',
+            url: 'https://www.legislation.gov.uk/uksi/2015/595/schedule/2/made',
+          },
+        ],
+        sectionName: 'About you',
+      },
+    },
+    {
       question: 'What type of application are you submitting?',
       responses: [
         {
-          value: 'Minor development',
+          value: 'Major development',
         },
       ],
       metadata: {
@@ -529,10 +864,11 @@ export const planningPermissionMinor: Schema = {
       },
     },
     {
-      question: 'Select the changes involved in the project',
+      question:
+        'Does your project involve any alterations to ground or floor levels?',
       responses: [
         {
-          value: 'Change of use',
+          value: 'Yes',
         },
       ],
       metadata: {
@@ -544,21 +880,11 @@ export const planningPermissionMinor: Schema = {
         'Does your project involve any alterations to ground or floor levels?',
       responses: [
         {
-          value: 'No',
+          value: 'Yes',
         },
       ],
       metadata: {
-        sectionName: 'The project',
-      },
-    },
-    {
-      question: 'What is the proposed new use?',
-      responses: [
-        {
-          value: 'Home',
-        },
-      ],
-      metadata: {
+        autoAnswered: true,
         sectionName: 'The project',
       },
     },
@@ -574,10 +900,52 @@ export const planningPermissionMinor: Schema = {
       },
     },
     {
+      question: 'Select the changes involved in the project',
+      responses: [
+        {
+          value: 'Homes',
+        },
+        {
+          value: 'Car parking',
+        },
+        {
+          value: 'Service roads and other means of access',
+        },
+      ],
+      metadata: {
+        sectionName: 'The project',
+      },
+    },
+    {
+      question: 'Does the proposal involve a change of use?',
+      responses: [
+        {
+          value: 'No',
+        },
+      ],
+      metadata: {
+        autoAnswered: true,
+        sectionName: 'The project',
+      },
+    },
+    {
+      question:
+        'Does the development involve new built waste disposal facilities?',
+      responses: [
+        {
+          value: 'No',
+        },
+      ],
+      metadata: {
+        autoAnswered: true,
+        sectionName: 'The project',
+      },
+    },
+    {
       question: 'What type of development are you applying for?',
       responses: [
         {
-          value: 'Minor development',
+          value: 'Major development',
         },
       ],
       metadata: {
@@ -607,8 +975,7 @@ export const planningPermissionMinor: Schema = {
       question: 'Does the development involve any of the following?',
       responses: [
         {
-          value:
-            'New or altered vehicle access proposed to or from the public highway',
+          value: 'New public roads to be provided within the site',
         },
       ],
       metadata: {
@@ -620,7 +987,7 @@ export const planningPermissionMinor: Schema = {
         'Do your plans and drawings identify areas to store and aid the collection of waste?',
       responses: [
         {
-          value: 'Yes',
+          value: 'No',
         },
       ],
       metadata: {
@@ -643,74 +1010,10 @@ export const planningPermissionMinor: Schema = {
       question: 'Does the project introduce any external materials?',
       responses: [
         {
-          value: 'Yes',
-        },
-      ],
-      metadata: {
-        sectionName: 'The project',
-      },
-    },
-    {
-      question: 'Do all the new materials match the existing?',
-      responses: [
-        {
           value: 'No',
         },
       ],
       metadata: {
-        sectionName: 'The project',
-      },
-    },
-    {
-      question: 'What external materials are you adding?',
-      responses: [
-        {
-          value: 'Fences, walls and gates on the boundary',
-        },
-      ],
-      metadata: {
-        policyRefs: [
-          {
-            text: 'The Town and Country Planning (Development Management Procedure) (England) 2015 (as amended)',
-            url: 'http://www.legislation.gov.uk/uksi/2015/595/article/7/made',
-          },
-        ],
-        sectionName: 'The project',
-      },
-    },
-    {
-      question:
-        'Describe the existing materials of fences, walls and gates on the boundary of the property',
-      responses: [
-        {
-          value: 'black painted timber',
-        },
-      ],
-      metadata: {
-        policyRefs: [
-          {
-            text: 'The Town and Country Planning (Development Management Procedure) (England) 2015 (as amended)',
-            url: 'http://www.legislation.gov.uk/uksi/2015/595/article/7/made',
-          },
-        ],
-        sectionName: 'The project',
-      },
-    },
-    {
-      question:
-        'Describe the new materials of fences, walls and gates on the boundary of the property',
-      responses: [
-        {
-          value: 'white painted timber',
-        },
-      ],
-      metadata: {
-        policyRefs: [
-          {
-            text: 'The Town and Country Planning (Development Management Procedure) (England) 2015 (as amended)',
-            url: 'http://www.legislation.gov.uk/uksi/2015/595/article/7/made',
-          },
-        ],
         sectionName: 'The project',
       },
     },
@@ -745,6 +1048,9 @@ export const planningPermissionMinor: Schema = {
         {
           value: 'Cars',
         },
+        {
+          value: 'Bicycles',
+        },
       ],
       metadata: {
         sectionName: 'The project',
@@ -754,7 +1060,7 @@ export const planningPermissionMinor: Schema = {
       question: 'What is the number of existing car parking spaces?',
       responses: [
         {
-          value: '2',
+          value: '0',
         },
       ],
       metadata: {
@@ -765,7 +1071,29 @@ export const planningPermissionMinor: Schema = {
       question: 'What is the proposed total number of car parking spaces?',
       responses: [
         {
-          value: '2',
+          value: '30',
+        },
+      ],
+      metadata: {
+        sectionName: 'The project',
+      },
+    },
+    {
+      question: 'What is the number of existing bicycle parking spaces?',
+      responses: [
+        {
+          value: '0',
+        },
+      ],
+      metadata: {
+        sectionName: 'The project',
+      },
+    },
+    {
+      question: 'What is the proposed total number of bicycle parking spaces?',
+      responses: [
+        {
+          value: '20',
         },
       ],
       metadata: {
@@ -847,7 +1175,7 @@ export const planningPermissionMinor: Schema = {
         'Are there trees or hedges on land adjacent to the proposed development site that could influence the development or might be important as part of the local landscape character?',
       responses: [
         {
-          value: 'No',
+          value: 'Yes',
         },
       ],
       metadata: {
@@ -895,7 +1223,7 @@ export const planningPermissionMinor: Schema = {
         'Does your proposal involve the loss, gain or change of use of non-residential floorspace?',
       responses: [
         {
-          value: 'Yes',
+          value: 'No',
         },
       ],
       metadata: {
@@ -934,6 +1262,7 @@ export const planningPermissionMinor: Schema = {
         },
       ],
       metadata: {
+        autoAnswered: true,
         sectionName: 'The project',
       },
     },
@@ -1000,7 +1329,7 @@ export const planningPermissionMinor: Schema = {
       question: 'How will surface water be disposed of?',
       responses: [
         {
-          value: 'Soakaway',
+          value: 'Sustainable drainage system',
         },
       ],
       metadata: {
@@ -1023,7 +1352,7 @@ export const planningPermissionMinor: Schema = {
       question: 'Please describe the current use of the site',
       responses: [
         {
-          value: 'Top secret HQ of MI6 Section VIII',
+          value: 'Vacant brownfield',
         },
       ],
       metadata: {
@@ -1127,7 +1456,7 @@ export const planningPermissionMinor: Schema = {
       question: 'What type of application is this?',
       responses: [
         {
-          value: 'Minor development',
+          value: 'Major development',
         },
       ],
       metadata: {
@@ -1136,14 +1465,19 @@ export const planningPermissionMinor: Schema = {
       },
     },
     {
-      question: 'Is the property on designated land?',
+      question: 'How do you want to submit this information?',
       responses: [
         {
-          value: 'No',
+          value: 'Upload a document',
         },
       ],
       metadata: {
-        autoAnswered: true,
+        policyRefs: [
+          {
+            text: 'The Town and Country Planning (Development Management Procedure) (England) 2015 (as amended)',
+            url: 'http://www.legislation.gov.uk/uksi/2015/595/article/7/made',
+          },
+        ],
         sectionName: 'The project',
       },
     },
@@ -1200,7 +1534,7 @@ export const planningPermissionMinor: Schema = {
         'Do you believe that, if the development is granted planning permission, the Biodiversity Gain Condition would apply? ',
       responses: [
         {
-          value: 'No',
+          value: 'Yes',
         },
       ],
       metadata: {
@@ -1215,10 +1549,111 @@ export const planningPermissionMinor: Schema = {
     },
     {
       question:
-        'What are the reasons why the Biodiversity Gain Condition does not apply?',
+        'When was the pre-development biodiversity value of onsite habitat(s) calculated?',
       responses: [
         {
-          value: 'Development is below de minimis threshold',
+          value: 'An earlier proposed date',
+        },
+      ],
+      metadata: {
+        sectionName: 'The project',
+      },
+    },
+    {
+      question:
+        'On what date was the pre-development biodiversity value of onsite habitat(s) calculated?',
+      responses: [
+        {
+          value: '2024-05-01',
+        },
+      ],
+      metadata: {
+        sectionName: 'The project',
+      },
+    },
+    {
+      question: 'Why was this date used?',
+      responses: [
+        {
+          value: 'N/A',
+        },
+      ],
+      metadata: {
+        sectionName: 'The project',
+      },
+    },
+    {
+      question:
+        'What was the pre-development biodiversity value of onsite habitats on the provided date?',
+      responses: [
+        {
+          value: '0',
+        },
+      ],
+      metadata: {
+        sectionName: 'The project',
+      },
+    },
+    {
+      question:
+        'What was the publication date of the biodiversity metric tool(s) used to calculate the onsite biodiversity value(s)?',
+      responses: [
+        {
+          value: '2024-04-07',
+        },
+      ],
+      metadata: {
+        sectionName: 'The project',
+      },
+    },
+    {
+      question:
+        'Has there been any loss (or degradation) of any onsite habitat(s), resulting from activities carried out before the provided date?',
+      responses: [
+        {
+          value: 'No',
+        },
+      ],
+      metadata: {
+        sectionName: 'The project',
+      },
+    },
+    {
+      question:
+        'Does the application site have irreplaceable habitat(s) which exist on land to which this application relates?',
+      responses: [
+        {
+          value: 'No',
+        },
+      ],
+      metadata: {
+        policyRefs: [
+          {
+            text: 'The Biodiversity Gain Requirements (Irreplaceable Habitat) Regulations 2024',
+            url: 'https://www.legislation.gov.uk/uksi/2024/48/made',
+          },
+        ],
+        sectionName: 'The project',
+      },
+    },
+    {
+      question:
+        'Please confirm your application is accompanied by the following',
+      responses: [
+        {
+          value: 'I confirm the above',
+        },
+      ],
+      metadata: {
+        sectionName: 'The project',
+      },
+    },
+    {
+      question:
+        'Please provide any other details (for example references to relevant documents)',
+      responses: [
+        {
+          value: 'N/A',
         },
       ],
       metadata: {
@@ -1241,7 +1676,7 @@ export const planningPermissionMinor: Schema = {
       question: 'What was the name of the planning officer you spoke to?',
       responses: [
         {
-          value: 'Pete the Planning Person',
+          value: 'Paul the Planner',
         },
       ],
       metadata: {
@@ -1252,7 +1687,7 @@ export const planningPermissionMinor: Schema = {
       question: 'What was your reference?',
       responses: [
         {
-          value: '0123456789',
+          value: 'PP420',
         },
       ],
       metadata: {
@@ -1263,7 +1698,7 @@ export const planningPermissionMinor: Schema = {
       question: 'What date was the pre-application advice given on?',
       responses: [
         {
-          value: '2020-01-01',
+          value: '2024-05-01',
         },
       ],
       metadata: {
@@ -1275,7 +1710,7 @@ export const planningPermissionMinor: Schema = {
       responses: [
         {
           value:
-            'I was recommended to submit a design and access statement due to the resulting access changes.',
+            'The proposal will require the new Biodiversity Net Gain conditions.',
         },
       ],
       metadata: {
@@ -1298,7 +1733,7 @@ export const planningPermissionMinor: Schema = {
       question: 'What type of development are you applying for?',
       responses: [
         {
-          value: 'Minor development',
+          value: 'Major development',
         },
       ],
       metadata: {
@@ -1325,10 +1760,10 @@ export const planningPermissionMinor: Schema = {
       },
     },
     {
-      question: 'What types of changes does the application relate to?',
+      question: 'Are you building fewer than 10 new homes?',
       responses: [
         {
-          value: 'Change use',
+          value: 'Yes',
         },
       ],
       metadata: {
@@ -1337,10 +1772,43 @@ export const planningPermissionMinor: Schema = {
       },
     },
     {
-      question: 'What is the new use?',
+      question: 'What types of changes does the application relate to?',
       responses: [
         {
-          value: 'Something else',
+          value: 'New buildings',
+        },
+        {
+          value: 'Alterations',
+        },
+      ],
+      metadata: {
+        autoAnswered: true,
+        sectionName: 'Your application',
+      },
+    },
+    {
+      question: 'What types of changes does the application relate to?',
+      responses: [
+        {
+          value: 'New build homes',
+        },
+      ],
+      metadata: {
+        autoAnswered: true,
+        sectionName: 'Your application',
+      },
+    },
+    {
+      question: 'What types of changes does the application relate to?',
+      responses: [
+        {
+          value: 'Hard surfaces used for car parking',
+        },
+        {
+          value: 'Access roads',
+        },
+        {
+          value: 'Other alterations',
         },
       ],
       metadata: {
@@ -1364,7 +1832,44 @@ export const planningPermissionMinor: Schema = {
       question: 'Does the proposal include fees in category 1 or 2 to 13?',
       responses: [
         {
+          value: 'Yes',
+        },
+      ],
+      metadata: {
+        autoAnswered: true,
+        sectionName: 'Your application',
+      },
+    },
+    {
+      question: 'Does the proposal include developments in category 1?',
+      responses: [
+        {
+          value: 'Yes',
+        },
+      ],
+      metadata: {
+        autoAnswered: true,
+        sectionName: 'Your application',
+      },
+    },
+    {
+      question:
+        'Does the proposal include development in categories 2, 3 or 4?',
+      responses: [
+        {
           value: 'No',
+        },
+      ],
+      metadata: {
+        autoAnswered: true,
+        sectionName: 'Your application',
+      },
+    },
+    {
+      question: 'Does the proposal include developments in category 5 to 13?',
+      responses: [
+        {
+          value: 'Yes',
         },
       ],
       metadata: {
@@ -1400,7 +1905,7 @@ export const planningPermissionMinor: Schema = {
       question: 'Does the project involve any of these changes?',
       responses: [
         {
-          value: 'Changing the use of a property',
+          value: 'Construction of a new building',
         },
       ],
       metadata: {
@@ -1524,7 +2029,7 @@ export const planningPermissionMinor: Schema = {
       question: 'What type of development are you applying for?',
       responses: [
         {
-          value: 'Minor development',
+          value: 'Major development',
         },
       ],
       metadata: {
@@ -1542,7 +2047,19 @@ export const planningPermissionMinor: Schema = {
       question: 'What type of application are you submitting?',
       responses: [
         {
-          value: 'Minor',
+          value: 'Major',
+        },
+      ],
+      metadata: {
+        autoAnswered: true,
+        sectionName: 'Upload application documents',
+      },
+    },
+    {
+      question: 'Is the application for a waste development?',
+      responses: [
+        {
+          value: 'No',
         },
       ],
       metadata: {
@@ -1634,16 +2151,6 @@ export const planningPermissionMinor: Schema = {
       ],
     },
     {
-      name: 'https://api.editor.planx.dev/file/private/vxui6fxw/Rooftype_pyramid%404x.png',
-      type: [
-        {
-          value: 'necessaryInformation',
-          description:
-            'Information the authority considers necessary for the application',
-        },
-      ],
-    },
-    {
       name: 'https://api.editor.planx.dev/file/private/a8i079zc/Elevations-best-practice.pdf',
       type: [
         {
@@ -1655,9 +2162,9 @@ export const planningPermissionMinor: Schema = {
     },
   ],
   metadata: {
-    id: '24ef1013-c18e-456a-bcc6-e7901ec86270',
+    id: '180da003-279d-40dc-b538-a616c8c2a700',
     organisation: 'BKM',
-    submittedAt: '2024-07-02T06:52:42.466Z',
+    submittedAt: '2024-07-03T06:57:54.645Z',
     source: 'PlanX',
     service: {
       flowId: '28e258a7-812f-4390-b520-7c00e7f5cd77',
@@ -1680,28 +2187,8 @@ export const planningPermissionMinor: Schema = {
         optional: [],
       },
       fee: {
-        calculated: [{}],
-        payable: [{}],
-        category: {
-          one: [],
-          two: [],
-          three: [],
-          four: [],
-          five: [],
-          sixAndSeven: [],
-          eight: [],
-          nine: [],
-          ten: [],
-          eleven: {
-            one: [],
-          },
-          twelve: {
-            one: [],
-            two: [],
-          },
-          thirteen: [],
-          fourteen: [],
-        },
+        calculated: [],
+        payable: [],
       },
     },
     schema: `https://theopensystemslab.github.io/digital-planning-data-schemas/${version}/schema.json`,

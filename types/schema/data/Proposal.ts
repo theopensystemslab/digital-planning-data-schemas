@@ -66,8 +66,6 @@ export interface BaseProposal {
    * @description Assessment of flood risk, if applicable to application.type
    */
   flood?: {
-    '20mFromWatercourse'?: boolean;
-    increasedRiskElsewhere?: boolean;
     surfaceWaterDisposal?:
       | 'drainageSystem'
       | 'soakaway'

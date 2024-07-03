@@ -245,7 +245,7 @@ export const priorApprovalBuildHomes: Schema = {
       projectType: [
         {
           value: 'new.residential.dwelling',
-          description: 'Build new homes on a roof',
+          description: 'Build new homes',
         },
       ],
       description:

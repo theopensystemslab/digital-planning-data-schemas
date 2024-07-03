@@ -69,6 +69,20 @@ export interface UKProperty {
       lastUseEndDate: Date;
     };
   };
+  /**
+   * @description Existing flood risk, if applicable to application.type
+   */
+  flood?: {
+    '20mFromWatercourse'?: boolean;
+    increasedRiskElsewhere?: boolean;
+  };
+  /**
+   * @description Existing trees on or near the site
+   */
+  trees?: {
+    present: boolean;
+    adjacent: boolean;
+  };
   units?: ResidentialUnits;
 }
 
