@@ -503,3 +503,20 @@ export const PropertyTypes = {
   'object.religious.building.synagogue': 'Synagogue',
   'object.religious.building.temple': 'Temple',
 };
+
+type PropertyTypeKeys = keyof typeof PropertyTypes;
+
+type GenericPropertyType<TKey extends PropertyTypeKeys> = {
+  value: TKey;
+  description: (typeof PropertyTypes)[TKey];
+};
+
+type PropertyTypeMap = {
+  [K in PropertyTypeKeys]: GenericPropertyType<K>;
+};
+
+/**
+ * @id #PropertyType
+ * @description Property types derived from Basic Land and Property Unit (BLPU) classification codes
+ */
+export type PropertyType = PropertyTypeMap[keyof PropertyTypeMap];

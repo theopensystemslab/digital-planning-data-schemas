@@ -1,3 +1,5 @@
+import {Entity} from '../schema/data/shared';
+
 /**
  * Values for `data.property.planning.designations`
  */
@@ -31,3 +33,40 @@ export const PlanningDesignations = {
   'road.classified': 'Classified Road',
   tpo: 'Tree Preservation Order (TPO) or zone',
 };
+
+type PlanningDesigationKeys = keyof typeof PlanningDesignations;
+
+type GenericPlanningDesignation<TKey extends PlanningDesigationKeys> = {
+  value: TKey;
+  description: (typeof PlanningDesignations)[TKey];
+};
+
+type PlanningDesignationMap = {
+  [K in PlanningDesigationKeys]: GenericPlanningDesignation<K>;
+};
+
+type BasePlanningDesignation =
+  PlanningDesignationMap[keyof PlanningDesignationMap];
+
+/**
+ * @description A planning designation that does not intersect with the proposed site, per the DE-9IM spatial relationship definition of intersects
+ */
+type NonIntersectingPlanningDesignation = {
+  intersects: false;
+} & BasePlanningDesignation;
+
+/**
+ * @description A planning designation that does intersect with the proposed site, per the DE-9IM spatial relationship definition of intersects
+ */
+type IntersectingPlanningDesignation = {
+  intersects: true;
+  entities: Entity[] | [];
+} & BasePlanningDesignation;
+
+/**
+ * @id #PlanningDesignation
+ * @description Planning designations that may intersect with the proposed site determined by spatial queries against Planning Data (planning.data.gov.uk) and Ordnance Survey
+ */
+export type PlanningDesignation =
+  | NonIntersectingPlanningDesignation
+  | IntersectingPlanningDesignation;
