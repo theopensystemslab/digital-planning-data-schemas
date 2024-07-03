@@ -1,4 +1,5 @@
 import {Schema} from '../../../types/Schema';
+import {BaseProposal} from '../../../types/schema/data/Proposal';
 
 const version = process.env['VERSION'] || '@next';
 
@@ -267,6 +268,19 @@ export const planningPermissionMinor: Schema = {
       materials: {
         boundary: 'white painted timber',
       },
+      units: {
+        residential: [
+          {
+            type: {value: 'house', description: 'House'},
+            tenure: {
+              value: 'selfCustomBuild',
+              description: 'Self-build and custom build',
+            },
+            bedrooms: 4,
+            identicalUnits: 1,
+          },
+        ],
+      } as BaseProposal['units'],
     },
   },
   responses: [

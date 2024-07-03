@@ -1,4 +1,6 @@
 import {GeoJSON} from 'geojson';
+import {UKResidentialUnitType} from '../../enums/ResidentialUnitTypes';
+import {UKTenureType} from '../../enums/TenureTypes';
 import {Area, URL} from '../../utils';
 
 export type Materials = {
@@ -30,4 +32,13 @@ type PlanningDataSource = {
 
 type OSRoadsSource = {
   text: 'Ordnance Survey MasterMap Highways';
+};
+
+export type ResidentialUnits = {
+  residential: {
+    type: UKResidentialUnitType;
+    tenure: UKTenureType;
+    bedrooms: number;
+    identicalUnits: number;
+  }[];
 };
