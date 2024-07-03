@@ -89,6 +89,9 @@ export const planningPermissionMajor: Schema = {
         value: 'other.unsupported',
         description: 'Unsupported Site',
       },
+      use: {
+        description: 'Vacant brownfield',
+      },
       planning: {
         sources: [
           'https://api.editor.planx.dev/gis/buckinghamshire?geom=POLYGON+%28%28-0.5202563671906586+51.51349326091676%2C+-0.5162271673824664+51.51342965453125%2C+-0.5160930726385158+51.5119189712527%2C+-0.5186025432309797+51.51150473816995%2C+-0.5192921685359919+51.51150076298916%2C+-0.5197391470751718+51.5115882253788%2C+-0.5204032314768795+51.51156039632619%2C+-0.5207544293552119+51.512609937924225%2C+-0.5202563671906586+51.51349326091676%29%29&sessionId=180da003-279d-40dc-b538-a616c8c2a700',
@@ -312,6 +315,14 @@ export const planningPermissionMajor: Schema = {
           squareMetres: 594820.2,
         },
       },
+      flood: {
+        '20mFromWatercourse': false,
+        increasedRiskElsewhere: false,
+      },
+      trees: {
+        present: false,
+        adjacent: true,
+      },
     },
     application: {
       type: {
@@ -385,7 +396,6 @@ export const planningPermissionMajor: Schema = {
       ],
       description:
         'The erection of 25 private dwellinghouses and associated infrastructure on vacant brownfield site',
-      date: {},
       boundary: {
         site: {
           type: 'Feature',
@@ -411,6 +421,15 @@ export const planningPermissionMajor: Schema = {
           hectares: 6.1751949999999995,
           squareMetres: 61751.95,
         },
+      },
+      access: {
+        affected: 'newRoad',
+      },
+      utilities: {
+        foulSewageDisposal: 'sewer',
+      },
+      flood: {
+        surfaceWaterDisposal: 'drainageSystem',
       },
     },
   },
