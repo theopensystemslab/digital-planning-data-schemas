@@ -1,5 +1,5 @@
+import {FileType} from '../enums/FileTypes';
 import {DateTime, URL, UUID} from './../utils';
-import {FileType} from './File';
 import {QuestionMetaData} from './Responses';
 
 /**

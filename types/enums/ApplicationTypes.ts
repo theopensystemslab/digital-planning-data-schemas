@@ -135,3 +135,20 @@ export const ApplicationTypes = {
   'wtt.notice':
     'Works to trees - Notification of proposed works to a tree in a Conservation Area',
 };
+
+type ApplicationTypeKeys = keyof typeof ApplicationTypes;
+
+type GenericApplicationType<TKey extends ApplicationTypeKeys> = {
+  value: TKey;
+  description: (typeof ApplicationTypes)[TKey];
+};
+
+type ApplicationTypeMap = {
+  [K in ApplicationTypeKeys]: GenericApplicationType<K>;
+};
+
+/**
+ * @id #ApplicationType
+ * @description Planning application types
+ */
+export type ApplicationType = ApplicationTypeMap[keyof ApplicationTypeMap];

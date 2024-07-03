@@ -344,3 +344,20 @@ export const ProjectTypes = {
   'unit.merge': 'Convert two or more properties into one',
   'unit.subdivide': 'Convert a home or part of a home into flats',
 };
+
+type ProjectTypeKeys = keyof typeof ProjectTypes;
+
+type GenericProjectType<TKey extends ProjectTypeKeys> = {
+  value: TKey;
+  description: (typeof ProjectTypes)[TKey];
+};
+
+type ProjectTypeMap = {
+  [K in ProjectTypeKeys]: GenericProjectType<K>;
+};
+
+/**
+ * @id #ProjectType
+ * @description Planning project types
+ */
+export type ProjectType = ProjectTypeMap[keyof ProjectTypeMap];

@@ -7,3 +7,23 @@ export const GLAProtectedSpaceDesignations = {
   none: 'Not designated',
   SSSI: 'Sites of Special Scientific Interest',
 };
+
+type ProtectedSpaceDesignationKeys = keyof typeof GLAProtectedSpaceDesignations;
+
+type GenericProtectedSpaceDesignation<
+  TKey extends ProtectedSpaceDesignationKeys,
+> = {
+  value: TKey;
+  description: (typeof GLAProtectedSpaceDesignations)[TKey];
+};
+
+type ProtectedSpaceDesignationMap = {
+  [K in ProtectedSpaceDesignationKeys]: GenericProtectedSpaceDesignation<K>;
+};
+
+/**
+ * @id #ProtectedSpaceDesignation
+ * @description Designations of natural protected spaces
+ */
+export type ProtectedSpaceDesignation =
+  ProtectedSpaceDesignationMap[keyof ProtectedSpaceDesignationMap];
