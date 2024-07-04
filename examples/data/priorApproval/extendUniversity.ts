@@ -95,7 +95,6 @@ export const priorApprovalExtendUniversity: Schema = {
             value: 'designated',
             description: 'Designated land',
             intersects: true,
-            entities: [],
           },
           {
             value: 'nature.SAC',

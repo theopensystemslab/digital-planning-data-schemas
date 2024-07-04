@@ -211,7 +211,7 @@ type NonIntersectingPlanningConstraint = {
  */
 type IntersectingPlanningConstraint = {
   intersects: true;
-  entities: Entity[] | [];
+  entities: Entity[];
 } & BasePlanningConstraint;
 
 /**
