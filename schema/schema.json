@@ -516,6 +516,60 @@
           "additionalProperties": false,
           "properties": {
             "description": {
+              "const": "Environmental Impact Decision",
+              "type": "string"
+            },
+            "value": {
+              "const": "environmnentalImpact",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Environmental Impact Decision - Scoping",
+              "type": "string"
+            },
+            "value": {
+              "const": "environmentalImpact.scoping",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Environmental Impact Decision - Screening",
+              "type": "string"
+            },
+            "value": {
+              "const": "environmentalImpact.screening",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
               "const": "Consent to move and dispose of hazardous substances",
               "type": "string"
             },
@@ -665,6 +719,24 @@
             },
             "value": {
               "const": "listed",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Notification of Completion",
+              "type": "string"
+            },
+            "value": {
+              "const": "notifyCompletion",
               "type": "string"
             }
           },

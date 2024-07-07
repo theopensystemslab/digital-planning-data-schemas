@@ -9,6 +9,9 @@ export const ApplicationTypes = {
     'Consent to make small (minor material) changes to a project with Planning Permission',
   'amendment.nonMaterial':
     'Consent to make small (non-material) changes to a project with Planning Permission',
+  environmnentalImpact: 'Environmental Impact Decision',
+  'environmentalImpact.scoping': 'Environmental Impact Decision - Scoping',
+  'environmentalImpact.screening': 'Environmental Impact Decision - Screening',
   hazardousSubstanceConsent:
     'Consent to move and dispose of hazardous substances',
   hedgerowRemovalNotice: 'Notice to remove a hedge',
@@ -22,6 +25,7 @@ export const ApplicationTypes = {
   'ldc.condition':
     'Lawful Development Certificate - Lawful not to comply with a condition or limitation',
   listed: 'Consent to do works to a Listed Building',
+  notifyCompletion: 'Notification of Completion',
   pa: 'Prior Approval',
   'pa.part1.classA': 'Prior Approval - Larger extension to a house',
   'pa.part1.classAA': 'Prior Approval - Adding storeys to a house',
