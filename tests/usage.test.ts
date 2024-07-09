@@ -1,3 +1,4 @@
+import {priorApprovalLargerExtension} from './../examples/data/priorApproval/largerExtension';
 import Ajv from 'ajv';
 import addFormats from 'ajv-formats';
 import {Validator} from 'jsonschema';
@@ -26,6 +27,7 @@ const examplesToTest = [
   priorApprovalSolarPanels,
   priorApprovalBuildHomes,
   priorApprovalConvertCommercialToHome,
+  priorApprovalLargerExtension,
 ];
 
 describe("parsing using the 'jsonschema' library", () => {
