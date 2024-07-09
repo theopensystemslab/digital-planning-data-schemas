@@ -516,6 +516,114 @@
           "additionalProperties": false,
           "properties": {
             "description": {
+              "const": "Planning approval",
+              "type": "string"
+            },
+            "value": {
+              "const": "approval",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Approval of reserved matters",
+              "type": "string"
+            },
+            "value": {
+              "const": "approval.reservedMatters",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Written confirmation of compliance with a planning condition",
+              "type": "string"
+            },
+            "value": {
+              "const": "complianceConfirmation",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Environmental Impact Decision",
+              "type": "string"
+            },
+            "value": {
+              "const": "environmnentalImpact",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Environmental Impact Decision - Scoping",
+              "type": "string"
+            },
+            "value": {
+              "const": "environmentalImpact.scoping",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Environmental Impact Decision - Screening",
+              "type": "string"
+            },
+            "value": {
+              "const": "environmentalImpact.screening",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
               "const": "Consent to move and dispose of hazardous substances",
               "type": "string"
             },
@@ -665,6 +773,78 @@
             },
             "value": {
               "const": "listed",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Notification of completion",
+              "type": "string"
+            },
+            "value": {
+              "const": "notifyCompletion",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Planning obligation",
+              "type": "string"
+            },
+            "value": {
+              "const": "obligation",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Discharge a planning obligation",
+              "type": "string"
+            },
+            "value": {
+              "const": "obligation.discharge",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Modify a planning obligation",
+              "type": "string"
+            },
+            "value": {
+              "const": "obligation.modify",
               "type": "string"
             }
           },
@@ -1380,42 +1560,6 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Permission in Principle - Consent for the principle of a project with less than 1,000 square metres floor area on a site of less than 1 hectare",
-              "type": "string"
-            },
-            "value": {
-              "const": "pip",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "Permission in Principle - Approval of technical details",
-              "type": "string"
-            },
-            "value": {
-              "const": "pip.technicalDetails",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
               "const": "Planning Permission",
               "type": "string"
             },
@@ -1578,6 +1722,60 @@
           "additionalProperties": false,
           "properties": {
             "description": {
+              "const": "Planning Permission - Technical details consent for major development",
+              "type": "string"
+            },
+            "value": {
+              "const": "pp.full.major.technicalDetails",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Planning Permission - Technical details consent for waste development",
+              "type": "string"
+            },
+            "value": {
+              "const": "pp.full.major.technicalDetails.waste",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Planning Permission - Full planning permission for waste development",
+              "type": "string"
+            },
+            "value": {
+              "const": "pp.full.major.waste",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
               "const": "Planning Permission - Minor application",
               "type": "string"
             },
@@ -1601,6 +1799,24 @@
             },
             "value": {
               "const": "pp.full.minor.listed",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Planning Permission - Technical details consent for minor development",
+              "type": "string"
+            },
+            "value": {
+              "const": "pp.full.minor.technicalDetails",
               "type": "string"
             }
           },
@@ -1672,25 +1888,7 @@
               "type": "string"
             },
             "value": {
-              "const": "pp.outline.allReserved",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "Outline Planning Permission - Approval of reserved matters",
-              "type": "string"
-            },
-            "value": {
-              "const": "pp.outline.reservedMatters",
+              "const": "pp.outline.all",
               "type": "string"
             }
           },
@@ -1708,7 +1906,7 @@
               "type": "string"
             },
             "value": {
-              "const": "pp.outline.someReserved",
+              "const": "pp.outline.some",
               "type": "string"
             }
           },
@@ -1744,25 +1942,7 @@
               "type": "string"
             },
             "value": {
-              "const": "pp.outline.minor.allReserved",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "Outline Planning Permission - Approval of reserved matters (minor)",
-              "type": "string"
-            },
-            "value": {
-              "const": "pp.outline.minor.reservedMatters",
+              "const": "pp.outline.minor.all",
               "type": "string"
             }
           },
@@ -1780,7 +1960,7 @@
               "type": "string"
             },
             "value": {
-              "const": "pp.outline.minor.someReserved",
+              "const": "pp.outline.minor.some",
               "type": "string"
             }
           },
@@ -1816,7 +1996,7 @@
               "type": "string"
             },
             "value": {
-              "const": "pp.outline.major.allReserved",
+              "const": "pp.outline.major.all",
               "type": "string"
             }
           },
@@ -1830,11 +2010,11 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Outline Planning Permission - Approval of reserved matters (major)",
+              "const": "Outline Planning Permission - Consent for the principle of waste development witholding all details",
               "type": "string"
             },
             "value": {
-              "const": "pp.outline.major.reservedMatters",
+              "const": "pp.outline.major.all.waste",
               "type": "string"
             }
           },
@@ -1852,7 +2032,61 @@
               "type": "string"
             },
             "value": {
-              "const": "pp.outline.major.someReserved",
+              "const": "pp.outline.major.some",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Outline Planning Permission - Consent for the principle of waste development witholding all details",
+              "type": "string"
+            },
+            "value": {
+              "const": "pp.outline.major.some.waste",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Permission in Principle - Consent for the principle of a project with less than 1,000 square metres floor area on a site of less than 1 hectare",
+              "type": "string"
+            },
+            "value": {
+              "const": "pp.pip",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Permission in Principle - Approval of technical details",
+              "type": "string"
+            },
+            "value": {
+              "const": "pp.pip.technicalDetails",
               "type": "string"
             }
           },
