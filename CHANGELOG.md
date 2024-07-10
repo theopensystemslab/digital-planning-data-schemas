@@ -9,6 +9,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 The minor version will be incremented upon a breaking change and the patch version will be
 incremented for features.
 
+## [0.7.0] - 2024-07-10
+
+### Breaking
+- Updated `ApplicationTypes` & `ProjectTypes` based on ODP Service development ([#198](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/198), [#197](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/197), [#182](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/182), [#177](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/177))
+
+### Added
+- Added new example payloads, now organised in subdirectories by application type ([#183](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/183)):
+    - Minor planning permission ([#193](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/193))
+    - Major planning permission ([#194](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/194))
+    - Prior approvals (5 types) ([#195](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/195), [#186](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/186))
+- Added type definitions for Greater London Authority reporting requirements, like residential units etc ([#192](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/192), [#179](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/179), [#178](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/178))
+- Added type definitions for "documents submitted as data" (not yet represented in example payloads) ([#180](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/180))
+
+### Changed
+- Updated `FileTypes` based on ODP Service development ([#198](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/198), [#176](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/176))
+- Tightened type defintion for planning desigation "entities" ([#196](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/196))
+- Upgraded a number of technical dependencies via Dependabot
+
 ## [0.6.0] - 2024-05-03
 
 ### Breaking
