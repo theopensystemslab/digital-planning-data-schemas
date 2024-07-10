@@ -4242,11 +4242,47 @@
           "additionalProperties": false,
           "properties": {
             "description": {
+              "const": "Recyclable waste storage details",
+              "type": "string"
+            },
+            "value": {
+              "const": "recycleWasteStorageDetails",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
               "const": "Information the applicant considers relevant to the application",
               "type": "string"
             },
             "value": {
               "const": "relevantInformation",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Residential units details",
+              "type": "string"
+            },
+            "value": {
+              "const": "residentialUnitsDetails",
               "type": "string"
             }
           },
@@ -4913,6 +4949,24 @@
             },
             "value": {
               "const": "wasteAndRecyclingStrategy",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Waste storage details",
+              "type": "string"
+            },
+            "value": {
+              "const": "wasteStorageDetails",
               "type": "string"
             }
           },

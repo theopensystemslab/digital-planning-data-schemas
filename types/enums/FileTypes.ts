@@ -66,8 +66,10 @@ export const FileTypes = {
   'photographs.existing': 'Photographs - existing',
   'photographs.proposed': 'Photographs - proposed',
   planningStatement: 'Planning statement',
+  recycleWasteStorageDetails: 'Recyclable waste storage details',
   relevantInformation:
     'Information the applicant considers relevant to the application',
+  residentialUnitsDetails: 'Residential units details',
   'roofPlan.existing': 'Roof plan - existing',
   'roofPlan.proposed': 'Roof plan - proposed',
   'sections.existing': 'Sections - existing',
@@ -106,6 +108,7 @@ export const FileTypes = {
   viabilityAppraisal: 'Viability Appraisal',
   visualisations: 'Visualisations',
   wasteAndRecyclingStrategy: 'Waste and recycling strategy',
+  wasteStorageDetails: 'Waste storage details',
   waterEnvironmentAssessment: 'Water environment assessment',
 };
 
