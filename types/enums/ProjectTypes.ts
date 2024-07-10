@@ -47,7 +47,7 @@ export const ProjectTypes = {
   'alter.chimneys': 'Change chimneys',
   'alter.chimneys.add': 'Add a chimney',
   'alter.chimneys.replace': 'Replace a chimney',
-  'alter.deck': 'Add a verandah or deck',
+  'alter.decks': 'Add a verandah or deck',
   'alter.decksHigh': 'Add a high verandah or deck',
   'alter.drains': 'Work on drains',
   'alter.equipment': 'Install equipment',

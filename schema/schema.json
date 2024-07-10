@@ -4026,6 +4026,24 @@
           "additionalProperties": false,
           "properties": {
             "description": {
+              "const": "Method statement",
+              "type": "string"
+            },
+            "value": {
+              "const": "methodStatement",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
               "const": "Minerals and waste assessment",
               "type": "string"
             },
@@ -4553,6 +4571,24 @@
             },
             "value": {
               "const": "technicalEvidence",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Technical specification",
+              "type": "string"
+            },
+            "value": {
+              "const": "technicalSpecification",
               "type": "string"
             }
           },
@@ -10465,7 +10501,7 @@
               "type": "string"
             },
             "value": {
-              "const": "alter.deck",
+              "const": "alter.decks",
               "type": "string"
             }
           },

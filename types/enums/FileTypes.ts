@@ -53,6 +53,7 @@ export const FileTypes = {
   litterVerminAndBirdControlDetails:
     'Details of litter, vermin and bird control',
   locationPlan: 'Location plan',
+  methodStatement: 'Method statement',
   mineralsAndWasteAssessment: 'Minerals and waste assessment',
   necessaryInformation:
     'Information the authority considers necessary for the application',
@@ -86,6 +87,7 @@ export const FileTypes = {
   sunlightAndDaylightReport: 'Sunlight and daylight report',
   sustainabilityStatement: 'Sustainability statement',
   technicalEvidence: 'Technical evidence',
+  technicalSpecification: 'Technical specification',
   tenancyAgreement: 'Tenancy agreement',
   tenancyInvoice: 'Tenancy invoice',
   townCentreImpactAssessment: 'Town centre uses - Impact assessment',
