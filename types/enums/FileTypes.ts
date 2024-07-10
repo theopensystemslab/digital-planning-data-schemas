@@ -53,6 +53,7 @@ export const FileTypes = {
   litterVerminAndBirdControlDetails:
     'Details of litter, vermin and bird control',
   locationPlan: 'Location plan',
+  methodStatement: 'Method statement',
   mineralsAndWasteAssessment: 'Minerals and waste assessment',
   necessaryInformation:
     'Information the authority considers necessary for the application',
@@ -66,8 +67,10 @@ export const FileTypes = {
   'photographs.existing': 'Photographs - existing',
   'photographs.proposed': 'Photographs - proposed',
   planningStatement: 'Planning statement',
+  recycleWasteStorageDetails: 'Recyclable waste storage details',
   relevantInformation:
     'Information the applicant considers relevant to the application',
+  residentialUnitsDetails: 'Residential units details',
   'roofPlan.existing': 'Roof plan - existing',
   'roofPlan.proposed': 'Roof plan - proposed',
   'sections.existing': 'Sections - existing',
@@ -84,6 +87,7 @@ export const FileTypes = {
   sunlightAndDaylightReport: 'Sunlight and daylight report',
   sustainabilityStatement: 'Sustainability statement',
   technicalEvidence: 'Technical evidence',
+  technicalSpecification: 'Technical specification',
   tenancyAgreement: 'Tenancy agreement',
   tenancyInvoice: 'Tenancy invoice',
   townCentreImpactAssessment: 'Town centre uses - Impact assessment',
@@ -94,6 +98,7 @@ export const FileTypes = {
   treeAndHedgeRemovedOrPruned: 'Removed or pruned trees and hedges',
   treeCanopyCalculator: 'Tree canopy calculator',
   treeConditionReport: 'Tree condition report',
+  treePlan: 'Tree plan',
   treesReport: 'Trees report',
   'unitPlan.existing': 'Unit plan - existing',
   'unitPlan.proposed': 'Unit plan - proposed',
@@ -105,6 +110,7 @@ export const FileTypes = {
   viabilityAppraisal: 'Viability Appraisal',
   visualisations: 'Visualisations',
   wasteAndRecyclingStrategy: 'Waste and recycling strategy',
+  wasteStorageDetails: 'Waste storage details',
   waterEnvironmentAssessment: 'Water environment assessment',
 };
 

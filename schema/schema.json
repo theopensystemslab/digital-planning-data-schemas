@@ -4026,6 +4026,24 @@
           "additionalProperties": false,
           "properties": {
             "description": {
+              "const": "Method statement",
+              "type": "string"
+            },
+            "value": {
+              "const": "methodStatement",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
               "const": "Minerals and waste assessment",
               "type": "string"
             },
@@ -4242,11 +4260,47 @@
           "additionalProperties": false,
           "properties": {
             "description": {
+              "const": "Recyclable waste storage details",
+              "type": "string"
+            },
+            "value": {
+              "const": "recycleWasteStorageDetails",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
               "const": "Information the applicant considers relevant to the application",
               "type": "string"
             },
             "value": {
               "const": "relevantInformation",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Residential units details",
+              "type": "string"
+            },
+            "value": {
+              "const": "residentialUnitsDetails",
               "type": "string"
             }
           },
@@ -4530,6 +4584,24 @@
           "additionalProperties": false,
           "properties": {
             "description": {
+              "const": "Technical specification",
+              "type": "string"
+            },
+            "value": {
+              "const": "technicalSpecification",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
               "const": "Tenancy agreement",
               "type": "string"
             },
@@ -4697,6 +4769,24 @@
             },
             "value": {
               "const": "treeConditionReport",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Tree plan",
+              "type": "string"
+            },
+            "value": {
+              "const": "treePlan",
               "type": "string"
             }
           },
@@ -4895,6 +4985,24 @@
             },
             "value": {
               "const": "wasteAndRecyclingStrategy",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Waste storage details",
+              "type": "string"
+            },
+            "value": {
+              "const": "wasteStorageDetails",
               "type": "string"
             }
           },
@@ -10393,7 +10501,7 @@
               "type": "string"
             },
             "value": {
-              "const": "alter.deck",
+              "const": "alter.decks",
               "type": "string"
             }
           },
@@ -10731,6 +10839,24 @@
           "additionalProperties": false,
           "properties": {
             "description": {
+              "const": "Install machinery",
+              "type": "string"
+            },
+            "value": {
+              "const": "alter.equipment.machinery",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
               "const": "Install solar panels",
               "type": "string"
             },
@@ -10790,6 +10916,24 @@
             },
             "value": {
               "const": "alter.equipment.tank",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Install ventilation",
+              "type": "string"
+            },
+            "value": {
+              "const": "alter.equipment.ventilation",
               "type": "string"
             }
           },
@@ -14493,11 +14637,11 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "New agricultural buildings - glass house",
+              "const": "New agricultural buildings - glasshouse",
               "type": "string"
             },
             "value": {
-              "const": "new.agriculture.glassHouse",
+              "const": "new.agriculture.glasshouse",
               "type": "string"
             }
           },
