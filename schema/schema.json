@@ -4710,6 +4710,24 @@
           "additionalProperties": false,
           "properties": {
             "description": {
+              "const": "Tree plan",
+              "type": "string"
+            },
+            "value": {
+              "const": "treePlan",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
               "const": "Trees report",
               "type": "string"
             },
@@ -10731,6 +10749,24 @@
           "additionalProperties": false,
           "properties": {
             "description": {
+              "const": "Install machinery",
+              "type": "string"
+            },
+            "value": {
+              "const": "alter.equipment.machinery",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
               "const": "Install solar panels",
               "type": "string"
             },
@@ -10790,6 +10826,24 @@
             },
             "value": {
               "const": "alter.equipment.tank",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Install ventilation",
+              "type": "string"
+            },
+            "value": {
+              "const": "alter.equipment.ventilation",
               "type": "string"
             }
           },
@@ -14493,11 +14547,11 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "New agricultural buildings - glass house",
+              "const": "New agricultural buildings - glasshouse",
               "type": "string"
             },
             "value": {
-              "const": "new.agriculture.glassHouse",
+              "const": "new.agriculture.glasshouse",
               "type": "string"
             }
           },

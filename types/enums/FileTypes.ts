@@ -94,6 +94,7 @@ export const FileTypes = {
   treeAndHedgeRemovedOrPruned: 'Removed or pruned trees and hedges',
   treeCanopyCalculator: 'Tree canopy calculator',
   treeConditionReport: 'Tree condition report',
+  treePlan: 'Tree plan',
   treesReport: 'Trees report',
   'unitPlan.existing': 'Unit plan - existing',
   'unitPlan.proposed': 'Unit plan - proposed',
