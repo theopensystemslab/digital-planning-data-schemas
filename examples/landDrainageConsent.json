@@ -65,14 +65,14 @@
             "intersects": true,
             "entities": [
               {
-                "name": "",
+                "name": "Tidal Models - Risk level 3",
                 "source": {
                   "text": "Planning Data",
                   "url": "https://www.planning.data.gov.uk/entity/65104983"
                 }
               },
               {
-                "name": "",
+                "name": "Tidal Models - Risk level 2",
                 "source": {
                   "text": "Planning Data",
                   "url": "https://www.planning.data.gov.uk/entity/65230121"
@@ -128,8 +128,7 @@
           {
             "value": "designated",
             "description": "Designated land",
-            "intersects": true,
-            "entities": []
+            "intersects": true
           },
           {
             "value": "nature.SAC",
@@ -159,14 +158,12 @@
           {
             "value": "flood.zone.2",
             "description": "Flood Risk Zone 2 - Medium risk",
-            "intersects": true,
-            "entities": []
+            "intersects": true
           },
           {
             "value": "flood.zone.3",
             "description": "Flood Risk Zone 3 - High risk",
-            "intersects": true,
-            "entities": []
+            "intersects": true
           },
           {
             "value": "brownfieldSite",
@@ -181,8 +178,7 @@
           {
             "value": "listed.grade.I",
             "description": "Listed Building - Grade I",
-            "intersects": true,
-            "entities": []
+            "intersects": true
           },
           {
             "value": "registeredPark",
@@ -1074,7 +1070,7 @@
     "source": "PlanX",
     "service": {
       "flowId": "5aab3466-8fb0-4e73-b51d-347d61ad5547",
-      "url": "https://editor.planx.uk/medway/apply-for-land-drainage-consent-copy/published",
+      "url": "https://editor.planx.dev/medway/apply-for-land-drainage-consent-copy/published",
       "files": {
         "required": [
           {

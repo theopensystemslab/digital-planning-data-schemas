@@ -1,4 +1,8 @@
 import {Schema} from '../../types/Schema';
+import {BaseApplicant} from '../../types/schema/data/Applicant';
+import {BaseApplication} from '../../types/schema/data/Application';
+import {UKProperty} from '../../types/schema/data/Property';
+import {BaseProposal} from '../../types/schema/data/Proposal';
 
 const version = process.env['VERSION'] || '@next';
 
@@ -67,14 +71,14 @@ export const landDrainageConsent: Schema = {
             intersects: true,
             entities: [
               {
-                name: '',
+                name: 'Tidal Models - Risk level 3',
                 source: {
                   text: 'Planning Data',
                   url: 'https://www.planning.data.gov.uk/entity/65104983',
                 },
               },
               {
-                name: '',
+                name: 'Tidal Models - Risk level 2',
                 source: {
                   text: 'Planning Data',
                   url: 'https://www.planning.data.gov.uk/entity/65230121',
@@ -131,7 +135,6 @@ export const landDrainageConsent: Schema = {
             value: 'designated',
             description: 'Designated land',
             intersects: true,
-            entities: [],
           },
           {
             value: 'nature.SAC',
@@ -162,13 +165,11 @@ export const landDrainageConsent: Schema = {
             value: 'flood.zone.2',
             description: 'Flood Risk Zone 2 - Medium risk',
             intersects: true,
-            entities: [],
           },
           {
             value: 'flood.zone.3',
             description: 'Flood Risk Zone 3 - High risk',
             intersects: true,
-            entities: [],
           },
           {
             value: 'brownfieldSite',
@@ -184,7 +185,6 @@ export const landDrainageConsent: Schema = {
             value: 'listed.grade.I',
             description: 'Listed Building - Grade I',
             intersects: true,
-            entities: [],
           },
           {
             value: 'registeredPark',
@@ -514,7 +514,7 @@ export const landDrainageConsent: Schema = {
       },
       environmentalImpactDescription:
         'These are the environmental impact of the works to be undertaken: A, B, C. And this is how we are mitigating them: 1, 2, 3',
-    },
+    } as BaseProposal,
   },
   responses: [
     {
@@ -645,7 +645,7 @@ export const landDrainageConsent: Schema = {
     source: 'PlanX',
     service: {
       flowId: '5aab3466-8fb0-4e73-b51d-347d61ad5547',
-      url: 'https://editor.planx.uk/medway/apply-for-land-drainage-consent-copy/published',
+      url: 'https://editor.planx.dev/medway/apply-for-land-drainage-consent-copy/published',
       files: {
         required: [
           {
