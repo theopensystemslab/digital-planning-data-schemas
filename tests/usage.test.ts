@@ -18,17 +18,17 @@ import {priorApprovalSolarPanels} from '../examples/data/priorApproval/solarPane
 import generatedSchema from '../schema/schema.json';
 
 const examplesToTest = [
-  // lawfulDevelopmentCertificateExisting,
-  // lawfulDevelopmentCertificateProposed,
-  // listedBuildingConsent,
-  // planningPermissionFullHouseholder,
-  // planningPermissionMajor,
-  // planningPermissionMinor,
-  // priorApprovalExtendUniversity,
-  // priorApprovalSolarPanels,
-  // priorApprovalBuildHomes,
-  // priorApprovalConvertCommercialToHome,
-  // priorApprovalLargerExtension,
+  lawfulDevelopmentCertificateExisting,
+  lawfulDevelopmentCertificateProposed,
+  listedBuildingConsent,
+  planningPermissionFullHouseholder,
+  planningPermissionMajor,
+  planningPermissionMinor,
+  priorApprovalExtendUniversity,
+  priorApprovalSolarPanels,
+  priorApprovalBuildHomes,
+  priorApprovalConvertCommercialToHome,
+  priorApprovalLargerExtension,
   landDrainageConsent,
 ];
 
@@ -40,7 +40,6 @@ describe("parsing using the 'jsonschema' library", () => {
         disableFormat: true,
       });
 
-      console.log(result.errors);
       expect(result.errors).toHaveLength(0);
     });
   });
