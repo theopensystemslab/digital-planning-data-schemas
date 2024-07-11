@@ -4,51 +4,18 @@ const version = process.env['VERSION'] || '@next';
 
 export const priorApprovalSolarPanels: Schema = {
   data: {
-    application: {
-      type: {
-        value: 'pa.part14.classJ',
-        description: 'Prior Approval - Install or change solar panels',
-      },
-      fee: {
-        calculated: 120,
-        payable: 120,
-        exemption: {
-          disability: false,
-          resubmission: false,
-        },
-        reduction: {
-          sports: false,
-          parishCouncil: false,
-          alternative: false,
-        },
-        reference: {
-          govPay: 'sandbox-ref-789',
-        },
-      },
-      declaration: {
-        accurate: true,
-        connection: {
-          value: 'relation.electedMember',
-          description:
-            'I think the King is but a man, as I am. The violet smells to him as it doth to me. The element shows to him as it doth to me. All his senses have but human conditions. His ceremonies laid by, in his nakedness he appears but a man.',
-        },
-      },
-    },
     user: {
       role: 'applicant',
     },
     applicant: {
-      type: 'company',
+      type: 'individual',
       name: {
-        first: 'William',
+        first: 'Bill',
         last: 'Shakespeare',
       },
-      email: 'thebard@example.com',
+      email: 'byanyothername@email.org',
       phone: {
-        primary: '2830407283',
-      },
-      company: {
-        name: "Lord Chamberlain's Men",
+        primary: '012345678901',
       },
       address: {
         sameAsSiteAddress: true,
@@ -59,187 +26,21 @@ export const priorApprovalSolarPanels: Schema = {
     },
     property: {
       address: {
-        latitude: 51.5081109,
-        longitude: -0.0965974,
+        latitude: 51.5081124,
+        longitude: -0.0965717,
         x: 532192,
         y: 180515,
         title:
           'INTERNATIONAL SHAKESPEARE GLOBE CENTRE LTD, SHAKESPEARE GLOBE THEATRE, 21, NEW GLOBE WALK, LONDON',
-        singleLine:
-          'INTERNATIONAL SHAKESPEARE GLOBE CENTRE LTD, SHAKESPEARE GLOBE THEATRE, 21, NEW GLOBE WALK, LONDON, SE1 9DT',
         source: 'Ordnance Survey',
         uprn: '200003377200',
         usrn: '22503078',
-        pao: '21',
+        pao: '21SHAKESPEARE GLOBE THEATRE',
         street: 'NEW GLOBE WALK',
         town: 'LONDON',
         postcode: 'SE1 9DT',
-      },
-      boundary: {
-        site: {
-          type: 'Feature',
-          geometry: {
-            type: 'Polygon',
-            coordinates: [
-              [
-                [-0.0967472791671659, 51.50830340605074],
-                [-0.09676337242125525, 51.50830507546084],
-                [-0.09689748287199977, 51.50831926544436],
-                [-0.09693503379820824, 51.50790775412855],
-                [-0.09666681289671919, 51.50789439872946],
-                [-0.09645719784644384, 51.507889747624404],
-                [-0.09639290535660058, 51.50828278342658],
-                [-0.0967472791671659, 51.50830340605074],
-              ],
-            ],
-          },
-          properties: null,
-        },
-        area: {
-          hectares: 0.152757,
-          squareMetres: 1527.57,
-        },
-      },
-      planning: {
-        sources: [
-          'https://api.editor.planx.dev/gis/southwark?geom=POLYGON+%28%28-0.0967472791671659+51.50830340605074%2C+-0.09676337242125525+51.50830507546084%2C+-0.09689748287199977+51.50831926544436%2C+-0.09693503379820824+51.50790775412855%2C+-0.09666681289671919+51.50789439872946%2C+-0.09645719784644384+51.507889747624404%2C+-0.09639290535660058+51.50828278342658%2C+-0.0967472791671659+51.50830340605074%29%29&analytics=false&sessionId=b18c301b-9d44-4c6c-8d27-5b5bf33c570b',
-          'https://api.editor.planx.dev/roads?usrn=22503078',
-        ],
-        designations: [
-          {
-            value: 'article4',
-            description: 'Article 4 Direction area',
-            intersects: true,
-            entities: [
-              {
-                name: 'Central Activities Zone',
-                description:
-                  'Change of use from offices to dwelling houses is restricted',
-                source: {
-                  text: 'Planning Data',
-                  url: 'https://www.planning.data.gov.uk/entity/7010000942',
-                },
-              },
-              {
-                name: 'Central Activities Zone',
-                description:
-                  'Demolition of commercial buildings and construction of new dwellinghouses is restricted',
-                source: {
-                  text: 'Planning Data',
-                  url: 'https://www.planning.data.gov.uk/entity/7010000944',
-                },
-              },
-              {
-                name: 'Bankside and Borough District Town Centre',
-                description:
-                  'Demolition of commercial buildings and construction of new dwellinghouses is restricted',
-                source: {
-                  text: 'Planning Data',
-                  url: 'https://www.planning.data.gov.uk/entity/7010001042',
-                },
-              },
-              {
-                name: 'Central Activities Zone',
-                description:
-                  'Change of use from Class E to residential is restricted',
-                source: {
-                  text: 'Planning Data',
-                  url: 'https://www.planning.data.gov.uk/entity/7010001055',
-                },
-              },
-              {
-                name: 'Bankside and Borough District Town Centre',
-                description:
-                  'Change of use from Class E to residential is restricted',
-                source: {
-                  text: 'Planning Data',
-                  url: 'https://www.planning.data.gov.uk/entity/7010001153',
-                },
-              },
-            ],
-          },
-          {
-            value: 'article4.caz',
-            description: 'Central Activities Zone (CAZ)',
-            intersects: true,
-            entities: [],
-          },
-          {
-            value: 'tpo',
-            description: 'Tree Preservation Order (TPO) or zone',
-            intersects: false,
-          },
-          {
-            value: 'listed',
-            description: 'Listed Building',
-            intersects: false,
-          },
-          {
-            value: 'monument',
-            description: 'Site of a Scheduled Monument',
-            intersects: false,
-          },
-          {
-            value: 'designated',
-            description: 'Designated land',
-            intersects: false,
-          },
-          {
-            value: 'nature.SAC',
-            description: 'Special Area of Conservation (SAC)',
-            intersects: false,
-          },
-          {
-            value: 'nature.ASNW',
-            description: 'Ancient Semi-Natural Woodland (ASNW)',
-            intersects: false,
-          },
-          {
-            value: 'nature.SSSI',
-            description: 'Site of Special Scientific Interest (SSSI)',
-            intersects: false,
-          },
-          {
-            value: 'locallyListed',
-            description: 'Locally Listed Building',
-            intersects: false,
-          },
-          {
-            value: 'nature.SPA',
-            description: 'Special Protection Area (SPA)',
-            intersects: false,
-          },
-          {
-            value: 'designated.WHS',
-            description: 'UNESCO World Heritage Site or buffer zone',
-            intersects: false,
-          },
-          {
-            value: 'registeredPark',
-            description: 'Historic Park or Garden',
-            intersects: false,
-          },
-          {
-            value: 'designated.AONB',
-            description: 'Area of Outstanding Natural Beauty (AONB)',
-            intersects: false,
-          },
-          {
-            value: 'designated.conservationArea',
-            description: 'Conservation Area',
-            intersects: false,
-          },
-          {
-            value: 'designated.nationalPark.broads',
-            description: 'National Park - Broads',
-            intersects: false,
-          },
-          {
-            value: 'road.classified',
-            description: 'Classified Road',
-            intersects: false,
-          },
-        ],
+        singleLine:
+          'INTERNATIONAL SHAKESPEARE GLOBE CENTRE LTD, SHAKESPEARE GLOBE THEATRE, 21, NEW GLOBE WALK, LONDON, SOUTHWARK, SE1 9DT',
       },
       localAuthorityDistrict: ['Southwark'],
       region: 'London',
@@ -247,6 +48,155 @@ export const priorApprovalSolarPanels: Schema = {
         value: 'commercial.leisure.entertainment',
         description:
           'Bingo Hall / Cinema / Conference / Exhibition Centre / Theatre / Concert Hall',
+      },
+      boundary: {
+        site: {
+          type: 'Feature',
+          geometry: {
+            type: 'MultiPolygon',
+            coordinates: [
+              [
+                [
+                  [-0.097554, 51.507945],
+                  [-0.097612, 51.507942],
+                  [-0.097592, 51.507805],
+                  [-0.097442, 51.507818],
+                  [-0.097257, 51.507806],
+                  [-0.097255, 51.507821],
+                  [-0.096964, 51.507802],
+                  [-0.096853, 51.507857],
+                  [-0.096465, 51.507835],
+                  [-0.096391, 51.508281],
+                  [-0.096748, 51.508303],
+                  [-0.096891, 51.508319],
+                  [-0.097056, 51.5083],
+                  [-0.097068, 51.508316],
+                  [-0.097096, 51.508318],
+                  [-0.097232, 51.508312],
+                  [-0.09723, 51.508301],
+                  [-0.097249, 51.508299],
+                  [-0.097247, 51.508292],
+                  [-0.097277, 51.50829],
+                  [-0.097279, 51.508302],
+                  [-0.097362, 51.508296],
+                  [-0.097358, 51.508284],
+                  [-0.09741, 51.50828],
+                  [-0.097414, 51.508291],
+                  [-0.097452, 51.508288],
+                  [-0.09745, 51.508279],
+                  [-0.097626, 51.508267],
+                  [-0.097607, 51.508177],
+                  [-0.097597, 51.508177],
+                  [-0.097554, 51.507945],
+                ],
+              ],
+            ],
+          },
+          properties: {
+            name: '',
+            entity: 12000608797,
+            prefix: 'title-boundary',
+            dataset: 'title-boundary',
+            'end-date': '',
+            typology: 'geography',
+            reference: '53336201',
+            'entry-date': '2024-05-06',
+            'start-date': '2011-12-01',
+            'organisation-entity': '13',
+          },
+        },
+        area: {
+          hectares: 0.424414,
+          squareMetres: 4244.14,
+        },
+      },
+      titleNumber: {
+        known: 'Yes',
+        number: '24/12345/FUL',
+      },
+      EPC: {
+        known: 'Yes',
+        number: '1234-1234-1234-1234',
+      },
+      parking: {
+        cars: {
+          count: 0,
+        },
+        vans: {
+          count: 0,
+        },
+        motorcycles: {
+          count: 0,
+        },
+        cycles: {
+          count: 30,
+        },
+        buses: {
+          count: 0,
+        },
+        disabled: {
+          count: 0,
+        },
+        carClub: {
+          count: 0,
+        },
+        offStreet: {
+          residential: {
+            count: 0,
+          },
+        },
+        other: {
+          count: 0,
+        },
+      },
+    },
+    application: {
+      type: {
+        value: 'pa.part14.classJ',
+        description: 'Prior Approval - Install or change solar panels',
+      },
+      fee: {
+        calculated: 120,
+        payable: 120,
+        category: {
+          one: 0,
+          two: 0,
+          three: 0,
+          four: 0,
+          five: 0,
+          sixAndSeven: 0,
+          eight: 0,
+          nine: 0,
+          ten: 0,
+          eleven: {
+            one: 0,
+            two: 0,
+          },
+          twelve: {
+            one: 0,
+            two: 0,
+          },
+          thirteen: 0,
+          fourteen: 0,
+        },
+        exemption: {
+          disability: false,
+          resubmission: false,
+        },
+        reduction: {
+          sports: false,
+          parishCouncil: false,
+          alternative: false,
+        },
+        reference: {
+          govPay: 'mfm6s5irae9bh5g75p3ks5opng',
+        },
+      },
+      declaration: {
+        accurate: true,
+        connection: {
+          value: 'none',
+        },
       },
     },
     proposal: {
@@ -256,30 +206,111 @@ export const priorApprovalSolarPanels: Schema = {
           description: 'Install solar panels',
         },
       ],
-      description: '@todo not provided in Prior Approval',
+      description: 'Not provided',
+      date: {
+        start: '2024-07-28',
+        completion: '2030-07-28',
+      },
       boundary: {
         site: {
           type: 'Feature',
           geometry: {
-            type: 'Polygon',
+            type: 'MultiPolygon',
             coordinates: [
               [
-                [-0.0967472791671659, 51.50830340605074],
-                [-0.09676337242125525, 51.50830507546084],
-                [-0.09689748287199977, 51.50831926544436],
-                [-0.09693503379820824, 51.50790775412855],
-                [-0.09666681289671919, 51.50789439872946],
-                [-0.09645719784644384, 51.507889747624404],
-                [-0.09639290535660058, 51.50828278342658],
-                [-0.0967472791671659, 51.50830340605074],
+                [
+                  [-0.097554, 51.507945],
+                  [-0.097612, 51.507942],
+                  [-0.097592, 51.507805],
+                  [-0.097442, 51.507818],
+                  [-0.097257, 51.507806],
+                  [-0.097255, 51.507821],
+                  [-0.096964, 51.507802],
+                  [-0.096853, 51.507857],
+                  [-0.096465, 51.507835],
+                  [-0.096391, 51.508281],
+                  [-0.096748, 51.508303],
+                  [-0.096891, 51.508319],
+                  [-0.097056, 51.5083],
+                  [-0.097068, 51.508316],
+                  [-0.097096, 51.508318],
+                  [-0.097232, 51.508312],
+                  [-0.09723, 51.508301],
+                  [-0.097249, 51.508299],
+                  [-0.097247, 51.508292],
+                  [-0.097277, 51.50829],
+                  [-0.097279, 51.508302],
+                  [-0.097362, 51.508296],
+                  [-0.097358, 51.508284],
+                  [-0.09741, 51.50828],
+                  [-0.097414, 51.508291],
+                  [-0.097452, 51.508288],
+                  [-0.09745, 51.508279],
+                  [-0.097626, 51.508267],
+                  [-0.097607, 51.508177],
+                  [-0.097597, 51.508177],
+                  [-0.097554, 51.507945],
+                ],
               ],
             ],
           },
-          properties: null,
+          properties: {
+            name: '',
+            entity: 12000608797,
+            prefix: 'title-boundary',
+            dataset: 'title-boundary',
+            'end-date': '',
+            typology: 'geography',
+            reference: '53336201',
+            'entry-date': '2024-05-06',
+            'start-date': '2011-12-01',
+            'organisation-entity': '13',
+            planx_user_action: 'Accepted the title boundary',
+          },
         },
         area: {
-          hectares: 0.152757,
-          squareMetres: 1527.57,
+          hectares: 0.424414,
+          squareMetres: 4244.14,
+        },
+      },
+      parking: {
+        cars: {
+          count: 0,
+          difference: 0,
+        },
+        vans: {
+          count: 0,
+          difference: 0,
+        },
+        motorcycles: {
+          count: 0,
+          difference: 0,
+        },
+        cycles: {
+          count: 30,
+          difference: 0,
+        },
+        buses: {
+          count: 0,
+          difference: 0,
+        },
+        disabled: {
+          count: 0,
+          difference: 0,
+        },
+        carClub: {
+          count: 0,
+          difference: 0,
+        },
+        offStreet: {
+          residential: {
+            count: 0,
+            difference: 0,
+          },
+        },
+        other: {
+          count: 0,
+          difference: 0,
         },
       },
     },
@@ -294,58 +325,118 @@ export const priorApprovalSolarPanels: Schema = {
   responses: [
     {
       question: 'Is the property in Southwark?',
-      responses: [{value: 'Yes'}],
-      metadata: {autoAnswered: true, sectionName: 'The property'},
+      responses: [
+        {
+          value: 'Yes',
+        },
+      ],
+      metadata: {
+        autoAnswered: true,
+        sectionName: 'The property',
+      },
     },
     {
       question: 'What type of property is it?',
-      responses: [{value: 'Something else'}],
-      metadata: {autoAnswered: true, sectionName: 'The property'},
+      responses: [
+        {
+          value: 'Something else',
+        },
+      ],
+      metadata: {
+        autoAnswered: true,
+        sectionName: 'The property',
+      },
     },
     {
       question: 'Which of these best describes the use of the property?',
-      responses: [{value: 'Leisure and sport'}],
-      metadata: {autoAnswered: true, sectionName: 'The property'},
+      responses: [
+        {
+          value: 'Leisure and sport',
+        },
+      ],
+      metadata: {
+        autoAnswered: true,
+        sectionName: 'The property',
+      },
     },
     {
       question: 'What type of leisure property is it?',
-      responses: [{value: 'Entertainment'}],
-      metadata: {autoAnswered: true, sectionName: 'The property'},
+      responses: [
+        {
+          value: 'Entertainment',
+        },
+      ],
+      metadata: {
+        autoAnswered: true,
+        sectionName: 'The property',
+      },
     },
     {
       question: 'Have the works already started?',
-      responses: [{value: 'No'}],
-      metadata: {sectionName: 'About the project'},
+      responses: [
+        {
+          value: 'No',
+        },
+      ],
+      metadata: {
+        sectionName: 'About the project',
+      },
     },
     {
       question: 'Describe the project.',
       responses: [
         {
           value:
-            'Addition of solar panels in order to power the globe with green energy.',
+            'Installation of solar panels on the roof of the globe theatre',
         },
       ],
-      metadata: {sectionName: 'About the project'},
+      metadata: {
+        sectionName: 'About the project',
+      },
     },
     {
       question: 'What type of property is it?',
-      responses: [{value: 'Commercial building'}],
-      metadata: {autoAnswered: true, sectionName: 'About the project'},
+      responses: [
+        {
+          value: 'Commercial building',
+        },
+      ],
+      metadata: {
+        autoAnswered: true,
+        sectionName: 'About the project',
+      },
     },
     {
       question: 'What type of property is it?',
-      responses: [{value: 'Neither a house nor a flat'}],
-      metadata: {autoAnswered: true, sectionName: 'About the project'},
+      responses: [
+        {
+          value: 'Neither a house nor a flat',
+        },
+      ],
+      metadata: {
+        autoAnswered: true,
+        sectionName: 'About the project',
+      },
     },
     {
       question: 'What do you want to install?',
-      responses: [{value: 'Solar photovoltaics (PV)'}],
-      metadata: {sectionName: 'About the project'},
+      responses: [
+        {
+          value: 'Solar photovoltaics (PV)',
+        },
+      ],
+      metadata: {
+        sectionName: 'About the project',
+      },
     },
     {
       question:
         'Are there any other locations where the equipment could be installed?',
-      responses: [{value: 'Yes'}],
+      responses: [
+        {
+          value: 'Yes',
+        },
+      ],
       metadata: {
         policyRefs: [
           {
@@ -366,7 +457,9 @@ export const priorApprovalSolarPanels: Schema = {
       responses: [
         {
           value: 'No',
-          metadata: {flags: ['Planning permission / Permitted development']},
+          metadata: {
+            flags: ['Planning permission / Permitted development'],
+          },
         },
       ],
       metadata: {
@@ -384,11 +477,12 @@ export const priorApprovalSolarPanels: Schema = {
       responses: [
         {
           value: 'No',
-          metadata: {flags: ['Planning permission / Permitted development']},
+          metadata: {
+            flags: ['Planning permission / Permitted development'],
+          },
         },
       ],
       metadata: {
-        autoAnswered: true,
         policyRefs: [
           {
             text: 'The Town and Country Planning (General Permitted Development) (England) Order 2015 Schedule 2, Part 14, Class J',
@@ -403,11 +497,12 @@ export const priorApprovalSolarPanels: Schema = {
       responses: [
         {
           value: 'No',
-          metadata: {flags: ['Planning permission / Permitted development']},
+          metadata: {
+            flags: ['Planning permission / Permitted development'],
+          },
         },
       ],
       metadata: {
-        autoAnswered: true,
         policyRefs: [
           {
             text: 'The Town and Country Planning (General Permitted Development) (England) Order 2015 Schedule 2, Part 14, Class J',
@@ -419,39 +514,23 @@ export const priorApprovalSolarPanels: Schema = {
     },
     {
       question: 'Where are the new solar panels?',
-      responses: [{value: 'On roofs'}],
-      metadata: {sectionName: 'About the project'},
-    },
-    {
-      question: 'What type of roofs are they?',
-      responses: [{value: 'Both pitched and flat'}],
-      metadata: {sectionName: 'About the project'},
-    },
-    {
-      question: 'Is the property in a conservation area?',
-      responses: [{value: 'No'}],
+      responses: [
+        {
+          value: 'On roofs',
+        },
+      ],
       metadata: {
-        autoAnswered: true,
-        policyRefs: [
-          {
-            text: 'The Town and Country Planning (General Permitted Development) (England) Order 2015 S.2.P.14. .A.1 (c)',
-            url: 'https://www.legislation.gov.uk/uksi/2015/596/schedule/2/part/14',
-          },
-        ],
         sectionName: 'About the project',
       },
     },
     {
-      question: 'Is the property in a world heritage site?',
-      responses: [{value: 'No'}],
+      question: 'What type of roofs are they?',
+      responses: [
+        {
+          value: 'Pitched',
+        },
+      ],
       metadata: {
-        autoAnswered: true,
-        policyRefs: [
-          {
-            text: 'The Town and Country Planning (General Permitted Development) (England) Order 2015 Schedule 2, Part 14, Class A.1 (c)',
-            url: 'https://www.legislation.gov.uk/uksi/2015/596/schedule/2/part/14',
-          },
-        ],
         sectionName: 'About the project',
       },
     },
@@ -461,7 +540,9 @@ export const priorApprovalSolarPanels: Schema = {
       responses: [
         {
           value: '0.2m or less',
-          metadata: {flags: ['Planning permission / Permitted development']},
+          metadata: {
+            flags: ['Planning permission / Permitted development'],
+          },
         },
       ],
       metadata: {
@@ -475,29 +556,13 @@ export const priorApprovalSolarPanels: Schema = {
       },
     },
     {
-      question: 'How high are the new solar panels compared to the flat roofs?',
-      responses: [
-        {
-          value: '1m or less higher than the roof',
-          metadata: {flags: ['Planning permission / Permitted development']},
-        },
-      ],
-      metadata: {
-        policyRefs: [
-          {
-            text: 'The Town and Country Planning (General Permitted Development) (England) Order 2015 Schedule 2, Part 14, Class A',
-            url: 'https://www.legislation.gov.uk/uksi/2015/596/schedule/2/part/14',
-          },
-        ],
-        sectionName: 'About the project',
-      },
-    },
-    {
       question: 'How far are the new solar panels from the edge of the roof?',
       responses: [
         {
           value: '1m or more from the edge of the roof',
-          metadata: {flags: ['Planning permission / Permitted development']},
+          metadata: {
+            flags: ['Planning permission / Permitted development'],
+          },
         },
       ],
       metadata: {
@@ -512,21 +577,29 @@ export const priorApprovalSolarPanels: Schema = {
     },
     {
       question: 'What do you want to install?',
-      responses: [{value: 'Solar photovoltaics (PV)'}],
-      metadata: {sectionName: 'About the project'},
+      responses: [
+        {
+          value: 'Solar photovoltaics (PV)',
+        },
+      ],
+      metadata: {
+        sectionName: 'About the project',
+      },
     },
     {
       question: 'What is the total capacity of all solar photovoltaics (PV)?',
       responses: [
         {
-          value: 'Between 50kW and 1,000kW (1 MW)',
-          metadata: {flags: ['Planning permission / Prior approval']},
+          value: 'More than 50kW',
+          metadata: {
+            flags: ['Planning permission / Prior approval'],
+          },
         },
       ],
       metadata: {
         policyRefs: [
           {
-            text: 'The Town and Country Planning (General Permitted Development) (England) Order 2015 Schedule 2, Part 14, Class J.3',
+            text: 'The Town and Country Planning (General Permitted Development) (England) Order 2015 Schedule 2, Part 14, Class J',
             url: 'https://www.legislation.gov.uk/uksi/2015/596/schedule/2/part/14',
           },
         ],
@@ -538,7 +611,9 @@ export const priorApprovalSolarPanels: Schema = {
       responses: [
         {
           value: 'OK',
-          metadata: {flags: ['Planning permission / Permitted development']},
+          metadata: {
+            flags: ['Planning permission / Permitted development'],
+          },
         },
       ],
       metadata: {
@@ -557,121 +632,486 @@ export const priorApprovalSolarPanels: Schema = {
     },
     {
       question: 'What type of property is it?',
-      responses: [{value: 'Another use'}],
-      metadata: {sectionName: 'About the project'},
+      responses: [
+        {
+          value: 'Another use',
+        },
+      ],
+      metadata: {
+        sectionName: 'About the project',
+      },
     },
     {
       question: 'Select your project',
-      responses: [{value: 'Install solar panels'}],
-      metadata: {sectionName: 'About the project'},
+      responses: [
+        {
+          value: 'Install solar panels',
+        },
+      ],
+      metadata: {
+        sectionName: 'About the project',
+      },
     },
     {
       question: 'What type of application is being applied for?',
-      responses: [{value: 'Part 14 Class J'}],
-      metadata: {autoAnswered: true, sectionName: 'About the project'},
+      responses: [
+        {
+          value: 'Part 14 Class J',
+        },
+      ],
+      metadata: {
+        autoAnswered: true,
+        sectionName: 'About the project',
+      },
     },
     {
       question: 'Is the property subject to any Article 4 directions?',
-      responses: [{value: 'Yes'}],
-      metadata: {autoAnswered: true, sectionName: 'About the project'},
-    },
-    {
-      question: 'List all the changes involved in the project',
-      responses: [{value: 'Install solar panels'}],
-      metadata: {autoAnswered: true, sectionName: 'About the project'},
+      responses: [
+        {
+          value: 'No',
+        },
+      ],
+      metadata: {
+        sectionName: 'About the project',
+      },
     },
     {
       question: 'What type of prior approval application is it?',
-      responses: [{value: 'Install or change solar panels'}],
-      metadata: {autoAnswered: true, sectionName: 'About the project'},
+      responses: [
+        {
+          value: 'Install or change solar panels',
+        },
+      ],
+      metadata: {
+        autoAnswered: true,
+        sectionName: 'About the project',
+      },
+    },
+    {
+      question: 'Is the proposal within the Greater London Authority?',
+      responses: [
+        {
+          value: 'Yes',
+        },
+      ],
+      metadata: {
+        autoAnswered: true,
+        sectionName: 'About the project',
+      },
+    },
+    {
+      question: 'Does the site include more than one property?',
+      responses: [
+        {
+          value: 'No',
+        },
+      ],
+      metadata: {
+        policyRefs: [
+          {
+            text: 'Greater London Authority Act 1999',
+            url: 'https://www.legislation.gov.uk/ukpga/1999/29/section/346',
+          },
+        ],
+        sectionName: 'About the project',
+      },
+    },
+    {
+      question: 'Do you know the title number of the property?',
+      responses: [
+        {
+          value: 'Yes',
+        },
+      ],
+      metadata: {
+        sectionName: 'About the project',
+      },
+    },
+    {
+      question: 'What is the title number of the property?',
+      responses: [
+        {
+          value: '24/12345/FUL',
+        },
+      ],
+      metadata: {
+        policyRefs: [
+          {
+            text: 'Greater London Authority Act 1999',
+            url: 'https://www.legislation.gov.uk/ukpga/1999/29/section/346',
+          },
+        ],
+        sectionName: 'About the project',
+      },
+    },
+    {
+      question:
+        'Does the property have an Energy Performance Certificate (EPC)?',
+      responses: [
+        {
+          value: 'Yes',
+        },
+      ],
+      metadata: {
+        policyRefs: [
+          {
+            text: 'Greater London Authority Act 1999',
+            url: 'https://www.legislation.gov.uk/ukpga/1999/29/section/346',
+          },
+        ],
+        sectionName: 'About the project',
+      },
+    },
+    {
+      question: 'Enter the reference number (RRN) from the most recent EPC',
+      responses: [
+        {
+          value: '1234-1234-1234-1234',
+        },
+      ],
+      metadata: {
+        sectionName: 'About the project',
+      },
+    },
+    {
+      question: 'What type of application is this?',
+      responses: [
+        {
+          value: 'Prior approval',
+        },
+      ],
+      metadata: {
+        autoAnswered: true,
+        sectionName: 'About the project',
+      },
+    },
+    {
+      question: 'When are the works planned to start?',
+      responses: [
+        {
+          value: '2024-07-28',
+        },
+      ],
+      metadata: {
+        policyRefs: [
+          {
+            text: 'Greater London Authority Act 1999',
+            url: 'https://www.legislation.gov.uk/ukpga/1999/29/section/346',
+          },
+        ],
+        sectionName: 'About the project',
+      },
+    },
+    {
+      question: 'When are the works planned to be completed?',
+      responses: [
+        {
+          value: '2030-07-28',
+        },
+      ],
+      metadata: {
+        policyRefs: [
+          {
+            text: 'Greater London Authority Act 1999',
+            url: 'https://www.legislation.gov.uk/ukpga/1999/29/section/346',
+          },
+        ],
+        sectionName: 'About the project',
+      },
+    },
+    {
+      question:
+        '[HIDDEN] Is the application for prior approval for an extension to a dwelling house?',
+      responses: [
+        {
+          value: 'Yes',
+        },
+      ],
+      metadata: {
+        autoAnswered: true,
+        sectionName: 'About the project',
+      },
+    },
+    {
+      question: 'What is the gross internal floor area to be added?',
+      responses: [
+        {
+          value: '0',
+        },
+      ],
+      metadata: {
+        sectionName: 'About the project',
+      },
+    },
+    {
+      question:
+        'Do the changes involve creating any new bedrooms or bathrooms?',
+      responses: [
+        {
+          value: 'No',
+        },
+      ],
+      metadata: {
+        sectionName: 'About the project',
+      },
+    },
+    {
+      question:
+        'Are there existing or are you proposing parking spaces for any of these on the site?',
+      responses: [
+        {
+          value: 'Bicycles',
+        },
+      ],
+      metadata: {
+        policyRefs: [
+          {
+            text: 'Greater London Authority Act 1999',
+            url: 'https://www.legislation.gov.uk/ukpga/1999/29/section/346',
+          },
+        ],
+        sectionName: 'About the project',
+      },
+    },
+    {
+      question: 'What is the number of existing bicycle parking spaces?',
+      responses: [
+        {
+          value: '30',
+        },
+      ],
+      metadata: {
+        policyRefs: [
+          {
+            text: 'Greater London Authority Act 1999',
+            url: 'https://www.legislation.gov.uk/ukpga/1999/29/section/346',
+          },
+        ],
+        sectionName: 'About the project',
+      },
+    },
+    {
+      question: 'What is the proposed total number of bicycle parking spaces?',
+      responses: [
+        {
+          value: '30',
+        },
+      ],
+      metadata: {
+        policyRefs: [
+          {
+            text: 'Greater London Authority Act 1999',
+            url: 'https://www.legislation.gov.uk/ukpga/1999/29/section/346',
+          },
+        ],
+        sectionName: 'About the project',
+      },
+    },
+    {
+      question: 'What type of application is it?',
+      responses: [
+        {
+          value: 'Apply for prior approval',
+        },
+      ],
+      metadata: {
+        autoAnswered: true,
+        sectionName: 'About you',
+      },
     },
     {
       question: 'Are you applying on behalf of someone else?',
-      responses: [{value: 'No'}],
-      metadata: {sectionName: 'About you'},
+      responses: [
+        {
+          value: 'No',
+        },
+      ],
+      metadata: {
+        sectionName: 'About you',
+      },
     },
     {
       question: 'Which of these best describes you?',
-      responses: [{value: 'Company'}],
-      metadata: {sectionName: 'About you'},
+      responses: [
+        {
+          value: 'Private individual',
+        },
+      ],
+      metadata: {
+        sectionName: 'About you',
+      },
     },
     {
       question: 'Your contact details',
       responses: [
         {
-          value:
-            "Mr William Shakespeare Lord Chamberlain's Men 2830407283 thebard@example.com",
+          value: 'Bill Shakespeare 012345678901 byanyothername@email.org',
         },
       ],
-      metadata: {sectionName: 'About you'},
+      metadata: {
+        sectionName: 'About you',
+      },
     },
     {
       question: 'Is your contact address the same as the property address?',
-      responses: [{value: 'Yes'}],
-      metadata: {sectionName: 'About you'},
+      responses: [
+        {
+          value: 'No',
+        },
+      ],
+      metadata: {
+        sectionName: 'About you',
+      },
+    },
+    {
+      question: 'Your contact address',
+      responses: [
+        {
+          value: '12 Sonnet Street, Stratford upon Avon, TH334RD',
+        },
+      ],
+      metadata: {
+        sectionName: 'About you',
+      },
+    },
+    {
+      question: 'Can a planning officer see the works from public land?',
+      responses: [
+        {
+          value: "Yes, it's visible from the road or somewhere else",
+        },
+      ],
+      metadata: {
+        sectionName: 'About you',
+      },
     },
     {
       question:
         'We may need to visit the site to assess your application. If we do, who should we contact to arrange the visit?',
-      responses: [{value: 'Me, the applicant'}],
-      metadata: {sectionName: 'About you'},
+      responses: [
+        {
+          value: 'Me, the applicant',
+        },
+      ],
+      metadata: {
+        sectionName: 'About you',
+      },
     },
     {
       question: 'What type of prior approval application is it?',
-      responses: [{value: 'Install or change solar panels'}],
-      metadata: {autoAnswered: true, sectionName: 'Upload drawings'},
+      responses: [
+        {
+          value: 'Install or change solar panels',
+        },
+      ],
+      metadata: {
+        autoAnswered: true,
+        sectionName: 'Upload drawings',
+      },
     },
     {
       question: 'Where will the solar panels be installed?',
-      responses: [{value: 'On roofs'}],
-      metadata: {autoAnswered: true, sectionName: 'Upload drawings'},
+      responses: [
+        {
+          value: 'On roofs',
+        },
+      ],
+      metadata: {
+        autoAnswered: true,
+        sectionName: 'Upload drawings',
+      },
     },
     {
       question:
         'Your planning officer will need to check how far the solar panels stick out beyond the surface of the roof. What do you have that shows this?',
-      responses: [{value: "Manufacturer's specification document"}],
-      metadata: {sectionName: 'Upload drawings'},
+      responses: [
+        {
+          value: 'Section drawing of the building',
+        },
+      ],
+      metadata: {
+        sectionName: 'Upload drawings',
+      },
     },
     {
-      question: 'Do you want to upload any photographs?',
-      responses: [{value: 'No'}],
-      metadata: {sectionName: 'Upload drawings'},
+      question: 'Is this for submission or information only?',
+      responses: [
+        {
+          value: 'Submission',
+        },
+      ],
+      metadata: {
+        autoAnswered: true,
+        sectionName: 'Upload drawings',
+      },
     },
     {
-      question:
-        'Would you like to upload any additional drawings, documents or images?',
-      responses: [{value: 'No'}],
-      metadata: {sectionName: 'Upload drawings'},
-    },
-    {
-      question: 'What type of planning application are you making?',
-      responses: [{value: 'Prior approval'}],
-      metadata: {autoAnswered: true, sectionName: 'Check your application'},
+      question: 'What type of application is it?',
+      responses: [
+        {
+          value: 'Prior approval',
+        },
+      ],
+      metadata: {
+        autoAnswered: true,
+        sectionName: 'Check your application',
+      },
     },
     {
       question: 'What type of prior approval application is it?',
-      responses: [{value: 'Install or change solar panels'}],
-      metadata: {autoAnswered: true, sectionName: 'Check your application'},
+      responses: [
+        {
+          value: 'Install or change solar panels',
+        },
+      ],
+      metadata: {
+        autoAnswered: true,
+        sectionName: 'Check your application',
+      },
     },
     {
       question: 'Is the property a home?',
-      responses: [{value: 'No'}],
-      metadata: {autoAnswered: true, sectionName: 'Check your application'},
+      responses: [
+        {
+          value: 'No',
+        },
+      ],
+      metadata: {
+        autoAnswered: true,
+        sectionName: 'Check your application',
+      },
     },
     {
       question: 'What type of changes does the project involve?',
-      responses: [{value: 'Alteration'}],
-      metadata: {autoAnswered: true, sectionName: 'Check your application'},
+      responses: [
+        {
+          value: 'Alteration',
+        },
+      ],
+      metadata: {
+        autoAnswered: true,
+        sectionName: 'Check your application',
+      },
     },
     {
       question: 'Are the public allowed to access the building?',
-      responses: [{value: 'Yes'}],
-      metadata: {sectionName: 'Check your application'},
+      responses: [
+        {
+          value: 'Yes',
+        },
+      ],
+      metadata: {
+        sectionName: 'Check your application',
+      },
     },
     {
       question:
         'Is the sole purpose of the project to provide disabled access to (or within) the building?',
-      responses: [{value: 'No'}],
+      responses: [
+        {
+          value: 'No',
+        },
+      ],
       metadata: {
         policyRefs: [
           {
@@ -688,23 +1128,48 @@ export const priorApprovalSolarPanels: Schema = {
     },
     {
       question: 'What type of prior approval application is it?',
-      responses: [{value: 'Install or change solar panels'}],
-      metadata: {autoAnswered: true, sectionName: 'Check your application'},
+      responses: [
+        {
+          value: 'Install or change solar panels',
+        },
+      ],
+      metadata: {
+        autoAnswered: true,
+        sectionName: 'Check your application',
+      },
     },
     {
       question: 'Does the application qualify for a disability exemption?',
-      responses: [{value: 'No'}],
-      metadata: {autoAnswered: true, sectionName: 'Check your application'},
+      responses: [
+        {
+          value: 'No',
+        },
+      ],
+      metadata: {
+        autoAnswered: true,
+        sectionName: 'Check your application',
+      },
     },
     {
       question: 'Does the application qualify for a resubmission exemption?',
-      responses: [{value: 'No'}],
-      metadata: {autoAnswered: true, sectionName: 'Check your application'},
+      responses: [
+        {
+          value: 'No',
+        },
+      ],
+      metadata: {
+        autoAnswered: true,
+        sectionName: 'Check your application',
+      },
     },
     {
       question:
         'Does the application qualify to the same-day-planning-application exemption?',
-      responses: [{value: 'No'}],
+      responses: [
+        {
+          value: 'No',
+        },
+      ],
       metadata: {
         autoAnswered: true,
         policyRefs: [
@@ -717,29 +1182,51 @@ export const priorApprovalSolarPanels: Schema = {
       },
     },
     {
-      question: 'Which Local Planning authority is it?',
-      responses: [{value: 'Southwark'}],
-      metadata: {autoAnswered: true, sectionName: 'Check your application'},
-    },
-    {
-      question: 'Describe your connection',
+      question: 'Check for multiple fees?',
       responses: [
         {
-          value:
-            'I think the King is but a man, as I am. The violet smells to him as it doth to me. The element shows to him as it doth to me. All his senses have but human conditions. His ceremonies laid by, in his nakedness he appears but a man.',
+          value: 'No',
         },
       ],
-      metadata: {sectionName: 'Check your application'},
+      metadata: {
+        autoAnswered: true,
+        sectionName: 'Check your application',
+      },
+    },
+    {
+      question: 'What type of application is it?',
+      responses: [
+        {
+          value: 'Prior approval',
+        },
+      ],
+      metadata: {
+        autoAnswered: true,
+        sectionName: 'Check your application',
+      },
+    },
+    {
+      question: 'Which Local Planning authority is it?',
+      responses: [
+        {
+          value: 'Southwark',
+        },
+      ],
+      metadata: {
+        autoAnswered: true,
+        sectionName: 'Check your application',
+      },
     },
     {
       question: 'Connections with Southwark Council',
       responses: [
         {
-          value:
-            'I am related to, or partnered with, an elected member for Southwark Council',
+          value: 'None of the above apply to me',
         },
       ],
-      metadata: {sectionName: 'Check your application'},
+      metadata: {
+        sectionName: 'Check your application',
+      },
     },
     {
       question: 'I confirm that:',
@@ -749,31 +1236,48 @@ export const priorApprovalSolarPanels: Schema = {
             'The information contained in this application is truthful, accurate and complete, to the best of my knowledge',
         },
       ],
-      metadata: {sectionName: 'Check your application'},
+      metadata: {
+        sectionName: 'Check your application',
+      },
     },
     {
       question: 'Which Local Planning authority is it?',
-      responses: [{value: 'Southwark'}],
-      metadata: {autoAnswered: true, sectionName: 'Pay and submit'},
+      responses: [
+        {
+          value: 'Southwark',
+        },
+      ],
+      metadata: {
+        autoAnswered: true,
+        sectionName: 'Pay and submit',
+      },
     },
     {
-      question: 'What type of prior approval application is it?',
-      responses: [{value: 'Install or change solar panels'}],
-      metadata: {autoAnswered: true, sectionName: 'Pay and submit'},
+      question:
+        'What type of prior approval application is it?application.type',
+      responses: [
+        {
+          value: 'Install or change solar panels',
+        },
+      ],
+      metadata: {
+        autoAnswered: true,
+        sectionName: 'Pay and submit',
+      },
     },
   ],
   files: [
     {
-      name: 'https://api.editor.planx.dev/file/private/5w5v8s8z/other.pdf',
+      name: 'https://api.editor.planx.dev/file/private/mq2iovsi/test%20document.pdf',
       type: [
         {
-          value: 'otherDrawing',
-          description: 'Other - drawing',
+          value: 'sections.proposed',
+          description: 'Sections - proposed',
         },
       ],
     },
     {
-      name: 'https://api.editor.planx.dev/file/private/tbp4kiba/myPlans.pdf',
+      name: 'https://api.editor.planx.dev/file/private/czxk98ug/test%20document.pdf',
       type: [
         {
           value: 'sitePlan.proposed',
@@ -783,26 +1287,43 @@ export const priorApprovalSolarPanels: Schema = {
     },
   ],
   metadata: {
+    id: 'dee911d0-48b4-438c-96b6-2bb12ae46335',
     organisation: 'SWK',
-    id: 'b18c301b-9d44-4c6c-8d27-5b5bf33c570b',
+    submittedAt: '2024-06-29T13:06:44.801Z',
     source: 'PlanX',
     service: {
       flowId: 'c6628103-c648-4663-81e1-bfa0a1a18340',
-      url: 'https://www.editor.planx.dev/southwark/apply-for-prior-approval/preview',
+      url: 'https://editor.planx.uk/southwark/apply-for-prior-approval/published',
       files: {
         required: [
-          {
-            value: 'otherDrawing',
-            description: 'Other - drawing',
-          },
-        ],
-        recommended: [
           {
             value: 'sitePlan.proposed',
             description: 'Site plan - proposed',
           },
+          {
+            value: 'sections.proposed',
+            description: 'Sections - proposed',
+          },
         ],
-        optional: [],
+        recommended: [],
+        optional: [
+          {
+            value: 'photographs.existing',
+            description: 'Photographs - existing',
+          },
+          {
+            value: 'otherDrawing',
+            description: 'Other - drawing',
+          },
+          {
+            value: 'otherDocument',
+            description: 'Other - document',
+          },
+          {
+            value: 'visualisations',
+            description: 'Visualisations',
+          },
+        ],
       },
       fee: {
         calculated: [
@@ -817,17 +1338,12 @@ export const priorApprovalSolarPanels: Schema = {
         ],
         payable: [
           {
-            policyRefs: [
-              {
-                text: 'The Town and Country Planning (Fees for Applications, Deemed Applications, Requests and Site Visits) (England) (Amendment) Regulations 2023',
-                url: 'https://www.legislation.gov.uk/uksi/2023/1197/made',
-              },
-            ],
+            description:
+              '<p>This application does not qualify for any exemptions or reductions</p>',
           },
         ],
       },
     },
-    submittedAt: '2023-10-02T00:00:00Z',
     schema: `https://theopensystemslab.github.io/digital-planning-data-schemas/${version}/schema.json`,
   },
 };

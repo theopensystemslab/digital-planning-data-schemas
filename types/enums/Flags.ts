@@ -40,3 +40,20 @@ export const Flags = {
   'Community infrastructure levy / Liable': '',
   'Community infrastructure levy / Not liable': '',
 };
+
+type FlagKeys = keyof typeof Flags;
+
+type GenericFlag<TKey extends FlagKeys> = {
+  value: TKey;
+  description: (typeof Flags)[TKey];
+};
+
+type FlagMap = {
+  [K in FlagKeys]: GenericFlag<K>;
+};
+
+/**
+ * @id #ResultFlag
+ * @description The result of a single flagset
+ */
+export type ResultFlag = FlagMap[keyof FlagMap];

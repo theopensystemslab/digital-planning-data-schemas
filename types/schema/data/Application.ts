@@ -1,4 +1,4 @@
-import {ApplicationTypes} from '../../enums/ApplicationTypes';
+import {ApplicationType} from '../../enums/ApplicationTypes';
 import {Date} from '../../utils';
 
 /**
@@ -175,22 +175,8 @@ export interface CommunityInfrastructureLevy {
 
 export interface LeadDeveloper {
   type: 'ukCompany' | 'overseasCompany' | 'none';
-  companyRegistrationNumber?: string;
+  company?: {
+    name: string;
+    registrationNumber: string;
+  };
 }
-
-type ApplicationTypeKeys = keyof typeof ApplicationTypes;
-
-type GenericApplicationType<TKey extends ApplicationTypeKeys> = {
-  value: TKey;
-  description: (typeof ApplicationTypes)[TKey];
-};
-
-type ApplicationTypeMap = {
-  [K in ApplicationTypeKeys]: GenericApplicationType<K>;
-};
-
-/**
- * @id #ApplicationType
- * @description Planning application types
- */
-export type ApplicationType = ApplicationTypeMap[keyof ApplicationTypeMap];

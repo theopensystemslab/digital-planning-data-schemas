@@ -21,3 +21,38 @@ export const GLAOpenSpaceDesignations = {
   none: 'Not designated',
   other: 'Other designation',
 };
+
+type OpenSpaceTypeKeys = keyof typeof GLAOpenSpaceTypes;
+
+type GenericOpenSpaceType<TKey extends OpenSpaceTypeKeys> = {
+  value: TKey;
+  description: (typeof GLAOpenSpaceTypes)[TKey];
+};
+
+type OpenSpaceTypeMap = {
+  [K in OpenSpaceTypeKeys]: GenericOpenSpaceType<K>;
+};
+
+/**
+ * @id #OpenSpaceType
+ * @description Types of natural open spaces
+ */
+export type OpenSpaceType = OpenSpaceTypeMap[keyof OpenSpaceTypeMap];
+
+type OpenSpaceDesignationKeys = keyof typeof GLAOpenSpaceDesignations;
+
+type GenericOpenSpaceDesignation<TKey extends OpenSpaceDesignationKeys> = {
+  value: TKey;
+  description: (typeof GLAOpenSpaceDesignations)[TKey];
+};
+
+type OpenSpaceDesignationMap = {
+  [K in OpenSpaceDesignationKeys]: GenericOpenSpaceDesignation<K>;
+};
+
+/**
+ * @id #OpenSpaceDesignation
+ * @description Designations of natural open spaces
+ */
+export type OpenSpaceDesignation =
+  OpenSpaceDesignationMap[keyof OpenSpaceDesignationMap];

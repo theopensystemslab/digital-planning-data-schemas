@@ -1,5 +1,7 @@
 import {GeoJSON} from 'geojson';
-import {Area} from '../../utils';
+import {UKResidentialUnitType} from '../../enums/ResidentialUnitTypes';
+import {UKTenureType} from '../../enums/TenureTypes';
+import {Area, URL} from '../../utils';
 
 export type Materials = {
   boundary?: string;
@@ -15,4 +17,29 @@ export type Materials = {
 export type GeoBoundary = {
   site: GeoJSON;
   area: Area;
+};
+
+export type Entity = {
+  name: string;
+  description?: string;
+  source: PlanningDataSource | OSRoadsSource;
+};
+
+type PlanningDataSource = {
+  text: 'Planning Data';
+  url: URL;
+};
+
+type OSRoadsSource = {
+  text: 'Ordnance Survey MasterMap Highways';
+};
+
+export type ResidentialUnits = {
+  total: number;
+  residential: {
+    type: UKResidentialUnitType;
+    tenure: UKTenureType;
+    bedrooms: number;
+    identicalUnits: number;
+  }[];
 };

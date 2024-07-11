@@ -104,7 +104,6 @@ export const listedBuildingConsent: Schema = {
             value: 'listed',
             description: 'Listed Building',
             intersects: true,
-            entities: [],
           },
           {
             value: 'article4',
@@ -134,7 +133,6 @@ export const listedBuildingConsent: Schema = {
             value: 'designated',
             description: 'Designated land',
             intersects: true,
-            entities: [],
           },
           {
             value: 'nature.SAC',

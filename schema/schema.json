@@ -516,6 +516,114 @@
           "additionalProperties": false,
           "properties": {
             "description": {
+              "const": "Planning approval",
+              "type": "string"
+            },
+            "value": {
+              "const": "approval",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Approval of reserved matters",
+              "type": "string"
+            },
+            "value": {
+              "const": "approval.reservedMatters",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Written confirmation of compliance with a planning condition",
+              "type": "string"
+            },
+            "value": {
+              "const": "complianceConfirmation",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Environmental Impact Decision",
+              "type": "string"
+            },
+            "value": {
+              "const": "environmnentalImpact",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Environmental Impact Decision - Scoping",
+              "type": "string"
+            },
+            "value": {
+              "const": "environmentalImpact.scoping",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Environmental Impact Decision - Screening",
+              "type": "string"
+            },
+            "value": {
+              "const": "environmentalImpact.screening",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
               "const": "Consent to move and dispose of hazardous substances",
               "type": "string"
             },
@@ -665,6 +773,78 @@
             },
             "value": {
               "const": "listed",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Notification of completion",
+              "type": "string"
+            },
+            "value": {
+              "const": "notifyCompletion",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Planning obligation",
+              "type": "string"
+            },
+            "value": {
+              "const": "obligation",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Discharge a planning obligation",
+              "type": "string"
+            },
+            "value": {
+              "const": "obligation.discharge",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Modify a planning obligation",
+              "type": "string"
+            },
+            "value": {
+              "const": "obligation.modify",
               "type": "string"
             }
           },
@@ -930,7 +1110,7 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Prior Approval - Part 4 Class BC",
+              "const": "Prior Approval - Develop a temporary campsite",
               "type": "string"
             },
             "value": {
@@ -948,7 +1128,7 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Prior Approval - Part 4 Class CA",
+              "const": "Prior Approval - Put temporary school buildings on vacant commercial land",
               "type": "string"
             },
             "value": {
@@ -1092,6 +1272,24 @@
           "additionalProperties": false,
           "properties": {
             "description": {
+              "const": "Prior Approval - Development of toll facilities",
+              "type": "string"
+            },
+            "value": {
+              "const": "pa.part9.classD",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
               "const": "Prior Approval - Demolish a building",
               "type": "string"
             },
@@ -1133,6 +1331,24 @@
             },
             "value": {
               "const": "pa.part16.classA",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Prior Approval - Coal mining",
+              "type": "string"
+            },
+            "value": {
+              "const": "pa.part17",
               "type": "string"
             }
           },
@@ -1200,7 +1416,7 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Prior Approval - Specific Acts of Parliament or Local Orders",
+              "const": "Prior Approval - Development under private acts or orders",
               "type": "string"
             },
             "value": {
@@ -1218,7 +1434,7 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Prior Approval - Part 19 Class TA",
+              "const": "Prior Approval - Development on a closed defence site",
               "type": "string"
             },
             "value": {
@@ -1331,42 +1547,6 @@
             },
             "value": {
               "const": "pa.part20.classZA",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "Permission in Principle - Consent for the principle of a project with less than 1,000 square metres floor area on a site of less than 1 hectare",
-              "type": "string"
-            },
-            "value": {
-              "const": "pip",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "Permission in Principle - Approval of technical details",
-              "type": "string"
-            },
-            "value": {
-              "const": "pip.technicalDetails",
               "type": "string"
             }
           },
@@ -1542,6 +1722,60 @@
           "additionalProperties": false,
           "properties": {
             "description": {
+              "const": "Planning Permission - Technical details consent for major development",
+              "type": "string"
+            },
+            "value": {
+              "const": "pp.full.major.technicalDetails",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Planning Permission - Technical details consent for waste development",
+              "type": "string"
+            },
+            "value": {
+              "const": "pp.full.major.technicalDetails.waste",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Planning Permission - Full planning permission for waste development",
+              "type": "string"
+            },
+            "value": {
+              "const": "pp.full.major.waste",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
               "const": "Planning Permission - Minor application",
               "type": "string"
             },
@@ -1565,6 +1799,24 @@
             },
             "value": {
               "const": "pp.full.minor.listed",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Planning Permission - Technical details consent for minor development",
+              "type": "string"
+            },
+            "value": {
+              "const": "pp.full.minor.technicalDetails",
               "type": "string"
             }
           },
@@ -1636,25 +1888,7 @@
               "type": "string"
             },
             "value": {
-              "const": "pp.outline.allReserved",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "Outline Planning Permission - Approval of reserved matters",
-              "type": "string"
-            },
-            "value": {
-              "const": "pp.outline.reservedMatters",
+              "const": "pp.outline.all",
               "type": "string"
             }
           },
@@ -1672,7 +1906,7 @@
               "type": "string"
             },
             "value": {
-              "const": "pp.outline.someReserved",
+              "const": "pp.outline.some",
               "type": "string"
             }
           },
@@ -1708,25 +1942,7 @@
               "type": "string"
             },
             "value": {
-              "const": "pp.outline.minor.allReserved",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "Outline Planning Permission - Approval of reserved matters (minor)",
-              "type": "string"
-            },
-            "value": {
-              "const": "pp.outline.minor.reservedMatters",
+              "const": "pp.outline.minor.all",
               "type": "string"
             }
           },
@@ -1744,7 +1960,7 @@
               "type": "string"
             },
             "value": {
-              "const": "pp.outline.minor.someReserved",
+              "const": "pp.outline.minor.some",
               "type": "string"
             }
           },
@@ -1780,7 +1996,7 @@
               "type": "string"
             },
             "value": {
-              "const": "pp.outline.major.allReserved",
+              "const": "pp.outline.major.all",
               "type": "string"
             }
           },
@@ -1794,11 +2010,11 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Outline Planning Permission - Approval of reserved matters (major)",
+              "const": "Outline Planning Permission - Consent for the principle of waste development witholding all details",
               "type": "string"
             },
             "value": {
-              "const": "pp.outline.major.reservedMatters",
+              "const": "pp.outline.major.all.waste",
               "type": "string"
             }
           },
@@ -1816,7 +2032,61 @@
               "type": "string"
             },
             "value": {
-              "const": "pp.outline.major.someReserved",
+              "const": "pp.outline.major.some",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Outline Planning Permission - Consent for the principle of waste development witholding all details",
+              "type": "string"
+            },
+            "value": {
+              "const": "pp.outline.major.some.waste",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Permission in Principle - Consent for the principle of a project with less than 1,000 square metres floor area on a site of less than 1 hectare",
+              "type": "string"
+            },
+            "value": {
+              "const": "pp.pip",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Permission in Principle - Approval of technical details",
+              "type": "string"
+            },
+            "value": {
+              "const": "pp.pip.technicalDetails",
               "type": "string"
             }
           },
@@ -2131,12 +2401,6 @@
           "additionalProperties": false,
           "description": "Assessment of flood risk, if applicable to application.type",
           "properties": {
-            "20mFromWatercourse": {
-              "type": "boolean"
-            },
-            "increasedRiskElsewhere": {
-              "type": "boolean"
-            },
             "surfaceWaterDisposal": {
               "enum": [
                 "drainageSystem",
@@ -2180,6 +2444,24 @@
           "required": [
             "area"
           ],
+          "type": "object"
+        },
+        "newDwellings": {
+          "additionalProperties": false,
+          "properties": {
+            "newBuild": {
+              "additionalProperties": false,
+              "properties": {
+                "count": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "count"
+              ],
+              "type": "object"
+            }
+          },
           "type": "object"
         },
         "projectType": {
@@ -2240,6 +2522,9 @@
           ],
           "type": "object"
         },
+        "units": {
+          "$ref": "#/definitions/ResidentialUnits"
+        },
         "use": {
           "additionalProperties": false,
           "description": "Proposed land use, including storage of hazardous materials, if applicable to application.type",
@@ -2268,7 +2553,21 @@
           "additionalProperties": false,
           "description": "Proposed utilities, if applicable to application.type",
           "properties": {
+            "fire": {
+              "additionalProperties": false,
+              "description": "Whether the proposal introduces a fire suppression system",
+              "properties": {
+                "suppression": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "suppression"
+              ],
+              "type": "object"
+            },
             "foulSewageDisposal": {
+              "description": "Type of proposed foul sewage disposal",
               "enum": [
                 "sewer",
                 "tank",
@@ -2277,6 +2576,85 @@
                 "other"
               ],
               "type": "string"
+            },
+            "gas": {
+              "additionalProperties": false,
+              "description": "Count of new gas connections",
+              "properties": {
+                "connections": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "count": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "count"
+                  ],
+                  "type": "object"
+                }
+              },
+              "required": [
+                "connections"
+              ],
+              "type": "object"
+            },
+            "internet": {
+              "additionalProperties": false,
+              "description": "Count of new full fibre Internet connections",
+              "properties": {
+                "commercialUnits": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "count": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "count"
+                  ],
+                  "type": "object"
+                },
+                "residentialUnits": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "count": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "count"
+                  ],
+                  "type": "object"
+                }
+              },
+              "required": [
+                "commercialUnits",
+                "residentialUnits"
+              ],
+              "type": "object"
+            },
+            "water": {
+              "additionalProperties": false,
+              "description": "Count of new water connections",
+              "properties": {
+                "connections": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "count": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "count"
+                  ],
+                  "type": "object"
+                }
+              },
+              "required": [
+                "connections"
+              ],
+              "type": "object"
             }
           },
           "type": "object"
@@ -2311,6 +2689,84 @@
         "description"
       ],
       "type": "object"
+    },
+    "BuildingRegulation": {
+      "$id": "#BuildingRegulation",
+      "anyOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Part M4(2) of the Building Regulations 2010",
+              "type": "string"
+            },
+            "value": {
+              "const": "m42",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Part M4(3)(2a) of the Building Regulations 2010",
+              "type": "string"
+            },
+            "value": {
+              "const": "m432a",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Part M4(3)(2b) of the Building Regulations 2010",
+              "type": "string"
+            },
+            "value": {
+              "const": "m432b",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "None of these",
+              "type": "string"
+            },
+            "value": {
+              "const": "none",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        }
+      ],
+      "description": "Building regulations"
     },
     "CalculateMetadata": {
       "$id": "#CalculateMetadata",
@@ -2397,9 +2853,191 @@
       ],
       "type": "object"
     },
+    "DevelopmentType": {
+      "$id": "#DevelopmentType",
+      "anyOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Change of use",
+              "type": "string"
+            },
+            "value": {
+              "const": "changeOfUse",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Change of use of an existing single home",
+              "type": "string"
+            },
+            "value": {
+              "const": "changeOfUseFrom",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Change of use to a home",
+              "type": "string"
+            },
+            "value": {
+              "const": "changeOfUseTo",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Conversion",
+              "type": "string"
+            },
+            "value": {
+              "const": "conversion",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Extension",
+              "type": "string"
+            },
+            "value": {
+              "const": "extension",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "New build",
+              "type": "string"
+            },
+            "value": {
+              "const": "newBuild",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Not known",
+              "type": "string"
+            },
+            "value": {
+              "const": "notKnown",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        }
+      ],
+      "description": "Development types"
+    },
     "Email": {
       "format": "email",
       "type": "string"
+    },
+    "Entity": {
+      "additionalProperties": false,
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "source": {
+          "anyOf": [
+            {
+              "additionalProperties": false,
+              "properties": {
+                "text": {
+                  "const": "Planning Data",
+                  "type": "string"
+                },
+                "url": {
+                  "$ref": "#/definitions/URL"
+                }
+              },
+              "required": [
+                "text",
+                "url"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "text": {
+                  "const": "Ordnance Survey MasterMap Highways",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "text"
+              ],
+              "type": "object"
+            }
+          ]
+        }
+      },
+      "required": [
+        "name",
+        "source"
+      ],
+      "type": "object"
     },
     "Feature": {
       "additionalProperties": false,
@@ -3467,6 +4105,24 @@
           "additionalProperties": false,
           "properties": {
             "description": {
+              "const": "Method statement",
+              "type": "string"
+            },
+            "value": {
+              "const": "methodStatement",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
               "const": "Minerals and waste assessment",
               "type": "string"
             },
@@ -3683,11 +4339,47 @@
           "additionalProperties": false,
           "properties": {
             "description": {
+              "const": "Recyclable waste storage details",
+              "type": "string"
+            },
+            "value": {
+              "const": "recycleWasteStorageDetails",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
               "const": "Information the applicant considers relevant to the application",
               "type": "string"
             },
             "value": {
               "const": "relevantInformation",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Residential units details",
+              "type": "string"
+            },
+            "value": {
+              "const": "residentialUnitsDetails",
               "type": "string"
             }
           },
@@ -3971,6 +4663,24 @@
           "additionalProperties": false,
           "properties": {
             "description": {
+              "const": "Technical specification",
+              "type": "string"
+            },
+            "value": {
+              "const": "technicalSpecification",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
               "const": "Tenancy agreement",
               "type": "string"
             },
@@ -4138,6 +4848,24 @@
             },
             "value": {
               "const": "treeConditionReport",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Tree plan",
+              "type": "string"
+            },
+            "value": {
+              "const": "treePlan",
               "type": "string"
             }
           },
@@ -4349,6 +5077,24 @@
           "additionalProperties": false,
           "properties": {
             "description": {
+              "const": "Waste storage details",
+              "type": "string"
+            },
+            "value": {
+              "const": "wasteStorageDetails",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
               "const": "Water environment assessment",
               "type": "string"
             },
@@ -4382,6 +5128,654 @@
         }
       },
       "type": "object"
+    },
+    "GLAHousingProvider": {
+      "$id": "#GLAHousingProvider",
+      "anyOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Other affordable housing provider",
+              "type": "string"
+            },
+            "value": {
+              "const": "affordableHousing",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Council delivered build to rent",
+              "type": "string"
+            },
+            "value": {
+              "const": "councilBuildToRent",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Council delivery company",
+              "type": "string"
+            },
+            "value": {
+              "const": "councilDelivery",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Housing association",
+              "type": "string"
+            },
+            "value": {
+              "const": "HA",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Local Authority",
+              "type": "string"
+            },
+            "value": {
+              "const": "LA",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Private",
+              "type": "string"
+            },
+            "value": {
+              "const": "private",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Private rented sector",
+              "type": "string"
+            },
+            "value": {
+              "const": "privateRented",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Other public authority",
+              "type": "string"
+            },
+            "value": {
+              "const": "publicAuthority",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Self-build",
+              "type": "string"
+            },
+            "value": {
+              "const": "selfBuild",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        }
+      ],
+      "description": "Housing provider categories tracked by the Greater London Authority (GLA)"
+    },
+    "GLAResidentialUnitType": {
+      "$id": "#GLAResidentialUnitType",
+      "anyOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Cluster flat",
+              "type": "string"
+            },
+            "value": {
+              "const": "cluster",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Co-living unit",
+              "type": "string"
+            },
+            "value": {
+              "const": "coLiving",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Detached home",
+              "type": "string"
+            },
+            "value": {
+              "const": "detached",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Flat/apartment or maisonette",
+              "type": "string"
+            },
+            "value": {
+              "const": "flat",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "House in multiple occupation (HMO)",
+              "type": "string"
+            },
+            "value": {
+              "const": "HMO",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Hostel room",
+              "type": "string"
+            },
+            "value": {
+              "const": "hostel",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Live/work unit",
+              "type": "string"
+            },
+            "value": {
+              "const": "LW",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Other",
+              "type": "string"
+            },
+            "value": {
+              "const": "other",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Semi-detached home",
+              "type": "string"
+            },
+            "value": {
+              "const": "semiDetached",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Student accomodation",
+              "type": "string"
+            },
+            "value": {
+              "const": "student",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Studio or bedsit",
+              "type": "string"
+            },
+            "value": {
+              "const": "studio",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Terraced home",
+              "type": "string"
+            },
+            "value": {
+              "const": "terraced",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        }
+      ],
+      "description": "Residential unit types tracked by the Greater London Authority (GLA)"
+    },
+    "GLATenureType": {
+      "$id": "#GLATenureType",
+      "anyOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Affordable rent (not at LAR benchmark rents)",
+              "type": "string"
+            },
+            "value": {
+              "const": "AR",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Discount market rate",
+              "type": "string"
+            },
+            "value": {
+              "const": "DMR",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Discount market rate (charged at London Living Rents)",
+              "type": "string"
+            },
+            "value": {
+              "const": "DMRLLR",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Discount market sale",
+              "type": "string"
+            },
+            "value": {
+              "const": "DMS",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "London Affordable Rent",
+              "type": "string"
+            },
+            "value": {
+              "const": "LAR",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "London Living Rent",
+              "type": "string"
+            },
+            "value": {
+              "const": "LRR",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "London Shared Ownership",
+              "type": "string"
+            },
+            "value": {
+              "const": "LSO",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Market for rent",
+              "type": "string"
+            },
+            "value": {
+              "const": "marketForRent",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Market for sale",
+              "type": "string"
+            },
+            "value": {
+              "const": "marketForSale",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Other",
+              "type": "string"
+            },
+            "value": {
+              "const": "other",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Self-build and custom build",
+              "type": "string"
+            },
+            "value": {
+              "const": "selfCustomBuild",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Starter homes",
+              "type": "string"
+            },
+            "value": {
+              "const": "SH",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Shared equity",
+              "type": "string"
+            },
+            "value": {
+              "const": "sharedEquity",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Social rent",
+              "type": "string"
+            },
+            "value": {
+              "const": "SR",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        }
+      ],
+      "description": "Tenure types tracked by the Greater London Authority (GLA)"
     },
     "GeoBoundary": {
       "additionalProperties": false,
@@ -4524,8 +5918,21 @@
     "LeadDeveloper": {
       "additionalProperties": false,
       "properties": {
-        "companyRegistrationNumber": {
-          "type": "string"
+        "company": {
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "registrationNumber": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "name",
+            "registrationNumber"
+          ],
+          "type": "object"
         },
         "type": {
           "enum": [
@@ -4649,6 +6056,19 @@
           "$ref": "#/definitions/GeoBoundary",
           "description": "HM Land Registry Index polygon for this property, commonly referred to as the blue line boundary, sourced from planning.data.gov.uk/dataset/title-boundary"
         },
+        "flood": {
+          "additionalProperties": false,
+          "description": "Existing flood risk, if applicable to application.type",
+          "properties": {
+            "20mFromWatercourse": {
+              "type": "boolean"
+            },
+            "increasedRiskElsewhere": {
+              "type": "boolean"
+            }
+          },
+          "type": "object"
+        },
         "localAuthorityDistrict": {
           "description": "Current and historic UK Local Authority Districts that contain this address sourced from planning.data.gov.uk/dataset/local-authority-district",
           "items": {
@@ -4659,6 +6079,24 @@
         "materials": {
           "$ref": "#/definitions/Materials",
           "description": "Existing materials, if applicable to proposal.projectType"
+        },
+        "occupation": {
+          "additionalProperties": false,
+          "description": "Current occupation status of the property",
+          "properties": {
+            "status": {
+              "enum": [
+                "occupied",
+                "partVacant",
+                "vacant"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "status"
+          ],
+          "type": "object"
         },
         "ownership": {
           "additionalProperties": false,
@@ -4916,8 +6354,28 @@
           ],
           "type": "object"
         },
+        "trees": {
+          "additionalProperties": false,
+          "description": "Existing trees on or near the site",
+          "properties": {
+            "adjacent": {
+              "type": "boolean"
+            },
+            "present": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "present",
+            "adjacent"
+          ],
+          "type": "object"
+        },
         "type": {
           "$ref": "#/definitions/PropertyType"
+        },
+        "units": {
+          "$ref": "#/definitions/ResidentialUnits"
         },
         "use": {
           "additionalProperties": false,
@@ -5007,10 +6465,6 @@
               "type": "object"
             }
           },
-          "required": [
-            "active",
-            "passive"
-          ],
           "type": "object"
         },
         "cost": {
@@ -5068,6 +6522,93 @@
           },
           "type": "object"
         },
+        "energy": {
+          "additionalProperties": false,
+          "description": "Proposed energy sources",
+          "properties": {
+            "communityOwned": {
+              "additionalProperties": false,
+              "properties": {
+                "capacity": {
+                  "additionalProperties": false,
+                  "description": "Proposed total capacity of any on-site community-owned energy generation in megawatts (mW)",
+                  "properties": {
+                    "megawatts": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "megawatts"
+                  ],
+                  "type": "object"
+                }
+              },
+              "required": [
+                "capacity"
+              ],
+              "type": "object"
+            },
+            "heatPumps": {
+              "additionalProperties": false,
+              "properties": {
+                "capacity": {
+                  "additionalProperties": false,
+                  "description": "Proposed total capacity of any heat pumps in megawatts (mV)",
+                  "properties": {
+                    "megawatts": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "megawatts"
+                  ],
+                  "type": "object"
+                }
+              },
+              "required": [
+                "capacity"
+              ],
+              "type": "object"
+            },
+            "solar": {
+              "additionalProperties": false,
+              "properties": {
+                "capacity": {
+                  "additionalProperties": false,
+                  "description": "Proposed total capacity of any solar energy generation in megawatts (mV)",
+                  "properties": {
+                    "megawatts": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "megawatts"
+                  ],
+                  "type": "object"
+                }
+              },
+              "required": [
+                "capacity"
+              ],
+              "type": "object"
+            },
+            "type": {
+              "items": {
+                "enum": [
+                  "communityOwned",
+                  "heatPump",
+                  "solar"
+                ],
+                "type": "string"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "type"
+          ],
+          "type": "object"
+        },
         "environmentalImpactDescription": {
           "type": "string"
         },
@@ -5087,12 +6628,6 @@
           "additionalProperties": false,
           "description": "Assessment of flood risk, if applicable to application.type",
           "properties": {
-            "20mFromWatercourse": {
-              "type": "boolean"
-            },
-            "increasedRiskElsewhere": {
-              "type": "boolean"
-            },
             "surfaceWaterDisposal": {
               "enum": [
                 "drainageSystem",
@@ -5105,6 +6640,19 @@
               "type": "string"
             }
           },
+          "type": "object"
+        },
+        "greenRoof": {
+          "additionalProperties": false,
+          "description": "Green roof",
+          "properties": {
+            "area": {
+              "$ref": "#/definitions/Area"
+            }
+          },
+          "required": [
+            "area"
+          ],
           "type": "object"
         },
         "materials": {
@@ -5255,6 +6803,24 @@
         "newBuildings": {
           "$ref": "#/definitions/NewBuildingsOrStoreys",
           "description": "Creating new buildings"
+        },
+        "newDwellings": {
+          "additionalProperties": false,
+          "properties": {
+            "newBuild": {
+              "additionalProperties": false,
+              "properties": {
+                "count": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "count"
+              ],
+              "type": "object"
+            }
+          },
+          "type": "object"
         },
         "newStoreys": {
           "$ref": "#/definitions/NewBuildingsOrStoreys",
@@ -5481,6 +7047,239 @@
           ],
           "type": "object"
         },
+        "units": {
+          "additionalProperties": false,
+          "properties": {
+            "residential": {
+              "additionalProperties": false,
+              "properties": {
+                "new": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "area": {
+                        "$ref": "#/definitions/Area"
+                      },
+                      "bedrooms": {
+                        "type": "number"
+                      },
+                      "compliance": {
+                        "items": {
+                          "$ref": "#/definitions/BuildingRegulation"
+                        },
+                        "type": "array"
+                      },
+                      "development": {
+                        "$ref": "#/definitions/DevelopmentType"
+                      },
+                      "garden": {
+                        "type": "boolean"
+                      },
+                      "habitableRooms": {
+                        "type": "number"
+                      },
+                      "identicalUnits": {
+                        "type": "number"
+                      },
+                      "olderPersons": {
+                        "type": "boolean"
+                      },
+                      "provider": {
+                        "$ref": "#/definitions/GLAHousingProvider"
+                      },
+                      "sheltered": {
+                        "type": "boolean"
+                      },
+                      "tenure": {
+                        "$ref": "#/definitions/GLATenureType"
+                      },
+                      "type": {
+                        "$ref": "#/definitions/GLAResidentialUnitType"
+                      }
+                    },
+                    "required": [
+                      "area",
+                      "bedrooms",
+                      "compliance",
+                      "development",
+                      "garden",
+                      "habitableRooms",
+                      "identicalUnits",
+                      "olderPersons",
+                      "provider",
+                      "sheltered",
+                      "tenure",
+                      "type"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                "rebuilt": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "area": {
+                        "$ref": "#/definitions/Area"
+                      },
+                      "bedrooms": {
+                        "type": "number"
+                      },
+                      "compliance": {
+                        "items": {
+                          "$ref": "#/definitions/BuildingRegulation"
+                        },
+                        "type": "array"
+                      },
+                      "development": {
+                        "$ref": "#/definitions/DevelopmentType"
+                      },
+                      "garden": {
+                        "type": "boolean"
+                      },
+                      "habitableRooms": {
+                        "type": "number"
+                      },
+                      "identicalUnits": {
+                        "type": "number"
+                      },
+                      "olderPersons": {
+                        "type": "boolean"
+                      },
+                      "provider": {
+                        "$ref": "#/definitions/GLAHousingProvider"
+                      },
+                      "sheltered": {
+                        "type": "boolean"
+                      },
+                      "tenure": {
+                        "$ref": "#/definitions/GLATenureType"
+                      },
+                      "type": {
+                        "$ref": "#/definitions/GLAResidentialUnitType"
+                      }
+                    },
+                    "required": [
+                      "area",
+                      "bedrooms",
+                      "compliance",
+                      "development",
+                      "garden",
+                      "habitableRooms",
+                      "identicalUnits",
+                      "olderPersons",
+                      "provider",
+                      "sheltered",
+                      "tenure",
+                      "type"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                "removed": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "area": {
+                        "$ref": "#/definitions/Area"
+                      },
+                      "bedrooms": {
+                        "type": "number"
+                      },
+                      "compliance": {
+                        "items": {
+                          "$ref": "#/definitions/BuildingRegulation"
+                        },
+                        "type": "array"
+                      },
+                      "habitableRooms": {
+                        "type": "number"
+                      },
+                      "identicalUnits": {
+                        "type": "number"
+                      },
+                      "olderPersons": {
+                        "type": "boolean"
+                      },
+                      "provider": {
+                        "$ref": "#/definitions/GLAHousingProvider"
+                      },
+                      "sheltered": {
+                        "type": "boolean"
+                      },
+                      "tenure": {
+                        "$ref": "#/definitions/GLATenureType"
+                      },
+                      "type": {
+                        "$ref": "#/definitions/GLAResidentialUnitType"
+                      }
+                    },
+                    "required": [
+                      "area",
+                      "bedrooms",
+                      "compliance",
+                      "habitableRooms",
+                      "identicalUnits",
+                      "olderPersons",
+                      "provider",
+                      "sheltered",
+                      "tenure",
+                      "type"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                "retained": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "bedrooms": {
+                        "type": "number"
+                      },
+                      "identicalUnits": {
+                        "type": "number"
+                      },
+                      "tenure": {
+                        "$ref": "#/definitions/GLATenureType"
+                      },
+                      "type": {
+                        "$ref": "#/definitions/GLAResidentialUnitType"
+                      }
+                    },
+                    "required": [
+                      "bedrooms",
+                      "tenure",
+                      "type",
+                      "identicalUnits"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "required": [
+            "residential"
+          ],
+          "type": "object"
+        },
+        "urbanGreeningFactor": {
+          "additionalProperties": false,
+          "description": "Urban Greening Factor Score",
+          "properties": {
+            "score": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "score"
+          ],
+          "type": "object"
+        },
         "use": {
           "additionalProperties": false,
           "description": "Proposed land use, including storage of hazardous materials, if applicable to application.type",
@@ -5509,7 +7308,21 @@
           "additionalProperties": false,
           "description": "Proposed utilities, if applicable to application.type",
           "properties": {
+            "fire": {
+              "additionalProperties": false,
+              "description": "Whether the proposal introduces a fire suppression system",
+              "properties": {
+                "suppression": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "suppression"
+              ],
+              "type": "object"
+            },
             "foulSewageDisposal": {
+              "description": "Type of proposed foul sewage disposal",
               "enum": [
                 "sewer",
                 "tank",
@@ -5518,8 +7331,109 @@
                 "other"
               ],
               "type": "string"
+            },
+            "gas": {
+              "additionalProperties": false,
+              "description": "Count of new gas connections",
+              "properties": {
+                "connections": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "count": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "count"
+                  ],
+                  "type": "object"
+                }
+              },
+              "required": [
+                "connections"
+              ],
+              "type": "object"
+            },
+            "internet": {
+              "additionalProperties": false,
+              "description": "Count of new full fibre Internet connections",
+              "properties": {
+                "commercialUnits": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "count": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "count"
+                  ],
+                  "type": "object"
+                },
+                "residentialUnits": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "count": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "count"
+                  ],
+                  "type": "object"
+                }
+              },
+              "required": [
+                "commercialUnits",
+                "residentialUnits"
+              ],
+              "type": "object"
+            },
+            "water": {
+              "additionalProperties": false,
+              "description": "Count of new water connections",
+              "properties": {
+                "connections": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "count": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "count"
+                  ],
+                  "type": "object"
+                }
+              },
+              "required": [
+                "connections"
+              ],
+              "type": "object"
             }
           },
+          "type": "object"
+        },
+        "waste": {
+          "additionalProperties": false,
+          "description": "Waste management of demolition and construction materials",
+          "properties": {
+            "reuseRecycle": {
+              "additionalProperties": false,
+              "properties": {
+                "percent": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "percent"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "reuseRecycle"
+          ],
           "type": "object"
         },
         "water": {
@@ -6479,66 +8393,10 @@
               "type": "string"
             },
             "entities": {
-              "anyOf": [
-                {
-                  "items": {
-                    "additionalProperties": false,
-                    "properties": {
-                      "description": {
-                        "type": "string"
-                      },
-                      "name": {
-                        "type": "string"
-                      },
-                      "source": {
-                        "anyOf": [
-                          {
-                            "additionalProperties": false,
-                            "properties": {
-                              "text": {
-                                "const": "Planning Data",
-                                "type": "string"
-                              },
-                              "url": {
-                                "$ref": "#/definitions/URL"
-                              }
-                            },
-                            "required": [
-                              "text",
-                              "url"
-                            ],
-                            "type": "object"
-                          },
-                          {
-                            "additionalProperties": false,
-                            "properties": {
-                              "text": {
-                                "const": "Ordnance Survey MasterMap Highways",
-                                "type": "string"
-                              }
-                            },
-                            "required": [
-                              "text"
-                            ],
-                            "type": "object"
-                          }
-                        ]
-                      }
-                    },
-                    "required": [
-                      "name",
-                      "source"
-                    ],
-                    "type": "object"
-                  },
-                  "type": "array"
-                },
-                {
-                  "maxItems": 0,
-                  "minItems": 0,
-                  "type": "array"
-                }
-              ]
+              "items": {
+                "$ref": "#/definitions/Entity"
+              },
+              "type": "array"
             },
             "intersects": {
               "const": true,
@@ -7221,66 +9079,10 @@
                   "type": "string"
                 },
                 "entities": {
-                  "anyOf": [
-                    {
-                      "items": {
-                        "additionalProperties": false,
-                        "properties": {
-                          "description": {
-                            "type": "string"
-                          },
-                          "name": {
-                            "type": "string"
-                          },
-                          "source": {
-                            "anyOf": [
-                              {
-                                "additionalProperties": false,
-                                "properties": {
-                                  "text": {
-                                    "const": "Planning Data",
-                                    "type": "string"
-                                  },
-                                  "url": {
-                                    "$ref": "#/definitions/URL"
-                                  }
-                                },
-                                "required": [
-                                  "text",
-                                  "url"
-                                ],
-                                "type": "object"
-                              },
-                              {
-                                "additionalProperties": false,
-                                "properties": {
-                                  "text": {
-                                    "const": "Ordnance Survey MasterMap Highways",
-                                    "type": "string"
-                                  }
-                                },
-                                "required": [
-                                  "text"
-                                ],
-                                "type": "object"
-                              }
-                            ]
-                          }
-                        },
-                        "required": [
-                          "name",
-                          "source"
-                        ],
-                        "type": "object"
-                      },
-                      "type": "array"
-                    },
-                    {
-                      "maxItems": 0,
-                      "minItems": 0,
-                      "type": "array"
-                    }
-                  ]
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
                 },
                 "intersects": {
                   "const": true,
@@ -7293,7 +9095,6 @@
               },
               "required": [
                 "description",
-                "entities",
                 "intersects",
                 "value"
               ],
@@ -7307,66 +9108,10 @@
                   "type": "string"
                 },
                 "entities": {
-                  "anyOf": [
-                    {
-                      "items": {
-                        "additionalProperties": false,
-                        "properties": {
-                          "description": {
-                            "type": "string"
-                          },
-                          "name": {
-                            "type": "string"
-                          },
-                          "source": {
-                            "anyOf": [
-                              {
-                                "additionalProperties": false,
-                                "properties": {
-                                  "text": {
-                                    "const": "Planning Data",
-                                    "type": "string"
-                                  },
-                                  "url": {
-                                    "$ref": "#/definitions/URL"
-                                  }
-                                },
-                                "required": [
-                                  "text",
-                                  "url"
-                                ],
-                                "type": "object"
-                              },
-                              {
-                                "additionalProperties": false,
-                                "properties": {
-                                  "text": {
-                                    "const": "Ordnance Survey MasterMap Highways",
-                                    "type": "string"
-                                  }
-                                },
-                                "required": [
-                                  "text"
-                                ],
-                                "type": "object"
-                              }
-                            ]
-                          }
-                        },
-                        "required": [
-                          "name",
-                          "source"
-                        ],
-                        "type": "object"
-                      },
-                      "type": "array"
-                    },
-                    {
-                      "maxItems": 0,
-                      "minItems": 0,
-                      "type": "array"
-                    }
-                  ]
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
                 },
                 "intersects": {
                   "const": true,
@@ -7379,7 +9124,6 @@
               },
               "required": [
                 "description",
-                "entities",
                 "intersects",
                 "value"
               ],
@@ -7393,66 +9137,10 @@
                   "type": "string"
                 },
                 "entities": {
-                  "anyOf": [
-                    {
-                      "items": {
-                        "additionalProperties": false,
-                        "properties": {
-                          "description": {
-                            "type": "string"
-                          },
-                          "name": {
-                            "type": "string"
-                          },
-                          "source": {
-                            "anyOf": [
-                              {
-                                "additionalProperties": false,
-                                "properties": {
-                                  "text": {
-                                    "const": "Planning Data",
-                                    "type": "string"
-                                  },
-                                  "url": {
-                                    "$ref": "#/definitions/URL"
-                                  }
-                                },
-                                "required": [
-                                  "text",
-                                  "url"
-                                ],
-                                "type": "object"
-                              },
-                              {
-                                "additionalProperties": false,
-                                "properties": {
-                                  "text": {
-                                    "const": "Ordnance Survey MasterMap Highways",
-                                    "type": "string"
-                                  }
-                                },
-                                "required": [
-                                  "text"
-                                ],
-                                "type": "object"
-                              }
-                            ]
-                          }
-                        },
-                        "required": [
-                          "name",
-                          "source"
-                        ],
-                        "type": "object"
-                      },
-                      "type": "array"
-                    },
-                    {
-                      "maxItems": 0,
-                      "minItems": 0,
-                      "type": "array"
-                    }
-                  ]
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
                 },
                 "intersects": {
                   "const": true,
@@ -7465,7 +9153,6 @@
               },
               "required": [
                 "description",
-                "entities",
                 "intersects",
                 "value"
               ],
@@ -7479,66 +9166,10 @@
                   "type": "string"
                 },
                 "entities": {
-                  "anyOf": [
-                    {
-                      "items": {
-                        "additionalProperties": false,
-                        "properties": {
-                          "description": {
-                            "type": "string"
-                          },
-                          "name": {
-                            "type": "string"
-                          },
-                          "source": {
-                            "anyOf": [
-                              {
-                                "additionalProperties": false,
-                                "properties": {
-                                  "text": {
-                                    "const": "Planning Data",
-                                    "type": "string"
-                                  },
-                                  "url": {
-                                    "$ref": "#/definitions/URL"
-                                  }
-                                },
-                                "required": [
-                                  "text",
-                                  "url"
-                                ],
-                                "type": "object"
-                              },
-                              {
-                                "additionalProperties": false,
-                                "properties": {
-                                  "text": {
-                                    "const": "Ordnance Survey MasterMap Highways",
-                                    "type": "string"
-                                  }
-                                },
-                                "required": [
-                                  "text"
-                                ],
-                                "type": "object"
-                              }
-                            ]
-                          }
-                        },
-                        "required": [
-                          "name",
-                          "source"
-                        ],
-                        "type": "object"
-                      },
-                      "type": "array"
-                    },
-                    {
-                      "maxItems": 0,
-                      "minItems": 0,
-                      "type": "array"
-                    }
-                  ]
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
                 },
                 "intersects": {
                   "const": true,
@@ -7551,7 +9182,6 @@
               },
               "required": [
                 "description",
-                "entities",
                 "intersects",
                 "value"
               ],
@@ -7565,66 +9195,10 @@
                   "type": "string"
                 },
                 "entities": {
-                  "anyOf": [
-                    {
-                      "items": {
-                        "additionalProperties": false,
-                        "properties": {
-                          "description": {
-                            "type": "string"
-                          },
-                          "name": {
-                            "type": "string"
-                          },
-                          "source": {
-                            "anyOf": [
-                              {
-                                "additionalProperties": false,
-                                "properties": {
-                                  "text": {
-                                    "const": "Planning Data",
-                                    "type": "string"
-                                  },
-                                  "url": {
-                                    "$ref": "#/definitions/URL"
-                                  }
-                                },
-                                "required": [
-                                  "text",
-                                  "url"
-                                ],
-                                "type": "object"
-                              },
-                              {
-                                "additionalProperties": false,
-                                "properties": {
-                                  "text": {
-                                    "const": "Ordnance Survey MasterMap Highways",
-                                    "type": "string"
-                                  }
-                                },
-                                "required": [
-                                  "text"
-                                ],
-                                "type": "object"
-                              }
-                            ]
-                          }
-                        },
-                        "required": [
-                          "name",
-                          "source"
-                        ],
-                        "type": "object"
-                      },
-                      "type": "array"
-                    },
-                    {
-                      "maxItems": 0,
-                      "minItems": 0,
-                      "type": "array"
-                    }
-                  ]
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
                 },
                 "intersects": {
                   "const": true,
@@ -7637,7 +9211,6 @@
               },
               "required": [
                 "description",
-                "entities",
                 "intersects",
                 "value"
               ],
@@ -7651,66 +9224,10 @@
                   "type": "string"
                 },
                 "entities": {
-                  "anyOf": [
-                    {
-                      "items": {
-                        "additionalProperties": false,
-                        "properties": {
-                          "description": {
-                            "type": "string"
-                          },
-                          "name": {
-                            "type": "string"
-                          },
-                          "source": {
-                            "anyOf": [
-                              {
-                                "additionalProperties": false,
-                                "properties": {
-                                  "text": {
-                                    "const": "Planning Data",
-                                    "type": "string"
-                                  },
-                                  "url": {
-                                    "$ref": "#/definitions/URL"
-                                  }
-                                },
-                                "required": [
-                                  "text",
-                                  "url"
-                                ],
-                                "type": "object"
-                              },
-                              {
-                                "additionalProperties": false,
-                                "properties": {
-                                  "text": {
-                                    "const": "Ordnance Survey MasterMap Highways",
-                                    "type": "string"
-                                  }
-                                },
-                                "required": [
-                                  "text"
-                                ],
-                                "type": "object"
-                              }
-                            ]
-                          }
-                        },
-                        "required": [
-                          "name",
-                          "source"
-                        ],
-                        "type": "object"
-                      },
-                      "type": "array"
-                    },
-                    {
-                      "maxItems": 0,
-                      "minItems": 0,
-                      "type": "array"
-                    }
-                  ]
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
                 },
                 "intersects": {
                   "const": true,
@@ -7723,7 +9240,6 @@
               },
               "required": [
                 "description",
-                "entities",
                 "intersects",
                 "value"
               ],
@@ -7737,66 +9253,10 @@
                   "type": "string"
                 },
                 "entities": {
-                  "anyOf": [
-                    {
-                      "items": {
-                        "additionalProperties": false,
-                        "properties": {
-                          "description": {
-                            "type": "string"
-                          },
-                          "name": {
-                            "type": "string"
-                          },
-                          "source": {
-                            "anyOf": [
-                              {
-                                "additionalProperties": false,
-                                "properties": {
-                                  "text": {
-                                    "const": "Planning Data",
-                                    "type": "string"
-                                  },
-                                  "url": {
-                                    "$ref": "#/definitions/URL"
-                                  }
-                                },
-                                "required": [
-                                  "text",
-                                  "url"
-                                ],
-                                "type": "object"
-                              },
-                              {
-                                "additionalProperties": false,
-                                "properties": {
-                                  "text": {
-                                    "const": "Ordnance Survey MasterMap Highways",
-                                    "type": "string"
-                                  }
-                                },
-                                "required": [
-                                  "text"
-                                ],
-                                "type": "object"
-                              }
-                            ]
-                          }
-                        },
-                        "required": [
-                          "name",
-                          "source"
-                        ],
-                        "type": "object"
-                      },
-                      "type": "array"
-                    },
-                    {
-                      "maxItems": 0,
-                      "minItems": 0,
-                      "type": "array"
-                    }
-                  ]
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
                 },
                 "intersects": {
                   "const": true,
@@ -7809,7 +9269,6 @@
               },
               "required": [
                 "description",
-                "entities",
                 "intersects",
                 "value"
               ],
@@ -7823,66 +9282,10 @@
                   "type": "string"
                 },
                 "entities": {
-                  "anyOf": [
-                    {
-                      "items": {
-                        "additionalProperties": false,
-                        "properties": {
-                          "description": {
-                            "type": "string"
-                          },
-                          "name": {
-                            "type": "string"
-                          },
-                          "source": {
-                            "anyOf": [
-                              {
-                                "additionalProperties": false,
-                                "properties": {
-                                  "text": {
-                                    "const": "Planning Data",
-                                    "type": "string"
-                                  },
-                                  "url": {
-                                    "$ref": "#/definitions/URL"
-                                  }
-                                },
-                                "required": [
-                                  "text",
-                                  "url"
-                                ],
-                                "type": "object"
-                              },
-                              {
-                                "additionalProperties": false,
-                                "properties": {
-                                  "text": {
-                                    "const": "Ordnance Survey MasterMap Highways",
-                                    "type": "string"
-                                  }
-                                },
-                                "required": [
-                                  "text"
-                                ],
-                                "type": "object"
-                              }
-                            ]
-                          }
-                        },
-                        "required": [
-                          "name",
-                          "source"
-                        ],
-                        "type": "object"
-                      },
-                      "type": "array"
-                    },
-                    {
-                      "maxItems": 0,
-                      "minItems": 0,
-                      "type": "array"
-                    }
-                  ]
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
                 },
                 "intersects": {
                   "const": true,
@@ -7895,7 +9298,6 @@
               },
               "required": [
                 "description",
-                "entities",
                 "intersects",
                 "value"
               ],
@@ -7909,66 +9311,10 @@
                   "type": "string"
                 },
                 "entities": {
-                  "anyOf": [
-                    {
-                      "items": {
-                        "additionalProperties": false,
-                        "properties": {
-                          "description": {
-                            "type": "string"
-                          },
-                          "name": {
-                            "type": "string"
-                          },
-                          "source": {
-                            "anyOf": [
-                              {
-                                "additionalProperties": false,
-                                "properties": {
-                                  "text": {
-                                    "const": "Planning Data",
-                                    "type": "string"
-                                  },
-                                  "url": {
-                                    "$ref": "#/definitions/URL"
-                                  }
-                                },
-                                "required": [
-                                  "text",
-                                  "url"
-                                ],
-                                "type": "object"
-                              },
-                              {
-                                "additionalProperties": false,
-                                "properties": {
-                                  "text": {
-                                    "const": "Ordnance Survey MasterMap Highways",
-                                    "type": "string"
-                                  }
-                                },
-                                "required": [
-                                  "text"
-                                ],
-                                "type": "object"
-                              }
-                            ]
-                          }
-                        },
-                        "required": [
-                          "name",
-                          "source"
-                        ],
-                        "type": "object"
-                      },
-                      "type": "array"
-                    },
-                    {
-                      "maxItems": 0,
-                      "minItems": 0,
-                      "type": "array"
-                    }
-                  ]
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
                 },
                 "intersects": {
                   "const": true,
@@ -7981,7 +9327,6 @@
               },
               "required": [
                 "description",
-                "entities",
                 "intersects",
                 "value"
               ],
@@ -7995,66 +9340,10 @@
                   "type": "string"
                 },
                 "entities": {
-                  "anyOf": [
-                    {
-                      "items": {
-                        "additionalProperties": false,
-                        "properties": {
-                          "description": {
-                            "type": "string"
-                          },
-                          "name": {
-                            "type": "string"
-                          },
-                          "source": {
-                            "anyOf": [
-                              {
-                                "additionalProperties": false,
-                                "properties": {
-                                  "text": {
-                                    "const": "Planning Data",
-                                    "type": "string"
-                                  },
-                                  "url": {
-                                    "$ref": "#/definitions/URL"
-                                  }
-                                },
-                                "required": [
-                                  "text",
-                                  "url"
-                                ],
-                                "type": "object"
-                              },
-                              {
-                                "additionalProperties": false,
-                                "properties": {
-                                  "text": {
-                                    "const": "Ordnance Survey MasterMap Highways",
-                                    "type": "string"
-                                  }
-                                },
-                                "required": [
-                                  "text"
-                                ],
-                                "type": "object"
-                              }
-                            ]
-                          }
-                        },
-                        "required": [
-                          "name",
-                          "source"
-                        ],
-                        "type": "object"
-                      },
-                      "type": "array"
-                    },
-                    {
-                      "maxItems": 0,
-                      "minItems": 0,
-                      "type": "array"
-                    }
-                  ]
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
                 },
                 "intersects": {
                   "const": true,
@@ -8067,7 +9356,6 @@
               },
               "required": [
                 "description",
-                "entities",
                 "intersects",
                 "value"
               ],
@@ -8081,66 +9369,10 @@
                   "type": "string"
                 },
                 "entities": {
-                  "anyOf": [
-                    {
-                      "items": {
-                        "additionalProperties": false,
-                        "properties": {
-                          "description": {
-                            "type": "string"
-                          },
-                          "name": {
-                            "type": "string"
-                          },
-                          "source": {
-                            "anyOf": [
-                              {
-                                "additionalProperties": false,
-                                "properties": {
-                                  "text": {
-                                    "const": "Planning Data",
-                                    "type": "string"
-                                  },
-                                  "url": {
-                                    "$ref": "#/definitions/URL"
-                                  }
-                                },
-                                "required": [
-                                  "text",
-                                  "url"
-                                ],
-                                "type": "object"
-                              },
-                              {
-                                "additionalProperties": false,
-                                "properties": {
-                                  "text": {
-                                    "const": "Ordnance Survey MasterMap Highways",
-                                    "type": "string"
-                                  }
-                                },
-                                "required": [
-                                  "text"
-                                ],
-                                "type": "object"
-                              }
-                            ]
-                          }
-                        },
-                        "required": [
-                          "name",
-                          "source"
-                        ],
-                        "type": "object"
-                      },
-                      "type": "array"
-                    },
-                    {
-                      "maxItems": 0,
-                      "minItems": 0,
-                      "type": "array"
-                    }
-                  ]
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
                 },
                 "intersects": {
                   "const": true,
@@ -8153,7 +9385,6 @@
               },
               "required": [
                 "description",
-                "entities",
                 "intersects",
                 "value"
               ],
@@ -8167,66 +9398,10 @@
                   "type": "string"
                 },
                 "entities": {
-                  "anyOf": [
-                    {
-                      "items": {
-                        "additionalProperties": false,
-                        "properties": {
-                          "description": {
-                            "type": "string"
-                          },
-                          "name": {
-                            "type": "string"
-                          },
-                          "source": {
-                            "anyOf": [
-                              {
-                                "additionalProperties": false,
-                                "properties": {
-                                  "text": {
-                                    "const": "Planning Data",
-                                    "type": "string"
-                                  },
-                                  "url": {
-                                    "$ref": "#/definitions/URL"
-                                  }
-                                },
-                                "required": [
-                                  "text",
-                                  "url"
-                                ],
-                                "type": "object"
-                              },
-                              {
-                                "additionalProperties": false,
-                                "properties": {
-                                  "text": {
-                                    "const": "Ordnance Survey MasterMap Highways",
-                                    "type": "string"
-                                  }
-                                },
-                                "required": [
-                                  "text"
-                                ],
-                                "type": "object"
-                              }
-                            ]
-                          }
-                        },
-                        "required": [
-                          "name",
-                          "source"
-                        ],
-                        "type": "object"
-                      },
-                      "type": "array"
-                    },
-                    {
-                      "maxItems": 0,
-                      "minItems": 0,
-                      "type": "array"
-                    }
-                  ]
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
                 },
                 "intersects": {
                   "const": true,
@@ -8239,7 +9414,6 @@
               },
               "required": [
                 "description",
-                "entities",
                 "intersects",
                 "value"
               ],
@@ -8253,66 +9427,10 @@
                   "type": "string"
                 },
                 "entities": {
-                  "anyOf": [
-                    {
-                      "items": {
-                        "additionalProperties": false,
-                        "properties": {
-                          "description": {
-                            "type": "string"
-                          },
-                          "name": {
-                            "type": "string"
-                          },
-                          "source": {
-                            "anyOf": [
-                              {
-                                "additionalProperties": false,
-                                "properties": {
-                                  "text": {
-                                    "const": "Planning Data",
-                                    "type": "string"
-                                  },
-                                  "url": {
-                                    "$ref": "#/definitions/URL"
-                                  }
-                                },
-                                "required": [
-                                  "text",
-                                  "url"
-                                ],
-                                "type": "object"
-                              },
-                              {
-                                "additionalProperties": false,
-                                "properties": {
-                                  "text": {
-                                    "const": "Ordnance Survey MasterMap Highways",
-                                    "type": "string"
-                                  }
-                                },
-                                "required": [
-                                  "text"
-                                ],
-                                "type": "object"
-                              }
-                            ]
-                          }
-                        },
-                        "required": [
-                          "name",
-                          "source"
-                        ],
-                        "type": "object"
-                      },
-                      "type": "array"
-                    },
-                    {
-                      "maxItems": 0,
-                      "minItems": 0,
-                      "type": "array"
-                    }
-                  ]
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
                 },
                 "intersects": {
                   "const": true,
@@ -8325,7 +9443,6 @@
               },
               "required": [
                 "description",
-                "entities",
                 "intersects",
                 "value"
               ],
@@ -8339,66 +9456,10 @@
                   "type": "string"
                 },
                 "entities": {
-                  "anyOf": [
-                    {
-                      "items": {
-                        "additionalProperties": false,
-                        "properties": {
-                          "description": {
-                            "type": "string"
-                          },
-                          "name": {
-                            "type": "string"
-                          },
-                          "source": {
-                            "anyOf": [
-                              {
-                                "additionalProperties": false,
-                                "properties": {
-                                  "text": {
-                                    "const": "Planning Data",
-                                    "type": "string"
-                                  },
-                                  "url": {
-                                    "$ref": "#/definitions/URL"
-                                  }
-                                },
-                                "required": [
-                                  "text",
-                                  "url"
-                                ],
-                                "type": "object"
-                              },
-                              {
-                                "additionalProperties": false,
-                                "properties": {
-                                  "text": {
-                                    "const": "Ordnance Survey MasterMap Highways",
-                                    "type": "string"
-                                  }
-                                },
-                                "required": [
-                                  "text"
-                                ],
-                                "type": "object"
-                              }
-                            ]
-                          }
-                        },
-                        "required": [
-                          "name",
-                          "source"
-                        ],
-                        "type": "object"
-                      },
-                      "type": "array"
-                    },
-                    {
-                      "maxItems": 0,
-                      "minItems": 0,
-                      "type": "array"
-                    }
-                  ]
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
                 },
                 "intersects": {
                   "const": true,
@@ -8411,7 +9472,6 @@
               },
               "required": [
                 "description",
-                "entities",
                 "intersects",
                 "value"
               ],
@@ -8425,66 +9485,10 @@
                   "type": "string"
                 },
                 "entities": {
-                  "anyOf": [
-                    {
-                      "items": {
-                        "additionalProperties": false,
-                        "properties": {
-                          "description": {
-                            "type": "string"
-                          },
-                          "name": {
-                            "type": "string"
-                          },
-                          "source": {
-                            "anyOf": [
-                              {
-                                "additionalProperties": false,
-                                "properties": {
-                                  "text": {
-                                    "const": "Planning Data",
-                                    "type": "string"
-                                  },
-                                  "url": {
-                                    "$ref": "#/definitions/URL"
-                                  }
-                                },
-                                "required": [
-                                  "text",
-                                  "url"
-                                ],
-                                "type": "object"
-                              },
-                              {
-                                "additionalProperties": false,
-                                "properties": {
-                                  "text": {
-                                    "const": "Ordnance Survey MasterMap Highways",
-                                    "type": "string"
-                                  }
-                                },
-                                "required": [
-                                  "text"
-                                ],
-                                "type": "object"
-                              }
-                            ]
-                          }
-                        },
-                        "required": [
-                          "name",
-                          "source"
-                        ],
-                        "type": "object"
-                      },
-                      "type": "array"
-                    },
-                    {
-                      "maxItems": 0,
-                      "minItems": 0,
-                      "type": "array"
-                    }
-                  ]
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
                 },
                 "intersects": {
                   "const": true,
@@ -8497,7 +9501,6 @@
               },
               "required": [
                 "description",
-                "entities",
                 "intersects",
                 "value"
               ],
@@ -8511,66 +9514,10 @@
                   "type": "string"
                 },
                 "entities": {
-                  "anyOf": [
-                    {
-                      "items": {
-                        "additionalProperties": false,
-                        "properties": {
-                          "description": {
-                            "type": "string"
-                          },
-                          "name": {
-                            "type": "string"
-                          },
-                          "source": {
-                            "anyOf": [
-                              {
-                                "additionalProperties": false,
-                                "properties": {
-                                  "text": {
-                                    "const": "Planning Data",
-                                    "type": "string"
-                                  },
-                                  "url": {
-                                    "$ref": "#/definitions/URL"
-                                  }
-                                },
-                                "required": [
-                                  "text",
-                                  "url"
-                                ],
-                                "type": "object"
-                              },
-                              {
-                                "additionalProperties": false,
-                                "properties": {
-                                  "text": {
-                                    "const": "Ordnance Survey MasterMap Highways",
-                                    "type": "string"
-                                  }
-                                },
-                                "required": [
-                                  "text"
-                                ],
-                                "type": "object"
-                              }
-                            ]
-                          }
-                        },
-                        "required": [
-                          "name",
-                          "source"
-                        ],
-                        "type": "object"
-                      },
-                      "type": "array"
-                    },
-                    {
-                      "maxItems": 0,
-                      "minItems": 0,
-                      "type": "array"
-                    }
-                  ]
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
                 },
                 "intersects": {
                   "const": true,
@@ -8583,7 +9530,6 @@
               },
               "required": [
                 "description",
-                "entities",
                 "intersects",
                 "value"
               ],
@@ -8597,66 +9543,10 @@
                   "type": "string"
                 },
                 "entities": {
-                  "anyOf": [
-                    {
-                      "items": {
-                        "additionalProperties": false,
-                        "properties": {
-                          "description": {
-                            "type": "string"
-                          },
-                          "name": {
-                            "type": "string"
-                          },
-                          "source": {
-                            "anyOf": [
-                              {
-                                "additionalProperties": false,
-                                "properties": {
-                                  "text": {
-                                    "const": "Planning Data",
-                                    "type": "string"
-                                  },
-                                  "url": {
-                                    "$ref": "#/definitions/URL"
-                                  }
-                                },
-                                "required": [
-                                  "text",
-                                  "url"
-                                ],
-                                "type": "object"
-                              },
-                              {
-                                "additionalProperties": false,
-                                "properties": {
-                                  "text": {
-                                    "const": "Ordnance Survey MasterMap Highways",
-                                    "type": "string"
-                                  }
-                                },
-                                "required": [
-                                  "text"
-                                ],
-                                "type": "object"
-                              }
-                            ]
-                          }
-                        },
-                        "required": [
-                          "name",
-                          "source"
-                        ],
-                        "type": "object"
-                      },
-                      "type": "array"
-                    },
-                    {
-                      "maxItems": 0,
-                      "minItems": 0,
-                      "type": "array"
-                    }
-                  ]
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
                 },
                 "intersects": {
                   "const": true,
@@ -8669,7 +9559,6 @@
               },
               "required": [
                 "description",
-                "entities",
                 "intersects",
                 "value"
               ],
@@ -8683,66 +9572,10 @@
                   "type": "string"
                 },
                 "entities": {
-                  "anyOf": [
-                    {
-                      "items": {
-                        "additionalProperties": false,
-                        "properties": {
-                          "description": {
-                            "type": "string"
-                          },
-                          "name": {
-                            "type": "string"
-                          },
-                          "source": {
-                            "anyOf": [
-                              {
-                                "additionalProperties": false,
-                                "properties": {
-                                  "text": {
-                                    "const": "Planning Data",
-                                    "type": "string"
-                                  },
-                                  "url": {
-                                    "$ref": "#/definitions/URL"
-                                  }
-                                },
-                                "required": [
-                                  "text",
-                                  "url"
-                                ],
-                                "type": "object"
-                              },
-                              {
-                                "additionalProperties": false,
-                                "properties": {
-                                  "text": {
-                                    "const": "Ordnance Survey MasterMap Highways",
-                                    "type": "string"
-                                  }
-                                },
-                                "required": [
-                                  "text"
-                                ],
-                                "type": "object"
-                              }
-                            ]
-                          }
-                        },
-                        "required": [
-                          "name",
-                          "source"
-                        ],
-                        "type": "object"
-                      },
-                      "type": "array"
-                    },
-                    {
-                      "maxItems": 0,
-                      "minItems": 0,
-                      "type": "array"
-                    }
-                  ]
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
                 },
                 "intersects": {
                   "const": true,
@@ -8755,7 +9588,6 @@
               },
               "required": [
                 "description",
-                "entities",
                 "intersects",
                 "value"
               ],
@@ -8769,66 +9601,10 @@
                   "type": "string"
                 },
                 "entities": {
-                  "anyOf": [
-                    {
-                      "items": {
-                        "additionalProperties": false,
-                        "properties": {
-                          "description": {
-                            "type": "string"
-                          },
-                          "name": {
-                            "type": "string"
-                          },
-                          "source": {
-                            "anyOf": [
-                              {
-                                "additionalProperties": false,
-                                "properties": {
-                                  "text": {
-                                    "const": "Planning Data",
-                                    "type": "string"
-                                  },
-                                  "url": {
-                                    "$ref": "#/definitions/URL"
-                                  }
-                                },
-                                "required": [
-                                  "text",
-                                  "url"
-                                ],
-                                "type": "object"
-                              },
-                              {
-                                "additionalProperties": false,
-                                "properties": {
-                                  "text": {
-                                    "const": "Ordnance Survey MasterMap Highways",
-                                    "type": "string"
-                                  }
-                                },
-                                "required": [
-                                  "text"
-                                ],
-                                "type": "object"
-                              }
-                            ]
-                          }
-                        },
-                        "required": [
-                          "name",
-                          "source"
-                        ],
-                        "type": "object"
-                      },
-                      "type": "array"
-                    },
-                    {
-                      "maxItems": 0,
-                      "minItems": 0,
-                      "type": "array"
-                    }
-                  ]
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
                 },
                 "intersects": {
                   "const": true,
@@ -8841,7 +9617,6 @@
               },
               "required": [
                 "description",
-                "entities",
                 "intersects",
                 "value"
               ],
@@ -8855,66 +9630,10 @@
                   "type": "string"
                 },
                 "entities": {
-                  "anyOf": [
-                    {
-                      "items": {
-                        "additionalProperties": false,
-                        "properties": {
-                          "description": {
-                            "type": "string"
-                          },
-                          "name": {
-                            "type": "string"
-                          },
-                          "source": {
-                            "anyOf": [
-                              {
-                                "additionalProperties": false,
-                                "properties": {
-                                  "text": {
-                                    "const": "Planning Data",
-                                    "type": "string"
-                                  },
-                                  "url": {
-                                    "$ref": "#/definitions/URL"
-                                  }
-                                },
-                                "required": [
-                                  "text",
-                                  "url"
-                                ],
-                                "type": "object"
-                              },
-                              {
-                                "additionalProperties": false,
-                                "properties": {
-                                  "text": {
-                                    "const": "Ordnance Survey MasterMap Highways",
-                                    "type": "string"
-                                  }
-                                },
-                                "required": [
-                                  "text"
-                                ],
-                                "type": "object"
-                              }
-                            ]
-                          }
-                        },
-                        "required": [
-                          "name",
-                          "source"
-                        ],
-                        "type": "object"
-                      },
-                      "type": "array"
-                    },
-                    {
-                      "maxItems": 0,
-                      "minItems": 0,
-                      "type": "array"
-                    }
-                  ]
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
                 },
                 "intersects": {
                   "const": true,
@@ -8927,7 +9646,6 @@
               },
               "required": [
                 "description",
-                "entities",
                 "intersects",
                 "value"
               ],
@@ -8941,66 +9659,10 @@
                   "type": "string"
                 },
                 "entities": {
-                  "anyOf": [
-                    {
-                      "items": {
-                        "additionalProperties": false,
-                        "properties": {
-                          "description": {
-                            "type": "string"
-                          },
-                          "name": {
-                            "type": "string"
-                          },
-                          "source": {
-                            "anyOf": [
-                              {
-                                "additionalProperties": false,
-                                "properties": {
-                                  "text": {
-                                    "const": "Planning Data",
-                                    "type": "string"
-                                  },
-                                  "url": {
-                                    "$ref": "#/definitions/URL"
-                                  }
-                                },
-                                "required": [
-                                  "text",
-                                  "url"
-                                ],
-                                "type": "object"
-                              },
-                              {
-                                "additionalProperties": false,
-                                "properties": {
-                                  "text": {
-                                    "const": "Ordnance Survey MasterMap Highways",
-                                    "type": "string"
-                                  }
-                                },
-                                "required": [
-                                  "text"
-                                ],
-                                "type": "object"
-                              }
-                            ]
-                          }
-                        },
-                        "required": [
-                          "name",
-                          "source"
-                        ],
-                        "type": "object"
-                      },
-                      "type": "array"
-                    },
-                    {
-                      "maxItems": 0,
-                      "minItems": 0,
-                      "type": "array"
-                    }
-                  ]
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
                 },
                 "intersects": {
                   "const": true,
@@ -9013,7 +9675,6 @@
               },
               "required": [
                 "description",
-                "entities",
                 "intersects",
                 "value"
               ],
@@ -9027,66 +9688,10 @@
                   "type": "string"
                 },
                 "entities": {
-                  "anyOf": [
-                    {
-                      "items": {
-                        "additionalProperties": false,
-                        "properties": {
-                          "description": {
-                            "type": "string"
-                          },
-                          "name": {
-                            "type": "string"
-                          },
-                          "source": {
-                            "anyOf": [
-                              {
-                                "additionalProperties": false,
-                                "properties": {
-                                  "text": {
-                                    "const": "Planning Data",
-                                    "type": "string"
-                                  },
-                                  "url": {
-                                    "$ref": "#/definitions/URL"
-                                  }
-                                },
-                                "required": [
-                                  "text",
-                                  "url"
-                                ],
-                                "type": "object"
-                              },
-                              {
-                                "additionalProperties": false,
-                                "properties": {
-                                  "text": {
-                                    "const": "Ordnance Survey MasterMap Highways",
-                                    "type": "string"
-                                  }
-                                },
-                                "required": [
-                                  "text"
-                                ],
-                                "type": "object"
-                              }
-                            ]
-                          }
-                        },
-                        "required": [
-                          "name",
-                          "source"
-                        ],
-                        "type": "object"
-                      },
-                      "type": "array"
-                    },
-                    {
-                      "maxItems": 0,
-                      "minItems": 0,
-                      "type": "array"
-                    }
-                  ]
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
                 },
                 "intersects": {
                   "const": true,
@@ -9099,7 +9704,6 @@
               },
               "required": [
                 "description",
-                "entities",
                 "intersects",
                 "value"
               ],
@@ -9113,66 +9717,10 @@
                   "type": "string"
                 },
                 "entities": {
-                  "anyOf": [
-                    {
-                      "items": {
-                        "additionalProperties": false,
-                        "properties": {
-                          "description": {
-                            "type": "string"
-                          },
-                          "name": {
-                            "type": "string"
-                          },
-                          "source": {
-                            "anyOf": [
-                              {
-                                "additionalProperties": false,
-                                "properties": {
-                                  "text": {
-                                    "const": "Planning Data",
-                                    "type": "string"
-                                  },
-                                  "url": {
-                                    "$ref": "#/definitions/URL"
-                                  }
-                                },
-                                "required": [
-                                  "text",
-                                  "url"
-                                ],
-                                "type": "object"
-                              },
-                              {
-                                "additionalProperties": false,
-                                "properties": {
-                                  "text": {
-                                    "const": "Ordnance Survey MasterMap Highways",
-                                    "type": "string"
-                                  }
-                                },
-                                "required": [
-                                  "text"
-                                ],
-                                "type": "object"
-                              }
-                            ]
-                          }
-                        },
-                        "required": [
-                          "name",
-                          "source"
-                        ],
-                        "type": "object"
-                      },
-                      "type": "array"
-                    },
-                    {
-                      "maxItems": 0,
-                      "minItems": 0,
-                      "type": "array"
-                    }
-                  ]
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
                 },
                 "intersects": {
                   "const": true,
@@ -9185,7 +9733,6 @@
               },
               "required": [
                 "description",
-                "entities",
                 "intersects",
                 "value"
               ],
@@ -9199,66 +9746,10 @@
                   "type": "string"
                 },
                 "entities": {
-                  "anyOf": [
-                    {
-                      "items": {
-                        "additionalProperties": false,
-                        "properties": {
-                          "description": {
-                            "type": "string"
-                          },
-                          "name": {
-                            "type": "string"
-                          },
-                          "source": {
-                            "anyOf": [
-                              {
-                                "additionalProperties": false,
-                                "properties": {
-                                  "text": {
-                                    "const": "Planning Data",
-                                    "type": "string"
-                                  },
-                                  "url": {
-                                    "$ref": "#/definitions/URL"
-                                  }
-                                },
-                                "required": [
-                                  "text",
-                                  "url"
-                                ],
-                                "type": "object"
-                              },
-                              {
-                                "additionalProperties": false,
-                                "properties": {
-                                  "text": {
-                                    "const": "Ordnance Survey MasterMap Highways",
-                                    "type": "string"
-                                  }
-                                },
-                                "required": [
-                                  "text"
-                                ],
-                                "type": "object"
-                              }
-                            ]
-                          }
-                        },
-                        "required": [
-                          "name",
-                          "source"
-                        ],
-                        "type": "object"
-                      },
-                      "type": "array"
-                    },
-                    {
-                      "maxItems": 0,
-                      "minItems": 0,
-                      "type": "array"
-                    }
-                  ]
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
                 },
                 "intersects": {
                   "const": true,
@@ -9271,7 +9762,6 @@
               },
               "required": [
                 "description",
-                "entities",
                 "intersects",
                 "value"
               ],
@@ -9285,66 +9775,10 @@
                   "type": "string"
                 },
                 "entities": {
-                  "anyOf": [
-                    {
-                      "items": {
-                        "additionalProperties": false,
-                        "properties": {
-                          "description": {
-                            "type": "string"
-                          },
-                          "name": {
-                            "type": "string"
-                          },
-                          "source": {
-                            "anyOf": [
-                              {
-                                "additionalProperties": false,
-                                "properties": {
-                                  "text": {
-                                    "const": "Planning Data",
-                                    "type": "string"
-                                  },
-                                  "url": {
-                                    "$ref": "#/definitions/URL"
-                                  }
-                                },
-                                "required": [
-                                  "text",
-                                  "url"
-                                ],
-                                "type": "object"
-                              },
-                              {
-                                "additionalProperties": false,
-                                "properties": {
-                                  "text": {
-                                    "const": "Ordnance Survey MasterMap Highways",
-                                    "type": "string"
-                                  }
-                                },
-                                "required": [
-                                  "text"
-                                ],
-                                "type": "object"
-                              }
-                            ]
-                          }
-                        },
-                        "required": [
-                          "name",
-                          "source"
-                        ],
-                        "type": "object"
-                      },
-                      "type": "array"
-                    },
-                    {
-                      "maxItems": 0,
-                      "minItems": 0,
-                      "type": "array"
-                    }
-                  ]
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
                 },
                 "intersects": {
                   "const": true,
@@ -9357,7 +9791,6 @@
               },
               "required": [
                 "description",
-                "entities",
                 "intersects",
                 "value"
               ],
@@ -9371,66 +9804,10 @@
                   "type": "string"
                 },
                 "entities": {
-                  "anyOf": [
-                    {
-                      "items": {
-                        "additionalProperties": false,
-                        "properties": {
-                          "description": {
-                            "type": "string"
-                          },
-                          "name": {
-                            "type": "string"
-                          },
-                          "source": {
-                            "anyOf": [
-                              {
-                                "additionalProperties": false,
-                                "properties": {
-                                  "text": {
-                                    "const": "Planning Data",
-                                    "type": "string"
-                                  },
-                                  "url": {
-                                    "$ref": "#/definitions/URL"
-                                  }
-                                },
-                                "required": [
-                                  "text",
-                                  "url"
-                                ],
-                                "type": "object"
-                              },
-                              {
-                                "additionalProperties": false,
-                                "properties": {
-                                  "text": {
-                                    "const": "Ordnance Survey MasterMap Highways",
-                                    "type": "string"
-                                  }
-                                },
-                                "required": [
-                                  "text"
-                                ],
-                                "type": "object"
-                              }
-                            ]
-                          }
-                        },
-                        "required": [
-                          "name",
-                          "source"
-                        ],
-                        "type": "object"
-                      },
-                      "type": "array"
-                    },
-                    {
-                      "maxItems": 0,
-                      "minItems": 0,
-                      "type": "array"
-                    }
-                  ]
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
                 },
                 "intersects": {
                   "const": true,
@@ -9443,7 +9820,6 @@
               },
               "required": [
                 "description",
-                "entities",
                 "intersects",
                 "value"
               ],
@@ -9457,66 +9833,10 @@
                   "type": "string"
                 },
                 "entities": {
-                  "anyOf": [
-                    {
-                      "items": {
-                        "additionalProperties": false,
-                        "properties": {
-                          "description": {
-                            "type": "string"
-                          },
-                          "name": {
-                            "type": "string"
-                          },
-                          "source": {
-                            "anyOf": [
-                              {
-                                "additionalProperties": false,
-                                "properties": {
-                                  "text": {
-                                    "const": "Planning Data",
-                                    "type": "string"
-                                  },
-                                  "url": {
-                                    "$ref": "#/definitions/URL"
-                                  }
-                                },
-                                "required": [
-                                  "text",
-                                  "url"
-                                ],
-                                "type": "object"
-                              },
-                              {
-                                "additionalProperties": false,
-                                "properties": {
-                                  "text": {
-                                    "const": "Ordnance Survey MasterMap Highways",
-                                    "type": "string"
-                                  }
-                                },
-                                "required": [
-                                  "text"
-                                ],
-                                "type": "object"
-                              }
-                            ]
-                          }
-                        },
-                        "required": [
-                          "name",
-                          "source"
-                        ],
-                        "type": "object"
-                      },
-                      "type": "array"
-                    },
-                    {
-                      "maxItems": 0,
-                      "minItems": 0,
-                      "type": "array"
-                    }
-                  ]
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
                 },
                 "intersects": {
                   "const": true,
@@ -9529,7 +9849,6 @@
               },
               "required": [
                 "description",
-                "entities",
                 "intersects",
                 "value"
               ],
@@ -9543,66 +9862,10 @@
                   "type": "string"
                 },
                 "entities": {
-                  "anyOf": [
-                    {
-                      "items": {
-                        "additionalProperties": false,
-                        "properties": {
-                          "description": {
-                            "type": "string"
-                          },
-                          "name": {
-                            "type": "string"
-                          },
-                          "source": {
-                            "anyOf": [
-                              {
-                                "additionalProperties": false,
-                                "properties": {
-                                  "text": {
-                                    "const": "Planning Data",
-                                    "type": "string"
-                                  },
-                                  "url": {
-                                    "$ref": "#/definitions/URL"
-                                  }
-                                },
-                                "required": [
-                                  "text",
-                                  "url"
-                                ],
-                                "type": "object"
-                              },
-                              {
-                                "additionalProperties": false,
-                                "properties": {
-                                  "text": {
-                                    "const": "Ordnance Survey MasterMap Highways",
-                                    "type": "string"
-                                  }
-                                },
-                                "required": [
-                                  "text"
-                                ],
-                                "type": "object"
-                              }
-                            ]
-                          }
-                        },
-                        "required": [
-                          "name",
-                          "source"
-                        ],
-                        "type": "object"
-                      },
-                      "type": "array"
-                    },
-                    {
-                      "maxItems": 0,
-                      "minItems": 0,
-                      "type": "array"
-                    }
-                  ]
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
                 },
                 "intersects": {
                   "const": true,
@@ -9615,7 +9878,6 @@
               },
               "required": [
                 "description",
-                "entities",
                 "intersects",
                 "value"
               ],
@@ -10397,7 +10659,7 @@
               "type": "string"
             },
             "value": {
-              "const": "alter.deck",
+              "const": "alter.decks",
               "type": "string"
             }
           },
@@ -10735,6 +10997,24 @@
           "additionalProperties": false,
           "properties": {
             "description": {
+              "const": "Install machinery",
+              "type": "string"
+            },
+            "value": {
+              "const": "alter.equipment.machinery",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
               "const": "Install solar panels",
               "type": "string"
             },
@@ -10794,6 +11074,24 @@
             },
             "value": {
               "const": "alter.equipment.tank",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Install ventilation",
+              "type": "string"
+            },
+            "value": {
+              "const": "alter.equipment.ventilation",
               "type": "string"
             }
           },
@@ -14515,11 +14813,11 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "New agricultural buildings - glass house",
+              "const": "New agricultural buildings - glasshouse",
               "type": "string"
             },
             "value": {
-              "const": "new.agriculture.glassHouse",
+              "const": "new.agriculture.glasshouse",
               "type": "string"
             }
           },
@@ -14767,7 +15065,7 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Build new homes on a roof",
+              "const": "Build new homes",
               "type": "string"
             },
             "value": {
@@ -23693,6 +23991,46 @@
       ],
       "type": "object"
     },
+    "ResidentialUnits": {
+      "additionalProperties": false,
+      "properties": {
+        "residential": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "bedrooms": {
+                "type": "number"
+              },
+              "identicalUnits": {
+                "type": "number"
+              },
+              "tenure": {
+                "$ref": "#/definitions/UKTenureType"
+              },
+              "type": {
+                "$ref": "#/definitions/UKResidentialUnitType"
+              }
+            },
+            "required": [
+              "type",
+              "tenure",
+              "bedrooms",
+              "identicalUnits"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "total": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "total",
+        "residential"
+      ],
+      "type": "object"
+    },
     "Response": {
       "additionalProperties": false,
       "properties": {
@@ -24362,6 +24700,19 @@
           "$ref": "#/definitions/GeoBoundary",
           "description": "HM Land Registry Index polygon for this property, commonly referred to as the blue line boundary, sourced from planning.data.gov.uk/dataset/title-boundary"
         },
+        "flood": {
+          "additionalProperties": false,
+          "description": "Existing flood risk, if applicable to application.type",
+          "properties": {
+            "20mFromWatercourse": {
+              "type": "boolean"
+            },
+            "increasedRiskElsewhere": {
+              "type": "boolean"
+            }
+          },
+          "type": "object"
+        },
         "localAuthorityDistrict": {
           "description": "Current and historic UK Local Authority Districts that contain this address sourced from planning.data.gov.uk/dataset/local-authority-district",
           "items": {
@@ -24433,8 +24784,28 @@
         "region": {
           "$ref": "#/definitions/UKRegion"
         },
+        "trees": {
+          "additionalProperties": false,
+          "description": "Existing trees on or near the site",
+          "properties": {
+            "adjacent": {
+              "type": "boolean"
+            },
+            "present": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "present",
+            "adjacent"
+          ],
+          "type": "object"
+        },
         "type": {
           "$ref": "#/definitions/PropertyType"
+        },
+        "units": {
+          "$ref": "#/definitions/ResidentialUnits"
         },
         "use": {
           "additionalProperties": false,
@@ -24485,6 +24856,234 @@
         "South West"
       ],
       "type": "string"
+    },
+    "UKResidentialUnitType": {
+      "$id": "#UKResidentialUnitType",
+      "anyOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Cluster flat",
+              "type": "string"
+            },
+            "value": {
+              "const": "cluster",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Flat",
+              "type": "string"
+            },
+            "value": {
+              "const": "flat",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "House",
+              "type": "string"
+            },
+            "value": {
+              "const": "house",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Other",
+              "type": "string"
+            },
+            "value": {
+              "const": "other",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Sheltered housing",
+              "type": "string"
+            },
+            "value": {
+              "const": "sheltered",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Studio or bedsit",
+              "type": "string"
+            },
+            "value": {
+              "const": "studio",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        }
+      ],
+      "description": "Residential unit types tracked throughout the UK"
+    },
+    "UKTenureType": {
+      "$id": "#UKTenureType",
+      "anyOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Affordable home ownership",
+              "type": "string"
+            },
+            "value": {
+              "const": "AHO",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Market housing",
+              "type": "string"
+            },
+            "value": {
+              "const": "MH",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Other",
+              "type": "string"
+            },
+            "value": {
+              "const": "other",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Social, affordable or interim rent",
+              "type": "string"
+            },
+            "value": {
+              "const": "SAIR",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Self-build and custom build",
+              "type": "string"
+            },
+            "value": {
+              "const": "selfCustomBuild",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Starter homes",
+              "type": "string"
+            },
+            "value": {
+              "const": "SH",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        }
+      ],
+      "description": "Tenure types tracked throughout the UK"
     },
     "URL": {
       "format": "uri",

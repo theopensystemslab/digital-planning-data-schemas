@@ -47,7 +47,7 @@ export const ProjectTypes = {
   'alter.chimneys': 'Change chimneys',
   'alter.chimneys.add': 'Add a chimney',
   'alter.chimneys.replace': 'Replace a chimney',
-  'alter.deck': 'Add a verandah or deck',
+  'alter.decks': 'Add a verandah or deck',
   'alter.decksHigh': 'Add a high verandah or deck',
   'alter.drains': 'Work on drains',
   'alter.equipment': 'Install equipment',
@@ -66,10 +66,12 @@ export const ProjectTypes = {
   'alter.equipment.heatPump.water': 'Install a water heat pump',
   'alter.equipment.industrial': 'Install industrial equipment',
   'alter.equipment.lighting': 'Install outdoor lights',
+  'alter.equipment.machinery': 'Install machinery',
   'alter.equipment.solar': 'Install solar panels',
   'alter.equipment.solar.pv': 'Install solar photovoltaics (PV)',
   'alter.equipment.solar.thermal': 'Install solar thermal equipment',
   'alter.equipment.tank': 'Install an outdoor tank (for example a water tank)',
+  'alter.equipment.ventilation': 'Install ventilation',
   'alter.equipment.wifi': 'Install internet equipment',
   'alter.equipment.wind': 'Install a wind turbine',
   'alter.facades': 'Change the material or colour of the external walls',
@@ -314,7 +316,7 @@ export const ProjectTypes = {
   maintain: 'Maintenance of an existing structure',
   new: 'Add a new separate building or self-contained units',
   'new.agriculture': 'New agricultural buildings',
-  'new.agriculture.glassHouse': 'New agricultural buildings - glass house',
+  'new.agriculture.glasshouse': 'New agricultural buildings - glasshouse',
   'new.agriculture.mining': 'New agricultural buildings - mining',
   'new.agriculture.pigs': 'New agricultural buildings - pigs',
   'new agriculture.poultry': 'New agricultural buildings - poultry',
@@ -328,7 +330,7 @@ export const ProjectTypes = {
   'new.leisure': 'New leisure premises',
   'new.office': 'New offices',
   'new.other': 'Add another type of building - something else',
-  'new.residential.dwelling': 'Build new homes on a roof',
+  'new.residential.dwelling': 'Build new homes',
   'new.retail': 'New retail premises',
   'new.telecoms': 'Install telecommunications equipment',
   'new.temporaryStructure':
@@ -345,3 +347,20 @@ export const ProjectTypes = {
   'unit.merge': 'Convert two or more properties into one',
   'unit.subdivide': 'Convert a home or part of a home into flats',
 };
+
+type ProjectTypeKeys = keyof typeof ProjectTypes;
+
+type GenericProjectType<TKey extends ProjectTypeKeys> = {
+  value: TKey;
+  description: (typeof ProjectTypes)[TKey];
+};
+
+type ProjectTypeMap = {
+  [K in ProjectTypeKeys]: GenericProjectType<K>;
+};
+
+/**
+ * @id #ProjectType
+ * @description Planning project types
+ */
+export type ProjectType = ProjectTypeMap[keyof ProjectTypeMap];
