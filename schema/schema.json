@@ -118,6 +118,9 @@
         "email": {
           "$ref": "#/definitions/Email"
         },
+        "maintenanceContact": {
+          "$ref": "#/definitions/MaintenanceContact"
+        },
         "name": {
           "additionalProperties": false,
           "properties": {
@@ -2231,6 +2234,9 @@
         "email": {
           "$ref": "#/definitions/Email"
         },
+        "maintenanceContact": {
+          "$ref": "#/definitions/MaintenanceContact"
+        },
         "name": {
           "additionalProperties": false,
           "properties": {
@@ -2307,6 +2313,9 @@
               "$ref": "#/definitions/ApplicationFeeNotApplicable"
             }
           ]
+        },
+        "planningApp": {
+          "$ref": "#/definitions/PlanningApplication"
         },
         "preApp": {
           "$ref": "#/definitions/PreApplication"
@@ -5997,6 +6006,9 @@
         "leadDeveloper": {
           "$ref": "#/definitions/LeadDeveloper"
         },
+        "planningApp": {
+          "$ref": "#/definitions/PlanningApplication"
+        },
         "preApp": {
           "$ref": "#/definitions/PreApplication"
         },
@@ -7498,6 +7510,81 @@
       ],
       "type": "object"
     },
+    "MaintenanceContact": {
+      "$id": "#MaintenanceContact",
+      "description": "Contact information for the person(s) responsible for maintenance while the works are carried out",
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "address": {
+            "$ref": "#/definitions/Address"
+          },
+          "contact": {
+            "additionalProperties": false,
+            "properties": {
+              "company": {
+                "additionalProperties": false,
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "name"
+                ],
+                "type": "object"
+              },
+              "email": {
+                "type": "string"
+              },
+              "name": {
+                "additionalProperties": false,
+                "properties": {
+                  "first": {
+                    "type": "string"
+                  },
+                  "last": {
+                    "type": "string"
+                  },
+                  "title": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "first",
+                  "last"
+                ],
+                "type": "object"
+              },
+              "phone": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name",
+              "email",
+              "phone"
+            ],
+            "type": "object"
+          },
+          "when": {
+            "enum": [
+              "duringConstruction",
+              "afterConstruction",
+              "duringAndAfterConstruction"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "when",
+          "address",
+          "contact"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
     "Materials": {
       "additionalProperties": false,
       "properties": {
@@ -8355,6 +8442,28 @@
         "service",
         "source",
         "submittedAt"
+      ],
+      "type": "object"
+    },
+    "PlanningApplication": {
+      "$id": "#PlanningApplication",
+      "additionalProperties": false,
+      "description": "Details of the planning application linked to this application, if applicable",
+      "properties": {
+        "date": {
+          "$ref": "#/definitions/Date"
+        },
+        "localPlanningAuthority": {
+          "type": "string"
+        },
+        "reference": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "reference",
+        "date",
+        "localPlanningAuthority"
       ],
       "type": "object"
     },
@@ -9949,7 +10058,7 @@
     "PreApplication": {
       "$id": "#PreApplication",
       "additionalProperties": false,
-      "description": "Details of the pre-application, if applicable",
+      "description": "Details of the pre-application preceeding this application, if applicable",
       "properties": {
         "date": {
           "$ref": "#/definitions/Date"
@@ -15117,7 +15226,7 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Erect a temporary structure for historic visitor attractions and listed buildings",
+              "const": "Build a temporary structure",
               "type": "string"
             },
             "value": {

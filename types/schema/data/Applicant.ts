@@ -28,6 +28,7 @@ export interface BaseApplicant {
   address: UserAddress;
   ownership?: Ownership;
   siteContact: SiteContact;
+  maintenanceContact?: MaintenanceContact;
 }
 
 /**
@@ -164,3 +165,27 @@ export interface SiteContactOther {
   email: string;
   phone: string;
 }
+
+/**
+ * @id #MaintenanceContact
+ * @description Contact information for the person(s) responsible for maintenance while the works are carried out
+ */
+export type MaintenanceContact = {
+  when:
+    | 'duringConstruction'
+    | 'afterConstruction'
+    | 'duringAndAfterConstruction';
+  address: Address;
+  contact: {
+    name: {
+      title?: string;
+      first: string;
+      last: string;
+    };
+    email: string;
+    phone: string;
+    company?: {
+      name: string;
+    };
+  };
+}[];
