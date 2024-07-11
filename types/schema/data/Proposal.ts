@@ -105,6 +105,30 @@ export interface BaseProposal {
     newBuild?: {count: number};
   };
   units?: ResidentialUnits;
+  watercourse?: {
+    name: string;
+    type: 'ditch' | 'millStream' | 'pond' | 'river' | 'streamOrBrook' | 'other';
+  };
+  structures?: {
+    type:
+      | 'bridge'
+      | 'catchpit'
+      | 'culvert'
+      | 'pipe'
+      | 'gully'
+      | 'headwall'
+      | 'manhole'
+      | 'weir'
+      | 'other';
+    total: number;
+    permanent?: {
+      count: number;
+    };
+    temporary?: {
+      count: number;
+    };
+  };
+  environmentalImpactDescription?: string;
 }
 
 /**

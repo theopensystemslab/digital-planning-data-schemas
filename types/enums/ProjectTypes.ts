@@ -313,6 +313,7 @@ export const ProjectTypes = {
   'internal.staircases': 'Alter internal staircases',
   'internal.walls': 'Alter internal walls',
   'internal.windows.openings': 'Alter internal window openings',
+  maintain: 'Maintenance of an existing structure',
   new: 'Add a new separate building or self-contained units',
   'new.agriculture': 'New agricultural buildings',
   'new.agriculture.glasshouse': 'New agricultural buildings - glasshouse',
@@ -332,8 +333,7 @@ export const ProjectTypes = {
   'new.residential.dwelling': 'Build new homes',
   'new.retail': 'New retail premises',
   'new.telecoms': 'Install telecommunications equipment',
-  'new.temporaryStructure':
-    'Erect a temporary structure for historic visitor attractions and listed buildings',
+  'new.temporaryStructure': 'Build a temporary structure',
   'new.warehouse': 'New storage or distribution premises',
   not: 'Negate a project type',
   'not.alter.replace': 'Do not add or change windows or doors',

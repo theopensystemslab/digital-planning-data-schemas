@@ -1,9 +1,9 @@
-import {priorApprovalLargerExtension} from './../examples/data/priorApproval/largerExtension';
 import Ajv from 'ajv';
 import addFormats from 'ajv-formats';
 import {Validator} from 'jsonschema';
 import {describe, expect, test} from 'vitest';
 
+import {landDrainageConsent} from '../examples/data/landDrainageConsent';
 import {lawfulDevelopmentCertificateExisting} from '../examples/data/lawfulDevelopmentCertificate/existing';
 import {lawfulDevelopmentCertificateProposed} from '../examples/data/lawfulDevelopmentCertificate/proposed';
 import {listedBuildingConsent} from '../examples/data/listedBuildingConsent';
@@ -13,6 +13,7 @@ import {planningPermissionMinor} from '../examples/data/planningPermission/minor
 import {priorApprovalBuildHomes} from '../examples/data/priorApproval/buildHomes';
 import {priorApprovalConvertCommercialToHome} from '../examples/data/priorApproval/convertCommercialToHome';
 import {priorApprovalExtendUniversity} from '../examples/data/priorApproval/extendUniversity';
+import {priorApprovalLargerExtension} from './../examples/data/priorApproval/largerExtension';
 import {priorApprovalSolarPanels} from '../examples/data/priorApproval/solarPanels';
 import generatedSchema from '../schema/schema.json';
 
@@ -28,6 +29,7 @@ const examplesToTest = [
   priorApprovalBuildHomes,
   priorApprovalConvertCommercialToHome,
   priorApprovalLargerExtension,
+  landDrainageConsent,
 ];
 
 describe("parsing using the 'jsonschema' library", () => {

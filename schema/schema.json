@@ -118,6 +118,9 @@
         "email": {
           "$ref": "#/definitions/Email"
         },
+        "maintenanceContact": {
+          "$ref": "#/definitions/MaintenanceContact"
+        },
         "name": {
           "additionalProperties": false,
           "properties": {
@@ -2231,6 +2234,9 @@
         "email": {
           "$ref": "#/definitions/Email"
         },
+        "maintenanceContact": {
+          "$ref": "#/definitions/MaintenanceContact"
+        },
         "name": {
           "additionalProperties": false,
           "properties": {
@@ -2308,6 +2314,9 @@
             }
           ]
         },
+        "planningApp": {
+          "$ref": "#/definitions/PlanningApplication"
+        },
         "preApp": {
           "$ref": "#/definitions/PreApplication"
         },
@@ -2381,6 +2390,9 @@
             }
           },
           "type": "object"
+        },
+        "environmentalImpactDescription": {
+          "type": "string"
         },
         "extend": {
           "additionalProperties": false,
@@ -2466,6 +2478,57 @@
             "$ref": "#/definitions/ProjectType"
           },
           "type": "array"
+        },
+        "structures": {
+          "additionalProperties": false,
+          "properties": {
+            "permanent": {
+              "additionalProperties": false,
+              "properties": {
+                "count": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "count"
+              ],
+              "type": "object"
+            },
+            "temporary": {
+              "additionalProperties": false,
+              "properties": {
+                "count": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "count"
+              ],
+              "type": "object"
+            },
+            "total": {
+              "type": "number"
+            },
+            "type": {
+              "enum": [
+                "bridge",
+                "catchpit",
+                "culvert",
+                "pipe",
+                "gully",
+                "headwall",
+                "manhole",
+                "weir",
+                "other"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "type",
+            "total"
+          ],
+          "type": "object"
         },
         "units": {
           "$ref": "#/definitions/ResidentialUnits"
@@ -2602,6 +2665,30 @@
               "type": "object"
             }
           },
+          "type": "object"
+        },
+        "watercourse": {
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "type": {
+              "enum": [
+                "ditch",
+                "millStream",
+                "pond",
+                "river",
+                "streamOrBrook",
+                "other"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "name",
+            "type"
+          ],
           "type": "object"
         }
       },
@@ -5919,6 +6006,9 @@
         "leadDeveloper": {
           "$ref": "#/definitions/LeadDeveloper"
         },
+        "planningApp": {
+          "$ref": "#/definitions/PlanningApplication"
+        },
         "preApp": {
           "$ref": "#/definitions/PreApplication"
         },
@@ -6530,6 +6620,9 @@
           ],
           "type": "object"
         },
+        "environmentalImpactDescription": {
+          "type": "string"
+        },
         "extend": {
           "additionalProperties": false,
           "properties": {
@@ -6912,6 +7005,57 @@
         },
         "schemeName": {
           "type": "string"
+        },
+        "structures": {
+          "additionalProperties": false,
+          "properties": {
+            "permanent": {
+              "additionalProperties": false,
+              "properties": {
+                "count": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "count"
+              ],
+              "type": "object"
+            },
+            "temporary": {
+              "additionalProperties": false,
+              "properties": {
+                "count": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "count"
+              ],
+              "type": "object"
+            },
+            "total": {
+              "type": "number"
+            },
+            "type": {
+              "enum": [
+                "bridge",
+                "catchpit",
+                "culvert",
+                "pipe",
+                "gully",
+                "headwall",
+                "manhole",
+                "weir",
+                "other"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "type",
+            "total"
+          ],
+          "type": "object"
         },
         "units": {
           "additionalProperties": false,
@@ -7334,6 +7478,30 @@
             "grey"
           ],
           "type": "object"
+        },
+        "watercourse": {
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "type": {
+              "enum": [
+                "ditch",
+                "millStream",
+                "pond",
+                "river",
+                "streamOrBrook",
+                "other"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "name",
+            "type"
+          ],
+          "type": "object"
         }
       },
       "required": [
@@ -7341,6 +7509,81 @@
         "projectType"
       ],
       "type": "object"
+    },
+    "MaintenanceContact": {
+      "$id": "#MaintenanceContact",
+      "description": "Contact information for the person(s) responsible for maintenance while the works are carried out",
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "address": {
+            "$ref": "#/definitions/Address"
+          },
+          "contact": {
+            "additionalProperties": false,
+            "properties": {
+              "company": {
+                "additionalProperties": false,
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "name"
+                ],
+                "type": "object"
+              },
+              "email": {
+                "type": "string"
+              },
+              "name": {
+                "additionalProperties": false,
+                "properties": {
+                  "first": {
+                    "type": "string"
+                  },
+                  "last": {
+                    "type": "string"
+                  },
+                  "title": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "first",
+                  "last"
+                ],
+                "type": "object"
+              },
+              "phone": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name",
+              "email",
+              "phone"
+            ],
+            "type": "object"
+          },
+          "when": {
+            "enum": [
+              "duringConstruction",
+              "afterConstruction",
+              "duringAndAfterConstruction"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "when",
+          "address",
+          "contact"
+        ],
+        "type": "object"
+      },
+      "type": "array"
     },
     "Materials": {
       "additionalProperties": false,
@@ -8199,6 +8442,28 @@
         "service",
         "source",
         "submittedAt"
+      ],
+      "type": "object"
+    },
+    "PlanningApplication": {
+      "$id": "#PlanningApplication",
+      "additionalProperties": false,
+      "description": "Details of the planning application linked to this application, if applicable",
+      "properties": {
+        "date": {
+          "$ref": "#/definitions/Date"
+        },
+        "localPlanningAuthority": {
+          "type": "string"
+        },
+        "reference": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "reference",
+        "date",
+        "localPlanningAuthority"
       ],
       "type": "object"
     },
@@ -9793,7 +10058,7 @@
     "PreApplication": {
       "$id": "#PreApplication",
       "additionalProperties": false,
-      "description": "Details of the pre-application, if applicable",
+      "description": "Details of the pre-application preceeding this application, if applicable",
       "properties": {
         "date": {
           "$ref": "#/definitions/Date"
@@ -14601,6 +14866,24 @@
           "additionalProperties": false,
           "properties": {
             "description": {
+              "const": "Maintenance of an existing structure",
+              "type": "string"
+            },
+            "value": {
+              "const": "maintain",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
               "const": "Add a new separate building or self-contained units",
               "type": "string"
             },
@@ -14943,7 +15226,7 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Erect a temporary structure for historic visitor attractions and listed buildings",
+              "const": "Build a temporary structure",
               "type": "string"
             },
             "value": {
