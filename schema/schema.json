@@ -118,6 +118,9 @@
         "email": {
           "$ref": "#/definitions/Email"
         },
+        "maintenanceContact": {
+          "$ref": "#/definitions/MaintenanceContact"
+        },
         "name": {
           "additionalProperties": false,
           "properties": {
@@ -984,24 +987,6 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Prior Approval - Convert a light industrial building into a home",
-              "type": "string"
-            },
-            "value": {
-              "const": "pa.part3.classPA",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
               "const": "Prior Approval - Convert an agricultural building into a home",
               "type": "string"
             },
@@ -1074,7 +1059,7 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Prior Approval - Part 3 Class V",
+              "const": "Prior Approval - Changes of use permitted under a permission granted on an application",
               "type": "string"
             },
             "value": {
@@ -1308,11 +1293,83 @@
           "additionalProperties": false,
           "properties": {
             "description": {
+              "const": "Prior Approval - Install or change solar equipment on domestic premises",
+              "type": "string"
+            },
+            "value": {
+              "const": "pa.part14.classA",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Prior Approval - Install or change stand-alone solar equipment on domestic premises",
+              "type": "string"
+            },
+            "value": {
+              "const": "pa.part14.classB",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
               "const": "Prior Approval - Install or change solar panels",
               "type": "string"
             },
             "value": {
               "const": "pa.part14.classJ",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Prior Approval - Install or change stand-alone solar equipment on non-domestic premises",
+              "type": "string"
+            },
+            "value": {
+              "const": "pa.part14.classK",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Prior Approval - Installation of a solar canopy on non-domestic, off-street parking",
+              "type": "string"
+            },
+            "value": {
+              "const": "pa.part14.classOA",
               "type": "string"
             }
           },
@@ -1362,7 +1419,7 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Prior Approval - Part 17 Class B",
+              "const": "Prior Approval - Other developments ancillary to mining operations",
               "type": "string"
             },
             "value": {
@@ -1380,7 +1437,7 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Prior Approval - Part 17 Class C",
+              "const": "Prior Approval - Developments for maintenance or safety",
               "type": "string"
             },
             "value": {
@@ -1398,7 +1455,7 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Prior Approval - Part 17 Class G",
+              "const": "Prior Approval - Coal mining development by the Coal Authority for maintence or safety",
               "type": "string"
             },
             "value": {
@@ -2231,6 +2288,9 @@
         "email": {
           "$ref": "#/definitions/Email"
         },
+        "maintenanceContact": {
+          "$ref": "#/definitions/MaintenanceContact"
+        },
         "name": {
           "additionalProperties": false,
           "properties": {
@@ -2308,6 +2368,9 @@
             }
           ]
         },
+        "planningApp": {
+          "$ref": "#/definitions/PlanningApplication"
+        },
         "preApp": {
           "$ref": "#/definitions/PreApplication"
         },
@@ -2381,6 +2444,9 @@
             }
           },
           "type": "object"
+        },
+        "environmentalImpactDescription": {
+          "type": "string"
         },
         "extend": {
           "additionalProperties": false,
@@ -2466,6 +2532,57 @@
             "$ref": "#/definitions/ProjectType"
           },
           "type": "array"
+        },
+        "structures": {
+          "additionalProperties": false,
+          "properties": {
+            "permanent": {
+              "additionalProperties": false,
+              "properties": {
+                "count": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "count"
+              ],
+              "type": "object"
+            },
+            "temporary": {
+              "additionalProperties": false,
+              "properties": {
+                "count": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "count"
+              ],
+              "type": "object"
+            },
+            "total": {
+              "type": "number"
+            },
+            "type": {
+              "enum": [
+                "bridge",
+                "catchpit",
+                "culvert",
+                "pipe",
+                "gully",
+                "headwall",
+                "manhole",
+                "weir",
+                "other"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "type",
+            "total"
+          ],
+          "type": "object"
         },
         "units": {
           "$ref": "#/definitions/ResidentialUnits"
@@ -2602,6 +2719,30 @@
               "type": "object"
             }
           },
+          "type": "object"
+        },
+        "watercourse": {
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "type": {
+              "enum": [
+                "ditch",
+                "millStream",
+                "pond",
+                "river",
+                "streamOrBrook",
+                "other"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "name",
+            "type"
+          ],
           "type": "object"
         }
       },
@@ -4026,6 +4167,24 @@
           "additionalProperties": false,
           "properties": {
             "description": {
+              "const": "Method statement",
+              "type": "string"
+            },
+            "value": {
+              "const": "methodStatement",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
               "const": "Minerals and waste assessment",
               "type": "string"
             },
@@ -4242,11 +4401,47 @@
           "additionalProperties": false,
           "properties": {
             "description": {
+              "const": "Recyclable waste storage details",
+              "type": "string"
+            },
+            "value": {
+              "const": "recycleWasteStorageDetails",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
               "const": "Information the applicant considers relevant to the application",
               "type": "string"
             },
             "value": {
               "const": "relevantInformation",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Residential units details",
+              "type": "string"
+            },
+            "value": {
+              "const": "residentialUnitsDetails",
               "type": "string"
             }
           },
@@ -4530,6 +4725,24 @@
           "additionalProperties": false,
           "properties": {
             "description": {
+              "const": "Technical specification",
+              "type": "string"
+            },
+            "value": {
+              "const": "technicalSpecification",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
               "const": "Tenancy agreement",
               "type": "string"
             },
@@ -4697,6 +4910,24 @@
             },
             "value": {
               "const": "treeConditionReport",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Tree plan",
+              "type": "string"
+            },
+            "value": {
+              "const": "treePlan",
               "type": "string"
             }
           },
@@ -4895,6 +5126,24 @@
             },
             "value": {
               "const": "wasteAndRecyclingStrategy",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Waste storage details",
+              "type": "string"
+            },
+            "value": {
+              "const": "wasteStorageDetails",
               "type": "string"
             }
           },
@@ -5811,6 +6060,9 @@
         "leadDeveloper": {
           "$ref": "#/definitions/LeadDeveloper"
         },
+        "planningApp": {
+          "$ref": "#/definitions/PlanningApplication"
+        },
         "preApp": {
           "$ref": "#/definitions/PreApplication"
         },
@@ -6422,6 +6674,9 @@
           ],
           "type": "object"
         },
+        "environmentalImpactDescription": {
+          "type": "string"
+        },
         "extend": {
           "additionalProperties": false,
           "properties": {
@@ -6804,6 +7059,57 @@
         },
         "schemeName": {
           "type": "string"
+        },
+        "structures": {
+          "additionalProperties": false,
+          "properties": {
+            "permanent": {
+              "additionalProperties": false,
+              "properties": {
+                "count": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "count"
+              ],
+              "type": "object"
+            },
+            "temporary": {
+              "additionalProperties": false,
+              "properties": {
+                "count": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "count"
+              ],
+              "type": "object"
+            },
+            "total": {
+              "type": "number"
+            },
+            "type": {
+              "enum": [
+                "bridge",
+                "catchpit",
+                "culvert",
+                "pipe",
+                "gully",
+                "headwall",
+                "manhole",
+                "weir",
+                "other"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "type",
+            "total"
+          ],
+          "type": "object"
         },
         "units": {
           "additionalProperties": false,
@@ -7226,6 +7532,30 @@
             "grey"
           ],
           "type": "object"
+        },
+        "watercourse": {
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "type": {
+              "enum": [
+                "ditch",
+                "millStream",
+                "pond",
+                "river",
+                "streamOrBrook",
+                "other"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "name",
+            "type"
+          ],
+          "type": "object"
         }
       },
       "required": [
@@ -7233,6 +7563,81 @@
         "projectType"
       ],
       "type": "object"
+    },
+    "MaintenanceContact": {
+      "$id": "#MaintenanceContact",
+      "description": "Contact information for the person(s) responsible for maintenance while the works are carried out",
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "address": {
+            "$ref": "#/definitions/Address"
+          },
+          "contact": {
+            "additionalProperties": false,
+            "properties": {
+              "company": {
+                "additionalProperties": false,
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "name"
+                ],
+                "type": "object"
+              },
+              "email": {
+                "type": "string"
+              },
+              "name": {
+                "additionalProperties": false,
+                "properties": {
+                  "first": {
+                    "type": "string"
+                  },
+                  "last": {
+                    "type": "string"
+                  },
+                  "title": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "first",
+                  "last"
+                ],
+                "type": "object"
+              },
+              "phone": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name",
+              "email",
+              "phone"
+            ],
+            "type": "object"
+          },
+          "when": {
+            "enum": [
+              "duringConstruction",
+              "afterConstruction",
+              "duringAndAfterConstruction"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "when",
+          "address",
+          "contact"
+        ],
+        "type": "object"
+      },
+      "type": "array"
     },
     "Materials": {
       "additionalProperties": false,
@@ -8091,6 +8496,28 @@
         "service",
         "source",
         "submittedAt"
+      ],
+      "type": "object"
+    },
+    "PlanningApplication": {
+      "$id": "#PlanningApplication",
+      "additionalProperties": false,
+      "description": "Details of the planning application linked to this application, if applicable",
+      "properties": {
+        "date": {
+          "$ref": "#/definitions/Date"
+        },
+        "localPlanningAuthority": {
+          "type": "string"
+        },
+        "reference": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "reference",
+        "date",
+        "localPlanningAuthority"
       ],
       "type": "object"
     },
@@ -9685,7 +10112,7 @@
     "PreApplication": {
       "$id": "#PreApplication",
       "additionalProperties": false,
-      "description": "Details of the pre-application, if applicable",
+      "description": "Details of the pre-application preceeding this application, if applicable",
       "properties": {
         "date": {
           "$ref": "#/definitions/Date"
@@ -10393,7 +10820,7 @@
               "type": "string"
             },
             "value": {
-              "const": "alter.deck",
+              "const": "alter.decks",
               "type": "string"
             }
           },
@@ -10731,6 +11158,24 @@
           "additionalProperties": false,
           "properties": {
             "description": {
+              "const": "Install machinery",
+              "type": "string"
+            },
+            "value": {
+              "const": "alter.equipment.machinery",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
               "const": "Install solar panels",
               "type": "string"
             },
@@ -10790,6 +11235,24 @@
             },
             "value": {
               "const": "alter.equipment.tank",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Install ventilation",
+              "type": "string"
+            },
+            "value": {
+              "const": "alter.equipment.ventilation",
               "type": "string"
             }
           },
@@ -14457,6 +14920,24 @@
           "additionalProperties": false,
           "properties": {
             "description": {
+              "const": "Maintenance of an existing structure",
+              "type": "string"
+            },
+            "value": {
+              "const": "maintain",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
               "const": "Add a new separate building or self-contained units",
               "type": "string"
             },
@@ -14493,11 +14974,11 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "New agricultural buildings - glass house",
+              "const": "New agricultural buildings - glasshouse",
               "type": "string"
             },
             "value": {
-              "const": "new.agriculture.glassHouse",
+              "const": "new.agriculture.glasshouse",
               "type": "string"
             }
           },
@@ -14799,7 +15280,7 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Erect a temporary structure for historic visitor attractions and listed buildings",
+              "const": "Build a temporary structure",
               "type": "string"
             },
             "value": {

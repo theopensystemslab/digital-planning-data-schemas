@@ -1,6 +1,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 
+import {landDrainageConsent} from '../examples/data/landDrainageConsent';
 import {lawfulDevelopmentCertificateExisting} from '../examples/data/lawfulDevelopmentCertificate/existing';
 import {lawfulDevelopmentCertificateProposed} from '../examples/data/lawfulDevelopmentCertificate/proposed';
 import {listedBuildingConsent} from '../examples/data/listedBuildingConsent';
@@ -63,6 +64,10 @@ const examplesToConvert: Example[] = [
   {
     filename: 'listedBuildingConsent',
     data: listedBuildingConsent,
+  },
+  {
+    filename: 'landDrainageConsent',
+    data: landDrainageConsent,
   },
 ];
 
