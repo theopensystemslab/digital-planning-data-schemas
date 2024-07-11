@@ -1,7 +1,4 @@
 import {Schema} from '../../types/Schema';
-import {BaseApplicant} from '../../types/schema/data/Applicant';
-import {BaseApplication} from '../../types/schema/data/Application';
-import {UKProperty} from '../../types/schema/data/Property';
 import {BaseProposal} from '../../types/schema/data/Proposal';
 
 const version = process.env['VERSION'] || '@next';
