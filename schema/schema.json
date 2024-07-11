@@ -984,24 +984,6 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Prior Approval - Convert a light industrial building into a home",
-              "type": "string"
-            },
-            "value": {
-              "const": "pa.part3.classPA",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
               "const": "Prior Approval - Convert an agricultural building into a home",
               "type": "string"
             },
@@ -1074,7 +1056,7 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Prior Approval - Part 3 Class V",
+              "const": "Prior Approval - Changes of use permitted under a permission granted on an application",
               "type": "string"
             },
             "value": {
@@ -1308,11 +1290,83 @@
           "additionalProperties": false,
           "properties": {
             "description": {
+              "const": "Prior Approval - Install or change solar equipment on domestic premises",
+              "type": "string"
+            },
+            "value": {
+              "const": "pa.part14.classA",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Prior Approval - Install or change stand-alone solar equipment on domestic premises",
+              "type": "string"
+            },
+            "value": {
+              "const": "pa.part14.classB",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
               "const": "Prior Approval - Install or change solar panels",
               "type": "string"
             },
             "value": {
               "const": "pa.part14.classJ",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Prior Approval - Install or change stand-alone solar equipment on non-domestic premises",
+              "type": "string"
+            },
+            "value": {
+              "const": "pa.part14.classK",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Prior Approval - Installation of a solar canopy on non-domestic, off-street parking",
+              "type": "string"
+            },
+            "value": {
+              "const": "pa.part14.classOA",
               "type": "string"
             }
           },
@@ -1362,7 +1416,7 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Prior Approval - Part 17 Class B",
+              "const": "Prior Approval - Other developments ancillary to mining operations",
               "type": "string"
             },
             "value": {
@@ -1380,7 +1434,7 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Prior Approval - Part 17 Class C",
+              "const": "Prior Approval - Developments for maintenance or safety",
               "type": "string"
             },
             "value": {
@@ -1398,7 +1452,7 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Prior Approval - Part 17 Class G",
+              "const": "Prior Approval - Coal mining development by the Coal Authority for maintence or safety",
               "type": "string"
             },
             "value": {

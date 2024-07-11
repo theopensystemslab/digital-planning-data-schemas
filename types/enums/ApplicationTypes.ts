@@ -44,8 +44,6 @@ export const ApplicationTypes = {
     'Prior Approval - Convert a commercial building into a home or homes',
   'pa.part3.classN':
     'Prior Approval - Convert a casino or amusement arcade into a home or homes',
-  'pa.part3.classPA':
-    'Prior Approval - Convert a light industrial building into a home',
   'pa.part3.classQ':
     'Prior Approval - Convert an agricultural building into a home',
   'pa.part3.classR':
@@ -54,7 +52,8 @@ export const ApplicationTypes = {
     'Prior Approval - Convert an agricultural building to a school',
   'pa.part3.classT':
     'Prior Approval - Convert a commercial building to a school',
-  'pa.part3.classV': 'Prior Approval - Part 3 Class V',
+  'pa.part3.classV':
+    'Prior Approval - Changes of use permitted under a permission granted on an application',
   'pa.part4.classBB': 'Prior Approval - Put up a temporary structure',
   'pa.part4.classBC': 'Prior Approval - Develop a temporary campsite',
   'pa.part4.classCA':
@@ -72,12 +71,22 @@ export const ApplicationTypes = {
     'Prior Approval - Extend a school, college, university, prison or hospital',
   'pa.part9.classD': 'Prior Approval - Development of toll facilities',
   'pa.part11.classB': 'Prior Approval - Demolish a building',
+  'pa.part14.classA':
+    'Prior Approval - Install or change solar equipment on domestic premises',
+  'pa.part14.classB':
+    'Prior Approval - Install or change stand-alone solar equipment on domestic premises',
   'pa.part14.classJ': 'Prior Approval - Install or change solar panels',
+  'pa.part14.classK':
+    'Prior Approval - Install or change stand-alone solar equipment on non-domestic premises',
+  'pa.part14.classOA':
+    'Prior Approval - Installation of a solar canopy on non-domestic, off-street parking',
   'pa.part16.classA': 'Prior Approval - Install telecommunications equipment',
   'pa.part17': 'Prior Approval - Coal mining',
-  'pa.part17.classB': 'Prior Approval - Part 17 Class B',
-  'pa.part17.classC': 'Prior Approval - Part 17 Class C',
-  'pa.part17.classG': 'Prior Approval - Part 17 Class G',
+  'pa.part17.classB':
+    'Prior Approval - Other developments ancillary to mining operations',
+  'pa.part17.classC': 'Prior Approval - Developments for maintenance or safety',
+  'pa.part17.classG':
+    'Prior Approval - Coal mining development by the Coal Authority for maintence or safety',
   'pa.part18.classA':
     'Prior Approval - Development under private acts or orders',
   'pa.part19.classTA': 'Prior Approval - Development on a closed defence site',
