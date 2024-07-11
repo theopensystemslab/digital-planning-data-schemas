@@ -122,7 +122,7 @@ export interface BaseProposal {
       | 'other';
     total: number;
     permanent?: {
-      count: Number;
+      count: number;
     };
     temporary?: {
       count: number;

@@ -2477,8 +2477,7 @@
               "additionalProperties": false,
               "properties": {
                 "count": {
-                  "additionalProperties": false,
-                  "type": "object"
+                  "type": "number"
                 }
               },
               "required": [
@@ -7002,8 +7001,7 @@
               "additionalProperties": false,
               "properties": {
                 "count": {
-                  "additionalProperties": false,
-                  "type": "object"
+                  "type": "number"
                 }
               },
               "required": [
