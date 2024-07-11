@@ -12,13 +12,14 @@ incremented for features.
 ## [0.7.0] - 2024-07-10
 
 ### Breaking
-- Updated `ApplicationTypes` & `ProjectTypes` based on ODP Service development ([#198](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/198), [#197](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/197), [#182](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/182), [#177](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/177))
+- Updated `ApplicationTypes` & `ProjectTypes` based on ODP Service development across whole planning application ecosystem ([#200](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/200), [#198](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/198), [#197](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/197), [#182](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/182), [#177](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/177))
 
 ### Added
-- Added new example payloads, now organised in subdirectories by application type ([#183](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/183)):
+- Added new example payloads and their associated types, now organised in subdirectories by application type ([#183](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/183)):
     - Minor planning permission ([#193](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/193))
     - Major planning permission ([#194](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/194))
     - Prior approvals (5 types) ([#195](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/195), [#186](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/186))
+    - Land Drainage Consent ([#187](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/187))
 - Added type definitions for Greater London Authority reporting requirements, like residential units etc ([#192](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/192), [#179](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/179), [#178](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/178))
 - Added type definitions for "documents submitted as data" (not yet represented in example payloads) ([#180](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/180))
 
