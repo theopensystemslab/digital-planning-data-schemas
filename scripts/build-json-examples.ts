@@ -1,23 +1,23 @@
 import * as fs from 'fs';
 import * as path from 'path';
 
-import {landDrainageConsent} from '../examples/data/landDrainageConsent';
-import {lawfulDevelopmentCertificateExisting} from '../examples/data/lawfulDevelopmentCertificate/existing';
-import {lawfulDevelopmentCertificateProposed} from '../examples/data/lawfulDevelopmentCertificate/proposed';
-import {listedBuildingConsent} from '../examples/data/listedBuildingConsent';
-import {planningPermissionFullHouseholder} from '../examples/data/planningPermission/fullHouseholder';
-import {planningPermissionMajor} from '../examples/data/planningPermission/major';
-import {planningPermissionMinor} from '../examples/data/planningPermission/minor';
-import {priorApprovalBuildHomes} from '../examples/data/priorApproval/buildHomes';
-import {priorApprovalConvertCommercialToHome} from '../examples/data/priorApproval/convertCommercialToHome';
-import {priorApprovalExtendUniversity} from '../examples/data/priorApproval/extendUniversity';
-import {priorApprovalLargerExtension} from '../examples/data/priorApproval/largerExtension';
-import {priorApprovalSolarPanels} from '../examples/data/priorApproval/solarPanels';
-import {Schema} from '../types/Schema';
+import {landDrainageConsent} from '../examples/digitalPlanningApplication/data/landDrainageConsent';
+import {lawfulDevelopmentCertificateExisting} from '../examples/digitalPlanningApplication/data/lawfulDevelopmentCertificate/existing';
+import {lawfulDevelopmentCertificateProposed} from '../examples/digitalPlanningApplication/data/lawfulDevelopmentCertificate/proposed';
+import {listedBuildingConsent} from '../examples/digitalPlanningApplication/data/listedBuildingConsent';
+import {planningPermissionFullHouseholder} from '../examples/digitalPlanningApplication/data/planningPermission/fullHouseholder';
+import {planningPermissionMajor} from '../examples/digitalPlanningApplication/data/planningPermission/major';
+import {planningPermissionMinor} from '../examples/digitalPlanningApplication/data/planningPermission/minor';
+import {priorApprovalBuildHomes} from '../examples/digitalPlanningApplication/data/priorApproval/buildHomes';
+import {priorApprovalConvertCommercialToHome} from '../examples/digitalPlanningApplication/data/priorApproval/convertCommercialToHome';
+import {priorApprovalExtendUniversity} from '../examples/digitalPlanningApplication/data/priorApproval/extendUniversity';
+import {priorApprovalLargerExtension} from '../examples/digitalPlanningApplication/data/priorApproval/largerExtension';
+import {priorApprovalSolarPanels} from '../examples/digitalPlanningApplication/data/priorApproval/solarPanels';
+import {DigitalPlanningApplication} from '../types/schemas/digitalPlanningApplication';
 
 interface Example {
   filename: string;
-  data: Schema;
+  data: DigitalPlanningApplication;
 }
 
 const examplesToConvert: Example[] = [
@@ -75,7 +75,8 @@ const convertTypeScriptObjectsToJSONFiles = (objects: Example[]) => {
   for (const object of objects) {
     const outputFilePath = path.join(
       __dirname,
-      `../examples/${object.filename}.json`
+      // TODO: Handle schema name as variable
+      `../examples/digitalPlanningApplication/${object.filename}.json`
     );
     const jsonContent = JSON.stringify(object.data, null, 2);
     fs.writeFileSync(outputFilePath, jsonContent, {flag: 'w'});

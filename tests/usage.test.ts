@@ -1,21 +1,21 @@
 import Ajv from 'ajv';
 import addFormats from 'ajv-formats';
-import {Validator} from 'jsonschema';
+import {Schema, Validator} from 'jsonschema';
 import {describe, expect, test} from 'vitest';
 
-import {landDrainageConsent} from '../examples/data/landDrainageConsent';
-import {lawfulDevelopmentCertificateExisting} from '../examples/data/lawfulDevelopmentCertificate/existing';
-import {lawfulDevelopmentCertificateProposed} from '../examples/data/lawfulDevelopmentCertificate/proposed';
-import {listedBuildingConsent} from '../examples/data/listedBuildingConsent';
-import {planningPermissionFullHouseholder} from '../examples/data/planningPermission/fullHouseholder';
-import {planningPermissionMajor} from '../examples/data/planningPermission/major';
-import {planningPermissionMinor} from '../examples/data/planningPermission/minor';
-import {priorApprovalBuildHomes} from '../examples/data/priorApproval/buildHomes';
-import {priorApprovalConvertCommercialToHome} from '../examples/data/priorApproval/convertCommercialToHome';
-import {priorApprovalExtendUniversity} from '../examples/data/priorApproval/extendUniversity';
-import {priorApprovalLargerExtension} from './../examples/data/priorApproval/largerExtension';
-import {priorApprovalSolarPanels} from '../examples/data/priorApproval/solarPanels';
-import generatedSchema from '../schema/schema.json';
+import {landDrainageConsent} from '../examples/digitalPlanningApplication/data/landDrainageConsent';
+import {lawfulDevelopmentCertificateExisting} from '../examples/digitalPlanningApplication/data/lawfulDevelopmentCertificate/existing';
+import {lawfulDevelopmentCertificateProposed} from '../examples/digitalPlanningApplication/data/lawfulDevelopmentCertificate/proposed';
+import {listedBuildingConsent} from '../examples/digitalPlanningApplication/data/listedBuildingConsent';
+import {planningPermissionFullHouseholder} from '../examples/digitalPlanningApplication/data/planningPermission/fullHouseholder';
+import {planningPermissionMajor} from '../examples/digitalPlanningApplication/data/planningPermission/major';
+import {planningPermissionMinor} from '../examples/digitalPlanningApplication/data/planningPermission/minor';
+import {priorApprovalBuildHomes} from '../examples/digitalPlanningApplication/data/priorApproval/buildHomes';
+import {priorApprovalConvertCommercialToHome} from '../examples/digitalPlanningApplication/data/priorApproval/convertCommercialToHome';
+import {priorApprovalExtendUniversity} from '../examples/digitalPlanningApplication/data/priorApproval/extendUniversity';
+import {priorApprovalLargerExtension} from './../examples/digitalPlanningApplication/data/priorApproval/largerExtension';
+import {priorApprovalSolarPanels} from '../examples/digitalPlanningApplication/data/priorApproval/solarPanels';
+import generatedSchema from '../schemas/digitalPlanningApplication.json';
 
 const examplesToTest = [
   lawfulDevelopmentCertificateExisting,
@@ -36,9 +36,7 @@ describe("parsing using the 'jsonschema' library", () => {
   examplesToTest.forEach(example => {
     test(`accepts a valid example: ${example.data.application.type.description}`, () => {
       const validator = new Validator();
-      const result = validator.validate(example, generatedSchema, {
-        disableFormat: true,
-      });
+      const result = validator.validate(example, generatedSchema as Schema);
 
       expect(result.errors).toHaveLength(0);
     });
@@ -47,9 +45,10 @@ describe("parsing using the 'jsonschema' library", () => {
   test('rejects an invalid example', () => {
     const validator = new Validator();
     const invalidExample = {foo: 'bar'};
-    const result = validator.validate(invalidExample, generatedSchema, {
-      disableFormat: true,
-    });
+    const result = validator.validate(
+      invalidExample,
+      generatedSchema as Schema
+    );
 
     expect(result.errors).not.toHaveLength(0);
   });
