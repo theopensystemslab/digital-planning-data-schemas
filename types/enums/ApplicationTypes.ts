@@ -152,9 +152,7 @@ export const ApplicationTypes = {
   'pp.outline.major.some.waste':
     'Outline Planning Permission - Consent for the principle of waste development witholding all details',
   'pp.pip':
-    'Permission in Principle - Consent for the principle of a project with less than 1,000 square metres floor area on a site of less than 1 hectare',
-  'pp.pip.technicalDetails':
-    'Permission in Principle - Approval of technical details',
+    'Planning Permission in Principle - Consent for the principle of a project with less than 1,000 square metres floor area on a site of less than 1 hectare',
   rightsOfWayOrder: 'Rights of Way Order - Apply to move or close a path',
   wtt: 'Works to trees',
   'wtt.consent':
