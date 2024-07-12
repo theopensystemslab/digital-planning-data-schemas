@@ -44,7 +44,12 @@ jobs:
           mv types/* "$GITHUB_WORKSPACE/v${{ steps.version_check.outputs.version }}/types"
 
           mkdir -p "$GITHUB_WORKSPACE/v${{ steps.version_check.outputs.version }}/examples"
-          cp -r examples/**/*.json "$GITHUB_WORKSPACE/v${{ steps.version_check.outputs.version }}/examples"
+          
+          # Copy JSON files, preserving directory structure
+          rsync -a --prune-empty-dirs --include '*/' --include '*.json' --exclude '*' examples/ "$GITHUB_WORKSPACE/v${{ steps.version_check.outputs.version }}/examples/"
+          
+          # Remove JSON files from source destination
+          find examples -type f -name "*.json" -delete
 
       - name: Checkout Dist Branch
         if: steps.version_check.outputs.changed == 'true'
