@@ -1,89 +1,46 @@
 import * as fs from 'fs';
 import * as path from 'path';
 
-import {landDrainageConsent} from '../examples/data/landDrainageConsent';
-import {lawfulDevelopmentCertificateExisting} from '../examples/data/lawfulDevelopmentCertificate/existing';
-import {lawfulDevelopmentCertificateProposed} from '../examples/data/lawfulDevelopmentCertificate/proposed';
-import {listedBuildingConsent} from '../examples/data/listedBuildingConsent';
-import {planningPermissionFullHouseholder} from '../examples/data/planningPermission/fullHouseholder';
-import {planningPermissionMajor} from '../examples/data/planningPermission/major';
-import {planningPermissionMinor} from '../examples/data/planningPermission/minor';
-import {priorApprovalBuildHomes} from '../examples/data/priorApproval/buildHomes';
-import {priorApprovalConvertCommercialToHome} from '../examples/data/priorApproval/convertCommercialToHome';
-import {priorApprovalExtendUniversity} from '../examples/data/priorApproval/extendUniversity';
-import {priorApprovalLargerExtension} from '../examples/data/priorApproval/largerExtension';
-import {priorApprovalSolarPanels} from '../examples/data/priorApproval/solarPanels';
-import {Schema} from '../types/Schema';
+const convertTypeScriptObjectToJSON = async (input: string, output: string) => {
+  try {
+    // Import TypeScript module containing example, and extract exported object
+    const module = await import(path.resolve(input));
+    const object = Object.values(module)[0];
 
-interface Example {
-  filename: string;
-  data: Schema;
-}
+    // Convert to JSON and write to file
+    const json = JSON.stringify(object, null, 2);
+    fs.writeFileSync(output, json);
 
-const examplesToConvert: Example[] = [
-  {
-    filename: 'lawfulDevelopmentCertificate/existing',
-    data: lawfulDevelopmentCertificateExisting,
-  },
-  {
-    filename: 'lawfulDevelopmentCertificate/proposed',
-    data: lawfulDevelopmentCertificateProposed,
-  },
-  {
-    filename: 'priorApproval/extendUniversity',
-    data: priorApprovalExtendUniversity,
-  },
-  {
-    filename: 'priorApproval/solarPanels',
-    data: priorApprovalSolarPanels,
-  },
-  {
-    filename: 'priorApproval/buildHomes',
-    data: priorApprovalBuildHomes,
-  },
-  {
-    filename: 'priorApproval/convertCommercialToHome',
-    data: priorApprovalConvertCommercialToHome,
-  },
-  {
-    filename: 'priorApproval/largerExtension',
-    data: priorApprovalLargerExtension,
-  },
-  {
-    filename: 'planningPermission/fullHouseholder',
-    data: planningPermissionFullHouseholder,
-  },
-  {
-    filename: 'planningPermission/major',
-    data: planningPermissionMajor,
-  },
-  {
-    filename: 'planningPermission/minor',
-    data: planningPermissionMinor,
-  },
-  {
-    filename: 'listedBuildingConsent',
-    data: listedBuildingConsent,
-  },
-  {
-    filename: 'landDrainageConsent',
-    data: landDrainageConsent,
-  },
-];
-
-const convertTypeScriptObjectsToJSONFiles = (objects: Example[]) => {
-  for (const object of objects) {
-    const outputFilePath = path.join(
-      __dirname,
-      `../examples/${object.filename}.json`
-    );
-    const jsonContent = JSON.stringify(object.data, null, 2);
-    fs.writeFileSync(outputFilePath, jsonContent, {flag: 'w'});
-
-    console.log(
-      `TypeScript object '${object.filename}' converted to JSON and saved to ${outputFilePath}`
-    );
+    console.log(`Converted ${input} to ${output}`);
+  } catch (err) {
+    console.error(`Error converting ${input} to JSON:`, err);
   }
 };
 
-convertTypeScriptObjectsToJSONFiles(examplesToConvert);
+/**
+ * Recursively walk through directories to locate .ts examples
+ * Convert from typed TS objects to plain JSON
+ */
+const walkDirectory = async (dir: string) => {
+  const files = fs.readdirSync(dir);
+
+  for (const file of files) {
+    const filePath = path.join(dir, file);
+
+    if (fs.statSync(filePath).isDirectory()) {
+      await walkDirectory(filePath);
+    } else if (path.extname(filePath) === '.ts') {
+      // Write file to mirrored directory, outside the /data folder where the TS examples are stored
+      const jsonExampleFilePath = path.join(
+        dir.replace('/data', ''),
+        `${path.basename(file, '.ts')}.json`
+      );
+      await convertTypeScriptObjectToJSON(filePath, jsonExampleFilePath);
+    }
+  }
+};
+
+(async () => {
+  await walkDirectory('./examples');
+  console.log('All example files converted to JSON');
+})();

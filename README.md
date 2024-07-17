@@ -12,7 +12,7 @@ There's two main options for integrating with Digital Planning Data schemas:
 
 1. Reference a hosted schema file directly:
 
-   `https://theopensystemslab.github.io/digital-planning-data-schemas/<VERSION>/schema.json` 
+   `https://theopensystemslab.github.io/digital-planning-data-schemas/<VERSION>/schemas/<SCHEMA>.json` 
 
 1. Clone this repository and reference the local schema files programmatically in your own code using tools that support JSON Schema validation
 
@@ -20,11 +20,11 @@ For more detailed info on integrating and validating schemas, please refer to th
 
 ## Repository structure
 
-`/examples`: Examples of valid payloads for each application type supported by this specification.
+`/examples`: Examples of valid payloads for each application type supported by the specifications encoded in this repository.
 
-`/schema`: The main JSON Schema file. The `main` branch of this repo will reflect the `@next` version, while historic versions are documented and released on the `dist` branch.
+`/schemas`: The main JSON Schema files. The `main` branch of this repo will reflect the `@next` version, while historic versions are documented and released on the `dist` branch.
 
-`/types`: TypeScript interfaces used to generate the JSON Schema.
+`/types`: TypeScript interfaces used to generate the JSON Schemas.
 
 `/tests`: Test suites to ensure that the generated schema and example payloads are valid, accurate, and capable of handling different scenarios.
 
@@ -37,9 +37,9 @@ pnpm i
 ```
 
 ## Developing
-The JSON Schema is defined using TypeScript interfaces and then generated using the `ts-json-schema-generator` library.
+The JSON Schemas are defined using TypeScript interfaces and then generated using the `ts-json-schema-generator` library.
 
-To make changes, update `/types` and then run `pnpm build` to automatically generate the output JSON file under `/schema`.
+To make changes, update `/types` and then run `pnpm build` to automatically generate the output JSON file under `/schemas`.
 
 Types should be annotated using JSDocs, which will then be read during schema generation. 
 
@@ -47,9 +47,7 @@ Please see the [JSON schema docs](https://json-schema.org/understanding-json-sch
 
 ## Adding examples and testing
 
-Add a TypeScript file to `/examples/data` with at least one exported variable representing an example payload definition.
-
-Add each exported payload to `examplesToConvert` in `/scripts/build-json-examples` and `examplesToTest` in `/tests/usage.test.ts`.
+Add a TypeScript file to `/examples/<SCHEMA>/data` with at least one exported variable representing an example payload definition.
 
 Run `pnpm build-json-examples` to automatically generate a corresponding JSON file per example payload in the root of `/examples`.
 
@@ -58,7 +56,7 @@ Run `pnpm test` to confirm your example payload can be successfully validated ag
 ## Publishing
 To publish a new version, open a pull request against `main` which increments the `package.json` version.
 
-On merge, the [publish.yml](https://github.com/theopensystemslab/digital-planning-data-schemas/blob/main/.github/workflows/publish.yml) GitHub Action will update the `dist` branch, create a release, and publish the new version via GitHub pages at `http://theopensystemslab.github.io/digital-planning-data-schemas/<VERSION>/schema.json`
+On merge, the [publish.yml](https://github.com/theopensystemslab/digital-planning-data-schemas/blob/main/.github/workflows/publish.yml) GitHub Action will update the `dist` branch, create a release, and publish the new version via GitHub pages at `http://theopensystemslab.github.io/digital-planning-data-schemas/<VERSION>/schemas/<SCHEMA>.json`
 
 ## Contributing
 We welcome feedback, bug reports, and contributions to help improve and grow the Digital Planning Data schemas via GitHub Issues and Pull Requests.

@@ -3,7 +3,7 @@
 
 branch="$(git rev-parse --abbrev-ref HEAD)"
 if [ "$branch" != "main" ]; then
-  pnpm build-json-examples && pnpm build-schema:dev
+  pnpm build
 fi
 
 pnpm check && pnpm fix
