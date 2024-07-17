@@ -34,6 +34,7 @@ jobs:
 
       - name: Move JSON schema files to /@next folder
         run: |
+          mkdir -p "$GITHUB_WORKSPACE/${{ env.VERSION }}"
           mv schemas/* "$GITHUB_WORKSPACE/${{ env.VERSION }}"
           mv types/* "$GITHUB_WORKSPACE/${{ env.VERSION }}/types"
 

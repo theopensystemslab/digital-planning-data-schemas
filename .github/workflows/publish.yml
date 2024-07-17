@@ -52,7 +52,7 @@ jobs:
           find examples -type f -name "*.json" -delete
 
           # Copy across new version to maintain a stable reference URL at /latest
-          rm -rf latest/*
+          mkdir -p "$GITHUB_WORKSPACE/latest"
           cp -r "$GITHUB_WORKSPACE/v${{ steps.version_check.outputs.version }} "$GITHUB_WORKSPACE/latest"
 
       - name: Checkout Dist Branch
@@ -60,6 +60,10 @@ jobs:
         run: |
           git fetch origin dist
           git checkout -b dist origin/dist
+
+      - name: Cleanup old /latest folder
+        if: steps.version_check.outputs.changed == 'true'
+        run: rm -rf latest/*
 
       - name: Commit and Push Changes
         if: steps.version_check.outputs.changed == 'true'
