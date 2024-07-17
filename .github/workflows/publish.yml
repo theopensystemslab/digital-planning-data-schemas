@@ -51,6 +51,10 @@ jobs:
           # Remove JSON files from source destination
           find examples -type f -name "*.json" -delete
 
+          # Copy across new version to maintain a stable reference URL at /latest
+          rm -rf latest/*
+          cp -r "$GITHUB_WORKSPACE/v${{ steps.version_check.outputs.version }} "$GITHUB_WORKSPACE/latest"
+
       - name: Checkout Dist Branch
         if: steps.version_check.outputs.changed == 'true'
         run: |
