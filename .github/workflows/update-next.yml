@@ -1,0 +1,58 @@
+# The current state of `main` is published as the @next version on the `dist` branch
+
+name: Update @next schema versions
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  VERSION: "@next"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18.16.1'
+
+      - name: Install pnpm
+        run: npm install -g pnpm
+
+      - name: Install Dependencies
+        run: pnpm install
+
+      - name: Build JSON schema files
+        run: pnpm build
+
+      - name: Move JSON schema files to /@next folder
+        run: |
+          mv schemas/* "$GITHUB_WORKSPACE/${{ env.VERSION }}"
+          mv types/* "$GITHUB_WORKSPACE/${{ env.VERSION }}/types"
+
+          # Copy JSON files, preserving directory structure
+          rsync -a --prune-empty-dirs --include '*/' --include '*.json' --exclude '*' examples/ "$GITHUB_WORKSPACE/${{ env.VERSION }}/examples/"
+          
+          # Remove JSON files from source destination
+          find examples -type f -name "*.json" -delete
+
+      - name: Checkout Dist Branch
+        run: |
+          git fetch origin dist
+          git checkout -b dist origin/dist
+
+      - name: Commit and Push Changes
+        run: |
+          git config user.name "${GITHUB_ACTOR}"
+          git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+          git add .
+          git commit -m "Add build files for ${{ env.VERSION }}"
+          git push origin dist
+
