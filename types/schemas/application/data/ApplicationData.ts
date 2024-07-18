@@ -2,12 +2,12 @@ import {ApplicationType} from '../enums/ApplicationTypes';
 import {Date} from '../../../shared/utils';
 
 /**
- * @id #Application
+ * @id #ApplicationData
  * @description Information about this planning application
  */
-export type Application = BaseApplication | LondonApplication;
+export type ApplicationData = BaseApplicationData | LondonApplicationData;
 
-export interface BaseApplication {
+export interface BaseApplicationData {
   type: ApplicationType;
   fee: ApplicationFee | ApplicationFeeNotApplicable;
   declaration: ApplicationDeclaration;
@@ -17,10 +17,10 @@ export interface BaseApplication {
 }
 
 /**
- * @id #LondonApplication
+ * @id #LondonApplicationData
  * @description Application details for project sites within the Greater London Authority (GLA) area
  */
-export interface LondonApplication extends BaseApplication {
+export interface LondonApplicationData extends BaseApplicationData {
   vacantBuildingCredit?: boolean;
   leadDeveloper?: LeadDeveloper;
 }

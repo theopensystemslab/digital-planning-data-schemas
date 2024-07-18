@@ -226,14 +226,14 @@
       ],
       "description": "The user who completed the application either for themself or on behalf of someone else"
     },
-    "Application": {
-      "$id": "#Application",
+    "ApplicationData": {
+      "$id": "#ApplicationData",
       "anyOf": [
         {
-          "$ref": "#/definitions/BaseApplication"
+          "$ref": "#/definitions/BaseApplicationData"
         },
         {
-          "$ref": "#/definitions/LondonApplication"
+          "$ref": "#/definitions/LondonApplicationData"
         }
       ],
       "description": "Information about this planning application"
@@ -2457,7 +2457,7 @@
       ],
       "type": "object"
     },
-    "BaseApplication": {
+    "BaseApplicationData": {
       "additionalProperties": false,
       "properties": {
         "CIL": {
@@ -6144,8 +6144,8 @@
       ],
       "type": "object"
     },
-    "LondonApplication": {
-      "$id": "#LondonApplication",
+    "LondonApplicationData": {
+      "$id": "#LondonApplicationData",
       "additionalProperties": false,
       "description": "Application details for project sites within the Greater London Authority (GLA) area",
       "properties": {
@@ -25450,7 +25450,7 @@
           "$ref": "#/definitions/Applicant"
         },
         "application": {
-          "$ref": "#/definitions/Application"
+          "$ref": "#/definitions/ApplicationData"
         },
         "files": {
           "$ref": "#/definitions/FilesAsData"
@@ -25496,6 +25496,6 @@
     "files",
     "metadata"
   ],
-  "title": "Digital Planning Application",
+  "title": "Application",
   "type": "object"
 }
