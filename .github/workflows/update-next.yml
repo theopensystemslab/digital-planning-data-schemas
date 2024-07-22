@@ -36,7 +36,11 @@ jobs:
         run: |
           mkdir -p "$GITHUB_WORKSPACE/${{ env.VERSION }}"
           mv schemas/* "$GITHUB_WORKSPACE/${{ env.VERSION }}"
+
+          mkdir -p "$GITHUB_WORKSPACE/${{ env.VERSION }}/types"
           mv types/* "$GITHUB_WORKSPACE/${{ env.VERSION }}/types"
+
+          mkdir -p "$GITHUB_WORKSPACE/${{ env.VERSION }}/examples"
 
           # Copy JSON files, preserving directory structure
           rsync -a --prune-empty-dirs --include '*/' --include '*.json' --exclude '*' examples/ "$GITHUB_WORKSPACE/${{ env.VERSION }}/examples/"
