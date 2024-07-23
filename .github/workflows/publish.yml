@@ -31,7 +31,7 @@ jobs:
 
       - name: Install Dependencies
         if: steps.version_check.outputs.changed == 'true'  
-        run: pnpm install
+        run: pnpm install --frozen-lockfile
 
       - name: Build and Move Files
         if: steps.version_check.outputs.changed == 'true'
