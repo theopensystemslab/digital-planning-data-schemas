@@ -54,9 +54,9 @@ export const ProjectTypes = {
   'alter.equipment.airConditioning': 'Install an air conditioning unit',
   'alter.equipment.alarm': 'Install a security alarm',
   'alter.equipment.antennae': 'Install a satellite dish or aerial',
-  'alter.equipment.antennae.aerial': 'Install an aerial antennea',
+  'alter.equipment.antennae.aerial': 'Install an aerial antennae',
   'alter.equipment.antennae.dish': 'Install a satellite dish',
-  'alter.equipment.bbq': 'Install a barbeque',
+  'alter.equipment.bbq': 'Install a barbecue',
   'alter.equipment.biomass': 'Install a flue with a biomass burner',
   'alter.equipment.cctv': 'Install CCTV cameras',
   'alter.equipment.charging': 'Install a car charging point',
@@ -165,7 +165,7 @@ export const ProjectTypes = {
   'alter.replace.doorsToWindows.front':
     'Replace door with window on the front of a building',
   'alter.replace.doorsToWindows.rear':
-    'Replace door with winoow on the rear of a building',
+    'Replace door with window on the rear of a building',
   'alter.replace.doorsToWindows.side':
     'Replace door with window on the side of a building',
   'alter.replace.windowsToDoors': 'Replace window with door',
@@ -239,7 +239,7 @@ export const ProjectTypes = {
   'demolish.full': 'Total demolition of a building',
   'demolish.internal': 'Demolish internal walls',
   'demolish.listed': 'Demolish a listed building',
-  'demolish.listed.full': 'Total demolition of a isted building',
+  'demolish.listed.full': 'Total demolition of a listed building',
   'demolish.listed.part': 'Demolish part of a listed building',
   'demolish.outbuilding': 'Demolish an outbuilding (such as a garage or barn)',
   'demolish.outbuilding.full':

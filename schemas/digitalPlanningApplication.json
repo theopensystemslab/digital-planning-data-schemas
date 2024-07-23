@@ -5636,7 +5636,7 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Student accomodation",
+              "const": "Student accommodation",
               "type": "string"
             },
             "value": {
@@ -11050,7 +11050,7 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Install an aerial antennea",
+              "const": "Install an aerial antennae",
               "type": "string"
             },
             "value": {
@@ -11086,7 +11086,7 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Install a barbeque",
+              "const": "Install a barbecue",
               "type": "string"
             },
             "value": {
@@ -12652,7 +12652,7 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Replace door with winoow on the rear of a building",
+              "const": "Replace door with window on the rear of a building",
               "type": "string"
             },
             "value": {
@@ -13822,7 +13822,7 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Total demolition of a isted building",
+              "const": "Total demolition of a listed building",
               "type": "string"
             },
             "value": {
@@ -15860,7 +15860,7 @@
               "type": "string"
             },
             "value": {
-              "const": "commercial.ancilliary",
+              "const": "commercial.ancillary",
               "type": "string"
             }
           },
@@ -16040,7 +16040,7 @@
               "type": "string"
             },
             "value": {
-              "const": "commercial.community.cemetary",
+              "const": "commercial.community.cemetery",
               "type": "string"
             }
           },
@@ -16058,7 +16058,7 @@
               "type": "string"
             },
             "value": {
-              "const": "commercial.community.cemetary.columbarium",
+              "const": "commercial.community.cemetery.columbarium",
               "type": "string"
             }
           },
@@ -16076,7 +16076,7 @@
               "type": "string"
             },
             "value": {
-              "const": "commercial.community.cemetary.crematorium",
+              "const": "commercial.community.cemetery.crematorium",
               "type": "string"
             }
           },
@@ -16094,7 +16094,7 @@
               "type": "string"
             },
             "value": {
-              "const": "commercial.community.cemetary.chapelOfRest",
+              "const": "commercial.community.cemetery.chapelOfRest",
               "type": "string"
             }
           },
@@ -16112,7 +16112,7 @@
               "type": "string"
             },
             "value": {
-              "const": "commercial.community.cemetary.cemetary",
+              "const": "commercial.community.cemetery.cemetery",
               "type": "string"
             }
           },
@@ -16130,7 +16130,7 @@
               "type": "string"
             },
             "value": {
-              "const": "commercial.community.cemetary.military",
+              "const": "commercial.community.cemetery.military",
               "type": "string"
             }
           },
@@ -16148,7 +16148,7 @@
               "type": "string"
             },
             "value": {
-              "const": "commercial.community.cemetary.mortuary",
+              "const": "commercial.community.cemetery.mortuary",
               "type": "string"
             }
           },
@@ -16648,7 +16648,7 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Holiday Let/Accomodation/Short-Term Let Other Than CH01",
+              "const": "Holiday Let/Accommodation/Short-Term Let Other Than CH01",
               "type": "string"
             },
             "value": {
@@ -17390,7 +17390,7 @@
               "type": "string"
             },
             "value": {
-              "const": "commercial.industrial.distribution.solidFueld",
+              "const": "commercial.industrial.distribution.solidFuel",
               "type": "string"
             }
           },
@@ -20702,7 +20702,7 @@
               "type": "string"
             },
             "value": {
-              "const": "commercial.utility.telecoms.exhange",
+              "const": "commercial.utility.telecoms.exchange",
               "type": "string"
             }
           },
@@ -22642,7 +22642,7 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Picnic / Barbeque Site",
+              "const": "Picnic / Barbecue Site",
               "type": "string"
             },
             "value": {

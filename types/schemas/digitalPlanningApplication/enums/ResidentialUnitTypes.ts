@@ -17,7 +17,7 @@ export const GLAResidentialUnitTypes = {
   LW: 'Live/work unit',
   other: 'Other',
   semiDetached: 'Semi-detached home',
-  student: 'Student accomodation',
+  student: 'Student accommodation',
   studio: 'Studio or bedsit',
   terraced: 'Terraced home',
 };
