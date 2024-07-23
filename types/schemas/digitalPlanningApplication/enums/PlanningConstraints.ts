@@ -34,15 +34,15 @@ export const PlanningDesignations = {
   tpo: 'Tree Preservation Order (TPO) or zone',
 };
 
-type PlanningDesigationKeys = keyof typeof PlanningDesignations;
+type PlanningDesignationKeys = keyof typeof PlanningDesignations;
 
-type GenericPlanningDesignation<TKey extends PlanningDesigationKeys> = {
+type GenericPlanningDesignation<TKey extends PlanningDesignationKeys> = {
   value: TKey;
   description: (typeof PlanningDesignations)[TKey];
 };
 
 type PlanningDesignationMap = {
-  [K in PlanningDesigationKeys]: GenericPlanningDesignation<K>;
+  [K in PlanningDesignationKeys]: GenericPlanningDesignation<K>;
 };
 
 type BasePlanningDesignation =
