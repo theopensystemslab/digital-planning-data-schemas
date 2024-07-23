@@ -10,10 +10,11 @@ export const ApplicationTypes = {
   'amendment.nonMaterial':
     'Consent to make small (non-material) changes to a project with Planning Permission',
   approval: 'Planning approval',
+  'approval.conditions': 'Approval of details reserved by condition',
   'approval.reservedMatters': 'Approval of reserved matters',
   complianceConfirmation:
     'Written confirmation of compliance with a planning condition',
-  environmnentalImpact: 'Environmental Impact Decision',
+  environmentalImpact: 'Environmental Impact Decision',
   'environmentalImpact.scoping': 'Environmental Impact Decision - Scoping',
   'environmentalImpact.screening': 'Environmental Impact Decision - Screening',
   hazardousSubstanceConsent:
@@ -22,17 +23,30 @@ export const ApplicationTypes = {
   landDrainageConsent:
     'Consent to do works affecting ordinary watercourses or land drainage',
   ldc: 'Lawful Development Certificate',
-  'ldc.proposed': 'Lawful Development Certificate - Proposed use',
+  'ldc.breachOfCondition':
+    'Lawful Development Certificate - Existing use lawful not to comply with a condition (S191C)',
   'ldc.existing': 'Lawful Development Certificate - Existing use',
-  'ldc.existing.regularise':
-    'Lawful Development Certificate - Continue an existing use',
-  'ldc.condition':
-    'Lawful Development Certificate - Lawful not to comply with a condition or limitation',
+  'ldc.listedBuildingWorks':
+    'Lawful Development Certificate - Works to a Listed Building (S26H)',
+  'ldc.proposed': 'Lawful Development Certificate - Proposed use',
   listed: 'Consent to do works to a Listed Building',
   notifyCompletion: 'Notification of completion',
   obligation: 'Planning obligation',
   'obligation.discharge': 'Discharge a planning obligation',
   'obligation.modify': 'Modify a planning obligation',
+  onshoreExtractionOilAndGas: 'Onshore extraction of oil and gas',
+  'onshoreExtractionOilAndGas.other':
+    'Onshore extraction of oil and gas - Other',
+  'onshoreExtractionOilAndGas.pp.extension':
+    'Onshore extraction of oil and gas - Full planning permission for an extension to an existing site including associated development',
+  'onshoreExtractionOilAndGas.pp.waste':
+    'Onshore extraction of oil and gas - Full planning permission for waste development',
+  'onshoreExtractionOilAndGas.pp.working':
+    'Onshore extraction of oil and gas - Full planning permission for oil and gas working including exploratory, appraisal and production phases',
+  'onshoreExtractionOilAndGas.review':
+    'Onshore extraction of oil and gas - Review of conditions applying to Mineral Permissions (ROMPs)',
+  'onshoreExtractionOilAndGas.variation':
+    'Onshore extraction of oil and gas - Variation of conditions',
   pa: 'Prior Approval',
   'pa.part1.classA': 'Prior Approval - Larger extension to a house',
   'pa.part1.classAA': 'Prior Approval - Adding storeys to a house',
@@ -86,7 +100,7 @@ export const ApplicationTypes = {
     'Prior Approval - Other developments ancillary to mining operations',
   'pa.part17.classC': 'Prior Approval - Developments for maintenance or safety',
   'pa.part17.classG':
-    'Prior Approval - Coal mining development by the Coal Authority for maintence or safety',
+    'Prior Approval - Coal mining development by the Coal Authority for maintenance or safety',
   'pa.part18.classA':
     'Prior Approval - Development under private acts or orders',
   'pa.part19.classTA': 'Prior Approval - Development on a closed defence site',
@@ -128,8 +142,6 @@ export const ApplicationTypes = {
     'Planning Permission - Technical details consent for minor development',
   'pp.mineralExtraction':
     'Planning Permission - Consent to extract minerals and related development, such as temporary buildings and roads',
-  'pp.onshoreExtractionOilAndGas':
-    'Planning Permission - Consent to extract oil and gas',
   'pp.outline': 'Planning permission - Outline for proposed development',
   'pp.outline.all':
     'Outline Planning Permission - Consent for the principle of a project witholding all details',
