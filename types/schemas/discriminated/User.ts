@@ -1,4 +1,4 @@
-import {PrimaryApplicationTypes} from '../digitalPlanningApplication/enums/ApplicationTypes';
+import {PrimaryApplicationType} from '../digitalPlanningApplication/enums/ApplicationTypes';
 
 export interface UserBase {
   role: 'applicant' | 'agent' | 'proxy';
@@ -13,7 +13,7 @@ export interface PPUser extends UserBase {
 }
 
 /**
- * @internal
+ * TypeMap of PrimaryApplicationTypes to their specific User models
  */
 interface UserVariants {
   wtt: WTTUser;
@@ -22,9 +22,7 @@ interface UserVariants {
 
 /**
  * @internal
+ * Conditional type to return a specific or generic User model, based on PrimaryApplicationType
  */
-export type User<T extends PrimaryApplicationTypes> =
-  T extends keyof UserVariants
-    ? UserVariants[T]
-    : // Default value for non-specific application types
-      UserBase;
+export type User<TPrimary extends PrimaryApplicationType> =
+  TPrimary extends keyof UserVariants ? UserVariants[TPrimary] : UserBase;
