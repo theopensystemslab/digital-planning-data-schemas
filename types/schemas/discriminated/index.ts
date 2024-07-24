@@ -5,36 +5,35 @@ import {
 import {ApplicationData} from './ApplicationData';
 import {User} from './User';
 
-/**
- * @internal
- */
-export type ApplicationTypeOf<T extends PrimaryApplicationTypes> = Extract<
-  ApplicationTypeKeys,
-  `${T}.${string}`
->;
-
-interface GenericApplication<T extends PrimaryApplicationTypes> {
-  applicationType: ApplicationTypeOf<T>;
+interface GenericApplication<
+  TPrimary extends PrimaryApplicationTypes,
+  TGranular extends ApplicationTypeKeys,
+> {
+  applicationType: TGranular;
   data: {
-    user: User<T>;
-    application: ApplicationData<T>;
+    user: User<TPrimary>;
+    application: ApplicationData<TPrimary, TGranular>;
   };
 }
 
 /**
  * @description Application for a "Planning Permission" project
  */
-export type PlanningPermissionApplication = GenericApplication<'pp'>;
+export type PlanningPermissionApplication = GenericApplication<'pp', 'pp'>;
 
 /**
  * @description Application for a "Prior Approval" project
  */
-export type PriorApprovalApplication = GenericApplication<'pa'>;
+export type PriorApprovalApplication = GenericApplication<'pa', 'pa'>;
+
+export type BaseWTT = GenericApplication<'wtt', 'wtt'>;
+export type ConsentWTT = GenericApplication<'wtt', 'wtt.consent'>;
+export type NoticeWTT = GenericApplication<'wtt', 'wtt.notice'>;
 
 /**
  * @description Application for a "Works to trees" project
  */
-export type WorksToTreesApplication = GenericApplication<'wtt'>;
+export type WorksToTreesApplications = BaseWTT | ConsentWTT | NoticeWTT;
 
 /**
  * @title App
@@ -43,7 +42,7 @@ export type WorksToTreesApplication = GenericApplication<'wtt'>;
 export type App =
   | PlanningPermissionApplication
   | PriorApprovalApplication
-  | WorksToTreesApplication;
+  | WorksToTreesApplications;
 
 const test: App = {
   applicationType: 'wtt.consent',
@@ -53,8 +52,9 @@ const test: App = {
       wttSpecificProperty: true,
     },
     application: {
-      applicationType: 'wtt.notice',
+      applicationType: 'wtt.consent',
       wttSpecificProperty: 123,
+      somethingShared: 'abc',
     },
   },
 };

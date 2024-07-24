@@ -9,145 +9,151 @@
       "$ref": "#/definitions/PriorApprovalApplication"
     },
     {
-      "$ref": "#/definitions/WorksToTreesApplication"
+      "$ref": "#/definitions/WorksToTreesApplications"
     }
   ],
   "definitions": {
-    "ApplicationTypeKeys": {
-      "enum": [
-        "advertConsent",
-        "amendment",
-        "amendment.minorMaterial",
-        "amendment.nonMaterial",
-        "approval",
-        "approval.conditions",
-        "approval.reservedMatters",
-        "complianceConfirmation",
-        "environmentalImpact",
-        "environmentalImpact.scoping",
-        "environmentalImpact.screening",
-        "hazardousSubstanceConsent",
-        "hedgerowRemovalNotice",
-        "landDrainageConsent",
-        "ldc",
-        "ldc.breachOfCondition",
-        "ldc.existing",
-        "ldc.listedBuildingWorks",
-        "ldc.proposed",
-        "listed",
-        "notifyCompletion",
-        "obligation",
-        "obligation.discharge",
-        "obligation.modify",
-        "onshoreExtractionOilAndGas",
-        "onshoreExtractionOilAndGas.other",
-        "onshoreExtractionOilAndGas.pp.extension",
-        "onshoreExtractionOilAndGas.pp.waste",
-        "onshoreExtractionOilAndGas.pp.working",
-        "onshoreExtractionOilAndGas.review",
-        "onshoreExtractionOilAndGas.variation",
-        "pa",
-        "pa.part1.classA",
-        "pa.part1.classAA",
-        "pa.part3.classG",
-        "pa.part3.classM",
-        "pa.part3.classMA",
-        "pa.part3.classN",
-        "pa.part3.classQ",
-        "pa.part3.classR",
-        "pa.part3.classS",
-        "pa.part3.classT",
-        "pa.part3.classV",
-        "pa.part4.classBB",
-        "pa.part4.classBC",
-        "pa.part4.classCA",
-        "pa.part4.classE",
-        "pa.part6",
-        "pa.part6.classA",
-        "pa.part6.classB",
-        "pa.part6.classE",
-        "pa.part7.classC",
-        "pa.part7.classM",
-        "pa.part9.classD",
-        "pa.part11.classB",
-        "pa.part14.classA",
-        "pa.part14.classB",
-        "pa.part14.classJ",
-        "pa.part14.classK",
-        "pa.part14.classOA",
-        "pa.part16.classA",
-        "pa.part17",
-        "pa.part17.classB",
-        "pa.part17.classC",
-        "pa.part17.classG",
-        "pa.part18.classA",
-        "pa.part19.classTA",
-        "pa.part20.classA",
-        "pa.part20.classAA",
-        "pa.part20.classAB",
-        "pa.part20.classAC",
-        "pa.part20.classAD",
-        "pa.part20.classZA",
-        "pp",
-        "pp.full",
-        "pp.full.advertConsent",
-        "pp.full.demolition",
-        "pp.full.fastTrack.affordable",
-        "pp.full.householder",
-        "pp.full.householder.listed",
-        "pp.full.householder.retro",
-        "pp.full.major",
-        "pp.full.major.technicalDetails",
-        "pp.full.major.technicalDetails.waste",
-        "pp.full.major.waste",
-        "pp.full.minor",
-        "pp.full.minor.listed",
-        "pp.full.minor.technicalDetails",
-        "pp.mineralExtraction",
-        "pp.outline",
-        "pp.outline.all",
-        "pp.outline.some",
-        "pp.outline.minor",
-        "pp.outline.minor.all",
-        "pp.outline.minor.some",
-        "pp.outline.major",
-        "pp.outline.major.all",
-        "pp.outline.major.all.waste",
-        "pp.outline.major.some",
-        "pp.outline.major.some.waste",
-        "pp.pip",
-        "rightsOfWayOrder",
-        "wtt",
-        "wtt.consent",
-        "wtt.notice"
-      ],
-      "type": "string"
-    },
-    "PAApplicationData": {
+    "BaseWTT": {
       "additionalProperties": false,
       "properties": {
         "applicationType": {
-          "$ref": "#/definitions/ApplicationTypeKeys"
-        }
-      },
-      "required": [
-        "applicationType"
-      ],
-      "type": "object"
-    },
-    "PPApplicationData": {
-      "additionalProperties": false,
-      "properties": {
-        "applicationType": {
-          "$ref": "#/definitions/ApplicationTypeKeys"
+          "const": "wtt",
+          "type": "string"
         },
-        "ppSpecificProperty": {
-          "type": "number"
+        "data": {
+          "additionalProperties": false,
+          "properties": {
+            "application": {
+              "additionalProperties": false,
+              "properties": {
+                "applicationType": {
+                  "const": "wtt",
+                  "type": "string"
+                },
+                "somethingShared": {
+                  "type": "string"
+                },
+                "wttSpecificProperty": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "applicationType",
+                "somethingShared",
+                "wttSpecificProperty"
+              ],
+              "type": "object"
+            },
+            "user": {
+              "$ref": "#/definitions/WTTUser"
+            }
+          },
+          "required": [
+            "user",
+            "application"
+          ],
+          "type": "object"
         }
       },
       "required": [
         "applicationType",
-        "ppSpecificProperty"
+        "data"
+      ],
+      "type": "object"
+    },
+    "ConsentWTT": {
+      "additionalProperties": false,
+      "properties": {
+        "applicationType": {
+          "const": "wtt.consent",
+          "type": "string"
+        },
+        "data": {
+          "additionalProperties": false,
+          "properties": {
+            "application": {
+              "additionalProperties": false,
+              "properties": {
+                "applicationType": {
+                  "const": "wtt.consent",
+                  "type": "string"
+                },
+                "somethingShared": {
+                  "type": "string"
+                },
+                "wttSpecificProperty": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "applicationType",
+                "somethingShared",
+                "wttSpecificProperty"
+              ],
+              "type": "object"
+            },
+            "user": {
+              "$ref": "#/definitions/WTTUser"
+            }
+          },
+          "required": [
+            "user",
+            "application"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "applicationType",
+        "data"
+      ],
+      "type": "object"
+    },
+    "NoticeWTT": {
+      "additionalProperties": false,
+      "properties": {
+        "applicationType": {
+          "const": "wtt.notice",
+          "type": "string"
+        },
+        "data": {
+          "additionalProperties": false,
+          "properties": {
+            "application": {
+              "additionalProperties": false,
+              "properties": {
+                "applicationType": {
+                  "const": "wtt.notice",
+                  "type": "string"
+                },
+                "somethingShared": {
+                  "type": "string"
+                },
+                "wttSpecificProperty": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "applicationType",
+                "somethingShared",
+                "wttSpecificProperty"
+              ],
+              "type": "object"
+            },
+            "user": {
+              "$ref": "#/definitions/WTTUser"
+            }
+          },
+          "required": [
+            "user",
+            "application"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "applicationType",
+        "data"
       ],
       "type": "object"
     },
@@ -177,13 +183,32 @@
       "description": "Application for a \"Planning Permission\" project",
       "properties": {
         "applicationType": {
-          "$ref": "#/definitions/ApplicationTypeKeys"
+          "const": "pp",
+          "type": "string"
         },
         "data": {
           "additionalProperties": false,
           "properties": {
             "application": {
-              "$ref": "#/definitions/PAApplicationData"
+              "additionalProperties": false,
+              "properties": {
+                "applicationType": {
+                  "const": "pp",
+                  "type": "string"
+                },
+                "ppSpecificProperty": {
+                  "type": "number"
+                },
+                "somethingShared": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "applicationType",
+                "ppSpecificProperty",
+                "somethingShared"
+              ],
+              "type": "object"
             },
             "user": {
               "$ref": "#/definitions/PPUser"
@@ -207,13 +232,28 @@
       "description": "Application for a \"Prior Approval\" project",
       "properties": {
         "applicationType": {
-          "$ref": "#/definitions/ApplicationTypeKeys"
+          "const": "pa",
+          "type": "string"
         },
         "data": {
           "additionalProperties": false,
           "properties": {
             "application": {
-              "$ref": "#/definitions/PPApplicationData"
+              "additionalProperties": false,
+              "properties": {
+                "applicationType": {
+                  "const": "pa",
+                  "type": "string"
+                },
+                "somethingShared": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "applicationType",
+                "somethingShared"
+              ],
+              "type": "object"
             },
             "user": {
               "$ref": "#/definitions/UserBase"
@@ -249,22 +289,6 @@
       ],
       "type": "object"
     },
-    "WTTApplicationData": {
-      "additionalProperties": false,
-      "properties": {
-        "applicationType": {
-          "$ref": "#/definitions/ApplicationTypeKeys"
-        },
-        "wttSpecificProperty": {
-          "type": "number"
-        }
-      },
-      "required": [
-        "applicationType",
-        "wttSpecificProperty"
-      ],
-      "type": "object"
-    },
     "WTTUser": {
       "additionalProperties": false,
       "properties": {
@@ -286,35 +310,19 @@
       ],
       "type": "object"
     },
-    "WorksToTreesApplication": {
-      "additionalProperties": false,
-      "description": "Application for a \"Works to trees\" project",
-      "properties": {
-        "applicationType": {
-          "$ref": "#/definitions/ApplicationTypeKeys"
+    "WorksToTreesApplications": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/BaseWTT"
         },
-        "data": {
-          "additionalProperties": false,
-          "properties": {
-            "application": {
-              "$ref": "#/definitions/WTTApplicationData"
-            },
-            "user": {
-              "$ref": "#/definitions/WTTUser"
-            }
-          },
-          "required": [
-            "user",
-            "application"
-          ],
-          "type": "object"
+        {
+          "$ref": "#/definitions/ConsentWTT"
+        },
+        {
+          "$ref": "#/definitions/NoticeWTT"
         }
-      },
-      "required": [
-        "applicationType",
-        "data"
       ],
-      "type": "object"
+      "description": "Application for a \"Works to trees\" project"
     }
   },
   "description": "The root specification for a planning application in England generated by a digital planning service",
