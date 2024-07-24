@@ -1,10 +1,23 @@
-import {PrimaryApplicationTypes} from '../digitalPlanningApplication/enums/ApplicationTypes';
+import {
+  ApplicationTypeKeys,
+  PrimaryApplicationTypes,
+} from '../digitalPlanningApplication/enums/ApplicationTypes';
+import {ApplicationData} from './ApplicationData';
 import {User} from './User';
 
+/**
+ * @internal
+ */
+export type ApplicationTypeOf<T extends PrimaryApplicationTypes> = Extract<
+  ApplicationTypeKeys,
+  `${T}.${string}`
+>;
+
 interface GenericApplication<T extends PrimaryApplicationTypes> {
-  primaryApplicationType: T;
+  applicationType: ApplicationTypeOf<T>;
   data: {
     user: User<T>;
+    application: ApplicationData<T>;
   };
 }
 
@@ -31,3 +44,17 @@ export type App =
   | PlanningPermissionApplication
   | PriorApprovalApplication
   | WorksToTreesApplication;
+
+const test: App = {
+  applicationType: 'wtt.consent',
+  data: {
+    user: {
+      role: 'agent',
+      wttSpecificProperty: true,
+    },
+    application: {
+      applicationType: 'wtt.notice',
+      wttSpecificProperty: 123,
+    },
+  },
+};
