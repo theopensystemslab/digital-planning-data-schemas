@@ -173,7 +173,7 @@ export const ApplicationTypes = {
     'Works to trees - Notification of proposed works to a tree in a Conservation Area',
 };
 
-type ApplicationTypeKeys = keyof typeof ApplicationTypes;
+export type ApplicationTypeKeys = keyof typeof ApplicationTypes;
 
 type GenericApplicationType<TKey extends ApplicationTypeKeys> = {
   value: TKey;
