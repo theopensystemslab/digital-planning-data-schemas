@@ -7,7 +7,7 @@ version="${VERSION:-@next}"
 
 echo "Version set to $version"
 
-dirs=("application" "discriminated")
+dirs=("application" "app")
 types=("Application" "App")
 
 for i in "${!dirs[@]}"; do
