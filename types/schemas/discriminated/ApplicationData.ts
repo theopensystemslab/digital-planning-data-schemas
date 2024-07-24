@@ -1,37 +1,39 @@
-import {ApplicationTypeOf} from '.';
-import {PrimaryApplicationTypes} from '../digitalPlanningApplication/enums/ApplicationTypes';
+import {
+  ApplicationTypeKeys,
+  PrimaryApplicationTypes,
+} from '../digitalPlanningApplication/enums/ApplicationTypes';
 
 /**
  * @internal
  */
-interface ApplicationDataBase<T extends PrimaryApplicationTypes> {
-  applicationType: ApplicationTypeOf<T>;
+export interface ApplicationDataBase<TGranular extends ApplicationTypeKeys> {
+  applicationType: TGranular;
+  somethingShared: string;
 }
 
-export interface WTTApplicationData extends ApplicationDataBase<'wtt'> {
+export interface WTTApplicationData {
   wttSpecificProperty: number;
 }
 
-export interface PPApplicationData extends ApplicationDataBase<'pp'> {
+export interface PPApplicationData {
   ppSpecificProperty: number;
 }
 
-export type PAApplicationData = ApplicationDataBase<'pa'>;
-
 /**
  * @internal
  */
-interface ApplicationDataVariants {
+export interface ApplicationDataVariants {
   wtt: WTTApplicationData;
-  pp: PAApplicationData;
-  pa: PPApplicationData;
+  pp: PPApplicationData;
 }
 
 /**
  * @internal
  */
-export type ApplicationData<T extends PrimaryApplicationTypes> =
-  T extends keyof ApplicationDataVariants
-    ? ApplicationDataVariants[T]
-    : // No fallback, all ApplicationData variants require a primary type
-      never;
+export type ApplicationData<
+  TPrimary extends PrimaryApplicationTypes,
+  TGranular extends ApplicationTypeKeys,
+> = TPrimary extends keyof ApplicationDataVariants
+  ? ApplicationDataVariants[TPrimary] & ApplicationDataBase<TGranular>
+  : // Fallback to shared values only
+    ApplicationDataBase<TGranular>;
