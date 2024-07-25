@@ -61,10 +61,6 @@ jobs:
           git fetch origin dist
           git checkout -b dist origin/dist
 
-      - name: Cleanup old /latest folder
-        if: steps.version_check.outputs.changed == 'true'
-        run: rm -rf latest/*
-
       - name: Commit and Push Changes
         if: steps.version_check.outputs.changed == 'true'
         run: |
