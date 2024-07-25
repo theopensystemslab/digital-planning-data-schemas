@@ -13,6 +13,19 @@
     }
   ],
   "definitions": {
+    "ApplicationDataBase": {
+      "additionalProperties": false,
+      "description": "Base type for ApplicationData. Contains all shared properties across all application types",
+      "properties": {
+        "somethingShared": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "somethingShared"
+      ],
+      "type": "object"
+    },
     "BaseWTT": {
       "additionalProperties": false,
       "properties": {
@@ -24,25 +37,7 @@
           "additionalProperties": false,
           "properties": {
             "application": {
-              "additionalProperties": false,
-              "properties": {
-                "applicationType": {
-                  "const": "wtt",
-                  "type": "string"
-                },
-                "somethingShared": {
-                  "type": "string"
-                },
-                "wttSpecificProperty": {
-                  "type": "number"
-                }
-              },
-              "required": [
-                "applicationType",
-                "somethingShared",
-                "wttSpecificProperty"
-              ],
-              "type": "object"
+              "$ref": "#/definitions/WTTApplicationData"
             },
             "user": {
               "$ref": "#/definitions/WTTUser"
@@ -72,25 +67,7 @@
           "additionalProperties": false,
           "properties": {
             "application": {
-              "additionalProperties": false,
-              "properties": {
-                "applicationType": {
-                  "const": "wtt.consent",
-                  "type": "string"
-                },
-                "somethingShared": {
-                  "type": "string"
-                },
-                "wttSpecificProperty": {
-                  "type": "number"
-                }
-              },
-              "required": [
-                "applicationType",
-                "somethingShared",
-                "wttSpecificProperty"
-              ],
-              "type": "object"
+              "$ref": "#/definitions/WTTApplicationData"
             },
             "user": {
               "$ref": "#/definitions/WTTUser"
@@ -120,25 +97,7 @@
           "additionalProperties": false,
           "properties": {
             "application": {
-              "additionalProperties": false,
-              "properties": {
-                "applicationType": {
-                  "const": "wtt.notice",
-                  "type": "string"
-                },
-                "somethingShared": {
-                  "type": "string"
-                },
-                "wttSpecificProperty": {
-                  "type": "number"
-                }
-              },
-              "required": [
-                "applicationType",
-                "somethingShared",
-                "wttSpecificProperty"
-              ],
-              "type": "object"
+              "$ref": "#/definitions/WTTApplicationData"
             },
             "user": {
               "$ref": "#/definitions/WTTUser"
@@ -154,6 +113,23 @@
       "required": [
         "applicationType",
         "data"
+      ],
+      "type": "object"
+    },
+    "PPApplicationData": {
+      "additionalProperties": false,
+      "description": "Specific ApplicationData required for \"Planning Permission\" applications",
+      "properties": {
+        "ppSpecificProperty": {
+          "type": "number"
+        },
+        "somethingShared": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "ppSpecificProperty",
+        "somethingShared"
       ],
       "type": "object"
     },
@@ -189,25 +165,7 @@
           "additionalProperties": false,
           "properties": {
             "application": {
-              "additionalProperties": false,
-              "properties": {
-                "applicationType": {
-                  "const": "pp",
-                  "type": "string"
-                },
-                "ppSpecificProperty": {
-                  "type": "number"
-                },
-                "somethingShared": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "applicationType",
-                "ppSpecificProperty",
-                "somethingShared"
-              ],
-              "type": "object"
+              "$ref": "#/definitions/PPApplicationData"
             },
             "user": {
               "$ref": "#/definitions/PPUser"
@@ -237,21 +195,7 @@
           "additionalProperties": false,
           "properties": {
             "application": {
-              "additionalProperties": false,
-              "properties": {
-                "applicationType": {
-                  "const": "pa",
-                  "type": "string"
-                },
-                "somethingShared": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "applicationType",
-                "somethingShared"
-              ],
-              "type": "object"
+              "$ref": "#/definitions/ApplicationDataBase"
             },
             "user": {
               "$ref": "#/definitions/UserBase"
@@ -284,6 +228,23 @@
       },
       "required": [
         "role"
+      ],
+      "type": "object"
+    },
+    "WTTApplicationData": {
+      "additionalProperties": false,
+      "description": "Specific ApplicationData required for \"Works to trees\" applications",
+      "properties": {
+        "somethingShared": {
+          "type": "string"
+        },
+        "wttSpecificProperty": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "somethingShared",
+        "wttSpecificProperty"
       ],
       "type": "object"
     },

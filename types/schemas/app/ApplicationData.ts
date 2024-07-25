@@ -1,28 +1,23 @@
-import {
-  ApplicationTypeKeys,
-  PrimaryApplicationType,
-} from '../digitalPlanningApplication/enums/ApplicationTypes';
+import {PrimaryApplicationType} from '../digitalPlanningApplication/enums/ApplicationTypes';
 
 /**
- * @internal
  * Base type for ApplicationData. Contains all shared properties across all application types
  */
-export interface ApplicationDataBase<TGranular extends ApplicationTypeKeys> {
-  applicationType: TGranular;
+export interface ApplicationDataBase {
   somethingShared: string;
 }
 
 /**
  * @description Specific ApplicationData required for "Works to trees" applications
  */
-export interface WTTApplicationData {
+export interface WTTApplicationData extends ApplicationDataBase {
   wttSpecificProperty: number;
 }
 
 /**
  * @description Specific ApplicationData required for "Planning Permission" applications
  */
-export interface PPApplicationData {
+export interface PPApplicationData extends ApplicationDataBase {
   ppSpecificProperty: number;
 }
 
@@ -37,11 +32,8 @@ export interface ApplicationDataVariants {
 /**
  * @internal
  * Conditional type to return a specific or generic ApplicationData model, based on PrimaryApplicationType
- * TPrimary and TGranular are both required as the granular variable is exposed, and must match the value in the Application root
  */
-export type ApplicationData<
-  TPrimary extends PrimaryApplicationType,
-  TGranular extends ApplicationTypeKeys,
-> = TPrimary extends keyof ApplicationDataVariants
-  ? ApplicationDataVariants[TPrimary] & ApplicationDataBase<TGranular>
-  : ApplicationDataBase<TGranular>;
+export type ApplicationData<TPrimary extends PrimaryApplicationType> =
+  TPrimary extends keyof ApplicationDataVariants
+    ? ApplicationDataVariants[TPrimary]
+    : ApplicationDataBase;
