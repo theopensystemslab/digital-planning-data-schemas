@@ -31,10 +31,10 @@ export type PlanningPermissionApplication = ApplicationSpecification<
 export type PriorApprovalApplication = ApplicationSpecification<'pa', 'pa'>;
 // TODO: All granular types
 
-export type WorksToTreesApplications = BaseWTT | ConsentWTT | NoticeWTT;
-export type BaseWTT = ApplicationSpecification<'wtt', 'wtt'>;
-export type ConsentWTT = ApplicationSpecification<'wtt', 'wtt.consent'>;
-export type NoticeWTT = ApplicationSpecification<'wtt', 'wtt.notice'>;
+export type WorksToTreesApplications = ApplicationSpecification<
+  'wtt',
+  Extract<ApplicationTypeKeys, 'wtt' | 'wtt.consent' | 'wtt.notice'>
+>;
 
 /**
  * @title App
