@@ -18,7 +18,7 @@ interface ApplicationSpecification<
   applicationType: TGranular;
   data: {
     user: User<TPrimary>;
-    application: ApplicationData<TPrimary, TGranular>;
+    application: ApplicationData<TPrimary>;
   };
 }
 
@@ -56,7 +56,6 @@ export type App =
 //       wttSpecificProperty: true,
 //     },
 //     application: {
-//       applicationType: 'wtt.consent',
 //       wttSpecificProperty: 123,
 //       somethingShared: 'abc',
 //     },
