@@ -29,6 +29,9 @@ jobs:
       - name: Install Dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Cleanup old /@next folder
+        run: rm -rf @next/*
+
       - name: Build JSON schema files
         run: pnpm build
 
@@ -51,7 +54,7 @@ jobs:
       - name: Checkout Dist Branch
         run: |
           git fetch origin dist
-          git checkout -b dist origin/dist
+          git checkout -f dist
 
       - name: Commit and Push Changes
         run: |
