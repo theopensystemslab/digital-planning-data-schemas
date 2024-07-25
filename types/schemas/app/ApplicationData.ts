@@ -1,4 +1,4 @@
-import {PrimaryApplicationType} from '../digitalPlanningApplication/enums/ApplicationTypes';
+import {PrimaryApplicationType} from '../application/enums/ApplicationTypes';
 
 /**
  * Base type for ApplicationData. Contains all shared properties across all application types

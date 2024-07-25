@@ -1,4 +1,4 @@
-import {PrimaryApplicationType} from '../digitalPlanningApplication/enums/ApplicationTypes';
+import {PrimaryApplicationType} from '../application/enums/ApplicationTypes';
 
 export interface UserBase {
   role: 'applicant' | 'agent' | 'proxy';

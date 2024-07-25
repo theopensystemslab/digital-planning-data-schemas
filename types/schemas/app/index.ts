@@ -1,7 +1,7 @@
 import {
   ApplicationTypeKeys,
   PrimaryApplicationType,
-} from '../digitalPlanningApplication/enums/ApplicationTypes';
+} from '../application/enums/ApplicationTypes';
 import {ApplicationData} from './ApplicationData';
 import {User} from './User';
 
