@@ -1,9 +1,9 @@
-import {DigitalPlanningApplication} from '../../../types/schemas/digitalPlanningApplication';
-import {BaseProposal} from '../../../types/schemas/digitalPlanningApplication/data/Proposal';
+import {Application} from '../../../types/schemas/application';
+import {BaseProposal} from '../../../types/schemas/application/data/Proposal';
 
 const version = process.env['VERSION'] || '@next';
 
-export const landDrainageConsent: DigitalPlanningApplication = {
+export const landDrainageConsent: Application = {
   data: {
     user: {
       role: 'applicant',

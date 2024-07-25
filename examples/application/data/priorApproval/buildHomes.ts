@@ -1,8 +1,8 @@
-import {DigitalPlanningApplication} from '../../../../types/schemas/digitalPlanningApplication';
+import {Application} from '../../../../types/schemas/application';
 
 const version = process.env['VERSION'] || '@next';
 
-export const priorApprovalBuildHomes: DigitalPlanningApplication = {
+export const priorApprovalBuildHomes: Application = {
   data: {
     user: {
       role: 'applicant',

@@ -4,8 +4,8 @@ import * as path from 'path';
 import Ajv from 'ajv';
 import addFormats from 'ajv-formats';
 import {Schema, Validator} from 'jsonschema';
-import digitalPlanningApplicationSchema from '../schemas/digitalPlanningApplication.json';
-import {DigitalPlanningApplication} from '../types/schemas/digitalPlanningApplication/index';
+import applicationSchema from '../schemas/application.json';
+import {Application} from '../types/schemas/application';
 import {describe, test, expect} from 'vitest';
 
 /**
@@ -37,11 +37,9 @@ const getJSONExamples = <T>(schemaPath: string): T[] => {
 
 const schemas = [
   {
-    name: 'DigitalPlanningApplication',
-    schema: digitalPlanningApplicationSchema,
-    examples: getJSONExamples<DigitalPlanningApplication>(
-      'digitalPlanningApplication'
-    ),
+    name: 'Application',
+    schema: applicationSchema,
+    examples: getJSONExamples<Application>('application'),
   },
 ];
 

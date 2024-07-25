@@ -1,8 +1,8 @@
-import {DigitalPlanningApplication} from '../../../../types/schemas/digitalPlanningApplication';
+import { Application } from "../../../../types/schemas/application";
 
 const version = process.env['VERSION'] || '@next';
 
-export const planningPermissionFullHouseholderInConservationArea: DigitalPlanningApplication =
+export const planningPermissionFullHouseholderInConservationArea: Application =
   {
     data: {
       application: {
