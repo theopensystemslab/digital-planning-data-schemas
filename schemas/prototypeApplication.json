@@ -3,13 +3,13 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "anyOf": [
     {
-      "$ref": "#/definitions/PlanningPermissionApplication"
+      "$ref": "#/definitions/PPApplication"
     },
     {
-      "$ref": "#/definitions/PriorApprovalApplication"
+      "$ref": "#/definitions/PAApplication"
     },
     {
-      "$ref": "#/definitions/WorksToTreesApplications"
+      "$ref": "#/definitions/WTTApplication"
     }
   ],
   "definitions": {
@@ -26,80 +26,11 @@
       ],
       "type": "object"
     },
-    "PPApplicationData": {
-      "additionalProperties": false,
-      "description": "Specific ApplicationData required for \"Planning Permission\" applications",
-      "properties": {
-        "ppSpecificProperty": {
-          "type": "number"
-        },
-        "somethingShared": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "ppSpecificProperty",
-        "somethingShared"
-      ],
-      "type": "object"
-    },
-    "PPUser": {
-      "additionalProperties": false,
-      "properties": {
-        "ppSpecificProperty": {
-          "type": "boolean"
-        },
-        "role": {
-          "enum": [
-            "applicant",
-            "agent",
-            "proxy"
-          ],
-          "type": "string"
-        }
-      },
-      "required": [
-        "ppSpecificProperty",
-        "role"
-      ],
-      "type": "object"
-    },
-    "PlanningPermissionApplication": {
+    "PAApplication": {
       "additionalProperties": false,
       "properties": {
         "applicationType": {
-          "const": "pp",
-          "type": "string"
-        },
-        "data": {
-          "additionalProperties": false,
-          "properties": {
-            "application": {
-              "$ref": "#/definitions/PPApplicationData"
-            },
-            "user": {
-              "$ref": "#/definitions/PPUser"
-            }
-          },
-          "required": [
-            "user",
-            "application"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "applicationType",
-        "data"
-      ],
-      "type": "object"
-    },
-    "PriorApprovalApplication": {
-      "additionalProperties": false,
-      "properties": {
-        "applicationType": {
-          "const": "pa",
-          "type": "string"
+          "$ref": "#/definitions/PAApplicationType"
         },
         "data": {
           "additionalProperties": false,
@@ -124,6 +55,153 @@
       ],
       "type": "object"
     },
+    "PAApplicationType": {
+      "enum": [
+        "pa",
+        "pa.part1.classA",
+        "pa.part1.classAA",
+        "pa.part3.classG",
+        "pa.part3.classM",
+        "pa.part3.classMA",
+        "pa.part3.classN",
+        "pa.part3.classQ",
+        "pa.part3.classR",
+        "pa.part3.classS",
+        "pa.part3.classT",
+        "pa.part3.classV",
+        "pa.part4.classBB",
+        "pa.part4.classBC",
+        "pa.part4.classCA",
+        "pa.part4.classE",
+        "pa.part6",
+        "pa.part6.classA",
+        "pa.part6.classB",
+        "pa.part6.classE",
+        "pa.part7.classC",
+        "pa.part7.classM",
+        "pa.part9.classD",
+        "pa.part11.classB",
+        "pa.part14.classA",
+        "pa.part14.classB",
+        "pa.part14.classJ",
+        "pa.part14.classK",
+        "pa.part14.classOA",
+        "pa.part16.classA",
+        "pa.part17",
+        "pa.part17.classB",
+        "pa.part17.classC",
+        "pa.part17.classG",
+        "pa.part18.classA",
+        "pa.part19.classTA",
+        "pa.part20.classA",
+        "pa.part20.classAA",
+        "pa.part20.classAB",
+        "pa.part20.classAC",
+        "pa.part20.classAD",
+        "pa.part20.classZA"
+      ],
+      "type": "string"
+    },
+    "PPApplication": {
+      "additionalProperties": false,
+      "properties": {
+        "applicationType": {
+          "$ref": "#/definitions/PPApplicationType"
+        },
+        "data": {
+          "additionalProperties": false,
+          "properties": {
+            "application": {
+              "$ref": "#/definitions/PPApplicationData"
+            },
+            "user": {
+              "$ref": "#/definitions/PPUser"
+            }
+          },
+          "required": [
+            "user",
+            "application"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "applicationType",
+        "data"
+      ],
+      "type": "object"
+    },
+    "PPApplicationData": {
+      "additionalProperties": false,
+      "description": "Specific ApplicationData required for \"Planning Permission\" applications",
+      "properties": {
+        "ppSpecificProperty": {
+          "type": "number"
+        },
+        "somethingShared": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "ppSpecificProperty",
+        "somethingShared"
+      ],
+      "type": "object"
+    },
+    "PPApplicationType": {
+      "enum": [
+        "pp",
+        "pp.full",
+        "pp.full.advertConsent",
+        "pp.full.demolition",
+        "pp.full.fastTrack.affordable",
+        "pp.full.householder",
+        "pp.full.householder.listed",
+        "pp.full.householder.retro",
+        "pp.full.major",
+        "pp.full.major.technicalDetails",
+        "pp.full.major.technicalDetails.waste",
+        "pp.full.major.waste",
+        "pp.full.minor",
+        "pp.full.minor.listed",
+        "pp.full.minor.technicalDetails",
+        "pp.mineralExtraction",
+        "pp.outline",
+        "pp.outline.all",
+        "pp.outline.some",
+        "pp.outline.minor",
+        "pp.outline.minor.all",
+        "pp.outline.minor.some",
+        "pp.outline.major",
+        "pp.outline.major.all",
+        "pp.outline.major.all.waste",
+        "pp.outline.major.some",
+        "pp.outline.major.some.waste",
+        "pp.pip"
+      ],
+      "type": "string"
+    },
+    "PPUser": {
+      "additionalProperties": false,
+      "properties": {
+        "ppSpecificProperty": {
+          "type": "boolean"
+        },
+        "role": {
+          "enum": [
+            "applicant",
+            "agent",
+            "proxy"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "ppSpecificProperty",
+        "role"
+      ],
+      "type": "object"
+    },
     "UserBase": {
       "additionalProperties": false,
       "properties": {
@@ -141,54 +219,11 @@
       ],
       "type": "object"
     },
-    "WTTApplicationData": {
-      "additionalProperties": false,
-      "description": "Specific ApplicationData required for \"Works to trees\" applications",
-      "properties": {
-        "somethingShared": {
-          "type": "string"
-        },
-        "wttSpecificProperty": {
-          "type": "number"
-        }
-      },
-      "required": [
-        "somethingShared",
-        "wttSpecificProperty"
-      ],
-      "type": "object"
-    },
-    "WTTUser": {
-      "additionalProperties": false,
-      "properties": {
-        "role": {
-          "enum": [
-            "applicant",
-            "agent",
-            "proxy"
-          ],
-          "type": "string"
-        },
-        "wttSpecificProperty": {
-          "type": "boolean"
-        }
-      },
-      "required": [
-        "role",
-        "wttSpecificProperty"
-      ],
-      "type": "object"
-    },
-    "WorksToTreesApplications": {
+    "WTTApplication": {
       "additionalProperties": false,
       "properties": {
         "applicationType": {
-          "enum": [
-            "wtt",
-            "wtt.consent",
-            "wtt.notice"
-          ],
-          "type": "string"
+          "$ref": "#/definitions/WTTApplicationType"
         },
         "data": {
           "additionalProperties": false,
@@ -210,6 +245,53 @@
       "required": [
         "applicationType",
         "data"
+      ],
+      "type": "object"
+    },
+    "WTTApplicationData": {
+      "additionalProperties": false,
+      "description": "Specific ApplicationData required for \"Works to trees\" applications",
+      "properties": {
+        "somethingShared": {
+          "type": "string"
+        },
+        "wttSpecificProperty": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "somethingShared",
+        "wttSpecificProperty"
+      ],
+      "type": "object"
+    },
+    "WTTApplicationType": {
+      "description": "{\n  \"wtt\": \"Works to trees\",\n  \"wtt.consent\": \"Consent to carry out works to a tree with a Tree Preservation Order\",\n  \"wtt.notice\": \"Notification of proposed works to a tree in a Conservation Area\"\n}",
+      "enum": [
+        "wtt",
+        "wtt.consent",
+        "wtt.notice"
+      ],
+      "type": "string"
+    },
+    "WTTUser": {
+      "additionalProperties": false,
+      "properties": {
+        "role": {
+          "enum": [
+            "applicant",
+            "agent",
+            "proxy"
+          ],
+          "type": "string"
+        },
+        "wttSpecificProperty": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "role",
+        "wttSpecificProperty"
       ],
       "type": "object"
     }

@@ -180,10 +180,6 @@ type GenericApplicationType<TKey extends ApplicationTypeKeys> = {
   description: (typeof ApplicationTypes)[TKey];
 };
 
-type ExtractPrimaryKeys<T> = T extends `${infer K}.${string}` ? K : T;
-
-export type PrimaryApplicationType = ExtractPrimaryKeys<ApplicationTypeKeys>;
-
 type ApplicationTypeMap = {
   [K in ApplicationTypeKeys]: GenericApplicationType<K>;
 };

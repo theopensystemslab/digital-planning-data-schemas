@@ -1,4 +1,4 @@
-import {PrimaryApplicationType} from '../application/enums/ApplicationTypes';
+import {PrimaryApplicationType} from '../enums/ApplicationType';
 
 /**
  * Base type for ApplicationData. Contains all shared properties across all application types
