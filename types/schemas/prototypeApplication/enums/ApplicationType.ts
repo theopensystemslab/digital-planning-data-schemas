@@ -429,7 +429,7 @@ export type PPApplicationType =
    */
   | 'pp.outline.major.some.waste'
   /**
-   * @description 'Planning Permission in Principle - Consent for the principle of a project with less than 1000 square metres floor area on a site of less than 1 hectare
+   * @description Planning Permission in Principle - Consent for the principle of a project with less than 1000 square metres floor area on a site of less than 1 hectare
    */
   | 'pp.pip';
 
@@ -440,14 +440,21 @@ export type RightsOfWayOrderApplicationType =
   'rightsOfWayOrder';
 
 /**
- * @description
- * {
- *   "wtt": "Works to trees",
- *   "wtt.consent": "Consent to carry out works to a tree with a Tree Preservation Order",
- *   "wtt.notice": "Notification of proposed works to a tree in a Conservation Area"
- * }
+ * @description Works to trees
  */
-export type WTTApplicationType = 'wtt' | 'wtt.consent' | 'wtt.notice';
+type WTT = 'wtt';
+
+/**
+ * @description Consent to carry out works to a tree with a Tree Preservation Order
+ */
+type WTTConstent = 'wtt.consent';
+
+/**
+ * @description Notification of proposed works to a tree in a Conservation Area
+ */
+type WTTNotice = 'wtt.notice';
+
+export type WTTApplicationType = WTT | WTTConstent | WTTNotice;
 
 /**
  * @id #ApplicationType

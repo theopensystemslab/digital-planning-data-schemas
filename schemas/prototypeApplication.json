@@ -266,13 +266,23 @@
       "type": "object"
     },
     "WTTApplicationType": {
-      "description": "{\n  \"wtt\": \"Works to trees\",\n  \"wtt.consent\": \"Consent to carry out works to a tree with a Tree Preservation Order\",\n  \"wtt.notice\": \"Notification of proposed works to a tree in a Conservation Area\"\n}",
-      "enum": [
-        "wtt",
-        "wtt.consent",
-        "wtt.notice"
-      ],
-      "type": "string"
+      "anyOf": [
+        {
+          "const": "wtt",
+          "description": "Works to trees",
+          "type": "string"
+        },
+        {
+          "const": "wtt.consent",
+          "description": "Consent to carry out works to a tree with a Tree Preservation Order",
+          "type": "string"
+        },
+        {
+          "const": "wtt.notice",
+          "description": "Notification of proposed works to a tree in a Conservation Area",
+          "type": "string"
+        }
+      ]
     },
     "WTTUser": {
       "additionalProperties": false,
