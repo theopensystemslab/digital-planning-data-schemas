@@ -173,12 +173,16 @@ export const ApplicationTypes = {
     'Works to trees - Notification of proposed works to a tree in a Conservation Area',
 };
 
-type ApplicationTypeKeys = keyof typeof ApplicationTypes;
+export type ApplicationTypeKeys = keyof typeof ApplicationTypes;
 
 type GenericApplicationType<TKey extends ApplicationTypeKeys> = {
   value: TKey;
   description: (typeof ApplicationTypes)[TKey];
 };
+
+type ExtractPrimaryKeys<T> = T extends `${infer K}.${string}` ? K : T;
+
+export type PrimaryApplicationType = ExtractPrimaryKeys<ApplicationTypeKeys>;
 
 type ApplicationTypeMap = {
   [K in ApplicationTypeKeys]: GenericApplicationType<K>;
