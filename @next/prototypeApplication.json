@@ -1,0 +1,219 @@
+{
+  "$id": "@next",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "anyOf": [
+    {
+      "$ref": "#/definitions/PlanningPermissionApplication"
+    },
+    {
+      "$ref": "#/definitions/PriorApprovalApplication"
+    },
+    {
+      "$ref": "#/definitions/WorksToTreesApplications"
+    }
+  ],
+  "definitions": {
+    "ApplicationDataBase": {
+      "additionalProperties": false,
+      "description": "Base type for ApplicationData. Contains all shared properties across all application types",
+      "properties": {
+        "somethingShared": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "somethingShared"
+      ],
+      "type": "object"
+    },
+    "PPApplicationData": {
+      "additionalProperties": false,
+      "description": "Specific ApplicationData required for \"Planning Permission\" applications",
+      "properties": {
+        "ppSpecificProperty": {
+          "type": "number"
+        },
+        "somethingShared": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "ppSpecificProperty",
+        "somethingShared"
+      ],
+      "type": "object"
+    },
+    "PPUser": {
+      "additionalProperties": false,
+      "properties": {
+        "ppSpecificProperty": {
+          "type": "boolean"
+        },
+        "role": {
+          "enum": [
+            "applicant",
+            "agent",
+            "proxy"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "ppSpecificProperty",
+        "role"
+      ],
+      "type": "object"
+    },
+    "PlanningPermissionApplication": {
+      "additionalProperties": false,
+      "properties": {
+        "applicationType": {
+          "const": "pp",
+          "type": "string"
+        },
+        "data": {
+          "additionalProperties": false,
+          "properties": {
+            "application": {
+              "$ref": "#/definitions/PPApplicationData"
+            },
+            "user": {
+              "$ref": "#/definitions/PPUser"
+            }
+          },
+          "required": [
+            "user",
+            "application"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "applicationType",
+        "data"
+      ],
+      "type": "object"
+    },
+    "PriorApprovalApplication": {
+      "additionalProperties": false,
+      "properties": {
+        "applicationType": {
+          "const": "pa",
+          "type": "string"
+        },
+        "data": {
+          "additionalProperties": false,
+          "properties": {
+            "application": {
+              "$ref": "#/definitions/ApplicationDataBase"
+            },
+            "user": {
+              "$ref": "#/definitions/UserBase"
+            }
+          },
+          "required": [
+            "user",
+            "application"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "applicationType",
+        "data"
+      ],
+      "type": "object"
+    },
+    "UserBase": {
+      "additionalProperties": false,
+      "properties": {
+        "role": {
+          "enum": [
+            "applicant",
+            "agent",
+            "proxy"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "role"
+      ],
+      "type": "object"
+    },
+    "WTTApplicationData": {
+      "additionalProperties": false,
+      "description": "Specific ApplicationData required for \"Works to trees\" applications",
+      "properties": {
+        "somethingShared": {
+          "type": "string"
+        },
+        "wttSpecificProperty": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "somethingShared",
+        "wttSpecificProperty"
+      ],
+      "type": "object"
+    },
+    "WTTUser": {
+      "additionalProperties": false,
+      "properties": {
+        "role": {
+          "enum": [
+            "applicant",
+            "agent",
+            "proxy"
+          ],
+          "type": "string"
+        },
+        "wttSpecificProperty": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "role",
+        "wttSpecificProperty"
+      ],
+      "type": "object"
+    },
+    "WorksToTreesApplications": {
+      "additionalProperties": false,
+      "properties": {
+        "applicationType": {
+          "enum": [
+            "wtt",
+            "wtt.consent",
+            "wtt.notice"
+          ],
+          "type": "string"
+        },
+        "data": {
+          "additionalProperties": false,
+          "properties": {
+            "application": {
+              "$ref": "#/definitions/WTTApplicationData"
+            },
+            "user": {
+              "$ref": "#/definitions/WTTUser"
+            }
+          },
+          "required": [
+            "user",
+            "application"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "applicationType",
+        "data"
+      ],
+      "type": "object"
+    }
+  },
+  "description": "The root specification for a planning application in England generated by a digital planning service (prototype)",
+  "title": "PrototypeApplication"
+}
