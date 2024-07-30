@@ -56,51 +56,218 @@
       "type": "object"
     },
     "PAApplicationType": {
-      "enum": [
-        "pa",
-        "pa.part1.classA",
-        "pa.part1.classAA",
-        "pa.part3.classG",
-        "pa.part3.classM",
-        "pa.part3.classMA",
-        "pa.part3.classN",
-        "pa.part3.classQ",
-        "pa.part3.classR",
-        "pa.part3.classS",
-        "pa.part3.classT",
-        "pa.part3.classV",
-        "pa.part4.classBB",
-        "pa.part4.classBC",
-        "pa.part4.classCA",
-        "pa.part4.classE",
-        "pa.part6",
-        "pa.part6.classA",
-        "pa.part6.classB",
-        "pa.part6.classE",
-        "pa.part7.classC",
-        "pa.part7.classM",
-        "pa.part9.classD",
-        "pa.part11.classB",
-        "pa.part14.classA",
-        "pa.part14.classB",
-        "pa.part14.classJ",
-        "pa.part14.classK",
-        "pa.part14.classOA",
-        "pa.part16.classA",
-        "pa.part17",
-        "pa.part17.classB",
-        "pa.part17.classC",
-        "pa.part17.classG",
-        "pa.part18.classA",
-        "pa.part19.classTA",
-        "pa.part20.classA",
-        "pa.part20.classAA",
-        "pa.part20.classAB",
-        "pa.part20.classAC",
-        "pa.part20.classAD",
-        "pa.part20.classZA"
-      ],
-      "type": "string"
+      "anyOf": [
+        {
+          "const": "pa",
+          "description": "Prior Approval",
+          "type": "string"
+        },
+        {
+          "const": "pa.part1.classA",
+          "description": "Prior Approval - Larger extension to a house",
+          "type": "string"
+        },
+        {
+          "const": "pa.part1.classAA",
+          "description": "Prior Approval - Adding storeys to a house",
+          "type": "string"
+        },
+        {
+          "const": "pa.part3.classG",
+          "description": "Prior Approval - Convert a commercial building to mixed use",
+          "type": "string"
+        },
+        {
+          "const": "pa.part3.classM",
+          "description": "Prior Approval - Convert a mixed use building into a home",
+          "type": "string"
+        },
+        {
+          "const": "pa.part3.classMA",
+          "description": "Prior Approval - Convert a commercial building into a home or homes",
+          "type": "string"
+        },
+        {
+          "const": "pa.part3.classN",
+          "description": "Prior Approval - Convert a casino or amusement arcade into a home or homes",
+          "type": "string"
+        },
+        {
+          "const": "pa.part3.classQ",
+          "description": "Prior Approval - Convert an agricultural building into a home",
+          "type": "string"
+        },
+        {
+          "const": "pa.part3.classR",
+          "description": "Prior Approval - Convert an agricultural building to a commercial use",
+          "type": "string"
+        },
+        {
+          "const": "pa.part3.classS",
+          "description": "Prior Approval - Convert an agricultural building to a school",
+          "type": "string"
+        },
+        {
+          "const": "pa.part3.classT",
+          "description": "Prior Approval - Convert a commercial building to a school",
+          "type": "string"
+        },
+        {
+          "const": "pa.part3.classV",
+          "description": "Prior Approval - Changes of use permitted under a permission granted on an application",
+          "type": "string"
+        },
+        {
+          "const": "pa.part4.classBB",
+          "description": "Prior Approval - Put up a temporary structure",
+          "type": "string"
+        },
+        {
+          "const": "pa.part4.classBC",
+          "description": "Prior Approval - Develop a temporary campsite",
+          "type": "string"
+        },
+        {
+          "const": "pa.part4.classCA",
+          "description": "Prior Approval - Put temporary school buildings on vacant commercial land",
+          "type": "string"
+        },
+        {
+          "const": "pa.part4.classE",
+          "description": "Prior Approval - Use a building or land to shoot a film",
+          "type": "string"
+        },
+        {
+          "const": "pa.part6",
+          "description": "Prior Approval - Alter or add new buildings to agricultural or forestry sites",
+          "type": "string"
+        },
+        {
+          "const": "pa.part6.classA",
+          "description": "Prior Approval - Build new agricultural buildings on a unit of 5 hectares or more",
+          "type": "string"
+        },
+        {
+          "const": "pa.part6.classB",
+          "description": "Prior Approval - Build new agricultural buildings on a unit of less than 5 hectares",
+          "type": "string"
+        },
+        {
+          "const": "pa.part6.classE",
+          "description": "Prior Approval - Build new forestry buildings",
+          "type": "string"
+        },
+        {
+          "const": "pa.part7.classC",
+          "description": "Prior Approval - Install click and collect facilities",
+          "type": "string"
+        },
+        {
+          "const": "pa.part7.classM",
+          "description": "Prior Approval - Extend a school, college, university, prison or hospital",
+          "type": "string"
+        },
+        {
+          "const": "pa.part9.classD",
+          "description": "Prior Approval - Development of toll facilities",
+          "type": "string"
+        },
+        {
+          "const": "pa.part11.classB",
+          "description": "Prior Approval - Demolish a building",
+          "type": "string"
+        },
+        {
+          "const": "pa.part14.classA",
+          "description": "Prior Approval - Install or change solar equipment on domestic premises",
+          "type": "string"
+        },
+        {
+          "const": "pa.part14.classB",
+          "description": "Prior Approval - Install or change stand-alone solar equipment on domestic premises",
+          "type": "string"
+        },
+        {
+          "const": "pa.part14.classJ",
+          "description": "Prior Approval - Install or change solar panels",
+          "type": "string"
+        },
+        {
+          "const": "pa.part14.classK",
+          "description": "Prior Approval - Install or change stand-alone solar equipment on non-domestic premises",
+          "type": "string"
+        },
+        {
+          "const": "pa.part14.classOA",
+          "description": "Prior Approval - Installation of a solar canopy on non-domestic, off-street parking",
+          "type": "string"
+        },
+        {
+          "const": "pa.part16.classA",
+          "description": "Prior Approval - Install telecommunications equipment",
+          "type": "string"
+        },
+        {
+          "const": "pa.part17",
+          "description": "Prior Approval - Coal mining",
+          "type": "string"
+        },
+        {
+          "const": "pa.part17.classB",
+          "description": "Prior Approval - Other developments ancillary to mining operations",
+          "type": "string"
+        },
+        {
+          "const": "pa.part17.classC",
+          "description": "Prior Approval - Developments for maintenance or safety",
+          "type": "string"
+        },
+        {
+          "const": "pa.part17.classG",
+          "description": "Prior Approval - Coal mining development by the Coal Authority for maintenance or safety",
+          "type": "string"
+        },
+        {
+          "const": "pa.part18.classA",
+          "description": "Prior Approval - Development under private acts or orders",
+          "type": "string"
+        },
+        {
+          "const": "pa.part19.classTA",
+          "description": "Prior Approval - Development on a closed defence site",
+          "type": "string"
+        },
+        {
+          "const": "pa.part20.classA",
+          "description": "Prior Approval - Build homes on a detached blocks of flats",
+          "type": "string"
+        },
+        {
+          "const": "pa.part20.classAA",
+          "description": "Prior Approval - Build homes on a detached commercial building",
+          "type": "string"
+        },
+        {
+          "const": "pa.part20.classAB",
+          "description": "Prior Approval - Build homes on an adjoining commercial or mixed use building",
+          "type": "string"
+        },
+        {
+          "const": "pa.part20.classAC",
+          "description": "Prior Approval - Build homes on adjoining houses",
+          "type": "string"
+        },
+        {
+          "const": "pa.part20.classAD",
+          "description": "Prior Approval - Build homes on detached houses",
+          "type": "string"
+        },
+        {
+          "const": "pa.part20.classZA",
+          "description": "Prior Approval - Demolish buildings and build homes in their place",
+          "type": "string"
+        }
+      ]
     },
     "PPApplication": {
       "additionalProperties": false,
@@ -149,37 +316,148 @@
       "type": "object"
     },
     "PPApplicationType": {
-      "enum": [
-        "pp",
-        "pp.full",
-        "pp.full.advertConsent",
-        "pp.full.demolition",
-        "pp.full.fastTrack.affordable",
-        "pp.full.householder",
-        "pp.full.householder.listed",
-        "pp.full.householder.retro",
-        "pp.full.major",
-        "pp.full.major.technicalDetails",
-        "pp.full.major.technicalDetails.waste",
-        "pp.full.major.waste",
-        "pp.full.minor",
-        "pp.full.minor.listed",
-        "pp.full.minor.technicalDetails",
-        "pp.mineralExtraction",
-        "pp.outline",
-        "pp.outline.all",
-        "pp.outline.some",
-        "pp.outline.minor",
-        "pp.outline.minor.all",
-        "pp.outline.minor.some",
-        "pp.outline.major",
-        "pp.outline.major.all",
-        "pp.outline.major.all.waste",
-        "pp.outline.major.some",
-        "pp.outline.major.some.waste",
-        "pp.pip"
-      ],
-      "type": "string"
+      "anyOf": [
+        {
+          "const": "pp",
+          "description": "Planning Permission",
+          "type": "string"
+        },
+        {
+          "const": "pp.full",
+          "description": "Planning Permission for development, including all householder, minor, and major applications",
+          "type": "string"
+        },
+        {
+          "const": "pp.full.advertConsent",
+          "description": "Full Planning Permission and consent to display an advert",
+          "type": "string"
+        },
+        {
+          "const": "pp.full.demolition",
+          "description": "Full Planning Permission including demolition in a Conservation Area",
+          "type": "string"
+        },
+        {
+          "const": "pp.full.fastTrack.affordable",
+          "description": "Full Planning Permission - Fast track for the purposes of Affordable Housing",
+          "type": "string"
+        },
+        {
+          "const": "pp.full.householder",
+          "description": "Planning Permission - Full householder",
+          "type": "string"
+        },
+        {
+          "const": "pp.full.householder.listed",
+          "description": "Planning Permission - Full householder with consent to do works to a Listed Building",
+          "type": "string"
+        },
+        {
+          "const": "pp.full.householder.retro",
+          "description": "Planning Permission - Full householder retrospective",
+          "type": "string"
+        },
+        {
+          "const": "pp.full.major",
+          "description": "Planning Permission - Major application",
+          "type": "string"
+        },
+        {
+          "const": "pp.full.major.technicalDetails",
+          "description": "Planning Permission - Technical details consent for major development",
+          "type": "string"
+        },
+        {
+          "const": "pp.full.major.technicalDetails.waste",
+          "description": "Planning Permission - Technical details consent for waste development",
+          "type": "string"
+        },
+        {
+          "const": "pp.full.major.waste",
+          "description": "Planning Permission - Full planning permission for waste development",
+          "type": "string"
+        },
+        {
+          "const": "pp.full.minor",
+          "description": "Planning Permission - Minor application",
+          "type": "string"
+        },
+        {
+          "const": "pp.full.minor.listed",
+          "description": "Planning Permission - Minor application and consent to do works to a Listed Building",
+          "type": "string"
+        },
+        {
+          "const": "pp.full.minor.technicalDetails",
+          "description": "Planning Permission - Technical details consent for minor development",
+          "type": "string"
+        },
+        {
+          "const": "pp.mineralExtraction",
+          "description": "Planning Permission - Consent to extract minerals and related development, such as temporary buildings and roads",
+          "type": "string"
+        },
+        {
+          "const": "pp.outline",
+          "description": "Planning permission - Outline for proposed development",
+          "type": "string"
+        },
+        {
+          "const": "pp.outline.all",
+          "description": "Outline Planning Permission - Consent for the principle of a project witholding all details",
+          "type": "string"
+        },
+        {
+          "const": "pp.outline.some",
+          "description": "Outline Planning Permission - Consent for the principle of a project specifying some details",
+          "type": "string"
+        },
+        {
+          "const": "pp.outline.minor",
+          "description": "Planning permission - Outline for proposed development (minor)",
+          "type": "string"
+        },
+        {
+          "const": "pp.outline.minor.all",
+          "description": "Outline Planning Permission - Consent for the principle of a project witholding all details (minor)",
+          "type": "string"
+        },
+        {
+          "const": "pp.outline.minor.some",
+          "description": "Outline Planning Permission - Consent for the principle of a project specifying some details (minor)",
+          "type": "string"
+        },
+        {
+          "const": "pp.outline.major",
+          "description": "Planning permission - Outline for proposed development (major)",
+          "type": "string"
+        },
+        {
+          "const": "pp.outline.major.all",
+          "description": "Outline Planning Permission - Consent for the principle of a project witholding all details (major)",
+          "type": "string"
+        },
+        {
+          "const": "pp.outline.major.all.waste",
+          "description": "Outline Planning Permission - Consent for the principle of waste development witholding all details",
+          "type": "string"
+        },
+        {
+          "const": "pp.outline.major.some",
+          "description": "Outline Planning Permission - Consent for the principle of a project specifying some details (major)",
+          "type": "string"
+        },
+        {
+          "const": "pp.outline.major.some.waste",
+          "description": "Outline Planning Permission - Consent for the principle of waste development witholding all details",
+          "type": "string"
+        },
+        {
+          "const": "pp.pip",
+          "description": "Planning Permission in Principle - Consent for the principle of a project with less than 1000 square metres floor area on a site of less than 1 hectare",
+          "type": "string"
+        }
+      ]
     },
     "PPUser": {
       "additionalProperties": false,
