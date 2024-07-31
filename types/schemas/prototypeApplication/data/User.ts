@@ -1,4 +1,4 @@
-import {PrimaryApplicationType} from '../application/enums/ApplicationTypes';
+import {PrimaryApplicationType} from '../enums/ApplicationType';
 
 export interface UserBase {
   role: 'applicant' | 'agent' | 'proxy';
