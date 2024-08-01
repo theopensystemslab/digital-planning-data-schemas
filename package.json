@@ -18,7 +18,7 @@
   "license": "MPL2",
   "devDependencies": {
     "@types/geojson": "^7946.0.14",
-    "@types/node": "18.16.1",
+    "@types/node": "22.0.2",
     "gts": "^5.3.1",
     "husky": "^8.0.0",
     "jsonschema": "^1.4.1",
