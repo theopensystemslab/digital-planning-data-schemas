@@ -1,4 +1,5 @@
 import {ApplicationData} from './data/ApplicationData';
+import {ProposalBase} from './data/Proposal';
 import {User} from './data/User';
 import {
   ApplicationType,
@@ -22,6 +23,7 @@ interface ApplicationSpecification<
   data: {
     user: User<TPrimary>;
     application: ApplicationData<TPrimary>;
+    proposal: ProposalBase;
   };
 }
 

@@ -26,6 +26,37 @@
       ],
       "type": "object"
     },
+    "OpenSpaceDesignation": {
+      "$id": "#OpenSpaceDesignation",
+      "anyOf": [
+        {
+          "const": "greenBelt",
+          "description": "Green Belt",
+          "type": "string"
+        },
+        {
+          "const": "local",
+          "description": "Local Open Spaces",
+          "type": "string"
+        },
+        {
+          "const": "metropolitan",
+          "description": "Metropolitan Open Land",
+          "type": "string"
+        },
+        {
+          "const": "none",
+          "description": "Not designated",
+          "type": "string"
+        },
+        {
+          "const": "other",
+          "description": "Other designation",
+          "type": "string"
+        }
+      ],
+      "description": "Designations of natural open spaces"
+    },
     "PAApplication": {
       "additionalProperties": false,
       "properties": {
@@ -38,13 +69,17 @@
             "application": {
               "$ref": "#/definitions/ApplicationDataBase"
             },
+            "proposal": {
+              "$ref": "#/definitions/ProposalBase"
+            },
             "user": {
               "$ref": "#/definitions/UserBase"
             }
           },
           "required": [
             "user",
-            "application"
+            "application",
+            "proposal"
           ],
           "type": "object"
         }
@@ -281,13 +316,17 @@
             "application": {
               "$ref": "#/definitions/PPApplicationData"
             },
+            "proposal": {
+              "$ref": "#/definitions/ProposalBase"
+            },
             "user": {
               "$ref": "#/definitions/PPUser"
             }
           },
           "required": [
             "user",
-            "application"
+            "application",
+            "proposal"
           ],
           "type": "object"
         }
@@ -480,6 +519,30 @@
       ],
       "type": "object"
     },
+    "ProposalBase": {
+      "additionalProperties": false,
+      "properties": {
+        "nature": {
+          "additionalProperties": false,
+          "properties": {
+            "openSpaces": {
+              "additionalProperties": false,
+              "properties": {
+                "designation": {
+                  "$ref": "#/definitions/OpenSpaceDesignation"
+                }
+              },
+              "required": [
+                "designation"
+              ],
+              "type": "object"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "UserBase": {
       "additionalProperties": false,
       "properties": {
@@ -509,13 +572,17 @@
             "application": {
               "$ref": "#/definitions/WTTApplicationData"
             },
+            "proposal": {
+              "$ref": "#/definitions/ProposalBase"
+            },
             "user": {
               "$ref": "#/definitions/WTTUser"
             }
           },
           "required": [
             "user",
-            "application"
+            "application",
+            "proposal"
           ],
           "type": "object"
         }
