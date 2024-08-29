@@ -8,10 +8,17 @@ export interface ApplicationDataBase {
 }
 
 /**
- * @description Specific ApplicationData required for "Works to trees" applications
+ * @description Specific ApplicationData required for "Lawful Development Certificate" applications
  */
-export interface WTTApplicationData extends ApplicationDataBase {
-  wttSpecificProperty: number;
+export interface LDCApplicationData extends ApplicationDataBase {
+  ldcSpecificProperty: number;
+}
+
+/**
+ * @description Specific ApplicationData required for "Prior Approval" applications
+ */
+export interface PAApplicationData extends ApplicationDataBase {
+  paSpecificProperty: number;
 }
 
 /**
@@ -25,7 +32,8 @@ export interface PPApplicationData extends ApplicationDataBase {
  * TypeMap of PrimaryApplicationTypes to their specific ApplicationData models
  */
 export interface ApplicationDataVariants {
-  wtt: WTTApplicationData;
+  ldc: LDCApplicationData;
+  pa: PAApplicationData;
   pp: PPApplicationData;
 }
 
