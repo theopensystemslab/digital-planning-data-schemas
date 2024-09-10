@@ -128,13 +128,6 @@
           ],
           "type": "object"
         },
-        "role": {
-          "enum": [
-            "agent",
-            "proxy"
-          ],
-          "type": "string"
-        },
         "siteContact": {
           "$ref": "#/definitions/SiteContact",
           "description": "Contact information for the site visit"
@@ -156,7 +149,6 @@
         "email",
         "name",
         "phone",
-        "role",
         "siteContact",
         "type"
       ],
@@ -279,10 +271,6 @@
           ],
           "type": "object"
         },
-        "role": {
-          "$ref": "#/definitions/UserRoles",
-          "description": "The role of the user who completed the application"
-        },
         "siteContact": {
           "$ref": "#/definitions/SiteContact",
           "description": "Contact information for the site visit"
@@ -303,7 +291,6 @@
         "email",
         "name",
         "phone",
-        "role",
         "siteContact",
         "type"
       ],
@@ -389,13 +376,21 @@
             "application": {
               "$ref": "#/definitions/LDCApplicationData"
             },
+            "property": {
+              "$ref": "#/definitions/PropertyBase"
+            },
             "proposal": {
               "$ref": "#/definitions/ProposalBase"
+            },
+            "user": {
+              "$ref": "#/definitions/UserBase"
             }
           },
           "required": [
+            "user",
             "applicant",
             "application",
+            "property",
             "proposal"
           ],
           "type": "object"
@@ -489,10 +484,6 @@
               ],
               "type": "object"
             },
-            "role": {
-              "$ref": "#/definitions/UserRoles",
-              "description": "The role of the user who completed the application"
-            },
             "siteContact": {
               "$ref": "#/definitions/SiteContact",
               "description": "Contact information for the site visit"
@@ -514,7 +505,6 @@
             "name",
             "ownership",
             "phone",
-            "role",
             "siteContact",
             "type"
           ],
@@ -662,13 +652,6 @@
               ],
               "type": "object"
             },
-            "role": {
-              "enum": [
-                "agent",
-                "proxy"
-              ],
-              "type": "string"
-            },
             "siteContact": {
               "$ref": "#/definitions/SiteContact",
               "description": "Contact information for the site visit"
@@ -691,7 +674,6 @@
             "name",
             "ownership",
             "phone",
-            "role",
             "siteContact",
             "type"
           ],
@@ -772,37 +754,6 @@
         "type": "object"
       },
       "type": "array"
-    },
-    "OpenSpaceDesignation": {
-      "$id": "#OpenSpaceDesignation",
-      "anyOf": [
-        {
-          "const": "greenBelt",
-          "description": "Green Belt",
-          "type": "string"
-        },
-        {
-          "const": "local",
-          "description": "Local Open Spaces",
-          "type": "string"
-        },
-        {
-          "const": "metropolitan",
-          "description": "Metropolitan Open Land",
-          "type": "string"
-        },
-        {
-          "const": "none",
-          "description": "Not designated",
-          "type": "string"
-        },
-        {
-          "const": "other",
-          "description": "Other designation",
-          "type": "string"
-        }
-      ],
-      "description": "Designations of natural open spaces"
     },
     "OwnersNoNoticeGiven": {
       "additionalProperties": false,
@@ -924,13 +875,21 @@
             "application": {
               "$ref": "#/definitions/PAApplicationData"
             },
+            "property": {
+              "$ref": "#/definitions/PropertyBase"
+            },
             "proposal": {
               "$ref": "#/definitions/ProposalBase"
+            },
+            "user": {
+              "$ref": "#/definitions/UserBase"
             }
           },
           "required": [
+            "user",
             "applicant",
             "application",
+            "property",
             "proposal"
           ],
           "type": "object"
@@ -1188,13 +1147,21 @@
             "application": {
               "$ref": "#/definitions/PPApplicationData"
             },
+            "property": {
+              "$ref": "#/definitions/PropertyBase"
+            },
             "proposal": {
               "$ref": "#/definitions/ProposalBase"
+            },
+            "user": {
+              "$ref": "#/definitions/UserBase"
             }
           },
           "required": [
+            "user",
             "applicant",
             "application",
+            "property",
             "proposal"
           ],
           "type": "object"
@@ -1360,10 +1327,6 @@
               ],
               "type": "object"
             },
-            "role": {
-              "$ref": "#/definitions/UserRoles",
-              "description": "The role of the user who completed the application"
-            },
             "siteContact": {
               "$ref": "#/definitions/SiteContact",
               "description": "Contact information for the site visit"
@@ -1385,7 +1348,6 @@
             "name",
             "ownership",
             "phone",
-            "role",
             "siteContact",
             "type"
           ],
@@ -1605,13 +1567,6 @@
               ],
               "type": "object"
             },
-            "role": {
-              "enum": [
-                "agent",
-                "proxy"
-              ],
-              "type": "string"
-            },
             "siteContact": {
               "$ref": "#/definitions/SiteContact",
               "description": "Contact information for the site visit"
@@ -1634,7 +1589,6 @@
             "name",
             "ownership",
             "phone",
-            "role",
             "siteContact",
             "type"
           ],
@@ -1803,28 +1757,28 @@
         }
       ]
     },
+    "PropertyBase": {
+      "additionalProperties": false,
+      "properties": {
+        "test": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "test"
+      ],
+      "type": "object"
+    },
     "ProposalBase": {
       "additionalProperties": false,
       "properties": {
-        "nature": {
-          "additionalProperties": false,
-          "properties": {
-            "openSpaces": {
-              "additionalProperties": false,
-              "properties": {
-                "designation": {
-                  "$ref": "#/definitions/OpenSpaceDesignation"
-                }
-              },
-              "required": [
-                "designation"
-              ],
-              "type": "object"
-            }
-          },
-          "type": "object"
+        "test": {
+          "type": "string"
         }
       },
+      "required": [
+        "test"
+      ],
       "type": "object"
     },
     "SiteContact": {
@@ -1900,6 +1854,19 @@
       ],
       "type": "object"
     },
+    "UserBase": {
+      "additionalProperties": false,
+      "properties": {
+        "role": {
+          "$ref": "#/definitions/UserRoles",
+          "description": "The role of the user who completed the application"
+        }
+      },
+      "required": [
+        "role"
+      ],
+      "type": "object"
+    },
     "UserRoles": {
       "enum": [
         "applicant",
@@ -1909,6 +1876,6 @@
       "type": "string"
     }
   },
-  "description": "The root specification for a planning application in England generated by a digital planning service (prototype)",
+  "description": "The (prototype) root specification for a planning application in England generated by a digital planning service",
   "title": "PrototypeApplication"
 }

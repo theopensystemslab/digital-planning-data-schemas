@@ -1,13 +1,10 @@
 import {Date, Email} from '../../../shared/utils';
 import {PrimaryApplicationType} from '../enums/ApplicationType';
+import {UserRoles} from './User';
 
 export type ApplicantBase = BaseApplicant | Agent;
 
 export type BaseApplicant = ContactDetails & {
-  /**
-   * @description The role of the user who completed the application
-   */
-  role: UserRoles;
   /**
    * @Description The type of applicant
    */
@@ -23,14 +20,11 @@ export type BaseApplicant = ContactDetails & {
 };
 
 export interface Agent extends BaseApplicant {
-  role: Extract<UserRoles, 'agent' | 'proxy'>;
   /**
    * @description Contact information for the agent or proxy
    */
   agent: ContactDetails & {address: UserAddress};
 }
-
-export type UserRoles = 'applicant' | 'agent' | 'proxy';
 
 export type SiteContact = {role: UserRoles} | SiteContactOther;
 
