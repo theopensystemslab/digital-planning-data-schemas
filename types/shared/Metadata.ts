@@ -1,6 +1,6 @@
-import {FileType} from './enums/FileTypes';
-import {DateTime, URL, UUID} from '../../shared/utils';
+import {FileType} from '../schemas/application/enums/FileTypes';
 import {QuestionMetaData} from './Responses';
+import {DateTime, URL, UUID} from './utils';
 
 /**
  * @id #DigitalPlanningMetadata

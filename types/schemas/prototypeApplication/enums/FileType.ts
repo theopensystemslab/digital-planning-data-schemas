@@ -500,11 +500,12 @@ type WasteStorageDetails = 'wasteStorageDetails';
  */
 type WaterEnvironmentAssessment = 'waterEnvironmentAssessment';
 
+// @todo rename exported type when PrototypeApplication replaces Application
 /**
  * @id #FileType
  * @description Types of planning documents and drawings
  */
-export type FileType =
+export type PrototypeFileType =
   | AccessRoadsRightsOfWayDetails
   | AffordableHousingStatement
   | ArboriculturistReport

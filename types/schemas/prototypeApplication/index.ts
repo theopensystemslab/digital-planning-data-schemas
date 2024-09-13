@@ -1,3 +1,5 @@
+import {Metadata} from '../../shared/Metadata';
+import {Responses} from '../../shared/Responses';
 import {Applicant} from './data/Applicant';
 import {ApplicationData} from './data/ApplicationData';
 import {PropertyBase} from './data/Property';
@@ -10,6 +12,8 @@ import {
   PPApplicationType,
   PrimaryApplicationType,
 } from './enums/ApplicationType';
+import {File} from './File';
+import {PreAssessment} from './PreAssessment';
 
 /**
  * @internal
@@ -29,6 +33,10 @@ interface ApplicationSpecification<
     property: PropertyBase;
     proposal: ProposalBase;
   };
+  preAssessment?: PreAssessment;
+  responses: Responses;
+  files: File[];
+  metadata: Metadata;
 }
 
 export type LDC = ApplicationSpecification<'ldc', LDCApplicationType>;

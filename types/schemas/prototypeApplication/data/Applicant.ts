@@ -101,10 +101,12 @@ export type LDCApplicant = ApplicantBase & {
   /**
    * @description Information about the propery owners, if different than the applicant
    */
-  ownership: {
-    interest: OwnershipInterest;
-    owners: (OwnersNoticeGiven | OwnersNoNoticeGiven)[];
-  };
+  ownership:
+    | {interest: Extract<OwnershipInterest, 'owner'>}
+    | {
+        interest: OwnershipInterest; // `Exclude<OwnershipInterest, "owner">` ? But I think you can be co owner & report other owners?
+        owners: (OwnersNoticeGiven | OwnersNoNoticeGiven)[];
+      };
 };
 
 export type PPApplicant = ApplicantBase & {
