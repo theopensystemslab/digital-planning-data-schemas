@@ -1,4 +1,4 @@
-import { PrototypeApplication } from '../../../../types/schemas/prototypeApplication';
+import {PrototypeApplication} from '../../../../types/schemas/prototypeApplication';
 
 const version = process.env['VERSION'] || '@next';
 
@@ -35,20 +35,20 @@ export const planningPermissionMajorPrototype: PrototypeApplication = {
         certificate: 'b',
         noticeGiven: true,
         ownersKnown: 'all',
-        owners: [
-          {
-            name: 'Agamemnon Agricullen',
-            address: {
-              town: 'Mycenae',
-              line1: 'Aggy Avenue',
-              line2: '',
-              county: '',
-              country: 'Greece',
-              postcode: '212 00',
-            },
-            noticeGiven: true,
-          },
-        ],
+        // owners: [
+        //   {
+        //     name: 'Agamemnon Agricullen',
+        //     address: {
+        //       town: 'Mycenae',
+        //       line1: 'Aggy Avenue',
+        //       line2: '',
+        //       county: '',
+        //       country: 'Greece',
+        //       postcode: '212 00',
+        //     },
+        //     noticeGiven: true,
+        //   },
+        // ],
         declaration: {
           accurate: true,
         },
@@ -86,7 +86,7 @@ export const planningPermissionMajorPrototype: PrototypeApplication = {
       },
       localAuthorityDistrict: ['Buckinghamshire', 'South Bucks'],
       region: 'South East',
-      type:'other.unsupported',
+      type: 'other.unsupported',
       // use: {
       //   description: 'Vacant brownfield',
       // },
@@ -301,24 +301,10 @@ export const planningPermissionMajorPrototype: PrototypeApplication = {
         payable: 2535,
         category: {
           one: 578,
-          two: 0,
-          three: 0,
-          four: 0,
-          five: 0,
-          sixAndSeven: 0,
           eight: 293,
-          nine: 0,
-          ten: 0,
           eleven: {
-            one: 0,
             two: 2535,
           },
-          twelve: {
-            one: 0,
-            two: 0,
-          },
-          thirteen: 0,
-          fourteen: 0,
         },
         exemption: {
           disability: false,
@@ -330,7 +316,7 @@ export const planningPermissionMajorPrototype: PrototypeApplication = {
           alternative: false,
         },
         reference: {
-          govPay: 'oo7f1o1emrimo39j5tsg9utjge',
+          govPay: 'sandbox-456',
         },
       },
       declaration: {
@@ -347,7 +333,11 @@ export const planningPermissionMajorPrototype: PrototypeApplication = {
       },
     },
     proposal: {
-      projectType: ['new.residential.dwelling','alter.surfaces.parking','alter.highways.access'],
+      projectType: [
+        'new.residential.dwelling',
+        'alter.surfaces.parking',
+        'alter.highways.access',
+      ],
       description:
         'The erection of 25 private dwellinghouses and associated infrastructure on vacant brownfield site',
       boundary: {

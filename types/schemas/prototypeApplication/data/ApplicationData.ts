@@ -1,4 +1,5 @@
 import {PrimaryApplicationType} from '../enums/ApplicationType';
+import {Date} from '../../../shared/utils';
 
 /**
  * Base type for ApplicationData. Contains all shared properties across all application types

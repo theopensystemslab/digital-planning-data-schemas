@@ -6730,8 +6730,7 @@
       "description": "Details of the planning application linked to this application, if applicable",
       "properties": {
         "date": {
-          "format": "date-time",
-          "type": "string"
+          "$ref": "#/definitions/Date"
         },
         "localPlanningAuthority": {
           "type": "string"
@@ -7190,8 +7189,7 @@
       "description": "Details of the pre-application preceeding this application, if applicable",
       "properties": {
         "date": {
-          "format": "date-time",
-          "type": "string"
+          "$ref": "#/definitions/Date"
         },
         "officer": {
           "type": "string"
