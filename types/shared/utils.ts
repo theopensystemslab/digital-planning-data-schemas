@@ -35,3 +35,8 @@ export type Area = {
   squareMetres: number;
   hectares?: number;
 };
+
+/**
+ * @format integer
+ */
+export type Integer = number;

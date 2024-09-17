@@ -78,7 +78,20 @@ export interface LondonProperty extends UKProperty {
       | 'No';
     number?: string;
   };
+  parking?: {
+    cars?: ExistingCount;
+    vans?: ExistingCount;
+    motorcycles?: ExistingCount;
+    cycles?: ExistingCount;
+    buses?: ExistingCount;
+    disabled?: ExistingCount;
+    carClub?: ExistingCount;
+    offStreet?: {residential: ExistingCount};
+    other?: ExistingCount;
+  };
 }
+
+type ExistingCount = {count: number};
 
 /**
  * @description Address information available for any site, whether existing or proposed

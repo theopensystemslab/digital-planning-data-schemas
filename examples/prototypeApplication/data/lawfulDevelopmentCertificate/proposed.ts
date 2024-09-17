@@ -182,7 +182,41 @@ export const lawfulDevelopmentCertificateProposedPrototype: PrototypeApplication
         type: 'residential.dwelling.house.detached',
       },
       proposal: {
-        test: 'todo',
+        projectType: ['extend.rear'],
+        description: 'Rear extension of a home',
+        boundary: {
+          site: {
+            type: 'Feature',
+            geometry: {
+              type: 'Polygon',
+              coordinates: [
+                [
+                  [-0.646633654832832, 51.61556919642334],
+                  [-0.6466296315193095, 51.61554504700152],
+                  [-0.6465049088001171, 51.61551173743314],
+                  [-0.6464512646198194, 51.61522027766699],
+                  [-0.6463131308555524, 51.61522943785954],
+                  [-0.6463037431240002, 51.61520695374722],
+                  [-0.6462487578391951, 51.615222775901515],
+                  [-0.6462393701076429, 51.61520861923739],
+                  [-0.6459456682205124, 51.615292726412235],
+                  [-0.6460489332675857, 51.61561499701554],
+                  [-0.646633654832832, 51.61556919642334],
+                ],
+              ],
+            },
+            properties: null,
+          },
+          area: {
+            hectares: 0.141826,
+            squareMetres: 1418.26,
+          },
+        },
+        extend: {
+          area: {
+            squareMetres: 24,
+          },
+        },
       },
     },
     preAssessment: [

@@ -14,7 +14,8 @@ export type Materials = {
   other?: string;
 };
 
-export type GeoBoundary = {
+// TODO - Rename when prototype application replaces application
+export type GeoBoundaryPrototype = {
   site: GeoJSON;
   area: Area;
 };
