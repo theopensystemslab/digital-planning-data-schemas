@@ -45,7 +45,10 @@ export type LDC = ApplicationSpecification<'ldc', LDCApplicationType>;
 export type PA = ApplicationSpecification<'pa', PAApplicationType>;
 export type PP = ApplicationSpecification<'pp', PPApplicationType>;
 export type Listed = ApplicationSpecification<'listed', ListedApplicationType>;
-export type LandDrainageConsent = ApplicationSpecification<'landDrainageConsent', LandDrainageConsentApplicationType>;
+export type LandDrainageConsent = ApplicationSpecification<
+  'landDrainageConsent',
+  LandDrainageConsentApplicationType
+>;
 // TODO: All the rest!
 
 /**

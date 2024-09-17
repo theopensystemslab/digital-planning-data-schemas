@@ -185,21 +185,21 @@ export interface LondonApplicationData extends UKApplicationData {
  */
 export type FeeCarryingApplicationData = ApplicationDataBase & {
   fee: ApplicationFee;
-}
+};
 
 /**
- * @description ApplicationData required for application types that do not have a fee 
+ * @description ApplicationData required for application types that do not have a fee
  */
 export type NonFeeCarryingApplicationData = ApplicationDataBase & {
   fee: ApplicationFeeNotApplicable;
-}
+};
 
 /**
  * @description Specific ApplicationData required for "Planning Permission" applications
  */
 export type PPApplicationData = FeeCarryingApplicationData & {
   CIL?: CommunityInfrastructureLevy;
-}
+};
 
 /**
  * TypeMap of PrimaryApplicationTypes to their specific ApplicationData models

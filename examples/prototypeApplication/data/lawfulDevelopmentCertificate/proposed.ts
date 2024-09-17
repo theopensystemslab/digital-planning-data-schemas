@@ -7,8 +7,28 @@ export const lawfulDevelopmentCertificateProposedPrototype: PrototypeApplication
     applicationType: 'ldc.proposed',
     data: {
       application: {
-        somethingShared: 'test',
-        ldcSpecificProperty: 1,
+        fee: {
+          calculated: 129,
+          payable: 0,
+          category: {
+            sixAndSeven: 129,
+          },
+          exemption: {
+            disability: true,
+            resubmission: true,
+          },
+          reduction: {
+            sports: false,
+            parishCouncil: false,
+            alternative: false,
+          },
+        },
+        declaration: {
+          accurate: true,
+          connection: {
+            value: 'none',
+          },
+        },
       },
       user: {
         role: 'applicant',
