@@ -174,7 +174,7 @@ type BasePlanningDesignation =
  */
 type NonIntersectingPlanningDesignation = {
   intersects: false;
-} & {designation: BasePlanningDesignation};
+} & {value: BasePlanningDesignation};
 
 /**
  * @description A planning designation that does intersect with the proposed site, per the DE-9IM spatial relationship definition of intersects
@@ -182,7 +182,7 @@ type NonIntersectingPlanningDesignation = {
 type IntersectingPlanningDesignation = {
   intersects: true;
   entities?: Entity[];
-} & {designation: BasePlanningDesignation};
+} & {value: BasePlanningDesignation};
 
 /**
  * @id #PlanningDesignation

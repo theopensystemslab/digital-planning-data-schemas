@@ -7,8 +7,31 @@ export const lawfulDevelopmentCertificateExistingPrototype: PrototypeApplication
     applicationType: 'ldc.existing',
     data: {
       application: {
-        somethingShared: 'test',
-        ldcSpecificProperty: 1,
+        fee: {
+          calculated: 258,
+          payable: 258,
+          category: {
+            sixAndSeven: 258,
+          },
+          exemption: {
+            disability: false,
+            resubmission: false,
+          },
+          reduction: {
+            sports: false,
+            parishCouncil: false,
+            alternative: false,
+          },
+          reference: {
+            govPay: 'sandbox-ref-123',
+          },
+        },
+        declaration: {
+          accurate: true,
+          connection: {
+            value: 'none',
+          },
+        },
       },
       user: {
         role: 'agent',
@@ -137,7 +160,7 @@ export const lawfulDevelopmentCertificateExistingPrototype: PrototypeApplication
           ],
           designations: [
             {
-              designation: 'article4',
+              value: 'article4',
               intersects: true,
               entities: [
                 {
@@ -152,55 +175,55 @@ export const lawfulDevelopmentCertificateExistingPrototype: PrototypeApplication
               ],
             },
             {
-              designation: 'article4.caz',
+              value: 'article4.caz',
               intersects: false,
             },
             {
-              designation: 'tpo',
+              value: 'tpo',
               intersects: false,
             },
             {
-              designation: 'listed',
+              value: 'listed',
               intersects: false,
             },
             {
-              designation: 'monument',
+              value: 'monument',
               intersects: false,
             },
             {
-              designation: 'designated',
+              value: 'designated',
               intersects: true,
             },
             {
-              designation: 'nature.SAC',
+              value: 'nature.SAC',
               intersects: false,
             },
             {
-              designation: 'nature.ASNW',
+              value: 'nature.ASNW',
               intersects: false,
             },
             {
-              designation: 'nature.SSSI',
+              value: 'nature.SSSI',
               intersects: false,
             },
             {
-              designation: 'locallyListed',
+              value: 'locallyListed',
               intersects: false,
             },
             {
-              designation: 'nature.SPA',
+              value: 'nature.SPA',
               intersects: false,
             },
             {
-              designation: 'designated.WHS',
+              value: 'designated.WHS',
               intersects: false,
             },
             {
-              designation: 'registeredPark',
+              value: 'registeredPark',
               intersects: false,
             },
             {
-              designation: 'designated.AONB',
+              value: 'designated.AONB',
               intersects: true,
               entities: [
                 {
@@ -213,19 +236,19 @@ export const lawfulDevelopmentCertificateExistingPrototype: PrototypeApplication
               ],
             },
             {
-              designation: 'designated.nationalPark',
+              value: 'designated.nationalPark',
               intersects: false,
             },
             {
-              designation: 'designated.conservationArea',
+              value: 'designated.conservationArea',
               intersects: false,
             },
             {
-              designation: 'designated.nationalPark.broads',
+              value: 'designated.nationalPark.broads',
               intersects: false,
             },
             {
-              designation: 'road.classified',
+              value: 'road.classified',
               intersects: false,
             },
           ],

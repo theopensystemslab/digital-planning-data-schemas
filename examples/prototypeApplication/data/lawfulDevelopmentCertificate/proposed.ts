@@ -84,75 +84,75 @@ export const lawfulDevelopmentCertificateProposedPrototype: PrototypeApplication
           ],
           designations: [
             {
-              designation: 'article4',
+              value: 'article4',
               intersects: false,
             },
             {
-              designation: 'article4.caz',
+              value: 'article4.caz',
               intersects: false,
             },
             {
-              designation: 'tpo',
+              value: 'tpo',
               intersects: false,
             },
             {
-              designation: 'listed',
+              value: 'listed',
               intersects: false,
             },
             {
-              designation: 'monument',
+              value: 'monument',
               intersects: false,
             },
             {
-              designation: 'designated',
+              value: 'designated',
               intersects: false,
             },
             {
-              designation: 'nature.SAC',
+              value: 'nature.SAC',
               intersects: false,
             },
             {
-              designation: 'nature.ASNW',
+              value: 'nature.ASNW',
               intersects: false,
             },
             {
-              designation: 'nature.SSSI',
+              value: 'nature.SSSI',
               intersects: false,
             },
             {
-              designation: 'locallyListed',
+              value: 'locallyListed',
               intersects: false,
             },
             {
-              designation: 'nature.SPA',
+              value: 'nature.SPA',
               intersects: false,
             },
             {
-              designation: 'designated.WHS',
+              value: 'designated.WHS',
               intersects: false,
             },
             {
-              designation: 'registeredPark',
+              value: 'registeredPark',
               intersects: false,
             },
             {
-              designation: 'designated.AONB',
+              value: 'designated.AONB',
               intersects: false,
             },
             {
-              designation: 'designated.nationalPark',
+              value: 'designated.nationalPark',
               intersects: false,
             },
             {
-              designation: 'designated.conservationArea',
+              value: 'designated.conservationArea',
               intersects: false,
             },
             {
-              designation: 'designated.nationalPark.broads',
+              value: 'designated.nationalPark.broads',
               intersects: false,
             },
             {
-              designation: 'road.classified',
+              value: 'road.classified',
               intersects: false,
             },
           ],

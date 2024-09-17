@@ -10,6 +10,12 @@
     },
     {
       "$ref": "#/definitions/PP"
+    },
+    {
+      "$ref": "#/definitions/Listed"
+    },
+    {
+      "$ref": "#/definitions/LandDrainageConsent"
     }
   ],
   "definitions": {
@@ -252,6 +258,205 @@
         }
       ]
     },
+    "ApplicationDeclaration": {
+      "additionalProperties": false,
+      "description": "Declarations about the accuracy of this application and any personal connections to the receiving authority",
+      "properties": {
+        "accurate": {
+          "type": "boolean"
+        },
+        "connection": {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "type": "string"
+            },
+            "value": {
+              "enum": [
+                "employee",
+                "relation.employee",
+                "electedMember",
+                "relation.electedMember",
+                "none"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "value"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "accurate",
+        "connection"
+      ],
+      "type": "object"
+    },
+    "ApplicationFee": {
+      "additionalProperties": false,
+      "description": "The costs associated with this application",
+      "properties": {
+        "calculated": {
+          "description": "Total calculated fee in GBP",
+          "type": "number"
+        },
+        "category": {
+          "additionalProperties": false,
+          "description": "Breakdown of calculated fee in GBP by category of development, based on the scales defined in The Town and Country Planning Regulations https://www.legislation.gov.uk/uksi/2012/2920/schedule/1/part/2",
+          "properties": {
+            "eight": {
+              "description": "Category 8 - Car parks or access roads",
+              "type": "number"
+            },
+            "eleven": {
+              "additionalProperties": false,
+              "properties": {
+                "one": {
+                  "description": "Category 11(1) - Mining operations",
+                  "type": "number"
+                },
+                "two": {
+                  "description": "Category 11(2) - Other operations",
+                  "type": "number"
+                }
+              },
+              "type": "object"
+            },
+            "five": {
+              "description": "Category 5 - Plant equipment or machinery",
+              "type": "number"
+            },
+            "four": {
+              "description": "Category 4 - Glasshouses on agricultural land",
+              "type": "number"
+            },
+            "fourteen": {
+              "description": "Category 14 - Other change of use",
+              "type": "number"
+            },
+            "nine": {
+              "description": "Category 9 - Exploratory drilling",
+              "type": "number"
+            },
+            "one": {
+              "description": "Category 1 - New homes",
+              "type": "number"
+            },
+            "sixAndSeven": {
+              "description": "Category 6 and 7 - Home or curtilage of home",
+              "type": "number"
+            },
+            "ten": {
+              "description": "Category 10 - Winning and working of oil or natural gas",
+              "type": "number"
+            },
+            "thirteen": {
+              "description": "Category 13 - Waste disposal",
+              "type": "number"
+            },
+            "three": {
+              "description": "Category 3 - Agricultural buildings",
+              "type": "number"
+            },
+            "twelve": {
+              "additionalProperties": false,
+              "properties": {
+                "one": {
+                  "description": "Category 12(1) - Change of use from single home to homes",
+                  "type": "number"
+                },
+                "two": {
+                  "description": "Category 12(2) - Change of use to home",
+                  "type": "number"
+                }
+              },
+              "type": "object"
+            },
+            "two": {
+              "description": "Category 2 - Other new buildings",
+              "type": "number"
+            }
+          },
+          "type": "object"
+        },
+        "exemption": {
+          "additionalProperties": false,
+          "properties": {
+            "disability": {
+              "type": "boolean"
+            },
+            "resubmission": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "disability",
+            "resubmission"
+          ],
+          "type": "object"
+        },
+        "payable": {
+          "description": "Total payable fee after any exemptions or reductions in GBP",
+          "type": "number"
+        },
+        "reduction": {
+          "additionalProperties": false,
+          "properties": {
+            "alternative": {
+              "type": "boolean"
+            },
+            "parishCouncil": {
+              "type": "boolean"
+            },
+            "sports": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "alternative",
+            "parishCouncil",
+            "sports"
+          ],
+          "type": "object"
+        },
+        "reference": {
+          "additionalProperties": false,
+          "properties": {
+            "govPay": {
+              "description": "GOV.UK Pay payment reference number",
+              "type": "string"
+            }
+          },
+          "required": [
+            "govPay"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "calculated",
+        "payable",
+        "exemption",
+        "reduction"
+      ],
+      "type": "object"
+    },
+    "ApplicationFeeNotApplicable": {
+      "additionalProperties": false,
+      "description": "An indicator that an application fee does not apply to this application type or journey",
+      "properties": {
+        "notApplicable": {
+          "const": true,
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "notApplicable"
+      ],
+      "type": "object"
+    },
     "Area": {
       "$id": "#Area",
       "additionalProperties": false,
@@ -394,6 +599,27 @@
           "type": "array"
         }
       },
+      "type": "object"
+    },
+    "CommunityInfrastructureLevy": {
+      "additionalProperties": false,
+      "description": "Details about the Community Infrastructure Levy planning charge, if applicable",
+      "properties": {
+        "result": {
+          "enum": [
+            "exempt.annexe",
+            "exempt.extension",
+            "exempt.selfBuild",
+            "liable",
+            "relief.charity",
+            "relief.socialHousing"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "result"
+      ],
       "type": "object"
     },
     "ContactDetails": {
@@ -614,6 +840,61 @@
         "type"
       ],
       "type": "object"
+    },
+    "FeeCarryingApplicationData": {
+      "anyOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "declaration": {
+              "$ref": "#/definitions/ApplicationDeclaration"
+            },
+            "fee": {
+              "$ref": "#/definitions/ApplicationFee"
+            },
+            "planningApp": {
+              "$ref": "#/definitions/PlanningApplication"
+            },
+            "preApp": {
+              "$ref": "#/definitions/PreApplication"
+            }
+          },
+          "required": [
+            "declaration",
+            "fee"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "declaration": {
+              "$ref": "#/definitions/ApplicationDeclaration"
+            },
+            "fee": {
+              "$ref": "#/definitions/ApplicationFee"
+            },
+            "leadDeveloper": {
+              "$ref": "#/definitions/LeadDeveloper"
+            },
+            "planningApp": {
+              "$ref": "#/definitions/PlanningApplication"
+            },
+            "preApp": {
+              "$ref": "#/definitions/PreApplication"
+            },
+            "vacantBuildingCredit": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "declaration",
+            "fee"
+          ],
+          "type": "object"
+        }
+      ],
+      "description": "ApplicationData required for fee carrying application types"
     },
     "FeeExplanation": {
       "$id": "#FeeExplanation",
@@ -2695,7 +2976,7 @@
               "$ref": "#/definitions/LDCApplicant"
             },
             "application": {
-              "$ref": "#/definitions/LDCApplicationData"
+              "$ref": "#/definitions/FeeCarryingApplicationData"
             },
             "property": {
               "$ref": "#/definitions/PropertyBase"
@@ -3054,23 +3335,6 @@
         }
       ]
     },
-    "LDCApplicationData": {
-      "additionalProperties": false,
-      "description": "Specific ApplicationData required for \"Lawful Development Certificate\" applications",
-      "properties": {
-        "ldcSpecificProperty": {
-          "type": "number"
-        },
-        "somethingShared": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "ldcSpecificProperty",
-        "somethingShared"
-      ],
-      "type": "object"
-    },
     "LDCApplicationType": {
       "anyOf": [
         {
@@ -3100,6 +3364,103 @@
         }
       ]
     },
+    "LandDrainageConsent": {
+      "additionalProperties": false,
+      "properties": {
+        "applicationType": {
+          "$ref": "#/definitions/LandDrainageConsentApplicationType"
+        },
+        "data": {
+          "additionalProperties": false,
+          "properties": {
+            "applicant": {
+              "$ref": "#/definitions/ApplicantBase"
+            },
+            "application": {
+              "$ref": "#/definitions/FeeCarryingApplicationData"
+            },
+            "property": {
+              "$ref": "#/definitions/PropertyBase"
+            },
+            "proposal": {
+              "$ref": "#/definitions/ProposalBase"
+            },
+            "user": {
+              "$ref": "#/definitions/UserBase"
+            }
+          },
+          "required": [
+            "user",
+            "applicant",
+            "application",
+            "property",
+            "proposal"
+          ],
+          "type": "object"
+        },
+        "files": {
+          "items": {
+            "$ref": "#/definitions/File"
+          },
+          "type": "array"
+        },
+        "metadata": {
+          "$ref": "#/definitions/Metadata"
+        },
+        "preAssessment": {
+          "$ref": "#/definitions/PreAssessment"
+        },
+        "responses": {
+          "$ref": "#/definitions/Responses"
+        }
+      },
+      "required": [
+        "applicationType",
+        "data",
+        "responses",
+        "files",
+        "metadata"
+      ],
+      "type": "object"
+    },
+    "LandDrainageConsentApplicationType": {
+      "const": "landDrainageConsent",
+      "description": "Consent to do works affecting ordinary watercourses or land drainage",
+      "type": "string"
+    },
+    "LeadDeveloper": {
+      "additionalProperties": false,
+      "properties": {
+        "company": {
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "registrationNumber": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "name",
+            "registrationNumber"
+          ],
+          "type": "object"
+        },
+        "type": {
+          "enum": [
+            "ukCompany",
+            "overseasCompany",
+            "none"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "type"
+      ],
+      "type": "object"
+    },
     "LineString": {
       "additionalProperties": false,
       "description": "LineString geometry object. https://tools.ietf.org/html/rfc7946#section-3.1.4",
@@ -3125,6 +3486,70 @@
         "type"
       ],
       "type": "object"
+    },
+    "Listed": {
+      "additionalProperties": false,
+      "properties": {
+        "applicationType": {
+          "$ref": "#/definitions/ListedApplicationType"
+        },
+        "data": {
+          "additionalProperties": false,
+          "properties": {
+            "applicant": {
+              "$ref": "#/definitions/ApplicantBase"
+            },
+            "application": {
+              "$ref": "#/definitions/NonFeeCarryingApplicationData"
+            },
+            "property": {
+              "$ref": "#/definitions/PropertyBase"
+            },
+            "proposal": {
+              "$ref": "#/definitions/ProposalBase"
+            },
+            "user": {
+              "$ref": "#/definitions/UserBase"
+            }
+          },
+          "required": [
+            "user",
+            "applicant",
+            "application",
+            "property",
+            "proposal"
+          ],
+          "type": "object"
+        },
+        "files": {
+          "items": {
+            "$ref": "#/definitions/File"
+          },
+          "type": "array"
+        },
+        "metadata": {
+          "$ref": "#/definitions/Metadata"
+        },
+        "preAssessment": {
+          "$ref": "#/definitions/PreAssessment"
+        },
+        "responses": {
+          "$ref": "#/definitions/Responses"
+        }
+      },
+      "required": [
+        "applicationType",
+        "data",
+        "responses",
+        "files",
+        "metadata"
+      ],
+      "type": "object"
+    },
+    "ListedApplicationType": {
+      "const": "listed",
+      "description": "Consent to do works to a Listed Building",
+      "type": "string"
     },
     "LondonProperty": {
       "$id": "#LondonProperty",
@@ -3393,6 +3818,61 @@
       ],
       "type": "object"
     },
+    "NonFeeCarryingApplicationData": {
+      "anyOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "declaration": {
+              "$ref": "#/definitions/ApplicationDeclaration"
+            },
+            "fee": {
+              "$ref": "#/definitions/ApplicationFeeNotApplicable"
+            },
+            "planningApp": {
+              "$ref": "#/definitions/PlanningApplication"
+            },
+            "preApp": {
+              "$ref": "#/definitions/PreApplication"
+            }
+          },
+          "required": [
+            "declaration",
+            "fee"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "declaration": {
+              "$ref": "#/definitions/ApplicationDeclaration"
+            },
+            "fee": {
+              "$ref": "#/definitions/ApplicationFeeNotApplicable"
+            },
+            "leadDeveloper": {
+              "$ref": "#/definitions/LeadDeveloper"
+            },
+            "planningApp": {
+              "$ref": "#/definitions/PlanningApplication"
+            },
+            "preApp": {
+              "$ref": "#/definitions/PreApplication"
+            },
+            "vacantBuildingCredit": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "declaration",
+            "fee"
+          ],
+          "type": "object"
+        }
+      ],
+      "description": "ApplicationData required for application types that do not have a fee"
+    },
     "OSAddress": {
       "additionalProperties": false,
       "description": "Address information for sites with a known address sourced from Ordnance Survey AddressBase Premium (LPI)",
@@ -3584,7 +4064,7 @@
               "$ref": "#/definitions/ApplicantBase"
             },
             "application": {
-              "$ref": "#/definitions/PAApplicationData"
+              "$ref": "#/definitions/FeeCarryingApplicationData"
             },
             "property": {
               "$ref": "#/definitions/PropertyBase"
@@ -3627,23 +4107,6 @@
         "responses",
         "files",
         "metadata"
-      ],
-      "type": "object"
-    },
-    "PAApplicationData": {
-      "additionalProperties": false,
-      "description": "Specific ApplicationData required for \"Prior Approval\" applications",
-      "properties": {
-        "paSpecificProperty": {
-          "type": "number"
-        },
-        "somethingShared": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "paSpecificProperty",
-        "somethingShared"
       ],
       "type": "object"
     },
@@ -4344,21 +4807,65 @@
       ]
     },
     "PPApplicationData": {
-      "additionalProperties": false,
-      "description": "Specific ApplicationData required for \"Planning Permission\" applications",
-      "properties": {
-        "ppSpecificProperty": {
-          "type": "number"
+      "anyOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "CIL": {
+              "$ref": "#/definitions/CommunityInfrastructureLevy"
+            },
+            "declaration": {
+              "$ref": "#/definitions/ApplicationDeclaration"
+            },
+            "fee": {
+              "$ref": "#/definitions/ApplicationFee"
+            },
+            "planningApp": {
+              "$ref": "#/definitions/PlanningApplication"
+            },
+            "preApp": {
+              "$ref": "#/definitions/PreApplication"
+            }
+          },
+          "required": [
+            "declaration",
+            "fee"
+          ],
+          "type": "object"
         },
-        "somethingShared": {
-          "type": "string"
+        {
+          "additionalProperties": false,
+          "properties": {
+            "CIL": {
+              "$ref": "#/definitions/CommunityInfrastructureLevy"
+            },
+            "declaration": {
+              "$ref": "#/definitions/ApplicationDeclaration"
+            },
+            "fee": {
+              "$ref": "#/definitions/ApplicationFee"
+            },
+            "leadDeveloper": {
+              "$ref": "#/definitions/LeadDeveloper"
+            },
+            "planningApp": {
+              "$ref": "#/definitions/PlanningApplication"
+            },
+            "preApp": {
+              "$ref": "#/definitions/PreApplication"
+            },
+            "vacantBuildingCredit": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "declaration",
+            "fee"
+          ],
+          "type": "object"
         }
-      },
-      "required": [
-        "ppSpecificProperty",
-        "somethingShared"
       ],
-      "type": "object"
+      "description": "Specific ApplicationData required for \"Planning Permission\" applications"
     },
     "PPApplicationType": {
       "anyOf": [
@@ -4570,6 +5077,28 @@
       ],
       "type": "object"
     },
+    "PlanningApplication": {
+      "additionalProperties": false,
+      "description": "Details of the planning application linked to this application, if applicable",
+      "properties": {
+        "date": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "localPlanningAuthority": {
+          "type": "string"
+        },
+        "reference": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "reference",
+        "date",
+        "localPlanningAuthority"
+      ],
+      "type": "object"
+    },
     "PlanningConstraint": {
       "$id": "#PlanningConstraint",
       "anyOf": [
@@ -4626,7 +5155,11 @@
           "additionalProperties": false,
           "description": "A planning designation that does not intersect with the proposed site, per the DE-9IM spatial relationship definition of intersects",
           "properties": {
-            "designation": {
+            "intersects": {
+              "const": false,
+              "type": "boolean"
+            },
+            "value": {
               "anyOf": [
                 {
                   "const": "article4",
@@ -4769,15 +5302,11 @@
                   "type": "string"
                 }
               ]
-            },
-            "intersects": {
-              "const": false,
-              "type": "boolean"
             }
           },
           "required": [
-            "designation",
-            "intersects"
+            "intersects",
+            "value"
           ],
           "type": "object"
         },
@@ -4785,150 +5314,6 @@
           "additionalProperties": false,
           "description": "A planning designation that does intersect with the proposed site, per the DE-9IM spatial relationship definition of intersects",
           "properties": {
-            "designation": {
-              "anyOf": [
-                {
-                  "const": "article4",
-                  "description": "Article 4 Direction area",
-                  "type": "string"
-                },
-                {
-                  "const": "article4.caz",
-                  "description": "Central Activities Zone (CAZ)",
-                  "type": "string"
-                },
-                {
-                  "const": "brownfieldSite",
-                  "description": "Brownfield site",
-                  "type": "string"
-                },
-                {
-                  "const": "designated",
-                  "description": "Designated land",
-                  "type": "string"
-                },
-                {
-                  "const": "designated.AONB",
-                  "description": "Area of Outstanding Natural Beauty (AONB)",
-                  "type": "string"
-                },
-                {
-                  "const": "designated.conservationArea",
-                  "description": "Conservation Area",
-                  "type": "string"
-                },
-                {
-                  "const": "designated.nationalPark",
-                  "description": "National Park",
-                  "type": "string"
-                },
-                {
-                  "const": "designated.nationalPark.broads",
-                  "description": "National Park - Broads",
-                  "type": "string"
-                },
-                {
-                  "const": "designated.WHS",
-                  "description": "UNESCO World Heritage Site or buffer zone",
-                  "type": "string"
-                },
-                {
-                  "const": "flood",
-                  "description": "Flood Risk Zone",
-                  "type": "string"
-                },
-                {
-                  "const": "flood.zone.1",
-                  "description": "Flood Risk Zone 1 - Low risk",
-                  "type": "string"
-                },
-                {
-                  "const": "flood.zone.2",
-                  "description": "Flood Risk Zone 2 - Medium risk",
-                  "type": "string"
-                },
-                {
-                  "const": "flood.zone.3",
-                  "description": "Flood Risk Zone 3 - High risk",
-                  "type": "string"
-                },
-                {
-                  "const": "greenBelt",
-                  "description": "Green Belt",
-                  "type": "string"
-                },
-                {
-                  "const": "listed",
-                  "description": "Listed Building",
-                  "type": "string"
-                },
-                {
-                  "const": "listed.grade.I",
-                  "description": "Listed Building - Grade I",
-                  "type": "string"
-                },
-                {
-                  "const": "listed.grade.II",
-                  "description": "Listed Building - Grade II",
-                  "type": "string"
-                },
-                {
-                  "const": "listed.grade.II*",
-                  "description": "Listed Building - Grade II*",
-                  "type": "string"
-                },
-                {
-                  "const": "locallyListed",
-                  "description": "Locally Listed Building",
-                  "type": "string"
-                },
-                {
-                  "const": "monument",
-                  "description": "Site of a Scheduled Monument",
-                  "type": "string"
-                },
-                {
-                  "const": "nature.ASNW",
-                  "description": "Ancient Semi-Natural Woodland (ASNW)",
-                  "type": "string"
-                },
-                {
-                  "const": "nature.ramsarSite",
-                  "description": "Ramsar site",
-                  "type": "string"
-                },
-                {
-                  "const": "nature.SAC",
-                  "description": "Special Area of Conservation (SAC)",
-                  "type": "string"
-                },
-                {
-                  "const": "nature.SPA",
-                  "description": "Special Protection Area (SPA)",
-                  "type": "string"
-                },
-                {
-                  "const": "nature.SSSI",
-                  "description": "Site of Special Scientific Interest (SSSI)",
-                  "type": "string"
-                },
-                {
-                  "const": "registeredPark",
-                  "description": "Historic Park or Garden",
-                  "type": "string"
-                },
-                {
-                  "const": "road.classified",
-                  "description": "Classified Road",
-                  "type": "string"
-                },
-                {
-                  "const": "tpo",
-                  "description": "Tree Preservation Order (TPO) or zone",
-                  "type": "string"
-                }
-              ]
-            },
             "entities": {
               "items": {
                 "$ref": "#/definitions/Entity"
@@ -4938,11 +5323,155 @@
             "intersects": {
               "const": true,
               "type": "boolean"
+            },
+            "value": {
+              "anyOf": [
+                {
+                  "const": "article4",
+                  "description": "Article 4 Direction area",
+                  "type": "string"
+                },
+                {
+                  "const": "article4.caz",
+                  "description": "Central Activities Zone (CAZ)",
+                  "type": "string"
+                },
+                {
+                  "const": "brownfieldSite",
+                  "description": "Brownfield site",
+                  "type": "string"
+                },
+                {
+                  "const": "designated",
+                  "description": "Designated land",
+                  "type": "string"
+                },
+                {
+                  "const": "designated.AONB",
+                  "description": "Area of Outstanding Natural Beauty (AONB)",
+                  "type": "string"
+                },
+                {
+                  "const": "designated.conservationArea",
+                  "description": "Conservation Area",
+                  "type": "string"
+                },
+                {
+                  "const": "designated.nationalPark",
+                  "description": "National Park",
+                  "type": "string"
+                },
+                {
+                  "const": "designated.nationalPark.broads",
+                  "description": "National Park - Broads",
+                  "type": "string"
+                },
+                {
+                  "const": "designated.WHS",
+                  "description": "UNESCO World Heritage Site or buffer zone",
+                  "type": "string"
+                },
+                {
+                  "const": "flood",
+                  "description": "Flood Risk Zone",
+                  "type": "string"
+                },
+                {
+                  "const": "flood.zone.1",
+                  "description": "Flood Risk Zone 1 - Low risk",
+                  "type": "string"
+                },
+                {
+                  "const": "flood.zone.2",
+                  "description": "Flood Risk Zone 2 - Medium risk",
+                  "type": "string"
+                },
+                {
+                  "const": "flood.zone.3",
+                  "description": "Flood Risk Zone 3 - High risk",
+                  "type": "string"
+                },
+                {
+                  "const": "greenBelt",
+                  "description": "Green Belt",
+                  "type": "string"
+                },
+                {
+                  "const": "listed",
+                  "description": "Listed Building",
+                  "type": "string"
+                },
+                {
+                  "const": "listed.grade.I",
+                  "description": "Listed Building - Grade I",
+                  "type": "string"
+                },
+                {
+                  "const": "listed.grade.II",
+                  "description": "Listed Building - Grade II",
+                  "type": "string"
+                },
+                {
+                  "const": "listed.grade.II*",
+                  "description": "Listed Building - Grade II*",
+                  "type": "string"
+                },
+                {
+                  "const": "locallyListed",
+                  "description": "Locally Listed Building",
+                  "type": "string"
+                },
+                {
+                  "const": "monument",
+                  "description": "Site of a Scheduled Monument",
+                  "type": "string"
+                },
+                {
+                  "const": "nature.ASNW",
+                  "description": "Ancient Semi-Natural Woodland (ASNW)",
+                  "type": "string"
+                },
+                {
+                  "const": "nature.ramsarSite",
+                  "description": "Ramsar site",
+                  "type": "string"
+                },
+                {
+                  "const": "nature.SAC",
+                  "description": "Special Area of Conservation (SAC)",
+                  "type": "string"
+                },
+                {
+                  "const": "nature.SPA",
+                  "description": "Special Protection Area (SPA)",
+                  "type": "string"
+                },
+                {
+                  "const": "nature.SSSI",
+                  "description": "Site of Special Scientific Interest (SSSI)",
+                  "type": "string"
+                },
+                {
+                  "const": "registeredPark",
+                  "description": "Historic Park or Garden",
+                  "type": "string"
+                },
+                {
+                  "const": "road.classified",
+                  "description": "Classified Road",
+                  "type": "string"
+                },
+                {
+                  "const": "tpo",
+                  "description": "Tree Preservation Order (TPO) or zone",
+                  "type": "string"
+                }
+              ]
             }
           },
           "required": [
-            "designation",
-            "intersects"
+            "intersects",
+            "value"
           ],
           "type": "object"
         }
@@ -5007,6 +5536,32 @@
         "type": "number"
       },
       "type": "array"
+    },
+    "PreApplication": {
+      "additionalProperties": false,
+      "description": "Details of the pre-application preceeding this application, if applicable",
+      "properties": {
+        "date": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "officer": {
+          "type": "string"
+        },
+        "reference": {
+          "type": "string"
+        },
+        "summary": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "reference",
+        "date",
+        "officer",
+        "summary"
+      ],
+      "type": "object"
     },
     "PreAssessment": {
       "$id": "#PreAssessment",
