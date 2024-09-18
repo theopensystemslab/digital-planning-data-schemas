@@ -1306,6 +1306,6 @@ export const lawfulDevelopmentCertificateExisting: Application = {
       },
     },
     submittedAt: '2023-10-02t00:00:00z',
-    schema: `https://theopensystemslab.github.io/digital-planning-data-schemas/${version}/schema.json`,
+    schema: `https://theopensystemslab.github.io/digital-planning-data-schemas/${version}/schemas/application.json`,
   },
 };

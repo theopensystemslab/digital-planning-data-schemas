@@ -1210,6 +1210,6 @@ export const planningPermissionFullHouseholderInConservationAreaPrototype: Proto
         },
       },
       submittedAt: '2023-10-02T00:00:00.00Z',
-      schema: `https://theopensystemslab.github.io/digital-planning-data-schemas/${version}/schema.json`,
+      schema: `https://theopensystemslab.github.io/digital-planning-data-schemas/${version}/schemas/prototypeApplication.json`,
     },
   };

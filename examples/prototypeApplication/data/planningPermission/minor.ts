@@ -1600,6 +1600,6 @@ export const planningPermissionMinorPrototype: PrototypeApplication = {
         payable: [],
       },
     },
-    schema: `https://theopensystemslab.github.io/digital-planning-data-schemas/${version}/schema.json`,
+    schema: `https://theopensystemslab.github.io/digital-planning-data-schemas/${version}/schemas/prototypeApplication.json`,
   },
 };

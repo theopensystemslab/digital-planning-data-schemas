@@ -1704,6 +1704,6 @@ export const planningPermissionMinor: Application = {
         },
       },
     },
-    schema: `https://theopensystemslab.github.io/digital-planning-data-schemas/${version}/schema.json`,
+    schema: `https://theopensystemslab.github.io/digital-planning-data-schemas/${version}/schemas/application.json`,
   },
 };
