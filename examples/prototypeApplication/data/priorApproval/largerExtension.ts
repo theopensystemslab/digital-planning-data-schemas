@@ -1429,41 +1429,15 @@ export const priorApprovalLargerExtensionPrototype: PrototypeApplication = {
     source: 'PlanX',
     service: {
       flowId: 'c6628103-c648-4663-81e1-bfa0a1a18340',
-      url: 'https://editor.planx.uk/southwark/apply-for-prior-approval/published',
+      url: 'https://editor.planx.dev/southwark/apply-for-prior-approval/published',
       files: {
-        required: [
-          {
-            value: 'sitePlan.proposed',
-            description: 'Site plan - proposed',
-          },
-        ],
-        recommended: [
-          {
-            value: 'elevations.existing',
-            description: 'Elevations - existing',
-          },
-          {
-            value: 'elevations.proposed',
-            description: 'Elevations - proposed',
-          },
-        ],
+        required: ['sitePlan.proposed'],
+        recommended: ['elevations.existing', 'elevations.proposed'],
         optional: [
-          {
-            value: 'photographs.existing',
-            description: 'Photographs - existing',
-          },
-          {
-            value: 'otherDrawing',
-            description: 'Other - drawing',
-          },
-          {
-            value: 'otherDocument',
-            description: 'Other - document',
-          },
-          {
-            value: 'visualisations',
-            description: 'Visualisations',
-          },
+          'photographs.existing',
+          'otherDrawing',
+          'otherDocument',
+          'visualisations',
         ],
       },
       fee: {

@@ -1250,36 +1250,15 @@ export const priorApprovalSolarPanelsPrototype: PrototypeApplication = {
     source: 'PlanX',
     service: {
       flowId: 'c6628103-c648-4663-81e1-bfa0a1a18340',
-      url: 'https://editor.planx.uk/southwark/apply-for-prior-approval/published',
+      url: 'https://editor.planx.dev/southwark/apply-for-prior-approval/published',
       files: {
-        required: [
-          {
-            value: 'sitePlan.proposed',
-            description: 'Site plan - proposed',
-          },
-          {
-            value: 'sections.proposed',
-            description: 'Sections - proposed',
-          },
-        ],
+        required: ['sitePlan.proposed', 'sections.proposed'],
         recommended: [],
         optional: [
-          {
-            value: 'photographs.existing',
-            description: 'Photographs - existing',
-          },
-          {
-            value: 'otherDrawing',
-            description: 'Other - drawing',
-          },
-          {
-            value: 'otherDocument',
-            description: 'Other - document',
-          },
-          {
-            value: 'visualisations',
-            description: 'Visualisations',
-          },
+          'photographs.existing',
+          'otherDrawing',
+          'otherDocument',
+          'visualisations',
         ],
       },
       fee: {

@@ -756,38 +756,14 @@ export const lawfulDevelopmentCertificateProposedPrototype: PrototypeApplication
         url: 'https://www.editor.planx.dev/buckinghamshire/apply-for-a-lawful-development-certificate/preview',
         files: {
           required: [
-            {
-              value: 'roofPlan.existing',
-              description: 'Roof plan - existing',
-            },
-            {
-              value: 'sitePlan.existing',
-              description: 'Site plan - existing',
-            },
-            {
-              value: 'roofPlan.proposed',
-              description: 'Roof plan - proposed',
-            },
-            {
-              value: 'sitePlan.proposed',
-              description: 'Site plan - proposed',
-            },
-            {
-              value: 'elevations.existing',
-              description: 'Elevations - existing',
-            },
-            {
-              value: 'floorPlan.existing',
-              description: 'Floor plan - existing',
-            },
-            {
-              value: 'elevations.proposed',
-              description: 'Elevations - proposed',
-            },
-            {
-              value: 'floorPlan.proposed',
-              description: 'Floor plan - proposed',
-            },
+            'roofPlan.existing',
+            'sitePlan.existing',
+            'roofPlan.proposed',
+            'sitePlan.proposed',
+            'elevations.existing',
+            'floorPlan.existing',
+            'elevations.proposed',
+            'floorPlan.proposed',
           ],
           recommended: [],
           optional: [],

@@ -646,20 +646,8 @@ export const landDrainageConsentPrototype: PrototypeApplication = {
       flowId: '5aab3466-8fb0-4e73-b51d-347d61ad5547',
       url: 'https://editor.planx.dev/medway/apply-for-land-drainage-consent-copy/published',
       files: {
-        required: [
-          {
-            value: 'necessaryInformation',
-            description:
-              'Information the authority considers necessary for the application',
-          },
-        ],
-        recommended: [
-          {
-            value: 'relevantInformation',
-            description:
-              'Information the applicant considers relevant to the application',
-          },
-        ],
+        required: ['necessaryInformation'],
+        recommended: ['relevantInformation'],
         optional: [],
       },
       fee: {

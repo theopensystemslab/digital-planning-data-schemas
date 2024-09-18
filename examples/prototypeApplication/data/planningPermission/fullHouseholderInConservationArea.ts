@@ -1149,56 +1149,23 @@ export const planningPermissionFullHouseholderInConservationAreaPrototype: Proto
       source: 'PlanX',
       service: {
         flowId: 'bba306e7-15c8-438f-a71e-a1e5d3a99caf',
-        url: 'https://editor.planx.uk/southwark/apply-for-planning-permission/published',
+        url: 'https://editor.planx.dev/southwark/apply-for-planning-permission/published',
         files: {
           required: [
-            {
-              value: 'sitePlan.existing',
-              description: 'Site plan - existing',
-            },
-            {
-              value: 'sitePlan.proposed',
-              description: 'Site plan - proposed',
-            },
-            {
-              value: 'elevations.existing',
-              description: 'Elevations - existing',
-            },
-            {
-              value: 'elevations.proposed',
-              description: 'Elevations - proposed',
-            },
-            {
-              value: 'floorPlan.existing',
-              description: 'Floor plan - existing',
-            },
-            {
-              value: 'floorPlan.proposed',
-              description: 'Floor plan - proposed',
-            },
-            {
-              value: 'heritageStatement',
-              description: 'Heritage Statement',
-            },
+            'sitePlan.existing',
+            'sitePlan.proposed',
+            'elevations.existing',
+            'elevations.proposed',
+            'floorPlan.existing',
+            'floorPlan.proposed',
+            'heritageStatement',
           ],
           recommended: [],
           optional: [
-            {
-              value: 'photographs.existing',
-              description: 'Photographs - existing',
-            },
-            {
-              value: 'otherDrawing',
-              description: 'Other - drawing',
-            },
-            {
-              value: 'otherDocument',
-              description: 'Other - document',
-            },
-            {
-              value: 'visualisations',
-              description: 'Visualisations',
-            },
+            'photographs.existing',
+            'otherDocument',
+            'otherDrawing',
+            'visualisations',
           ],
         },
         fee: {

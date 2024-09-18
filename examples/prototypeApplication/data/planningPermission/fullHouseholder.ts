@@ -1076,41 +1076,14 @@ export const planningPermissionFullHouseholderPrototype: PrototypeApplication =
         url: 'https://www.editor.planx.dev/lambeth/apply-for-planning-permission/preview',
         files: {
           required: [
-            {
-              value: 'roofPlan.existing',
-              description: 'Roof plan - existing',
-            },
-            {
-              value: 'roofPlan.proposed',
-              description: 'Roof plan - proposed',
-            },
-            {
-              value: 'sitePlan.existing',
-              description: 'Site plan - existing',
-            },
-            {
-              value: 'sitePlan.proposed',
-              description: 'Site plan - proposed',
-            },
-            {
-              value: 'elevations.existing',
-              description: 'Elevations - existing',
-            },
-            {
-              value: 'elevations.proposed',
-              description: 'Elevations - proposed',
-            },
+            'roofPlan.existing',
+            'roofPlan.proposed',
+            'sitePlan.existing',
+            'sitePlan.proposed',
+            'elevations.existing',
+            'elevations.proposed',
           ],
-          recommended: [
-            {
-              value: 'floorPlan.existing',
-              description: 'Floor plan - existing',
-            },
-            {
-              value: 'floorPlan.proposed',
-              description: 'Floor plan - proposed',
-            },
-          ],
+          recommended: ['floorPlan.existing', 'floorPlan.proposed'],
           optional: [],
         },
         fee: {

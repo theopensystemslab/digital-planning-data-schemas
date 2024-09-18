@@ -1674,37 +1674,16 @@ export const priorApprovalExtendUniversityPrototype: PrototypeApplication = {
       url: 'https://editor.planx.dev/camden/apply-for-prior-approval/published',
       files: {
         required: [
-          {
-            value: 'sitePlan.proposed',
-            description: 'Site plan - proposed',
-          },
-          {
-            value: 'elevations.existing',
-            description: 'Elevations - existing',
-          },
-          {
-            value: 'elevations.proposed',
-            description: 'Elevations - proposed',
-          },
+          'sitePlan.proposed',
+          'elevations.existing',
+          'elevations.proposed',
         ],
         recommended: [],
         optional: [
-          {
-            value: 'photographs.existing',
-            description: 'Photographs - existing',
-          },
-          {
-            value: 'otherDrawing',
-            description: 'Other - drawing',
-          },
-          {
-            value: 'otherDocument',
-            description: 'Other - document',
-          },
-          {
-            value: 'visualisations',
-            description: 'Visualisations',
-          },
+          'photographs.existing',
+          'otherDrawing',
+          'otherDocument',
+          'visualisations',
         ],
       },
       fee: {

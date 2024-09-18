@@ -1666,64 +1666,25 @@ export const priorApprovalBuildHomesPrototype: PrototypeApplication = {
     source: 'PlanX',
     service: {
       flowId: '6f76e837-7a42-40f3-80e9-a9482dce5982',
-      url: 'https://editor.planx.uk/buckinghamshire/apply-for-prior-approval/published',
+      url: 'https://editor.planx.dev/buckinghamshire/apply-for-prior-approval/published',
       files: {
         required: [
-          {
-            value: 'sitePlan.proposed',
-            description: 'Site plan - proposed',
-          },
-          {
-            value: 'elevations.existing',
-            description: 'Elevations - existing',
-          },
-          {
-            value: 'elevations.proposed',
-            description: 'Elevations - proposed',
-          },
-          {
-            value: 'floorPlan.existing',
-            description: 'Floor plan - existing',
-          },
-          {
-            value: 'floorPlan.proposed',
-            description: 'Floor plan - proposed',
-          },
-          {
-            value: 'roofPlan.proposed',
-            description: 'Roof plan - proposed',
-          },
-          {
-            value: 'sections.existing',
-            description: 'Sections - existing',
-          },
-          {
-            value: 'sections.proposed',
-            description: 'Sections - proposed',
-          },
-          {
-            value: 'noiseAssessment',
-            description: 'Noise assessment',
-          },
+          'sitePlan.proposed',
+          'elevations.existing',
+          'elevations.proposed',
+          'floorPlan.existing',
+          'floorPlan.proposed',
+          'roofPlan.proposed',
+          'sections.existing',
+          'sections.proposed',
+          'noiseAssessment',
         ],
         recommended: [],
         optional: [
-          {
-            value: 'photographs.existing',
-            description: 'Photographs - existing',
-          },
-          {
-            value: 'otherDrawing',
-            description: 'Other - drawing',
-          },
-          {
-            value: 'otherDocument',
-            description: 'Other - document',
-          },
-          {
-            value: 'visualisations',
-            description: 'Visualisations',
-          },
+          'photographs.existing',
+          'otherDrawing',
+          'otherDocument',
+          'visualisations',
         ],
       },
       fee: {

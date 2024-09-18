@@ -2095,20 +2095,8 @@ export const planningPermissionMajorPrototype: PrototypeApplication = {
       flowId: '28e258a7-812f-4390-b520-7c00e7f5cd77',
       url: 'https://editor.planx.dev/buckinghamshire/apply-for-planning-permission/published',
       files: {
-        required: [
-          {
-            value: 'necessaryInformation',
-            description:
-              'Information the authority considers necessary for the application',
-          },
-        ],
-        recommended: [
-          {
-            value: 'relevantInformation',
-            description:
-              'Information the applicant considers relevant to the application',
-          },
-        ],
+        required: ['necessaryInformation'],
+        recommended: ['relevantInformation'],
         optional: [],
       },
       fee: {

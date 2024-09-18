@@ -1050,61 +1050,24 @@ export const listedBuildingConsentPrototype: PrototypeApplication = {
     source: 'PlanX',
     service: {
       flowId: '2677568c-00d2-4391-98ea-f34a4e743437',
-      url: 'https://www.editor.planx.uk/camden/apply-for-listed-building-consent/published',
+      url: 'https://www.editor.planx.dev/camden/apply-for-listed-building-consent/published',
       files: {
         required: [
-          {
-            value: 'sitePlan.existing',
-            description: 'Site plan - existing',
-          },
-          {
-            value: 'sitePlan.proposed',
-            description: 'Site plan - proposed',
-          },
-          {
-            value: 'elevations.existing',
-            description: 'Elevations - existing',
-          },
-          {
-            value: 'elevations.proposed',
-            description: 'Elevations - proposed',
-          },
-          {
-            value: 'floorPlan.existing',
-            description: 'Floor plan - existing',
-          },
-          {
-            value: 'floorPlan.proposed',
-            description: 'Floor plan - proposed',
-          },
-          {
-            value: 'joinerySections',
-            description: 'Joinery section report',
-          },
+          'sitePlan.existing',
+          'sitePlan.proposed',
+          'elevations.existing',
+          'elevations.proposed',
+          'floorPlan.existing',
+          'floorPlan.proposed',
+          'joinerySections',
         ],
-        recommended: [
-          {
-            value: 'heritageStatement',
-            description: 'Heritage Statement',
-          },
-        ],
+        recommended: ['heritageStatement'],
         optional: [
-          {
-            value: 'photographs.existing',
-            description: 'Photographs - existing',
-          },
-          {
-            value: 'otherDrawing',
-            description: 'Other - drawing',
-          },
-          {
-            value: 'otherDocument',
-            description: 'Other - document',
-          },
-          {
-            value: 'visualisations',
-            description: 'Visualisations',
-          },
+          'photographs.existing',
+          'photographs.proposed',
+          'otherDrawing',
+          'otherDocument',
+          'visualisations',
         ],
       },
       fee: {
