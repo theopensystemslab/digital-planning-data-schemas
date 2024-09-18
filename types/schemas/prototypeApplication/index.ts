@@ -2,8 +2,6 @@ import {
   BaseMetadata,
   FeeExplanation,
   FeeExplanationNotApplicable,
-  Metadata,
-  PlanXMetadata,
 } from '../../shared/Metadata';
 import {Responses} from '../../shared/Responses';
 import {UUID, URL} from '../../shared/utils';
