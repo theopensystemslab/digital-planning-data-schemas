@@ -12,9 +12,9 @@ import {GeoBoundaryPrototype, Materials, ResidentialUnits} from './shared';
 /**
  * @description Information about the proposed works and any changes to the property
  */
-export type ProposalBase = UKProposal | LondonProposal;
+export type ProposalBase = EnglandProposal | LondonProposal;
 
-export interface UKProposal {
+export interface EnglandProposal {
   projectType: ProjectType[];
   description: string;
   date?: ProposalDates;
@@ -133,7 +133,7 @@ export interface UKProposal {
 /**
  * @description Proposal details for project sites within the Greater London Authority (GLA) area
  */
-export interface LondonProposal extends Omit<UKProposal, 'units'> {
+export interface LondonProposal extends Omit<EnglandProposal, 'units'> {
   schemeName?: string;
   /**
    * @description Proposed parking spaces
@@ -215,9 +215,9 @@ export interface LondonProposal extends Omit<UKProposal, 'units'> {
    * @description Proposed energy sources
    */
   energy?: {
-  /**
-   * @uniqueItems true
-   */
+    /**
+     * @uniqueItems true
+     */
     type: Array<'communityOwned' | 'heatPump' | 'solar'>;
     communityOwned?: {
       /** @description Proposed total capacity of any on-site community-owned energy generation in megawatts (mW) */
