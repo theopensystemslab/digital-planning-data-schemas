@@ -6,7 +6,7 @@ export type ApplicantBase = BaseApplicant | Agent;
 
 export type BaseApplicant = ContactDetails & {
   /**
-   * @Description The type of applicant
+   * @description The type of applicant
    */
   type: 'individual' | 'company' | 'charity' | 'public' | 'parishCouncil';
   /**
@@ -99,7 +99,7 @@ export type MaintenanceContact = {
 
 export type LDCApplicant = ApplicantBase & {
   /**
-   * @description Information about the propery owners, if different than the applicant
+   * @description Information about the property owners, if different than the applicant
    */
   ownership:
     | {interest: Extract<OwnershipInterest, 'owner'>}
@@ -111,7 +111,7 @@ export type LDCApplicant = ApplicantBase & {
 
 export type PPApplicant = ApplicantBase & {
   /**
-   * @description Information about the ownership certificate and propery owners, if different than the applicant
+   * @description Information about the ownership certificate and property owners, if different than the applicant
    */
   ownership: {
     interest: OwnershipInterest | 'owner.sole' | 'owner.co';
