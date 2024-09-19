@@ -139,7 +139,7 @@ type RoadClassified = 'road.classified';
  */
 type TPO = 'tpo';
 
-type BasePlanningDesignation =
+export type BasePlanningDesignation =
   | Article4
   | Article4CAZ
   | BrownfieldSite

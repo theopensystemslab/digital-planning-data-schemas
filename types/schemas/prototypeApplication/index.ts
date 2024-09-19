@@ -1,10 +1,4 @@
-import {
-  BaseMetadata,
-  FeeExplanation,
-  FeeExplanationNotApplicable,
-} from '../../shared/Metadata';
 import {Responses} from '../../shared/Responses';
-import {UUID, URL} from '../../shared/utils';
 import {Applicant} from './data/Applicant';
 import {ApplicationData} from './data/ApplicationData';
 import {PropertyBase} from './data/Property';
@@ -19,28 +13,9 @@ import {
   PPApplicationType,
   PrimaryApplicationType,
 } from './enums/ApplicationType';
-import {PrototypeFileType} from './enums/FileType';
 import {File} from './File';
+import {PrototypePlanXMetadata} from './Metadata';
 import {PreAssessment} from './PreAssessment';
-
-/**
- * @description File types requested by this service. Schema["files"] will be a subset of this list based on the user's journey through the service
- */
-export interface PrototypeRequestedFiles {
-  required: PrototypeFileType[];
-  recommended: PrototypeFileType[];
-  optional: PrototypeFileType[];
-}
-
-export interface PrototypePlanXMetadata extends BaseMetadata {
-  source: 'PlanX';
-  service: {
-    flowId: UUID;
-    url: URL;
-    files: PrototypeRequestedFiles;
-    fee: FeeExplanation | FeeExplanationNotApplicable;
-  };
-}
 
 /**
  * @internal
