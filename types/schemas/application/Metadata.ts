@@ -94,6 +94,28 @@ export interface FeeExplanation {
 }
 
 /**
+ * @id #UserOverrides
+ * @description PlanX fetches and suggests administrative data to users throughout a service; if a user contests or changes this data, those details will come through here
+ */
+export interface UserOverrides {
+  property?: {
+    type?: {
+      sourceClassification: string;
+      userClassification: string;
+    };
+    planning?: {
+      designations: {
+        value: string; // @TODO enum
+        entityId: string;
+        sourceIntersects: true;
+        userIntersects: false;
+        userReason: string;
+      }[];
+    };
+  };
+}
+
+/**
  * @id #PlanXMetadata
  * @description Additional metadata associated with applications submitted via PlanX
  */
@@ -104,5 +126,6 @@ export interface PlanXMetadata extends BaseMetadata {
     url: URL;
     files: RequestedFiles;
     fee: FeeExplanation | FeeExplanationNotApplicable;
+    overrides?: UserOverrides;
   };
 }

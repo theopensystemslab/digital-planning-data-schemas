@@ -8577,6 +8577,9 @@
             "flowId": {
               "$ref": "#/definitions/UUID"
             },
+            "overrides": {
+              "$ref": "#/definitions/UserOverrides"
+            },
             "url": {
               "$ref": "#/definitions/URL"
             }
@@ -25438,6 +25441,78 @@
         "sameAsSiteAddress",
         "town"
       ],
+      "type": "object"
+    },
+    "UserOverrides": {
+      "$id": "#UserOverrides",
+      "additionalProperties": false,
+      "description": "PlanX fetches and suggests administrative data to users throughout a service; if a user contests or changes this data, those details will come through here",
+      "properties": {
+        "property": {
+          "additionalProperties": false,
+          "properties": {
+            "planning": {
+              "additionalProperties": false,
+              "properties": {
+                "designations": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "entityId": {
+                        "type": "string"
+                      },
+                      "sourceIntersects": {
+                        "const": true,
+                        "type": "boolean"
+                      },
+                      "userIntersects": {
+                        "const": false,
+                        "type": "boolean"
+                      },
+                      "userReason": {
+                        "type": "string"
+                      },
+                      "value": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "value",
+                      "entityId",
+                      "sourceIntersects",
+                      "userIntersects",
+                      "userReason"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                }
+              },
+              "required": [
+                "designations"
+              ],
+              "type": "object"
+            },
+            "type": {
+              "additionalProperties": false,
+              "properties": {
+                "sourceClassification": {
+                  "type": "string"
+                },
+                "userClassification": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "sourceClassification",
+                "userClassification"
+              ],
+              "type": "object"
+            }
+          },
+          "type": "object"
+        }
+      },
       "type": "object"
     }
   },
