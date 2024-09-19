@@ -139,6 +139,7 @@
           "description": "Contact information for the site visit"
         },
         "type": {
+          "description": "The type of applicant",
           "enum": [
             "individual",
             "company",
@@ -518,6 +519,7 @@
           "description": "Contact information for the site visit"
         },
         "type": {
+          "description": "The type of applicant",
           "enum": [
             "individual",
             "company",
@@ -725,6 +727,470 @@
     "Email": {
       "format": "email",
       "type": "string"
+    },
+    "EnglandProperty": {
+      "additionalProperties": false,
+      "description": "Property details for sites anywhere in England",
+      "properties": {
+        "address": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/ProposedAddress"
+            },
+            {
+              "$ref": "#/definitions/OSAddress"
+            }
+          ]
+        },
+        "boundary": {
+          "$ref": "#/definitions/GeoBoundary",
+          "description": "HM Land Registry Index polygon for this property, commonly referred to as the blue-line or title boundary, sourced from planning.data.gov.uk/dataset/title-boundary"
+        },
+        "localAuthorityDistrict": {
+          "description": "Current and historic England Local Authority Districts that contain this address sourced from planning.data.gov.uk/dataset/local-authority-district",
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "planning": {
+          "additionalProperties": false,
+          "description": "Planning constraints and policies that intersect with this site and may impact or restrict development",
+          "properties": {
+            "conditions": {
+              "items": {
+                "$ref": "#/definitions/PlanningConstraint"
+              },
+              "type": "array"
+            },
+            "designations": {
+              "items": {
+                "$ref": "#/definitions/PlanningDesignation"
+              },
+              "type": "array"
+            },
+            "guidance": {
+              "items": {
+                "$ref": "#/definitions/PlanningConstraint"
+              },
+              "type": "array"
+            },
+            "plans": {
+              "additionalProperties": false,
+              "properties": {
+                "local": {
+                  "items": {
+                    "$ref": "#/definitions/PlanningConstraint"
+                  },
+                  "type": "array"
+                },
+                "neighbourhood": {
+                  "items": {
+                    "$ref": "#/definitions/PlanningConstraint"
+                  },
+                  "type": "array"
+                }
+              },
+              "required": [
+                "local",
+                "neighbourhood"
+              ],
+              "type": "object"
+            },
+            "sources": {
+              "description": "A list of open data requests or websites that explain how these constraints were sourced",
+              "items": {
+                "$ref": "#/definitions/URL"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "sources"
+          ],
+          "type": "object"
+        },
+        "region": {
+          "$ref": "#/definitions/Region"
+        },
+        "type": {
+          "$ref": "#/definitions/PropertyType"
+        }
+      },
+      "required": [
+        "address",
+        "region",
+        "localAuthorityDistrict",
+        "type"
+      ],
+      "type": "object"
+    },
+    "EnglandProposal": {
+      "additionalProperties": false,
+      "properties": {
+        "access": {
+          "additionalProperties": false,
+          "properties": {
+            "affected": {
+              "enum": [
+                "vehicle",
+                "pedestrian",
+                "newRoad",
+                "rightsOfWay.newPublic",
+                "rightsOfWay.changes"
+              ],
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
+        "boundary": {
+          "$ref": "#/definitions/GeoBoundaryPrototype",
+          "description": "Location plan boundary proposed by the user, commonly referred to as the red line boundary"
+        },
+        "date": {
+          "$ref": "#/definitions/ProposalDates"
+        },
+        "description": {
+          "type": "string"
+        },
+        "ecology": {
+          "additionalProperties": false,
+          "description": "Details of biodiversity and geological conservation, if applicable to application.type",
+          "properties": {
+            "conservationAffected": {
+              "enum": [
+                "site",
+                "adjacent",
+                "none"
+              ],
+              "type": "string"
+            },
+            "featuresAffected": {
+              "enum": [
+                "site",
+                "adjacent",
+                "none"
+              ],
+              "type": "string"
+            },
+            "speciesAffected": {
+              "enum": [
+                "site",
+                "adjacent",
+                "none"
+              ],
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
+        "environmentalImpactDescription": {
+          "type": "string"
+        },
+        "extend": {
+          "additionalProperties": false,
+          "properties": {
+            "area": {
+              "$ref": "#/definitions/Area"
+            }
+          },
+          "required": [
+            "area"
+          ],
+          "type": "object"
+        },
+        "flood": {
+          "additionalProperties": false,
+          "description": "Assessment of flood risk, if applicable to application.type",
+          "properties": {
+            "surfaceWaterDisposal": {
+              "enum": [
+                "drainageSystem",
+                "soakaway",
+                "sewer",
+                "watercourse",
+                "pondOrLake",
+                "other"
+              ],
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
+        "materials": {
+          "$ref": "#/definitions/Materials",
+          "description": "Proposed materials, if applicable to projectType"
+        },
+        "new": {
+          "additionalProperties": false,
+          "properties": {
+            "area": {
+              "$ref": "#/definitions/Area"
+            },
+            "count": {
+              "additionalProperties": false,
+              "properties": {
+                "bathrooms": {
+                  "$ref": "#/definitions/Integer"
+                },
+                "bedrooms": {
+                  "$ref": "#/definitions/Integer"
+                },
+                "dwellings": {
+                  "$ref": "#/definitions/Integer"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "required": [
+            "area"
+          ],
+          "type": "object"
+        },
+        "newDwellings": {
+          "additionalProperties": false,
+          "properties": {
+            "newBuild": {
+              "additionalProperties": false,
+              "properties": {
+                "count": {
+                  "$ref": "#/definitions/Integer"
+                }
+              },
+              "required": [
+                "count"
+              ],
+              "type": "object"
+            }
+          },
+          "type": "object"
+        },
+        "projectType": {
+          "items": {
+            "$ref": "#/definitions/ProjectType"
+          },
+          "type": "array"
+        },
+        "structures": {
+          "additionalProperties": false,
+          "properties": {
+            "permanent": {
+              "additionalProperties": false,
+              "properties": {
+                "count": {
+                  "$ref": "#/definitions/Integer"
+                }
+              },
+              "required": [
+                "count"
+              ],
+              "type": "object"
+            },
+            "temporary": {
+              "additionalProperties": false,
+              "properties": {
+                "count": {
+                  "$ref": "#/definitions/Integer"
+                }
+              },
+              "required": [
+                "count"
+              ],
+              "type": "object"
+            },
+            "total": {
+              "$ref": "#/definitions/Integer"
+            },
+            "type": {
+              "enum": [
+                "bridge",
+                "catchpit",
+                "culvert",
+                "pipe",
+                "gully",
+                "headwall",
+                "manhole",
+                "weir",
+                "other"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "type",
+            "total"
+          ],
+          "type": "object"
+        },
+        "units": {
+          "$ref": "#/definitions/ResidentialUnits"
+        },
+        "use": {
+          "additionalProperties": false,
+          "description": "Proposed land use, including storage of hazardous materials, if applicable to application.type",
+          "properties": {
+            "contamination": {
+              "enum": [
+                "known",
+                "suspected",
+                "vulnerable"
+              ],
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "storage": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        },
+        "utilities": {
+          "additionalProperties": false,
+          "description": "Proposed utilities, if applicable to application.type",
+          "properties": {
+            "fire": {
+              "additionalProperties": false,
+              "description": "Whether the proposal introduces a fire suppression system",
+              "properties": {
+                "suppression": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "suppression"
+              ],
+              "type": "object"
+            },
+            "foulSewageDisposal": {
+              "description": "Type of proposed foul sewage disposal",
+              "enum": [
+                "sewer",
+                "tank",
+                "plant",
+                "pit",
+                "other"
+              ],
+              "type": "string"
+            },
+            "gas": {
+              "additionalProperties": false,
+              "description": "Count of new gas connections",
+              "properties": {
+                "connections": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "count": {
+                      "$ref": "#/definitions/Integer"
+                    }
+                  },
+                  "required": [
+                    "count"
+                  ],
+                  "type": "object"
+                }
+              },
+              "required": [
+                "connections"
+              ],
+              "type": "object"
+            },
+            "internet": {
+              "additionalProperties": false,
+              "description": "Count of new full fibre Internet connections",
+              "properties": {
+                "commercialUnits": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "count": {
+                      "$ref": "#/definitions/Integer"
+                    }
+                  },
+                  "required": [
+                    "count"
+                  ],
+                  "type": "object"
+                },
+                "residentialUnits": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "count": {
+                      "$ref": "#/definitions/Integer"
+                    }
+                  },
+                  "required": [
+                    "count"
+                  ],
+                  "type": "object"
+                }
+              },
+              "required": [
+                "commercialUnits",
+                "residentialUnits"
+              ],
+              "type": "object"
+            },
+            "water": {
+              "additionalProperties": false,
+              "description": "Count of new water connections",
+              "properties": {
+                "connections": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "count": {
+                      "$ref": "#/definitions/Integer"
+                    }
+                  },
+                  "required": [
+                    "count"
+                  ],
+                  "type": "object"
+                }
+              },
+              "required": [
+                "connections"
+              ],
+              "type": "object"
+            }
+          },
+          "type": "object"
+        },
+        "watercourse": {
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "type": {
+              "enum": [
+                "ditch",
+                "millStream",
+                "pond",
+                "river",
+                "streamOrBrook",
+                "other"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "name",
+            "type"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "projectType",
+        "description"
+      ],
+      "type": "object"
     },
     "Entity": {
       "additionalProperties": false,
@@ -1532,7 +1998,7 @@
                   "type": "object"
                 }
               ],
-              "description": "Information about the propery owners, if different than the applicant"
+              "description": "Information about the property owners, if different than the applicant"
             },
             "phone": {
               "additionalProperties": false,
@@ -1551,6 +2017,7 @@
               "description": "Contact information for the site visit"
             },
             "type": {
+              "description": "The type of applicant",
               "enum": [
                 "individual",
                 "company",
@@ -1717,7 +2184,7 @@
                   "type": "object"
                 }
               ],
-              "description": "Information about the propery owners, if different than the applicant"
+              "description": "Information about the property owners, if different than the applicant"
             },
             "phone": {
               "additionalProperties": false,
@@ -1736,6 +2203,7 @@
               "description": "Contact information for the site visit"
             },
             "type": {
+              "description": "The type of applicant",
               "enum": [
                 "individual",
                 "company",
@@ -1977,7 +2445,6 @@
       "type": "string"
     },
     "LondonProperty": {
-      "$id": "#LondonProperty",
       "additionalProperties": false,
       "description": "Property details for sites within the Greater London Authority (GLA) area",
       "properties": {
@@ -2018,7 +2485,7 @@
           "description": "HM Land Registry Index polygon for this property, commonly referred to as the blue-line or title boundary, sourced from planning.data.gov.uk/dataset/title-boundary"
         },
         "localAuthorityDistrict": {
-          "description": "Current and historic UK Local Authority Districts that contain this address sourced from planning.data.gov.uk/dataset/local-authority-district",
+          "description": "Current and historic England Local Authority Districts that contain this address sourced from planning.data.gov.uk/dataset/local-authority-district",
           "items": {
             "type": "string"
           },
@@ -2296,7 +2763,7 @@
         },
         "cost": {
           "additionalProperties": false,
-          "description": "Project cost",
+          "description": "Project cost in GBP",
           "properties": {
             "projected": {
               "enum": [
@@ -2428,7 +2895,8 @@
                 ],
                 "type": "string"
               },
-              "type": "array"
+              "type": "array",
+              "uniqueItems": true
             }
           },
           "required": [
@@ -4231,7 +4699,7 @@
             },
             "ownership": {
               "additionalProperties": false,
-              "description": "Information about the ownership certificate and propery owners, if different than the applicant",
+              "description": "Information about the ownership certificate and property owners, if different than the applicant",
               "properties": {
                 "agriculturalTenants": {
                   "description": "Does the land have any agricultural tenants?",
@@ -4338,6 +4806,7 @@
               "description": "Contact information for the site visit"
             },
             "type": {
+              "description": "The type of applicant",
               "enum": [
                 "individual",
                 "company",
@@ -4471,7 +4940,7 @@
             },
             "ownership": {
               "additionalProperties": false,
-              "description": "Information about the ownership certificate and propery owners, if different than the applicant",
+              "description": "Information about the ownership certificate and property owners, if different than the applicant",
               "properties": {
                 "agriculturalTenants": {
                   "description": "Does the land have any agricultural tenants?",
@@ -4578,6 +5047,7 @@
               "description": "Contact information for the site visit"
             },
             "type": {
+              "description": "The type of applicant",
               "enum": [
                 "individual",
                 "company",
@@ -6806,7 +7276,7 @@
     "PropertyBase": {
       "anyOf": [
         {
-          "$ref": "#/definitions/UKProperty"
+          "$ref": "#/definitions/EnglandProperty"
         },
         {
           "$ref": "#/definitions/LondonProperty"
@@ -9142,7 +9612,7 @@
     "ProposalBase": {
       "anyOf": [
         {
-          "$ref": "#/definitions/UKProposal"
+          "$ref": "#/definitions/EnglandProposal"
         },
         {
           "$ref": "#/definitions/LondonProposal"
@@ -9901,6 +10371,21 @@
       },
       "type": "object"
     },
+    "Region": {
+      "description": "The region in England that contains this address sourced from planning.data.gov.uk/dataset/region, where London is a proxy for the Greater London Authority (GLA) area",
+      "enum": [
+        "North East",
+        "North West",
+        "Yorkshire and The Humber",
+        "East Midlands",
+        "West Midlands",
+        "East of England",
+        "London",
+        "South East",
+        "South West"
+      ],
+      "type": "string"
+    },
     "ResidentialUnits": {
       "additionalProperties": false,
       "properties": {
@@ -10035,487 +10520,6 @@
         "phone"
       ],
       "type": "object"
-    },
-    "UKProperty": {
-      "$id": "#UKProperty",
-      "additionalProperties": false,
-      "description": "Property details for sites anywhere in the UK",
-      "properties": {
-        "address": {
-          "anyOf": [
-            {
-              "$ref": "#/definitions/ProposedAddress"
-            },
-            {
-              "$ref": "#/definitions/OSAddress"
-            }
-          ]
-        },
-        "boundary": {
-          "$ref": "#/definitions/GeoBoundary",
-          "description": "HM Land Registry Index polygon for this property, commonly referred to as the blue-line or title boundary, sourced from planning.data.gov.uk/dataset/title-boundary"
-        },
-        "localAuthorityDistrict": {
-          "description": "Current and historic UK Local Authority Districts that contain this address sourced from planning.data.gov.uk/dataset/local-authority-district",
-          "items": {
-            "type": "string"
-          },
-          "type": "array"
-        },
-        "planning": {
-          "additionalProperties": false,
-          "description": "Planning constraints and policies that intersect with this site and may impact or restrict development",
-          "properties": {
-            "conditions": {
-              "items": {
-                "$ref": "#/definitions/PlanningConstraint"
-              },
-              "type": "array"
-            },
-            "designations": {
-              "items": {
-                "$ref": "#/definitions/PlanningDesignation"
-              },
-              "type": "array"
-            },
-            "guidance": {
-              "items": {
-                "$ref": "#/definitions/PlanningConstraint"
-              },
-              "type": "array"
-            },
-            "plans": {
-              "additionalProperties": false,
-              "properties": {
-                "local": {
-                  "items": {
-                    "$ref": "#/definitions/PlanningConstraint"
-                  },
-                  "type": "array"
-                },
-                "neighbourhood": {
-                  "items": {
-                    "$ref": "#/definitions/PlanningConstraint"
-                  },
-                  "type": "array"
-                }
-              },
-              "required": [
-                "local",
-                "neighbourhood"
-              ],
-              "type": "object"
-            },
-            "sources": {
-              "description": "A list of open data requests or websites that explain how these constraints were sourced",
-              "items": {
-                "$ref": "#/definitions/URL"
-              },
-              "type": "array"
-            }
-          },
-          "required": [
-            "sources"
-          ],
-          "type": "object"
-        },
-        "region": {
-          "$ref": "#/definitions/UKRegion"
-        },
-        "type": {
-          "$ref": "#/definitions/PropertyType"
-        }
-      },
-      "required": [
-        "address",
-        "region",
-        "localAuthorityDistrict",
-        "type"
-      ],
-      "type": "object"
-    },
-    "UKProposal": {
-      "additionalProperties": false,
-      "properties": {
-        "access": {
-          "additionalProperties": false,
-          "properties": {
-            "affected": {
-              "enum": [
-                "vehicle",
-                "pedestrian",
-                "newRoad",
-                "rightsOfWay.newPublic",
-                "rightsOfWay.changes"
-              ],
-              "type": "string"
-            }
-          },
-          "type": "object"
-        },
-        "boundary": {
-          "$ref": "#/definitions/GeoBoundaryPrototype",
-          "description": "Location plan boundary proposed by the user, commonly referred to as the red line boundary"
-        },
-        "date": {
-          "$ref": "#/definitions/ProposalDates"
-        },
-        "description": {
-          "type": "string"
-        },
-        "ecology": {
-          "additionalProperties": false,
-          "description": "Details of biodiversity and geological conservation, if applicable to application.type",
-          "properties": {
-            "conservationAffected": {
-              "enum": [
-                "site",
-                "adjacent",
-                "none"
-              ],
-              "type": "string"
-            },
-            "featuresAffected": {
-              "enum": [
-                "site",
-                "adjacent",
-                "none"
-              ],
-              "type": "string"
-            },
-            "speciesAffected": {
-              "enum": [
-                "site",
-                "adjacent",
-                "none"
-              ],
-              "type": "string"
-            }
-          },
-          "type": "object"
-        },
-        "environmentalImpactDescription": {
-          "type": "string"
-        },
-        "extend": {
-          "additionalProperties": false,
-          "properties": {
-            "area": {
-              "$ref": "#/definitions/Area"
-            }
-          },
-          "required": [
-            "area"
-          ],
-          "type": "object"
-        },
-        "flood": {
-          "additionalProperties": false,
-          "description": "Assessment of flood risk, if applicable to application.type",
-          "properties": {
-            "surfaceWaterDisposal": {
-              "enum": [
-                "drainageSystem",
-                "soakaway",
-                "sewer",
-                "watercourse",
-                "pondOrLake",
-                "other"
-              ],
-              "type": "string"
-            }
-          },
-          "type": "object"
-        },
-        "materials": {
-          "$ref": "#/definitions/Materials",
-          "description": "Proposed materials, if applicable to projectType"
-        },
-        "new": {
-          "additionalProperties": false,
-          "properties": {
-            "area": {
-              "$ref": "#/definitions/Area"
-            },
-            "count": {
-              "additionalProperties": false,
-              "properties": {
-                "bathrooms": {
-                  "$ref": "#/definitions/Integer"
-                },
-                "bedrooms": {
-                  "$ref": "#/definitions/Integer"
-                },
-                "dwellings": {
-                  "$ref": "#/definitions/Integer"
-                }
-              },
-              "type": "object"
-            }
-          },
-          "required": [
-            "area"
-          ],
-          "type": "object"
-        },
-        "newDwellings": {
-          "additionalProperties": false,
-          "properties": {
-            "newBuild": {
-              "additionalProperties": false,
-              "properties": {
-                "count": {
-                  "$ref": "#/definitions/Integer"
-                }
-              },
-              "required": [
-                "count"
-              ],
-              "type": "object"
-            }
-          },
-          "type": "object"
-        },
-        "projectType": {
-          "items": {
-            "$ref": "#/definitions/ProjectType"
-          },
-          "type": "array"
-        },
-        "structures": {
-          "additionalProperties": false,
-          "properties": {
-            "permanent": {
-              "additionalProperties": false,
-              "properties": {
-                "count": {
-                  "$ref": "#/definitions/Integer"
-                }
-              },
-              "required": [
-                "count"
-              ],
-              "type": "object"
-            },
-            "temporary": {
-              "additionalProperties": false,
-              "properties": {
-                "count": {
-                  "$ref": "#/definitions/Integer"
-                }
-              },
-              "required": [
-                "count"
-              ],
-              "type": "object"
-            },
-            "total": {
-              "$ref": "#/definitions/Integer"
-            },
-            "type": {
-              "enum": [
-                "bridge",
-                "catchpit",
-                "culvert",
-                "pipe",
-                "gully",
-                "headwall",
-                "manhole",
-                "weir",
-                "other"
-              ],
-              "type": "string"
-            }
-          },
-          "required": [
-            "type",
-            "total"
-          ],
-          "type": "object"
-        },
-        "units": {
-          "$ref": "#/definitions/ResidentialUnits"
-        },
-        "use": {
-          "additionalProperties": false,
-          "description": "Proposed land use, including storage of hazardous materials, if applicable to application.type",
-          "properties": {
-            "contamination": {
-              "enum": [
-                "known",
-                "suspected",
-                "vulnerable"
-              ],
-              "type": "string"
-            },
-            "description": {
-              "type": "string"
-            },
-            "storage": {
-              "items": {
-                "type": "string"
-              },
-              "type": "array"
-            }
-          },
-          "type": "object"
-        },
-        "utilities": {
-          "additionalProperties": false,
-          "description": "Proposed utilities, if applicable to application.type",
-          "properties": {
-            "fire": {
-              "additionalProperties": false,
-              "description": "Whether the proposal introduces a fire suppression system",
-              "properties": {
-                "suppression": {
-                  "type": "boolean"
-                }
-              },
-              "required": [
-                "suppression"
-              ],
-              "type": "object"
-            },
-            "foulSewageDisposal": {
-              "description": "Type of proposed foul sewage disposal",
-              "enum": [
-                "sewer",
-                "tank",
-                "plant",
-                "pit",
-                "other"
-              ],
-              "type": "string"
-            },
-            "gas": {
-              "additionalProperties": false,
-              "description": "Count of new gas connections",
-              "properties": {
-                "connections": {
-                  "additionalProperties": false,
-                  "properties": {
-                    "count": {
-                      "$ref": "#/definitions/Integer"
-                    }
-                  },
-                  "required": [
-                    "count"
-                  ],
-                  "type": "object"
-                }
-              },
-              "required": [
-                "connections"
-              ],
-              "type": "object"
-            },
-            "internet": {
-              "additionalProperties": false,
-              "description": "Count of new full fibre Internet connections",
-              "properties": {
-                "commercialUnits": {
-                  "additionalProperties": false,
-                  "properties": {
-                    "count": {
-                      "$ref": "#/definitions/Integer"
-                    }
-                  },
-                  "required": [
-                    "count"
-                  ],
-                  "type": "object"
-                },
-                "residentialUnits": {
-                  "additionalProperties": false,
-                  "properties": {
-                    "count": {
-                      "$ref": "#/definitions/Integer"
-                    }
-                  },
-                  "required": [
-                    "count"
-                  ],
-                  "type": "object"
-                }
-              },
-              "required": [
-                "commercialUnits",
-                "residentialUnits"
-              ],
-              "type": "object"
-            },
-            "water": {
-              "additionalProperties": false,
-              "description": "Count of new water connections",
-              "properties": {
-                "connections": {
-                  "additionalProperties": false,
-                  "properties": {
-                    "count": {
-                      "$ref": "#/definitions/Integer"
-                    }
-                  },
-                  "required": [
-                    "count"
-                  ],
-                  "type": "object"
-                }
-              },
-              "required": [
-                "connections"
-              ],
-              "type": "object"
-            }
-          },
-          "type": "object"
-        },
-        "watercourse": {
-          "additionalProperties": false,
-          "properties": {
-            "name": {
-              "type": "string"
-            },
-            "type": {
-              "enum": [
-                "ditch",
-                "millStream",
-                "pond",
-                "river",
-                "streamOrBrook",
-                "other"
-              ],
-              "type": "string"
-            }
-          },
-          "required": [
-            "name",
-            "type"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "projectType",
-        "description"
-      ],
-      "type": "object"
-    },
-    "UKRegion": {
-      "$id": "#UKRegion",
-      "description": "The UK region that contains this address sourced from planning.data.gov.uk/dataset/region, where London is a proxy for the Greater London Authority (GLA) area",
-      "enum": [
-        "North East",
-        "North West",
-        "Yorkshire and The Humber",
-        "East Midlands",
-        "West Midlands",
-        "East of England",
-        "London",
-        "South East",
-        "South West"
-      ],
-      "type": "string"
     },
     "UKResidentialUnitType": {
       "$id": "#UKResidentialUnitType",

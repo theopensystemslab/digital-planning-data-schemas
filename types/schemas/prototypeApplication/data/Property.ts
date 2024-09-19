@@ -6,13 +6,12 @@ import {
 } from '../enums/PlanningDesignation';
 import {PropertyType} from '../enums/PropertyTypes';
 
-export type PropertyBase = UKProperty | LondonProperty;
+export type PropertyBase = EnglandProperty | LondonProperty;
 
 /**
- * @id #UKRegion
- * @description The UK region that contains this address sourced from planning.data.gov.uk/dataset/region, where London is a proxy for the Greater London Authority (GLA) area
+ * @description The region in England that contains this address sourced from planning.data.gov.uk/dataset/region, where London is a proxy for the Greater London Authority (GLA) area
  */
-export type UKRegion =
+export type Region =
   | 'North East'
   | 'North West'
   | 'Yorkshire and The Humber'
@@ -24,14 +23,13 @@ export type UKRegion =
   | 'South West';
 
 /**
- * @id #UKProperty
- * @description Property details for sites anywhere in the UK
+ * @description Property details for sites anywhere in England
  */
-export interface UKProperty {
+export interface EnglandProperty {
   address: ProposedAddress | OSAddress;
-  region: UKRegion;
+  region: Region;
   /**
-   * @description Current and historic UK Local Authority Districts that contain this address sourced from planning.data.gov.uk/dataset/local-authority-district
+   * @description Current and historic England Local Authority Districts that contain this address sourced from planning.data.gov.uk/dataset/local-authority-district
    */
   localAuthorityDistrict: string[];
   type: PropertyType;
@@ -58,11 +56,10 @@ export interface UKProperty {
 }
 
 /**
- * @id #LondonProperty
  * @description Property details for sites within the Greater London Authority (GLA) area
  */
-export interface LondonProperty extends UKProperty {
-  region: Extract<UKRegion, 'London'>;
+export interface LondonProperty extends EnglandProperty {
+  region: Extract<Region, 'London'>;
   titleNumber?: {
     known: 'Yes' | 'No';
     number?: string;

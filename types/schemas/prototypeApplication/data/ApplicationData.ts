@@ -4,9 +4,11 @@ import {Date} from '../../../shared/utils';
 /**
  * Base type for ApplicationData. Contains all shared properties across all application types
  */
-export type ApplicationDataBase = UKApplicationData | LondonApplicationData;
+export type ApplicationDataBase =
+  | EnglandApplicationData
+  | LondonApplicationData;
 
-export interface UKApplicationData {
+export interface EnglandApplicationData {
   declaration: ApplicationDeclaration;
   preApp?: PreApplication;
   planningApp?: PlanningApplication;
@@ -176,7 +178,7 @@ export interface LeadDeveloper {
 /**
  * @description Application details for project sites within the Greater London Authority (GLA) area
  */
-export interface LondonApplicationData extends UKApplicationData {
+export interface LondonApplicationData extends EnglandApplicationData {
   vacantBuildingCredit?: boolean;
   leadDeveloper?: LeadDeveloper;
 }
