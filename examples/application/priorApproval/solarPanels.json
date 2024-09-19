@@ -1523,6 +1523,6 @@
         ]
       }
     },
-    "schema": "https://theopensystemslab.github.io/digital-planning-data-schemas/@next/schema.json"
+    "schema": "https://theopensystemslab.github.io/digital-planning-data-schemas/@next/schemas/application.json"
   }
 }

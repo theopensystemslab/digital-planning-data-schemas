@@ -668,6 +668,6 @@ export type ApplicationType =
 type ExtractPrimaryKeys<T> = T extends `${infer K}.${string}` ? K : T;
 
 /**
- * @internal
+ * @internal The first segment of the application type hierarchical codes
  */
 export type PrimaryApplicationType = ExtractPrimaryKeys<ApplicationType>;
