@@ -158,7 +158,7 @@ export interface LondonProposal extends Omit<UKProposal, 'units'> {
    */
   newStoreys?: NewBuildingsOrStoreys;
   /**
-   * @description Project cost
+   * @description Project cost in GBP
    */
   cost?: {
     projected: '2m' | '2mTo100m' | '100m';
