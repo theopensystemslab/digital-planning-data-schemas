@@ -215,9 +215,9 @@ export interface LondonProposal extends Omit<UKProposal, 'units'> {
    * @description Proposed energy sources
    */
   energy?: {
-  /**
-   * @uniqueItems true
-   */
+    /**
+     * @uniqueItems true
+     */
     type: Array<'communityOwned' | 'heatPump' | 'solar'>;
     communityOwned?: {
       /** @description Proposed total capacity of any on-site community-owned energy generation in megawatts (mW) */

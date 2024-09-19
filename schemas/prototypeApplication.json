@@ -139,6 +139,7 @@
           "description": "Contact information for the site visit"
         },
         "type": {
+          "description": "The type of applicant",
           "enum": [
             "individual",
             "company",
@@ -518,6 +519,7 @@
           "description": "Contact information for the site visit"
         },
         "type": {
+          "description": "The type of applicant",
           "enum": [
             "individual",
             "company",
@@ -537,6 +539,150 @@
         "type"
       ],
       "type": "object"
+    },
+    "BasePlanningDesignation": {
+      "anyOf": [
+        {
+          "const": "article4",
+          "description": "Article 4 Direction area",
+          "type": "string"
+        },
+        {
+          "const": "article4.caz",
+          "description": "Central Activities Zone (CAZ)",
+          "type": "string"
+        },
+        {
+          "const": "brownfieldSite",
+          "description": "Brownfield site",
+          "type": "string"
+        },
+        {
+          "const": "designated",
+          "description": "Designated land",
+          "type": "string"
+        },
+        {
+          "const": "designated.AONB",
+          "description": "Area of Outstanding Natural Beauty (AONB)",
+          "type": "string"
+        },
+        {
+          "const": "designated.conservationArea",
+          "description": "Conservation Area",
+          "type": "string"
+        },
+        {
+          "const": "designated.nationalPark",
+          "description": "National Park",
+          "type": "string"
+        },
+        {
+          "const": "designated.nationalPark.broads",
+          "description": "National Park - Broads",
+          "type": "string"
+        },
+        {
+          "const": "designated.WHS",
+          "description": "UNESCO World Heritage Site or buffer zone",
+          "type": "string"
+        },
+        {
+          "const": "flood",
+          "description": "Flood Risk Zone",
+          "type": "string"
+        },
+        {
+          "const": "flood.zone.1",
+          "description": "Flood Risk Zone 1 - Low risk",
+          "type": "string"
+        },
+        {
+          "const": "flood.zone.2",
+          "description": "Flood Risk Zone 2 - Medium risk",
+          "type": "string"
+        },
+        {
+          "const": "flood.zone.3",
+          "description": "Flood Risk Zone 3 - High risk",
+          "type": "string"
+        },
+        {
+          "const": "greenBelt",
+          "description": "Green Belt",
+          "type": "string"
+        },
+        {
+          "const": "listed",
+          "description": "Listed Building",
+          "type": "string"
+        },
+        {
+          "const": "listed.grade.I",
+          "description": "Listed Building - Grade I",
+          "type": "string"
+        },
+        {
+          "const": "listed.grade.II",
+          "description": "Listed Building - Grade II",
+          "type": "string"
+        },
+        {
+          "const": "listed.grade.II*",
+          "description": "Listed Building - Grade II*",
+          "type": "string"
+        },
+        {
+          "const": "locallyListed",
+          "description": "Locally Listed Building",
+          "type": "string"
+        },
+        {
+          "const": "monument",
+          "description": "Site of a Scheduled Monument",
+          "type": "string"
+        },
+        {
+          "const": "nature.ASNW",
+          "description": "Ancient Semi-Natural Woodland (ASNW)",
+          "type": "string"
+        },
+        {
+          "const": "nature.ramsarSite",
+          "description": "Ramsar site",
+          "type": "string"
+        },
+        {
+          "const": "nature.SAC",
+          "description": "Special Area of Conservation (SAC)",
+          "type": "string"
+        },
+        {
+          "const": "nature.SPA",
+          "description": "Special Protection Area (SPA)",
+          "type": "string"
+        },
+        {
+          "const": "nature.SSSI",
+          "description": "Site of Special Scientific Interest (SSSI)",
+          "type": "string"
+        },
+        {
+          "const": "registeredPark",
+          "description": "Historic Park or Garden",
+          "type": "string"
+        },
+        {
+          "const": "road.classified",
+          "description": "Classified Road",
+          "type": "string"
+        },
+        {
+          "const": "tpo",
+          "description": "Tree Preservation Order (TPO) or zone",
+          "type": "string"
+        }
+      ]
     },
     "BuildingRegulation": {
       "$id": "#BuildingRegulation",
@@ -1532,7 +1678,7 @@
                   "type": "object"
                 }
               ],
-              "description": "Information about the propery owners, if different than the applicant"
+              "description": "Information about the property owners, if different than the applicant"
             },
             "phone": {
               "additionalProperties": false,
@@ -1551,6 +1697,7 @@
               "description": "Contact information for the site visit"
             },
             "type": {
+              "description": "The type of applicant",
               "enum": [
                 "individual",
                 "company",
@@ -1717,7 +1864,7 @@
                   "type": "object"
                 }
               ],
-              "description": "Information about the propery owners, if different than the applicant"
+              "description": "Information about the property owners, if different than the applicant"
             },
             "phone": {
               "additionalProperties": false,
@@ -1736,6 +1883,7 @@
               "description": "Contact information for the site visit"
             },
             "type": {
+              "description": "The type of applicant",
               "enum": [
                 "individual",
                 "company",
@@ -2296,7 +2444,7 @@
         },
         "cost": {
           "additionalProperties": false,
-          "description": "Project cost",
+          "description": "Project cost in GBP",
           "properties": {
             "projected": {
               "enum": [
@@ -2428,7 +2576,8 @@
                 ],
                 "type": "string"
               },
-              "type": "array"
+              "type": "array",
+              "uniqueItems": true
             }
           },
           "required": [
@@ -4231,7 +4380,7 @@
             },
             "ownership": {
               "additionalProperties": false,
-              "description": "Information about the ownership certificate and propery owners, if different than the applicant",
+              "description": "Information about the ownership certificate and property owners, if different than the applicant",
               "properties": {
                 "agriculturalTenants": {
                   "description": "Does the land have any agricultural tenants?",
@@ -4338,6 +4487,7 @@
               "description": "Contact information for the site visit"
             },
             "type": {
+              "description": "The type of applicant",
               "enum": [
                 "individual",
                 "company",
@@ -4471,7 +4621,7 @@
             },
             "ownership": {
               "additionalProperties": false,
-              "description": "Information about the ownership certificate and propery owners, if different than the applicant",
+              "description": "Information about the ownership certificate and property owners, if different than the applicant",
               "properties": {
                 "agriculturalTenants": {
                   "description": "Does the land have any agricultural tenants?",
@@ -4578,6 +4728,7 @@
               "description": "Contact information for the site visit"
             },
             "type": {
+              "description": "The type of applicant",
               "enum": [
                 "individual",
                 "company",
@@ -4889,148 +5040,7 @@
               "type": "boolean"
             },
             "value": {
-              "anyOf": [
-                {
-                  "const": "article4",
-                  "description": "Article 4 Direction area",
-                  "type": "string"
-                },
-                {
-                  "const": "article4.caz",
-                  "description": "Central Activities Zone (CAZ)",
-                  "type": "string"
-                },
-                {
-                  "const": "brownfieldSite",
-                  "description": "Brownfield site",
-                  "type": "string"
-                },
-                {
-                  "const": "designated",
-                  "description": "Designated land",
-                  "type": "string"
-                },
-                {
-                  "const": "designated.AONB",
-                  "description": "Area of Outstanding Natural Beauty (AONB)",
-                  "type": "string"
-                },
-                {
-                  "const": "designated.conservationArea",
-                  "description": "Conservation Area",
-                  "type": "string"
-                },
-                {
-                  "const": "designated.nationalPark",
-                  "description": "National Park",
-                  "type": "string"
-                },
-                {
-                  "const": "designated.nationalPark.broads",
-                  "description": "National Park - Broads",
-                  "type": "string"
-                },
-                {
-                  "const": "designated.WHS",
-                  "description": "UNESCO World Heritage Site or buffer zone",
-                  "type": "string"
-                },
-                {
-                  "const": "flood",
-                  "description": "Flood Risk Zone",
-                  "type": "string"
-                },
-                {
-                  "const": "flood.zone.1",
-                  "description": "Flood Risk Zone 1 - Low risk",
-                  "type": "string"
-                },
-                {
-                  "const": "flood.zone.2",
-                  "description": "Flood Risk Zone 2 - Medium risk",
-                  "type": "string"
-                },
-                {
-                  "const": "flood.zone.3",
-                  "description": "Flood Risk Zone 3 - High risk",
-                  "type": "string"
-                },
-                {
-                  "const": "greenBelt",
-                  "description": "Green Belt",
-                  "type": "string"
-                },
-                {
-                  "const": "listed",
-                  "description": "Listed Building",
-                  "type": "string"
-                },
-                {
-                  "const": "listed.grade.I",
-                  "description": "Listed Building - Grade I",
-                  "type": "string"
-                },
-                {
-                  "const": "listed.grade.II",
-                  "description": "Listed Building - Grade II",
-                  "type": "string"
-                },
-                {
-                  "const": "listed.grade.II*",
-                  "description": "Listed Building - Grade II*",
-                  "type": "string"
-                },
-                {
-                  "const": "locallyListed",
-                  "description": "Locally Listed Building",
-                  "type": "string"
-                },
-                {
-                  "const": "monument",
-                  "description": "Site of a Scheduled Monument",
-                  "type": "string"
-                },
-                {
-                  "const": "nature.ASNW",
-                  "description": "Ancient Semi-Natural Woodland (ASNW)",
-                  "type": "string"
-                },
-                {
-                  "const": "nature.ramsarSite",
-                  "description": "Ramsar site",
-                  "type": "string"
-                },
-                {
-                  "const": "nature.SAC",
-                  "description": "Special Area of Conservation (SAC)",
-                  "type": "string"
-                },
-                {
-                  "const": "nature.SPA",
-                  "description": "Special Protection Area (SPA)",
-                  "type": "string"
-                },
-                {
-                  "const": "nature.SSSI",
-                  "description": "Site of Special Scientific Interest (SSSI)",
-                  "type": "string"
-                },
-                {
-                  "const": "registeredPark",
-                  "description": "Historic Park or Garden",
-                  "type": "string"
-                },
-                {
-                  "const": "road.classified",
-                  "description": "Classified Road",
-                  "type": "string"
-                },
-                {
-                  "const": "tpo",
-                  "description": "Tree Preservation Order (TPO) or zone",
-                  "type": "string"
-                }
-              ]
+              "$ref": "#/definitions/BasePlanningDesignation"
             }
           },
           "required": [
@@ -5054,148 +5064,7 @@
               "type": "boolean"
             },
             "value": {
-              "anyOf": [
-                {
-                  "const": "article4",
-                  "description": "Article 4 Direction area",
-                  "type": "string"
-                },
-                {
-                  "const": "article4.caz",
-                  "description": "Central Activities Zone (CAZ)",
-                  "type": "string"
-                },
-                {
-                  "const": "brownfieldSite",
-                  "description": "Brownfield site",
-                  "type": "string"
-                },
-                {
-                  "const": "designated",
-                  "description": "Designated land",
-                  "type": "string"
-                },
-                {
-                  "const": "designated.AONB",
-                  "description": "Area of Outstanding Natural Beauty (AONB)",
-                  "type": "string"
-                },
-                {
-                  "const": "designated.conservationArea",
-                  "description": "Conservation Area",
-                  "type": "string"
-                },
-                {
-                  "const": "designated.nationalPark",
-                  "description": "National Park",
-                  "type": "string"
-                },
-                {
-                  "const": "designated.nationalPark.broads",
-                  "description": "National Park - Broads",
-                  "type": "string"
-                },
-                {
-                  "const": "designated.WHS",
-                  "description": "UNESCO World Heritage Site or buffer zone",
-                  "type": "string"
-                },
-                {
-                  "const": "flood",
-                  "description": "Flood Risk Zone",
-                  "type": "string"
-                },
-                {
-                  "const": "flood.zone.1",
-                  "description": "Flood Risk Zone 1 - Low risk",
-                  "type": "string"
-                },
-                {
-                  "const": "flood.zone.2",
-                  "description": "Flood Risk Zone 2 - Medium risk",
-                  "type": "string"
-                },
-                {
-                  "const": "flood.zone.3",
-                  "description": "Flood Risk Zone 3 - High risk",
-                  "type": "string"
-                },
-                {
-                  "const": "greenBelt",
-                  "description": "Green Belt",
-                  "type": "string"
-                },
-                {
-                  "const": "listed",
-                  "description": "Listed Building",
-                  "type": "string"
-                },
-                {
-                  "const": "listed.grade.I",
-                  "description": "Listed Building - Grade I",
-                  "type": "string"
-                },
-                {
-                  "const": "listed.grade.II",
-                  "description": "Listed Building - Grade II",
-                  "type": "string"
-                },
-                {
-                  "const": "listed.grade.II*",
-                  "description": "Listed Building - Grade II*",
-                  "type": "string"
-                },
-                {
-                  "const": "locallyListed",
-                  "description": "Locally Listed Building",
-                  "type": "string"
-                },
-                {
-                  "const": "monument",
-                  "description": "Site of a Scheduled Monument",
-                  "type": "string"
-                },
-                {
-                  "const": "nature.ASNW",
-                  "description": "Ancient Semi-Natural Woodland (ASNW)",
-                  "type": "string"
-                },
-                {
-                  "const": "nature.ramsarSite",
-                  "description": "Ramsar site",
-                  "type": "string"
-                },
-                {
-                  "const": "nature.SAC",
-                  "description": "Special Area of Conservation (SAC)",
-                  "type": "string"
-                },
-                {
-                  "const": "nature.SPA",
-                  "description": "Special Protection Area (SPA)",
-                  "type": "string"
-                },
-                {
-                  "const": "nature.SSSI",
-                  "description": "Site of Special Scientific Interest (SSSI)",
-                  "type": "string"
-                },
-                {
-                  "const": "registeredPark",
-                  "description": "Historic Park or Garden",
-                  "type": "string"
-                },
-                {
-                  "const": "road.classified",
-                  "description": "Classified Road",
-                  "type": "string"
-                },
-                {
-                  "const": "tpo",
-                  "description": "Tree Preservation Order (TPO) or zone",
-                  "type": "string"
-                }
-              ]
+              "$ref": "#/definitions/BasePlanningDesignation"
             }
           },
           "required": [
@@ -9782,6 +9651,9 @@
             "flowId": {
               "$ref": "#/definitions/UUID"
             },
+            "overrides": {
+              "$ref": "#/definitions/UserOverrides"
+            },
             "url": {
               "$ref": "#/definitions/URL"
             }
@@ -10638,6 +10510,127 @@
       "required": [
         "role"
       ],
+      "type": "object"
+    },
+    "UserOverrides": {
+      "additionalProperties": false,
+      "description": "Administrative data suggested by PlanX which the user overrode or changed",
+      "properties": {
+        "property": {
+          "additionalProperties": false,
+          "properties": {
+            "planning": {
+              "additionalProperties": false,
+              "properties": {
+                "designations": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "entities": {
+                        "items": {
+                          "additionalProperties": false,
+                          "properties": {
+                            "description": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "type": "string"
+                            },
+                            "source": {
+                              "anyOf": [
+                                {
+                                  "additionalProperties": false,
+                                  "properties": {
+                                    "text": {
+                                      "const": "Planning Data",
+                                      "type": "string"
+                                    },
+                                    "url": {
+                                      "$ref": "#/definitions/URL"
+                                    }
+                                  },
+                                  "required": [
+                                    "text",
+                                    "url"
+                                  ],
+                                  "type": "object"
+                                },
+                                {
+                                  "additionalProperties": false,
+                                  "properties": {
+                                    "text": {
+                                      "const": "Ordnance Survey MasterMap Highways",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "required": [
+                                    "text"
+                                  ],
+                                  "type": "object"
+                                }
+                              ]
+                            },
+                            "userReason": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "name",
+                            "source",
+                            "userReason"
+                          ],
+                          "type": "object"
+                        },
+                        "type": "array"
+                      },
+                      "sourceIntersects": {
+                        "const": true,
+                        "type": "boolean"
+                      },
+                      "userIntersects": {
+                        "const": false,
+                        "type": "boolean"
+                      },
+                      "value": {
+                        "$ref": "#/definitions/BasePlanningDesignation"
+                      }
+                    },
+                    "required": [
+                      "value",
+                      "sourceIntersects",
+                      "userIntersects",
+                      "entities"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                }
+              },
+              "required": [
+                "designations"
+              ],
+              "type": "object"
+            },
+            "type": {
+              "additionalProperties": false,
+              "properties": {
+                "sourceType": {
+                  "type": "string"
+                },
+                "userType": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "sourceType",
+                "userType"
+              ],
+              "type": "object"
+            }
+          },
+          "type": "object"
+        }
+      },
       "type": "object"
     },
     "UserRoles": {
