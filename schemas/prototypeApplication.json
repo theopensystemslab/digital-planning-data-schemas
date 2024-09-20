@@ -5031,7 +5031,7 @@
               "$ref": "#/definitions/PPApplicationData"
             },
             "property": {
-              "$ref": "#/definitions/PropertyBase"
+              "$ref": "#/definitions/PPProperty"
             },
             "proposal": {
               "$ref": "#/definitions/ProposalBase"
@@ -5695,6 +5695,397 @@
           "const": "pp.pip",
           "description": "Planning Permission in Principle - Consent for the principle of a project with less than 1000 square metres floor area on a site of less than 1 hectare",
           "type": "string"
+        }
+      ]
+    },
+    "PPProperty": {
+      "anyOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "address": {
+              "anyOf": [
+                {
+                  "$ref": "#/definitions/ProposedAddress"
+                },
+                {
+                  "$ref": "#/definitions/OSAddress"
+                }
+              ]
+            },
+            "boundary": {
+              "$ref": "#/definitions/GeoBoundary",
+              "description": "HM Land Registry Index polygon for this property, commonly referred to as the blue-line or title boundary, sourced from planning.data.gov.uk/dataset/title-boundary"
+            },
+            "localAuthorityDistrict": {
+              "description": "Current and historic England Local Authority Districts that contain this address sourced from planning.data.gov.uk/dataset/local-authority-district",
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "materials": {
+              "$ref": "#/definitions/Materials"
+            },
+            "planning": {
+              "additionalProperties": false,
+              "description": "Planning constraints and policies that intersect with this site and may impact or restrict development",
+              "properties": {
+                "conditions": {
+                  "items": {
+                    "$ref": "#/definitions/PlanningConstraint"
+                  },
+                  "type": "array"
+                },
+                "designations": {
+                  "items": {
+                    "$ref": "#/definitions/PlanningDesignation"
+                  },
+                  "type": "array"
+                },
+                "guidance": {
+                  "items": {
+                    "$ref": "#/definitions/PlanningConstraint"
+                  },
+                  "type": "array"
+                },
+                "plans": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "local": {
+                      "items": {
+                        "$ref": "#/definitions/PlanningConstraint"
+                      },
+                      "type": "array"
+                    },
+                    "neighbourhood": {
+                      "items": {
+                        "$ref": "#/definitions/PlanningConstraint"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "local",
+                    "neighbourhood"
+                  ],
+                  "type": "object"
+                },
+                "sources": {
+                  "description": "A list of open data requests or websites that explain how these constraints were sourced",
+                  "items": {
+                    "$ref": "#/definitions/URL"
+                  },
+                  "type": "array"
+                }
+              },
+              "required": [
+                "sources"
+              ],
+              "type": "object"
+            },
+            "region": {
+              "$ref": "#/definitions/Region"
+            },
+            "type": {
+              "$ref": "#/definitions/PropertyType"
+            },
+            "use": {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "address",
+            "localAuthorityDistrict",
+            "region",
+            "type"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "EPC": {
+              "additionalProperties": false,
+              "properties": {
+                "known": {
+                  "enum": [
+                    "Yes",
+                    "Yes, but only some of the properties have one",
+                    "The property does not have one",
+                    "No"
+                  ],
+                  "type": "string"
+                },
+                "number": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "known"
+              ],
+              "title": "Energy Performance Certificate",
+              "type": "object"
+            },
+            "address": {
+              "anyOf": [
+                {
+                  "$ref": "#/definitions/ProposedAddress"
+                },
+                {
+                  "$ref": "#/definitions/OSAddress"
+                }
+              ]
+            },
+            "boundary": {
+              "$ref": "#/definitions/GeoBoundary",
+              "description": "HM Land Registry Index polygon for this property, commonly referred to as the blue-line or title boundary, sourced from planning.data.gov.uk/dataset/title-boundary"
+            },
+            "localAuthorityDistrict": {
+              "description": "Current and historic England Local Authority Districts that contain this address sourced from planning.data.gov.uk/dataset/local-authority-district",
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "materials": {
+              "$ref": "#/definitions/Materials"
+            },
+            "parking": {
+              "additionalProperties": false,
+              "properties": {
+                "buses": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "count": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "count"
+                  ],
+                  "type": "object"
+                },
+                "carClub": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "count": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "count"
+                  ],
+                  "type": "object"
+                },
+                "cars": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "count": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "count"
+                  ],
+                  "type": "object"
+                },
+                "cycles": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "count": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "count"
+                  ],
+                  "type": "object"
+                },
+                "disabled": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "count": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "count"
+                  ],
+                  "type": "object"
+                },
+                "motorcycles": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "count": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "count"
+                  ],
+                  "type": "object"
+                },
+                "offStreet": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "residential": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "count": {
+                          "type": "number"
+                        }
+                      },
+                      "required": [
+                        "count"
+                      ],
+                      "type": "object"
+                    }
+                  },
+                  "required": [
+                    "residential"
+                  ],
+                  "type": "object"
+                },
+                "other": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "count": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "count"
+                  ],
+                  "type": "object"
+                },
+                "vans": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "count": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "count"
+                  ],
+                  "type": "object"
+                }
+              },
+              "type": "object"
+            },
+            "planning": {
+              "additionalProperties": false,
+              "description": "Planning constraints and policies that intersect with this site and may impact or restrict development",
+              "properties": {
+                "conditions": {
+                  "items": {
+                    "$ref": "#/definitions/PlanningConstraint"
+                  },
+                  "type": "array"
+                },
+                "designations": {
+                  "items": {
+                    "$ref": "#/definitions/PlanningDesignation"
+                  },
+                  "type": "array"
+                },
+                "guidance": {
+                  "items": {
+                    "$ref": "#/definitions/PlanningConstraint"
+                  },
+                  "type": "array"
+                },
+                "plans": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "local": {
+                      "items": {
+                        "$ref": "#/definitions/PlanningConstraint"
+                      },
+                      "type": "array"
+                    },
+                    "neighbourhood": {
+                      "items": {
+                        "$ref": "#/definitions/PlanningConstraint"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "local",
+                    "neighbourhood"
+                  ],
+                  "type": "object"
+                },
+                "sources": {
+                  "description": "A list of open data requests or websites that explain how these constraints were sourced",
+                  "items": {
+                    "$ref": "#/definitions/URL"
+                  },
+                  "type": "array"
+                }
+              },
+              "required": [
+                "sources"
+              ],
+              "type": "object"
+            },
+            "region": {
+              "const": "London",
+              "type": "string"
+            },
+            "titleNumber": {
+              "additionalProperties": false,
+              "properties": {
+                "known": {
+                  "enum": [
+                    "Yes",
+                    "No"
+                  ],
+                  "type": "string"
+                },
+                "number": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "known"
+              ],
+              "type": "object"
+            },
+            "type": {
+              "$ref": "#/definitions/PropertyType"
+            },
+            "use": {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "address",
+            "localAuthorityDistrict",
+            "region",
+            "type"
+          ],
+          "type": "object"
         }
       ]
     },

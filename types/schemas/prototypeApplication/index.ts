@@ -1,8 +1,8 @@
 import {Responses} from '../../shared/Responses';
 import {Applicant} from './data/Applicant';
 import {ApplicationData} from './data/ApplicationData';
-import {PropertyBase} from './data/Property';
-import {ProposalBase} from './data/Proposal';
+import {Property} from './data/Property';
+import {Proposal} from './data/Proposal';
 import {UserBase} from './data/User';
 import {
   ApplicationType,
@@ -32,8 +32,8 @@ interface ApplicationSpecification<
     user: UserBase;
     applicant: Applicant<TPrimary>;
     application: ApplicationData<TPrimary>;
-    property: PropertyBase;
-    proposal: ProposalBase;
+    property: Property<TPrimary>;
+    proposal: Proposal<TPrimary>;
   };
   preAssessment?: PreAssessment;
   responses: Responses;
