@@ -28,48 +28,48 @@ export const landDrainageConsentPrototype: PrototypeApplication = {
       siteContact: {
         role: 'applicant',
       },
-      // ownership: {
-      //   interest: 'other',
-      // },
-      // maintenanceContact: [
-      //   {
-      //     when: 'duringConstruction',
-      //     address: {
-      //       line1: 'Pevensey Castle',
-      //       town: 'Pevensey',
-      //       postcode: 'PE737SY',
-      //     },
-      //     contact: {
-      //       name: {
-      //         title: 'Count',
-      //         first: 'Robert',
-      //         last: 'of Mortain',
-      //       },
-      //       email: 'countbobby@email.org',
-      //       phone: '012345678901',
-      //     },
-      //   },
-      //   {
-      //     when: 'afterConstruction',
-      //     address: {
-      //       line1: 'Dover Castle',
-      //       town: 'Dover',
-      //       postcode: 'DO737CA',
-      //     },
-      //     contact: {
-      //       name: {
-      //         title: 'Baron',
-      //         first: 'Roger',
-      //         last: 'De Leybourne',
-      //       },
-      //       email: 'baronsarerevolting@email.org',
-      //       phone: '098765432109',
-      //       company: {
-      //         name: "The Barons' Revolt",
-      //       },
-      //     },
-      //   },
-      // ],
+      ownership: {
+        interest: 'other',
+      },
+      maintenanceContact: [
+        {
+          when: 'duringConstruction',
+          address: {
+            line1: 'Pevensey Castle',
+            town: 'Pevensey',
+            postcode: 'PE737SY',
+          },
+          contact: {
+            name: {
+              title: 'Count',
+              first: 'Robert',
+              last: 'of Mortain',
+            },
+            email: 'countbobby@email.org',
+            phone: {primary: '012345678901'},
+          },
+        },
+        {
+          when: 'afterConstruction',
+          address: {
+            line1: 'Dover Castle',
+            town: 'Dover',
+            postcode: 'DO737CA',
+          },
+          contact: {
+            name: {
+              title: 'Baron',
+              first: 'Roger',
+              last: 'De Leybourne',
+            },
+            email: 'baronsarerevolting@email.org',
+            phone: {primary: '098765432109'},
+            company: {
+              name: "The Barons' Revolt",
+            },
+          },
+        },
+      ],
     },
     property: {
       address: {

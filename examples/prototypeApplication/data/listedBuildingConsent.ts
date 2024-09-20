@@ -30,38 +30,38 @@ export const listedBuildingConsentPrototype: PrototypeApplication = {
         email: 'gonzo@muppets.org',
         phone: '987654321',
       },
-      // ownership: {
-      //   interest: 'owner.sole',
-      //   certificate: 'b',
-      //   noticeGiven: true,
-      //   agriculturalTenants: true,
-      //   ownersKnown: 'all',
-      //   owners: [
-      //     {
-      //       name: 'Rowlf the Dog',
-      //       address: {
-      //         line1: '123 Sesame Street',
-      //         town: 'New York City',
-      //         postcode: '10023',
-      //         country: 'USA',
-      //       },
-      //       noticeDate: '2024-04-01',
-      //     },
-      //     {
-      //       name: 'Rizzo the Rat',
-      //       address: {
-      //         line1: '123 Sesame Street',
-      //         town: 'New York City',
-      //         postcode: '10023',
-      //         country: 'USA',
-      //       },
-      //       noticeDate: '2024-04-01',
-      //     },
-      //   ],
-      //   declaration: {
-      //     accurate: true,
-      //   },
-      // },
+      ownership: {
+        interest: 'owner.sole',
+        certificate: 'b',
+        noticeGiven: true,
+        agriculturalTenants: true,
+        ownersKnown: 'all',
+        owners: [
+          {
+            name: 'Rowlf the Dog',
+            address: {
+              line1: '123 Sesame Street',
+              town: 'New York City',
+              postcode: '10023',
+              country: 'USA',
+            },
+            noticeDate: '2024-04-01',
+          },
+          {
+            name: 'Rizzo the Rat',
+            address: {
+              line1: '123 Sesame Street',
+              town: 'New York City',
+              postcode: '10023',
+              country: 'USA',
+            },
+            noticeDate: '2024-04-01',
+          },
+        ],
+        declaration: {
+          accurate: true,
+        },
+      },
     },
     property: {
       address: {

@@ -146,6 +146,9 @@
             ]
           }
         ]
+      },
+      "materials": {
+        "boundary": "black painted timber"
       }
     },
     "application": {

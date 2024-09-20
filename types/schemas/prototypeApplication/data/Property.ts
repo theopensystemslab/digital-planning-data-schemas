@@ -1,10 +1,12 @@
 import {URL} from '../../../shared/utils';
 import {GeoBoundary} from '../../application/data/shared';
+import {PrimaryApplicationType} from '../enums/ApplicationType';
 import {
   PlanningConstraint,
   PlanningDesignation,
 } from '../enums/PlanningDesignation';
 import {PropertyType} from '../enums/PropertyTypes';
+import {Materials} from './shared';
 
 export type PropertyBase = EnglandProperty | LondonProperty;
 
@@ -142,3 +144,25 @@ export interface OSAddress extends SiteAddress {
   singleLine: string;
   source: 'Ordnance Survey';
 }
+
+export type PPProperty = PropertyBase & {
+  materials?: Materials;
+  use?: {
+    description: string;
+  };
+};
+
+/**
+ * TypeMap of PrimaryApplicationTypes to their specific Property models
+ */
+interface PropertyVariants {
+  pp: PPProperty;
+}
+
+/**
+ * @internal Conditional type to return a specific or generic Property model, based on PrimaryApplicationType
+ */
+export type Property<TPrimary extends PrimaryApplicationType> =
+  TPrimary extends keyof PropertyVariants
+    ? PropertyVariants[TPrimary]
+    : PropertyBase;

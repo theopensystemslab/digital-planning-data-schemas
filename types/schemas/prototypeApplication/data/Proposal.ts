@@ -1,3 +1,5 @@
+import {Area, Date, Integer} from '../../../shared/utils';
+import {PrimaryApplicationType} from '../enums/ApplicationType';
 import {BuildingRegulation} from '../enums/BuildingRegulation';
 import {DevelopmentType} from '../enums/DevelopmentType';
 import {GLAHousingProvider} from '../enums/HousingProvider';
@@ -6,7 +8,6 @@ import {ProjectType} from '../enums/ProjectType';
 import {ProtectedSpaceDesignation} from '../enums/ProtectedSpaceDesignation';
 import {GLAResidentialUnitType} from '../enums/ResidentialUnitType';
 import {GLATenureType} from '../enums/TenureType';
-import {Area, Date, Integer} from '../../../shared/utils';
 import {GeoBoundaryPrototype, Materials, ResidentialUnits} from './shared';
 
 /**
@@ -304,3 +305,16 @@ interface GLAGainedUnit extends GLALostUnit {
   development: DevelopmentType;
   garden: boolean;
 }
+
+/**
+ * TypeMap of PrimaryApplicationTypes to their specific Proposal models
+ */
+type ProposalVariants = {};
+
+/**
+ * @internal Conditional type to return a specific or generic Proposal model, based on PrimaryApplicationType
+ */
+export type Proposal<TPrimary extends PrimaryApplicationType> =
+  TPrimary extends keyof ProposalVariants
+    ? ProposalVariants[TPrimary]
+    : ProposalBase;

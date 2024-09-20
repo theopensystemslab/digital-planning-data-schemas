@@ -149,9 +149,9 @@ export const planningPermissionMinorPrototype: PrototypeApplication = {
           },
         ],
       },
-      // materials: {
-      //   boundary: 'black painted timber',
-      // },
+      materials: {
+        boundary: 'black painted timber',
+      },
     },
     application: {
       fee: {

@@ -88,7 +88,7 @@ export interface OwnersNoticeDate extends BaseOwners {
   noticeDate: Date;
 }
 
-export type MaintenanceContact = {
+export type MaintenanceContacts = {
   when:
     | 'duringConstruction'
     | 'afterConstruction'
@@ -147,7 +147,15 @@ export type PPApplicant = ApplicantBase & {
   /**
    * @description Contact information for the person(s) responsible for maintenace while the works are carried out
    */
-  maintenanceContact?: MaintenanceContact[];
+  maintenanceContact?: MaintenanceContacts;
+};
+
+export type LandDrainageConsentApplicant = ApplicantBase & {
+  ownership: {
+    interest: OwnershipInterest | 'owner.sole' | 'owner.co';
+  };
+  /** @description Contact information for the person(s) responsible for maintenace while the works are carried out */
+  maintenanceContact?: MaintenanceContacts;
 };
 
 /**
@@ -156,6 +164,8 @@ export type PPApplicant = ApplicantBase & {
 interface ApplicantVariants {
   ldc: LDCApplicant;
   pp: PPApplicant;
+  landDrainageConsent: LandDrainageConsentApplicant;
+  listed: PPApplicant;
 }
 
 /**

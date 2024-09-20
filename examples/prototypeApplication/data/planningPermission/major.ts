@@ -1,4 +1,5 @@
 import {PrototypeApplication} from '../../../../types/schemas/prototypeApplication';
+import {PPApplicant} from '../../../../types/schemas/prototypeApplication/data/Applicant';
 
 const version = process.env['VERSION'] || '@next';
 
@@ -35,24 +36,24 @@ export const planningPermissionMajorPrototype: PrototypeApplication = {
         certificate: 'b',
         noticeGiven: true,
         ownersKnown: 'all',
-        // owners: [
-        //   {
-        //     name: 'Agamemnon Agricullen',
-        //     address: {
-        //       town: 'Mycenae',
-        //       line1: 'Aggy Avenue',
-        //       line2: '',
-        //       county: '',
-        //       country: 'Greece',
-        //       postcode: '212 00',
-        //     },
-        //     noticeGiven: true,
-        //   },
-        // ],
+        owners: [
+          {
+            name: 'Agamemnon Agricullen',
+            address: {
+              town: 'Mycenae',
+              line1: 'Aggy Avenue',
+              line2: '',
+              county: '',
+              country: 'Greece',
+              postcode: '212 00',
+            },
+            noticeDate: '2024-01-01',
+          },
+        ],
         declaration: {
           accurate: true,
         },
-      },
+      } as PPApplicant['ownership'],
       agent: {
         name: {
           first: 'Andy',
@@ -87,9 +88,9 @@ export const planningPermissionMajorPrototype: PrototypeApplication = {
       localAuthorityDistrict: ['Buckinghamshire', 'South Bucks'],
       region: 'South East',
       type: 'other.unsupported',
-      // use: {
-      //   description: 'Vacant brownfield',
-      // },
+      use: {
+        description: 'Vacant brownfield',
+      },
       planning: {
         sources: [
           'https://api.editor.planx.dev/gis/buckinghamshire?geom=POLYGON+%28%28-0.5202563671906586+51.51349326091676%2C+-0.5162271673824664+51.51342965453125%2C+-0.5160930726385158+51.5119189712527%2C+-0.5186025432309797+51.51150473816995%2C+-0.5192921685359919+51.51150076298916%2C+-0.5197391470751718+51.5115882253788%2C+-0.5204032314768795+51.51156039632619%2C+-0.5207544293552119+51.512609937924225%2C+-0.5202563671906586+51.51349326091676%29%29&sessionId=180da003-279d-40dc-b538-a616c8c2a700',
