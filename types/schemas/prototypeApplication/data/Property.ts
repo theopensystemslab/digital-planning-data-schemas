@@ -134,7 +134,26 @@ export interface OSAddress extends SiteAddress {
    * @maxLength 8
    */
   usrn: string;
+  /**
+   * @title Primary Addressable Object start range and/or building description
+   * @description Combined `PAO_START_NUMBER`, `PAO_START_SUFFIX`, `PAO_TEXT` OS LPI properties
+   */
   pao: string;
+  /**
+   * @title Primary Addressable Object (PAO) end range
+   * @description Combined `PAO_END_NUMBER`, `PAO_END_SUFFIX` OS LPI properties
+   */
+  paoEnd?: string;
+  /**
+   * @title Secondary Addressable Object (SAO) start range and/or building description
+   * @description Combined `SAO_START_NUMBER`, `SAO_START_SUFFIX`, `SAO_TEXT` OS LPI properties
+   */
+  sao?: string;
+  /**
+   * @title Secondary Addressable Object (SAO) end range
+   * @description Combined `SAO_END_NUMBER`, `SAO_END_SUFFIX` OS LPI properties
+   */
+  saoEnd?: string;
   street: string;
   town: string;
   postcode: string;

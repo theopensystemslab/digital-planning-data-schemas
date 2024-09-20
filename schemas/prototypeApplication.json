@@ -4195,9 +4195,26 @@
           "type": "string"
         },
         "pao": {
+          "description": "Combined `PAO_START_NUMBER`, `PAO_START_SUFFIX`, `PAO_TEXT` OS LPI properties",
+          "title": "Primary Addressable Object start range and/or building description",
+          "type": "string"
+        },
+        "paoEnd": {
+          "description": "Combined `PAO_END_NUMBER`, `PAO_END_SUFFIX` OS LPI properties",
+          "title": "Primary Addressable Object (PAO) end range",
           "type": "string"
         },
         "postcode": {
+          "type": "string"
+        },
+        "sao": {
+          "description": "Combined `SAO_START_NUMBER`, `SAO_START_SUFFIX`, `SAO_TEXT` OS LPI properties",
+          "title": "Secondary Addressable Object (SAO) start range and/or building description",
+          "type": "string"
+        },
+        "saoEnd": {
+          "description": "Combined `SAO_END_NUMBER`, `SAO_END_SUFFIX` OS LPI properties",
+          "title": "Secondary Addressable Object (SAO) end range",
           "type": "string"
         },
         "singleLine": {
