@@ -1,4 +1,5 @@
 import {PrototypeApplication} from '../../../../types/schemas/prototypeApplication';
+import { PPApplicant } from '../../../../types/schemas/prototypeApplication/data/Applicant';
 
 const version = process.env['VERSION'] || '@next';
 
@@ -35,24 +36,24 @@ export const planningPermissionMajorPrototype: PrototypeApplication = {
         certificate: 'b',
         noticeGiven: true,
         ownersKnown: 'all',
-        // owners: [
-        //   {
-        //     name: 'Agamemnon Agricullen',
-        //     address: {
-        //       town: 'Mycenae',
-        //       line1: 'Aggy Avenue',
-        //       line2: '',
-        //       county: '',
-        //       country: 'Greece',
-        //       postcode: '212 00',
-        //     },
-        //     noticeGiven: true,
-        //   },
-        // ],
+        owners: [
+          {
+            name: 'Agamemnon Agricullen',
+            address: {
+              town: 'Mycenae',
+              line1: 'Aggy Avenue',
+              line2: '',
+              county: '',
+              country: 'Greece',
+              postcode: '212 00',
+            },
+            noticeDate: '2024-01-01',
+          },
+        ],
         declaration: {
           accurate: true,
         },
-      },
+      } as PPApplicant["ownership"],
       agent: {
         name: {
           first: 'Andy',

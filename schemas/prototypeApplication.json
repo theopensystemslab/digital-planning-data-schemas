@@ -2411,7 +2411,7 @@
           "additionalProperties": false,
           "properties": {
             "applicant": {
-              "$ref": "#/definitions/ApplicantBase"
+              "$ref": "#/definitions/LandDrainageConsentApplicant"
             },
             "application": {
               "$ref": "#/definitions/FeeCarryingApplicationData"
@@ -2459,6 +2459,289 @@
         "metadata"
       ],
       "type": "object"
+    },
+    "LandDrainageConsentApplicant": {
+      "anyOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "address": {
+              "$ref": "#/definitions/ApplicantAddress",
+              "description": "Address information for the applicant"
+            },
+            "company": {
+              "additionalProperties": false,
+              "properties": {
+                "name": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name"
+              ],
+              "type": "object"
+            },
+            "email": {
+              "$ref": "#/definitions/Email"
+            },
+            "maintenanceContact": {
+              "$ref": "#/definitions/MaintenanceContacts",
+              "description": "Contact information for the person(s) responsible for maintenace while the works are carried out"
+            },
+            "name": {
+              "additionalProperties": false,
+              "properties": {
+                "first": {
+                  "type": "string"
+                },
+                "last": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "first",
+                "last"
+              ],
+              "type": "object"
+            },
+            "ownership": {
+              "additionalProperties": false,
+              "properties": {
+                "interest": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/definitions/OwnershipInterest"
+                    },
+                    {
+                      "const": "owner.sole",
+                      "type": "string"
+                    },
+                    {
+                      "const": "owner.co",
+                      "type": "string"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "interest"
+              ],
+              "type": "object"
+            },
+            "phone": {
+              "additionalProperties": false,
+              "properties": {
+                "primary": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "primary"
+              ],
+              "type": "object"
+            },
+            "siteContact": {
+              "$ref": "#/definitions/SiteContact",
+              "description": "Contact information for the site visit"
+            },
+            "type": {
+              "description": "The type of applicant",
+              "enum": [
+                "individual",
+                "company",
+                "charity",
+                "public",
+                "parishCouncil"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "address",
+            "email",
+            "name",
+            "ownership",
+            "phone",
+            "siteContact",
+            "type"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "address": {
+              "$ref": "#/definitions/ApplicantAddress",
+              "description": "Address information for the applicant"
+            },
+            "agent": {
+              "additionalProperties": false,
+              "description": "Contact information for the agent or proxy",
+              "properties": {
+                "address": {
+                  "$ref": "#/definitions/UserAddress"
+                },
+                "company": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "name"
+                  ],
+                  "type": "object"
+                },
+                "email": {
+                  "$ref": "#/definitions/Email"
+                },
+                "name": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "first": {
+                      "type": "string"
+                    },
+                    "last": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "first",
+                    "last"
+                  ],
+                  "type": "object"
+                },
+                "phone": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "primary": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "primary"
+                  ],
+                  "type": "object"
+                }
+              },
+              "required": [
+                "address",
+                "email",
+                "name",
+                "phone"
+              ],
+              "type": "object"
+            },
+            "company": {
+              "additionalProperties": false,
+              "properties": {
+                "name": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name"
+              ],
+              "type": "object"
+            },
+            "email": {
+              "$ref": "#/definitions/Email"
+            },
+            "maintenanceContact": {
+              "$ref": "#/definitions/MaintenanceContacts",
+              "description": "Contact information for the person(s) responsible for maintenace while the works are carried out"
+            },
+            "name": {
+              "additionalProperties": false,
+              "properties": {
+                "first": {
+                  "type": "string"
+                },
+                "last": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "first",
+                "last"
+              ],
+              "type": "object"
+            },
+            "ownership": {
+              "additionalProperties": false,
+              "properties": {
+                "interest": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/definitions/OwnershipInterest"
+                    },
+                    {
+                      "const": "owner.sole",
+                      "type": "string"
+                    },
+                    {
+                      "const": "owner.co",
+                      "type": "string"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "interest"
+              ],
+              "type": "object"
+            },
+            "phone": {
+              "additionalProperties": false,
+              "properties": {
+                "primary": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "primary"
+              ],
+              "type": "object"
+            },
+            "siteContact": {
+              "$ref": "#/definitions/SiteContact",
+              "description": "Contact information for the site visit"
+            },
+            "type": {
+              "description": "The type of applicant",
+              "enum": [
+                "individual",
+                "company",
+                "charity",
+                "public",
+                "parishCouncil"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "address",
+            "agent",
+            "email",
+            "name",
+            "ownership",
+            "phone",
+            "siteContact",
+            "type"
+          ],
+          "type": "object"
+        }
+      ]
     },
     "LandDrainageConsentApplicationType": {
       "const": "landDrainageConsent",
@@ -2534,7 +2817,7 @@
           "additionalProperties": false,
           "properties": {
             "applicant": {
-              "$ref": "#/definitions/ApplicantBase"
+              "$ref": "#/definitions/PPApplicant"
             },
             "application": {
               "$ref": "#/definitions/NonFeeCarryingApplicationData"
@@ -3938,7 +4221,7 @@
       ],
       "type": "object"
     },
-    "MaintenanceContact": {
+    "MaintenanceContacts": {
       "items": {
         "additionalProperties": false,
         "properties": {
@@ -4816,11 +5099,8 @@
               "$ref": "#/definitions/Email"
             },
             "maintenanceContact": {
-              "description": "Contact information for the person(s) responsible for maintenace while the works are carried out",
-              "items": {
-                "$ref": "#/definitions/MaintenanceContact"
-              },
-              "type": "array"
+              "$ref": "#/definitions/MaintenanceContacts",
+              "description": "Contact information for the person(s) responsible for maintenace while the works are carried out"
             },
             "name": {
               "additionalProperties": false,
@@ -5057,11 +5337,8 @@
               "$ref": "#/definitions/Email"
             },
             "maintenanceContact": {
-              "description": "Contact information for the person(s) responsible for maintenace while the works are carried out",
-              "items": {
-                "$ref": "#/definitions/MaintenanceContact"
-              },
-              "type": "array"
+              "$ref": "#/definitions/MaintenanceContacts",
+              "description": "Contact information for the person(s) responsible for maintenace while the works are carried out"
             },
             "name": {
               "additionalProperties": false,
