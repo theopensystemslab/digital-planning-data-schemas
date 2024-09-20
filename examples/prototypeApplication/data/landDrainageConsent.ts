@@ -1,5 +1,4 @@
 import {PrototypeApplication} from '../../../types/schemas/prototypeApplication';
-import { MaintenanceContact } from '../../../types/schemas/prototypeApplication/data/Applicant';
 
 const version = process.env['VERSION'] || '@next';
 
@@ -47,7 +46,7 @@ export const landDrainageConsentPrototype: PrototypeApplication = {
               last: 'of Mortain',
             },
             email: 'countbobby@email.org',
-            phone: { primary: '012345678901' },
+            phone: {primary: '012345678901'},
           },
         },
         {
@@ -64,7 +63,7 @@ export const landDrainageConsentPrototype: PrototypeApplication = {
               last: 'De Leybourne',
             },
             email: 'baronsarerevolting@email.org',
-            phone: { primary: '098765432109' },
+            phone: {primary: '098765432109'},
             company: {
               name: "The Barons' Revolt",
             },

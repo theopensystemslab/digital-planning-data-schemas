@@ -1,6 +1,6 @@
-import { Date, Email } from '../../../shared/utils';
-import { PrimaryApplicationType } from '../enums/ApplicationType';
-import { UserRoles } from './User';
+import {Date, Email} from '../../../shared/utils';
+import {PrimaryApplicationType} from '../enums/ApplicationType';
+import {UserRoles} from './User';
 
 export type ApplicantBase = BaseApplicant | Agent;
 
@@ -23,10 +23,10 @@ export interface Agent extends BaseApplicant {
   /**
    * @description Contact information for the agent or proxy
    */
-  agent: ContactDetails & { address: UserAddress };
+  agent: ContactDetails & {address: UserAddress};
 }
 
-export type SiteContact = { role: UserRoles } | SiteContactOther;
+export type SiteContact = {role: UserRoles} | SiteContactOther;
 
 export interface SiteContactOther {
   role: 'other';
@@ -60,7 +60,7 @@ export type UserAddress = {
 };
 
 export type ApplicantAddress =
-  | { sameAsSiteAddress: true }
+  | {sameAsSiteAddress: true}
   | ApplicantAddressNotSameSite;
 
 export interface ApplicantAddressNotSameSite extends UserAddress {
@@ -90,9 +90,9 @@ export interface OwnersNoticeDate extends BaseOwners {
 
 export type MaintenanceContacts = {
   when:
-  | 'duringConstruction'
-  | 'afterConstruction'
-  | 'duringAndAfterConstruction';
+    | 'duringConstruction'
+    | 'afterConstruction'
+    | 'duringAndAfterConstruction';
   address: UserAddress;
   contact: ContactDetails;
 }[];
@@ -102,11 +102,11 @@ export type LDCApplicant = ApplicantBase & {
    * @description Information about the property owners, if different than the applicant
    */
   ownership:
-  | { interest: Extract<OwnershipInterest, 'owner'> }
-  | {
-    interest: OwnershipInterest; // `Exclude<OwnershipInterest, "owner">` ? But I think you can be co owner & report other owners?
-    owners: (OwnersNoticeGiven | OwnersNoNoticeGiven)[];
-  };
+    | {interest: Extract<OwnershipInterest, 'owner'>}
+    | {
+        interest: OwnershipInterest; // `Exclude<OwnershipInterest, "owner">` ? But I think you can be co owner & report other owners?
+        owners: (OwnersNoticeGiven | OwnersNoNoticeGiven)[];
+      };
 };
 
 export type PPApplicant = ApplicantBase & {
@@ -153,10 +153,10 @@ export type PPApplicant = ApplicantBase & {
 export type LandDrainageConsentApplicant = ApplicantBase & {
   ownership: {
     interest: OwnershipInterest | 'owner.sole' | 'owner.co';
-  }
+  };
   /** @description Contact information for the person(s) responsible for maintenace while the works are carried out */
   maintenanceContact?: MaintenanceContacts;
-}
+};
 
 /**
  * TypeMap of PrimaryApplicationTypes to their specific Applicant models
@@ -173,5 +173,5 @@ interface ApplicantVariants {
  */
 export type Applicant<TPrimary extends PrimaryApplicationType> =
   TPrimary extends keyof ApplicantVariants
-  ? ApplicantVariants[TPrimary]
-  : ApplicantBase;
+    ? ApplicantVariants[TPrimary]
+    : ApplicantBase;

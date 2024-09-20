@@ -1,5 +1,5 @@
 import {PrototypeApplication} from '../../../../types/schemas/prototypeApplication';
-import { PPApplicant } from '../../../../types/schemas/prototypeApplication/data/Applicant';
+import {PPApplicant} from '../../../../types/schemas/prototypeApplication/data/Applicant';
 
 const version = process.env['VERSION'] || '@next';
 
@@ -53,7 +53,7 @@ export const planningPermissionMajorPrototype: PrototypeApplication = {
         declaration: {
           accurate: true,
         },
-      } as PPApplicant["ownership"],
+      } as PPApplicant['ownership'],
       agent: {
         name: {
           first: 'Andy',
