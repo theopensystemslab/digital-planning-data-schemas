@@ -5705,7 +5705,7 @@
         },
         {
           "const": "pp.outline.major.some.waste",
-          "description": "Outline Planning Permission - Consent for the principle of waste development witholding all details",
+          "description": "Outline Planning Permission - Consent for the principle of waste development witholding some details",
           "type": "string"
         },
         {

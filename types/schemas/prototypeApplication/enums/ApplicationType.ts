@@ -578,7 +578,7 @@ type PPOutlineMajorAllWaste = 'pp.outline.major.all.waste';
 type PPOutlineMajorSome = 'pp.outline.major.some';
 
 /**
- * @description Outline Planning Permission - Consent for the principle of waste development witholding all details
+ * @description Outline Planning Permission - Consent for the principle of waste development witholding some details
  */
 type PPOutlineMajorSomeWaste = 'pp.outline.major.some.waste';
 

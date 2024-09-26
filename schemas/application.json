@@ -2229,7 +2229,7 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Outline Planning Permission - Consent for the principle of waste development witholding all details",
+              "const": "Outline Planning Permission - Consent for the principle of waste development witholding some details",
               "type": "string"
             },
             "value": {
