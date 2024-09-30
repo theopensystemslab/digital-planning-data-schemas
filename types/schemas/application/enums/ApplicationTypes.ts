@@ -162,7 +162,7 @@ export const ApplicationTypes = {
   'pp.outline.major.some':
     'Outline Planning Permission - Consent for the principle of a project specifying some details (major)',
   'pp.outline.major.some.waste':
-    'Outline Planning Permission - Consent for the principle of waste development witholding all details',
+    'Outline Planning Permission - Consent for the principle of waste development witholding some details',
   'pp.pip':
     'Planning Permission in Principle - Consent for the principle of a project with less than 1,000 square metres floor area on a site of less than 1 hectare',
   rightsOfWayOrder: 'Rights of Way Order - Apply to move or close a path',
