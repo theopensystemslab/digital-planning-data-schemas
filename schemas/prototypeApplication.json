@@ -5975,7 +5975,9 @@
           "type": "string"
         },
         {
-          "type": "object"
+          "const": "object",
+          "description": "Object of Interest",
+          "type": "string"
         },
         {
           "const": "object.archaeological",
