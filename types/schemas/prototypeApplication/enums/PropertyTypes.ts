@@ -2729,7 +2729,7 @@ export type PropertyType =
   | CommercialUtilityWaterTreatmentWater
   | CommercialUtilityWaterWaste
   | DualUse
-  | Object
+  | object
   | ObjectArchaeological
   | ObjectMonument
   | ObjectMonumentMemorial
