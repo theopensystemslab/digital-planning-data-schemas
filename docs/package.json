@@ -20,7 +20,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && pnpm run copy-index",
+    "copy-index": "cp build/public/index.html build/",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
