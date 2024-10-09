@@ -309,7 +309,7 @@ interface GLAGainedUnit extends GLALostUnit {
 /**
  * TypeMap of PrimaryApplicationTypes to their specific Proposal models
  */
-type ProposalVariants = {};
+type ProposalVariants = object;
 
 /**
  * @internal Conditional type to return a specific or generic Proposal model, based on PrimaryApplicationType

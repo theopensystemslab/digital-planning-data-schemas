@@ -2729,6 +2729,7 @@ export type PropertyType =
   | CommercialUtilityWaterTreatmentWater
   | CommercialUtilityWaterWaste
   | DualUse
+  // eslint-disable-next-line @typescript-eslint/ban-types
   | Object
   | ObjectArchaeological
   | ObjectMonument
