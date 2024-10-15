@@ -8359,7 +8359,7 @@
         "interest": {
           "enum": [
             "owner",
-            "tenant",
+            "lessee",
             "occupier",
             "other"
           ],
@@ -8400,7 +8400,7 @@
         "interest": {
           "enum": [
             "owner",
-            "tenant",
+            "lessee",
             "occupier",
             "other"
           ],
@@ -8436,7 +8436,7 @@
         "interest": {
           "enum": [
             "owner",
-            "tenant",
+            "lessee",
             "occupier",
             "other"
           ],
@@ -8494,7 +8494,7 @@
             "owner",
             "owner.sole",
             "owner.co",
-            "tenant",
+            "lessee",
             "occupier",
             "other"
           ],

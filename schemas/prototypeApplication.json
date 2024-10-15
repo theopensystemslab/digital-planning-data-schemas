@@ -4753,7 +4753,7 @@
     "OwnershipInterest": {
       "enum": [
         "owner",
-        "tenant",
+        "lessee",
         "occupier",
         "other"
       ],

@@ -67,7 +67,7 @@ export interface ApplicantAddressNotSameSite extends UserAddress {
   sameAsSiteAddress: false;
 }
 
-export type OwnershipInterest = 'owner' | 'tenant' | 'occupier' | 'other';
+export type OwnershipInterest = 'owner' | 'lessee' | 'occupier' | 'other';
 
 export interface BaseOwners {
   name: string;

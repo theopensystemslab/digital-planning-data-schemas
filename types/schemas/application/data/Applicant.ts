@@ -40,7 +40,7 @@ export interface Ownership {
     | 'owner'
     | 'owner.sole'
     | 'owner.co'
-    | 'tenant'
+    | 'lessee'
     | 'occupier'
     | 'other';
   certificate?: 'a' | 'b' | 'c' | 'd';
@@ -82,7 +82,7 @@ export type Owners = OwnersNoticeGiven | OwnersNoNoticeGiven | OwnersNoticeDate;
 export interface BaseOwners {
   name: string;
   address: Address | string;
-  interest?: 'owner' | 'tenant' | 'occupier' | 'other';
+  interest?: 'owner' | 'lessee' | 'occupier' | 'other';
 }
 
 // LDC requires `noticeGiven`, and `noNoticeReason` if false
