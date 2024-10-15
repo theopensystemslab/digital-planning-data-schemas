@@ -1,5 +1,6 @@
 import {JsonSchemaViewer} from '@stoplight/json-schema-viewer';
 import {Box, injectStyles, Provider as MosaicProvider} from '@stoplight/mosaic';
+
 import {prototypeApplication} from 'schemas';
 
 function App() {
