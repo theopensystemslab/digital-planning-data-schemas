@@ -32,4 +32,5 @@ export default defineConfig({
   build: {
     commonjsOptions: {transformMixedEsModules: true},
   },
+  base: '/digital-planning-data-schemas',
 });
