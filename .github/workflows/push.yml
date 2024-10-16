@@ -34,10 +34,10 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: '18.16.1'
+          node-version: ${{ vars.NODE_VERSION }}
 
       - name: Install pnpm
-        run: npm install -g pnpm
+        run: npm install -g pnpm@${{ vars.PNPM_VERSION }}
 
       - name: Install Dependencies
         run: pnpm install --frozen-lockfile
