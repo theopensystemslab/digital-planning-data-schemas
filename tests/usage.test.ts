@@ -6,7 +6,9 @@ import addFormats from 'ajv-formats';
 import {Schema, Validator} from 'jsonschema';
 import {describe, expect, test} from 'vitest';
 import applicationSchema from '../schemas/application.json';
+import prototypeApplicationSchema from '../schemas/prototypeApplication.json';
 import {Application} from '../types/schemas/application';
+import {PrototypeApplication} from '../types/schemas/prototypeApplication';
 
 /**
  * Helper function to walk /examples directory and collect generated JSON files
@@ -51,8 +53,8 @@ const schemas = [
 describe.each(schemas)('$name', ({schema, examples}) => {
   const validator = new Validator();
 
-  // const _applicationTypeProperty =
-  //   '$data.application.type.description' || '$applicationType';
+  const _applicationTypeProperty =
+    '$data.application.type.description' || '$applicationType';
 
   describe("parsing using the 'jsonschema' library", () => {
     describe.each(examples)('$data.application.type.description', example => {
