@@ -9,7 +9,6 @@
     "lint": "eslint .",
     "preview": "vite preview"
   },
-  "homepage": "https:/theopensystemslab.github.io/digital-planning-data-schemas",
   "dependencies": {
     "@stoplight/json-schema-viewer": "^4.16.1",
     "@stoplight/mosaic": "^1.53.4",
