@@ -22,7 +22,7 @@
     "gts": "^5.3.1",
     "husky": "^8.0.0",
     "jsonschema": "^1.4.1",
-    "typescript": "~5.6.2",
+    "typescript": "~5.5.4",
     "vitest": "^2.1.1"
   },
   "dependencies": {
