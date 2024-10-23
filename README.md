@@ -53,10 +53,12 @@ Run `pnpm build-json-examples` to automatically generate a corresponding JSON fi
 
 Run `pnpm test` to confirm your example payload can be successfully validated against the Digital Planning Data schema.
 
-## Publishing
+## Publishing and viewing
 To publish a new version, open a pull request against `main` which increments the `package.json` version.
 
 On merge, the [publish.yml](https://github.com/theopensystemslab/digital-planning-data-schemas/blob/main/.github/workflows/publish.yml) GitHub Action will update the `dist` branch, create a release, and publish the new version via GitHub pages at `http://theopensystemslab.github.io/digital-planning-data-schemas/<VERSION>/schemas/<SCHEMA>.json`
+
+The latest schema is also viewable at [https://theopensystemslab.github.io/digital-planning-data-schemas-docs/](https://theopensystemslab.github.io/digital-planning-data-schemas-docs/).
 
 ## Contributing
 We welcome feedback, bug reports, and contributions to help improve and grow the Digital Planning Data schemas via GitHub Issues and Pull Requests.
