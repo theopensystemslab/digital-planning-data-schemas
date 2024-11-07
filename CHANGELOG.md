@@ -9,6 +9,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 The minor version will be incremented upon a breaking change and the patch version will be
 incremented for features.
 
+## [0.7.1] - 2024-11-07
+
+### Added
+- Explicit support for address ranges ([#248](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/248))
+- Additional application types synced to PlanX service development - notably `ldc.listedBuildingWorks` and `approval.conditions` ([#197](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/197))
+
 ## [0.7.0] - 2024-07-12
 
 ### Breaking

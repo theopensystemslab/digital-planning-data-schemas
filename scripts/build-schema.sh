@@ -7,8 +7,10 @@ version="${VERSION:-@next}"
 
 echo "Version set to $version"
 
-dirs=("application" "prototypeApplication")
-types=("Application" "PrototypeApplication")
+# dirs=("application" "prototypeApplication")
+# types=("Application" "PrototypeApplication")
+dirs=("application")
+types=("Application")
 
 for i in "${!dirs[@]}"; do
   dir=${dirs[$i]}
