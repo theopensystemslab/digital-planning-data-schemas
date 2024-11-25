@@ -10,6 +10,12 @@ export interface PreApplicationData {
      * @description Total payable fee in GBP
      */
     payable: number;
+    reference: {
+      /**
+       * @description GOV.UK Pay payment reference number
+       */
+      govPay: string;
+    };
   };
   declaration: ApplicationDeclaration;
   information: {

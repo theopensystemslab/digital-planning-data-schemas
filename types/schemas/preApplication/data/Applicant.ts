@@ -1,7 +1,6 @@
 import {Email} from '../../../shared/utils';
 import {
   Agent,
-  Ownership,
   SiteContact,
   UserAddress,
 } from '../../application/data/Applicant';
@@ -31,6 +30,5 @@ export interface BaseApplicant {
     name: string;
   };
   address: UserAddress;
-  ownership?: Ownership;
   siteContact: SiteContact;
 }

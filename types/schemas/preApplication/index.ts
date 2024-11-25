@@ -1,6 +1,7 @@
-import {Metadata} from '../../shared/Metadata';
 import {Responses} from '../../shared/Responses';
 import {Applicant} from '../application/data/Applicant';
+import {File} from '../prototypeApplication/File';
+import {PrototypePlanXMetadata} from '../prototypeApplication/Metadata';
 import {PreApplicationData} from './data/ApplicationData';
 import {Property} from './data/Property';
 import {Proposal} from './data/Proposal';
@@ -21,5 +22,5 @@ export interface PreApplication {
   };
   responses: Responses;
   files: File[];
-  metadata: Metadata;
+  metadata: PrototypePlanXMetadata;
 }

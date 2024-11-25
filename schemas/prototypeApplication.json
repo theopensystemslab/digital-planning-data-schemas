@@ -10528,6 +10528,11 @@
           "type": "string"
         },
         {
+          "const": "otherSupporting",
+          "description": "Other - supporting document",
+          "type": "string"
+        },
+        {
           "const": "parkingPlan",
           "description": "Parking plan",
           "type": "string"

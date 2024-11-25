@@ -5,7 +5,7 @@ import {
 } from '../../application/data/Property';
 import {GeoBoundary} from '../../application/data/shared';
 import {PlanningDesignation} from '../../application/enums/PlanningConstraints';
-import {PropertyType} from '../../application/enums/PropertyTypes';
+import {PropertyType} from '../../prototypeApplication/enums/PropertyTypes';
 import {URL} from '../../../shared/utils';
 
 export interface Property {
