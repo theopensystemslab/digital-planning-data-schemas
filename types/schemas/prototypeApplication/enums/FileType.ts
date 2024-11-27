@@ -265,6 +265,11 @@ type OtherDrawing = 'otherDrawing';
 type OtherEvidence = 'otherEvidence';
 
 /**
+ * @description Other - supporting document
+ */
+type OtherSupporting = 'otherSupporting';
+
+/**
  * @description Parking plan
  */
 type ParkingPlan = 'parkingPlan';
@@ -559,6 +564,7 @@ export type PrototypeFileType =
   | OtherDocument
   | OtherDrawing
   | OtherEvidence
+  | OtherSupporting
   | ParkingPlan
   | PhotographsExisting
   | PhotographsProposed
