@@ -7919,9 +7919,8 @@
       "type": "object"
     },
     "OSAddress": {
-      "$id": "#OSAddress",
       "additionalProperties": false,
-      "description": "Address information for sites with a known address sourced from Ordnance Survey AddressBase Premium",
+      "description": "Address information for sites with a known address sourced from Ordnance Survey AddressBase Premium LPI source",
       "properties": {
         "latitude": {
           "description": "Latitude coordinate in EPSG:4326 (WGS84)",
@@ -7968,6 +7967,7 @@
           "type": "string"
         },
         "title": {
+          "description": "Single line address description",
           "type": "string"
         },
         "town": {
@@ -8007,6 +8007,7 @@
         "x",
         "y"
       ],
+      "title": "#OSAddress",
       "type": "object"
     },
     "OpenSpaceDesignation": {
@@ -24017,7 +24018,6 @@
       "type": "object"
     },
     "ProposedAddress": {
-      "$id": "#ProposedAddress",
       "additionalProperties": false,
       "description": "Address information for sites without a known Unique Property Reference Number (UPRN)",
       "properties": {
@@ -24034,6 +24034,7 @@
           "type": "string"
         },
         "title": {
+          "description": "Single line address description",
           "type": "string"
         },
         "x": {
@@ -24053,6 +24054,7 @@
         "x",
         "y"
       ],
+      "title": "#ProposedAddress",
       "type": "object"
     },
     "ProtectedSpaceDesignation": {
@@ -24245,6 +24247,22 @@
         }
       },
       "type": "object"
+    },
+    "Region": {
+      "description": "The region in England that contains this address sourced from planning.data.gov.uk/dataset/region, where London is a proxy for the Greater London Authority (GLA) area",
+      "enum": [
+        "North East",
+        "North West",
+        "Yorkshire and The Humber",
+        "East Midlands",
+        "West Midlands",
+        "East of England",
+        "London",
+        "South East",
+        "South West"
+      ],
+      "title": "#Region",
+      "type": "string"
     },
     "RequestedFiles": {
       "$id": "#RequestedFiles",
@@ -25068,7 +25086,7 @@
           "type": "object"
         },
         "region": {
-          "$ref": "#/definitions/UKRegion"
+          "$ref": "#/definitions/Region"
         },
         "trees": {
           "additionalProperties": false,
@@ -25126,22 +25144,6 @@
         "type"
       ],
       "type": "object"
-    },
-    "UKRegion": {
-      "$id": "#UKRegion",
-      "description": "The UK region that contains this address sourced from planning.data.gov.uk/dataset/region, where London is a proxy for the Greater London Authority (GLA) area",
-      "enum": [
-        "North East",
-        "North West",
-        "Yorkshire and The Humber",
-        "East Midlands",
-        "West Midlands",
-        "East of England",
-        "London",
-        "South East",
-        "South West"
-      ],
-      "type": "string"
     },
     "UKResidentialUnitType": {
       "$id": "#UKResidentialUnitType",

@@ -1,4 +1,4 @@
-import {GeoBoundary} from './shared';
+import {GeoBoundary} from './../../../shared/Boundaries';
 
 /**
  * @id #FilesAsData

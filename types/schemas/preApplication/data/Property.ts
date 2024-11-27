@@ -1,16 +1,13 @@
-import {
-  OSAddress,
-  ProposedAddress,
-  UKRegion,
-} from '../../application/data/Property';
-import {GeoBoundary} from '../../application/data/shared';
+import {OSAddress, ProposedAddress} from '../../../shared/Addresses';
+import {GeoBoundary} from './../../../shared/Boundaries';
+import {Region} from '../../../shared/Regions';
+import {URL} from '../../../shared/utils';
 import {PlanningDesignation} from '../../application/enums/PlanningConstraints';
 import {PropertyType} from '../../prototypeApplication/enums/PropertyTypes';
-import {URL} from '../../../shared/utils';
 
 export interface Property {
   address: ProposedAddress | OSAddress;
-  region: UKRegion;
+  region: Region;
   /**
    * @description Current and historic UK Local Authority Districts that contain this address sourced from planning.data.gov.uk/dataset/local-authority-district
    */

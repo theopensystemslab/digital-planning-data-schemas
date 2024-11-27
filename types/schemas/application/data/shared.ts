@@ -1,23 +1,6 @@
-import {GeoJSON} from 'geojson';
+import {URL} from '../../../shared/utils';
 import {UKResidentialUnitType} from '../enums/ResidentialUnitTypes';
 import {UKTenureType} from '../enums/TenureTypes';
-import {Area, URL} from '../../../shared/utils';
-
-export type Materials = {
-  boundary?: string;
-  door?: string;
-  lighting?: string;
-  roof?: string;
-  surface?: string;
-  wall?: string;
-  window?: string;
-  other?: string;
-};
-
-export type GeoBoundary = {
-  site: GeoJSON;
-  area: Area;
-};
 
 export type Entity = {
   name: string;

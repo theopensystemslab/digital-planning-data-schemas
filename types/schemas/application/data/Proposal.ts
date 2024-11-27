@@ -1,3 +1,5 @@
+import {GeoBoundary} from './../../../shared/Boundaries';
+import {Materials} from '../../../shared/Materials';
 import {BuildingRegulation} from '../enums/BuildingRegulations';
 import {DevelopmentType} from '../enums/DevelopmentTypes';
 import {GLAHousingProvider} from '../enums/HousingProviders';
@@ -7,7 +9,7 @@ import {ProtectedSpaceDesignation} from '../enums/ProtectedSpaces';
 import {GLAResidentialUnitType} from '../enums/ResidentialUnitTypes';
 import {GLATenureType} from '../enums/TenureTypes';
 import {Area, Date} from '../../../shared/utils';
-import {GeoBoundary, Materials, ResidentialUnits} from './shared';
+import {ResidentialUnits} from './shared';
 
 /**
  * @id #Proposal

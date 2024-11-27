@@ -1,4 +1,4 @@
-import {GeoBoundary} from '../../application/data/shared';
+import {GeoBoundary} from './../../../shared/Boundaries';
 
 export interface Proposal {
   description: string;

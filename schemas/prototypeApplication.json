@@ -989,7 +989,7 @@
           "type": "object"
         },
         "boundary": {
-          "$ref": "#/definitions/GeoBoundaryPrototype",
+          "$ref": "#/definitions/GeoBoundary",
           "description": "Location plan boundary proposed by the user, commonly referred to as the red line boundary"
         },
         "date": {
@@ -1887,22 +1887,6 @@
       "description": "Tenure types tracked by the Greater London Authority (GLA)"
     },
     "GeoBoundary": {
-      "additionalProperties": false,
-      "properties": {
-        "area": {
-          "$ref": "#/definitions/Area"
-        },
-        "site": {
-          "$ref": "#/definitions/GeoJSON"
-        }
-      },
-      "required": [
-        "site",
-        "area"
-      ],
-      "type": "object"
-    },
-    "GeoBoundaryPrototype": {
       "additionalProperties": false,
       "properties": {
         "area": {
@@ -3154,7 +3138,7 @@
           "type": "object"
         },
         "boundary": {
-          "$ref": "#/definitions/GeoBoundaryPrototype",
+          "$ref": "#/definitions/GeoBoundary",
           "description": "Location plan boundary proposed by the user, commonly referred to as the red line boundary"
         },
         "charging": {
@@ -4464,7 +4448,7 @@
     },
     "OSAddress": {
       "additionalProperties": false,
-      "description": "Address information for sites with a known address sourced from Ordnance Survey AddressBase Premium (LPI)",
+      "description": "Address information for sites with a known address sourced from Ordnance Survey AddressBase Premium LPI source",
       "properties": {
         "latitude": {
           "description": "Latitude coordinate in EPSG:4326 (WGS84)",
@@ -4511,6 +4495,7 @@
           "type": "string"
         },
         "title": {
+          "description": "Single line address description",
           "type": "string"
         },
         "town": {
@@ -4550,6 +4535,7 @@
         "x",
         "y"
       ],
+      "title": "#OSAddress",
       "type": "object"
     },
     "OpenSpaceDesignation": {
@@ -10197,6 +10183,7 @@
           "type": "string"
         },
         "title": {
+          "description": "Single line address description",
           "type": "string"
         },
         "x": {
@@ -10216,6 +10203,7 @@
         "x",
         "y"
       ],
+      "title": "#ProposedAddress",
       "type": "object"
     },
     "ProtectedSpaceDesignation": {
@@ -10939,6 +10927,7 @@
         "South East",
         "South West"
       ],
+      "title": "#Region",
       "type": "string"
     },
     "ResidentialUnits": {
