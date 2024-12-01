@@ -1,23 +1,13 @@
-import {ApplicationDeclaration} from '../../application/data/ApplicationData';
+import {Declaration} from '../../../shared/Declarations';
+import {Fee} from '../../../shared/Fees';
 
 /**
  * @id #PreApplicationData
  * @description Information about this planning pre-application
  */
 export interface PreApplicationData {
-  fee: {
-    /**
-     * @description Total payable fee in GBP
-     */
-    payable: number;
-    reference: {
-      /**
-       * @description GOV.UK Pay payment reference number
-       */
-      govPay: string;
-    };
-  };
-  declaration: ApplicationDeclaration;
+  fee: Pick<Fee, 'payable' | 'reference'>;
+  declaration: Declaration;
   information: {
     harmful: {
       /**

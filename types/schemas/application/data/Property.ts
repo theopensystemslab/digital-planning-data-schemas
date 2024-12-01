@@ -1,11 +1,12 @@
 import {OSAddress, ProposedAddress} from '../../../shared/Addresses';
-import {GeoBoundary} from './../../../shared/Boundaries';
+import {PlanningConstraint} from '../../../shared/Constraints';
 import {Materials} from '../../../shared/Materials';
 import {Region} from '../../../shared/Regions';
 import {Date, URL} from '../../../shared/utils';
 import {PlanningDesignation} from '../enums/PlanningConstraints';
 import {PropertyType} from '../enums/PropertyTypes';
-import {Entity, ResidentialUnits} from './shared';
+import {GeoBoundary} from './../../../shared/Boundaries';
+import {ResidentialUnits} from './shared';
 
 /**
  * @id #Property
@@ -126,31 +127,3 @@ export interface LondonProperty extends UKProperty {
 }
 
 type ExistingCount = {count: number};
-
-type BasePlanningConstraint = {
-  value: string;
-  description: string;
-};
-
-/**
- * @description A planning constraint that does not intersect with the proposed site, per the DE-9IM spatial relationship definition of intersects
- */
-type NonIntersectingPlanningConstraint = {
-  intersects: false;
-} & BasePlanningConstraint;
-
-/**
- * @description A planning constraint that does intersect with the proposed site, per the DE-9IM spatial relationship definition of intersects
- */
-type IntersectingPlanningConstraint = {
-  intersects: true;
-  entities: Entity[];
-} & BasePlanningConstraint;
-
-/**
- * @id #PlanningConstraint
- * @description Planning constraints that intersect with the proposed site
- */
-export type PlanningConstraint =
-  | NonIntersectingPlanningConstraint
-  | IntersectingPlanningConstraint;

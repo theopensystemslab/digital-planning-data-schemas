@@ -48,7 +48,7 @@ export interface OSAddress extends SiteAddress {
    */
   usrn: string;
   /**
-   * @title Primary Addressable Object start range and/or building description
+   * @title Primary Addressable Object (PAO) start range and/or building description
    * @description Combined `PAO_START_NUMBER`, `PAO_START_SUFFIX`, `PAO_TEXT` OS LPI properties
    */
   pao: string;
@@ -73,4 +73,30 @@ export interface OSAddress extends SiteAddress {
   organisation?: string;
   singleLine: string;
   source: 'Ordnance Survey';
+}
+
+/**
+ * @description Address information for a person associated with this application not at the property address
+ */
+export interface Address {
+  line1: string;
+  line2?: string;
+  town: string;
+  county?: string;
+  postcode: string;
+  country?: string;
+}
+
+/**
+ * @title #UserAddress
+ * @description Address information for the applicant
+ */
+export type UserAddress = {sameAsSiteAddress: true} | UserAddressNotSameSite;
+
+/**
+ * @title #UserAddressNotSameSite
+ * @description Address information for an applicant with contact information that differs from the property address
+ */
+export interface UserAddressNotSameSite extends Address {
+  sameAsSiteAddress: false;
 }
