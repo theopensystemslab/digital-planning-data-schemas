@@ -4,7 +4,6 @@
   "additionalProperties": false,
   "definitions": {
     "Address": {
-      "$id": "#Address",
       "additionalProperties": false,
       "description": "Address information for a person associated with this application not at the property address",
       "properties": {
@@ -96,10 +95,10 @@
             }
           },
           "required": [
-            "name",
+            "address",
             "email",
-            "phone",
-            "address"
+            "name",
+            "phone"
           ],
           "type": "object"
         },
@@ -237,208 +236,6 @@
         }
       ],
       "description": "Information about this planning application"
-    },
-    "ApplicationDeclaration": {
-      "$id": "#ApplicationDeclaration",
-      "additionalProperties": false,
-      "description": "Declarations about the accuracy of this application and any personal connections to the receiving authority",
-      "properties": {
-        "accurate": {
-          "type": "boolean"
-        },
-        "connection": {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "type": "string"
-            },
-            "value": {
-              "enum": [
-                "employee",
-                "relation.employee",
-                "electedMember",
-                "relation.electedMember",
-                "none"
-              ],
-              "type": "string"
-            }
-          },
-          "required": [
-            "value"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "accurate",
-        "connection"
-      ],
-      "type": "object"
-    },
-    "ApplicationFee": {
-      "$id": "#ApplicationFee",
-      "additionalProperties": false,
-      "description": "The costs associated with this application",
-      "properties": {
-        "calculated": {
-          "description": "Total calculated fee in GBP",
-          "type": "number"
-        },
-        "category": {
-          "additionalProperties": false,
-          "description": "Breakdown of calculated fee in GBP by category of development, based on the scales defined in The Town and Country Planning Regulations https://www.legislation.gov.uk/uksi/2012/2920/schedule/1/part/2",
-          "properties": {
-            "eight": {
-              "description": "Category 8 - Car parks or access roads",
-              "type": "number"
-            },
-            "eleven": {
-              "additionalProperties": false,
-              "properties": {
-                "one": {
-                  "description": "Category 11(1) - Mining operations",
-                  "type": "number"
-                },
-                "two": {
-                  "description": "Category 11(2) - Other operations",
-                  "type": "number"
-                }
-              },
-              "type": "object"
-            },
-            "five": {
-              "description": "Category 5 - Plant equipment or machinery",
-              "type": "number"
-            },
-            "four": {
-              "description": "Category 4 - Glasshouses on agricultural land",
-              "type": "number"
-            },
-            "fourteen": {
-              "description": "Category 14 - Other change of use",
-              "type": "number"
-            },
-            "nine": {
-              "description": "Category 9 - Exploratory drilling",
-              "type": "number"
-            },
-            "one": {
-              "description": "Category 1 - New homes",
-              "type": "number"
-            },
-            "sixAndSeven": {
-              "description": "Category 6 and 7 - Home or curtilage of home",
-              "type": "number"
-            },
-            "ten": {
-              "description": "Category 10 - Winning and working of oil or natural gas",
-              "type": "number"
-            },
-            "thirteen": {
-              "description": "Category 13 - Waste disposal",
-              "type": "number"
-            },
-            "three": {
-              "description": "Category 3 - Agricultural buildings",
-              "type": "number"
-            },
-            "twelve": {
-              "additionalProperties": false,
-              "properties": {
-                "one": {
-                  "description": "Category 12(1) - Change of use from single home to homes",
-                  "type": "number"
-                },
-                "two": {
-                  "description": "Category 12(2) - Change of use to home",
-                  "type": "number"
-                }
-              },
-              "type": "object"
-            },
-            "two": {
-              "description": "Category 2 - Other new buildings",
-              "type": "number"
-            }
-          },
-          "type": "object"
-        },
-        "exemption": {
-          "additionalProperties": false,
-          "properties": {
-            "disability": {
-              "type": "boolean"
-            },
-            "resubmission": {
-              "type": "boolean"
-            }
-          },
-          "required": [
-            "disability",
-            "resubmission"
-          ],
-          "type": "object"
-        },
-        "payable": {
-          "description": "Total payable fee after any exemptions or reductions in GBP",
-          "type": "number"
-        },
-        "reduction": {
-          "additionalProperties": false,
-          "properties": {
-            "alternative": {
-              "type": "boolean"
-            },
-            "parishCouncil": {
-              "type": "boolean"
-            },
-            "sports": {
-              "type": "boolean"
-            }
-          },
-          "required": [
-            "alternative",
-            "parishCouncil",
-            "sports"
-          ],
-          "type": "object"
-        },
-        "reference": {
-          "additionalProperties": false,
-          "properties": {
-            "govPay": {
-              "description": "GOV.UK Pay payment reference number",
-              "type": "string"
-            }
-          },
-          "required": [
-            "govPay"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "calculated",
-        "payable",
-        "exemption",
-        "reduction"
-      ],
-      "type": "object"
-    },
-    "ApplicationFeeNotApplicable": {
-      "$id": "#ApplicationFeeNotApplicable",
-      "additionalProperties": false,
-      "description": "An indicator that an application fee does not apply to this application type or journey",
-      "properties": {
-        "notApplicable": {
-          "const": true,
-          "type": "boolean"
-        }
-      },
-      "required": [
-        "notApplicable"
-      ],
-      "type": "object"
     },
     "ApplicationType": {
       "$id": "#ApplicationType",
@@ -2448,12 +2245,12 @@
         }
       },
       "required": [
-        "type",
-        "name",
-        "email",
-        "phone",
         "address",
-        "siteContact"
+        "email",
+        "name",
+        "phone",
+        "siteContact",
+        "type"
       ],
       "type": "object"
     },
@@ -2464,15 +2261,15 @@
           "$ref": "#/definitions/CommunityInfrastructureLevy"
         },
         "declaration": {
-          "$ref": "#/definitions/ApplicationDeclaration"
+          "$ref": "#/definitions/Declaration"
         },
         "fee": {
           "anyOf": [
             {
-              "$ref": "#/definitions/ApplicationFee"
+              "$ref": "#/definitions/Fee"
             },
             {
-              "$ref": "#/definitions/ApplicationFeeNotApplicable"
+              "$ref": "#/definitions/FeeNotApplicable"
             }
           ]
         },
@@ -2989,6 +2786,65 @@
       ],
       "type": "object"
     },
+    "ContactDetails": {
+      "additionalProperties": false,
+      "description": "Contact details for a person associated with this application",
+      "properties": {
+        "company": {
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "name"
+          ],
+          "type": "object"
+        },
+        "email": {
+          "$ref": "#/definitions/Email"
+        },
+        "name": {
+          "additionalProperties": false,
+          "properties": {
+            "first": {
+              "type": "string"
+            },
+            "last": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "first",
+            "last"
+          ],
+          "type": "object"
+        },
+        "phone": {
+          "additionalProperties": false,
+          "properties": {
+            "primary": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "primary"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "name",
+        "email",
+        "phone"
+      ],
+      "title": "#ContactDetails",
+      "type": "object"
+    },
     "Date": {
       "format": "date",
       "type": "string"
@@ -2998,6 +2854,43 @@
       "format": "date-time",
       "pattern": "^([0-9]+)-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])[Tt]([01][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9]|60)(\\.[0-9]+)?(([Zz])|([\\+|\\-]([01][0-9]|2[0-3]):[0-5][0-9]))$",
       "type": "string"
+    },
+    "Declaration": {
+      "additionalProperties": false,
+      "description": "Declarations about the accuracy of this application and any personal connections to the receiving authority",
+      "properties": {
+        "accurate": {
+          "type": "boolean"
+        },
+        "connection": {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "type": "string"
+            },
+            "value": {
+              "enum": [
+                "employee",
+                "relation.employee",
+                "electedMember",
+                "relation.electedMember",
+                "none"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "value"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "accurate",
+        "connection"
+      ],
+      "title": "#Declaration",
+      "type": "object"
     },
     "DesignAndAccessStatement": {
       "additionalProperties": false,
@@ -3307,6 +3200,156 @@
       ],
       "type": "object"
     },
+    "Fee": {
+      "additionalProperties": false,
+      "description": "The costs associated with this application",
+      "properties": {
+        "calculated": {
+          "description": "Total calculated fee in GBP",
+          "type": "number"
+        },
+        "category": {
+          "additionalProperties": false,
+          "description": "Breakdown of calculated fee in GBP by category of development, based on the scales defined in The Town and Country Planning Regulations https://www.legislation.gov.uk/uksi/2012/2920/schedule/1/part/2",
+          "properties": {
+            "eight": {
+              "description": "Category 8 - Car parks or access roads",
+              "type": "number"
+            },
+            "eleven": {
+              "additionalProperties": false,
+              "properties": {
+                "one": {
+                  "description": "Category 11(1) - Mining operations",
+                  "type": "number"
+                },
+                "two": {
+                  "description": "Category 11(2) - Other operations",
+                  "type": "number"
+                }
+              },
+              "type": "object"
+            },
+            "five": {
+              "description": "Category 5 - Plant equipment or machinery",
+              "type": "number"
+            },
+            "four": {
+              "description": "Category 4 - Glasshouses on agricultural land",
+              "type": "number"
+            },
+            "fourteen": {
+              "description": "Category 14 - Other change of use",
+              "type": "number"
+            },
+            "nine": {
+              "description": "Category 9 - Exploratory drilling",
+              "type": "number"
+            },
+            "one": {
+              "description": "Category 1 - New homes",
+              "type": "number"
+            },
+            "sixAndSeven": {
+              "description": "Category 6 and 7 - Home or curtilage of home",
+              "type": "number"
+            },
+            "ten": {
+              "description": "Category 10 - Winning and working of oil or natural gas",
+              "type": "number"
+            },
+            "thirteen": {
+              "description": "Category 13 - Waste disposal",
+              "type": "number"
+            },
+            "three": {
+              "description": "Category 3 - Agricultural buildings",
+              "type": "number"
+            },
+            "twelve": {
+              "additionalProperties": false,
+              "properties": {
+                "one": {
+                  "description": "Category 12(1) - Change of use from single home to homes",
+                  "type": "number"
+                },
+                "two": {
+                  "description": "Category 12(2) - Change of use to home",
+                  "type": "number"
+                }
+              },
+              "type": "object"
+            },
+            "two": {
+              "description": "Category 2 - Other new buildings",
+              "type": "number"
+            }
+          },
+          "type": "object"
+        },
+        "exemption": {
+          "additionalProperties": false,
+          "properties": {
+            "disability": {
+              "type": "boolean"
+            },
+            "resubmission": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "disability",
+            "resubmission"
+          ],
+          "type": "object"
+        },
+        "payable": {
+          "description": "Total payable fee after any exemptions or reductions in GBP",
+          "type": "number"
+        },
+        "reduction": {
+          "additionalProperties": false,
+          "properties": {
+            "alternative": {
+              "type": "boolean"
+            },
+            "parishCouncil": {
+              "type": "boolean"
+            },
+            "sports": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "alternative",
+            "parishCouncil",
+            "sports"
+          ],
+          "type": "object"
+        },
+        "reference": {
+          "additionalProperties": false,
+          "properties": {
+            "govPay": {
+              "description": "GOV.UK Pay payment reference number",
+              "type": "string"
+            }
+          },
+          "required": [
+            "govPay"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "calculated",
+        "payable",
+        "exemption",
+        "reduction"
+      ],
+      "title": "#Fee",
+      "type": "object"
+    },
     "FeeExplanation": {
       "$id": "#FeeExplanation",
       "additionalProperties": false,
@@ -3450,6 +3493,21 @@
       "required": [
         "notApplicable"
       ],
+      "type": "object"
+    },
+    "FeeNotApplicable": {
+      "additionalProperties": false,
+      "description": "An indicator that an application fee does not apply to this application type or journey",
+      "properties": {
+        "notApplicable": {
+          "const": true,
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "notApplicable"
+      ],
+      "title": "#FeeNotApplicable",
       "type": "object"
     },
     "File": {
@@ -6153,15 +6211,15 @@
           "$ref": "#/definitions/CommunityInfrastructureLevy"
         },
         "declaration": {
-          "$ref": "#/definitions/ApplicationDeclaration"
+          "$ref": "#/definitions/Declaration"
         },
         "fee": {
           "anyOf": [
             {
-              "$ref": "#/definitions/ApplicationFee"
+              "$ref": "#/definitions/Fee"
             },
             {
-              "$ref": "#/definitions/ApplicationFeeNotApplicable"
+              "$ref": "#/definitions/FeeNotApplicable"
             }
           ]
         },
@@ -7682,52 +7740,7 @@
             "$ref": "#/definitions/Address"
           },
           "contact": {
-            "additionalProperties": false,
-            "properties": {
-              "company": {
-                "additionalProperties": false,
-                "properties": {
-                  "name": {
-                    "type": "string"
-                  }
-                },
-                "required": [
-                  "name"
-                ],
-                "type": "object"
-              },
-              "email": {
-                "type": "string"
-              },
-              "name": {
-                "additionalProperties": false,
-                "properties": {
-                  "first": {
-                    "type": "string"
-                  },
-                  "last": {
-                    "type": "string"
-                  },
-                  "title": {
-                    "type": "string"
-                  }
-                },
-                "required": [
-                  "first",
-                  "last"
-                ],
-                "type": "object"
-              },
-              "phone": {
-                "type": "string"
-              }
-            },
-            "required": [
-              "name",
-              "email",
-              "phone"
-            ],
-            "type": "object"
+            "$ref": "#/definitions/ContactDetails"
           },
           "when": {
             "enum": [
@@ -7919,9 +7932,8 @@
       "type": "object"
     },
     "OSAddress": {
-      "$id": "#OSAddress",
       "additionalProperties": false,
-      "description": "Address information for sites with a known address sourced from Ordnance Survey AddressBase Premium",
+      "description": "Address information for sites with a known address sourced from Ordnance Survey AddressBase Premium LPI source",
       "properties": {
         "latitude": {
           "description": "Latitude coordinate in EPSG:4326 (WGS84)",
@@ -7936,7 +7948,7 @@
         },
         "pao": {
           "description": "Combined `PAO_START_NUMBER`, `PAO_START_SUFFIX`, `PAO_TEXT` OS LPI properties",
-          "title": "Primary Addressable Object start range and/or building description",
+          "title": "Primary Addressable Object (PAO) start range and/or building description",
           "type": "string"
         },
         "paoEnd": {
@@ -7968,6 +7980,7 @@
           "type": "string"
         },
         "title": {
+          "description": "Single line address description",
           "type": "string"
         },
         "town": {
@@ -8007,6 +8020,7 @@
         "x",
         "y"
       ],
+      "title": "#OSAddress",
       "type": "object"
     },
     "OpenSpaceDesignation": {
@@ -8346,7 +8360,6 @@
       "description": "Types of natural open spaces"
     },
     "Owners": {
-      "$id": "#Owners",
       "anyOf": [
         {
           "$ref": "#/definitions/OwnersNoticeGiven"
@@ -8358,7 +8371,17 @@
           "$ref": "#/definitions/OwnersNoticeDate"
         }
       ],
-      "description": "Names and addresses of all known owners and agricultural tenants, including confirmation or date of notice, or reason requisite notice has not been given if applicable"
+      "description": "Names and addresses of all known owners and agricultural tenants who are not the applicant, including confirmation or date of notice, or reason requisite notice has not been given if applicable",
+      "title": "#Owners"
+    },
+    "OwnersInterest": {
+      "enum": [
+        "owner",
+        "lessee",
+        "occupier",
+        "other"
+      ],
+      "type": "string"
     },
     "OwnersNoNoticeGiven": {
       "additionalProperties": false,
@@ -8374,13 +8397,7 @@
           ]
         },
         "interest": {
-          "enum": [
-            "owner",
-            "lessee",
-            "occupier",
-            "other"
-          ],
-          "type": "string"
+          "$ref": "#/definitions/OwnersInterest"
         },
         "name": {
           "type": "string"
@@ -8415,13 +8432,7 @@
           ]
         },
         "interest": {
-          "enum": [
-            "owner",
-            "lessee",
-            "occupier",
-            "other"
-          ],
-          "type": "string"
+          "$ref": "#/definitions/OwnersInterest"
         },
         "name": {
           "type": "string"
@@ -8451,13 +8462,7 @@
           ]
         },
         "interest": {
-          "enum": [
-            "owner",
-            "lessee",
-            "occupier",
-            "other"
-          ],
-          "type": "string"
+          "$ref": "#/definitions/OwnersInterest"
         },
         "name": {
           "type": "string"
@@ -8475,7 +8480,6 @@
       "type": "object"
     },
     "Ownership": {
-      "$id": "#Ownership",
       "additionalProperties": false,
       "description": "Information about the ownership certificate and property owners, if different than the applicant",
       "properties": {
@@ -8507,15 +8511,19 @@
           "type": "object"
         },
         "interest": {
-          "enum": [
-            "owner",
-            "owner.sole",
-            "owner.co",
-            "lessee",
-            "occupier",
-            "other"
-          ],
-          "type": "string"
+          "anyOf": [
+            {
+              "$ref": "#/definitions/OwnersInterest"
+            },
+            {
+              "const": "owner.sole",
+              "type": "string"
+            },
+            {
+              "const": "owner.co",
+              "type": "string"
+            }
+          ]
         },
         "noticeGiven": {
           "description": "Has requisite notice been given to all the known owners and agricultural tenants?",
@@ -8556,6 +8564,7 @@
           "type": "string"
         }
       },
+      "title": "#Ownership",
       "type": "object"
     },
     "PlanXMetadata": {
@@ -8647,7 +8656,6 @@
       "type": "object"
     },
     "PlanningConstraint": {
-      "$id": "#PlanningConstraint",
       "anyOf": [
         {
           "additionalProperties": false,
@@ -8701,7 +8709,8 @@
           "type": "object"
         }
       ],
-      "description": "Planning constraints that intersect with the proposed site"
+      "description": "Planning constraints that intersect with the proposed site",
+      "title": "#PlanningConstraint"
     },
     "PlanningDesignation": {
       "$id": "#PlanningDesignation",
@@ -24017,7 +24026,6 @@
       "type": "object"
     },
     "ProposedAddress": {
-      "$id": "#ProposedAddress",
       "additionalProperties": false,
       "description": "Address information for sites without a known Unique Property Reference Number (UPRN)",
       "properties": {
@@ -24034,6 +24042,7 @@
           "type": "string"
         },
         "title": {
+          "description": "Single line address description",
           "type": "string"
         },
         "x": {
@@ -24053,6 +24062,7 @@
         "x",
         "y"
       ],
+      "title": "#ProposedAddress",
       "type": "object"
     },
     "ProtectedSpaceDesignation": {
@@ -24245,6 +24255,22 @@
         }
       },
       "type": "object"
+    },
+    "Region": {
+      "description": "The region in England that contains this address sourced from planning.data.gov.uk/dataset/region, where London is a proxy for the Greater London Authority (GLA) area",
+      "enum": [
+        "North East",
+        "North West",
+        "Yorkshire and The Humber",
+        "East Midlands",
+        "West Midlands",
+        "East of England",
+        "London",
+        "South East",
+        "South West"
+      ],
+      "title": "#Region",
+      "type": "string"
     },
     "RequestedFiles": {
       "$id": "#RequestedFiles",
@@ -25068,7 +25094,7 @@
           "type": "object"
         },
         "region": {
-          "$ref": "#/definitions/UKRegion"
+          "$ref": "#/definitions/Region"
         },
         "trees": {
           "additionalProperties": false,
@@ -25126,22 +25152,6 @@
         "type"
       ],
       "type": "object"
-    },
-    "UKRegion": {
-      "$id": "#UKRegion",
-      "description": "The UK region that contains this address sourced from planning.data.gov.uk/dataset/region, where London is a proxy for the Greater London Authority (GLA) area",
-      "enum": [
-        "North East",
-        "North West",
-        "Yorkshire and The Humber",
-        "East Midlands",
-        "West Midlands",
-        "East of England",
-        "London",
-        "South East",
-        "South West"
-      ],
-      "type": "string"
     },
     "UKResidentialUnitType": {
       "$id": "#UKResidentialUnitType",
@@ -25400,7 +25410,6 @@
       "type": "object"
     },
     "UserAddress": {
-      "$id": "#UserAddress",
       "anyOf": [
         {
           "additionalProperties": false,
@@ -25419,10 +25428,10 @@
           "$ref": "#/definitions/UserAddressNotSameSite"
         }
       ],
-      "description": "Address information for the applicant"
+      "description": "Address information for the applicant",
+      "title": "#UserAddress"
     },
     "UserAddressNotSameSite": {
-      "$id": "#UserAddressNotSameSite",
       "additionalProperties": false,
       "description": "Address information for an applicant with contact information that differs from the property address",
       "properties": {
@@ -25455,6 +25464,7 @@
         "sameAsSiteAddress",
         "town"
       ],
+      "title": "#UserAddressNotSameSite",
       "type": "object"
     }
   },

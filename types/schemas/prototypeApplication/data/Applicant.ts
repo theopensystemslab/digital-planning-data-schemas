@@ -1,4 +1,12 @@
-import {Date, Email} from '../../../shared/utils';
+import {Address, UserAddress} from '../../../shared/Addresses';
+import {ContactDetails} from '../../../shared/Contacts';
+import {
+  OwnersInterest,
+  OwnersNoNoticeGiven,
+  OwnersNoticeDate,
+  OwnersNoticeGiven,
+} from '../../../shared/Ownership';
+import {Date} from '../../../shared/utils';
 import {PrimaryApplicationType} from '../enums/ApplicationType';
 import {UserRoles} from './User';
 
@@ -12,7 +20,7 @@ export type BaseApplicant = ContactDetails & {
   /**
    * @description Address information for the applicant
    */
-  address: ApplicantAddress;
+  address: UserAddress;
   /**
    * @description Contact information for the site visit
    */
@@ -23,7 +31,7 @@ export interface Agent extends BaseApplicant {
   /**
    * @description Contact information for the agent or proxy
    */
-  agent: ContactDetails & {address: UserAddress};
+  agent: ContactDetails & {address: Address};
 }
 
 export type SiteContact = {role: UserRoles} | SiteContactOther;
@@ -35,65 +43,12 @@ export interface SiteContactOther {
   phone: string;
 }
 
-export type ContactDetails = {
-  name: {
-    title?: string;
-    first: string;
-    last: string;
-  };
-  email: Email;
-  phone: {
-    primary: string;
-  };
-  company?: {
-    name: string;
-  };
-};
-
-export type UserAddress = {
-  line1: string;
-  line2?: string;
-  town: string;
-  county?: string;
-  postcode: string;
-  country?: string;
-};
-
-export type ApplicantAddress =
-  | {sameAsSiteAddress: true}
-  | ApplicantAddressNotSameSite;
-
-export interface ApplicantAddressNotSameSite extends UserAddress {
-  sameAsSiteAddress: false;
-}
-
-export type OwnershipInterest = 'owner' | 'lessee' | 'occupier' | 'other';
-
-export interface BaseOwners {
-  name: string;
-  address: UserAddress | string;
-  interest?: OwnershipInterest;
-}
-
-export interface OwnersNoticeGiven extends BaseOwners {
-  noticeGiven: true;
-}
-
-export interface OwnersNoNoticeGiven extends BaseOwners {
-  noticeGiven: false;
-  noNoticeReason: string;
-}
-
-export interface OwnersNoticeDate extends BaseOwners {
-  noticeDate: Date;
-}
-
 export type MaintenanceContacts = {
   when:
     | 'duringConstruction'
     | 'afterConstruction'
     | 'duringAndAfterConstruction';
-  address: UserAddress;
+  address: Address;
   contact: ContactDetails;
 }[];
 
@@ -102,9 +57,9 @@ export type LDCApplicant = ApplicantBase & {
    * @description Information about the property owners, if different than the applicant
    */
   ownership:
-    | {interest: Extract<OwnershipInterest, 'owner'>}
+    | {interest: Extract<OwnersInterest, 'owner'>}
     | {
-        interest: OwnershipInterest; // `Exclude<OwnershipInterest, "owner">` ? But I think you can be co owner & report other owners?
+        interest: OwnersInterest; // `Exclude<OwnershipInterest, "owner">` ? But I think you can be co owner & report other owners?
         owners: (OwnersNoticeGiven | OwnersNoNoticeGiven)[];
       };
 };
@@ -114,7 +69,7 @@ export type PPApplicant = ApplicantBase & {
    * @description Information about the ownership certificate and property owners, if different than the applicant
    */
   ownership: {
-    interest: OwnershipInterest | 'owner.sole' | 'owner.co';
+    interest: OwnersInterest | 'owner.sole' | 'owner.co';
     /**
      * @description Does the land have any agricultural tenants?
      */
@@ -152,7 +107,7 @@ export type PPApplicant = ApplicantBase & {
 
 export type LandDrainageConsentApplicant = ApplicantBase & {
   ownership: {
-    interest: OwnershipInterest | 'owner.sole' | 'owner.co';
+    interest: OwnersInterest | 'owner.sole' | 'owner.co';
   };
   /** @description Contact information for the person(s) responsible for maintenace while the works are carried out */
   maintenanceContact?: MaintenanceContacts;

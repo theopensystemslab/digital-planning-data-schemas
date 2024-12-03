@@ -46,7 +46,7 @@ export const landDrainageConsent: Application = {
               last: 'of Mortain',
             },
             email: 'countbobby@email.org',
-            phone: '012345678901',
+            phone: {primary: '012345678901'},
           },
         },
         {
@@ -63,7 +63,7 @@ export const landDrainageConsent: Application = {
               last: 'De Leybourne',
             },
             email: 'baronsarerevolting@email.org',
-            phone: '098765432109',
+            phone: {primary: '098765432109'},
             company: {
               name: "The Barons' Revolt",
             },

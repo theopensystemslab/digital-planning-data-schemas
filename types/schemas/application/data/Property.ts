@@ -1,7 +1,12 @@
+import {OSAddress, ProposedAddress} from '../../../shared/Addresses';
+import {PlanningConstraint} from '../../../shared/Constraints';
+import {Materials} from '../../../shared/Materials';
+import {Region} from '../../../shared/Regions';
+import {Date, URL} from '../../../shared/utils';
 import {PlanningDesignation} from '../enums/PlanningConstraints';
 import {PropertyType} from '../enums/PropertyTypes';
-import {Date, URL} from '../../../shared/utils';
-import {Entity, GeoBoundary, Materials, ResidentialUnits} from './shared';
+import {GeoBoundary} from './../../../shared/Boundaries';
+import {ResidentialUnits} from './shared';
 
 /**
  * @id #Property
@@ -10,27 +15,12 @@ import {Entity, GeoBoundary, Materials, ResidentialUnits} from './shared';
 export type Property = UKProperty | LondonProperty;
 
 /**
- * @id #UKRegion
- * @description The UK region that contains this address sourced from planning.data.gov.uk/dataset/region, where London is a proxy for the Greater London Authority (GLA) area
- */
-export type UKRegion =
-  | 'North East'
-  | 'North West'
-  | 'Yorkshire and The Humber'
-  | 'East Midlands'
-  | 'West Midlands'
-  | 'East of England'
-  | 'London'
-  | 'South East'
-  | 'South West';
-
-/**
  * @id #UKProperty
  * @description Property details for sites anywhere in the UK
  */
 export interface UKProperty {
   address: ProposedAddress | OSAddress;
-  region: UKRegion;
+  region: Region;
   /**
    * @description Current and historic UK Local Authority Districts that contain this address sourced from planning.data.gov.uk/dataset/local-authority-district
    */
@@ -91,7 +81,7 @@ export interface UKProperty {
  * @description Property details for sites within the Greater London Authority (GLA) area
  */
 export interface LondonProperty extends UKProperty {
-  region: Extract<UKRegion, 'London'>;
+  region: Extract<Region, 'London'>;
   titleNumber?: {
     known: 'Yes' | 'No';
     number?: string;
@@ -137,106 +127,3 @@ export interface LondonProperty extends UKProperty {
 }
 
 type ExistingCount = {count: number};
-
-/**
- * @id #SiteAddress
- * @description Address information available for any site, whether existing or proposed
- */
-export interface SiteAddress {
-  title: string;
-  /**
-   * @description Easting coordinate in British National Grid (OSGB36)
-   */
-  x: number;
-  /**
-   * @description Northing coordinate in British National Grid (OSGB36)
-   */
-  y: number;
-  /**
-   * @description Latitude coordinate in EPSG:4326 (WGS84)
-   */
-  latitude: number;
-  /**
-   * @description Longitude coordinate in EPSG:4326 (WGS84)
-   */
-  longitude: number;
-}
-
-/**
- * @id #ProposedAddress
- * @description Address information for sites without a known Unique Property Reference Number (UPRN)
- */
-export interface ProposedAddress extends SiteAddress {
-  source: 'Proposed by applicant';
-}
-
-/**
- * @id #OSAddress
- * @description Address information for sites with a known address sourced from Ordnance Survey AddressBase Premium
- */
-export interface OSAddress extends SiteAddress {
-  /**
-   * @title Unique Property Reference Number
-   * @maxLength 12
-   */
-  uprn: string;
-  /**
-   * @title Unique Street Reference Number
-   * @maxLength 8
-   */
-  usrn: string;
-  /**
-   * @title Primary Addressable Object start range and/or building description
-   * @description Combined `PAO_START_NUMBER`, `PAO_START_SUFFIX`, `PAO_TEXT` OS LPI properties
-   */
-  pao: string;
-  /**
-   * @title Primary Addressable Object (PAO) end range
-   * @description Combined `PAO_END_NUMBER`, `PAO_END_SUFFIX` OS LPI properties
-   */
-  paoEnd?: string;
-  /**
-   * @title Secondary Addressable Object (SAO) start range and/or building description
-   * @description Combined `SAO_START_NUMBER`, `SAO_START_SUFFIX`, `SAO_TEXT` OS LPI properties
-   */
-  sao?: string;
-  /**
-   * @title Secondary Addressable Object (SAO) end range
-   * @description Combined `SAO_END_NUMBER`, `SAO_END_SUFFIX` OS LPI properties
-   */
-  saoEnd?: string;
-  street: string;
-  town: string;
-  postcode: string;
-  organisation?: string;
-  singleLine: string;
-  source: 'Ordnance Survey';
-}
-
-type BasePlanningConstraint = {
-  value: string;
-  description: string;
-};
-
-/**
- * @description A planning constraint that does not intersect with the proposed site, per the DE-9IM spatial relationship definition of intersects
- */
-type NonIntersectingPlanningConstraint = {
-  intersects: false;
-} & BasePlanningConstraint;
-
-/**
- * @description A planning constraint that does intersect with the proposed site, per the DE-9IM spatial relationship definition of intersects
- */
-type IntersectingPlanningConstraint = {
-  intersects: true;
-  entities: Entity[];
-} & BasePlanningConstraint;
-
-/**
- * @id #PlanningConstraint
- * @description Planning constraints that intersect with the proposed site
- */
-export type PlanningConstraint =
-  | NonIntersectingPlanningConstraint
-  | IntersectingPlanningConstraint;
