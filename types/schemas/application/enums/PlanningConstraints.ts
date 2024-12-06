@@ -1,4 +1,4 @@
-import {Entity} from '../../../shared/Constraints';
+import {Entity} from '../../../shared/Entity';
 
 /**
  * Values for `data.property.planning.designations`

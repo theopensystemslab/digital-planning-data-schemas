@@ -1,5 +1,8 @@
 #!/bin/bash
 
+set -e
+set -o pipefail
+
 echo "Running build-schema script..."
 
 # Use environment variable VERSION, defaulting to "@next" if not set
