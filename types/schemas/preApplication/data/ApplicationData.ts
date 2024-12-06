@@ -1,4 +1,5 @@
 import {Declaration} from '../../../shared/Declarations';
+import {PreApplicationType} from '../enums/PreApplicationTypes';
 import {Fee} from '../../../shared/Fees';
 
 /**
@@ -6,6 +7,7 @@ import {Fee} from '../../../shared/Fees';
  * @description Information about this planning pre-application
  */
 export interface PreApplicationData {
+  type: PreApplicationType;
   fee: Pick<Fee, 'payable' | 'reference'>;
   declaration: Declaration;
   information: {

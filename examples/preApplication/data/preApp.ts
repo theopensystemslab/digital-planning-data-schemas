@@ -202,6 +202,10 @@ export const preApplication: PreApplication = {
       },
     },
     application: {
+      type: {
+        value: 'preApp',
+        description: 'Pre-application advice',
+      },
       fee: {
         payable: 450,
         reference: {

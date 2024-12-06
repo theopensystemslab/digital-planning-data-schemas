@@ -4,7 +4,7 @@ import {
   FeeExplanationNotApplicable,
 } from '../../shared/Metadata';
 import {URL, UUID} from '../../shared/utils';
-import {Entity} from './data/shared';
+import {Entity} from '../../shared/Entity';
 import {PrototypeFileType} from './enums/FileType';
 import {BasePlanningDesignation} from './enums/PlanningDesignation';
 
