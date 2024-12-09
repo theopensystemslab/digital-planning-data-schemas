@@ -517,25 +517,48 @@
       "type": "object"
     },
     "CommunityInfrastructureLevy": {
-      "additionalProperties": false,
-      "description": "Details about the Community Infrastructure Levy planning charge, if applicable",
-      "properties": {
-        "result": {
-          "enum": [
-            "exempt.annexe",
-            "exempt.extension",
-            "exempt.selfBuild",
-            "liable",
-            "relief.charity",
-            "relief.socialHousing"
+      "$id": "#CommunityInfrastructureLevy",
+      "anyOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "result": {
+              "enum": [
+                "exempt.annexe",
+                "exempt.extension",
+                "exempt.selfBuild",
+                "relief.charity",
+                "relief.socialHousing",
+                "liable"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "result"
           ],
-          "type": "string"
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "declaration": {
+              "const": true,
+              "type": "boolean"
+            },
+            "result": {
+              "const": "notLiable",
+              "type": "string"
+            }
+          },
+          "required": [
+            "result",
+            "declaration"
+          ],
+          "type": "object"
         }
-      },
-      "required": [
-        "result"
       ],
-      "type": "object"
+      "description": "Details about the Community Infrastructure Levy planning charge, if applicable"
     },
     "ContactDetails": {
       "additionalProperties": false,

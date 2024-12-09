@@ -2,6 +2,7 @@ import {PrimaryApplicationType} from '../enums/ApplicationType';
 import {Date} from '../../../shared/utils';
 import {Declaration} from '../../../shared/Declarations';
 import {Fee, FeeNotApplicable} from '../../../shared/Fees';
+import {CommunityInfrastructureLevy} from '../../../shared/CommunityInfrastructureLevy';
 
 /**
  * Base type for ApplicationData. Contains all shared properties across all application types
@@ -33,19 +34,6 @@ export interface PlanningApplication {
   reference: string;
   date: Date;
   localPlanningAuthority: string;
-}
-
-/**
- * @description Details about the Community Infrastructure Levy planning charge, if applicable
- */
-export interface CommunityInfrastructureLevy {
-  result:
-    | 'exempt.annexe'
-    | 'exempt.extension'
-    | 'exempt.selfBuild'
-    | 'liable'
-    | 'relief.charity'
-    | 'relief.socialHousing';
 }
 
 export interface LeadDeveloper {

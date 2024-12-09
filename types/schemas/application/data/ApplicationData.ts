@@ -1,3 +1,4 @@
+import {CommunityInfrastructureLevy} from '../../../shared/CommunityInfrastructureLevy';
 import {Declaration} from '../../../shared/Declarations';
 import {Date} from '../../../shared/utils';
 import {ApplicationType} from '../enums/ApplicationTypes';
@@ -46,20 +47,6 @@ export interface PlanningApplication {
   reference: string;
   date: Date;
   localPlanningAuthority: string;
-}
-
-/**
- * @id #CommunityInfrastructureLevy
- * @description Details about the Community Infrastructure Levy planning charge, if applicable
- */
-export interface CommunityInfrastructureLevy {
-  result:
-    | 'exempt.annexe'
-    | 'exempt.extension'
-    | 'exempt.selfBuild'
-    | 'liable'
-    | 'relief.charity'
-    | 'relief.socialHousing';
 }
 
 export interface LeadDeveloper {
