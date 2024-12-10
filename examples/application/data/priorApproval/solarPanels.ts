@@ -1,4 +1,4 @@
-import {Application} from '../../../../types/schemas/application';
+import {Application} from '../../../../src/types/schemas/application';
 
 const version = process.env['VERSION'] || '@next';
 

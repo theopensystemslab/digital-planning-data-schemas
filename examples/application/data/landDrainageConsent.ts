@@ -1,5 +1,5 @@
-import {Application} from '../../../types/schemas/application';
-import {BaseProposal} from '../../../types/schemas/application/data/Proposal';
+import {Application} from '../../../src/types/schemas/application';
+import {BaseProposal} from '../../../src/types/schemas/application/data/Proposal';
 
 const version = process.env['VERSION'] || '@next';
 

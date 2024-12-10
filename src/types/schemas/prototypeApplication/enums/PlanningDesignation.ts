@@ -1,4 +1,5 @@
-import {Entity} from '../data/shared';
+import { Entity } from "../../../shared/Constraints";
+
 /**
  * @description Article 4 Direction area
  */

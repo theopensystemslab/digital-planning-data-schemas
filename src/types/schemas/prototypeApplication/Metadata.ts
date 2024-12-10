@@ -1,10 +1,10 @@
+import { Entity } from '../../shared/Constraints';
 import {
   BaseMetadata,
   FeeExplanation,
   FeeExplanationNotApplicable,
 } from '../../shared/Metadata';
 import {URL, UUID} from '../../shared/utils';
-import {Entity} from './data/shared';
 import {PrototypeFileType} from './enums/FileType';
 import {BasePlanningDesignation} from './enums/PlanningDesignation';
 
