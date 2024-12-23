@@ -8,6 +8,6 @@
     "esModuleInterop": true,
     "moduleResolution": "node",
   },
-  "include": ["src/**/*.ts", "examples/**/*", "scripts/*", "schemas/**/*.json"],
+  "include": ["src/**/*.ts", "examples/**/*", "scripts/*", "src/schemas/**/*.json"],
   "exclude": ["dist"],
 }

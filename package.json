@@ -1,11 +1,13 @@
 {
-  "name": "digital-planning-data-schemas",
-  "version": "0.7.1",
+  "name": "@opensystemslab/digital-planning-data-schemas",
+  "version": "0.0.1",
   "description": "Digital Planning Data schemas",
-  "main": "schema/schema.json",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": ["dist"],
   "scripts": {
     "build": "pnpm build:types && pnpm build:schema",
-    "build:types": "tsc --emitDeclarationOnly --declaration --project tsconfig.build.json",
+    "build:types": "tsc --project tsconfig.build.json",
     "build:examples": "pnpm ts-node scripts/build-json-examples.ts",
     "build:schema": "./scripts/build-schema.sh",
     "lint": "gts lint",
@@ -13,6 +15,10 @@
     "fix": "gts fix",
     "test": "pnpm build:schema && vitest",
     "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/theopensystemslab/digital-planning-data-schemas"
   },
   "keywords": [],
   "author": "Open Systems Lab",
