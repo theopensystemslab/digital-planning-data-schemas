@@ -1,5 +1,5 @@
-import {PrototypeApplication} from '../../../../types/schemas/prototypeApplication';
-import {PPApplicant} from '../../../../types/schemas/prototypeApplication/data/Applicant';
+import {PrototypeApplication} from '../../../../src/types/schemas/prototypeApplication';
+import {PPApplicant} from '../../../../src/types/schemas/prototypeApplication/data/Applicant';
 
 const version = process.env['VERSION'] || '@next';
 

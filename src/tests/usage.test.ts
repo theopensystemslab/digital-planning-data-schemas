@@ -5,8 +5,8 @@ import Ajv from 'ajv';
 import addFormats from 'ajv-formats';
 import {Schema, Validator} from 'jsonschema';
 import {describe, expect, test} from 'vitest';
-import applicationSchema from '../schemas/application.json';
-import prototypeApplicationSchema from '../schemas/prototypeApplication.json';
+import applicationSchema from '../../schemas/application.json';
+import prototypeApplicationSchema from '../../schemas/prototypeApplication.json';
 import {Application} from '../types/schemas/application';
 import {PrototypeApplication} from '../types/schemas/prototypeApplication';
 
@@ -31,7 +31,7 @@ const getJSONExamples = <T>(schemaPath: string): T[] => {
     }
   };
 
-  const examplesDir = path.join(__dirname, `../examples/${schemaPath}`);
+  const examplesDir = path.join(__dirname, `../../examples/${schemaPath}`);
   walkDirectory(examplesDir);
 
   return examples;
