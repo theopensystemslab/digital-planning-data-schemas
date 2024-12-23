@@ -49,7 +49,7 @@ Please see the [JSON schema docs](https://json-schema.org/understanding-json-sch
 
 Add a TypeScript file to `/examples/<SCHEMA>/data` with at least one exported variable representing an example payload definition.
 
-Run `pnpm build-json-examples` to automatically generate a corresponding JSON file per example payload in the root of `/examples`.
+Run `pnpm build:examples` to automatically generate a corresponding JSON file per example payload in the root of `/examples`.
 
 Run `pnpm test` to confirm your example payload can be successfully validated against the Digital Planning Data schema.
 

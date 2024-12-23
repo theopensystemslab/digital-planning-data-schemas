@@ -16,5 +16,9 @@ for i in "${!dirs[@]}"; do
 
   echo "Building schema for $type from directory /$dir"
 
+  # Local build
   pnpm ts-json-schema-generator --path "src/types/schemas/${dir}/*.ts" --out "schemas/${dir}.json" --type "$type" --id "$version" --no-top-ref
+
+  # Dist build
+  pnpm ts-json-schema-generator --path "src/types/schemas/${dir}/*.ts" --out "dist/schemas/${dir}.json" --type "$type" --id "$version" --no-top-ref
 done

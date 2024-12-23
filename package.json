@@ -4,13 +4,14 @@
   "description": "Digital Planning Data schemas",
   "main": "schema/schema.json",
   "scripts": {
-    "build": "pnpm build-schema && pnpm build-json-examples",
-    "build-json-examples": "pnpm ts-node scripts/build-json-examples.ts",
-    "build-schema": "./scripts/build-schema.sh",
+    "build": "pnpm build:types && pnpm build:schema",
+    "build:types": "tsc --emitDeclarationOnly --declaration --project tsconfig.build.json",
+    "build:examples": "pnpm ts-node scripts/build-json-examples.ts",
+    "build:schema": "./scripts/build-schema.sh",
     "lint": "gts lint",
     "check": "tsc --noEmit",
     "fix": "gts fix",
-    "test": "pnpm build-schema && vitest",
+    "test": "pnpm build:schema && vitest",
     "prepare": "husky install"
   },
   "keywords": [],
