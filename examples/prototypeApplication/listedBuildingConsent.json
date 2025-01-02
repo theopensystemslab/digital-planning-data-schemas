@@ -99,7 +99,7 @@
             "intersects": true
           },
           {
-            "value": "article4",
+            "value": "articleFour",
             "intersects": true,
             "entities": [
               {
@@ -148,7 +148,7 @@
             "intersects": false
           },
           {
-            "value": "listed.grade.I",
+            "value": "listed.gradeOne",
             "intersects": false
           },
           {
@@ -160,7 +160,7 @@
             "intersects": false
           },
           {
-            "value": "listed.grade.II",
+            "value": "listed.gradeTwo",
             "intersects": true,
             "entities": [
               {
@@ -180,7 +180,7 @@
             ]
           },
           {
-            "value": "listed.grade.II*",
+            "value": "listed.gradeTwoStar",
             "intersects": false
           },
           {

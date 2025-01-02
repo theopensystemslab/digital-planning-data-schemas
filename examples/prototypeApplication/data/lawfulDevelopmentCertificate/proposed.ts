@@ -104,11 +104,11 @@ export const lawfulDevelopmentCertificateProposedPrototype: PrototypeApplication
           ],
           designations: [
             {
-              value: 'article4',
+              value: 'articleFour',
               intersects: false,
             },
             {
-              value: 'article4.caz',
+              value: 'articleFour.caz',
               intersects: false,
             },
             {

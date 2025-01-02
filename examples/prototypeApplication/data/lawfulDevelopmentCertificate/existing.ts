@@ -160,7 +160,7 @@ export const lawfulDevelopmentCertificateExistingPrototype: PrototypeApplication
           ],
           designations: [
             {
-              value: 'article4',
+              value: 'articleFour',
               intersects: true,
               entities: [
                 {
@@ -175,7 +175,7 @@ export const lawfulDevelopmentCertificateExistingPrototype: PrototypeApplication
               ],
             },
             {
-              value: 'article4.caz',
+              value: 'articleFour.caz',
               intersects: false,
             },
             {

@@ -63,7 +63,7 @@ export const priorApprovalBuildHomesPrototype: PrototypeApplication = {
             intersects: false,
           },
           {
-            value: 'article4',
+            value: 'articleFour',
             intersects: false,
           },
           {

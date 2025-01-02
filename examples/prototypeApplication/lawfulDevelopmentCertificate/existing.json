@@ -248,7 +248,7 @@
         ],
         "designations": [
           {
-            "value": "article4",
+            "value": "articleFour",
             "intersects": true,
             "entities": [
               {
@@ -262,7 +262,7 @@
             ]
           },
           {
-            "value": "article4.caz",
+            "value": "articleFour.caz",
             "intersects": false
           },
           {

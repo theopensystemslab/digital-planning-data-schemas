@@ -69,7 +69,7 @@ export const preApplication: PreApplication = {
             intersects: false,
           },
           {
-            value: 'article4',
+            value: 'articleFour',
             description: 'Article 4 Direction area',
             intersects: false,
           },

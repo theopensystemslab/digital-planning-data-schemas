@@ -2,12 +2,12 @@ import {Entity} from '../data/shared';
 /**
  * @description Article 4 Direction area
  */
-type Article4 = 'article4';
+type ArticleFour = 'articleFour';
 
 /**
  * @description Central Activities Zone (CAZ)
  */
-type Article4CAZ = 'article4.caz';
+type ArticleFourCAZ = 'articleFour.caz';
 
 /**
  * @description Brownfield site
@@ -52,17 +52,17 @@ type Flood = 'flood';
 /**
  * @description Flood Risk Zone 1 - Low risk
  */
-type FloodZone1 = 'flood.zone.1';
+type FloodZone1 = 'flood.zoneOne';
 
 /**
  * @description Flood Risk Zone 2 - Medium risk
  */
-type FloodZone2 = 'flood.zone.2';
+type FloodZone2 = 'flood.zoneTwo';
 
 /**
  * @description Flood Risk Zone 3 - High risk
  */
-type FloodZone3 = 'flood.zone.3';
+type FloodZone3 = 'flood.zoneThree';
 
 /**
  * @description Green Belt
@@ -77,17 +77,17 @@ type Listed = 'listed';
 /**
  * @description Listed Building - Grade I
  */
-type ListedGradeI = 'listed.grade.I';
+type ListedGradeI = 'listed.gradeOne';
 
 /**
  * @description Listed Building - Grade II
  */
-type ListedGradeII = 'listed.grade.II';
+type ListedGradeII = 'listed.gradeTwo';
 
 /**
  * @description Listed Building - Grade II*
  */
-type ListedGradeIIStar = 'listed.grade.II*';
+type ListedGradeIIStar = 'listed.gradeTwoStar';
 
 /**
  * @description Locally Listed Building
@@ -140,8 +140,8 @@ type RoadClassified = 'road.classified';
 type TPO = 'tpo';
 
 export type BasePlanningDesignation =
-  | Article4
-  | Article4CAZ
+  | ArticleFour
+  | ArticleFourCAZ
   | BrownfieldSite
   | Designated
   | DesignatedAONB

@@ -72,7 +72,7 @@ export const planningPermissionMinorPrototype: PrototypeApplication = {
             intersects: false,
           },
           {
-            value: 'article4',
+            value: 'articleFour',
             intersects: false,
           },
           {

@@ -106,7 +106,7 @@ export const listedBuildingConsent: Application = {
             intersects: true,
           },
           {
-            value: 'article4',
+            value: 'articleFour',
             description: 'Article 4 Direction area',
             intersects: true,
             entities: [
@@ -165,7 +165,7 @@ export const listedBuildingConsent: Application = {
             intersects: false,
           },
           {
-            value: 'listed.grade.I',
+            value: 'listed.gradeOne',
             description: 'Listed Building - Grade I',
             intersects: false,
           },
@@ -180,7 +180,7 @@ export const listedBuildingConsent: Application = {
             intersects: false,
           },
           {
-            value: 'listed.grade.II',
+            value: 'listed.gradeTwo',
             description: 'Listed Building - Grade II',
             intersects: true,
             entities: [
@@ -201,7 +201,7 @@ export const listedBuildingConsent: Application = {
             ],
           },
           {
-            value: 'listed.grade.II*',
+            value: 'listed.gradeTwoStar',
             description: 'Listed Building - Grade II*',
             intersects: false,
           },

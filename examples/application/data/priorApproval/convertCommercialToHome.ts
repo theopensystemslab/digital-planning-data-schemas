@@ -105,7 +105,7 @@ export const priorApprovalConvertCommercialToHome: Application = {
             ],
           },
           {
-            value: 'article4',
+            value: 'articleFour',
             description: 'Article 4 Direction area',
             intersects: false,
           },
@@ -155,7 +155,7 @@ export const priorApprovalConvertCommercialToHome: Application = {
             intersects: false,
           },
           {
-            value: 'listed.grade.I',
+            value: 'listed.gradeOne',
             description: 'Listed Building - Grade I',
             intersects: false,
           },
@@ -170,12 +170,12 @@ export const priorApprovalConvertCommercialToHome: Application = {
             intersects: false,
           },
           {
-            value: 'listed.grade.II',
+            value: 'listed.gradeTwo',
             description: 'Listed Building - Grade II',
             intersects: true,
           },
           {
-            value: 'listed.grade.II*',
+            value: 'listed.gradeTwoStar',
             description: 'Listed Building - Grade II*',
             intersects: false,
           },

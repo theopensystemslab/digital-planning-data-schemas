@@ -101,7 +101,7 @@ export const listedBuildingConsentPrototype: PrototypeApplication = {
             intersects: true,
           },
           {
-            value: 'article4',
+            value: 'articleFour',
             intersects: true,
             entities: [
               {
@@ -150,7 +150,7 @@ export const listedBuildingConsentPrototype: PrototypeApplication = {
             intersects: false,
           },
           {
-            value: 'listed.grade.I',
+            value: 'listed.gradeOne',
             intersects: false,
           },
           {
@@ -162,7 +162,7 @@ export const listedBuildingConsentPrototype: PrototypeApplication = {
             intersects: false,
           },
           {
-            value: 'listed.grade.II',
+            value: 'listed.gradeTwo',
             intersects: true,
             entities: [
               {
@@ -182,7 +182,7 @@ export const listedBuildingConsentPrototype: PrototypeApplication = {
             ],
           },
           {
-            value: 'listed.grade.II*',
+            value: 'listed.gradeTwoStar',
             intersects: false,
           },
           {
