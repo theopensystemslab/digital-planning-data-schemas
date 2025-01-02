@@ -109,7 +109,7 @@ export const planningPermissionMajorPrototype: PrototypeApplication = {
             intersects: false,
           },
           {
-            value: 'article4',
+            value: 'articleFour',
             intersects: false,
           },
           {

@@ -147,7 +147,7 @@ export const landDrainageConsent: Application = {
             ],
           },
           {
-            value: 'article4',
+            value: 'articleFour',
             description: 'Article 4 Direction area',
             intersects: false,
           },
@@ -196,17 +196,17 @@ export const landDrainageConsent: Application = {
             intersects: false,
           },
           {
-            value: 'flood.zone.1',
+            value: 'flood.zoneOne',
             description: 'Flood Risk Zone 1 - Low risk',
             intersects: false,
           },
           {
-            value: 'flood.zone.2',
+            value: 'flood.zoneTwo',
             description: 'Flood Risk Zone 2 - Medium risk',
             intersects: true,
           },
           {
-            value: 'flood.zone.3',
+            value: 'flood.zoneThree',
             description: 'Flood Risk Zone 3 - High risk',
             intersects: true,
           },
@@ -221,7 +221,7 @@ export const landDrainageConsent: Application = {
             intersects: false,
           },
           {
-            value: 'listed.grade.I',
+            value: 'listed.gradeOne',
             description: 'Listed Building - Grade I',
             intersects: true,
           },
@@ -236,12 +236,12 @@ export const landDrainageConsent: Application = {
             intersects: false,
           },
           {
-            value: 'listed.grade.II',
+            value: 'listed.gradeTwo',
             description: 'Listed Building - Grade II',
             intersects: false,
           },
           {
-            value: 'listed.grade.II*',
+            value: 'listed.gradeTwoStar',
             description: 'Listed Building - Grade II*',
             intersects: false,
           },

@@ -137,7 +137,7 @@ export const planningPermissionFullHouseholderInConservationAreaPrototype: Proto
           ],
           designations: [
             {
-              value: 'article4',
+              value: 'articleFour',
               intersects: false,
             },
             {
