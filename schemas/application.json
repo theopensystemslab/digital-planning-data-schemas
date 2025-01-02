@@ -24553,7 +24553,7 @@
               "type": "string"
             },
             "value": {
-              "const": "Listed building consent / Missing information",
+              "const": "Works to listed buildings / Missing information",
               "type": "string"
             }
           },
@@ -24571,7 +24571,7 @@
               "type": "string"
             },
             "value": {
-              "const": "Listed building consent / Required",
+              "const": "Works to listed buildings / Consent needed",
               "type": "string"
             }
           },
@@ -24589,7 +24589,7 @@
               "type": "string"
             },
             "value": {
-              "const": "Listed building consent / De minimis",
+              "const": "Works to listed buildings / De minimis",
               "type": "string"
             }
           },
@@ -24607,7 +24607,7 @@
               "type": "string"
             },
             "value": {
-              "const": "Listed building consent / Not required",
+              "const": "Works to listed buildings / Not required",
               "type": "string"
             }
           },
@@ -24643,7 +24643,7 @@
               "type": "string"
             },
             "value": {
-              "const": "Works to trees & hedges / Required",
+              "const": "Works to trees & hedges / Consent needed",
               "type": "string"
             }
           },
@@ -24661,7 +24661,7 @@
               "type": "string"
             },
             "value": {
-              "const": "Works to trees & hedges / De minimis",
+              "const": "Works to trees & hedges / Notice",
               "type": "string"
             }
           },
@@ -24715,7 +24715,7 @@
               "type": "string"
             },
             "value": {
-              "const": "Demolition in a conservation area / Required",
+              "const": "Demolition in a conservation area / Consent needed",
               "type": "string"
             }
           },
@@ -24859,43 +24859,7 @@
               "type": "string"
             },
             "value": {
-              "const": "Community infrastructure levy / Exemption void",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "",
-              "type": "string"
-            },
-            "value": {
               "const": "Community infrastructure levy / Exempt",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "",
-              "type": "string"
-            },
-            "value": {
-              "const": "Community infrastructure levy / Relief void",
               "type": "string"
             }
           },
@@ -24950,6 +24914,60 @@
             },
             "value": {
               "const": "Community infrastructure levy / Not liable",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "",
+              "type": "string"
+            },
+            "value": {
+              "const": "Material change of use / Missing information",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "",
+              "type": "string"
+            },
+            "value": {
+              "const": "Material change of use / Material change of use",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "",
+              "type": "string"
+            },
+            "value": {
+              "const": "Material change of use / Not material change of use",
               "type": "string"
             }
           },
