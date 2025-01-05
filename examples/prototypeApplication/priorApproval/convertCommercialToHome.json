@@ -98,7 +98,7 @@
             ]
           },
           {
-            "value": "article4",
+            "value": "articleFour",
             "intersects": false
           },
           {
@@ -138,7 +138,7 @@
             "intersects": false
           },
           {
-            "value": "listed.grade.I",
+            "value": "listed.gradeOne",
             "intersects": false
           },
           {
@@ -150,11 +150,11 @@
             "intersects": false
           },
           {
-            "value": "listed.grade.II",
+            "value": "listed.gradeTwo",
             "intersects": true
           },
           {
-            "value": "listed.grade.II*",
+            "value": "listed.gradeTwoStar",
             "intersects": false
           },
           {

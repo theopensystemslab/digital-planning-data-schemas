@@ -320,12 +320,12 @@
     "BasePlanningDesignation": {
       "anyOf": [
         {
-          "const": "article4",
+          "const": "articleFour",
           "description": "Article 4 Direction area",
           "type": "string"
         },
         {
-          "const": "article4.caz",
+          "const": "articleFour.caz",
           "description": "Central Activities Zone (CAZ)",
           "type": "string"
         },
@@ -370,17 +370,17 @@
           "type": "string"
         },
         {
-          "const": "flood.zone.1",
+          "const": "flood.zoneOne",
           "description": "Flood Risk Zone 1 - Low risk",
           "type": "string"
         },
         {
-          "const": "flood.zone.2",
+          "const": "flood.zoneTwo",
           "description": "Flood Risk Zone 2 - Medium risk",
           "type": "string"
         },
         {
-          "const": "flood.zone.3",
+          "const": "flood.zoneThree",
           "description": "Flood Risk Zone 3 - High risk",
           "type": "string"
         },
@@ -395,17 +395,17 @@
           "type": "string"
         },
         {
-          "const": "listed.grade.I",
+          "const": "listed.gradeOne",
           "description": "Listed Building - Grade I",
           "type": "string"
         },
         {
-          "const": "listed.grade.II",
+          "const": "listed.gradeTwo",
           "description": "Listed Building - Grade II",
           "type": "string"
         },
         {
-          "const": "listed.grade.II*",
+          "const": "listed.gradeTwoStar",
           "description": "Listed Building - Grade II*",
           "type": "string"
         },

@@ -101,7 +101,7 @@ export const priorApprovalConvertCommercialToHomePrototype: PrototypeApplication
               ],
             },
             {
-              value: 'article4',
+              value: 'articleFour',
               intersects: false,
             },
             {
@@ -141,7 +141,7 @@ export const priorApprovalConvertCommercialToHomePrototype: PrototypeApplication
               intersects: false,
             },
             {
-              value: 'listed.grade.I',
+              value: 'listed.gradeOne',
               intersects: false,
             },
             {
@@ -153,11 +153,11 @@ export const priorApprovalConvertCommercialToHomePrototype: PrototypeApplication
               intersects: false,
             },
             {
-              value: 'listed.grade.II',
+              value: 'listed.gradeTwo',
               intersects: true,
             },
             {
-              value: 'listed.grade.II*',
+              value: 'listed.gradeTwoStar',
               intersects: false,
             },
             {

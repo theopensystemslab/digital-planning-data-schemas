@@ -8751,7 +8751,7 @@
                   "type": "boolean"
                 },
                 "value": {
-                  "const": "article4",
+                  "const": "articleFour",
                   "type": "string"
                 }
               },
@@ -8774,7 +8774,7 @@
                   "type": "boolean"
                 },
                 "value": {
-                  "const": "article4.caz",
+                  "const": "articleFour.caz",
                   "type": "string"
                 }
               },
@@ -8981,7 +8981,7 @@
                   "type": "boolean"
                 },
                 "value": {
-                  "const": "flood.zone.1",
+                  "const": "flood.zoneOne",
                   "type": "string"
                 }
               },
@@ -9004,7 +9004,7 @@
                   "type": "boolean"
                 },
                 "value": {
-                  "const": "flood.zone.2",
+                  "const": "flood.zoneTwo",
                   "type": "string"
                 }
               },
@@ -9027,7 +9027,7 @@
                   "type": "boolean"
                 },
                 "value": {
-                  "const": "flood.zone.3",
+                  "const": "flood.zoneThree",
                   "type": "string"
                 }
               },
@@ -9096,7 +9096,7 @@
                   "type": "boolean"
                 },
                 "value": {
-                  "const": "listed.grade.I",
+                  "const": "listed.gradeOne",
                   "type": "string"
                 }
               },
@@ -9119,7 +9119,7 @@
                   "type": "boolean"
                 },
                 "value": {
-                  "const": "listed.grade.II",
+                  "const": "listed.gradeTwo",
                   "type": "string"
                 }
               },
@@ -9142,7 +9142,7 @@
                   "type": "boolean"
                 },
                 "value": {
-                  "const": "listed.grade.II*",
+                  "const": "listed.gradeTwoStar",
                   "type": "string"
                 }
               },
@@ -9406,7 +9406,7 @@
                   "type": "boolean"
                 },
                 "value": {
-                  "const": "article4",
+                  "const": "articleFour",
                   "type": "string"
                 }
               },
@@ -9435,7 +9435,7 @@
                   "type": "boolean"
                 },
                 "value": {
-                  "const": "article4.caz",
+                  "const": "articleFour.caz",
                   "type": "string"
                 }
               },
@@ -9696,7 +9696,7 @@
                   "type": "boolean"
                 },
                 "value": {
-                  "const": "flood.zone.1",
+                  "const": "flood.zoneOne",
                   "type": "string"
                 }
               },
@@ -9725,7 +9725,7 @@
                   "type": "boolean"
                 },
                 "value": {
-                  "const": "flood.zone.2",
+                  "const": "flood.zoneTwo",
                   "type": "string"
                 }
               },
@@ -9754,7 +9754,7 @@
                   "type": "boolean"
                 },
                 "value": {
-                  "const": "flood.zone.3",
+                  "const": "flood.zoneThree",
                   "type": "string"
                 }
               },
@@ -9841,7 +9841,7 @@
                   "type": "boolean"
                 },
                 "value": {
-                  "const": "listed.grade.I",
+                  "const": "listed.gradeOne",
                   "type": "string"
                 }
               },
@@ -9870,7 +9870,7 @@
                   "type": "boolean"
                 },
                 "value": {
-                  "const": "listed.grade.II",
+                  "const": "listed.gradeTwo",
                   "type": "string"
                 }
               },
@@ -9899,7 +9899,7 @@
                   "type": "boolean"
                 },
                 "value": {
-                  "const": "listed.grade.II*",
+                  "const": "listed.gradeTwoStar",
                   "type": "string"
                 }
               },

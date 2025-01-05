@@ -141,7 +141,7 @@ export const landDrainageConsentPrototype: PrototypeApplication = {
             ],
           },
           {
-            value: 'article4',
+            value: 'articleFour',
             intersects: false,
           },
           {
@@ -182,15 +182,15 @@ export const landDrainageConsentPrototype: PrototypeApplication = {
             intersects: false,
           },
           {
-            value: 'flood.zone.1',
+            value: 'flood.zoneOne',
             intersects: false,
           },
           {
-            value: 'flood.zone.2',
+            value: 'flood.zoneTwo',
             intersects: true,
           },
           {
-            value: 'flood.zone.3',
+            value: 'flood.zoneThree',
             intersects: true,
           },
           {
@@ -202,7 +202,7 @@ export const landDrainageConsentPrototype: PrototypeApplication = {
             intersects: false,
           },
           {
-            value: 'listed.grade.I',
+            value: 'listed.gradeOne',
             intersects: true,
           },
           {
@@ -214,11 +214,11 @@ export const landDrainageConsentPrototype: PrototypeApplication = {
             intersects: false,
           },
           {
-            value: 'listed.grade.II',
+            value: 'listed.gradeTwo',
             intersects: false,
           },
           {
-            value: 'listed.grade.II*',
+            value: 'listed.gradeTwoStar',
             intersects: false,
           },
           {
