@@ -220,7 +220,7 @@ export const planningPermissionFullHouseholder: Application = {
       localAuthorityDistrict: ['Lambeth'],
       region: 'London',
       type: {
-        value: 'residential.dwelling.house.terrace',
+        value: 'residential.house.terrace',
         description: 'Terrace',
       },
       titleNumber: {

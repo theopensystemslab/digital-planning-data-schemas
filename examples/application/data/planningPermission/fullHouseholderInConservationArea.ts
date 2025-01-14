@@ -258,7 +258,7 @@ export const planningPermissionFullHouseholderInConservationArea: Application =
         localAuthorityDistrict: ['Southwark'],
         region: 'London',
         type: {
-          value: 'residential.dwelling.house.semiDetached',
+          value: 'residential.house.semiDetached',
           description: 'Semi-detached',
         },
         titleNumber: {

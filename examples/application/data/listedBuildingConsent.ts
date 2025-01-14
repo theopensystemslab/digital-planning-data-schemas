@@ -81,7 +81,7 @@ export const listedBuildingConsent: Application = {
       localAuthorityDistrict: ['Camden'],
       region: 'London',
       type: {
-        value: 'residential.dwelling.flat',
+        value: 'residential.flat',
         description: 'Flat',
       },
       planning: {
