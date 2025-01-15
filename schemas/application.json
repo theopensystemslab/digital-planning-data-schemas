@@ -4517,6 +4517,24 @@
           "additionalProperties": false,
           "properties": {
             "description": {
+              "const": "Other - supporting document",
+              "type": "string"
+            },
+            "value": {
+              "const": "otherSupporting",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
               "const": "Parking plan",
               "type": "string"
             },
@@ -24981,7 +24999,6 @@
       "description": "The result of a single flagset"
     },
     "SiteContact": {
-      "$id": "#SiteContact",
       "anyOf": [
         {
           "additionalProperties": false,
@@ -25004,10 +25021,10 @@
           "$ref": "#/definitions/SiteContactOther"
         }
       ],
-      "description": "Contact information for the site visit"
+      "description": "Contact information for the site visit",
+      "title": "#SiteContact"
     },
     "SiteContactOther": {
-      "$id": "#SiteContactOther",
       "additionalProperties": false,
       "description": "Contact information for the site visit when the SiteContact's role is 'other'",
       "properties": {
@@ -25031,6 +25048,7 @@
         "email",
         "phone"
       ],
+      "title": "#SiteContactOther",
       "type": "object"
     },
     "UKProperty": {
@@ -25431,7 +25449,6 @@
       "type": "string"
     },
     "User": {
-      "$id": "User",
       "additionalProperties": false,
       "description": "The role of the user who completed the application",
       "properties": {
@@ -25447,6 +25464,7 @@
       "required": [
         "role"
       ],
+      "title": "User",
       "type": "object"
     },
     "UserAddress": {

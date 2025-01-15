@@ -4,7 +4,7 @@ import {
   FeeExplanationNotApplicable,
 } from '../../shared/Metadata';
 import {URL, UUID} from '../../shared/utils';
-import {Entity} from './data/shared';
+import {PrototypeEntity} from './data/shared';
 import {PrototypeFileType} from './enums/FileType';
 import {BasePlanningDesignation} from './enums/PlanningDesignation';
 
@@ -31,7 +31,7 @@ export interface UserOverrides {
         value: BasePlanningDesignation;
         sourceIntersects: true;
         userIntersects: false;
-        entities: Array<Entity & {userReason: string}>;
+        entities: Array<PrototypeEntity & {userReason: string}>;
       }[];
     };
   };

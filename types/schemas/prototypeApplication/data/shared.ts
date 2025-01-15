@@ -2,7 +2,7 @@ import {URL} from '../../../shared/utils';
 import {UKResidentialUnitType} from '../enums/ResidentialUnitType';
 import {UKTenureType} from '../enums/TenureType';
 
-export type Entity = {
+export type PrototypeEntity = {
   name: string;
   description?: string;
   source: PlanningDataSource | OSRoadsSource;

@@ -6,6 +6,10 @@ import {Fee} from '../../../shared/Fees';
  * @description Information about this planning pre-application
  */
 export interface PreApplicationData {
+  type: {
+    value: 'preApp';
+    description: 'Pre-application';
+  };
   fee: Pick<Fee, 'payable' | 'reference'>;
   declaration: Declaration;
   information: {

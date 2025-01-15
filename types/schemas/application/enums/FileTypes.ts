@@ -63,6 +63,7 @@ export const FileTypes = {
   otherDocument: 'Other - document',
   otherDrawing: 'Other - drawing',
   otherEvidence: 'Other - evidence or correspondence',
+  otherSupporting: 'Other - supporting document',
   parkingPlan: 'Parking plan',
   'photographs.existing': 'Photographs - existing',
   'photographs.proposed': 'Photographs - proposed',
