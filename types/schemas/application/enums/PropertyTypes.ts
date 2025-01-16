@@ -634,6 +634,7 @@ export const PropertyTypes = {
     'HMO Bedsit / Other Non Self Contained Accommodation',
   'residential.HMO.parent': 'HMO Parent',
   'residential.HMO.undivided': 'HMO Not Further Divided',
+  'residential.house': 'House',
   'residential.house.detached': 'Detached',
   'residential.house.semiDetached': 'Semi-detached',
   'residential.house.terrace': 'Terrace',
