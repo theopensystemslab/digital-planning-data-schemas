@@ -46,7 +46,7 @@ export const preApplication: PreApplication = {
       localAuthorityDistrict: ['Doncaster'],
       region: 'Yorkshire and The Humber',
       type: {
-        value: 'residential.dwelling.house.detached',
+        value: 'residential.house.detached',
         description: 'Detached',
       },
       planning: {

@@ -200,7 +200,7 @@ export const lawfulDevelopmentCertificateProposed: Application = {
       localAuthorityDistrict: ['Buckinghamshire', 'South Bucks'],
       region: 'South East',
       type: {
-        value: 'residential.dwelling.house.detached',
+        value: 'residential.house.detached',
         description: 'Detached',
       },
     },

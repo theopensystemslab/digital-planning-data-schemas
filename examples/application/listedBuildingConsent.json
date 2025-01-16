@@ -79,7 +79,7 @@
       ],
       "region": "London",
       "type": {
-        "value": "residential.dwelling.flat",
+        "value": "residential.flat",
         "description": "Flat"
       },
       "planning": {

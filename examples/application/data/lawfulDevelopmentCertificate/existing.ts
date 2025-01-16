@@ -276,7 +276,7 @@ export const lawfulDevelopmentCertificateExisting: Application = {
       localAuthorityDistrict: ['Buckinghamshire', 'Chiltern'],
       region: 'South East',
       type: {
-        value: 'residential.dwelling.house.detached',
+        value: 'residential.house.detached',
         description: 'Detached',
       },
     },

@@ -43,7 +43,7 @@ export const priorApprovalLargerExtension: Application = {
       localAuthorityDistrict: ['Croydon'],
       region: 'London',
       type: {
-        value: 'residential.dwelling.house.detached',
+        value: 'residential.house.detached',
         description: 'Detached',
       },
       planning: {
