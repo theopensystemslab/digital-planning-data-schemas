@@ -4,7 +4,6 @@
   "additionalProperties": false,
   "definitions": {
     "Address": {
-      "$id": "#Address",
       "additionalProperties": false,
       "description": "Address information for a person associated with this application not at the property address",
       "properties": {
@@ -96,10 +95,10 @@
             }
           },
           "required": [
-            "name",
+            "address",
             "email",
-            "phone",
-            "address"
+            "name",
+            "phone"
           ],
           "type": "object"
         },
@@ -180,89 +179,6 @@
       ],
       "type": "object"
     },
-    "AnyProviderMetadata": {
-      "$id": "#AnyProviderMetadata",
-      "additionalProperties": false,
-      "description": "Base metadata associated with applications submitted via any provider",
-      "properties": {
-        "id": {
-          "$ref": "#/definitions/UUID",
-          "description": "Unique identifier for this application"
-        },
-        "organisation": {
-          "description": "The reference code for the organisation responsible for processing this planning application, sourced from planning.data.gov.uk/dataset/local-authority",
-          "maxLength": 4,
-          "type": "string"
-        },
-        "schema": {
-          "$ref": "#/definitions/URL"
-        },
-        "source": {
-          "const": "Any",
-          "type": "string"
-        },
-        "submittedAt": {
-          "$ref": "#/definitions/DateTime"
-        }
-      },
-      "required": [
-        "id",
-        "organisation",
-        "schema",
-        "source",
-        "submittedAt"
-      ],
-      "type": "object"
-    },
-    "Applicant": {
-      "$id": "#Applicant",
-      "anyOf": [
-        {
-          "$ref": "#/definitions/BaseApplicant"
-        },
-        {
-          "$ref": "#/definitions/Agent"
-        }
-      ],
-      "description": "The user who completed the application either for themself or on behalf of someone else"
-    },
-    "ApplicationDeclaration": {
-      "$id": "#ApplicationDeclaration",
-      "additionalProperties": false,
-      "description": "Declarations about the accuracy of this application and any personal connections to the receiving authority",
-      "properties": {
-        "accurate": {
-          "type": "boolean"
-        },
-        "connection": {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "type": "string"
-            },
-            "value": {
-              "enum": [
-                "employee",
-                "relation.employee",
-                "electedMember",
-                "relation.electedMember",
-                "none"
-              ],
-              "type": "string"
-            }
-          },
-          "required": [
-            "value"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "accurate",
-        "connection"
-      ],
-      "type": "object"
-    },
     "Area": {
       "$id": "#Area",
       "additionalProperties": false,
@@ -300,10 +216,10 @@
       ],
       "description": "Bounding box https://tools.ietf.org/html/rfc7946#section-5"
     },
-    "BaseApplicant": {
-      "$id": "#BaseApplicant",
+    "BasePreApplicant": {
+      "$id": "#BasePreApplicant",
       "additionalProperties": false,
-      "description": "Information about the user who completed the application for themself, or information about the person who the user applied on behalf of",
+      "description": "Information about the user who completed the pre-application for themself, or information about the person who the user applied on behalf of",
       "properties": {
         "address": {
           "$ref": "#/definitions/UserAddress"
@@ -323,9 +239,6 @@
         "email": {
           "$ref": "#/definitions/Email"
         },
-        "maintenanceContact": {
-          "$ref": "#/definitions/MaintenanceContact"
-        },
         "name": {
           "additionalProperties": false,
           "properties": {
@@ -344,9 +257,6 @@
             "last"
           ],
           "type": "object"
-        },
-        "ownership": {
-          "$ref": "#/definitions/Ownership"
         },
         "phone": {
           "additionalProperties": false,
@@ -375,12 +285,12 @@
         }
       },
       "required": [
-        "type",
-        "name",
-        "email",
-        "phone",
         "address",
-        "siteContact"
+        "email",
+        "name",
+        "phone",
+        "siteContact",
+        "type"
       ],
       "type": "object"
     },
@@ -413,6 +323,65 @@
       },
       "type": "object"
     },
+    "ContactDetails": {
+      "additionalProperties": false,
+      "description": "Contact details for a person associated with this application",
+      "properties": {
+        "company": {
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "name"
+          ],
+          "type": "object"
+        },
+        "email": {
+          "$ref": "#/definitions/Email"
+        },
+        "name": {
+          "additionalProperties": false,
+          "properties": {
+            "first": {
+              "type": "string"
+            },
+            "last": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "first",
+            "last"
+          ],
+          "type": "object"
+        },
+        "phone": {
+          "additionalProperties": false,
+          "properties": {
+            "primary": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "primary"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "name",
+        "email",
+        "phone"
+      ],
+      "title": "#ContactDetails",
+      "type": "object"
+    },
     "Date": {
       "format": "date",
       "type": "string"
@@ -422,6 +391,43 @@
       "format": "date-time",
       "pattern": "^([0-9]+)-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])[Tt]([01][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9]|60)(\\.[0-9]+)?(([Zz])|([\\+|\\-]([01][0-9]|2[0-3]):[0-5][0-9]))$",
       "type": "string"
+    },
+    "Declaration": {
+      "additionalProperties": false,
+      "description": "Declarations about the accuracy of this application and any personal connections to the receiving authority",
+      "properties": {
+        "accurate": {
+          "type": "boolean"
+        },
+        "connection": {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "type": "string"
+            },
+            "value": {
+              "enum": [
+                "employee",
+                "relation.employee",
+                "electedMember",
+                "relation.electedMember",
+                "none"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "value"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "accurate",
+        "connection"
+      ],
+      "title": "#Declaration",
+      "type": "object"
     },
     "Email": {
       "format": "email",
@@ -477,42 +483,6 @@
       ],
       "type": "object"
     },
-    "Feature": {
-      "additionalProperties": false,
-      "description": "A feature object which contains a geometry and associated properties. https://tools.ietf.org/html/rfc7946#section-3.2",
-      "properties": {
-        "bbox": {
-          "$ref": "#/definitions/BBox",
-          "description": "Bounding box of the coordinate range of the object's Geometries, Features, or Feature Collections. The value of the bbox member is an array of length 2*n where n is the number of dimensions represented in the contained geometries, with all axes of the most southwesterly point followed by all axes of the more northeasterly point. The axes order of a bbox follows the axes order of geometries. https://tools.ietf.org/html/rfc7946#section-5"
-        },
-        "geometry": {
-          "$ref": "#/definitions/Geometry",
-          "description": "The feature's geometry"
-        },
-        "id": {
-          "description": "A value that uniquely identifies this feature in a https://tools.ietf.org/html/rfc7946#section-3.2.",
-          "type": [
-            "string",
-            "number"
-          ]
-        },
-        "properties": {
-          "$ref": "#/definitions/GeoJsonProperties",
-          "description": "Properties associated with this feature."
-        },
-        "type": {
-          "const": "Feature",
-          "description": "Specifies the type of GeoJSON object.",
-          "type": "string"
-        }
-      },
-      "required": [
-        "geometry",
-        "properties",
-        "type"
-      ],
-      "type": "object"
-    },
     "Feature<Geometry,GeoJsonProperties>": {
       "additionalProperties": false,
       "description": "A feature object which contains a geometry and associated properties. https://tools.ietf.org/html/rfc7946#section-3.2",
@@ -549,7 +519,7 @@
       ],
       "type": "object"
     },
-    "FeatureCollection": {
+    "FeatureCollection<Geometry,GeoJsonProperties>": {
       "additionalProperties": false,
       "description": "A collection of feature objects.  https://tools.ietf.org/html/rfc7946#section-3.3",
       "properties": {
@@ -717,6 +687,30 @@
       },
       "required": [
         "notApplicable"
+      ],
+      "type": "object"
+    },
+    "File": {
+      "$id": "#File",
+      "additionalProperties": false,
+      "description": "File uploaded and labeled by the user to support the application",
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "type": {
+          "items": {
+            "$ref": "#/definitions/FileType"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "name",
+        "type"
       ],
       "type": "object"
     },
@@ -1681,6 +1675,24 @@
           "additionalProperties": false,
           "properties": {
             "description": {
+              "const": "Other - supporting document",
+              "type": "string"
+            },
+            "value": {
+              "const": "otherSupporting",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
               "const": "Parking plan",
               "type": "string"
             },
@@ -2548,10 +2560,10 @@
           "$ref": "#/definitions/Geometry"
         },
         {
-          "$ref": "#/definitions/Feature"
+          "$ref": "#/definitions/Feature%3CGeometry%2CGeoJsonProperties%3E"
         },
         {
-          "$ref": "#/definitions/FeatureCollection"
+          "$ref": "#/definitions/FeatureCollection%3CGeometry%2CGeoJsonProperties%3E"
         }
       ],
       "description": "Union of GeoJSON objects."
@@ -2654,52 +2666,7 @@
             "$ref": "#/definitions/Address"
           },
           "contact": {
-            "additionalProperties": false,
-            "properties": {
-              "company": {
-                "additionalProperties": false,
-                "properties": {
-                  "name": {
-                    "type": "string"
-                  }
-                },
-                "required": [
-                  "name"
-                ],
-                "type": "object"
-              },
-              "email": {
-                "type": "string"
-              },
-              "name": {
-                "additionalProperties": false,
-                "properties": {
-                  "first": {
-                    "type": "string"
-                  },
-                  "last": {
-                    "type": "string"
-                  },
-                  "title": {
-                    "type": "string"
-                  }
-                },
-                "required": [
-                  "first",
-                  "last"
-                ],
-                "type": "object"
-              },
-              "phone": {
-                "type": "string"
-              }
-            },
-            "required": [
-              "name",
-              "email",
-              "phone"
-            ],
-            "type": "object"
+            "$ref": "#/definitions/ContactDetails"
           },
           "when": {
             "enum": [
@@ -2718,18 +2685,6 @@
         "type": "object"
       },
       "type": "array"
-    },
-    "Metadata": {
-      "$id": "#DigitalPlanningMetadata",
-      "anyOf": [
-        {
-          "$ref": "#/definitions/AnyProviderMetadata"
-        },
-        {
-          "$ref": "#/definitions/PlanXMetadata"
-        }
-      ],
-      "description": "Details of the digital planning service which sent this application"
     },
     "MultiLineString": {
       "additionalProperties": false,
@@ -2819,9 +2774,8 @@
       "type": "object"
     },
     "OSAddress": {
-      "$id": "#OSAddress",
       "additionalProperties": false,
-      "description": "Address information for sites with a known address sourced from Ordnance Survey AddressBase Premium",
+      "description": "Address information for sites with a known address sourced from Ordnance Survey AddressBase Premium LPI source",
       "properties": {
         "latitude": {
           "description": "Latitude coordinate in EPSG:4326 (WGS84)",
@@ -2836,7 +2790,7 @@
         },
         "pao": {
           "description": "Combined `PAO_START_NUMBER`, `PAO_START_SUFFIX`, `PAO_TEXT` OS LPI properties",
-          "title": "Primary Addressable Object start range and/or building description",
+          "title": "Primary Addressable Object (PAO) start range and/or building description",
           "type": "string"
         },
         "paoEnd": {
@@ -2868,6 +2822,7 @@
           "type": "string"
         },
         "title": {
+          "description": "Single line address description",
           "type": "string"
         },
         "town": {
@@ -2907,10 +2862,10 @@
         "x",
         "y"
       ],
+      "title": "#OSAddress",
       "type": "object"
     },
     "Owners": {
-      "$id": "#Owners",
       "anyOf": [
         {
           "$ref": "#/definitions/OwnersNoticeGiven"
@@ -2922,7 +2877,17 @@
           "$ref": "#/definitions/OwnersNoticeDate"
         }
       ],
-      "description": "Names and addresses of all known owners and agricultural tenants, including confirmation or date of notice, or reason requisite notice has not been given if applicable"
+      "description": "Names and addresses of all known owners and agricultural tenants who are not the applicant, including confirmation or date of notice, or reason requisite notice has not been given if applicable",
+      "title": "#Owners"
+    },
+    "OwnersInterest": {
+      "enum": [
+        "owner",
+        "lessee",
+        "occupier",
+        "other"
+      ],
+      "type": "string"
     },
     "OwnersNoNoticeGiven": {
       "additionalProperties": false,
@@ -2938,13 +2903,7 @@
           ]
         },
         "interest": {
-          "enum": [
-            "owner",
-            "lessee",
-            "occupier",
-            "other"
-          ],
-          "type": "string"
+          "$ref": "#/definitions/OwnersInterest"
         },
         "name": {
           "type": "string"
@@ -2979,13 +2938,7 @@
           ]
         },
         "interest": {
-          "enum": [
-            "owner",
-            "lessee",
-            "occupier",
-            "other"
-          ],
-          "type": "string"
+          "$ref": "#/definitions/OwnersInterest"
         },
         "name": {
           "type": "string"
@@ -3015,13 +2968,7 @@
           ]
         },
         "interest": {
-          "enum": [
-            "owner",
-            "lessee",
-            "occupier",
-            "other"
-          ],
-          "type": "string"
+          "$ref": "#/definitions/OwnersInterest"
         },
         "name": {
           "type": "string"
@@ -3039,7 +2986,6 @@
       "type": "object"
     },
     "Ownership": {
-      "$id": "#Ownership",
       "additionalProperties": false,
       "description": "Information about the ownership certificate and property owners, if different than the applicant",
       "properties": {
@@ -3071,15 +3017,19 @@
           "type": "object"
         },
         "interest": {
-          "enum": [
-            "owner",
-            "owner.sole",
-            "owner.co",
-            "lessee",
-            "occupier",
-            "other"
-          ],
-          "type": "string"
+          "anyOf": [
+            {
+              "$ref": "#/definitions/OwnersInterest"
+            },
+            {
+              "const": "owner.sole",
+              "type": "string"
+            },
+            {
+              "const": "owner.co",
+              "type": "string"
+            }
+          ]
         },
         "noticeGiven": {
           "description": "Has requisite notice been given to all the known owners and agricultural tenants?",
@@ -3120,6 +3070,7 @@
           "type": "string"
         }
       },
+      "title": "#Ownership",
       "type": "object"
     },
     "PlanXMetadata": {
@@ -3205,7 +3156,7 @@
                   "type": "boolean"
                 },
                 "value": {
-                  "const": "article4",
+                  "const": "articleFour",
                   "type": "string"
                 }
               },
@@ -3228,7 +3179,7 @@
                   "type": "boolean"
                 },
                 "value": {
-                  "const": "article4.caz",
+                  "const": "articleFour.caz",
                   "type": "string"
                 }
               },
@@ -3435,7 +3386,7 @@
                   "type": "boolean"
                 },
                 "value": {
-                  "const": "flood.zone.1",
+                  "const": "flood.zoneOne",
                   "type": "string"
                 }
               },
@@ -3458,7 +3409,7 @@
                   "type": "boolean"
                 },
                 "value": {
-                  "const": "flood.zone.2",
+                  "const": "flood.zoneTwo",
                   "type": "string"
                 }
               },
@@ -3481,7 +3432,7 @@
                   "type": "boolean"
                 },
                 "value": {
-                  "const": "flood.zone.3",
+                  "const": "flood.zoneThree",
                   "type": "string"
                 }
               },
@@ -3550,7 +3501,7 @@
                   "type": "boolean"
                 },
                 "value": {
-                  "const": "listed.grade.I",
+                  "const": "listed.gradeOne",
                   "type": "string"
                 }
               },
@@ -3573,7 +3524,7 @@
                   "type": "boolean"
                 },
                 "value": {
-                  "const": "listed.grade.II",
+                  "const": "listed.gradeTwo",
                   "type": "string"
                 }
               },
@@ -3596,7 +3547,7 @@
                   "type": "boolean"
                 },
                 "value": {
-                  "const": "listed.grade.II*",
+                  "const": "listed.gradeTwoStar",
                   "type": "string"
                 }
               },
@@ -3860,7 +3811,7 @@
                   "type": "boolean"
                 },
                 "value": {
-                  "const": "article4",
+                  "const": "articleFour",
                   "type": "string"
                 }
               },
@@ -3889,7 +3840,7 @@
                   "type": "boolean"
                 },
                 "value": {
-                  "const": "article4.caz",
+                  "const": "articleFour.caz",
                   "type": "string"
                 }
               },
@@ -4150,7 +4101,7 @@
                   "type": "boolean"
                 },
                 "value": {
-                  "const": "flood.zone.1",
+                  "const": "flood.zoneOne",
                   "type": "string"
                 }
               },
@@ -4179,7 +4130,7 @@
                   "type": "boolean"
                 },
                 "value": {
-                  "const": "flood.zone.2",
+                  "const": "flood.zoneTwo",
                   "type": "string"
                 }
               },
@@ -4208,7 +4159,7 @@
                   "type": "boolean"
                 },
                 "value": {
-                  "const": "flood.zone.3",
+                  "const": "flood.zoneThree",
                   "type": "string"
                 }
               },
@@ -4295,7 +4246,7 @@
                   "type": "boolean"
                 },
                 "value": {
-                  "const": "listed.grade.I",
+                  "const": "listed.gradeOne",
                   "type": "string"
                 }
               },
@@ -4324,7 +4275,7 @@
                   "type": "boolean"
                 },
                 "value": {
-                  "const": "listed.grade.II",
+                  "const": "listed.gradeTwo",
                   "type": "string"
                 }
               },
@@ -4353,7 +4304,7 @@
                   "type": "boolean"
                 },
                 "value": {
-                  "const": "listed.grade.II*",
+                  "const": "listed.gradeTwoStar",
                   "type": "string"
                 }
               },
@@ -4719,20 +4670,45 @@
       },
       "type": "array"
     },
+    "PreApplicant": {
+      "$id": "#PreApplicant",
+      "anyOf": [
+        {
+          "$ref": "#/definitions/BasePreApplicant"
+        },
+        {
+          "$ref": "#/definitions/Agent"
+        }
+      ],
+      "description": "The user who completed the pre-application either for themself or on behalf of someone else"
+    },
     "PreApplicationData": {
       "$id": "#PreApplicationData",
       "additionalProperties": false,
       "description": "Information about this planning pre-application",
       "properties": {
         "declaration": {
-          "$ref": "#/definitions/ApplicationDeclaration"
+          "$ref": "#/definitions/Declaration"
         },
         "fee": {
           "additionalProperties": false,
           "properties": {
             "payable": {
-              "description": "Total payable fee in GBP",
+              "description": "Total payable fee after any exemptions or reductions in GBP",
               "type": "number"
+            },
+            "reference": {
+              "additionalProperties": false,
+              "properties": {
+                "govPay": {
+                  "description": "GOV.UK Pay payment reference number",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "govPay"
+              ],
+              "type": "object"
             }
           },
           "required": [
@@ -4781,9 +4757,28 @@
             "sensitive"
           ],
           "type": "object"
+        },
+        "type": {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Pre-application",
+              "type": "string"
+            },
+            "value": {
+              "const": "preApp",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
         }
       },
       "required": [
+        "type",
         "fee",
         "declaration",
         "information"
@@ -4838,7 +4833,7 @@
           "type": "object"
         },
         "region": {
-          "$ref": "#/definitions/UKRegion"
+          "$ref": "#/definitions/Region"
         },
         "type": {
           "$ref": "#/definitions/PropertyType"
@@ -13227,7 +13222,6 @@
       "type": "object"
     },
     "ProposedAddress": {
-      "$id": "#ProposedAddress",
       "additionalProperties": false,
       "description": "Address information for sites without a known Unique Property Reference Number (UPRN)",
       "properties": {
@@ -13244,6 +13238,7 @@
           "type": "string"
         },
         "title": {
+          "description": "Single line address description",
           "type": "string"
         },
         "x": {
@@ -13263,6 +13258,7 @@
         "x",
         "y"
       ],
+      "title": "#ProposedAddress",
       "type": "object"
     },
     "QuestionAndResponses": {
@@ -13323,6 +13319,22 @@
         }
       },
       "type": "object"
+    },
+    "Region": {
+      "description": "The region in England that contains this address sourced from planning.data.gov.uk/dataset/region, where London is a proxy for the Greater London Authority (GLA) area",
+      "enum": [
+        "North East",
+        "North West",
+        "Yorkshire and The Humber",
+        "East Midlands",
+        "West Midlands",
+        "East of England",
+        "London",
+        "South East",
+        "South West"
+      ],
+      "title": "#Region",
+      "type": "string"
     },
     "RequestedFiles": {
       "$id": "#RequestedFiles",
@@ -13407,7 +13419,6 @@
       "type": "array"
     },
     "SiteContact": {
-      "$id": "#SiteContact",
       "anyOf": [
         {
           "additionalProperties": false,
@@ -13430,10 +13441,10 @@
           "$ref": "#/definitions/SiteContactOther"
         }
       ],
-      "description": "Contact information for the site visit"
+      "description": "Contact information for the site visit",
+      "title": "#SiteContact"
     },
     "SiteContactOther": {
-      "$id": "#SiteContactOther",
       "additionalProperties": false,
       "description": "Contact information for the site visit when the SiteContact's role is 'other'",
       "properties": {
@@ -13457,23 +13468,8 @@
         "email",
         "phone"
       ],
+      "title": "#SiteContactOther",
       "type": "object"
-    },
-    "UKRegion": {
-      "$id": "#UKRegion",
-      "description": "The UK region that contains this address sourced from planning.data.gov.uk/dataset/region, where London is a proxy for the Greater London Authority (GLA) area",
-      "enum": [
-        "North East",
-        "North West",
-        "Yorkshire and The Humber",
-        "East Midlands",
-        "West Midlands",
-        "East of England",
-        "London",
-        "South East",
-        "South West"
-      ],
-      "type": "string"
     },
     "URL": {
       "format": "uri",
@@ -13485,7 +13481,6 @@
       "type": "string"
     },
     "User": {
-      "$id": "User",
       "additionalProperties": false,
       "description": "The role of the user who completed the application",
       "properties": {
@@ -13501,10 +13496,10 @@
       "required": [
         "role"
       ],
+      "title": "User",
       "type": "object"
     },
     "UserAddress": {
-      "$id": "#UserAddress",
       "anyOf": [
         {
           "additionalProperties": false,
@@ -13523,10 +13518,10 @@
           "$ref": "#/definitions/UserAddressNotSameSite"
         }
       ],
-      "description": "Address information for the applicant"
+      "description": "Address information for the applicant",
+      "title": "#UserAddress"
     },
     "UserAddressNotSameSite": {
-      "$id": "#UserAddressNotSameSite",
       "additionalProperties": false,
       "description": "Address information for an applicant with contact information that differs from the property address",
       "properties": {
@@ -13559,20 +13554,17 @@
         "sameAsSiteAddress",
         "town"
       ],
+      "title": "#UserAddressNotSameSite",
       "type": "object"
     }
   },
   "description": "The root specification for a planning pre-application in England generated by a digital planning service",
   "properties": {
-    "applicationType": {
-      "const": "preApp",
-      "type": "string"
-    },
     "data": {
       "additionalProperties": false,
       "properties": {
         "applicant": {
-          "$ref": "#/definitions/Applicant"
+          "$ref": "#/definitions/PreApplicant"
         },
         "application": {
           "$ref": "#/definitions/PreApplicationData"
@@ -13598,44 +13590,18 @@
     },
     "files": {
       "items": {
-        "additionalProperties": false,
-        "properties": {
-          "lastModified": {
-            "type": "number"
-          },
-          "name": {
-            "type": "string"
-          },
-          "size": {
-            "type": "number"
-          },
-          "type": {
-            "type": "string"
-          },
-          "webkitRelativePath": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "lastModified",
-          "name",
-          "size",
-          "type",
-          "webkitRelativePath"
-        ],
-        "type": "object"
+        "$ref": "#/definitions/File"
       },
       "type": "array"
     },
     "metadata": {
-      "$ref": "#/definitions/Metadata"
+      "$ref": "#/definitions/PlanXMetadata"
     },
     "responses": {
       "$ref": "#/definitions/Responses"
     }
   },
   "required": [
-    "applicationType",
     "data",
     "responses",
     "files",

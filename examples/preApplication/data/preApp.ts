@@ -3,7 +3,6 @@ import {PreApplication} from '../../../types/schemas/preApplication';
 const version = process.env['VERSION'] || '@next';
 
 export const preApplication: PreApplication = {
-  applicationType: 'preApp',
   data: {
     user: {
       role: 'applicant',
@@ -46,7 +45,10 @@ export const preApplication: PreApplication = {
       },
       localAuthorityDistrict: ['Doncaster'],
       region: 'Yorkshire and The Humber',
-      type: 'residential.dwelling.house.detached',
+      type: {
+        value: 'residential.dwelling.house.detached',
+        description: 'Detached',
+      },
       planning: {
         sources: [
           'https://api.editor.planx.dev/gis/doncaster?geom=MULTIPOLYGON+%28%28%28-1.0206931342729486+53.50213165258532%2C+-1.020646+53.502065000000016%2C+-1.020719+53.502047000000005%2C+-1.0206422209739665+53.50198572771234%2C+-1.020557+53.501923000000005%2C+-1.020433+53.50195500000001%2C+-1.0205027461051923+53.50206709121434%2C+-1.020549684762953+53.50215722902928%2C+-1.0206931342729486+53.50213165258532%29%29%29&analytics=false&sessionId=1a768034-c07a-4cd5-92b6-fc4a1fd0abd4',
@@ -202,6 +204,10 @@ export const preApplication: PreApplication = {
       },
     },
     application: {
+      type: {
+        value: 'preApp',
+        description: 'Pre-application',
+      },
       fee: {
         payable: 450,
         reference: {
@@ -565,11 +571,25 @@ export const preApplication: PreApplication = {
   files: [
     {
       name: 'https://api.editor.planx.dev/file/private/fomris6d/correspondence.pdf',
-      type: ['otherSupporting'],
+      type: [
+        {
+          value: 'otherSupporting',
+          description: 'Other - supporting document',
+        },
+      ],
     },
     {
       name: 'https://api.editor.planx.dev/file/private/7xsm1un0/myPlans.pdf',
-      type: ['sitePlan.existing', 'sitePlan.proposed'],
+      type: [
+        {
+          value: 'sitePlan.existing',
+          description: 'Site plan - existing',
+        },
+        {
+          value: 'sitePlan.proposed',
+          description: 'Site plan - proposed',
+        },
+      ],
     },
   ],
   metadata: {
@@ -581,15 +601,23 @@ export const preApplication: PreApplication = {
       flowId: '426494e7-34a2-4a94-a554-8ecc5e20e3ef',
       url: 'https://editor.planx.uk/doncaster/pre-application-advice/published',
       files: {
-        required: ['sitePlan.proposed'],
+        required: [
+          {value: 'sitePlan.proposed', description: 'Site plan - proposed'},
+        ],
         recommended: [
-          'sitePlan.existing',
-          'elevations.existing',
-          'elevations.proposed',
-          'floorPlan.existing',
-          'floorPlan.proposed',
-          'photographs.existing',
-          'otherSupporting',
+          {value: 'sitePlan.existing', description: 'Site plan - existing'},
+          {value: 'elevations.existing', description: 'Elevations - existing'},
+          {value: 'elevations.proposed', description: 'Elevations - proposed'},
+          {value: 'floorPlan.existing', description: 'Floor plan - existing'},
+          {value: 'floorPlan.proposed', description: 'Floor plan - proposed'},
+          {
+            value: 'photographs.existing',
+            description: 'Photographs - existing',
+          },
+          {
+            value: 'otherSupporting',
+            description: 'Other - supporting document',
+          },
         ],
         optional: [],
       },

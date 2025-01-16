@@ -3124,42 +3124,6 @@
       ],
       "type": "object"
     },
-    "Feature": {
-      "additionalProperties": false,
-      "description": "A feature object which contains a geometry and associated properties. https://tools.ietf.org/html/rfc7946#section-3.2",
-      "properties": {
-        "bbox": {
-          "$ref": "#/definitions/BBox",
-          "description": "Bounding box of the coordinate range of the object's Geometries, Features, or Feature Collections. The value of the bbox member is an array of length 2*n where n is the number of dimensions represented in the contained geometries, with all axes of the most southwesterly point followed by all axes of the more northeasterly point. The axes order of a bbox follows the axes order of geometries. https://tools.ietf.org/html/rfc7946#section-5"
-        },
-        "geometry": {
-          "$ref": "#/definitions/Geometry",
-          "description": "The feature's geometry"
-        },
-        "id": {
-          "description": "A value that uniquely identifies this feature in a https://tools.ietf.org/html/rfc7946#section-3.2.",
-          "type": [
-            "string",
-            "number"
-          ]
-        },
-        "properties": {
-          "$ref": "#/definitions/GeoJsonProperties",
-          "description": "Properties associated with this feature."
-        },
-        "type": {
-          "const": "Feature",
-          "description": "Specifies the type of GeoJSON object.",
-          "type": "string"
-        }
-      },
-      "required": [
-        "geometry",
-        "properties",
-        "type"
-      ],
-      "type": "object"
-    },
     "Feature<Geometry,GeoJsonProperties>": {
       "additionalProperties": false,
       "description": "A feature object which contains a geometry and associated properties. https://tools.ietf.org/html/rfc7946#section-3.2",
@@ -3196,7 +3160,7 @@
       ],
       "type": "object"
     },
-    "FeatureCollection": {
+    "FeatureCollection<Geometry,GeoJsonProperties>": {
       "additionalProperties": false,
       "description": "A collection of feature objects.  https://tools.ietf.org/html/rfc7946#section-3.3",
       "properties": {
@@ -4504,6 +4468,24 @@
             },
             "value": {
               "const": "otherEvidence",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Other - supporting document",
+              "type": "string"
+            },
+            "value": {
+              "const": "otherSupporting",
               "type": "string"
             }
           },
@@ -6049,10 +6031,10 @@
           "$ref": "#/definitions/Geometry"
         },
         {
-          "$ref": "#/definitions/Feature"
+          "$ref": "#/definitions/Feature%3CGeometry%2CGeoJsonProperties%3E"
         },
         {
-          "$ref": "#/definitions/FeatureCollection"
+          "$ref": "#/definitions/FeatureCollection%3CGeometry%2CGeoJsonProperties%3E"
         }
       ],
       "description": "Union of GeoJSON objects."
@@ -27483,7 +27465,6 @@
       "description": "The result of a single flagset"
     },
     "SiteContact": {
-      "$id": "#SiteContact",
       "anyOf": [
         {
           "additionalProperties": false,
@@ -27506,10 +27487,10 @@
           "$ref": "#/definitions/SiteContactOther"
         }
       ],
-      "description": "Contact information for the site visit"
+      "description": "Contact information for the site visit",
+      "title": "#SiteContact"
     },
     "SiteContactOther": {
-      "$id": "#SiteContactOther",
       "additionalProperties": false,
       "description": "Contact information for the site visit when the SiteContact's role is 'other'",
       "properties": {
@@ -27533,6 +27514,7 @@
         "email",
         "phone"
       ],
+      "title": "#SiteContactOther",
       "type": "object"
     },
     "UKProperty": {
@@ -27933,7 +27915,6 @@
       "type": "string"
     },
     "User": {
-      "$id": "User",
       "additionalProperties": false,
       "description": "The role of the user who completed the application",
       "properties": {
@@ -27949,6 +27930,7 @@
       "required": [
         "role"
       ],
+      "title": "User",
       "type": "object"
     },
     "UserAddress": {
