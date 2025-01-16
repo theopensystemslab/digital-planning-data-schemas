@@ -4,10 +4,14 @@
     "rootDir": ".",
     "outDir": "build",
     "skipLibCheck": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true
   },
   "include": [
     "examples/**/*.ts",
-    "schema/**/*.ts",
-    "scripts/**/*.ts"
+    "schemas/**/*.json",
+    "scripts/**/*.ts",
+    "tests/**/*.ts",
+    "types/**/*.ts"
   ]
 }

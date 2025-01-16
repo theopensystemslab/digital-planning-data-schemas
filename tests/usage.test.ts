@@ -6,9 +6,11 @@ import addFormats from 'ajv-formats';
 import {Schema, Validator} from 'jsonschema';
 import {describe, expect, test} from 'vitest';
 import applicationSchema from '../schemas/application.json';
-import prototypeApplicationSchema from '../schemas/prototypeApplication.json';
+import preApplicationSchema from '../schemas/preApplication.json';
+//import prototypeApplicationSchema from '../schemas/prototypeApplication.json';
 import {Application} from '../types/schemas/application';
-import {PrototypeApplication} from '../types/schemas/prototypeApplication';
+import {PreApplication} from '../types/schemas/preApplication';
+//import {PrototypeApplication} from '../types/schemas/prototypeApplication';
 
 /**
  * Helper function to walk /examples directory and collect generated JSON files
@@ -43,6 +45,11 @@ const schemas = [
     schema: applicationSchema,
     examples: getJSONExamples<Application>('application'),
   },
+  {
+    name: 'PreApplication',
+    schema: preApplicationSchema,
+    examples: getJSONExamples<PreApplication>('preApplication'),
+  },
   // {
   //   name: 'PrototypeApplication',
   //   schema: prototypeApplicationSchema,
@@ -53,24 +60,24 @@ const schemas = [
 describe.each(schemas)('$name', ({schema, examples}) => {
   const validator = new Validator();
 
-  const _applicationTypeProperty =
-    '$data.application.type.description' || '$applicationType';
-
   describe("parsing using the 'jsonschema' library", () => {
-    describe.each(examples)('$data.application.type.description', example => {
-      test('accepts a valid example', async () => {
-        const result = validator.validate(example, schema as Schema);
+    describe.each<Application | PreApplication>(examples)(
+      '$data.application.type.description',
+      example => {
+        test('accepts a valid example', async () => {
+          const result = validator.validate(example, schema as Schema);
 
-        expect(result.errors).toHaveLength(0);
-      });
+          expect(result.errors).toHaveLength(0);
+        });
 
-      test('rejects an invalid example', () => {
-        const invalidExample = {foo: 'bar'};
-        const result = validator.validate(invalidExample, schema as Schema);
+        test('rejects an invalid example', () => {
+          const invalidExample = {foo: 'bar'};
+          const result = validator.validate(invalidExample, schema as Schema);
 
-        expect(result.errors).not.toHaveLength(0);
-      });
-    });
+          expect(result.errors).not.toHaveLength(0);
+        });
+      },
+    );
   });
 
   describe("parsing using the 'ajv' library", () => {
@@ -78,21 +85,24 @@ describe.each(schemas)('$name', ({schema, examples}) => {
     const ajv = addFormats(new Ajv({allowUnionTypes: true}));
     const validate = ajv.compile(schema);
 
-    describe.each(examples)('$data.application.type.description', example => {
-      test('accepts a valid example', async () => {
-        const isValid = validate(example);
+    describe.each<Application | PreApplication>(examples)(
+      '$data.application.type.description',
+      example => {
+        test('accepts a valid example', async () => {
+          const isValid = validate(example);
 
-        expect(validate.errors).toBeNull();
-        expect(isValid).toBe(true);
-      });
+          expect(validate.errors).toBeNull();
+          expect(isValid).toBe(true);
+        });
 
-      test('rejects an invalid example', () => {
-        const invalidExample = {foo: 'bar'};
-        const isValid = validate(invalidExample);
+        test('rejects an invalid example', () => {
+          const invalidExample = {foo: 'bar'};
+          const isValid = validate(invalidExample);
 
-        expect(validate.errors).not.toBeNull();
-        expect(isValid).toBe(false);
-      });
-    });
+          expect(validate.errors).not.toBeNull();
+          expect(isValid).toBe(false);
+        });
+      },
+    );
   });
 });
