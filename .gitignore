@@ -1,4 +1,4 @@
 .vscode
 node_modules
-dist
-tsconfig.tsbuildinfo.json
+dist/**/*
+tsconfig.build.tsbuildinfo

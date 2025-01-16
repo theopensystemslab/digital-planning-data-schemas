@@ -1,4 +1,4 @@
-import {Application} from '../../../src/types/schemas/application';
+import {Application} from '../../../src/types/schemas/application/SchemaRoot';
 import {BaseProposal} from '../../../src/types/schemas/application/data/Proposal';
 
 const version = process.env['VERSION'] || '@next';

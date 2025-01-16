@@ -7,8 +7,8 @@ import {Schema, Validator} from 'jsonschema';
 import {describe, expect, test} from 'vitest';
 import applicationSchema from '../schemas/application.json';
 import prototypeApplicationSchema from '../schemas/prototypeApplication.json';
-import {Application} from '../types/schemas/application';
-import {PrototypeApplication} from '../types/schemas/prototypeApplication';
+import {Application} from '../types/schemas/application/SchemaRoot';
+import {PrototypeApplication} from '../types/schemas/prototypeApplication/SchemaRoot';
 
 /**
  * Helper function to walk /examples directory and collect generated JSON files

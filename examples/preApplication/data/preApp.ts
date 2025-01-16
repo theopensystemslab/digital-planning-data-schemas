@@ -1,4 +1,4 @@
-import {PreApplication} from '../../../src/types/schemas/preApplication';
+import {PreApplication} from '../../../src/types/schemas/preApplication/SchemaRoot';
 
 const version = process.env['VERSION'] || '@next';
 

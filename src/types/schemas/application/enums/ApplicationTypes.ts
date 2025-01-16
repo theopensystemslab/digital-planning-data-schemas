@@ -171,7 +171,7 @@ export const ApplicationTypes = {
     'Works to trees - Consent to carry out works to a tree with a Tree Preservation Order',
   'wtt.notice':
     'Works to trees - Notification of proposed works to a tree in a Conservation Area',
-};
+} as const;
 
 export type ApplicationTypeKeys = keyof typeof ApplicationTypes;
 

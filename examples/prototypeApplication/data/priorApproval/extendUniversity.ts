@@ -1,4 +1,4 @@
-import {PrototypeApplication} from '../../../../src/types/schemas/prototypeApplication';
+import {PrototypeApplication} from '../../../../src/types/schemas/prototypeApplication/SchemaRoot';
 
 const version = process.env['VERSION'] || '@next';
 
