@@ -1175,56 +1175,6 @@
       ],
       "type": "object"
     },
-    "Entity": {
-      "additionalProperties": false,
-      "properties": {
-        "description": {
-          "type": "string"
-        },
-        "name": {
-          "type": "string"
-        },
-        "source": {
-          "anyOf": [
-            {
-              "additionalProperties": false,
-              "properties": {
-                "text": {
-                  "const": "Planning Data",
-                  "type": "string"
-                },
-                "url": {
-                  "$ref": "#/definitions/URL"
-                }
-              },
-              "required": [
-                "text",
-                "url"
-              ],
-              "type": "object"
-            },
-            {
-              "additionalProperties": false,
-              "properties": {
-                "text": {
-                  "const": "Ordnance Survey MasterMap Highways",
-                  "type": "string"
-                }
-              },
-              "required": [
-                "text"
-              ],
-              "type": "object"
-            }
-          ]
-        }
-      },
-      "required": [
-        "name",
-        "source"
-      ],
-      "type": "object"
-    },
     "Feature": {
       "additionalProperties": false,
       "description": "A feature object which contains a geometry and associated properties. https://tools.ietf.org/html/rfc7946#section-3.2",
@@ -6147,7 +6097,7 @@
             },
             "entities": {
               "items": {
-                "$ref": "#/definitions/Entity"
+                "$ref": "#/definitions/PrototypeEntity"
               },
               "type": "array"
             },
@@ -6193,7 +6143,7 @@
           "properties": {
             "entities": {
               "items": {
-                "$ref": "#/definitions/Entity"
+                "$ref": "#/definitions/PrototypeEntity"
               },
               "type": "array"
             },
@@ -10250,6 +10200,56 @@
         }
       ],
       "description": "Designations of natural protected spaces"
+    },
+    "PrototypeEntity": {
+      "additionalProperties": false,
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "source": {
+          "anyOf": [
+            {
+              "additionalProperties": false,
+              "properties": {
+                "text": {
+                  "const": "Planning Data",
+                  "type": "string"
+                },
+                "url": {
+                  "$ref": "#/definitions/URL"
+                }
+              },
+              "required": [
+                "text",
+                "url"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "text": {
+                  "const": "Ordnance Survey MasterMap Highways",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "text"
+              ],
+              "type": "object"
+            }
+          ]
+        }
+      },
+      "required": [
+        "name",
+        "source"
+      ],
+      "type": "object"
     },
     "PrototypeFileType": {
       "$id": "#FileType",

@@ -3,7 +3,7 @@ import {GeoBoundary} from './../../../shared/Boundaries';
 import {Region} from '../../../shared/Regions';
 import {URL} from '../../../shared/utils';
 import {PlanningDesignation} from '../../application/enums/PlanningConstraints';
-import {PropertyType} from '../../prototypeApplication/enums/PropertyTypes';
+import {PropertyType} from '../../application/enums/PropertyTypes';
 
 export interface Property {
   address: ProposedAddress | OSAddress;

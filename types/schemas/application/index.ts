@@ -1,5 +1,6 @@
 import {File} from './File';
 import {Metadata} from '../../shared/Metadata';
+import {User} from '../../shared/User';
 import {PreAssessment} from './PreAssessment';
 import {Responses} from '../../shared/Responses';
 import {Applicant} from './data/Applicant';
@@ -7,7 +8,6 @@ import {ApplicationData} from './data/ApplicationData';
 import {FilesAsData} from './data/Files';
 import {Property} from './data/Property';
 import {Proposal} from './data/Proposal';
-import {User} from './data/User';
 
 /**
  * @title Application

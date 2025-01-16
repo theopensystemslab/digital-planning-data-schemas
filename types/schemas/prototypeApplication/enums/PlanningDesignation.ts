@@ -1,4 +1,4 @@
-import {Entity} from '../data/shared';
+import {PrototypeEntity} from '../data/shared';
 /**
  * @description Article 4 Direction area
  */
@@ -181,7 +181,7 @@ type NonIntersectingPlanningDesignation = {
  */
 type IntersectingPlanningDesignation = {
   intersects: true;
-  entities?: Entity[];
+  entities?: PrototypeEntity[];
 } & {value: BasePlanningDesignation};
 
 /**
@@ -208,7 +208,7 @@ type NonIntersectingPlanningConstraint = {
  */
 type IntersectingPlanningConstraint = {
   intersects: true;
-  entities: Entity[];
+  entities: PrototypeEntity[];
 } & BasePlanningConstraint;
 
 /**

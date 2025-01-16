@@ -1,7 +1,7 @@
 import {Address, UserAddress} from '../../../shared/Addresses';
 import {ContactDetails} from '../../../shared/Contacts';
 import {Ownership} from '../../../shared/Ownership';
-import {User} from './User';
+import {SiteContact} from '../../../shared/SiteContact';
 
 /**
  * @id #Applicant
@@ -27,23 +27,6 @@ export type BaseApplicant = ContactDetails & {
  */
 export interface Agent extends BaseApplicant {
   agent: ContactDetails & {address: Address};
-}
-
-/**
- * @id #SiteContact
- * @description Contact information for the site visit
- */
-export type SiteContact = {role: User['role']} | SiteContactOther;
-
-/**
- * @id #SiteContactOther
- * @description Contact information for the site visit when the SiteContact's role is 'other'
- */
-export interface SiteContactOther {
-  role: 'other';
-  name: string;
-  email: string;
-  phone: string;
 }
 
 /**
