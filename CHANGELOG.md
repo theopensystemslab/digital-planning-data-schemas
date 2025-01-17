@@ -9,6 +9,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 The minor version will be incremented upon a breaking change and the patch version will be
 incremented for features.
 
+## [0.7.2] - 2025-01-16
+
+### Changed
+- Updates `CommunityInfrastructureLevy` type to include "Not liable" path ([#282](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/282))
+- Updates `Flags` enum values ([#285](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/285))
+- Updates `PlanningDesignation` enum values ([#286](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/286))
+- Updates `PropertyTypes` enum values ([#287](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/287))
+
+### Added
+- Adds a work-in-progress `PreApplication` schema, including example payloads ([#275](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/275))
+
 ## [0.7.1] - 2024-11-07
 
 ### Added
