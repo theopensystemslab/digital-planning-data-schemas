@@ -17884,7 +17884,7 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Ordance manufacturing & processing",
+              "const": "Ordnance manufacturing & processing",
               "type": "string"
             },
             "value": {
@@ -21668,7 +21668,7 @@
               "type": "string"
             },
             "value": {
-              "const": "commercial.utility.telecoms.exhange",
+              "const": "commercial.utility.telecoms.exchange",
               "type": "string"
             }
           },
@@ -26434,7 +26434,7 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Serviced accomodation",
+              "const": "Serviced accommodation",
               "type": "string"
             },
             "value": {
