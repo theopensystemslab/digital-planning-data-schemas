@@ -22,9 +22,9 @@ export interface EnglandApplicationData {
  */
 export interface PreApplication {
   reference: string;
-  date: Date;
-  officer: string;
-  summary: string;
+  date?: Date;
+  officer?: string;
+  summary?: string;
 }
 
 /**
