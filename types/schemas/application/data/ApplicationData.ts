@@ -34,9 +34,9 @@ export interface LondonApplicationData extends BaseApplicationData {
  */
 export interface PreApplication {
   reference: string;
-  date: Date;
-  officer: string;
-  summary: string;
+  date?: Date;
+  officer?: string;
+  summary?: string;
 }
 
 /**
