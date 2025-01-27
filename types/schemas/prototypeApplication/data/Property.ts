@@ -69,8 +69,6 @@ export interface LondonProperty extends EnglandProperty {
   parking?: ExistingLondonParking;
 }
 
-type ExistingCount = {count: number};
-
 export type PPProperty = PropertyBase & {
   materials?: Materials;
   use?: {
