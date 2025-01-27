@@ -16,6 +16,9 @@
     },
     {
       "$ref": "#/definitions/LandDrainageConsent"
+    }, 
+    {
+      "$ref":"#/definitions/WT"
     }
   ],
   "definitions": {
@@ -11209,6 +11212,389 @@
         "proxy"
       ],
       "type": "string"
+    }, 
+    "WT": {
+      "additionalProperties": false,
+      "properties": {
+        "applicationType": {
+          "$ref": "#/definitions/WTApplicationType"
+        },
+        "data": {
+          "additionalProperties": false,
+          "properties": {
+            "applicant": {
+              "$ref": "#/definitions/WTApplicant"
+            },
+            "application": {
+              "$ref": "#/definitions/FeeNotApplicable"
+            },
+            "property": {
+              "$ref": "#/definitions/PropertyBase"
+            },
+            "proposal": {
+              "$ref": "#/definitions/ProposalBase"
+            },
+            "user": {
+              "$ref": "#/definitions/UserBase"
+            }
+          },
+          "required": [
+            "user",
+            "applicant",
+            "application",
+            "property",
+            "proposal"
+          ],
+          "type": "object"
+        },
+        "files": {
+          "items": {
+            "$ref": "#/definitions/File"
+          },
+          "type": "array"
+        },
+        "metadata": {
+          "$ref": "#/definitions/PrototypePlanXMetadata"
+        },
+        "preAssessment": {
+          "$ref": "#/definitions/PreAssessment"
+        },
+        "responses": {
+          "$ref": "#/definitions/Responses"
+        }
+      },
+      "required": [
+        "applicationType",
+        "data",
+        "responses",
+        "files",
+        "metadata"
+      ],
+      "type": "object"
+    },
+    "WTApplicant": {
+      "anyOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "address": {
+              "$ref": "#/definitions/UserAddress",
+              "description": "Address information for the applicant"
+            },
+            "company": {
+              "additionalProperties": false,
+              "properties": {
+                "name": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name"
+              ],
+              "type": "object"
+            },
+            "email": {
+              "$ref": "#/definitions/Email"
+            },
+            "name": {
+              "additionalProperties": false,
+              "properties": {
+                "first": {
+                  "type": "string"
+                },
+                "last": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "first",
+                "last"
+              ],
+              "type": "object"
+            },
+            "ownership": {
+              "anyOf": [
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "interest": {
+                      "const": "owner",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "interest"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "interest": {
+                      "$ref": "#/definitions/OwnersInterest"
+                    },
+                    "owners": {
+                      "items": {
+                        "anyOf": [
+                          {
+                            "$ref": "#/definitions/OwnersNoticeGiven"
+                          },
+                          {
+                            "$ref": "#/definitions/OwnersNoNoticeGiven"
+                          }
+                        ]
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "interest",
+                    "owners"
+                  ],
+                  "type": "object"
+                }
+              ],
+              "description": "Information about the property owners, if different than the applicant"
+            },
+            "phone": {
+              "additionalProperties": false,
+              "properties": {
+                "primary": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "primary"
+              ],
+              "type": "object"
+            },
+            "siteContact": {
+              "$ref": "#/definitions/SiteContact",
+              "description": "Contact information for the site visit"
+            },
+            "type": {
+              "description": "The type of applicant",
+              "enum": [
+                "individual",
+                "company",
+                "charity",
+                "public",
+                "parishCouncil"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "address",
+            "email",
+            "name",
+            "ownership",
+            "phone",
+            "siteContact",
+            "type"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "address": {
+              "$ref": "#/definitions/UserAddress",
+              "description": "Address information for the applicant"
+            },
+            "agent": {
+              "additionalProperties": false,
+              "description": "Contact information for the agent or proxy",
+              "properties": {
+                "address": {
+                  "$ref": "#/definitions/Address"
+                },
+                "company": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "name"
+                  ],
+                  "type": "object"
+                },
+                "email": {
+                  "$ref": "#/definitions/Email"
+                },
+                "name": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "first": {
+                      "type": "string"
+                    },
+                    "last": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "first",
+                    "last"
+                  ],
+                  "type": "object"
+                },
+                "phone": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "primary": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "primary"
+                  ],
+                  "type": "object"
+                }
+              },
+              "required": [
+                "address",
+                "email",
+                "name",
+                "phone"
+              ],
+              "type": "object"
+            },
+            "company": {
+              "additionalProperties": false,
+              "properties": {
+                "name": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name"
+              ],
+              "type": "object"
+            },
+            "email": {
+              "$ref": "#/definitions/Email"
+            },
+            "name": {
+              "additionalProperties": false,
+              "properties": {
+                "first": {
+                  "type": "string"
+                },
+                "last": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "first",
+                "last"
+              ],
+              "type": "object"
+            },
+            "ownership": {
+              "anyOf": [
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "interest": {
+                      "const": "owner",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "interest"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "interest": {
+                      "$ref": "#/definitions/OwnersInterest"
+                    },
+                    "owners": {
+                      "items": {
+                        "anyOf": [
+                          {
+                            "$ref": "#/definitions/OwnersNoticeGiven"
+                          },
+                          {
+                            "$ref": "#/definitions/OwnersNoNoticeGiven"
+                          }
+                        ]
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "interest",
+                    "owners"
+                  ],
+                  "type": "object"
+                }
+              ],
+              "description": "Information about the property owners, if different than the applicant"
+            },
+            "phone": {
+              "additionalProperties": false,
+              "properties": {
+                "primary": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "primary"
+              ],
+              "type": "object"
+            },
+            "siteContact": {
+              "$ref": "#/definitions/SiteContact",
+              "description": "Contact information for the site visit"
+            },
+            "type": {
+              "description": "The type of applicant",
+              "enum": [
+                "individual",
+                "company",
+                "charity",
+                "public",
+                "parishCouncil"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "address",
+            "agent",
+            "email",
+            "name",
+            "ownership",
+            "phone",
+            "siteContact",
+            "type"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "WTApplicationType": {
+      "anyOf": [
+        {
+          "const": "wt",
+          "description": "Works to Trees",
+          "type": "string"
+        }
+      ]
     }
   },
   "description": "The (prototype) root specification for a planning application in England generated by a digital planning service",
