@@ -1,6 +1,6 @@
 /**
- * @title #Region
- * @description The region in England that contains this address sourced from planning.data.gov.uk/dataset/region, where London is a proxy for the Greater London Authority (GLA) area
+ * @title Region
+ * @description The region in England that contains this address sourced from planning.data.gov.uk/dataset/region, where 'London' is a proxy for the Greater London Authority (GLA) area
  */
 export type Region =
   | 'North East'

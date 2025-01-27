@@ -1,39 +1,23 @@
 import {PrimaryApplicationType} from '../enums/ApplicationType';
-import {Date} from '../../../shared/utils';
 import {Declaration} from '../../../shared/Declarations';
 import {Fee, FeeNotApplicable} from '../../../shared/Fees';
 import {CommunityInfrastructureLevy} from '../../../shared/CommunityInfrastructureLevy';
+import {
+  PlanningApplication,
+  PreApplication,
+} from '../../../shared/LinkedApplications';
 
-/**
- * Base type for ApplicationData. Contains all shared properties across all application types
- */
 export type ApplicationDataBase =
   | EnglandApplicationData
   | LondonApplicationData;
 
+/**
+ * @description Application details for project sites anywhere in England
+ */
 export interface EnglandApplicationData {
   declaration: Declaration;
   preApp?: PreApplication;
   planningApp?: PlanningApplication;
-}
-
-/**
- * @description Details of the pre-application preceeding this application, if applicable
- */
-export interface PreApplication {
-  reference: string;
-  date?: Date;
-  officer?: string;
-  summary?: string;
-}
-
-/**
- * @description Details of the planning application linked to this application, if applicable
- */
-export interface PlanningApplication {
-  reference: string;
-  date: Date;
-  localPlanningAuthority: string;
 }
 
 export interface LeadDeveloper {

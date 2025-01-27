@@ -1,7 +1,7 @@
 import {Email} from './utils';
 
 /**
- * @title #ContactDetails
+ * @title Contact details
  * @description Contact details for a person associated with this application
  */
 export type ContactDetails = {

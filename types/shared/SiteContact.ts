@@ -1,13 +1,12 @@
 import {User} from './User';
 
 /**
- * @title #SiteContact
+ * @title Site contact
  * @description Contact information for the site visit
  */
 export type SiteContact = {role: User['role']} | SiteContactOther;
 
 /**
- * @title #SiteContactOther
  * @description Contact information for the site visit when the SiteContact's role is 'other'
  */
 export interface SiteContactOther {
