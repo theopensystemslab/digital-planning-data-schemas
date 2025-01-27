@@ -6205,10 +6205,7 @@
         }
       },
       "required": [
-        "reference",
-        "date",
-        "officer",
-        "summary"
+        "reference"
       ],
       "type": "object"
     },
