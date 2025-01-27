@@ -25,7 +25,7 @@ export interface SiteAddress {
 }
 
 /**
- * @title #ProposedAddress
+ * @title Proposed site address
  * @description Address information for sites without a known Unique Property Reference Number (UPRN)
  */
 export interface ProposedAddress extends SiteAddress {
@@ -33,7 +33,7 @@ export interface ProposedAddress extends SiteAddress {
 }
 
 /**
- * @title #OSAddress
+ * @title OS site address
  * @description Address information for sites with a known address sourced from Ordnance Survey AddressBase Premium LPI source
  */
 export interface OSAddress extends SiteAddress {
@@ -76,7 +76,8 @@ export interface OSAddress extends SiteAddress {
 }
 
 /**
- * @description Address information for a person associated with this application not at the property address
+ * @title Contact address
+ * @description Address information for a person associated with this application not at the site address
  */
 export interface Address {
   line1: string;
@@ -88,14 +89,13 @@ export interface Address {
 }
 
 /**
- * @title #UserAddress
+ * @title User address
  * @description Address information for the applicant
  */
 export type UserAddress = {sameAsSiteAddress: true} | UserAddressNotSameSite;
 
 /**
- * @title #UserAddressNotSameSite
- * @description Address information for an applicant with contact information that differs from the property address
+ * @description Address information for an applicant with contact information that differs from the site address
  */
 export interface UserAddressNotSameSite extends Address {
   sameAsSiteAddress: false;

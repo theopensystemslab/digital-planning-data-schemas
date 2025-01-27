@@ -5,7 +5,7 @@
   "definitions": {
     "Address": {
       "additionalProperties": false,
-      "description": "Address information for a person associated with this application not at the property address",
+      "description": "Address information for a person associated with this application not at the site address",
       "properties": {
         "country": {
           "type": "string"
@@ -31,6 +31,7 @@
         "town",
         "postcode"
       ],
+      "title": "Contact address",
       "type": "object"
     },
     "Agent": {
@@ -118,7 +119,7 @@
           "$ref": "#/definitions/Email"
         },
         "maintenanceContact": {
-          "$ref": "#/definitions/MaintenanceContact"
+          "$ref": "#/definitions/MaintenanceContacts"
         },
         "name": {
           "additionalProperties": false,
@@ -379,7 +380,7 @@
         "email",
         "phone"
       ],
-      "title": "#ContactDetails",
+      "title": "Contact details",
       "type": "object"
     },
     "Date": {
@@ -426,7 +427,7 @@
         "accurate",
         "connection"
       ],
-      "title": "#Declaration",
+      "title": "Declaration",
       "type": "object"
     },
     "Email": {
@@ -2656,8 +2657,7 @@
       ],
       "type": "object"
     },
-    "MaintenanceContact": {
-      "$id": "#MaintenanceContact",
+    "MaintenanceContacts": {
       "description": "Contact information for the person(s) responsible for maintenance while the works are carried out",
       "items": {
         "additionalProperties": false,
@@ -2684,6 +2684,7 @@
         ],
         "type": "object"
       },
+      "title": "Maintenance contacts",
       "type": "array"
     },
     "MultiLineString": {
@@ -2862,7 +2863,7 @@
         "x",
         "y"
       ],
-      "title": "#OSAddress",
+      "title": "OS site address",
       "type": "object"
     },
     "Owners": {
@@ -15778,7 +15779,7 @@
         "x",
         "y"
       ],
-      "title": "#ProposedAddress",
+      "title": "Proposed site address",
       "type": "object"
     },
     "QuestionAndResponses": {
@@ -15841,7 +15842,7 @@
       "type": "object"
     },
     "Region": {
-      "description": "The region in England that contains this address sourced from planning.data.gov.uk/dataset/region, where London is a proxy for the Greater London Authority (GLA) area",
+      "description": "The region in England that contains this address sourced from planning.data.gov.uk/dataset/region, where 'London' is a proxy for the Greater London Authority (GLA) area",
       "enum": [
         "North East",
         "North West",
@@ -15853,7 +15854,7 @@
         "South East",
         "South West"
       ],
-      "title": "#Region",
+      "title": "Region",
       "type": "string"
     },
     "RequestedFiles": {
@@ -15962,7 +15963,7 @@
         }
       ],
       "description": "Contact information for the site visit",
-      "title": "#SiteContact"
+      "title": "Site contact"
     },
     "SiteContactOther": {
       "additionalProperties": false,
@@ -15988,7 +15989,6 @@
         "email",
         "phone"
       ],
-      "title": "#SiteContactOther",
       "type": "object"
     },
     "URL": {
@@ -16039,11 +16039,11 @@
         }
       ],
       "description": "Address information for the applicant",
-      "title": "#UserAddress"
+      "title": "User address"
     },
     "UserAddressNotSameSite": {
       "additionalProperties": false,
-      "description": "Address information for an applicant with contact information that differs from the property address",
+      "description": "Address information for an applicant with contact information that differs from the site address",
       "properties": {
         "country": {
           "type": "string"
@@ -16074,7 +16074,6 @@
         "sameAsSiteAddress",
         "town"
       ],
-      "title": "#UserAddressNotSameSite",
       "type": "object"
     }
   },

@@ -1,5 +1,5 @@
 /**
- * @title #Declaration
+ * @title Declaration
  * @description Declarations about the accuracy of this application and any personal connections to the receiving authority
  */
 export interface Declaration {

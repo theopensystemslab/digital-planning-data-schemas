@@ -1,6 +1,7 @@
 import {OSAddress, ProposedAddress} from '../../../shared/Addresses';
 import {PlanningConstraint} from '../../../shared/Constraints';
 import {Materials} from '../../../shared/Materials';
+import {ExistingLondonParking} from '../../../shared/Parking';
 import {Region} from '../../../shared/Regions';
 import {Date, URL} from '../../../shared/utils';
 import {PlanningDesignation} from '../enums/PlanningConstraints';
@@ -113,17 +114,5 @@ export interface LondonProperty extends UKProperty {
   occupation?: {
     status: 'occupied' | 'partVacant' | 'vacant';
   };
-  parking?: {
-    cars?: ExistingCount;
-    vans?: ExistingCount;
-    motorcycles?: ExistingCount;
-    cycles?: ExistingCount;
-    buses?: ExistingCount;
-    disabled?: ExistingCount;
-    carClub?: ExistingCount;
-    offStreet?: {residential: ExistingCount};
-    other?: ExistingCount;
-  };
+  parking?: ExistingLondonParking;
 }
-
-type ExistingCount = {count: number};

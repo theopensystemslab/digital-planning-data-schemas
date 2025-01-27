@@ -1,5 +1,5 @@
 /**
- * @title #FeeNotApplicable
+ * @title Fee not applicable
  * @description An indicator that an application fee does not apply to this application type or journey
  */
 export interface FeeNotApplicable {
@@ -7,7 +7,7 @@ export interface FeeNotApplicable {
 }
 
 /**
- * @title #Fee
+ * @title Fee
  * @description The costs associated with this application
  */
 export interface Fee {

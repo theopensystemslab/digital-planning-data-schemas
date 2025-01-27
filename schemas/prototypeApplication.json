@@ -21,7 +21,7 @@
   "definitions": {
     "Address": {
       "additionalProperties": false,
-      "description": "Address information for a person associated with this application not at the property address",
+      "description": "Address information for a person associated with this application not at the site address",
       "properties": {
         "country": {
           "type": "string"
@@ -47,6 +47,7 @@
         "town",
         "postcode"
       ],
+      "title": "Contact address",
       "type": "object"
     },
     "Agent": {
@@ -517,7 +518,6 @@
       "type": "object"
     },
     "CommunityInfrastructureLevy": {
-      "$id": "#CommunityInfrastructureLevy",
       "anyOf": [
         {
           "additionalProperties": false,
@@ -558,7 +558,8 @@
           "type": "object"
         }
       ],
-      "description": "Details about the Community Infrastructure Levy planning charge, if applicable"
+      "description": "Details about the Community Infrastructure Levy planning charge, if applicable",
+      "title": "Community Infrastructure Levy"
     },
     "ContactDetails": {
       "additionalProperties": false,
@@ -616,7 +617,7 @@
         "email",
         "phone"
       ],
-      "title": "#ContactDetails",
+      "title": "Contact details",
       "type": "object"
     },
     "Date": {
@@ -663,7 +664,7 @@
         "accurate",
         "connection"
       ],
-      "title": "#Declaration",
+      "title": "Declaration",
       "type": "object"
     },
     "DevelopmentType": {
@@ -1175,6 +1176,130 @@
       ],
       "type": "object"
     },
+    "ExistingLondonParking": {
+      "additionalProperties": false,
+      "description": "Existing parking spaces on the site per the Greater London Authority specification",
+      "properties": {
+        "buses": {
+          "additionalProperties": false,
+          "properties": {
+            "count": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "count"
+          ],
+          "type": "object"
+        },
+        "carClub": {
+          "additionalProperties": false,
+          "properties": {
+            "count": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "count"
+          ],
+          "type": "object"
+        },
+        "cars": {
+          "additionalProperties": false,
+          "properties": {
+            "count": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "count"
+          ],
+          "type": "object"
+        },
+        "cycles": {
+          "additionalProperties": false,
+          "properties": {
+            "count": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "count"
+          ],
+          "type": "object"
+        },
+        "disabled": {
+          "additionalProperties": false,
+          "properties": {
+            "count": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "count"
+          ],
+          "type": "object"
+        },
+        "motorcycles": {
+          "additionalProperties": false,
+          "properties": {
+            "count": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "count"
+          ],
+          "type": "object"
+        },
+        "offStreet": {
+          "additionalProperties": false,
+          "properties": {
+            "residential": {
+              "additionalProperties": false,
+              "properties": {
+                "count": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "count"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "residential"
+          ],
+          "type": "object"
+        },
+        "other": {
+          "additionalProperties": false,
+          "properties": {
+            "count": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "count"
+          ],
+          "type": "object"
+        },
+        "vans": {
+          "additionalProperties": false,
+          "properties": {
+            "count": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "count"
+          ],
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "Feature<Geometry,GeoJsonProperties>": {
       "additionalProperties": false,
       "description": "A feature object which contains a geometry and associated properties. https://tools.ietf.org/html/rfc7946#section-3.2",
@@ -1384,7 +1509,7 @@
         "exemption",
         "reduction"
       ],
-      "title": "#Fee",
+      "title": "Fee",
       "type": "object"
     },
     "FeeCarryingApplicationData": {
@@ -1599,7 +1724,7 @@
       "required": [
         "notApplicable"
       ],
-      "title": "#FeeNotApplicable",
+      "title": "Fee not applicable",
       "type": "object"
     },
     "File": {
@@ -2821,127 +2946,7 @@
           "type": "array"
         },
         "parking": {
-          "additionalProperties": false,
-          "properties": {
-            "buses": {
-              "additionalProperties": false,
-              "properties": {
-                "count": {
-                  "type": "number"
-                }
-              },
-              "required": [
-                "count"
-              ],
-              "type": "object"
-            },
-            "carClub": {
-              "additionalProperties": false,
-              "properties": {
-                "count": {
-                  "type": "number"
-                }
-              },
-              "required": [
-                "count"
-              ],
-              "type": "object"
-            },
-            "cars": {
-              "additionalProperties": false,
-              "properties": {
-                "count": {
-                  "type": "number"
-                }
-              },
-              "required": [
-                "count"
-              ],
-              "type": "object"
-            },
-            "cycles": {
-              "additionalProperties": false,
-              "properties": {
-                "count": {
-                  "type": "number"
-                }
-              },
-              "required": [
-                "count"
-              ],
-              "type": "object"
-            },
-            "disabled": {
-              "additionalProperties": false,
-              "properties": {
-                "count": {
-                  "type": "number"
-                }
-              },
-              "required": [
-                "count"
-              ],
-              "type": "object"
-            },
-            "motorcycles": {
-              "additionalProperties": false,
-              "properties": {
-                "count": {
-                  "type": "number"
-                }
-              },
-              "required": [
-                "count"
-              ],
-              "type": "object"
-            },
-            "offStreet": {
-              "additionalProperties": false,
-              "properties": {
-                "residential": {
-                  "additionalProperties": false,
-                  "properties": {
-                    "count": {
-                      "type": "number"
-                    }
-                  },
-                  "required": [
-                    "count"
-                  ],
-                  "type": "object"
-                }
-              },
-              "required": [
-                "residential"
-              ],
-              "type": "object"
-            },
-            "other": {
-              "additionalProperties": false,
-              "properties": {
-                "count": {
-                  "type": "number"
-                }
-              },
-              "required": [
-                "count"
-              ],
-              "type": "object"
-            },
-            "vans": {
-              "additionalProperties": false,
-              "properties": {
-                "count": {
-                  "type": "number"
-                }
-              },
-              "required": [
-                "count"
-              ],
-              "type": "object"
-            }
-          },
-          "type": "object"
+          "$ref": "#/definitions/ExistingLondonParking"
         },
         "planning": {
           "additionalProperties": false,
@@ -3451,164 +3456,7 @@
           "description": "Increasing the height of existing buildings"
         },
         "parking": {
-          "additionalProperties": false,
-          "description": "Proposed parking spaces",
-          "properties": {
-            "buses": {
-              "additionalProperties": false,
-              "properties": {
-                "count": {
-                  "type": "number"
-                },
-                "difference": {
-                  "type": "number"
-                }
-              },
-              "required": [
-                "count",
-                "difference"
-              ],
-              "type": "object"
-            },
-            "carClub": {
-              "additionalProperties": false,
-              "properties": {
-                "count": {
-                  "type": "number"
-                },
-                "difference": {
-                  "type": "number"
-                }
-              },
-              "required": [
-                "count",
-                "difference"
-              ],
-              "type": "object"
-            },
-            "cars": {
-              "additionalProperties": false,
-              "properties": {
-                "count": {
-                  "type": "number"
-                },
-                "difference": {
-                  "type": "number"
-                }
-              },
-              "required": [
-                "count",
-                "difference"
-              ],
-              "type": "object"
-            },
-            "cycles": {
-              "additionalProperties": false,
-              "properties": {
-                "count": {
-                  "type": "number"
-                },
-                "difference": {
-                  "type": "number"
-                }
-              },
-              "required": [
-                "count",
-                "difference"
-              ],
-              "type": "object"
-            },
-            "disabled": {
-              "additionalProperties": false,
-              "properties": {
-                "count": {
-                  "type": "number"
-                },
-                "difference": {
-                  "type": "number"
-                }
-              },
-              "required": [
-                "count",
-                "difference"
-              ],
-              "type": "object"
-            },
-            "motorcycles": {
-              "additionalProperties": false,
-              "properties": {
-                "count": {
-                  "type": "number"
-                },
-                "difference": {
-                  "type": "number"
-                }
-              },
-              "required": [
-                "count",
-                "difference"
-              ],
-              "type": "object"
-            },
-            "offStreet": {
-              "additionalProperties": false,
-              "properties": {
-                "residential": {
-                  "additionalProperties": false,
-                  "properties": {
-                    "count": {
-                      "type": "number"
-                    },
-                    "difference": {
-                      "type": "number"
-                    }
-                  },
-                  "required": [
-                    "count",
-                    "difference"
-                  ],
-                  "type": "object"
-                }
-              },
-              "required": [
-                "residential"
-              ],
-              "type": "object"
-            },
-            "other": {
-              "additionalProperties": false,
-              "properties": {
-                "count": {
-                  "type": "number"
-                },
-                "difference": {
-                  "type": "number"
-                }
-              },
-              "required": [
-                "count",
-                "difference"
-              ],
-              "type": "object"
-            },
-            "vans": {
-              "additionalProperties": false,
-              "properties": {
-                "count": {
-                  "type": "number"
-                },
-                "difference": {
-                  "type": "number"
-                }
-              },
-              "required": [
-                "count",
-                "difference"
-              ],
-              "type": "object"
-            }
-          },
-          "type": "object"
+          "$ref": "#/definitions/ProposedLondonParking"
         },
         "projectType": {
           "items": {
@@ -4124,6 +3972,7 @@
       "type": "object"
     },
     "MaintenanceContacts": {
+      "description": "Contact information for the person(s) responsible for maintenance while the works are carried out",
       "items": {
         "additionalProperties": false,
         "properties": {
@@ -4149,6 +3998,7 @@
         ],
         "type": "object"
       },
+      "title": "Maintenance contacts",
       "type": "array"
     },
     "Materials": {
@@ -4453,7 +4303,7 @@
         "x",
         "y"
       ],
-      "title": "#OSAddress",
+      "title": "OS site address",
       "type": "object"
     },
     "OpenSpaceDesignation": {
@@ -5782,127 +5632,7 @@
               "$ref": "#/definitions/Materials"
             },
             "parking": {
-              "additionalProperties": false,
-              "properties": {
-                "buses": {
-                  "additionalProperties": false,
-                  "properties": {
-                    "count": {
-                      "type": "number"
-                    }
-                  },
-                  "required": [
-                    "count"
-                  ],
-                  "type": "object"
-                },
-                "carClub": {
-                  "additionalProperties": false,
-                  "properties": {
-                    "count": {
-                      "type": "number"
-                    }
-                  },
-                  "required": [
-                    "count"
-                  ],
-                  "type": "object"
-                },
-                "cars": {
-                  "additionalProperties": false,
-                  "properties": {
-                    "count": {
-                      "type": "number"
-                    }
-                  },
-                  "required": [
-                    "count"
-                  ],
-                  "type": "object"
-                },
-                "cycles": {
-                  "additionalProperties": false,
-                  "properties": {
-                    "count": {
-                      "type": "number"
-                    }
-                  },
-                  "required": [
-                    "count"
-                  ],
-                  "type": "object"
-                },
-                "disabled": {
-                  "additionalProperties": false,
-                  "properties": {
-                    "count": {
-                      "type": "number"
-                    }
-                  },
-                  "required": [
-                    "count"
-                  ],
-                  "type": "object"
-                },
-                "motorcycles": {
-                  "additionalProperties": false,
-                  "properties": {
-                    "count": {
-                      "type": "number"
-                    }
-                  },
-                  "required": [
-                    "count"
-                  ],
-                  "type": "object"
-                },
-                "offStreet": {
-                  "additionalProperties": false,
-                  "properties": {
-                    "residential": {
-                      "additionalProperties": false,
-                      "properties": {
-                        "count": {
-                          "type": "number"
-                        }
-                      },
-                      "required": [
-                        "count"
-                      ],
-                      "type": "object"
-                    }
-                  },
-                  "required": [
-                    "residential"
-                  ],
-                  "type": "object"
-                },
-                "other": {
-                  "additionalProperties": false,
-                  "properties": {
-                    "count": {
-                      "type": "number"
-                    }
-                  },
-                  "required": [
-                    "count"
-                  ],
-                  "type": "object"
-                },
-                "vans": {
-                  "additionalProperties": false,
-                  "properties": {
-                    "count": {
-                      "type": "number"
-                    }
-                  },
-                  "required": [
-                    "count"
-                  ],
-                  "type": "object"
-                }
-              },
-              "type": "object"
+              "$ref": "#/definitions/ExistingLondonParking"
             },
             "planning": {
               "additionalProperties": false,
@@ -6029,6 +5759,7 @@
         "date",
         "localPlanningAuthority"
       ],
+      "title": "Planning application",
       "type": "object"
     },
     "PlanningConstraint": {
@@ -6207,6 +5938,7 @@
       "required": [
         "reference"
       ],
+      "title": "Pre-application",
       "type": "object"
     },
     "PreAssessment": {
@@ -10118,7 +9850,167 @@
         "x",
         "y"
       ],
-      "title": "#ProposedAddress",
+      "title": "Proposed site address",
+      "type": "object"
+    },
+    "ProposedLondonParking": {
+      "additionalProperties": false,
+      "description": "Proposed parking spaces and total change or difference in parking spaces per the Greater London Authority specification",
+      "properties": {
+        "buses": {
+          "additionalProperties": false,
+          "properties": {
+            "count": {
+              "type": "number"
+            },
+            "difference": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "count",
+            "difference"
+          ],
+          "type": "object"
+        },
+        "carClub": {
+          "additionalProperties": false,
+          "properties": {
+            "count": {
+              "type": "number"
+            },
+            "difference": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "count",
+            "difference"
+          ],
+          "type": "object"
+        },
+        "cars": {
+          "additionalProperties": false,
+          "properties": {
+            "count": {
+              "type": "number"
+            },
+            "difference": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "count",
+            "difference"
+          ],
+          "type": "object"
+        },
+        "cycles": {
+          "additionalProperties": false,
+          "properties": {
+            "count": {
+              "type": "number"
+            },
+            "difference": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "count",
+            "difference"
+          ],
+          "type": "object"
+        },
+        "disabled": {
+          "additionalProperties": false,
+          "properties": {
+            "count": {
+              "type": "number"
+            },
+            "difference": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "count",
+            "difference"
+          ],
+          "type": "object"
+        },
+        "motorcycles": {
+          "additionalProperties": false,
+          "properties": {
+            "count": {
+              "type": "number"
+            },
+            "difference": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "count",
+            "difference"
+          ],
+          "type": "object"
+        },
+        "offStreet": {
+          "additionalProperties": false,
+          "properties": {
+            "residential": {
+              "additionalProperties": false,
+              "properties": {
+                "count": {
+                  "type": "number"
+                },
+                "difference": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "count",
+                "difference"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "residential"
+          ],
+          "type": "object"
+        },
+        "other": {
+          "additionalProperties": false,
+          "properties": {
+            "count": {
+              "type": "number"
+            },
+            "difference": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "count",
+            "difference"
+          ],
+          "type": "object"
+        },
+        "vans": {
+          "additionalProperties": false,
+          "properties": {
+            "count": {
+              "type": "number"
+            },
+            "difference": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "count",
+            "difference"
+          ],
+          "type": "object"
+        }
+      },
       "type": "object"
     },
     "ProtectedSpaceDesignation": {
@@ -10880,7 +10772,7 @@
       "type": "object"
     },
     "Region": {
-      "description": "The region in England that contains this address sourced from planning.data.gov.uk/dataset/region, where London is a proxy for the Greater London Authority (GLA) area",
+      "description": "The region in England that contains this address sourced from planning.data.gov.uk/dataset/region, where 'London' is a proxy for the Greater London Authority (GLA) area",
       "enum": [
         "North East",
         "North West",
@@ -10892,7 +10784,7 @@
         "South East",
         "South West"
       ],
-      "title": "#Region",
+      "title": "Region",
       "type": "string"
     },
     "ResidentialUnits": {
@@ -10992,7 +10884,12 @@
           "additionalProperties": false,
           "properties": {
             "role": {
-              "$ref": "#/definitions/UserRoles"
+              "enum": [
+                "applicant",
+                "agent",
+                "proxy"
+              ],
+              "type": "string"
             }
           },
           "required": [
@@ -11003,10 +10900,13 @@
         {
           "$ref": "#/definitions/SiteContactOther"
         }
-      ]
+      ],
+      "description": "Contact information for the site visit",
+      "title": "Site contact"
     },
     "SiteContactOther": {
       "additionalProperties": false,
+      "description": "Contact information for the site visit when the SiteContact's role is 'other'",
       "properties": {
         "email": {
           "type": "string"
@@ -11131,11 +11031,11 @@
         }
       ],
       "description": "Address information for the applicant",
-      "title": "#UserAddress"
+      "title": "User address"
     },
     "UserAddressNotSameSite": {
       "additionalProperties": false,
-      "description": "Address information for an applicant with contact information that differs from the property address",
+      "description": "Address information for an applicant with contact information that differs from the site address",
       "properties": {
         "country": {
           "type": "string"
@@ -11166,7 +11066,6 @@
         "sameAsSiteAddress",
         "town"
       ],
-      "title": "#UserAddressNotSameSite",
       "type": "object"
     },
     "UserBase": {

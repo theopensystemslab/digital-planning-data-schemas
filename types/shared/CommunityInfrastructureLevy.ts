@@ -1,11 +1,11 @@
 /**
- * @id #CommunityInfrastructureLevy
+ * @title Community Infrastructure Levy
  * @description Details about the Community Infrastructure Levy planning charge, if applicable
  */
 export type CommunityInfrastructureLevy = LiableForCIL | NotLiableForCIL;
 
 type LiableForCIL = {
-  // Results are heirarchical (first check if project qualifies for full exemption from CIL, then CIL relief, else plain "liable")
+  // Result checks in PlanX are heirarchical (first check if project qualifies for full exemption from CIL, then CIL relief, else plain "liable")
   result:
     | 'exempt.annexe'
     | 'exempt.extension'

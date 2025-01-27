@@ -9,6 +9,7 @@ import {
   PlanningDesignation,
 } from '../enums/PlanningDesignation';
 import {PropertyType} from '../enums/PropertyTypes';
+import {ExistingLondonParking} from '../../../shared/Parking';
 
 export type PropertyBase = EnglandProperty | LondonProperty;
 
@@ -65,20 +66,8 @@ export interface LondonProperty extends EnglandProperty {
       | 'No';
     number?: string;
   };
-  parking?: {
-    cars?: ExistingCount;
-    vans?: ExistingCount;
-    motorcycles?: ExistingCount;
-    cycles?: ExistingCount;
-    buses?: ExistingCount;
-    disabled?: ExistingCount;
-    carClub?: ExistingCount;
-    offStreet?: {residential: ExistingCount};
-    other?: ExistingCount;
-  };
+  parking?: ExistingLondonParking;
 }
-
-type ExistingCount = {count: number};
 
 export type PPProperty = PropertyBase & {
   materials?: Materials;

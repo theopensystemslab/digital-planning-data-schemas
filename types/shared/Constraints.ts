@@ -36,7 +36,7 @@ type IntersectingPlanningConstraint = {
 } & BasePlanningConstraint;
 
 /**
- * @title #PlanningConstraint
+ * @title Planning constraint
  * @description Planning constraints that intersect with the proposed site
  */
 export type PlanningConstraint =

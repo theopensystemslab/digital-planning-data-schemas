@@ -1,8 +1,11 @@
 import {CommunityInfrastructureLevy} from '../../../shared/CommunityInfrastructureLevy';
 import {Declaration} from '../../../shared/Declarations';
-import {Date} from '../../../shared/utils';
-import {ApplicationType} from '../enums/ApplicationTypes';
 import {Fee, FeeNotApplicable} from '../../../shared/Fees';
+import {
+  PlanningApplication,
+  PreApplication,
+} from '../../../shared/LinkedApplications';
+import {ApplicationType} from '../enums/ApplicationTypes';
 
 /**
  * @id #ApplicationData
@@ -26,27 +29,6 @@ export interface BaseApplicationData {
 export interface LondonApplicationData extends BaseApplicationData {
   vacantBuildingCredit?: boolean;
   leadDeveloper?: LeadDeveloper;
-}
-
-/**
- * @id #PreApplication
- * @description Details of the pre-application preceeding this application, if applicable
- */
-export interface PreApplication {
-  reference: string;
-  date?: Date;
-  officer?: string;
-  summary?: string;
-}
-
-/**
- * @id #PlanningApplication
- * @description Details of the planning application linked to this application, if applicable
- */
-export interface PlanningApplication {
-  reference: string;
-  date: Date;
-  localPlanningAuthority: string;
 }
 
 export interface LeadDeveloper {

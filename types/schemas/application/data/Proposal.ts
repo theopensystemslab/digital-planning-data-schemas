@@ -10,6 +10,7 @@ import {GLAResidentialUnitType} from '../enums/ResidentialUnitTypes';
 import {GLATenureType} from '../enums/TenureTypes';
 import {Area, Date} from '../../../shared/utils';
 import {ResidentialUnits} from './shared';
+import {ProposedLondonParking} from '../../../shared/Parking';
 
 /**
  * @id #Proposal
@@ -142,17 +143,7 @@ export interface LondonProposal extends Omit<BaseProposal, 'units'> {
   /**
    * @description Proposed parking spaces
    */
-  parking?: {
-    cars?: ProposedCount;
-    vans?: ProposedCount;
-    motorcycles?: ProposedCount;
-    cycles?: ProposedCount;
-    buses?: ProposedCount;
-    disabled?: ProposedCount;
-    carClub?: ProposedCount;
-    offStreet?: {residential: ProposedCount};
-    other?: ProposedCount;
-  };
+  parking?: ProposedLondonParking;
   /**
    * @description Creating new buildings
    */
@@ -260,11 +251,6 @@ export interface LondonProposal extends Omit<BaseProposal, 'units'> {
     };
   };
 }
-
-type ProposedCount = {
-  count: number;
-  difference: number;
-};
 
 /**
  * @id #NewBuildingsOrStoreys

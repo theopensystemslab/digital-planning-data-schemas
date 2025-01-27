@@ -1,14 +1,15 @@
 import {Address, UserAddress} from '../../../shared/Addresses';
 import {ContactDetails} from '../../../shared/Contacts';
+import {MaintenanceContacts} from '../../../shared/MaintenanceContact';
 import {
   OwnersInterest,
   OwnersNoNoticeGiven,
   OwnersNoticeDate,
   OwnersNoticeGiven,
 } from '../../../shared/Ownership';
+import {SiteContact} from '../../../shared/SiteContact';
 import {Date} from '../../../shared/utils';
 import {PrimaryApplicationType} from '../enums/ApplicationType';
-import {UserRoles} from './User';
 
 export type ApplicantBase = BaseApplicant | Agent;
 
@@ -34,24 +35,6 @@ export interface Agent extends BaseApplicant {
   agent: ContactDetails & {address: Address};
 }
 
-export type SiteContact = {role: UserRoles} | SiteContactOther;
-
-export interface SiteContactOther {
-  role: 'other';
-  name: string;
-  email: string;
-  phone: string;
-}
-
-export type MaintenanceContacts = {
-  when:
-    | 'duringConstruction'
-    | 'afterConstruction'
-    | 'duringAndAfterConstruction';
-  address: Address;
-  contact: ContactDetails;
-}[];
-
 export type LDCApplicant = ApplicantBase & {
   /**
    * @description Information about the property owners, if different than the applicant
@@ -59,7 +42,7 @@ export type LDCApplicant = ApplicantBase & {
   ownership:
     | {interest: Extract<OwnersInterest, 'owner'>}
     | {
-        interest: OwnersInterest; // `Exclude<OwnershipInterest, "owner">` ? But I think you can be co owner & report other owners?
+        interest: OwnersInterest; // `Exclude<OwnershipInterest, "owner">` ? But I think you can be co-owner & report other owners?
         owners: (OwnersNoticeGiven | OwnersNoNoticeGiven)[];
       };
 };
