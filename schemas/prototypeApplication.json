@@ -18,7 +18,7 @@
       "$ref": "#/definitions/LandDrainageConsent"
     }, 
     {
-      "$ref":"#/definitions/WT"
+      "$ref":"#/definitions/WTT"
     }
   ],
   "definitions": {
@@ -11213,17 +11213,17 @@
       ],
       "type": "string"
     }, 
-    "WT": {
+    "WTT": {
       "additionalProperties": false,
       "properties": {
         "applicationType": {
-          "$ref": "#/definitions/WTApplicationType"
+          "$ref": "#/definitions/WTTApplicationType"
         },
         "data": {
           "additionalProperties": false,
           "properties": {
             "applicant": {
-              "$ref": "#/definitions/WTApplicant"
+              "$ref": "#/definitions/WTTApplicant"
             },
             "application": {
               "$ref": "#/definitions/FeeNotApplicable"
@@ -11272,7 +11272,7 @@
       ],
       "type": "object"
     },
-    "WTApplicant": {
+    "WTTApplicant": {
       "anyOf": [
         {
           "additionalProperties": false,
@@ -11371,10 +11371,6 @@
               ],
               "type": "object"
             },
-            "siteContact": {
-              "$ref": "#/definitions/SiteContact",
-              "description": "Contact information for the site visit"
-            },
             "type": {
               "description": "The type of applicant",
               "enum": [
@@ -11393,7 +11389,6 @@
             "name",
             "ownership",
             "phone",
-            "siteContact",
             "type"
           ],
           "type": "object"
@@ -11580,18 +11575,28 @@
             "name",
             "ownership",
             "phone",
-            "siteContact",
+    //        "siteContact",
             "type"
           ],
           "type": "object"
         }
       ]
     },
-    "WTApplicationType": {
+    "WTTApplicationType": {
       "anyOf": [
         {
-          "const": "wt",
+          "const": "wtt",
           "description": "Works to Trees",
+          "type": "string"
+        },
+        {
+          "const": "wtt.consent",
+          "description": "Works to trees - Consent to carry out works to a tree with a Tree Preservation Order",
+          "type": "string"
+        },
+        {
+          "const": "wtt.notice",
+          "description": "Works to trees - Notification of proposed works to a tree in a Conservation Area",
           "type": "string"
         }
       ]
