@@ -96,6 +96,8 @@ export type LandDrainageConsentApplicant = ApplicantBase & {
   maintenanceContact?: MaintenanceContacts;
 };
 
+export type WTTApplicant = Omit<ApplicantBase, 'siteContact'>;
+
 /**
  * TypeMap of PrimaryApplicationTypes to their specific Applicant models
  */
@@ -104,6 +106,7 @@ interface ApplicantVariants {
   pp: PPApplicant;
   landDrainageConsent: LandDrainageConsentApplicant;
   listed: PPApplicant;
+  wtt: WTTApplicant;
 }
 
 /**
