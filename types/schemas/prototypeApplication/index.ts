@@ -1,5 +1,5 @@
 import {Responses} from '../../shared/Responses';
-import {Applicant, WTTApplicant} from './data/Applicant';
+import {Applicant} from './data/Applicant';
 import {ApplicationData} from './data/ApplicationData';
 import {Property} from './data/Property';
 import {Proposal} from './data/Proposal';
