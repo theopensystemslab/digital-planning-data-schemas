@@ -178,9 +178,7 @@ export const worksToTreesPrototype: PrototypeApplication = {
       },
     },
     proposal: {
-      projectType: [],
       description: 'Not provided',
-      date: {},
       boundary: {
         site: {
           type: 'Feature',

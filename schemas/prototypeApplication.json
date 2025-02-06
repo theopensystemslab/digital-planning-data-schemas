@@ -11435,52 +11435,11 @@
           "$ref": "#/definitions/GeoBoundary",
           "description": "Location plan boundary proposed by the user, commonly referred to as the red line boundary"
         },
-        "date": {
-          "$ref": "#/definitions/ProposalDates"
-        },
         "description": {
           "type": "string"
-        },
-        "ecology": {
-          "additionalProperties": false,
-          "description": "Details of biodiversity and geological conservation, if applicable to application.type",
-          "properties": {
-            "conservationAffected": {
-              "enum": [
-                "site",
-                "adjacent",
-                "none"
-              ],
-              "type": "string"
-            },
-            "featuresAffected": {
-              "enum": [
-                "site",
-                "adjacent",
-                "none"
-              ],
-              "type": "string"
-            },
-            "speciesAffected": {
-              "enum": [
-                "site",
-                "adjacent",
-                "none"
-              ],
-              "type": "string"
-            }
-          },
-          "type": "object"
-        },
-        "projectType": {
-          "items": {
-            "$ref": "#/definitions/ProjectType"
-          },
-          "type": "array"
         }
       },
       "required": [
-        "projectType",
         "description"
       ],
       "type": "object"

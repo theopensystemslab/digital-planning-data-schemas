@@ -194,9 +194,7 @@
       }
     },
     "proposal": {
-      "projectType": [],
       "description": "Not provided",
-      "date": {},
       "boundary": {
         "site": {
           "type": "Feature",
