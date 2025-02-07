@@ -291,10 +291,14 @@ interface GLAGainedUnit extends GLALostUnit {
   garden: boolean;
 }
 
+export type WTTProposal = Pick<EnglandProposal, 'description' | 'boundary'>;
+
 /**
  * TypeMap of PrimaryApplicationTypes to their specific Proposal models
  */
-type ProposalVariants = {};
+type ProposalVariants = {
+  wtt: WTTProposal;
+};
 
 /**
  * @internal Conditional type to return a specific or generic Proposal model, based on PrimaryApplicationType

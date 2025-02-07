@@ -16,6 +16,9 @@
     },
     {
       "$ref": "#/definitions/LandDrainageConsent"
+    },
+    {
+      "$ref": "#/definitions/WTT"
     }
   ],
   "definitions": {
@@ -11209,6 +11212,237 @@
         "proxy"
       ],
       "type": "string"
+    },
+    "WTT": {
+      "additionalProperties": false,
+      "properties": {
+        "applicationType": {
+          "$ref": "#/definitions/WTTApplicationType"
+        },
+        "data": {
+          "additionalProperties": false,
+          "properties": {
+            "applicant": {
+              "$ref": "#/definitions/WTTApplicant"
+            },
+            "application": {
+              "$ref": "#/definitions/NonFeeCarryingApplicationData"
+            },
+            "property": {
+              "$ref": "#/definitions/EnglandProperty"
+            },
+            "proposal": {
+              "$ref": "#/definitions/WTTProposal"
+            },
+            "user": {
+              "$ref": "#/definitions/UserBase"
+            }
+          },
+          "required": [
+            "user",
+            "applicant",
+            "application",
+            "property",
+            "proposal"
+          ],
+          "type": "object"
+        },
+        "files": {
+          "items": {
+            "$ref": "#/definitions/File"
+          },
+          "type": "array"
+        },
+        "metadata": {
+          "$ref": "#/definitions/PrototypePlanXMetadata"
+        },
+        "preAssessment": {
+          "$ref": "#/definitions/PreAssessment"
+        },
+        "responses": {
+          "$ref": "#/definitions/Responses"
+        }
+      },
+      "required": [
+        "applicationType",
+        "data",
+        "responses",
+        "files",
+        "metadata"
+      ],
+      "type": "object"
+    },
+    "WTTApplicant": {
+      "additionalProperties": false,
+      "properties": {
+        "address": {
+          "$ref": "#/definitions/UserAddress",
+          "description": "Address information for the applicant"
+        },
+        "agent": {
+          "additionalProperties": false,
+          "description": "Contact information for the agent or proxy",
+          "properties": {
+            "address": {
+              "$ref": "#/definitions/Address"
+            },
+            "company": {
+              "additionalProperties": false,
+              "properties": {
+                "name": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name"
+              ],
+              "type": "object"
+            },
+            "email": {
+              "$ref": "#/definitions/Email"
+            },
+            "name": {
+              "additionalProperties": false,
+              "properties": {
+                "first": {
+                  "type": "string"
+                },
+                "last": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "first",
+                "last"
+              ],
+              "type": "object"
+            },
+            "phone": {
+              "additionalProperties": false,
+              "properties": {
+                "primary": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "primary"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "address",
+            "email",
+            "name",
+            "phone"
+          ],
+          "type": "object"
+        },
+        "company": {
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "name"
+          ],
+          "type": "object"
+        },
+        "email": {
+          "$ref": "#/definitions/Email"
+        },
+        "name": {
+          "additionalProperties": false,
+          "properties": {
+            "first": {
+              "type": "string"
+            },
+            "last": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "first",
+            "last"
+          ],
+          "type": "object"
+        },
+        "phone": {
+          "additionalProperties": false,
+          "properties": {
+            "primary": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "primary"
+          ],
+          "type": "object"
+        },
+        "type": {
+          "description": "The type of applicant",
+          "enum": [
+            "individual",
+            "company",
+            "charity",
+            "public",
+            "parishCouncil"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "email",
+        "phone",
+        "type",
+        "address",
+        "agent"
+      ],
+      "type": "object"
+    },
+    "WTTApplicationType": {
+      "anyOf": [
+        {
+          "const": "wtt",
+          "description": "Works to trees",
+          "type": "string"
+        },
+        {
+          "const": "wtt.consent",
+          "description": "Consent to carry out works to a tree with a Tree Preservation Order",
+          "type": "string"
+        },
+        {
+          "const": "wtt.notice",
+          "description": "Notification of proposed works to a tree in a Conservation Area",
+          "type": "string"
+        }
+      ]
+    },
+    "WTTProposal": {
+      "additionalProperties": false,
+      "properties": {
+        "boundary": {
+          "$ref": "#/definitions/GeoBoundary",
+          "description": "Location plan boundary proposed by the user, commonly referred to as the red line boundary"
+        },
+        "description": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "description"
+      ],
+      "type": "object"
     }
   },
   "description": "The (prototype) root specification for a planning application in England generated by a digital planning service",

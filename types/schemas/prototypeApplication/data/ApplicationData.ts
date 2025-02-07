@@ -66,6 +66,7 @@ export interface ApplicationDataVariants {
   pp: PPApplicationData;
   listed: NonFeeCarryingApplicationData;
   landDrainageConsent: FeeCarryingApplicationData;
+  wtt: NonFeeCarryingApplicationData;
 }
 
 /**
