@@ -67,6 +67,7 @@ export interface ApplicationDataVariants {
   listed: NonFeeCarryingApplicationData;
   landDrainageConsent: FeeCarryingApplicationData;
   wtt: NonFeeCarryingApplicationData;
+  hedgerowRemovalNotice: NonFeeCarryingApplicationData;
 }
 
 /**

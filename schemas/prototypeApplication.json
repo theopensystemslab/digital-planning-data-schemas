@@ -19,6 +19,9 @@
     },
     {
       "$ref": "#/definitions/WTT"
+    },
+    {
+      "$ref": "#/definitions/HedgerowRemovalNotice"
     }
   ],
   "definitions": {
@@ -1174,8 +1177,8 @@
         }
       },
       "required": [
-        "projectType",
-        "description"
+        "description",
+        "projectType"
       ],
       "type": "object"
     },
@@ -1972,6 +1975,17 @@
         }
       ]
     },
+    "GeographyBasedProposal": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/EnglandProposal"
+        },
+        {
+          "$ref": "#/definitions/LondonProposal"
+        }
+      ],
+      "description": "Information about the proposed works and any changes to the property"
+    },
     "Geometry": {
       "anyOf": [
         {
@@ -2024,6 +2038,70 @@
       ],
       "type": "object"
     },
+    "HedgerowRemovalNotice": {
+      "additionalProperties": false,
+      "properties": {
+        "applicationType": {
+          "$ref": "#/definitions/HedgerowRemovalNoticeApplicationType"
+        },
+        "data": {
+          "additionalProperties": false,
+          "properties": {
+            "applicant": {
+              "$ref": "#/definitions/ApplicantBase"
+            },
+            "application": {
+              "$ref": "#/definitions/NonFeeCarryingApplicationData"
+            },
+            "property": {
+              "$ref": "#/definitions/EnglandProperty"
+            },
+            "proposal": {
+              "$ref": "#/definitions/ProposalBase"
+            },
+            "user": {
+              "$ref": "#/definitions/UserBase"
+            }
+          },
+          "required": [
+            "user",
+            "applicant",
+            "application",
+            "property",
+            "proposal"
+          ],
+          "type": "object"
+        },
+        "files": {
+          "items": {
+            "$ref": "#/definitions/File"
+          },
+          "type": "array"
+        },
+        "metadata": {
+          "$ref": "#/definitions/PrototypePlanXMetadata"
+        },
+        "preAssessment": {
+          "$ref": "#/definitions/PreAssessment"
+        },
+        "responses": {
+          "$ref": "#/definitions/Responses"
+        }
+      },
+      "required": [
+        "applicationType",
+        "data",
+        "responses",
+        "files",
+        "metadata"
+      ],
+      "type": "object"
+    },
+    "HedgerowRemovalNoticeApplicationType": {
+      "const": "hedgerowRemovalNotice",
+      "description": "Notice to remove a hedge",
+      "type": "string"
+    },
     "Integer": {
       "format": "integer",
       "type": "number"
@@ -2047,7 +2125,7 @@
               "$ref": "#/definitions/PropertyBase"
             },
             "proposal": {
-              "$ref": "#/definitions/ProposalBase"
+              "$ref": "#/definitions/GeographyBasedProposal"
             },
             "user": {
               "$ref": "#/definitions/UserBase"
@@ -2450,7 +2528,7 @@
               "$ref": "#/definitions/PropertyBase"
             },
             "proposal": {
-              "$ref": "#/definitions/ProposalBase"
+              "$ref": "#/definitions/GeographyBasedProposal"
             },
             "user": {
               "$ref": "#/definitions/UserBase"
@@ -2856,7 +2934,7 @@
               "$ref": "#/definitions/PropertyBase"
             },
             "proposal": {
-              "$ref": "#/definitions/ProposalBase"
+              "$ref": "#/definitions/GeographyBasedProposal"
             },
             "user": {
               "$ref": "#/definitions/UserBase"
@@ -4535,7 +4613,7 @@
               "$ref": "#/definitions/PropertyBase"
             },
             "proposal": {
-              "$ref": "#/definitions/ProposalBase"
+              "$ref": "#/definitions/GeographyBasedProposal"
             },
             "user": {
               "$ref": "#/definitions/UserBase"
@@ -4808,7 +4886,7 @@
               "$ref": "#/definitions/PPProperty"
             },
             "proposal": {
-              "$ref": "#/definitions/ProposalBase"
+              "$ref": "#/definitions/GeographyBasedProposal"
             },
             "user": {
               "$ref": "#/definitions/UserBase"
@@ -9793,15 +9871,20 @@
       "description": "Property types derived from Basic Land and Property Unit (BLPU) classification codes"
     },
     "ProposalBase": {
-      "anyOf": [
-        {
-          "$ref": "#/definitions/EnglandProposal"
+      "additionalProperties": false,
+      "properties": {
+        "boundary": {
+          "$ref": "#/definitions/GeoBoundary",
+          "description": "Location plan boundary proposed by the user, commonly referred to as the red line boundary"
         },
-        {
-          "$ref": "#/definitions/LondonProposal"
+        "description": {
+          "type": "string"
         }
+      },
+      "required": [
+        "description"
       ],
-      "description": "Information about the proposed works and any changes to the property"
+      "type": "object"
     },
     "ProposalDates": {
       "additionalProperties": false,
@@ -11232,7 +11315,7 @@
               "$ref": "#/definitions/EnglandProperty"
             },
             "proposal": {
-              "$ref": "#/definitions/WTTProposal"
+              "$ref": "#/definitions/ProposalBase"
             },
             "user": {
               "$ref": "#/definitions/UserBase"
@@ -11427,22 +11510,6 @@
           "type": "string"
         }
       ]
-    },
-    "WTTProposal": {
-      "additionalProperties": false,
-      "properties": {
-        "boundary": {
-          "$ref": "#/definitions/GeoBoundary",
-          "description": "Location plan boundary proposed by the user, commonly referred to as the red line boundary"
-        },
-        "description": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "description"
-      ],
-      "type": "object"
     }
   },
   "description": "The (prototype) root specification for a planning application in England generated by a digital planning service",

@@ -1,3 +1,4 @@
+import {Listed} from '..';
 import {GeoBoundary} from '../../../shared/Boundaries';
 import {Materials} from '../../../shared/Materials';
 import {ProposedLondonParking} from '../../../shared/Parking';
@@ -13,19 +14,22 @@ import {GLAResidentialUnitType} from '../enums/ResidentialUnitType';
 import {GLATenureType} from '../enums/TenureType';
 import {ResidentialUnits} from './shared';
 
-/**
- * @description Information about the proposed works and any changes to the property
- */
-export type ProposalBase = EnglandProposal | LondonProposal;
-
-export interface EnglandProposal {
-  projectType: ProjectType[];
+export interface ProposalBase {
   description: string;
-  date?: ProposalDates;
   /**
    * @description Location plan boundary proposed by the user, commonly referred to as the red line boundary
    */
   boundary?: GeoBoundary;
+}
+
+/**
+ * @description Information about the proposed works and any changes to the property
+ */
+export type GeographyBasedProposal = EnglandProposal | LondonProposal;
+
+export interface EnglandProposal extends ProposalBase {
+  projectType: ProjectType[];
+  date?: ProposalDates;
   /**
    * @description Proposed materials, if applicable to projectType
    */
@@ -291,13 +295,15 @@ interface GLAGainedUnit extends GLALostUnit {
   garden: boolean;
 }
 
-export type WTTProposal = Pick<EnglandProposal, 'description' | 'boundary'>;
-
 /**
  * TypeMap of PrimaryApplicationTypes to their specific Proposal models
  */
 type ProposalVariants = {
-  wtt: WTTProposal;
+  pp: GeographyBasedProposal;
+  ldc: GeographyBasedProposal;
+  pa: GeographyBasedProposal;
+  listed: GeographyBasedProposal;
+  landDrainageConsent: GeographyBasedProposal;
 };
 
 /**
