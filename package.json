@@ -17,7 +17,7 @@
   "author": "Open Systems Lab",
   "license": "MPL2",
   "devDependencies": {
-    "@types/geojson": "^7946.0.15",
+    "@types/geojson": "^7946.0.16",
     "@types/node": "18.16.1",
     "gts": "^6.0.2",
     "husky": "^8.0.0",

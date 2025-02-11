@@ -20,8 +20,8 @@ dependencies:
 
 devDependencies:
   '@types/geojson':
-    specifier: ^7946.0.15
-    version: 7946.0.15
+    specifier: ^7946.0.16
+    version: 7946.0.16
   '@types/node':
     specifier: 18.16.1
     version: 18.16.1
@@ -580,8 +580,8 @@ packages:
     resolution: {integrity: sha512-AYnb1nQyY49te+VRAVgmzfcgjYS91mY5P0TKUDCLEM+gNnA+3T6rWITXRLYCpahpqSQbN5cE+gHpnPyXjHWxcw==}
     dev: true
 
-  /@types/geojson@7946.0.15:
-    resolution: {integrity: sha512-9oSxFzDCT2Rj6DfcHF8G++jxBKS7mBqXl5xrRW+Kbvjry6Uduya2iiwqHPhVXpasAVMBYKkEPGgKhd3+/HZ6xA==}
+  /@types/geojson@7946.0.16:
+    resolution: {integrity: sha512-6C8nqWur3j98U6+lXDfTUWIfgvZU+EumvpHKcYjujKH7woYyLj2sUmff0tRhrqM7BohUw7Pz3ZB1jj2gW9Fvmg==}
     dev: true
 
   /@types/json-schema@7.0.15:
