@@ -2067,7 +2067,7 @@
                 "hedgerowAgeLessThanThirty": {
                   "type": "boolean"
                 },
-                "hedgrowLength": {
+                "hedgerowLength": {
                   "additionalProperties": false,
                   "properties": {
                     "metres": {
@@ -2086,7 +2086,7 @@
               "required": [
                 "description",
                 "hedgerowAgeLessThanThirty",
-                "hedgrowLength",
+                "hedgerowLength",
                 "reason"
               ],
               "type": "object"

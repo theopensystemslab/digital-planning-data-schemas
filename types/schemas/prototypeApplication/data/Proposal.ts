@@ -296,7 +296,7 @@ interface GLAGainedUnit extends GLALostUnit {
 
 interface hedgerowRemovalNoticeProposal extends ProposalBase {
   reason: string;
-  hedgrowLength: {metres: number};
+  hedgerowLength: {metres: number};
   hedgerowAgeLessThanThirty: boolean;
 }
 
