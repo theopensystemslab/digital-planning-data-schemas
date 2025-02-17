@@ -23,6 +23,9 @@ export const hedgerowRemovalNoticePrototype: PrototypeApplication = {
           "siteContact": {
             "role": "applicant"
           },
+          "ownership": {
+            "interest": "owner"
+          }
         },
         "property": {
           "address": {

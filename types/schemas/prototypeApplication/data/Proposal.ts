@@ -294,6 +294,12 @@ interface GLAGainedUnit extends GLALostUnit {
   garden: boolean;
 }
 
+interface hedgerowRemovalNoticeProposal extends ProposalBase {
+  reason: string;
+  hedgrowLength: {metres: number};
+  hedgerowAgeLessThanThirty: boolean;
+}
+
 /**
  * TypeMap of PrimaryApplicationTypes to their specific Proposal models
  */
@@ -303,6 +309,7 @@ type ProposalVariants = {
   pa: GeographyBasedProposal;
   listed: GeographyBasedProposal;
   landDrainageConsent: GeographyBasedProposal;
+  hedgerowRemovalNotice: hedgerowRemovalNoticeProposal
 };
 
 /**

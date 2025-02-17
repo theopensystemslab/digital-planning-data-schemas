@@ -193,8 +193,7 @@
         "email",
         "name",
         "phone",
-        "siteContact",
-        "type"
+        "siteContact"
       ],
       "type": "object"
     },
@@ -319,8 +318,7 @@
         "email",
         "name",
         "phone",
-        "siteContact",
-        "type"
+        "siteContact"
       ],
       "type": "object"
     },
@@ -2048,7 +2046,7 @@
           "additionalProperties": false,
           "properties": {
             "applicant": {
-              "$ref": "#/definitions/ApplicantBase"
+              "$ref": "#/definitions/HedgerowRemovalNoticeApplicant"
             },
             "application": {
               "$ref": "#/definitions/NonFeeCarryingApplicationData"
@@ -2057,7 +2055,41 @@
               "$ref": "#/definitions/EnglandProperty"
             },
             "proposal": {
-              "$ref": "#/definitions/ProposalBase"
+              "additionalProperties": false,
+              "properties": {
+                "boundary": {
+                  "$ref": "#/definitions/GeoBoundary",
+                  "description": "Location plan boundary proposed by the user, commonly referred to as the red line boundary"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "hedgerowAgeLessThanThirty": {
+                  "type": "boolean"
+                },
+                "hedgrowLength": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "metres": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "metres"
+                  ],
+                  "type": "object"
+                },
+                "reason": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "hedgerowAgeLessThanThirty",
+                "hedgrowLength",
+                "reason"
+              ],
+              "type": "object"
             },
             "user": {
               "$ref": "#/definitions/UserBase"
@@ -2096,6 +2128,279 @@
         "metadata"
       ],
       "type": "object"
+    },
+    "HedgerowRemovalNoticeApplicant": {
+      "anyOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "address": {
+              "$ref": "#/definitions/UserAddress",
+              "description": "Address information for the applicant"
+            },
+            "company": {
+              "additionalProperties": false,
+              "properties": {
+                "name": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name"
+              ],
+              "type": "object"
+            },
+            "email": {
+              "$ref": "#/definitions/Email"
+            },
+            "name": {
+              "additionalProperties": false,
+              "properties": {
+                "first": {
+                  "type": "string"
+                },
+                "last": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "first",
+                "last"
+              ],
+              "type": "object"
+            },
+            "ownership": {
+              "additionalProperties": false,
+              "properties": {
+                "interest": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/definitions/OwnersInterest"
+                    },
+                    {
+                      "const": "owner.sole",
+                      "type": "string"
+                    },
+                    {
+                      "const": "owner.co",
+                      "type": "string"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "interest"
+              ],
+              "type": "object"
+            },
+            "phone": {
+              "additionalProperties": false,
+              "properties": {
+                "primary": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "primary"
+              ],
+              "type": "object"
+            },
+            "siteContact": {
+              "$ref": "#/definitions/SiteContact",
+              "description": "Contact information for the site visit"
+            },
+            "type": {
+              "description": "The type of applicant",
+              "enum": [
+                "individual",
+                "company",
+                "charity",
+                "public",
+                "parishCouncil"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "address",
+            "email",
+            "name",
+            "ownership",
+            "phone",
+            "siteContact"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "address": {
+              "$ref": "#/definitions/UserAddress",
+              "description": "Address information for the applicant"
+            },
+            "agent": {
+              "additionalProperties": false,
+              "description": "Contact information for the agent or proxy",
+              "properties": {
+                "address": {
+                  "$ref": "#/definitions/Address"
+                },
+                "company": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "name"
+                  ],
+                  "type": "object"
+                },
+                "email": {
+                  "$ref": "#/definitions/Email"
+                },
+                "name": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "first": {
+                      "type": "string"
+                    },
+                    "last": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "first",
+                    "last"
+                  ],
+                  "type": "object"
+                },
+                "phone": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "primary": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "primary"
+                  ],
+                  "type": "object"
+                }
+              },
+              "required": [
+                "address",
+                "email",
+                "name",
+                "phone"
+              ],
+              "type": "object"
+            },
+            "company": {
+              "additionalProperties": false,
+              "properties": {
+                "name": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name"
+              ],
+              "type": "object"
+            },
+            "email": {
+              "$ref": "#/definitions/Email"
+            },
+            "name": {
+              "additionalProperties": false,
+              "properties": {
+                "first": {
+                  "type": "string"
+                },
+                "last": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "first",
+                "last"
+              ],
+              "type": "object"
+            },
+            "ownership": {
+              "additionalProperties": false,
+              "properties": {
+                "interest": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/definitions/OwnersInterest"
+                    },
+                    {
+                      "const": "owner.sole",
+                      "type": "string"
+                    },
+                    {
+                      "const": "owner.co",
+                      "type": "string"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "interest"
+              ],
+              "type": "object"
+            },
+            "phone": {
+              "additionalProperties": false,
+              "properties": {
+                "primary": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "primary"
+              ],
+              "type": "object"
+            },
+            "siteContact": {
+              "$ref": "#/definitions/SiteContact",
+              "description": "Contact information for the site visit"
+            },
+            "type": {
+              "description": "The type of applicant",
+              "enum": [
+                "individual",
+                "company",
+                "charity",
+                "public",
+                "parishCouncil"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "address",
+            "agent",
+            "email",
+            "name",
+            "ownership",
+            "phone",
+            "siteContact"
+          ],
+          "type": "object"
+        }
+      ]
     },
     "HedgerowRemovalNoticeApplicationType": {
       "const": "hedgerowRemovalNotice",
@@ -2286,8 +2591,7 @@
             "name",
             "ownership",
             "phone",
-            "siteContact",
-            "type"
+            "siteContact"
           ],
           "type": "object"
         },
@@ -2473,8 +2777,7 @@
             "name",
             "ownership",
             "phone",
-            "siteContact",
-            "type"
+            "siteContact"
           ],
           "type": "object"
         }
@@ -2673,8 +2976,7 @@
             "name",
             "ownership",
             "phone",
-            "siteContact",
-            "type"
+            "siteContact"
           ],
           "type": "object"
         },
@@ -2844,8 +3146,7 @@
             "name",
             "ownership",
             "phone",
-            "siteContact",
-            "type"
+            "siteContact"
           ],
           "type": "object"
         }
@@ -5099,8 +5400,7 @@
             "name",
             "ownership",
             "phone",
-            "siteContact",
-            "type"
+            "siteContact"
           ],
           "type": "object"
         },
@@ -5338,8 +5638,7 @@
             "name",
             "ownership",
             "phone",
-            "siteContact",
-            "type"
+            "siteContact"
           ],
           "type": "object"
         }
@@ -11486,7 +11785,6 @@
         "name",
         "email",
         "phone",
-        "type",
         "address",
         "agent"
       ],
