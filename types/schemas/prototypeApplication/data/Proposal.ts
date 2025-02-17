@@ -294,7 +294,7 @@ interface GLAGainedUnit extends GLALostUnit {
   garden: boolean;
 }
 
-interface hedgerowRemovalNoticeProposal extends ProposalBase {
+export interface hedgerowRemovalNoticeProposal extends ProposalBase {
   reason: string;
   hedgerowLength: {metres: number};
   hedgerowAgeLessThanThirty: boolean;
@@ -309,7 +309,7 @@ type ProposalVariants = {
   pa: GeographyBasedProposal;
   listed: GeographyBasedProposal;
   landDrainageConsent: GeographyBasedProposal;
-  hedgerowRemovalNotice: hedgerowRemovalNoticeProposal
+  hedgerowRemovalNotice: hedgerowRemovalNoticeProposal;
 };
 
 /**
