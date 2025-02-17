@@ -94,7 +94,10 @@ export const hedgerowRemovalNoticePrototype: PrototypeApplication = {
             "area": {
               "squareMetres": 2526.36
             }
-          }
+          },
+          "reason": "Blocking pathway", 
+          "hedgerowLength" : {metres: 20},
+          "hedgerowAgeLessThanThirty": true
         },
     },
       "responses": [
