@@ -96,11 +96,7 @@ export const hedgerowRemovalNoticePrototype: PrototypeApplication = {
             }
           }
         },
-      "preAssessment": [
-        {
-          "value": "Planning permission / No result"
-        }
-      ],
+    },
       "responses": [
         {
           "question": "Is the property in [COUNCIL NAME]?",
@@ -340,5 +336,4 @@ export const hedgerowRemovalNoticePrototype: PrototypeApplication = {
         },
         "schema": `https://theopensystemslab.github.io/digital-planning-data-schemas/${version}/schemas/application.json`
       }
-    }
-};
+    };
