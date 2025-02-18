@@ -10546,13 +10546,13 @@
           "type": "string"
         },
         {
-          "const": "treePlan",
-          "description": "Tree plan",
+          "const": "treesReport",
+          "description": "Trees report",
           "type": "string"
         },
         {
-          "const": "treesReport",
-          "description": "Trees report",
+          "const": "treeSurvey",
+          "description": "Tree survey",
           "type": "string"
         },
         {
