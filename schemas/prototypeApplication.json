@@ -19,6 +19,9 @@
     },
     {
       "$ref": "#/definitions/WTT"
+    },
+    {
+      "$ref": "#/definitions/HedgerowRemovalNotice"
     }
   ],
   "definitions": {
@@ -190,8 +193,7 @@
         "email",
         "name",
         "phone",
-        "siteContact",
-        "type"
+        "siteContact"
       ],
       "type": "object"
     },
@@ -316,8 +318,7 @@
         "email",
         "name",
         "phone",
-        "siteContact",
-        "type"
+        "siteContact"
       ],
       "type": "object"
     },
@@ -1174,8 +1175,8 @@
         }
       },
       "required": [
-        "projectType",
-        "description"
+        "description",
+        "projectType"
       ],
       "type": "object"
     },
@@ -1972,6 +1973,17 @@
         }
       ]
     },
+    "GeographyBasedProposal": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/EnglandProposal"
+        },
+        {
+          "$ref": "#/definitions/LondonProposal"
+        }
+      ],
+      "description": "Information about the proposed works and any changes to the property"
+    },
     "Geometry": {
       "anyOf": [
         {
@@ -2024,6 +2036,376 @@
       ],
       "type": "object"
     },
+    "HedgerowRemovalNotice": {
+      "additionalProperties": false,
+      "properties": {
+        "applicationType": {
+          "$ref": "#/definitions/HedgerowRemovalNoticeApplicationType"
+        },
+        "data": {
+          "additionalProperties": false,
+          "properties": {
+            "applicant": {
+              "$ref": "#/definitions/HedgerowRemovalNoticeApplicant"
+            },
+            "application": {
+              "$ref": "#/definitions/NonFeeCarryingApplicationData"
+            },
+            "property": {
+              "$ref": "#/definitions/EnglandProperty"
+            },
+            "proposal": {
+              "$ref": "#/definitions/HedgerowRemovalNoticeProposal"
+            },
+            "user": {
+              "$ref": "#/definitions/UserBase"
+            }
+          },
+          "required": [
+            "user",
+            "applicant",
+            "application",
+            "property",
+            "proposal"
+          ],
+          "type": "object"
+        },
+        "files": {
+          "items": {
+            "$ref": "#/definitions/File"
+          },
+          "type": "array"
+        },
+        "metadata": {
+          "$ref": "#/definitions/PrototypePlanXMetadata"
+        },
+        "preAssessment": {
+          "$ref": "#/definitions/PreAssessment"
+        },
+        "responses": {
+          "$ref": "#/definitions/Responses"
+        }
+      },
+      "required": [
+        "applicationType",
+        "data",
+        "responses",
+        "files",
+        "metadata"
+      ],
+      "type": "object"
+    },
+    "HedgerowRemovalNoticeApplicant": {
+      "anyOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "address": {
+              "$ref": "#/definitions/UserAddress",
+              "description": "Address information for the applicant"
+            },
+            "company": {
+              "additionalProperties": false,
+              "properties": {
+                "name": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name"
+              ],
+              "type": "object"
+            },
+            "email": {
+              "$ref": "#/definitions/Email"
+            },
+            "name": {
+              "additionalProperties": false,
+              "properties": {
+                "first": {
+                  "type": "string"
+                },
+                "last": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "first",
+                "last"
+              ],
+              "type": "object"
+            },
+            "ownership": {
+              "additionalProperties": false,
+              "properties": {
+                "interest": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/definitions/OwnersInterest"
+                    },
+                    {
+                      "const": "owner.sole",
+                      "type": "string"
+                    },
+                    {
+                      "const": "owner.co",
+                      "type": "string"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "interest"
+              ],
+              "type": "object"
+            },
+            "phone": {
+              "additionalProperties": false,
+              "properties": {
+                "primary": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "primary"
+              ],
+              "type": "object"
+            },
+            "siteContact": {
+              "$ref": "#/definitions/SiteContact",
+              "description": "Contact information for the site visit"
+            },
+            "type": {
+              "description": "The type of applicant",
+              "enum": [
+                "individual",
+                "company",
+                "charity",
+                "public",
+                "parishCouncil"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "address",
+            "email",
+            "name",
+            "ownership",
+            "phone",
+            "siteContact"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "address": {
+              "$ref": "#/definitions/UserAddress",
+              "description": "Address information for the applicant"
+            },
+            "agent": {
+              "additionalProperties": false,
+              "description": "Contact information for the agent or proxy",
+              "properties": {
+                "address": {
+                  "$ref": "#/definitions/Address"
+                },
+                "company": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "name"
+                  ],
+                  "type": "object"
+                },
+                "email": {
+                  "$ref": "#/definitions/Email"
+                },
+                "name": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "first": {
+                      "type": "string"
+                    },
+                    "last": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "first",
+                    "last"
+                  ],
+                  "type": "object"
+                },
+                "phone": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "primary": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "primary"
+                  ],
+                  "type": "object"
+                }
+              },
+              "required": [
+                "address",
+                "email",
+                "name",
+                "phone"
+              ],
+              "type": "object"
+            },
+            "company": {
+              "additionalProperties": false,
+              "properties": {
+                "name": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name"
+              ],
+              "type": "object"
+            },
+            "email": {
+              "$ref": "#/definitions/Email"
+            },
+            "name": {
+              "additionalProperties": false,
+              "properties": {
+                "first": {
+                  "type": "string"
+                },
+                "last": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "first",
+                "last"
+              ],
+              "type": "object"
+            },
+            "ownership": {
+              "additionalProperties": false,
+              "properties": {
+                "interest": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/definitions/OwnersInterest"
+                    },
+                    {
+                      "const": "owner.sole",
+                      "type": "string"
+                    },
+                    {
+                      "const": "owner.co",
+                      "type": "string"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "interest"
+              ],
+              "type": "object"
+            },
+            "phone": {
+              "additionalProperties": false,
+              "properties": {
+                "primary": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "primary"
+              ],
+              "type": "object"
+            },
+            "siteContact": {
+              "$ref": "#/definitions/SiteContact",
+              "description": "Contact information for the site visit"
+            },
+            "type": {
+              "description": "The type of applicant",
+              "enum": [
+                "individual",
+                "company",
+                "charity",
+                "public",
+                "parishCouncil"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "address",
+            "agent",
+            "email",
+            "name",
+            "ownership",
+            "phone",
+            "siteContact"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "HedgerowRemovalNoticeApplicationType": {
+      "const": "hedgerowRemovalNotice",
+      "description": "Notice to remove a hedge",
+      "type": "string"
+    },
+    "HedgerowRemovalNoticeProposal": {
+      "additionalProperties": false,
+      "properties": {
+        "boundary": {
+          "$ref": "#/definitions/GeoBoundary",
+          "description": "Location plan boundary proposed by the user, commonly referred to as the red line boundary"
+        },
+        "hedgerowAgeLessThanThirty": {
+          "type": "boolean"
+        },
+        "hedgerowLength": {
+          "additionalProperties": false,
+          "properties": {
+            "metres": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "metres"
+          ],
+          "type": "object"
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "hedgerowAgeLessThanThirty",
+        "hedgerowLength",
+        "reason"
+      ],
+      "type": "object"
+    },
     "Integer": {
       "format": "integer",
       "type": "number"
@@ -2047,7 +2429,7 @@
               "$ref": "#/definitions/PropertyBase"
             },
             "proposal": {
-              "$ref": "#/definitions/ProposalBase"
+              "$ref": "#/definitions/GeographyBasedProposal"
             },
             "user": {
               "$ref": "#/definitions/UserBase"
@@ -2208,8 +2590,7 @@
             "name",
             "ownership",
             "phone",
-            "siteContact",
-            "type"
+            "siteContact"
           ],
           "type": "object"
         },
@@ -2395,8 +2776,7 @@
             "name",
             "ownership",
             "phone",
-            "siteContact",
-            "type"
+            "siteContact"
           ],
           "type": "object"
         }
@@ -2450,7 +2830,7 @@
               "$ref": "#/definitions/PropertyBase"
             },
             "proposal": {
-              "$ref": "#/definitions/ProposalBase"
+              "$ref": "#/definitions/GeographyBasedProposal"
             },
             "user": {
               "$ref": "#/definitions/UserBase"
@@ -2595,8 +2975,7 @@
             "name",
             "ownership",
             "phone",
-            "siteContact",
-            "type"
+            "siteContact"
           ],
           "type": "object"
         },
@@ -2766,8 +3145,7 @@
             "name",
             "ownership",
             "phone",
-            "siteContact",
-            "type"
+            "siteContact"
           ],
           "type": "object"
         }
@@ -2856,7 +3234,7 @@
               "$ref": "#/definitions/PropertyBase"
             },
             "proposal": {
-              "$ref": "#/definitions/ProposalBase"
+              "$ref": "#/definitions/GeographyBasedProposal"
             },
             "user": {
               "$ref": "#/definitions/UserBase"
@@ -4535,7 +4913,7 @@
               "$ref": "#/definitions/PropertyBase"
             },
             "proposal": {
-              "$ref": "#/definitions/ProposalBase"
+              "$ref": "#/definitions/GeographyBasedProposal"
             },
             "user": {
               "$ref": "#/definitions/UserBase"
@@ -4808,7 +5186,7 @@
               "$ref": "#/definitions/PPProperty"
             },
             "proposal": {
-              "$ref": "#/definitions/ProposalBase"
+              "$ref": "#/definitions/GeographyBasedProposal"
             },
             "user": {
               "$ref": "#/definitions/UserBase"
@@ -5021,8 +5399,7 @@
             "name",
             "ownership",
             "phone",
-            "siteContact",
-            "type"
+            "siteContact"
           ],
           "type": "object"
         },
@@ -5260,8 +5637,7 @@
             "name",
             "ownership",
             "phone",
-            "siteContact",
-            "type"
+            "siteContact"
           ],
           "type": "object"
         }
@@ -9793,15 +10169,20 @@
       "description": "Property types derived from Basic Land and Property Unit (BLPU) classification codes"
     },
     "ProposalBase": {
-      "anyOf": [
-        {
-          "$ref": "#/definitions/EnglandProposal"
+      "additionalProperties": false,
+      "properties": {
+        "boundary": {
+          "$ref": "#/definitions/GeoBoundary",
+          "description": "Location plan boundary proposed by the user, commonly referred to as the red line boundary"
         },
-        {
-          "$ref": "#/definitions/LondonProposal"
+        "description": {
+          "type": "string"
         }
+      },
+      "required": [
+        "description"
       ],
-      "description": "Information about the proposed works and any changes to the property"
+      "type": "object"
     },
     "ProposalDates": {
       "additionalProperties": false,
@@ -11232,7 +11613,7 @@
               "$ref": "#/definitions/EnglandProperty"
             },
             "proposal": {
-              "$ref": "#/definitions/WTTProposal"
+              "$ref": "#/definitions/ProposalBase"
             },
             "user": {
               "$ref": "#/definitions/UserBase"
@@ -11403,7 +11784,6 @@
         "name",
         "email",
         "phone",
-        "type",
         "address",
         "agent"
       ],
@@ -11427,22 +11807,6 @@
           "type": "string"
         }
       ]
-    },
-    "WTTProposal": {
-      "additionalProperties": false,
-      "properties": {
-        "boundary": {
-          "$ref": "#/definitions/GeoBoundary",
-          "description": "Location plan boundary proposed by the user, commonly referred to as the red line boundary"
-        },
-        "description": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "description"
-      ],
-      "type": "object"
     }
   },
   "description": "The (prototype) root specification for a planning application in England generated by a digital planning service",

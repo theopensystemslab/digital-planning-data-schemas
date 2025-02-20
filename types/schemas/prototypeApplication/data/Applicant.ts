@@ -17,7 +17,7 @@ export type BaseApplicant = ContactDetails & {
   /**
    * @description The type of applicant
    */
-  type: 'individual' | 'company' | 'charity' | 'public' | 'parishCouncil';
+  type?: 'individual' | 'company' | 'charity' | 'public' | 'parishCouncil';
   /**
    * @description Address information for the applicant
    */
@@ -98,6 +98,12 @@ export type LandDrainageConsentApplicant = ApplicantBase & {
 
 export type WTTApplicant = Omit<ApplicantBase, 'siteContact'>;
 
+export type HedgerowRemovalNoticeApplicant = ApplicantBase & {
+  ownership: {
+    interest: OwnersInterest | 'owner.sole' | 'owner.co';
+  };
+};
+
 /**
  * TypeMap of PrimaryApplicationTypes to their specific Applicant models
  */
@@ -107,6 +113,7 @@ interface ApplicantVariants {
   landDrainageConsent: LandDrainageConsentApplicant;
   listed: PPApplicant;
   wtt: WTTApplicant;
+  hedgerowRemovalNotice: HedgerowRemovalNoticeApplicant;
 }
 
 /**

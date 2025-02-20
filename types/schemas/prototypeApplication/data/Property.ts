@@ -82,6 +82,7 @@ export type PPProperty = PropertyBase & {
 interface PropertyVariants {
   pp: PPProperty;
   wtt: EnglandProperty;
+  hedgerowRemovalNotice: EnglandProperty;
 }
 
 /**
