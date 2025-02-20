@@ -64,7 +64,6 @@
       }
     },
     "proposal": {
-      "description": "Not provided",
       "boundary": {
         "site": {
           "type": "Feature",

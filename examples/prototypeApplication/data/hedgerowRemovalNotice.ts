@@ -67,7 +67,6 @@ export const hedgerowRemovalNoticePrototype: PrototypeApplication = {
       },
     },
     proposal: {
-      description: 'Not provided',
       boundary: {
         site: {
           type: 'Feature',

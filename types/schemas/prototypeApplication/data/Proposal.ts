@@ -294,11 +294,11 @@ interface GLAGainedUnit extends GLALostUnit {
   garden: boolean;
 }
 
-export type HedgerowRemovalNoticeProposal = Pick<ProposalBase, 'boundary'> & { 
-  reason: string; 
-  hedgerowLength: { metres: number };
+export type HedgerowRemovalNoticeProposal = Pick<ProposalBase, 'boundary'> & {
+  reason: string;
+  hedgerowLength: {metres: number};
   hedgerowAgeLessThanThirty: boolean;
-}
+};
 
 /**
  * TypeMap of PrimaryApplicationTypes to their specific Proposal models
