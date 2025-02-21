@@ -2288,11 +2288,11 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Tree plan",
+              "const": "Trees report",
               "type": "string"
             },
             "value": {
-              "const": "treePlan",
+              "const": "treesReport",
               "type": "string"
             }
           },
@@ -2306,11 +2306,11 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Trees report",
+              "const": "Tree survey",
               "type": "string"
             },
             "value": {
-              "const": "treesReport",
+              "const": "treeSurvey",
               "type": "string"
             }
           },

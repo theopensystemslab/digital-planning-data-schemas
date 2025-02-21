@@ -436,14 +436,14 @@ type TreeCanopyCalculator = 'treeCanopyCalculator';
 type TreeConditionReport = 'treeConditionReport';
 
 /**
- * @description Tree plan
- */
-type TreePlan = 'treePlan';
-
-/**
  * @description Trees report
  */
 type TreesReport = 'treesReport';
+
+/**
+ * @description Tree survey
+ */
+type TreeSurvey = 'treeSurvey';
 
 /**
  * @description Unit plan - existing
@@ -598,8 +598,8 @@ export type PrototypeFileType =
   | TreeAndHedgeRemovedOrPruned
   | TreeCanopyCalculator
   | TreeConditionReport
-  | TreePlan
   | TreesReport
+  | TreeSurvey
   | UnitPlanExisting
   | UnitPlanProposed
   | UsePlanExisting

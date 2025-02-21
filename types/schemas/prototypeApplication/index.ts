@@ -13,6 +13,7 @@ import {
   PPApplicationType,
   PrimaryApplicationType,
   WTTApplicationType,
+  HedgerowRemovalNoticeApplicationType,
 } from './enums/ApplicationType';
 import {File} from './File';
 import {PrototypePlanXMetadata} from './Metadata';
@@ -51,6 +52,10 @@ export type LandDrainageConsent = ApplicationSpecification<
   LandDrainageConsentApplicationType
 >;
 export type WTT = ApplicationSpecification<'wtt', WTTApplicationType>;
+export type HedgerowRemovalNotice = ApplicationSpecification<
+  'hedgerowRemovalNotice',
+  HedgerowRemovalNoticeApplicationType
+>;
 // TODO: All the rest!
 
 /**
@@ -63,4 +68,5 @@ export type PrototypeApplication =
   | PP
   | Listed
   | LandDrainageConsent
-  | WTT;
+  | WTT
+  | HedgerowRemovalNotice;
