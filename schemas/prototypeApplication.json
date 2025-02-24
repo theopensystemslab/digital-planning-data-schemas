@@ -325,144 +325,1246 @@
     "BasePlanningDesignation": {
       "anyOf": [
         {
-          "const": "articleFour",
-          "description": "Article 4 Direction area",
-          "type": "string"
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Aerodrome",
+              "type": "string"
+            },
+            "value": {
+              "const": "aerodrome",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
         },
         {
-          "const": "articleFour.caz",
-          "description": "Central Activities Zone (CAZ)",
-          "type": "string"
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Archaeological priority area",
+              "type": "string"
+            },
+            "value": {
+              "const": "archaeologicalPriorityArea",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
         },
         {
-          "const": "brownfieldSite",
-          "description": "Brownfield site",
-          "type": "string"
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Areas of archaeological potential",
+              "type": "string"
+            },
+            "value": {
+              "const": "areasOfArchaeologicalPotential",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
         },
         {
-          "const": "designated",
-          "description": "Designated land",
-          "type": "string"
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Article 4 Direction area",
+              "type": "string"
+            },
+            "value": {
+              "const": "articleFour",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
         },
         {
-          "const": "designated.AONB",
-          "description": "Area of Outstanding Natural Beauty (AONB)",
-          "type": "string"
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Central Activities Zone (CAZ)",
+              "type": "string"
+            },
+            "value": {
+              "const": "articleFour.caz",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
         },
         {
-          "const": "designated.conservationArea",
-          "description": "Conservation Area",
-          "type": "string"
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Aquifer",
+              "type": "string"
+            },
+            "value": {
+              "const": "aquifer",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
         },
         {
-          "const": "designated.nationalPark",
-          "description": "National Park",
-          "type": "string"
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Primary aquifer",
+              "type": "string"
+            },
+            "value": {
+              "const": "aquifer.primary",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
         },
         {
-          "const": "designated.nationalPark.broads",
-          "description": "National Park - Broads",
-          "type": "string"
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Secondary aquifer",
+              "type": "string"
+            },
+            "value": {
+              "const": "aquifer.secondary",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
         },
         {
-          "const": "designated.WHS",
-          "description": "UNESCO World Heritage Site or buffer zone",
-          "type": "string"
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Brownfield site",
+              "type": "string"
+            },
+            "value": {
+              "const": "brownfieldSite",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
         },
         {
-          "const": "flood",
-          "description": "Flood Risk Zone",
-          "type": "string"
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Coastal change management area",
+              "type": "string"
+            },
+            "value": {
+              "const": "coastalChangeManagementArea",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
         },
         {
-          "const": "flood.zoneOne",
-          "description": "Flood Risk Zone 1 - Low risk",
-          "type": "string"
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Community asset",
+              "type": "string"
+            },
+            "value": {
+              "const": "communityAsset",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
         },
         {
-          "const": "flood.zoneTwo",
-          "description": "Flood Risk Zone 2 - Medium risk",
-          "type": "string"
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Community asset - Nomimated",
+              "type": "string"
+            },
+            "value": {
+              "const": "communityAsset.nominated",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
         },
         {
-          "const": "flood.zoneThree",
-          "description": "Flood Risk Zone 3 - High risk",
-          "type": "string"
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Community asset - Registered",
+              "type": "string"
+            },
+            "value": {
+              "const": "communityAsset.registered",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
         },
         {
-          "const": "greenBelt",
-          "description": "Green Belt",
-          "type": "string"
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Designated land",
+              "type": "string"
+            },
+            "value": {
+              "const": "designated",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
         },
         {
-          "const": "listed",
-          "description": "Listed Building",
-          "type": "string"
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Area of Outstanding Natural Beauty (AONB)",
+              "type": "string"
+            },
+            "value": {
+              "const": "designated.AONB",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
         },
         {
-          "const": "listed.gradeOne",
-          "description": "Listed Building - Grade I",
-          "type": "string"
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Conservation Area",
+              "type": "string"
+            },
+            "value": {
+              "const": "designated.conservationArea",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
         },
         {
-          "const": "listed.gradeTwo",
-          "description": "Listed Building - Grade II",
-          "type": "string"
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "National Park",
+              "type": "string"
+            },
+            "value": {
+              "const": "designated.nationalPark",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
         },
         {
-          "const": "listed.gradeTwoStar",
-          "description": "Listed Building - Grade II*",
-          "type": "string"
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "National Park - Broads",
+              "type": "string"
+            },
+            "value": {
+              "const": "designated.nationalPark.broads",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
         },
         {
-          "const": "locallyListed",
-          "description": "Locally Listed Building",
-          "type": "string"
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "UNESCO World Heritage Site (WHS)",
+              "type": "string"
+            },
+            "value": {
+              "const": "designated.WHS",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
         },
         {
-          "const": "monument",
-          "description": "Site of a Scheduled Monument",
-          "type": "string"
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "UNESCO World Heritage Site (WHS) buffer zone",
+              "type": "string"
+            },
+            "value": {
+              "const": "designated.WHS.bufferZone",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
         },
         {
-          "const": "nature.ASNW",
-          "description": "Ancient Semi-Natural Woodland (ASNW)",
-          "type": "string"
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Explosives or ordnance storage",
+              "type": "string"
+            },
+            "value": {
+              "const": "explosivesOrdnanceStorage",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
         },
         {
-          "const": "nature.ramsarSite",
-          "description": "Ramsar site",
-          "type": "string"
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Flood Risk Zone",
+              "type": "string"
+            },
+            "value": {
+              "const": "flood",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
         },
         {
-          "const": "nature.SAC",
-          "description": "Special Area of Conservation (SAC)",
-          "type": "string"
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Areas of critical drainage problems",
+              "type": "string"
+            },
+            "value": {
+              "const": "flood.criticalDrainage",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
         },
         {
-          "const": "nature.SPA",
-          "description": "Special Protection Area (SPA)",
-          "type": "string"
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Local flood site",
+              "type": "string"
+            },
+            "value": {
+              "const": "flood.local",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
         },
         {
-          "const": "nature.SSSI",
-          "description": "Site of Special Scientific Interest (SSSI)",
-          "type": "string"
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Flood storage area",
+              "type": "string"
+            },
+            "value": {
+              "const": "flood.storageArea",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
         },
         {
-          "const": "registeredPark",
-          "description": "Historic Park or Garden",
-          "type": "string"
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Coastal storm surge flood risk area",
+              "type": "string"
+            },
+            "value": {
+              "const": "flood.stormSurge",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
         },
         {
-          "const": "road.classified",
-          "description": "Classified Road",
-          "type": "string"
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Flood Risk Zone 1 - Low risk",
+              "type": "string"
+            },
+            "value": {
+              "const": "flood.zoneOne",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
         },
         {
-          "const": "tpo",
-          "description": "Tree Preservation Order (TPO) or zone",
-          "type": "string"
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Flood Risk Zone 2 - Medium risk",
+              "type": "string"
+            },
+            "value": {
+              "const": "flood.zoneTwo",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Flood Risk Zone 3 - High risk",
+              "type": "string"
+            },
+            "value": {
+              "const": "flood.zoneThree",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Flood Risk Zone 3a - High risk",
+              "type": "string"
+            },
+            "value": {
+              "const": "flood.zoneThree.a",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Flood Risk Zone 3b - Highest risk",
+              "type": "string"
+            },
+            "value": {
+              "const": "flood.zoneThree.b",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Green Belt",
+              "type": "string"
+            },
+            "value": {
+              "const": "greenBelt",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Heritage coast",
+              "type": "string"
+            },
+            "value": {
+              "const": "heritageCoast",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Historic underground watercourse",
+              "type": "string"
+            },
+            "value": {
+              "const": "historicUndergroundWatercourse",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Irreplaceable habitat",
+              "type": "string"
+            },
+            "value": {
+              "const": "irreplaceableHabitat",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Landfill",
+              "type": "string"
+            },
+            "value": {
+              "const": "landfill",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Authorised landfill site",
+              "type": "string"
+            },
+            "value": {
+              "const": "landfill.authorised",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Historic landfill site",
+              "type": "string"
+            },
+            "value": {
+              "const": "landfill.historic",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Listed Building",
+              "type": "string"
+            },
+            "value": {
+              "const": "listed",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Listed Building - Grade I",
+              "type": "string"
+            },
+            "value": {
+              "const": "listed.gradeOne",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Listed Building - Grade II",
+              "type": "string"
+            },
+            "value": {
+              "const": "listed.gradeTwo",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Listed Building - Grade II*",
+              "type": "string"
+            },
+            "value": {
+              "const": "listed.gradeTwoStar",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Designed space or landscape on the local landscape register",
+              "type": "string"
+            },
+            "value": {
+              "const": "localLandscapeRegister",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Locally Listed Building",
+              "type": "string"
+            },
+            "value": {
+              "const": "locallyListed",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Site of a Scheduled Monument",
+              "type": "string"
+            },
+            "value": {
+              "const": "monument",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Ancient Semi-Natural Woodland (ASNW)",
+              "type": "string"
+            },
+            "value": {
+              "const": "nature.ASNW",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Local geological site",
+              "type": "string"
+            },
+            "value": {
+              "const": "nature.localGeologicalSite",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Local nature reserve",
+              "type": "string"
+            },
+            "value": {
+              "const": "nature.localNatureReserve",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Local Biodiversity Action Plan (BAP) priority habitat",
+              "type": "string"
+            },
+            "value": {
+              "const": "nature.localPriorityHabitat",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Local wildlife site",
+              "type": "string"
+            },
+            "value": {
+              "const": "nature.localWildlifeSite",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Habitat of principal importance (Section 41)",
+              "type": "string"
+            },
+            "value": {
+              "const": "nature.priorityHabitat",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Ramsar site",
+              "type": "string"
+            },
+            "value": {
+              "const": "nature.ramsarSite",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Proposed Ramsar site",
+              "type": "string"
+            },
+            "value": {
+              "const": "nature.ramsarSite.proposed",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Regionally Important Geological and Geomorphological Site (RIGS)",
+              "type": "string"
+            },
+            "value": {
+              "const": "nature.RIGS",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Special Area of Conservation (SAC)",
+              "type": "string"
+            },
+            "value": {
+              "const": "nature.SAC",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Possible Special Area of Conservation (SAC)",
+              "type": "string"
+            },
+            "value": {
+              "const": "nature.SAC.possible",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Special Protection Area (SPA)",
+              "type": "string"
+            },
+            "value": {
+              "const": "nature.SPA",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Potential Special Protection Area (SPA)",
+              "type": "string"
+            },
+            "value": {
+              "const": "nature.SPA.potential",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Site of Special Scientific Interest (SSSI)",
+              "type": "string"
+            },
+            "value": {
+              "const": "nature.SSSI",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Veteran tree",
+              "type": "string"
+            },
+            "value": {
+              "const": "nature.veteranTree",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Historic Park or Garden",
+              "type": "string"
+            },
+            "value": {
+              "const": "registeredPark",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Classified Road",
+              "type": "string"
+            },
+            "value": {
+              "const": "road.classified",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Safeguarded land",
+              "type": "string"
+            },
+            "value": {
+              "const": "safeguardedLand",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Safety hazard area",
+              "type": "string"
+            },
+            "value": {
+              "const": "safetyHazardArea",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Source protection zone",
+              "type": "string"
+            },
+            "value": {
+              "const": "sourceProtectionZone",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Tree Preservation Order (TPO) or zone",
+              "type": "string"
+            },
+            "value": {
+              "const": "tpo",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Watercourse",
+              "type": "string"
+            },
+            "value": {
+              "const": "watercourse",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Main river",
+              "type": "string"
+            },
+            "value": {
+              "const": "watercourse.mainRiver",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Other watercourse",
+              "type": "string"
+            },
+            "value": {
+              "const": "watercourse.other",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
         }
       ]
     },
@@ -1178,6 +2280,58 @@
         "description",
         "projectType"
       ],
+      "type": "object"
+    },
+    "Entity": {
+      "additionalProperties": false,
+      "description": "A specific entity within an intersecting planning designation category",
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "source": {
+          "anyOf": [
+            {
+              "additionalProperties": false,
+              "properties": {
+                "text": {
+                  "const": "Planning Data",
+                  "type": "string"
+                },
+                "url": {
+                  "$ref": "#/definitions/URL"
+                }
+              },
+              "required": [
+                "text",
+                "url"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "text": {
+                  "const": "Ordnance Survey MasterMap Highways",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "text"
+              ],
+              "type": "object"
+            }
+          ]
+        }
+      },
+      "required": [
+        "name",
+        "source"
+      ],
+      "title": "Designated entity",
       "type": "object"
     },
     "ExistingLondonParking": {
@@ -6142,101 +7296,3669 @@
       "type": "object"
     },
     "PlanningConstraint": {
-      "$id": "#PlanningConstraint",
       "anyOf": [
         {
           "additionalProperties": false,
           "description": "A planning constraint that does not intersect with the proposed site, per the DE-9IM spatial relationship definition of intersects",
           "properties": {
-            "constraint": {
+            "description": {
               "type": "string"
             },
             "intersects": {
               "const": false,
               "type": "boolean"
+            },
+            "value": {
+              "type": "string"
             }
           },
           "required": [
-            "constraint",
-            "intersects"
+            "description",
+            "intersects",
+            "value"
           ],
+          "title": "Non-intersecting planning constraint",
           "type": "object"
         },
         {
           "additionalProperties": false,
           "description": "A planning constraint that does intersect with the proposed site, per the DE-9IM spatial relationship definition of intersects",
           "properties": {
-            "constraint": {
+            "description": {
               "type": "string"
             },
             "entities": {
               "items": {
-                "$ref": "#/definitions/PrototypeEntity"
+                "$ref": "#/definitions/Entity"
               },
               "type": "array"
             },
             "intersects": {
               "const": true,
               "type": "boolean"
+            },
+            "value": {
+              "type": "string"
             }
           },
           "required": [
-            "constraint",
+            "description",
             "entities",
-            "intersects"
+            "intersects",
+            "value"
           ],
+          "title": "Intersecting planning constraint",
           "type": "object"
         }
       ],
-      "description": "Planning constraints that intersect with the proposed site"
+      "description": "Planning constraints that may intersect with the proposed site",
+      "title": "Planning constraint"
     },
     "PlanningDesignation": {
-      "$id": "#PlanningDesignation",
       "anyOf": [
         {
-          "additionalProperties": false,
-          "description": "A planning designation that does not intersect with the proposed site, per the DE-9IM spatial relationship definition of intersects",
-          "properties": {
-            "intersects": {
-              "const": false,
-              "type": "boolean"
+          "anyOf": [
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Aerodrome",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "aerodrome",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
             },
-            "value": {
-              "$ref": "#/definitions/BasePlanningDesignation"
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Archaeological priority area",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "archaeologicalPriorityArea",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Areas of archaeological potential",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "areasOfArchaeologicalPotential",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Article 4 Direction area",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "articleFour",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Central Activities Zone (CAZ)",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "articleFour.caz",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Aquifer",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "aquifer",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Primary aquifer",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "aquifer.primary",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Secondary aquifer",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "aquifer.secondary",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Brownfield site",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "brownfieldSite",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Coastal change management area",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "coastalChangeManagementArea",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Community asset",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "communityAsset",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Community asset - Nomimated",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "communityAsset.nominated",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Community asset - Registered",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "communityAsset.registered",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Designated land",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "designated",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Area of Outstanding Natural Beauty (AONB)",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "designated.AONB",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Conservation Area",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "designated.conservationArea",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "National Park",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "designated.nationalPark",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "National Park - Broads",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "designated.nationalPark.broads",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "UNESCO World Heritage Site (WHS)",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "designated.WHS",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "UNESCO World Heritage Site (WHS) buffer zone",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "designated.WHS.bufferZone",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Explosives or ordnance storage",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "explosivesOrdnanceStorage",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Flood Risk Zone",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "flood",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Areas of critical drainage problems",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "flood.criticalDrainage",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Local flood site",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "flood.local",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Flood storage area",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "flood.storageArea",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Coastal storm surge flood risk area",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "flood.stormSurge",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Flood Risk Zone 1 - Low risk",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "flood.zoneOne",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Flood Risk Zone 2 - Medium risk",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "flood.zoneTwo",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Flood Risk Zone 3 - High risk",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "flood.zoneThree",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Flood Risk Zone 3a - High risk",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "flood.zoneThree.a",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Flood Risk Zone 3b - Highest risk",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "flood.zoneThree.b",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Green Belt",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "greenBelt",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Heritage coast",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "heritageCoast",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Historic underground watercourse",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "historicUndergroundWatercourse",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Irreplaceable habitat",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "irreplaceableHabitat",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Landfill",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "landfill",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Authorised landfill site",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "landfill.authorised",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Historic landfill site",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "landfill.historic",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Listed Building",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "listed",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Listed Building - Grade I",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "listed.gradeOne",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Listed Building - Grade II",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "listed.gradeTwo",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Listed Building - Grade II*",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "listed.gradeTwoStar",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Designed space or landscape on the local landscape register",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "localLandscapeRegister",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Locally Listed Building",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "locallyListed",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Site of a Scheduled Monument",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "monument",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Ancient Semi-Natural Woodland (ASNW)",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "nature.ASNW",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Local geological site",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "nature.localGeologicalSite",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Local nature reserve",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "nature.localNatureReserve",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Local Biodiversity Action Plan (BAP) priority habitat",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "nature.localPriorityHabitat",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Local wildlife site",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "nature.localWildlifeSite",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Habitat of principal importance (Section 41)",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "nature.priorityHabitat",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Ramsar site",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "nature.ramsarSite",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Proposed Ramsar site",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "nature.ramsarSite.proposed",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Regionally Important Geological and Geomorphological Site (RIGS)",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "nature.RIGS",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Special Area of Conservation (SAC)",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "nature.SAC",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Possible Special Area of Conservation (SAC)",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "nature.SAC.possible",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Special Protection Area (SPA)",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "nature.SPA",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Potential Special Protection Area (SPA)",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "nature.SPA.potential",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Site of Special Scientific Interest (SSSI)",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "nature.SSSI",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Veteran tree",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "nature.veteranTree",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Historic Park or Garden",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "registeredPark",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Classified Road",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "road.classified",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Safeguarded land",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "safeguardedLand",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Safety hazard area",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "safetyHazardArea",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Source protection zone",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "sourceProtectionZone",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Tree Preservation Order (TPO) or zone",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "tpo",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Watercourse",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "watercourse",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Main river",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "watercourse.mainRiver",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Other watercourse",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "watercourse.other",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
             }
-          },
-          "required": [
-            "intersects",
-            "value"
           ],
-          "type": "object"
+          "description": "A planning designation that does not intersect with the proposed site, per the DE-9IM spatial relationship definition of intersects",
+          "title": "Non-intersecting planning designation"
         },
         {
-          "additionalProperties": false,
-          "description": "A planning designation that does intersect with the proposed site, per the DE-9IM spatial relationship definition of intersects",
-          "properties": {
-            "entities": {
-              "items": {
-                "$ref": "#/definitions/PrototypeEntity"
+          "anyOf": [
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Aerodrome",
+                  "type": "string"
+                },
+                "entities": {
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "aerodrome",
+                  "type": "string"
+                }
               },
-              "type": "array"
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
             },
-            "intersects": {
-              "const": true,
-              "type": "boolean"
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Archaeological priority area",
+                  "type": "string"
+                },
+                "entities": {
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "archaeologicalPriorityArea",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
             },
-            "value": {
-              "$ref": "#/definitions/BasePlanningDesignation"
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Areas of archaeological potential",
+                  "type": "string"
+                },
+                "entities": {
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "areasOfArchaeologicalPotential",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Article 4 Direction area",
+                  "type": "string"
+                },
+                "entities": {
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "articleFour",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Central Activities Zone (CAZ)",
+                  "type": "string"
+                },
+                "entities": {
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "articleFour.caz",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Aquifer",
+                  "type": "string"
+                },
+                "entities": {
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "aquifer",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Primary aquifer",
+                  "type": "string"
+                },
+                "entities": {
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "aquifer.primary",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Secondary aquifer",
+                  "type": "string"
+                },
+                "entities": {
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "aquifer.secondary",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Brownfield site",
+                  "type": "string"
+                },
+                "entities": {
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "brownfieldSite",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Coastal change management area",
+                  "type": "string"
+                },
+                "entities": {
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "coastalChangeManagementArea",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Community asset",
+                  "type": "string"
+                },
+                "entities": {
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "communityAsset",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Community asset - Nomimated",
+                  "type": "string"
+                },
+                "entities": {
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "communityAsset.nominated",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Community asset - Registered",
+                  "type": "string"
+                },
+                "entities": {
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "communityAsset.registered",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Designated land",
+                  "type": "string"
+                },
+                "entities": {
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "designated",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Area of Outstanding Natural Beauty (AONB)",
+                  "type": "string"
+                },
+                "entities": {
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "designated.AONB",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Conservation Area",
+                  "type": "string"
+                },
+                "entities": {
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "designated.conservationArea",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "National Park",
+                  "type": "string"
+                },
+                "entities": {
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "designated.nationalPark",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "National Park - Broads",
+                  "type": "string"
+                },
+                "entities": {
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "designated.nationalPark.broads",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "UNESCO World Heritage Site (WHS)",
+                  "type": "string"
+                },
+                "entities": {
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "designated.WHS",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "UNESCO World Heritage Site (WHS) buffer zone",
+                  "type": "string"
+                },
+                "entities": {
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "designated.WHS.bufferZone",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Explosives or ordnance storage",
+                  "type": "string"
+                },
+                "entities": {
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "explosivesOrdnanceStorage",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Flood Risk Zone",
+                  "type": "string"
+                },
+                "entities": {
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "flood",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Areas of critical drainage problems",
+                  "type": "string"
+                },
+                "entities": {
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "flood.criticalDrainage",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Local flood site",
+                  "type": "string"
+                },
+                "entities": {
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "flood.local",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Flood storage area",
+                  "type": "string"
+                },
+                "entities": {
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "flood.storageArea",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Coastal storm surge flood risk area",
+                  "type": "string"
+                },
+                "entities": {
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "flood.stormSurge",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Flood Risk Zone 1 - Low risk",
+                  "type": "string"
+                },
+                "entities": {
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "flood.zoneOne",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Flood Risk Zone 2 - Medium risk",
+                  "type": "string"
+                },
+                "entities": {
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "flood.zoneTwo",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Flood Risk Zone 3 - High risk",
+                  "type": "string"
+                },
+                "entities": {
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "flood.zoneThree",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Flood Risk Zone 3a - High risk",
+                  "type": "string"
+                },
+                "entities": {
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "flood.zoneThree.a",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Flood Risk Zone 3b - Highest risk",
+                  "type": "string"
+                },
+                "entities": {
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "flood.zoneThree.b",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Green Belt",
+                  "type": "string"
+                },
+                "entities": {
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "greenBelt",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Heritage coast",
+                  "type": "string"
+                },
+                "entities": {
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "heritageCoast",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Historic underground watercourse",
+                  "type": "string"
+                },
+                "entities": {
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "historicUndergroundWatercourse",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Irreplaceable habitat",
+                  "type": "string"
+                },
+                "entities": {
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "irreplaceableHabitat",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Landfill",
+                  "type": "string"
+                },
+                "entities": {
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "landfill",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Authorised landfill site",
+                  "type": "string"
+                },
+                "entities": {
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "landfill.authorised",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Historic landfill site",
+                  "type": "string"
+                },
+                "entities": {
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "landfill.historic",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Listed Building",
+                  "type": "string"
+                },
+                "entities": {
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "listed",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Listed Building - Grade I",
+                  "type": "string"
+                },
+                "entities": {
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "listed.gradeOne",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Listed Building - Grade II",
+                  "type": "string"
+                },
+                "entities": {
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "listed.gradeTwo",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Listed Building - Grade II*",
+                  "type": "string"
+                },
+                "entities": {
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "listed.gradeTwoStar",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Designed space or landscape on the local landscape register",
+                  "type": "string"
+                },
+                "entities": {
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "localLandscapeRegister",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Locally Listed Building",
+                  "type": "string"
+                },
+                "entities": {
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "locallyListed",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Site of a Scheduled Monument",
+                  "type": "string"
+                },
+                "entities": {
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "monument",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Ancient Semi-Natural Woodland (ASNW)",
+                  "type": "string"
+                },
+                "entities": {
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "nature.ASNW",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Local geological site",
+                  "type": "string"
+                },
+                "entities": {
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "nature.localGeologicalSite",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Local nature reserve",
+                  "type": "string"
+                },
+                "entities": {
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "nature.localNatureReserve",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Local Biodiversity Action Plan (BAP) priority habitat",
+                  "type": "string"
+                },
+                "entities": {
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "nature.localPriorityHabitat",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Local wildlife site",
+                  "type": "string"
+                },
+                "entities": {
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "nature.localWildlifeSite",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Habitat of principal importance (Section 41)",
+                  "type": "string"
+                },
+                "entities": {
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "nature.priorityHabitat",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Ramsar site",
+                  "type": "string"
+                },
+                "entities": {
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "nature.ramsarSite",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Proposed Ramsar site",
+                  "type": "string"
+                },
+                "entities": {
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "nature.ramsarSite.proposed",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Regionally Important Geological and Geomorphological Site (RIGS)",
+                  "type": "string"
+                },
+                "entities": {
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "nature.RIGS",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Special Area of Conservation (SAC)",
+                  "type": "string"
+                },
+                "entities": {
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "nature.SAC",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Possible Special Area of Conservation (SAC)",
+                  "type": "string"
+                },
+                "entities": {
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "nature.SAC.possible",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Special Protection Area (SPA)",
+                  "type": "string"
+                },
+                "entities": {
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "nature.SPA",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Potential Special Protection Area (SPA)",
+                  "type": "string"
+                },
+                "entities": {
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "nature.SPA.potential",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Site of Special Scientific Interest (SSSI)",
+                  "type": "string"
+                },
+                "entities": {
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "nature.SSSI",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Veteran tree",
+                  "type": "string"
+                },
+                "entities": {
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "nature.veteranTree",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Historic Park or Garden",
+                  "type": "string"
+                },
+                "entities": {
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "registeredPark",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Classified Road",
+                  "type": "string"
+                },
+                "entities": {
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "road.classified",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Safeguarded land",
+                  "type": "string"
+                },
+                "entities": {
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "safeguardedLand",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Safety hazard area",
+                  "type": "string"
+                },
+                "entities": {
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "safetyHazardArea",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Source protection zone",
+                  "type": "string"
+                },
+                "entities": {
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "sourceProtectionZone",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Tree Preservation Order (TPO) or zone",
+                  "type": "string"
+                },
+                "entities": {
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "tpo",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Watercourse",
+                  "type": "string"
+                },
+                "entities": {
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "watercourse",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Main river",
+                  "type": "string"
+                },
+                "entities": {
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "watercourse.mainRiver",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Other watercourse",
+                  "type": "string"
+                },
+                "entities": {
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "watercourse.other",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
             }
-          },
-          "required": [
-            "intersects",
-            "value"
           ],
-          "type": "object"
+          "description": "A planning designation that does intersect with the proposed site, per the DE-9IM spatial relationship definition of intersects",
+          "title": "Intersecting planning designation"
         }
       ],
-      "description": "Planning designations that may intersect with the proposed site determined by spatial queries against Planning Data (planning.data.gov.uk) and Ordnance Survey"
+      "description": "Planning designations that may intersect with the proposed site determined by spatial queries against Planning Data (planning.data.gov.uk) and Ordnance Survey",
+      "title": "Planning designation"
     },
     "Point": {
       "additionalProperties": false,
@@ -6291,7 +11013,7 @@
       "type": "object"
     },
     "Position": {
-      "description": "A Position is an array of coordinates. https://tools.ietf.org/html/rfc7946#section-3.1.1 Array should contain between two and three elements. The previous GeoJSON specification allowed more elements (e.g., which could be used to represent M values), but the current specification only allows X, Y, and (optionally) Z to be defined.",
+      "description": "A Position is an array of coordinates. https://tools.ietf.org/html/rfc7946#section-3.1.1 Array should contain between two and three elements. The previous GeoJSON specification allowed more elements (e.g., which could be used to represent M values), but the current specification only allows X, Y, and (optionally) Z to be defined.\n\nNote: the type will not be narrowed down to `[number, number] | [number, number, number]` due to marginal benefits and the large impact of breaking change.\n\nSee previous discussions on the type narrowing:\n-  {@link  https://github.com/DefinitelyTyped/DefinitelyTyped/pull/21590 Nov 2017 } \n-  {@link  https://github.com/DefinitelyTyped/DefinitelyTyped/discussions/67773 Dec 2023 } \n-  {@link  https://github.com/DefinitelyTyped/DefinitelyTyped/discussions/71441 Dec 2024 } \n\nOne can use a  {@link  https://www.typescriptlang.org/docs/handbook/2/narrowing.html#using-type-predicates user-defined type guard that returns a type predicate }  to determine if a position is a 2D or 3D position.",
       "items": {
         "type": "number"
       },
@@ -10437,56 +15159,6 @@
         }
       ],
       "description": "Designations of natural protected spaces"
-    },
-    "PrototypeEntity": {
-      "additionalProperties": false,
-      "properties": {
-        "description": {
-          "type": "string"
-        },
-        "name": {
-          "type": "string"
-        },
-        "source": {
-          "anyOf": [
-            {
-              "additionalProperties": false,
-              "properties": {
-                "text": {
-                  "const": "Planning Data",
-                  "type": "string"
-                },
-                "url": {
-                  "$ref": "#/definitions/URL"
-                }
-              },
-              "required": [
-                "text",
-                "url"
-              ],
-              "type": "object"
-            },
-            {
-              "additionalProperties": false,
-              "properties": {
-                "text": {
-                  "const": "Ordnance Survey MasterMap Highways",
-                  "type": "string"
-                }
-              },
-              "required": [
-                "text"
-              ],
-              "type": "object"
-            }
-          ]
-        }
-      },
-      "required": [
-        "name",
-        "source"
-      ],
-      "type": "object"
     },
     "PrototypeFileType": {
       "$id": "#FileType",

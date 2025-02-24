@@ -1,9 +1,9 @@
-import {OSAddress, ProposedAddress} from '../../../shared/Addresses';
-import {GeoBoundary} from './../../../shared/Boundaries';
-import {Region} from '../../../shared/Regions';
-import {URL} from '../../../shared/utils';
-import {PlanningDesignation} from '../../application/enums/PlanningConstraints';
-import {PropertyType} from '../../application/enums/PropertyTypes';
+import { OSAddress, ProposedAddress } from '../../../shared/Addresses';
+import { PlanningDesignation } from '../../../shared/Constraints';
+import { Region } from '../../../shared/Regions';
+import { URL } from '../../../shared/utils';
+import { PropertyType } from '../../application/enums/PropertyTypes';
+import { GeoBoundary } from './../../../shared/Boundaries';
 
 export interface Property {
   address: ProposedAddress | OSAddress;
