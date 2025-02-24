@@ -123,7 +123,7 @@ export const priorApprovalExtendUniversity: Application = {
           },
           {
             value: 'designated.WHS',
-            description: 'UNESCO World Heritage Site or buffer zone',
+            description: 'UNESCO World Heritage Site (WHS)',
             intersects: false,
           },
           {

@@ -261,7 +261,7 @@ export const lawfulDevelopmentCertificateExistingPrototype: PrototypeApplication
             },
             {
               value: 'road.classified',
-              description: "Classified road",
+              description: 'Classified road',
               intersects: false,
             },
           ],

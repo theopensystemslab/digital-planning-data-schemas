@@ -1,7 +1,7 @@
 import {URL} from './utils';
 
 /**
- * This list includes more values than PlanX currently checks (see `data.property.planning.designations` in example payloads), 
+ * This list includes more values than PlanX currently checks (see `data.property.planning.designations` in example payloads),
  *   but is a good representation of all possible designations which may be put to users now or automatically checked in the future based on Planning Data's backlog
  */
 export const PlanningDesignations = {
@@ -47,18 +47,21 @@ export const PlanningDesignations = {
   'listed.gradeOne': 'Listed Building - Grade I',
   'listed.gradeTwo': 'Listed Building - Grade II',
   'listed.gradeTwoStar': 'Listed Building - Grade II*',
-  localLandscapeRegister: 'Designed space or landscape on the local landscape register',
+  localLandscapeRegister:
+    'Designed space or landscape on the local landscape register',
   locallyListed: 'Locally Listed Building',
   monument: 'Site of a Scheduled Monument',
   'nature.ASNW': 'Ancient Semi-Natural Woodland (ASNW)',
   'nature.localGeologicalSite': 'Local geological site',
   'nature.localNatureReserve': 'Local nature reserve',
-  'nature.localPriorityHabitat': 'Local Biodiversity Action Plan (BAP) priority habitat',
+  'nature.localPriorityHabitat':
+    'Local Biodiversity Action Plan (BAP) priority habitat',
   'nature.localWildlifeSite': 'Local wildlife site',
   'nature.priorityHabitat': 'Habitat of principal importance (Section 41)',
   'nature.ramsarSite': 'Ramsar site',
   'nature.ramsarSite.proposed': 'Proposed Ramsar site',
-  'nature.RIGS': 'Regionally Important Geological and Geomorphological Site (RIGS)',
+  'nature.RIGS':
+    'Regionally Important Geological and Geomorphological Site (RIGS)',
   'nature.SAC': 'Special Area of Conservation (SAC)',
   'nature.SAC.possible': 'Possible Special Area of Conservation (SAC)',
   'nature.SPA': 'Special Protection Area (SPA)',
@@ -135,7 +138,7 @@ export type PlanningDesignation =
   | IntersectingPlanningDesignation;
 
 /**
- * @internal Planning constraints are a generic type, while planning designations adhere to enum value/description pairs 
+ * @internal Planning constraints are a generic type, while planning designations adhere to enum value/description pairs
  */
 type BasePlanningConstraint = {
   value: string;

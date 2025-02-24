@@ -130,7 +130,7 @@ export const lawfulDevelopmentCertificateProposedPrototype: PrototypeApplication
             },
             {
               value: 'designated',
-              description: "Designated land",
+              description: 'Designated land',
               intersects: false,
             },
             {

@@ -138,78 +138,97 @@ export const planningPermissionFullHouseholderInConservationAreaPrototype: Proto
           designations: [
             {
               value: 'articleFour',
+              description: 'Article 4 Direction area',
               intersects: false,
             },
             {
               value: 'flood',
+              description: 'Flood Risk Zone',
               intersects: false,
             },
             {
               value: 'tpo',
+              description: 'Tree Preservation Order (TPO) or zone',
               intersects: false,
             },
             {
               value: 'listed',
+              description: 'Listed Building',
               intersects: false,
             },
             {
               value: 'monument',
+              description: 'Site of a Scheduled Monument',
               intersects: false,
             },
             {
               value: 'designated',
+              description: 'Designated land',
               intersects: true,
             },
             {
               value: 'greenBelt',
+              description: 'Green Belt',
               intersects: false,
             },
             {
               value: 'nature.SAC',
+              description: 'Special Area of Conservation (SAC)',
               intersects: false,
             },
             {
               value: 'nature.ASNW',
+              description: 'Ancient Semi-Natural Woodland (ASNW)',
               intersects: false,
             },
             {
               value: 'nature.SSSI',
+              description: 'Site of Special Scientific Interest (SSSI)',
               intersects: false,
             },
             {
               value: 'locallyListed',
+              description: 'Locally Listed Building',
               intersects: false,
             },
             {
               value: 'brownfieldSite',
+              description: 'Brownfield site',
               intersects: false,
             },
             {
               value: 'nature.SPA',
+              description: 'Special Protection Area (SPA)',
               intersects: false,
             },
             {
               value: 'designated.WHS',
+              description: 'UNESCO World Heritage Site (WHS)',
               intersects: false,
             },
             {
               value: 'registeredPark',
+              description: 'Historic Park or Garden',
               intersects: false,
             },
             {
               value: 'designated.AONB',
+              description: 'Area of Outstanding Natural Beauty (AONB)',
               intersects: false,
             },
             {
               value: 'nature.ramsarSite',
+              description: 'Ramsar site',
               intersects: false,
             },
             {
               value: 'designated.nationalPark',
+              description: 'National Park',
               intersects: false,
             },
             {
               value: 'designated.conservationArea',
+              description: 'Conservation Area',
               intersects: true,
               entities: [
                 {
@@ -223,10 +242,12 @@ export const planningPermissionFullHouseholderInConservationAreaPrototype: Proto
             },
             {
               value: 'designated.nationalPark.broads',
+              description: 'National Park - Broads',
               intersects: false,
             },
             {
               value: 'road.classified',
+              description: 'Classified Road',
               intersects: false,
             },
           ],

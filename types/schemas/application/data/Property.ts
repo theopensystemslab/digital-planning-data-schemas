@@ -1,12 +1,15 @@
-import { OSAddress, ProposedAddress } from '../../../shared/Addresses';
-import { PlanningConstraint, PlanningDesignation } from '../../../shared/Constraints';
-import { Materials } from '../../../shared/Materials';
-import { ExistingLondonParking } from '../../../shared/Parking';
-import { Region } from '../../../shared/Regions';
-import { Date, URL } from '../../../shared/utils';
-import { PropertyType } from '../enums/PropertyTypes';
-import { GeoBoundary } from './../../../shared/Boundaries';
-import { ResidentialUnits } from './shared';
+import {OSAddress, ProposedAddress} from '../../../shared/Addresses';
+import {
+  PlanningConstraint,
+  PlanningDesignation,
+} from '../../../shared/Constraints';
+import {Materials} from '../../../shared/Materials';
+import {ExistingLondonParking} from '../../../shared/Parking';
+import {Region} from '../../../shared/Regions';
+import {Date, URL} from '../../../shared/utils';
+import {PropertyType} from '../enums/PropertyTypes';
+import {GeoBoundary} from './../../../shared/Boundaries';
+import {ResidentialUnits} from './shared';
 
 /**
  * @id #Property
