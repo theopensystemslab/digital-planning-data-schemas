@@ -84,7 +84,7 @@ export const priorApprovalConvertCommercialToHomePrototype: PrototypeApplication
             },
             {
               value: 'listed',
-              description: 'Listed Building',
+              description: 'Listed building',
               intersects: true,
               entities: [
                 {
@@ -105,7 +105,7 @@ export const priorApprovalConvertCommercialToHomePrototype: PrototypeApplication
             },
             {
               value: 'articleFour',
-              description: 'Article 4 Direction area',
+              description: 'Article 4 direction area',
               intersects: false,
             },
             {
@@ -115,7 +115,7 @@ export const priorApprovalConvertCommercialToHomePrototype: PrototypeApplication
             },
             {
               value: 'greenBelt',
-              description: 'Green Belt',
+              description: 'Green belt',
               intersects: false,
             },
             {
@@ -155,12 +155,12 @@ export const priorApprovalConvertCommercialToHomePrototype: PrototypeApplication
             },
             {
               value: 'listed.gradeOne',
-              description: 'Listed Building - Grade I',
+              description: 'Listed building - Grade I',
               intersects: false,
             },
             {
               value: 'registeredPark',
-              description: 'Historic Park or Garden',
+              description: 'Registered parks and gardens',
               intersects: false,
             },
             {
@@ -170,12 +170,12 @@ export const priorApprovalConvertCommercialToHomePrototype: PrototypeApplication
             },
             {
               value: 'listed.gradeTwo',
-              description: 'Listed Building - Grade II',
+              description: 'Listed building - Grade II',
               intersects: true,
             },
             {
               value: 'listed.gradeTwoStar',
-              description: 'Listed Building - Grade II*',
+              description: 'Listed building - Grade II*',
               intersects: false,
             },
             {
@@ -190,7 +190,7 @@ export const priorApprovalConvertCommercialToHomePrototype: PrototypeApplication
             },
             {
               value: 'designated.conservationArea',
-              description: 'Conservation Area',
+              description: 'Conservation area',
               intersects: true,
               entities: [
                 {
@@ -209,7 +209,7 @@ export const priorApprovalConvertCommercialToHomePrototype: PrototypeApplication
             },
             {
               value: 'road.classified',
-              description: 'Classified Road',
+              description: 'Classified road',
               intersects: false,
             },
           ],

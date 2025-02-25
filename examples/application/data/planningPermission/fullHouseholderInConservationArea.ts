@@ -141,7 +141,7 @@ export const planningPermissionFullHouseholderInConservationArea: Application =
           designations: [
             {
               value: 'articleFour',
-              description: 'Article 4 Direction area',
+              description: 'Article 4 direction area',
               intersects: false,
             },
             {
@@ -156,7 +156,7 @@ export const planningPermissionFullHouseholderInConservationArea: Application =
             },
             {
               value: 'listed',
-              description: 'Listed Building',
+              description: 'Listed building',
               intersects: false,
             },
             {
@@ -171,7 +171,7 @@ export const planningPermissionFullHouseholderInConservationArea: Application =
             },
             {
               value: 'greenBelt',
-              description: 'Green Belt',
+              description: 'Green belt',
               intersects: false,
             },
             {
@@ -206,7 +206,7 @@ export const planningPermissionFullHouseholderInConservationArea: Application =
             },
             {
               value: 'registeredPark',
-              description: 'Historic Park or Garden',
+              description: 'Registered parks and gardens',
               intersects: false,
             },
             {
@@ -226,7 +226,7 @@ export const planningPermissionFullHouseholderInConservationArea: Application =
             },
             {
               value: 'designated.conservationArea',
-              description: 'Conservation Area',
+              description: 'Conservation area',
               intersects: true,
               entities: [
                 {
@@ -245,7 +245,7 @@ export const planningPermissionFullHouseholderInConservationArea: Application =
             },
             {
               value: 'road.classified',
-              description: 'Classified Road',
+              description: 'Classified road',
               intersects: false,
             },
           ],

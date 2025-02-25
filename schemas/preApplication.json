@@ -3173,7 +3173,7 @@
               "additionalProperties": false,
               "properties": {
                 "description": {
-                  "const": "Archaeological priority area",
+                  "const": "Archaeological Priority Area",
                   "type": "string"
                 },
                 "intersects": {
@@ -3196,7 +3196,7 @@
               "additionalProperties": false,
               "properties": {
                 "description": {
-                  "const": "Areas of archaeological potential",
+                  "const": "Areas of Archaeological Potential",
                   "type": "string"
                 },
                 "intersects": {
@@ -3219,7 +3219,7 @@
               "additionalProperties": false,
               "properties": {
                 "description": {
-                  "const": "Article 4 Direction area",
+                  "const": "Article 4 direction area",
                   "type": "string"
                 },
                 "intersects": {
@@ -3495,7 +3495,7 @@
               "additionalProperties": false,
               "properties": {
                 "description": {
-                  "const": "Conservation Area",
+                  "const": "Conservation area",
                   "type": "string"
                 },
                 "intersects": {
@@ -3656,7 +3656,7 @@
               "additionalProperties": false,
               "properties": {
                 "description": {
-                  "const": "Areas of critical drainage problems",
+                  "const": "Areas with critical drainage problems",
                   "type": "string"
                 },
                 "intersects": {
@@ -3748,7 +3748,7 @@
               "additionalProperties": false,
               "properties": {
                 "description": {
-                  "const": "Flood Risk Zone 1 - Low risk",
+                  "const": "Flood zone 1 - Low risk",
                   "type": "string"
                 },
                 "intersects": {
@@ -3771,7 +3771,7 @@
               "additionalProperties": false,
               "properties": {
                 "description": {
-                  "const": "Flood Risk Zone 2 - Medium risk",
+                  "const": "Flood zone 2 - Medium risk",
                   "type": "string"
                 },
                 "intersects": {
@@ -3794,7 +3794,7 @@
               "additionalProperties": false,
               "properties": {
                 "description": {
-                  "const": "Flood Risk Zone 3 - High risk",
+                  "const": "Flood zone 3 - High risk",
                   "type": "string"
                 },
                 "intersects": {
@@ -3817,7 +3817,7 @@
               "additionalProperties": false,
               "properties": {
                 "description": {
-                  "const": "Flood Risk Zone 3a - High risk",
+                  "const": "Flood zone 3a - High risk",
                   "type": "string"
                 },
                 "intersects": {
@@ -3840,7 +3840,7 @@
               "additionalProperties": false,
               "properties": {
                 "description": {
-                  "const": "Flood Risk Zone 3b - Highest risk",
+                  "const": "Flood zone 3b - Highest risk",
                   "type": "string"
                 },
                 "intersects": {
@@ -3863,7 +3863,7 @@
               "additionalProperties": false,
               "properties": {
                 "description": {
-                  "const": "Green Belt",
+                  "const": "Green belt",
                   "type": "string"
                 },
                 "intersects": {
@@ -4024,7 +4024,7 @@
               "additionalProperties": false,
               "properties": {
                 "description": {
-                  "const": "Listed Building",
+                  "const": "Listed building",
                   "type": "string"
                 },
                 "intersects": {
@@ -4047,7 +4047,7 @@
               "additionalProperties": false,
               "properties": {
                 "description": {
-                  "const": "Listed Building - Grade I",
+                  "const": "Listed building - Grade I",
                   "type": "string"
                 },
                 "intersects": {
@@ -4070,7 +4070,7 @@
               "additionalProperties": false,
               "properties": {
                 "description": {
-                  "const": "Listed Building - Grade II",
+                  "const": "Listed building - Grade II",
                   "type": "string"
                 },
                 "intersects": {
@@ -4093,7 +4093,7 @@
               "additionalProperties": false,
               "properties": {
                 "description": {
-                  "const": "Listed Building - Grade II*",
+                  "const": "Listed building - Grade II*",
                   "type": "string"
                 },
                 "intersects": {
@@ -4139,7 +4139,7 @@
               "additionalProperties": false,
               "properties": {
                 "description": {
-                  "const": "Locally Listed Building",
+                  "const": "Locally listed building",
                   "type": "string"
                 },
                 "intersects": {
@@ -4530,7 +4530,7 @@
               "additionalProperties": false,
               "properties": {
                 "description": {
-                  "const": "Historic Park or Garden",
+                  "const": "Registered parks and gardens",
                   "type": "string"
                 },
                 "intersects": {
@@ -4553,7 +4553,7 @@
               "additionalProperties": false,
               "properties": {
                 "description": {
-                  "const": "Classified Road",
+                  "const": "Classified road",
                   "type": "string"
                 },
                 "intersects": {
@@ -4772,7 +4772,7 @@
               "additionalProperties": false,
               "properties": {
                 "description": {
-                  "const": "Archaeological priority area",
+                  "const": "Archaeological Priority Area",
                   "type": "string"
                 },
                 "entities": {
@@ -4801,7 +4801,7 @@
               "additionalProperties": false,
               "properties": {
                 "description": {
-                  "const": "Areas of archaeological potential",
+                  "const": "Areas of Archaeological Potential",
                   "type": "string"
                 },
                 "entities": {
@@ -4830,7 +4830,7 @@
               "additionalProperties": false,
               "properties": {
                 "description": {
-                  "const": "Article 4 Direction area",
+                  "const": "Article 4 direction area",
                   "type": "string"
                 },
                 "entities": {
@@ -5178,7 +5178,7 @@
               "additionalProperties": false,
               "properties": {
                 "description": {
-                  "const": "Conservation Area",
+                  "const": "Conservation area",
                   "type": "string"
                 },
                 "entities": {
@@ -5381,7 +5381,7 @@
               "additionalProperties": false,
               "properties": {
                 "description": {
-                  "const": "Areas of critical drainage problems",
+                  "const": "Areas with critical drainage problems",
                   "type": "string"
                 },
                 "entities": {
@@ -5497,7 +5497,7 @@
               "additionalProperties": false,
               "properties": {
                 "description": {
-                  "const": "Flood Risk Zone 1 - Low risk",
+                  "const": "Flood zone 1 - Low risk",
                   "type": "string"
                 },
                 "entities": {
@@ -5526,7 +5526,7 @@
               "additionalProperties": false,
               "properties": {
                 "description": {
-                  "const": "Flood Risk Zone 2 - Medium risk",
+                  "const": "Flood zone 2 - Medium risk",
                   "type": "string"
                 },
                 "entities": {
@@ -5555,7 +5555,7 @@
               "additionalProperties": false,
               "properties": {
                 "description": {
-                  "const": "Flood Risk Zone 3 - High risk",
+                  "const": "Flood zone 3 - High risk",
                   "type": "string"
                 },
                 "entities": {
@@ -5584,7 +5584,7 @@
               "additionalProperties": false,
               "properties": {
                 "description": {
-                  "const": "Flood Risk Zone 3a - High risk",
+                  "const": "Flood zone 3a - High risk",
                   "type": "string"
                 },
                 "entities": {
@@ -5613,7 +5613,7 @@
               "additionalProperties": false,
               "properties": {
                 "description": {
-                  "const": "Flood Risk Zone 3b - Highest risk",
+                  "const": "Flood zone 3b - Highest risk",
                   "type": "string"
                 },
                 "entities": {
@@ -5642,7 +5642,7 @@
               "additionalProperties": false,
               "properties": {
                 "description": {
-                  "const": "Green Belt",
+                  "const": "Green belt",
                   "type": "string"
                 },
                 "entities": {
@@ -5845,7 +5845,7 @@
               "additionalProperties": false,
               "properties": {
                 "description": {
-                  "const": "Listed Building",
+                  "const": "Listed building",
                   "type": "string"
                 },
                 "entities": {
@@ -5874,7 +5874,7 @@
               "additionalProperties": false,
               "properties": {
                 "description": {
-                  "const": "Listed Building - Grade I",
+                  "const": "Listed building - Grade I",
                   "type": "string"
                 },
                 "entities": {
@@ -5903,7 +5903,7 @@
               "additionalProperties": false,
               "properties": {
                 "description": {
-                  "const": "Listed Building - Grade II",
+                  "const": "Listed building - Grade II",
                   "type": "string"
                 },
                 "entities": {
@@ -5932,7 +5932,7 @@
               "additionalProperties": false,
               "properties": {
                 "description": {
-                  "const": "Listed Building - Grade II*",
+                  "const": "Listed building - Grade II*",
                   "type": "string"
                 },
                 "entities": {
@@ -5990,7 +5990,7 @@
               "additionalProperties": false,
               "properties": {
                 "description": {
-                  "const": "Locally Listed Building",
+                  "const": "Locally listed building",
                   "type": "string"
                 },
                 "entities": {
@@ -6483,7 +6483,7 @@
               "additionalProperties": false,
               "properties": {
                 "description": {
-                  "const": "Historic Park or Garden",
+                  "const": "Registered parks and gardens",
                   "type": "string"
                 },
                 "entities": {
@@ -6512,7 +6512,7 @@
               "additionalProperties": false,
               "properties": {
                 "description": {
-                  "const": "Classified Road",
+                  "const": "Classified road",
                   "type": "string"
                 },
                 "entities": {

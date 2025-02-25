@@ -138,7 +138,7 @@ export const planningPermissionFullHouseholderInConservationAreaPrototype: Proto
           designations: [
             {
               value: 'articleFour',
-              description: 'Article 4 Direction area',
+              description: 'Article 4 direction area',
               intersects: false,
             },
             {
@@ -153,7 +153,7 @@ export const planningPermissionFullHouseholderInConservationAreaPrototype: Proto
             },
             {
               value: 'listed',
-              description: 'Listed Building',
+              description: 'Listed building',
               intersects: false,
             },
             {
@@ -168,7 +168,7 @@ export const planningPermissionFullHouseholderInConservationAreaPrototype: Proto
             },
             {
               value: 'greenBelt',
-              description: 'Green Belt',
+              description: 'Green belt',
               intersects: false,
             },
             {
@@ -203,7 +203,7 @@ export const planningPermissionFullHouseholderInConservationAreaPrototype: Proto
             },
             {
               value: 'registeredPark',
-              description: 'Historic Park or Garden',
+              description: 'Registered parks and gardens',
               intersects: false,
             },
             {
@@ -223,7 +223,7 @@ export const planningPermissionFullHouseholderInConservationAreaPrototype: Proto
             },
             {
               value: 'designated.conservationArea',
-              description: 'Conservation Area',
+              description: 'Conservation area',
               intersects: true,
               entities: [
                 {
@@ -242,7 +242,7 @@ export const planningPermissionFullHouseholderInConservationAreaPrototype: Proto
             },
             {
               value: 'road.classified',
-              description: 'Classified Road',
+              description: 'Classified road',
               intersects: false,
             },
           ],

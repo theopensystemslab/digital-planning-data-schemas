@@ -62,12 +62,12 @@ export const priorApprovalBuildHomesPrototype: PrototypeApplication = {
           },
           {
             value: 'listed',
-            description: 'Listed Building',
+            description: 'Listed building',
             intersects: false,
           },
           {
             value: 'articleFour',
-            description: 'Article 4 Direction area',
+            description: 'Article 4 direction area',
             intersects: false,
           },
           {
@@ -77,7 +77,7 @@ export const priorApprovalBuildHomesPrototype: PrototypeApplication = {
           },
           {
             value: 'greenBelt',
-            description: 'Green Belt',
+            description: 'Green belt',
             intersects: false,
           },
           {
@@ -117,7 +117,7 @@ export const priorApprovalBuildHomesPrototype: PrototypeApplication = {
           },
           {
             value: 'registeredPark',
-            description: 'Historic Park or Garden',
+            description: 'Registered parks and gardens',
             intersects: false,
           },
           {
@@ -137,7 +137,7 @@ export const priorApprovalBuildHomesPrototype: PrototypeApplication = {
           },
           {
             value: 'designated.conservationArea',
-            description: 'Conservation Area',
+            description: 'Conservation area',
             intersects: false,
           },
           {
@@ -147,7 +147,7 @@ export const priorApprovalBuildHomesPrototype: PrototypeApplication = {
           },
           {
             value: 'road.classified',
-            description: 'Classified Road',
+            description: 'Classified road',
             intersects: false,
           },
         ],
