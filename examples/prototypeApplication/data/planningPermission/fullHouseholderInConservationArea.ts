@@ -187,11 +187,6 @@ export const planningPermissionFullHouseholderInConservationAreaPrototype: Proto
               intersects: false,
             },
             {
-              value: 'locallyListed',
-              description: 'Locally Listed Building',
-              intersects: false,
-            },
-            {
               value: 'brownfieldSite',
               description: 'Brownfield site',
               intersects: false,

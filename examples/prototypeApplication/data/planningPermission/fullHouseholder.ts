@@ -169,11 +169,6 @@ export const planningPermissionFullHouseholderPrototype: PrototypeApplication =
               intersects: false,
             },
             {
-              value: 'locallyListed',
-              description: 'Locally Listed Building',
-              intersects: false,
-            },
-            {
               value: 'nature.SPA',
               description: 'Special Protection Area (SPA)',
               intersects: false,
