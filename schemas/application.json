@@ -8715,7 +8715,7 @@
               "additionalProperties": false,
               "properties": {
                 "description": {
-                  "const": "Primary aquifer",
+                  "const": "Principal aquifer",
                   "type": "string"
                 },
                 "intersects": {
@@ -8723,7 +8723,7 @@
                   "type": "boolean"
                 },
                 "value": {
-                  "const": "aquifer.primary",
+                  "const": "aquifer.principal",
                   "type": "string"
                 }
               },
@@ -9060,7 +9060,7 @@
               "additionalProperties": false,
               "properties": {
                 "description": {
-                  "const": "Flood Risk Zone",
+                  "const": "Flood risk",
                   "type": "string"
                 },
                 "intersects": {
@@ -10344,7 +10344,7 @@
               "additionalProperties": false,
               "properties": {
                 "description": {
-                  "const": "Primary aquifer",
+                  "const": "Principal aquifer",
                   "type": "string"
                 },
                 "entities": {
@@ -10358,7 +10358,7 @@
                   "type": "boolean"
                 },
                 "value": {
-                  "const": "aquifer.primary",
+                  "const": "aquifer.principal",
                   "type": "string"
                 }
               },
@@ -10779,7 +10779,7 @@
               "additionalProperties": false,
               "properties": {
                 "description": {
-                  "const": "Flood Risk Zone",
+                  "const": "Flood risk",
                   "type": "string"
                 },
                 "entities": {

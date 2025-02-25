@@ -97,7 +97,7 @@ export const listedBuildingConsent: Application = {
           },
           {
             value: 'flood',
-            description: 'Flood Risk Zone',
+            description: 'Flood risk',
             intersects: false,
           },
           {

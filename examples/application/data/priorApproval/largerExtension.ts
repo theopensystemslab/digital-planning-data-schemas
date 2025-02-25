@@ -59,7 +59,7 @@ export const priorApprovalLargerExtension: Application = {
           },
           {
             value: 'flood',
-            description: 'Flood Risk Zone',
+            description: 'Flood risk',
             intersects: false,
           },
           {
