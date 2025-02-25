@@ -107,7 +107,7 @@ export const lawfulDevelopmentCertificateProposed: Application = {
         designations: [
           {
             value: 'articleFour',
-            description: 'Article 4 Direction area',
+            description: 'Article 4 direction area',
             intersects: false,
           },
           {
@@ -122,7 +122,7 @@ export const lawfulDevelopmentCertificateProposed: Application = {
           },
           {
             value: 'listed',
-            description: 'Listed Building',
+            description: 'Listed building',
             intersects: false,
           },
           {
@@ -151,23 +151,18 @@ export const lawfulDevelopmentCertificateProposed: Application = {
             intersects: false,
           },
           {
-            value: 'locallyListed',
-            description: 'Locally Listed Building',
-            intersects: false,
-          },
-          {
             value: 'nature.SPA',
             description: 'Special Protection Area (SPA)',
             intersects: false,
           },
           {
             value: 'designated.WHS',
-            description: 'UNESCO World Heritage Site or buffer zone',
+            description: 'UNESCO World Heritage Site (WHS)',
             intersects: false,
           },
           {
             value: 'registeredPark',
-            description: 'Historic Park or Garden',
+            description: 'Registered parks and gardens',
             intersects: false,
           },
           {
@@ -182,7 +177,7 @@ export const lawfulDevelopmentCertificateProposed: Application = {
           },
           {
             value: 'designated.conservationArea',
-            description: 'Conservation Area',
+            description: 'Conservation area',
             intersects: false,
           },
           {
@@ -192,7 +187,7 @@ export const lawfulDevelopmentCertificateProposed: Application = {
           },
           {
             value: 'road.classified',
-            description: 'Classified Road',
+            description: 'Classified road',
             intersects: false,
           },
         ],

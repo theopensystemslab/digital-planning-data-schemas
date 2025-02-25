@@ -105,17 +105,17 @@ export const planningPermissionMajor: Application = {
           },
           {
             value: 'flood',
-            description: 'Flood Risk Zone',
+            description: 'Flood risk',
             intersects: false,
           },
           {
             value: 'listed',
-            description: 'Listed Building',
+            description: 'Listed building',
             intersects: false,
           },
           {
             value: 'articleFour',
-            description: 'Article 4 Direction area',
+            description: 'Article 4 direction area',
             intersects: false,
           },
           {
@@ -125,7 +125,7 @@ export const planningPermissionMajor: Application = {
           },
           {
             value: 'greenBelt',
-            description: 'Green Belt',
+            description: 'Green belt',
             intersects: true,
             entities: [
               {
@@ -169,12 +169,12 @@ export const planningPermissionMajor: Application = {
           },
           {
             value: 'designated.WHS',
-            description: 'UNESCO World Heritage Site or buffer zone',
+            description: 'UNESCO World Heritage Site (WHS)',
             intersects: false,
           },
           {
             value: 'registeredPark',
-            description: 'Historic Park or Garden',
+            description: 'Registered parks and gardens',
             intersects: false,
           },
           {
@@ -194,7 +194,7 @@ export const planningPermissionMajor: Application = {
           },
           {
             value: 'designated.conservationArea',
-            description: 'Conservation Area',
+            description: 'Conservation area',
             intersects: false,
           },
           {

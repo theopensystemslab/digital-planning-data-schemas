@@ -98,10 +98,12 @@ export const landDrainageConsentPrototype: PrototypeApplication = {
         designations: [
           {
             value: 'tpo',
+            description: 'Tree Preservation Order (TPO) or zone',
             intersects: false,
           },
           {
             value: 'flood',
+            description: 'Flood risk',
             intersects: true,
             entities: [
               {
@@ -122,6 +124,7 @@ export const landDrainageConsentPrototype: PrototypeApplication = {
           },
           {
             value: 'listed',
+            description: 'Listed building',
             intersects: true,
             entities: [
               {
@@ -142,10 +145,12 @@ export const landDrainageConsentPrototype: PrototypeApplication = {
           },
           {
             value: 'articleFour',
+            description: 'Article 4 direction area',
             intersects: false,
           },
           {
             value: 'monument',
+            description: 'Site of a Scheduled Monument',
             intersects: true,
             entities: [
               {
@@ -159,78 +164,97 @@ export const landDrainageConsentPrototype: PrototypeApplication = {
           },
           {
             value: 'greenBelt',
+            description: 'Green belt',
             intersects: false,
           },
           {
             value: 'designated',
+            description: 'Designated land',
             intersects: true,
           },
           {
             value: 'nature.SAC',
+            description: 'Special Area of Conservation (SAC)',
             intersects: false,
           },
           {
             value: 'nature.SPA',
+            description: 'Special Protection Area (SPA)',
             intersects: false,
           },
           {
             value: 'nature.ASNW',
+            description: 'Ancient Semi-Natural Woodland (ASNW)',
             intersects: false,
           },
           {
             value: 'nature.SSSI',
+            description: 'Site of Special Scientific Interest (SSSI)',
             intersects: false,
           },
           {
             value: 'flood.zoneOne',
+            description: 'Flood zone 1 - Low risk',
             intersects: false,
           },
           {
             value: 'flood.zoneTwo',
+            description: 'Flood zone 2 - Medium risk',
             intersects: true,
           },
           {
             value: 'flood.zoneThree',
+            description: 'Flood zone 3 - High risk',
             intersects: true,
           },
           {
             value: 'brownfieldSite',
+            description: 'Brownfield site',
             intersects: false,
           },
           {
             value: 'designated.WHS',
+            description: 'UNESCO World Heritage Site (WHS)',
             intersects: false,
           },
           {
             value: 'listed.gradeOne',
+            description: 'Listed building - Grade I',
             intersects: true,
           },
           {
             value: 'registeredPark',
+            description: 'Registered parks and gardens',
             intersects: false,
           },
           {
             value: 'designated.AONB',
+            description: 'Area of Outstanding Natural Beauty (AONB)',
             intersects: false,
           },
           {
             value: 'listed.gradeTwo',
+            description: 'Listed building - Grade II',
             intersects: false,
           },
           {
             value: 'listed.gradeTwoStar',
+            description: 'Listed building - Grade II*',
             intersects: false,
           },
           {
             value: 'nature.ramsarSite',
+            description: 'Ramsar site',
             intersects: false,
           },
           {
             value: 'designated.nationalPark',
+            description: 'National Park',
             intersects: false,
           },
           {
             value: 'designated.conservationArea',
+            description: 'Conservation area',
             intersects: true,
             entities: [
               {
@@ -244,10 +268,12 @@ export const landDrainageConsentPrototype: PrototypeApplication = {
           },
           {
             value: 'designated.nationalPark.broads',
+            description: 'National Park - Broads',
             intersects: false,
           },
           {
             value: 'road.classified',
+            description: 'Classified road',
             intersects: false,
           },
         ],
