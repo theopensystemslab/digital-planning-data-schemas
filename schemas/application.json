@@ -2871,6 +2871,10 @@
               "description": "Planning application reference number for the existing permission",
               "type": "string"
             },
+            "floorAreaHundredPlus": {
+              "description": "Does the application include new build development (including extensions and replacement) of 100 square metres gross internal area or above?",
+              "type": "boolean"
+            },
             "newDwellings": {
               "description": "Does the application include creation of one or more new dwellings (including residential annexes) either through new build or conversion (except the conversion of a single dwelling house into two or more separate dwellings with no additional gross internal area created)?",
               "type": "boolean"
@@ -3005,7 +3009,6 @@
             "newDwellings",
             "newNonResidentialDevelopment",
             "newResidentialDevelopment",
-            "proposedTotalArea",
             "result",
             "s73Application"
           ],
@@ -3118,6 +3121,10 @@
             "existingPermissionReference": {
               "description": "Planning application reference number for the existing permission",
               "type": "string"
+            },
+            "floorAreaHundredPlus": {
+              "description": "Does the application include new build development (including extensions and replacement) of 100 square metres gross internal area or above?",
+              "type": "boolean"
             },
             "newDwellings": {
               "description": "Does the application include creation of one or more new dwellings (including residential annexes) either through new build or conversion (except the conversion of a single dwelling house into two or more separate dwellings with no additional gross internal area created)?",
@@ -3247,7 +3254,6 @@
             "newDwellings",
             "newNonResidentialDevelopment",
             "newResidentialDevelopment",
-            "proposedTotalArea",
             "result",
             "s73Application"
           ],

@@ -65,7 +65,11 @@ interface BaseCIL {
    * @description Does the application involve new non-residential development?
    */
   newNonResidentialDevelopment: boolean;
-  proposedTotalArea: {
+  /**
+   * @description Does the application include new build development (including extensions and replacement) of 100 square metres gross internal area or above?
+   */
+  floorAreaHundredPlus?: boolean;
+  proposedTotalArea?: {
     /**
      * @description Total existing gross internal area
      */
