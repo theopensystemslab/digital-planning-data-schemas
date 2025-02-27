@@ -8529,17 +8529,10 @@
       "additionalProperties": false,
       "properties": {
         "address": {
-          "anyOf": [
-            {
-              "$ref": "#/definitions/Address"
-            },
-            {
-              "type": "string"
-            }
-          ]
+          "$ref": "#/definitions/Address"
         },
         "interest": {
-          "$ref": "#/definitions/OwnersInterest"
+          "type": "string"
         },
         "name": {
           "type": "string"
@@ -8554,6 +8547,7 @@
       },
       "required": [
         "address",
+        "interest",
         "name",
         "noNoticeReason",
         "noticeGiven"
@@ -8564,17 +8558,7 @@
       "additionalProperties": false,
       "properties": {
         "address": {
-          "anyOf": [
-            {
-              "$ref": "#/definitions/Address"
-            },
-            {
-              "type": "string"
-            }
-          ]
-        },
-        "interest": {
-          "$ref": "#/definitions/OwnersInterest"
+          "$ref": "#/definitions/Address"
         },
         "name": {
           "type": "string"
@@ -8594,17 +8578,10 @@
       "additionalProperties": false,
       "properties": {
         "address": {
-          "anyOf": [
-            {
-              "$ref": "#/definitions/Address"
-            },
-            {
-              "type": "string"
-            }
-          ]
+          "$ref": "#/definitions/Address"
         },
         "interest": {
-          "$ref": "#/definitions/OwnersInterest"
+          "type": "string"
         },
         "name": {
           "type": "string"
@@ -8616,6 +8593,7 @@
       },
       "required": [
         "address",
+        "interest",
         "name",
         "noticeGiven"
       ],
@@ -8666,6 +8644,9 @@
               "type": "string"
             }
           ]
+        },
+        "interestDescription": {
+          "type": "string"
         },
         "noticeGiven": {
           "description": "Has requisite notice been given to all the known owners and agricultural tenants?",

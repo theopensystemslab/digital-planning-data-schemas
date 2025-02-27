@@ -3972,6 +3972,37 @@
                   "additionalProperties": false,
                   "properties": {
                     "interest": {
+                      "const": "other",
+                      "type": "string"
+                    },
+                    "interestDescription": {
+                      "type": "string"
+                    },
+                    "owners": {
+                      "items": {
+                        "anyOf": [
+                          {
+                            "$ref": "#/definitions/OwnersNoticeGiven"
+                          },
+                          {
+                            "$ref": "#/definitions/OwnersNoNoticeGiven"
+                          }
+                        ]
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "interest",
+                    "interestDescription",
+                    "owners"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "interest": {
                       "$ref": "#/definitions/OwnersInterest"
                     },
                     "owners": {
@@ -4150,6 +4181,37 @@
                   },
                   "required": [
                     "interest"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "interest": {
+                      "const": "other",
+                      "type": "string"
+                    },
+                    "interestDescription": {
+                      "type": "string"
+                    },
+                    "owners": {
+                      "items": {
+                        "anyOf": [
+                          {
+                            "$ref": "#/definitions/OwnersNoticeGiven"
+                          },
+                          {
+                            "$ref": "#/definitions/OwnersNoNoticeGiven"
+                          }
+                        ]
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "interest",
+                    "interestDescription",
+                    "owners"
                   ],
                   "type": "object"
                 },
@@ -6243,17 +6305,10 @@
       "additionalProperties": false,
       "properties": {
         "address": {
-          "anyOf": [
-            {
-              "$ref": "#/definitions/Address"
-            },
-            {
-              "type": "string"
-            }
-          ]
+          "$ref": "#/definitions/Address"
         },
         "interest": {
-          "$ref": "#/definitions/OwnersInterest"
+          "type": "string"
         },
         "name": {
           "type": "string"
@@ -6268,6 +6323,7 @@
       },
       "required": [
         "address",
+        "interest",
         "name",
         "noNoticeReason",
         "noticeGiven"
@@ -6278,17 +6334,7 @@
       "additionalProperties": false,
       "properties": {
         "address": {
-          "anyOf": [
-            {
-              "$ref": "#/definitions/Address"
-            },
-            {
-              "type": "string"
-            }
-          ]
-        },
-        "interest": {
-          "$ref": "#/definitions/OwnersInterest"
+          "$ref": "#/definitions/Address"
         },
         "name": {
           "type": "string"
@@ -6308,17 +6354,10 @@
       "additionalProperties": false,
       "properties": {
         "address": {
-          "anyOf": [
-            {
-              "$ref": "#/definitions/Address"
-            },
-            {
-              "type": "string"
-            }
-          ]
+          "$ref": "#/definitions/Address"
         },
         "interest": {
-          "$ref": "#/definitions/OwnersInterest"
+          "type": "string"
         },
         "name": {
           "type": "string"
@@ -6330,6 +6369,7 @@
       },
       "required": [
         "address",
+        "interest",
         "name",
         "noticeGiven"
       ],
