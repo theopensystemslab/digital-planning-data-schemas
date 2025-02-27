@@ -9,6 +9,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 The minor version will be incremented upon a breaking change and the patch version will be
 incremented for features.
 
+## [0.7.3] - 2025-02-27
+
+### Added
+- `CommunityInfrastructureLevy` now includes all details collected by Form 1: Additional information ([#312](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/312))
+
+### Changed 
+- Minor type changes to `Ownership` definitions to better align to PlanX service content ([#313](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/313))
+- Renames `treePlan` document to `treeSurvey` ([#309](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/309))
+- Adjusts linked pre-application reference requirements ([#298](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/298))
+
 ## [0.7.2] - 2025-01-16
 
 ### Changed
