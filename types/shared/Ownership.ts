@@ -9,6 +9,7 @@ export type OwnersInterest = 'owner' | 'lessee' | 'occupier' | 'other';
  */
 export interface Ownership {
   interest?: OwnersInterest | 'owner.sole' | 'owner.co';
+  interestDescription?: string;
   certificate?: 'a' | 'b' | 'c' | 'd';
   /**
    * @description Does the land have any agricultural tenants?
@@ -47,21 +48,24 @@ export type Owners = OwnersNoticeGiven | OwnersNoNoticeGiven | OwnersNoticeDate;
 
 export interface BaseOwners {
   name: string;
-  address: Address | string;
-  interest?: OwnersInterest;
+  address: Address;
 }
 
-// LDC requires `noticeGiven`, and `noNoticeReason` if false
-export interface OwnersNoticeGiven extends BaseOwners {
+// PP & LBC require `noticeDate` (PlanX List schema "Ownership Certificate Owners")
+export interface OwnersNoticeDate extends BaseOwners {
+  noticeDate: Date;
+}
+
+// LDC requires `noticeGiven`, and `noNoticeReason` if false (PlanX List schema "Interest in Land LDC")
+export interface OwnersInterestedInLand extends BaseOwners {
+  interest: string;
+}
+
+export interface OwnersNoticeGiven extends OwnersInterestedInLand {
   noticeGiven: true;
 }
 
-export interface OwnersNoNoticeGiven extends BaseOwners {
+export interface OwnersNoNoticeGiven extends OwnersInterestedInLand {
   noticeGiven: false;
   noNoticeReason: string;
-}
-
-// PP & LBC require `noticeDate`
-export interface OwnersNoticeDate extends BaseOwners {
-  noticeDate: Date;
 }

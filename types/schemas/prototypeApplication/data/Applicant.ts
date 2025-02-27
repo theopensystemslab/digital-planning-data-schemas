@@ -40,7 +40,12 @@ export type LDCApplicant = ApplicantBase & {
    * @description Information about the property owners, if different than the applicant
    */
   ownership:
-    | {interest: Extract<OwnersInterest, 'owner'>}
+    | {interest: Extract<OwnersInterest, 'owner'>} // sole owner does not report `owners`
+    | {
+        interest: Extract<OwnersInterest, 'other'>;
+        interestDescription: string; // "other" interest uniquely requires a free text description
+        owners: (OwnersNoticeGiven | OwnersNoNoticeGiven)[];
+      }
     | {
         interest: OwnersInterest; // `Exclude<OwnershipInterest, "owner">` ? But I think you can be co-owner & report other owners?
         owners: (OwnersNoticeGiven | OwnersNoNoticeGiven)[];
