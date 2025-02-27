@@ -19,6 +19,14 @@ interface BaseCIL {
    * @description Planning application reference number for the existing permission if applicable
    */
   existingPermissionReference?: string;
+  /**
+   * @description Does the application involve a change in the amount of gross internal area where one or more new dwellings (including residential annexes) are to be created, either through new build or conversion (except the conversion of a single dwelling house into two or more separate dwellings with no additional gross internal area created)?
+   */
+  newDwellings: boolean;
+  /**
+   * @description Does the application involve a change in the amount or use of new build development, where the total (including that previously granted planning permission) is over 100 square metres gross internal area?
+   */
+  floorAreaHundredPlus: boolean;
 }
 
 interface LiableForCIL extends BaseCIL {
@@ -49,14 +57,6 @@ interface LiableForCIL extends BaseCIL {
     socialHousingRelief: boolean;
   };
   /**
-   * @description Does the application involve a change in the amount of gross internal area where one or more new dwellings (including residential annexes) are to be created, either through new build or conversion (except the conversion of a single dwelling house into two or more separate dwellings with no additional gross internal area created)?
-   */
-  newDwellings: boolean;
-  /**
-   * @description Does the application involve a change in the amount or use of new build development, where the total (including that previously granted planning permission) is over 100 square metres gross internal area?
-   */
-  floorAreaHundredPlus?: boolean;
-  /**
    * @description Does the application involve new residential development (including new dwellings, extensions, conversions/changes of use, garages, basements or any other buildings ancillary to residential use)?
    */
   newResidentialDevelopment: boolean;
@@ -86,77 +86,86 @@ interface LiableForCIL extends BaseCIL {
    * @description How many existing buildings on the site will be retained, demolished or partially demolished as part of the development proposed?
    */
   existingBuildings?: {
-    description: {
+    count: number;
+    buildings?: {
+      description: {
+        /**
+         * @description Description of existing building or part
+         */
+        existing: string;
+        /**
+         * @description Proposed use of retained gross internal area
+         */
+        proposed: string;
+      };
+      area: {
+        /**
+         * @description Gross internal area to be retained
+         */
+        retained: Area;
+        /**
+         * @description Gross internal area to be demolished
+         */
+        loss: Area;
+      };
       /**
-       * @description Description of existing building or part
+       * @description Was the building or part of the building occupied for its lawful use for 6 continuous months of the 36 previous months (excluding temporary permissions)?
        */
-      existing: string;
+      continuousOccupation: boolean;
       /**
-       * @description Proposed use of retained gross internal area
+       * @description Is the building still occupied for its lawful use?
        */
-      proposed: string;
-    };
-    area: {
+      stillInUse: boolean;
       /**
-       * @description Gross internal area to be retained
+       * @description When was the building last occupied for its lawful use?
        */
-      retained: Area;
-      /**
-       * @description Gross internal area to be demolished
-       */
-      loss: Area;
-    };
-    /**
-     * @description Was the building or part of the building occupied for its lawful use for 6 continuous months of the 36 previous months (excluding temporary permissions)?
-     */
-    continuousOccupation: boolean;
-    /**
-     * @description Is the building still occupied for its lawful use?
-     */
-    stillInUse: boolean;
-    /**
-     * @description When was the building last occupied for its lawful use?
-     */
-    lastOccupation: Date;
-  }[];
+      lastOccupation?: Date;
+    }[];
+  };
   /**
    * @description Are there existing buildings on the property into which people do not usually go or that have been granted temporary planning permission?
    */
   unoccupiedBuildings?: {
-    description: {
-      /**
-       * @description Description of unoccupied building or part
-       */
-      existing: string;
-      /**
-       * @description Proposed use of retained gross internal area
-       */
-      proposed: string;
-    };
-    area: {
-      /**
-       * @description Gross internal area to be retained
-       */
-      retained: Area;
-      /**
-       * @description Gross internal area to be demolished
-       */
-      loss: Area;
-    };
-  }[];
+    applicable: boolean;
+    buildings?: {
+      description: {
+        /**
+         * @description Description of unoccupied building or part
+         */
+        existing: string;
+        /**
+         * @description Proposed use of retained gross internal area
+         */
+        proposed: string;
+      };
+      area: {
+        /**
+         * @description Gross internal area to be retained
+         */
+        retained: Area;
+        /**
+         * @description Gross internal area to be demolished
+         */
+        loss: Area;
+      };
+    }[];
+  };
   /**
    * @description Will the project create a new mezzanine floor within an existing building?
    */
   newMezzanine?: {
-    /**
-     * @description Description of the use of the new mezzanine
-     */
-    description: string;
-    /**
-     * @description Proposed floorspace of the new mezzanine
-     */
-    area: Area;
-  }[];
+    applicable: boolean;
+    mezzanines?: {
+      /**
+       * @description Description of the use of the new mezzanine
+       */
+      description: string;
+      /**
+       * @description Proposed floorspace of the new mezzanine
+       */
+      area: Area;
+    }[];
+  };
 }
 
 interface NotLiableForCIL extends BaseCIL {

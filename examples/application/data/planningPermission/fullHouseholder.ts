@@ -39,6 +39,8 @@ export const planningPermissionFullHouseholder: Application = {
         declaration: true,
         s73Application: false,
         existingPermissionPrecedingCIL: false,
+        newDwellings: false,
+        floorAreaHundredPlus: false,
       },
     },
     user: {

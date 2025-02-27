@@ -34,7 +34,9 @@
         "result": "notLiable",
         "declaration": true,
         "s73Application": false,
-        "existingPermissionPrecedingCIL": false
+        "existingPermissionPrecedingCIL": false,
+        "newDwellings": false,
+        "floorAreaHundredPlus": false
       }
     },
     "user": {

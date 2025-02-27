@@ -2799,69 +2799,80 @@
               "type": "object"
             },
             "existingBuildings": {
+              "additionalProperties": false,
               "description": "How many existing buildings on the site will be retained, demolished or partially demolished as part of the development proposed?",
-              "items": {
-                "additionalProperties": false,
-                "properties": {
-                  "area": {
+              "properties": {
+                "buildings": {
+                  "items": {
                     "additionalProperties": false,
                     "properties": {
-                      "loss": {
-                        "$ref": "#/definitions/Area",
-                        "description": "Gross internal area to be demolished"
+                      "area": {
+                        "additionalProperties": false,
+                        "properties": {
+                          "loss": {
+                            "$ref": "#/definitions/Area",
+                            "description": "Gross internal area to be demolished"
+                          },
+                          "retained": {
+                            "$ref": "#/definitions/Area",
+                            "description": "Gross internal area to be retained"
+                          }
+                        },
+                        "required": [
+                          "retained",
+                          "loss"
+                        ],
+                        "type": "object"
                       },
-                      "retained": {
-                        "$ref": "#/definitions/Area",
-                        "description": "Gross internal area to be retained"
+                      "continuousOccupation": {
+                        "description": "Was the building or part of the building occupied for its lawful use for 6 continuous months of the 36 previous months (excluding temporary permissions)?",
+                        "type": "boolean"
+                      },
+                      "description": {
+                        "additionalProperties": false,
+                        "properties": {
+                          "existing": {
+                            "description": "Description of existing building or part",
+                            "type": "string"
+                          },
+                          "proposed": {
+                            "description": "Proposed use of retained gross internal area",
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "existing",
+                          "proposed"
+                        ],
+                        "type": "object"
+                      },
+                      "lastOccupation": {
+                        "$ref": "#/definitions/Date",
+                        "description": "When was the building last occupied for its lawful use?"
+                      },
+                      "stillInUse": {
+                        "description": "Is the building still occupied for its lawful use?",
+                        "type": "boolean"
                       }
                     },
                     "required": [
-                      "retained",
-                      "loss"
+                      "description",
+                      "area",
+                      "continuousOccupation",
+                      "stillInUse"
                     ],
                     "type": "object"
                   },
-                  "continuousOccupation": {
-                    "description": "Was the building or part of the building occupied for its lawful use for 6 continuous months of the 36 previous months (excluding temporary permissions)?",
-                    "type": "boolean"
-                  },
-                  "description": {
-                    "additionalProperties": false,
-                    "properties": {
-                      "existing": {
-                        "description": "Description of existing building or part",
-                        "type": "string"
-                      },
-                      "proposed": {
-                        "description": "Proposed use of retained gross internal area",
-                        "type": "string"
-                      }
-                    },
-                    "required": [
-                      "existing",
-                      "proposed"
-                    ],
-                    "type": "object"
-                  },
-                  "lastOccupation": {
-                    "$ref": "#/definitions/Date",
-                    "description": "When was the building last occupied for its lawful use?"
-                  },
-                  "stillInUse": {
-                    "description": "Is the building still occupied for its lawful use?",
-                    "type": "boolean"
-                  }
+                  "type": "array"
                 },
-                "required": [
-                  "description",
-                  "area",
-                  "continuousOccupation",
-                  "stillInUse",
-                  "lastOccupation"
-                ],
-                "type": "object"
+                "count": {
+                  "type": "number"
+                }
               },
-              "type": "array"
+              "required": [
+                "count"
+              ],
+              "type": "object"
             },
             "existingPermissionPrecedingCIL": {
               "description": "Does the application relate to details or reserved matters on an existing permission that was granted prior to the introduction of the CIL charge in the relevant local authority area?",
@@ -2880,26 +2891,38 @@
               "type": "boolean"
             },
             "newMezzanine": {
+              "additionalProperties": false,
               "description": "Will the project create a new mezzanine floor within an existing building?",
-              "items": {
-                "additionalProperties": false,
-                "properties": {
-                  "area": {
-                    "$ref": "#/definitions/Area",
-                    "description": "Proposed floorspace of the new mezzanine"
-                  },
-                  "description": {
-                    "description": "Description of the use of the new mezzanine",
-                    "type": "string"
-                  }
+              "properties": {
+                "applicable": {
+                  "type": "boolean"
                 },
-                "required": [
-                  "description",
-                  "area"
-                ],
-                "type": "object"
+                "mezzanines": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "area": {
+                        "$ref": "#/definitions/Area",
+                        "description": "Proposed floorspace of the new mezzanine"
+                      },
+                      "description": {
+                        "description": "Description of the use of the new mezzanine",
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "description",
+                      "area"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                }
               },
-              "type": "array"
+              "required": [
+                "applicable"
+              ],
+              "type": "object"
             },
             "newNonResidentialDevelopment": {
               "description": "Does the application involve new non-residential development?",
@@ -2953,59 +2976,72 @@
               "type": "boolean"
             },
             "unoccupiedBuildings": {
+              "additionalProperties": false,
               "description": "Are there existing buildings on the property into which people do not usually go or that have been granted temporary planning permission?",
-              "items": {
-                "additionalProperties": false,
-                "properties": {
-                  "area": {
+              "properties": {
+                "applicable": {
+                  "type": "boolean"
+                },
+                "buildings": {
+                  "items": {
                     "additionalProperties": false,
                     "properties": {
-                      "loss": {
-                        "$ref": "#/definitions/Area",
-                        "description": "Gross internal area to be demolished"
+                      "area": {
+                        "additionalProperties": false,
+                        "properties": {
+                          "loss": {
+                            "$ref": "#/definitions/Area",
+                            "description": "Gross internal area to be demolished"
+                          },
+                          "retained": {
+                            "$ref": "#/definitions/Area",
+                            "description": "Gross internal area to be retained"
+                          }
+                        },
+                        "required": [
+                          "retained",
+                          "loss"
+                        ],
+                        "type": "object"
                       },
-                      "retained": {
-                        "$ref": "#/definitions/Area",
-                        "description": "Gross internal area to be retained"
+                      "description": {
+                        "additionalProperties": false,
+                        "properties": {
+                          "existing": {
+                            "description": "Description of unoccupied building or part",
+                            "type": "string"
+                          },
+                          "proposed": {
+                            "description": "Proposed use of retained gross internal area",
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "existing",
+                          "proposed"
+                        ],
+                        "type": "object"
                       }
                     },
                     "required": [
-                      "retained",
-                      "loss"
+                      "description",
+                      "area"
                     ],
                     "type": "object"
                   },
-                  "description": {
-                    "additionalProperties": false,
-                    "properties": {
-                      "existing": {
-                        "description": "Description of unoccupied building or part",
-                        "type": "string"
-                      },
-                      "proposed": {
-                        "description": "Proposed use of retained gross internal area",
-                        "type": "string"
-                      }
-                    },
-                    "required": [
-                      "existing",
-                      "proposed"
-                    ],
-                    "type": "object"
-                  }
-                },
-                "required": [
-                  "description",
-                  "area"
-                ],
-                "type": "object"
+                  "type": "array"
+                }
               },
-              "type": "array"
+              "required": [
+                "applicable"
+              ],
+              "type": "object"
             }
           },
           "required": [
             "claim",
             "existingPermissionPrecedingCIL",
+            "floorAreaHundredPlus",
             "newDwellings",
             "newNonResidentialDevelopment",
             "newResidentialDevelopment",
@@ -3030,6 +3066,14 @@
               "description": "Planning application reference number for the existing permission if applicable",
               "type": "string"
             },
+            "floorAreaHundredPlus": {
+              "description": "Does the application involve a change in the amount or use of new build development, where the total (including that previously granted planning permission) is over 100 square metres gross internal area?",
+              "type": "boolean"
+            },
+            "newDwellings": {
+              "description": "Does the application involve a change in the amount of gross internal area where one or more new dwellings (including residential annexes) are to be created, either through new build or conversion (except the conversion of a single dwelling house into two or more separate dwellings with no additional gross internal area created)?",
+              "type": "boolean"
+            },
             "result": {
               "const": "notLiable",
               "type": "string"
@@ -3041,6 +3085,8 @@
           },
           "required": [
             "existingPermissionPrecedingCIL",
+            "floorAreaHundredPlus",
+            "newDwellings",
             "result",
             "s73Application"
           ],
