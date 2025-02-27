@@ -6,20 +6,11 @@ import {Area, Date} from './utils';
  */
 export type CommunityInfrastructureLevy = LiableForCIL | NotLiableForCIL;
 
-type BaseCIL = Section73Applicable | Section73NotApplicable;
-
-type Section73Applicable = {
+interface BaseCIL {
   /**
    * @description Does the application seek to remove or vary conditions on an existing planning permission (Section 73)
    */
-  s73Application: true;
-};
-
-type Section73NotApplicable = {
-  /**
-   * @description Does the application seek to remove or vary conditions on an existing planning permission (Section 73)
-   */
-  s73Application: false;
+  s73Application: boolean;
   /**
    * @description Does the application relate to details or reserved matters on an existing permission that was granted prior to the introduction of the CIL charge in the relevant local authority area?
    */
@@ -28,9 +19,9 @@ type Section73NotApplicable = {
    * @description Planning application reference number for the existing permission if applicable
    */
   existingPermissionReference?: string;
-};
+}
 
-export type LiableForCIL = BaseCIL & {
+interface LiableForCIL extends BaseCIL {
   // Result checks in PlanX are heirarchical (first check if project qualifies for full exemption from CIL, then CIL relief, else plain "liable")
   result:
     | 'exempt.annexe'
@@ -166,12 +157,12 @@ export type LiableForCIL = BaseCIL & {
      */
     area: Area;
   }[];
-};
+}
 
-export type NotLiableForCIL = BaseCIL & {
+interface NotLiableForCIL extends BaseCIL {
   result: 'notLiable';
   /**
    * @description Has the user confirmed that the CIL information they have provided is correct? Specifically, that this project does not create either new buildings with 100m² new floor space or new dwellings, and therefore does not need to pay the Community Infrastructure Levy (CIL)?
    */
   declaration?: true;
-};
+}
