@@ -7,7 +7,7 @@ import {PrimaryApplicationType} from '../enums/ApplicationType';
 import {
   PlanningConstraint,
   PlanningDesignation,
-} from '../enums/PlanningDesignation';
+} from '../../../shared/Constraints';
 import {PropertyType} from '../enums/PropertyTypes';
 import {ExistingLondonParking} from '../../../shared/Parking';
 

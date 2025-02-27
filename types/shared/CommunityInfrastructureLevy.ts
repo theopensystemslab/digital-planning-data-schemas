@@ -1,12 +1,44 @@
 import {Area, Date} from './utils';
 
 /**
- * @title Community Infrastructure Levy
- * @description Details about the Community Infrastructure Levy planning charge, if applicable
+ * @title Community Infrastructure Levy (CIL) Form 1
+ * @description Details about the Community Infrastructure Levy planning charge according to Form 1: Additional information, if applicable
  */
 export type CommunityInfrastructureLevy = LiableForCIL | NotLiableForCIL;
 
-interface LiableForCIL extends BaseCIL {
+type BaseCIL = Section73Applicable | Section73NotApplicable;
+
+type Section73Applicable = {
+  /**
+   * @description Does the application seek to remove or vary conditions on an existing planning permission (Section 73)
+   */
+  s73Application: true;
+  /**
+   * @description Does the application involve a change in the amount of gross internal area where one or more new dwellings (including residential annexes) are to be created, either through new build or conversion (except the conversion of a single dwelling house into two or more separate dwellings with no additional gross internal area created)?
+   */
+  newDwellings: boolean;
+  /**
+   * @description Does the application involve a change in the amount or use of new build development, where the total (including that previously granted planning permission) is over 100 square metres gross internal area?
+   */
+  floorAreaHundredPlus?: boolean;
+};
+
+type Section73NotApplicable = {
+  /**
+   * @description Does the application seek to remove or vary conditions on an existing planning permission (Section 73)
+   */
+  s73Application: false;
+  /**
+   * @description Does the application relate to details or reserved matters on an existing permission that was granted prior to the introduction of the CIL charge in the relevant local authority area?
+   */
+  existingPermissionPrecedingCIL: boolean;
+  /**
+   * @description Planning application reference number for the existing permission if applicable
+   */
+  existingPermissionReference?: string;
+};
+
+export type LiableForCIL = BaseCIL & {
   // Result checks in PlanX are heirarchical (first check if project qualifies for full exemption from CIL, then CIL relief, else plain "liable")
   result:
     | 'exempt.annexe'
@@ -15,14 +47,6 @@ interface LiableForCIL extends BaseCIL {
     | 'relief.charity'
     | 'relief.socialHousing'
     | 'liable';
-}
-
-interface NotLiableForCIL extends BaseCIL {
-  result: 'notLiable';
-  declaration: true;
-}
-
-interface BaseCIL {
   claim: {
     /**
      * @description Do you wish to claim an exemption for a residential annex or extension?
@@ -42,22 +66,6 @@ interface BaseCIL {
     socialHousingRelief: boolean;
   };
   /**
-   * @description Does the application seek to remove or vary conditions on an existing planning permission (Section 73)
-   */
-  s73Application: boolean;
-  /**
-   * @description Does the application relate to details or reserved matters on an existing permission that was granted prior to the introduction of the CIL charge in the relevant local authority area?
-   */
-  existingPermissionPrecedingCIL: boolean;
-  /**
-   * @description Planning application reference number for the existing permission
-   */
-  existingPermissionReference?: string;
-  /**
-   * @description Does the application include creation of one or more new dwellings (including residential annexes) either through new build or conversion (except the conversion of a single dwelling house into two or more separate dwellings with no additional gross internal area created)?
-   */
-  newDwellings: boolean;
-  /**
    * @description Does the application involve new residential development (including new dwellings, extensions, conversions/changes of use, garages, basements or any other buildings ancillary to residential use)?
    */
   newResidentialDevelopment: boolean;
@@ -65,10 +73,6 @@ interface BaseCIL {
    * @description Does the application involve new non-residential development?
    */
   newNonResidentialDevelopment: boolean;
-  /**
-   * @description Does the application include new build development (including extensions and replacement) of 100 square metres gross internal area or above?
-   */
-  floorAreaHundredPlus?: boolean;
   proposedTotalArea?: {
     /**
      * @description Total existing gross internal area
@@ -162,4 +166,12 @@ interface BaseCIL {
      */
     area: Area;
   }[];
-}
+};
+
+export type NotLiableForCIL = BaseCIL & {
+  result: 'notLiable';
+  /**
+   * @description Has the user confirmed that the CIL information they have provided is correct? Specifically, that this project does not create either new buildings with 100m² new floor space or new dwellings, and therefore does not need to pay the Community Infrastructure Levy (CIL)?
+   */
+  declaration?: true;
+};

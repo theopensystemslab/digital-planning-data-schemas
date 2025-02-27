@@ -97,17 +97,17 @@ export const listedBuildingConsent: Application = {
           },
           {
             value: 'flood',
-            description: 'Flood Risk Zone',
+            description: 'Flood risk',
             intersects: false,
           },
           {
             value: 'listed',
-            description: 'Listed Building',
+            description: 'Listed building',
             intersects: true,
           },
           {
             value: 'articleFour',
-            description: 'Article 4 Direction area',
+            description: 'Article 4 direction area',
             intersects: true,
             entities: [
               {
@@ -126,7 +126,7 @@ export const listedBuildingConsent: Application = {
           },
           {
             value: 'greenBelt',
-            description: 'Green Belt',
+            description: 'Green belt',
             intersects: false,
           },
           {
@@ -161,17 +161,17 @@ export const listedBuildingConsent: Application = {
           },
           {
             value: 'designated.WHS',
-            description: 'UNESCO World Heritage Site or buffer zone',
+            description: 'UNESCO World Heritage Site (WHS)',
             intersects: false,
           },
           {
             value: 'listed.gradeOne',
-            description: 'Listed Building - Grade I',
+            description: 'Listed building - Grade I',
             intersects: false,
           },
           {
             value: 'registeredPark',
-            description: 'Historic Park or Garden',
+            description: 'Registered parks and gardens',
             intersects: false,
           },
           {
@@ -181,7 +181,7 @@ export const listedBuildingConsent: Application = {
           },
           {
             value: 'listed.gradeTwo',
-            description: 'Listed Building - Grade II',
+            description: 'Listed building - Grade II',
             intersects: true,
             entities: [
               {
@@ -202,7 +202,7 @@ export const listedBuildingConsent: Application = {
           },
           {
             value: 'listed.gradeTwoStar',
-            description: 'Listed Building - Grade II*',
+            description: 'Listed building - Grade II*',
             intersects: false,
           },
           {
@@ -217,7 +217,7 @@ export const listedBuildingConsent: Application = {
           },
           {
             value: 'designated.conservationArea',
-            description: 'Conservation Area',
+            description: 'Conservation area',
             intersects: true,
             entities: [
               {
@@ -236,7 +236,7 @@ export const listedBuildingConsent: Application = {
           },
           {
             value: 'road.classified',
-            description: 'Classified Road',
+            description: 'Classified road',
             intersects: false,
           },
         ],

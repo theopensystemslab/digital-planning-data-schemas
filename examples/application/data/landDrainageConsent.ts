@@ -106,7 +106,7 @@ export const landDrainageConsent: Application = {
           },
           {
             value: 'flood',
-            description: 'Flood Risk Zone',
+            description: 'Flood risk',
             intersects: true,
             entities: [
               {
@@ -127,7 +127,7 @@ export const landDrainageConsent: Application = {
           },
           {
             value: 'listed',
-            description: 'Listed Building',
+            description: 'Listed building',
             intersects: true,
             entities: [
               {
@@ -148,7 +148,7 @@ export const landDrainageConsent: Application = {
           },
           {
             value: 'articleFour',
-            description: 'Article 4 Direction area',
+            description: 'Article 4 direction area',
             intersects: false,
           },
           {
@@ -167,7 +167,7 @@ export const landDrainageConsent: Application = {
           },
           {
             value: 'greenBelt',
-            description: 'Green Belt',
+            description: 'Green belt',
             intersects: false,
           },
           {
@@ -197,17 +197,17 @@ export const landDrainageConsent: Application = {
           },
           {
             value: 'flood.zoneOne',
-            description: 'Flood Risk Zone 1 - Low risk',
+            description: 'Flood zone 1 - Low risk',
             intersects: false,
           },
           {
             value: 'flood.zoneTwo',
-            description: 'Flood Risk Zone 2 - Medium risk',
+            description: 'Flood zone 2 - Medium risk',
             intersects: true,
           },
           {
             value: 'flood.zoneThree',
-            description: 'Flood Risk Zone 3 - High risk',
+            description: 'Flood zone 3 - High risk',
             intersects: true,
           },
           {
@@ -217,17 +217,17 @@ export const landDrainageConsent: Application = {
           },
           {
             value: 'designated.WHS',
-            description: 'UNESCO World Heritage Site or buffer zone',
+            description: 'UNESCO World Heritage Site (WHS)',
             intersects: false,
           },
           {
             value: 'listed.gradeOne',
-            description: 'Listed Building - Grade I',
+            description: 'Listed building - Grade I',
             intersects: true,
           },
           {
             value: 'registeredPark',
-            description: 'Historic Park or Garden',
+            description: 'Registered parks and gardens',
             intersects: false,
           },
           {
@@ -237,12 +237,12 @@ export const landDrainageConsent: Application = {
           },
           {
             value: 'listed.gradeTwo',
-            description: 'Listed Building - Grade II',
+            description: 'Listed building - Grade II',
             intersects: false,
           },
           {
             value: 'listed.gradeTwoStar',
-            description: 'Listed Building - Grade II*',
+            description: 'Listed building - Grade II*',
             intersects: false,
           },
           {
@@ -257,7 +257,7 @@ export const landDrainageConsent: Application = {
           },
           {
             value: 'designated.conservationArea',
-            description: 'Conservation Area',
+            description: 'Conservation area',
             intersects: true,
             entities: [
               {
@@ -276,7 +276,7 @@ export const landDrainageConsent: Application = {
           },
           {
             value: 'road.classified',
-            description: 'Classified Road',
+            description: 'Classified road',
             intersects: false,
           },
         ],
