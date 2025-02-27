@@ -36,7 +36,7 @@ export type Area = {
   hectares?: number;
 };
 
-/**
- * @format integer
- */
+// /**
+//  * @format integer
+//  */
 export type Integer = number;
