@@ -4,7 +4,9 @@
     "application": {
       "reference": "ABC-123-XYZ",
       "stage": "assessment",
-      "status": "determined"
+      "status": "undetermined",
+      "withdrawnAt": "2024-02-20T15:54:31.021Z",
+      "withdrawnReason": "The applicant has decided not to proceed with the application"
     },
     "localPlanningAuthority": {
       "commentsAcceptedUntilDecision": false
@@ -21,13 +23,6 @@
       "startDate": "2024-02-19",
       "endDate": "2024-03-11",
       "siteNotice": true
-    },
-    "assessment": {
-      "councilDecision": "granted",
-      "councilDecisionDate": "2024-03-21",
-      "decisionNotice": {
-        "url": "https://planningregister.org"
-      }
     },
     "caseOfficer": {
       "name": "Casey Officer"

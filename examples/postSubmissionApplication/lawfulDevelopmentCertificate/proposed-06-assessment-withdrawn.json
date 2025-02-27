@@ -3,8 +3,10 @@
   "data": {
     "application": {
       "reference": "ABC-123-XYZ",
-      "stage": "appeal",
-      "status": "determined"
+      "stage": "assessment",
+      "status": "undetermined",
+      "withdrawnAt": "2024-02-20T15:54:31.021Z",
+      "withdrawnReason": "The applicant has decided not to proceed with the application"
     },
     "localPlanningAuthority": {
       "commentsAcceptedUntilDecision": true
@@ -16,18 +18,6 @@
       "receivedAt": "2024-02-18T15:54:31.021Z",
       "validatedAt": "2024-02-19T15:54:31.021Z",
       "isValid": true
-    },
-    "assessment": {
-      "councilDecision": "granted",
-      "councilDecisionDate": "2024-03-21",
-      "decisionNotice": {
-        "url": "https://planningregister.org"
-      }
-    },
-    "appeal": {
-      "lodgedDate": "2024-05-01",
-      "reason": "We don't believe the council took into consideration the environmental impact alleviation approach during their assessment.",
-      "validatedDate": "2024-05-02"
     },
     "caseOfficer": {
       "name": "Casey Officer"

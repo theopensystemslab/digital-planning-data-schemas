@@ -368,30 +368,6 @@ appeal is determined
 
 At any point between appeal lodged and a decision an appeal can be withdrawn
 
-```json
-{
-  "application": {"withdrawnAt": "2024-02-20T15:54:31.021Z"},
-  "submission": {"submittedAt": "2024-02-18T15:54:30.821Z"},
-  "validation": {
-    "receivedAt": "2024-02-18T15:54:31.021Z",
-    "validatedAt": "2024-02-19T15:54:31.021Z"
-  },
-  "publishedAt": "2024-02-19T15:54:31.221Z",
-  "consultation": {
-    "startAt": "2024-02-19T15:54:31.021Z",
-    "endAt": "2024-03-11T15:54:31.021Z"
-  },
-  "assessment": {
-    "councilDecisionAt": "2024-03-21T15:54:31.021Z",
-    "committeeSentAt": "2024-03-22T15:54:31.021Z",
-    "committeeDecisionAt": "2024-04-01T14:54:31.021Z"
-  },
-  "appeal": {
-    "lodgedAt": "2024-05-01T14:54:31.021Z",
-    "validatedAt": "2024-05-02T14:54:31.021Z",
-    "startedAt": "2024-05-02T14:54:31.221Z",
-    "decidedAt": "2024-05-07T14:54:31.221Z",
-    "withdrawnAt": "2024-05-02T14:54:31.021Z"
-  }
-}
-```
+#### 06 Application withdrawn
+
+An application can be with drawn only after validation and before a decision is made
