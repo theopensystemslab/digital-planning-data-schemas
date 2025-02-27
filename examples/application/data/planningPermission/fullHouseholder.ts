@@ -34,6 +34,14 @@ export const planningPermissionFullHouseholder: Application = {
           value: 'none',
         },
       },
+      CIL: {
+        result: 'notLiable',
+        declaration: true,
+        s73Application: false,
+        existingPermissionPrecedingCIL: false,
+        newDwellings: false,
+        floorAreaHundredPlus: false,
+      },
     },
     user: {
       role: 'proxy',
