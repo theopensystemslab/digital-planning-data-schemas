@@ -13,6 +13,7 @@ incremented for features.
 
 ### Added
 - `CommunityInfrastructureLevy` now includes all details collected by Form 1: Additional information ([#312](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/312))
+- `PlanningDesignations` enum includes more datasets which may be incorporated into services soon based on Planning Data's backlog ([#311](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/311))
 
 ### Changed 
 - Minor type changes to `Ownership` definitions to better align to PlanX service content ([#313](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/313))
