@@ -4656,6 +4656,14 @@
               "description": "Planning application reference number for the existing permission if applicable",
               "type": "string"
             },
+            "floorAreaHundredPlus": {
+              "description": "Does the application involve a change in the amount or use of new build development, where the total (including that previously granted planning permission) is over 100 square metres gross internal area?",
+              "type": "boolean"
+            },
+            "newDwellings": {
+              "description": "Does the application involve a change in the amount of gross internal area where one or more new dwellings (including residential annexes) are to be created, either through new build or conversion (except the conversion of a single dwelling house into two or more separate dwellings with no additional gross internal area created)?",
+              "type": "boolean"
+            },
             "newMezzanine": {
               "description": "Will the project create a new mezzanine floor within an existing building?",
               "items": {
@@ -4784,6 +4792,7 @@
           "required": [
             "claim",
             "existingPermissionPrecedingCIL",
+            "newDwellings",
             "newNonResidentialDevelopment",
             "newResidentialDevelopment",
             "result",
@@ -6209,14 +6218,6 @@
               "description": "Has the user confirmed that the CIL information they have provided is correct? Specifically, that this project does not create either new buildings with 100m² new floor space or new dwellings, and therefore does not need to pay the Community Infrastructure Levy (CIL)?",
               "type": "boolean"
             },
-            "floorAreaHundredPlus": {
-              "description": "Does the application involve a change in the amount or use of new build development, where the total (including that previously granted planning permission) is over 100 square metres gross internal area?",
-              "type": "boolean"
-            },
-            "newDwellings": {
-              "description": "Does the application involve a change in the amount of gross internal area where one or more new dwellings (including residential annexes) are to be created, either through new build or conversion (except the conversion of a single dwelling house into two or more separate dwellings with no additional gross internal area created)?",
-              "type": "boolean"
-            },
             "result": {
               "const": "notLiable",
               "type": "string"
@@ -6228,7 +6229,6 @@
             }
           },
           "required": [
-            "newDwellings",
             "result",
             "s73Application"
           ],

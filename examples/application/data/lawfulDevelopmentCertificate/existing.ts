@@ -44,17 +44,20 @@ export const lawfulDevelopmentCertificateExisting: Application = {
         },
         s73Application: false,
         existingPermissionPrecedingCIL: false,
+        newDwellings: true,
+        floorAreaHundredPlus: false,
         newResidentialDevelopment: true,
         newNonResidentialDevelopment: false,
         existingBuildings: [
           {
             description: {
-              existing: 'My primary house is the only building on my site',
+              existing:
+                'My primary house (75m2) is the only building on my site',
               proposed:
-                "I'm building a new garden studio and making no changes to my house",
+                "I'm building a new garden studio (15m2) and making no changes to my house",
             },
             area: {
-              retained: {squareMetres: 50},
+              retained: {squareMetres: 75},
               loss: {squareMetres: 0},
             },
             continuousOccupation: true,

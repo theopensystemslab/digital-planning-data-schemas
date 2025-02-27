@@ -13,14 +13,6 @@ type Section73Applicable = {
    * @description Does the application seek to remove or vary conditions on an existing planning permission (Section 73)
    */
   s73Application: true;
-  /**
-   * @description Does the application involve a change in the amount of gross internal area where one or more new dwellings (including residential annexes) are to be created, either through new build or conversion (except the conversion of a single dwelling house into two or more separate dwellings with no additional gross internal area created)?
-   */
-  newDwellings: boolean;
-  /**
-   * @description Does the application involve a change in the amount or use of new build development, where the total (including that previously granted planning permission) is over 100 square metres gross internal area?
-   */
-  floorAreaHundredPlus?: boolean;
 };
 
 type Section73NotApplicable = {
@@ -65,6 +57,14 @@ export type LiableForCIL = BaseCIL & {
      */
     socialHousingRelief: boolean;
   };
+  /**
+   * @description Does the application involve a change in the amount of gross internal area where one or more new dwellings (including residential annexes) are to be created, either through new build or conversion (except the conversion of a single dwelling house into two or more separate dwellings with no additional gross internal area created)?
+   */
+  newDwellings: boolean;
+  /**
+   * @description Does the application involve a change in the amount or use of new build development, where the total (including that previously granted planning permission) is over 100 square metres gross internal area?
+   */
+  floorAreaHundredPlus?: boolean;
   /**
    * @description Does the application involve new residential development (including new dwellings, extensions, conversions/changes of use, garages, basements or any other buildings ancillary to residential use)?
    */
