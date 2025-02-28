@@ -46,7 +46,7 @@ export const planningPermissionMajor: Application = {
               country: 'Greece',
               postcode: '212 00',
             },
-            noticeGiven: true,
+            noticeDate: '2024-01-01',
           },
         ],
         declaration: {
