@@ -630,14 +630,14 @@ type WTT = 'wtt';
 /**
  * @description Consent to carry out works to a tree with a Tree Preservation Order
  */
-type WTTConstent = 'wtt.consent';
+type WTTConsent = 'wtt.consent';
 
 /**
  * @description Notification of proposed works to a tree in a Conservation Area
  */
 type WTTNotice = 'wtt.notice';
 
-export type WTTApplicationType = WTT | WTTConstent | WTTNotice;
+export type WTTApplicationType = WTT | WTTConsent | WTTNotice;
 
 /**
  * @id #ApplicationType
