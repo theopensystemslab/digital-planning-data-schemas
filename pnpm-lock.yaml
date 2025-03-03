@@ -32,8 +32,8 @@ devDependencies:
     specifier: ^8.0.0
     version: 8.0.0
   jsonschema:
-    specifier: ^1.4.1
-    version: 1.4.1
+    specifier: ^1.5.0
+    version: 1.5.0
   typescript:
     specifier: ~5.5.4
     version: 5.5.4
@@ -1761,8 +1761,8 @@ packages:
     engines: {node: '>=6'}
     hasBin: true
 
-  /jsonschema@1.4.1:
-    resolution: {integrity: sha512-S6cATIPVv1z0IlxdN+zUk5EPjkGCdnhN4wVSBlvoUO1tOLJootbo9CquNJmbIh4yikWHiUedhRYrNPn1arpEmQ==}
+  /jsonschema@1.5.0:
+    resolution: {integrity: sha512-K+A9hhqbn0f3pJX17Q/7H6yQfD/5OXgdrR5UE12gMXCiN9D5Xq2o5mddV2QEcX/bjla99ASsAAQUyMCCRWAEhw==}
     dev: true
 
   /keyv@4.5.4:
