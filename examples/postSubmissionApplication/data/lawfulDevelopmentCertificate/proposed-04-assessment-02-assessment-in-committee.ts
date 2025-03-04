@@ -35,7 +35,7 @@ export const lawfulDevelopmentCertificateProposedPostSubmission: PostSubmissionA
         isValid: true,
       },
       assessment: {
-        councilRecommendation: 'refused',
+        planningOfficerRecommendation: 'refused',
         committeeSentDate: formatDateToYYYYMMDD(
           realisticDates.assessment.committeeSentAt.toISOString(),
         ),

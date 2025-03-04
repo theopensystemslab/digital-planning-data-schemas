@@ -251,7 +251,31 @@ Not all application types have consultation periods - this is something that wil
 
 ### data.assessment?
 
-Assessment is when the council and optionally a committee make a decision. `councilDecision`, `committeeSentDate` and `committeeDecision`
+Assessment is when the council and optionally a committee make a decision. The specification differentiates between `planningOfficerDecision` and `committeeDecision` on purpose in order to show our workings as to how the council decision was arrived at.
+
+`Council decision = planningOfficerDecision || committeeDecision`
+
+We don't show council decision as its own field as its too prone to errors and is a duplication of data.
+
+An application in assessment can have either `planningOfficerDecision` or `planningOfficerRecommendation + CommitteeDecision`
+
+```json
+{
+  "planningOfficerDecision": "granted",
+  "planningOfficerDecisionDate": "2024-03-21"
+}
+```
+
+or
+
+```json
+{
+  "planningOfficerRecommendation": "granted",
+  "committeeSentDate": "2024-03-21",
+  "committeeDecision": "granted",
+  "committeeDecisionDate": "2024-04-01"
+}
+```
 
 If an application is Prior Approval it also has `priorApprovalRequired` since they can be 'Prior approval required and approved', 'Prior approval not required', 'Prior approval required and refused'
 

@@ -15,7 +15,7 @@ type RealisticDates = {
     endAt: Date;
   };
   assessment: {
-    councilDecisionAt: Date;
+    planningOfficerDecisionAt: Date;
     committeeSentAt: Date;
     committeeDecisionAt: Date;
   };
@@ -67,10 +67,10 @@ export const generateRealisticDates = (
   const consultationEndAt = addDays(consultationStartAt, 21);
 
   // the council decision is made sometime after the consultation ends
-  const councilDecisionAt = addDays(consultationEndAt, 10);
+  const planningOfficerDecisionAt = addDays(consultationEndAt, 10);
 
-  // if it's sent to committee it's sent after the council decision
-  const committeeSentAt = addDays(councilDecisionAt, 1);
+  // if it's sent to committee it's sent after the council recommendation is made
+  const committeeSentAt = addDays(planningOfficerDecisionAt, 1);
 
   // after it's sent to the committee the decision is made after that date
   const committeeDecisionAt = addDays(committeeSentAt, 10);
@@ -88,7 +88,7 @@ export const generateRealisticDates = (
   // appeal decided
   const appealDecidedAt = addDays(appealStartedAt, 5);
 
-  // application can be withdrawn any time between consultationStartAt and councilDecisionAt
+  // application can be withdrawn any time between consultationStartAt and planningOfficerDecisionAt
   const withdrawnAt = addDays(consultationStartAt, 1);
 
   // appeal is withdrawn any time between appealLodgedAt and appealDecidedAt
@@ -111,7 +111,7 @@ export const generateRealisticDates = (
       endAt: consultationEndAt,
     },
     assessment: {
-      councilDecisionAt: councilDecisionAt,
+      planningOfficerDecisionAt: planningOfficerDecisionAt,
       committeeSentAt: committeeSentAt,
       committeeDecisionAt: committeeDecisionAt,
     },

@@ -46,7 +46,7 @@ export const priorApprovalLargerExtensionPostSubmission: PostSubmissionApplicati
       },
       assessment: {
         priorApprovalRequired: true,
-        councilRecommendation: 'refused',
+        planningOfficerRecommendation: 'refused',
         committeeSentDate: formatDateToYYYYMMDD(
           realisticDates.assessment.committeeSentAt.toISOString(),
         ),

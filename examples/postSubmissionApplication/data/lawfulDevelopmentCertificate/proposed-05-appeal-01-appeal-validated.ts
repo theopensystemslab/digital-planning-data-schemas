@@ -35,9 +35,9 @@ export const lawfulDevelopmentCertificateProposedPostSubmission: PostSubmissionA
         isValid: true,
       },
       assessment: {
-        councilDecision: 'granted',
-        councilDecisionDate: formatDateToYYYYMMDD(
-          realisticDates.assessment.councilDecisionAt.toISOString(),
+        planningOfficerDecision: 'granted',
+        planningOfficerDecisionDate: formatDateToYYYYMMDD(
+          realisticDates.assessment.planningOfficerDecisionAt.toISOString(),
         ),
         decisionNotice: {
           url: 'https://planningregister.org',

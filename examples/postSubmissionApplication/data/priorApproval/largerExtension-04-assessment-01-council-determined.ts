@@ -45,9 +45,9 @@ export const priorApprovalLargerExtensionPostSubmission: PostSubmissionApplicati
         siteNotice: true,
       },
       assessment: {
-        councilDecision: 'granted',
-        councilDecisionDate: formatDateToYYYYMMDD(
-          realisticDates.assessment.councilDecisionAt.toISOString(),
+        planningOfficerDecision: 'granted',
+        planningOfficerDecisionDate: formatDateToYYYYMMDD(
+          realisticDates.assessment.planningOfficerDecisionAt.toISOString(),
         ),
         priorApprovalRequired: true,
         decisionNotice: {
