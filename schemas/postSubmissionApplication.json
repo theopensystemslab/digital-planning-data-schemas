@@ -12800,6 +12800,9 @@
             "mimeType": {
               "type": "string"
             },
+            "publishedAt": {
+              "$ref": "#/definitions/DateTime"
+            },
             "uploadedAt": {
               "$ref": "#/definitions/DateTime"
             }
@@ -12808,7 +12811,8 @@
             "byteSize",
             "mimeType",
             "createdAt",
-            "uploadedAt"
+            "uploadedAt",
+            "publishedAt"
           ],
           "type": "object"
         },

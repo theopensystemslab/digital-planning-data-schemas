@@ -10,15 +10,16 @@ export interface PostSubmissionFile {
   type?: FileType[];
   description?: string;
   url: string;
-  metadata: FileMetadata;
+  metadata: PostSubmissionFileMetadata;
 }
 
 /**
  * @description Metadata about the file
  */
-interface FileMetadata {
+interface PostSubmissionFileMetadata {
   byteSize: number;
   mimeType: string;
   createdAt: DateTime;
   uploadedAt: DateTime;
+  publishedAt: DateTime;
 }
