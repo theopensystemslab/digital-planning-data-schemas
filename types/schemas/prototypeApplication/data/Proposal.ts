@@ -300,6 +300,30 @@ export type HedgerowRemovalNoticeProposal = Pick<ProposalBase, 'boundary'> & {
   hedgerowAgeLessThanThirty: boolean;
 };
 
+export type AdvertConsentProposal = Pick<ProposalBase, 'boundary'> & {
+  advertType: string;
+  communityConsultation: {
+    description: string;
+  };
+  //boolean,
+  // {communityConsultation.description: string};
+  advertisementDetails: string;
+  otherAdvertisements: boolean;
+  started: {
+    description: string;
+    date: Date;
+  };
+  completed: {
+    date: Date;
+  };
+  // started.description: string;
+  // started.date: date; // date?: ProposalDates;
+  // completed.date: date;
+  existingAdvertRemovedOrReplaced: boolean;
+  highwayProjection: boolean;
+  visibility: {public: boolean};
+};
+
 /**
  * TypeMap of PrimaryApplicationTypes to their specific Proposal models
  */
@@ -310,6 +334,7 @@ type ProposalVariants = {
   listed: GeographyBasedProposal;
   landDrainageConsent: GeographyBasedProposal;
   hedgerowRemovalNotice: HedgerowRemovalNoticeProposal;
+  advertConsent: AdvertConsentProposal;
 };
 
 /**
