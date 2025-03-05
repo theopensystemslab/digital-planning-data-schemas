@@ -8,6 +8,14 @@ import {AssessmentDecision} from '../enums/AssessmentDecision';
  */
 export type AssessmentBase = {
   /**
+   * The decision has to be made before this date if not an appeal can be made on the grounds of non-determination
+   * @todo After this the determination can be shown as "Non-Determination: would have granted Non-Determination: would have refused" by some councils do we need to show this or will decisionDate being after expiryDate be enough?
+   */
+  expiryDate: Date;
+};
+
+export type PostSubmissionAssessment = AssessmentBase & {
+  /**
    * This is the decision made by planning officer(s) in a LPA
    */
   planningOfficerDecision?: AssessmentDecision;
@@ -48,13 +56,17 @@ export type AssessmentBase = {
   };
 };
 
-export type PriorApprovalAssessment = AssessmentBase & {
+export type PriorApprovalAssessmentBase = PostSubmissionAssessment & {
   /**
    * Only applies for prior approval applications so we can work out
    * 'Prior approval required and approved', 'Prior approval not required', 'Prior approval required and refused'
    */
   priorApprovalRequired: boolean;
 };
+
+export type PriorApprovalAssessment =
+  | AssessmentBase
+  | PriorApprovalAssessmentBase;
 
 /**
  * TypeMap of PrimaryApplicationTypes to their specific Assessment models
@@ -69,4 +81,4 @@ type AssessmentVariants = {
 export type Assessment<TPrimary extends PrimaryApplicationType> =
   TPrimary extends keyof AssessmentVariants
     ? AssessmentVariants[TPrimary]
-    : AssessmentBase;
+    : PostSubmissionAssessment;

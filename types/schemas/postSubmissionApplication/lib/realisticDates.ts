@@ -15,6 +15,7 @@ type RealisticDates = {
     endAt: Date;
   };
   assessment: {
+    expiryAt: Date;
     planningOfficerDecisionAt: Date;
     committeeSentAt: Date;
     committeeDecisionAt: Date;
@@ -66,6 +67,9 @@ export const generateRealisticDates = (
   const consultationStartAt = validatedAt;
   const consultationEndAt = addDays(consultationStartAt, 21);
 
+  // An assessment has an expiry date which is different per application type
+  const expiryAt = addMonths(consultationEndAt, 1);
+
   // the council decision is made sometime after the consultation ends
   const planningOfficerDecisionAt = addDays(consultationEndAt, 10);
 
@@ -111,6 +115,7 @@ export const generateRealisticDates = (
       endAt: consultationEndAt,
     },
     assessment: {
+      expiryAt: expiryAt,
       planningOfficerDecisionAt: planningOfficerDecisionAt,
       committeeSentAt: committeeSentAt,
       committeeDecisionAt: committeeDecisionAt,

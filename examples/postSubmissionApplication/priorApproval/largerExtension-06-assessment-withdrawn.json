@@ -24,6 +24,9 @@
       "endDate": "2024-03-11",
       "siteNotice": true
     },
+    "assessment": {
+      "expiryDate": "2024-04-11"
+    },
     "caseOfficer": {
       "name": "Casey Officer"
     }

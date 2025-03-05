@@ -18,6 +18,7 @@
       "isValid": true
     },
     "assessment": {
+      "expiryDate": "2024-04-11",
       "planningOfficerDecision": "granted",
       "planningOfficerDecisionDate": "2024-03-21",
       "decisionNotice": {

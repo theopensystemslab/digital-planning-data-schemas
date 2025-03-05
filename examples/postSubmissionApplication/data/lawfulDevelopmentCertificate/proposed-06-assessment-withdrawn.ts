@@ -5,6 +5,7 @@ import {
   publicComments,
   specialistComments,
 } from '../../../../types/schemas/postSubmissionApplication/lib/exampleComments';
+import {formatDateToYYYYMMDD} from '../../../../types/schemas/postSubmissionApplication/lib/formatDates';
 
 const version = process.env['VERSION'] || '@next';
 
@@ -35,6 +36,11 @@ export const lawfulDevelopmentCertificateProposedPostSubmission: PostSubmissionA
         receivedAt: realisticDates.validation.receivedAt.toISOString(),
         validatedAt: realisticDates.validation.validatedAt.toISOString(),
         isValid: true,
+      },
+      assessment: {
+        expiryDate: formatDateToYYYYMMDD(
+          realisticDates.assessment.expiryAt.toISOString(),
+        ),
       },
       caseOfficer: {
         name: 'Casey Officer',

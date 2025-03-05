@@ -44,6 +44,9 @@ export const planningPermissionFullHouseholderPostSubmission: PostSubmissionAppl
         siteNotice: true,
       },
       assessment: {
+        expiryDate: formatDateToYYYYMMDD(
+          realisticDates.assessment.expiryAt.toISOString(),
+        ),
         planningOfficerRecommendation: 'refused',
         committeeSentDate: formatDateToYYYYMMDD(
           realisticDates.assessment.committeeSentAt.toISOString(),
