@@ -112,7 +112,6 @@ export type HedgerowRemovalNoticeApplicant = ApplicantBase & {
 export type AdvertConsentApplicant = ApplicantBase & {
   ownership: {
     interest: OwnersInterest | 'owner.sole' | 'owner.co';
-    permissionObtained: boolean;
   };
 };
 

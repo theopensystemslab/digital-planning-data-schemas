@@ -301,24 +301,17 @@ export type HedgerowRemovalNoticeProposal = Pick<ProposalBase, 'boundary'> & {
 };
 
 export type AdvertConsentProposal = Pick<ProposalBase, 'boundary'> & {
+  date: ProposalDates;
   advertType: string;
-  communityConsultation: {
-    description: string;
+  communityConsultation: boolean;
+  advertisementDetails: {
+    other: Integer;
+    fascia: Integer;
+    hoarding: Integer;
+    projecting: Integer;
   };
-  //boolean,
-  // {communityConsultation.description: string};
-  advertisementDetails: string;
   otherAdvertisements: boolean;
-  started: {
-    description: string;
-    date: Date;
-  };
-  completed: {
-    date: Date;
-  };
-  // started.description: string;
-  // started.date: date; // date?: ProposalDates;
-  // completed.date: date;
+  started: boolean;
   existingAdvertRemovedOrReplaced: boolean;
   highwayProjection: boolean;
   visibility: {public: boolean};

@@ -178,14 +178,10 @@
                       "type": "string"
                     }
                   ]
-                },
-                "permissionObtained": {
-                  "type": "boolean"
                 }
               },
               "required": [
-                "interest",
-                "permissionObtained"
+                "interest"
               ],
               "type": "object"
             },
@@ -347,14 +343,10 @@
                       "type": "string"
                     }
                   ]
-                },
-                "permissionObtained": {
-                  "type": "boolean"
                 }
               },
               "required": [
-                "interest",
-                "permissionObtained"
+                "interest"
               ],
               "type": "object"
             },
@@ -411,35 +403,38 @@
           "type": "string"
         },
         "advertisementDetails": {
-          "type": "string"
+          "additionalProperties": false,
+          "properties": {
+            "fascia": {
+              "$ref": "#/definitions/Integer"
+            },
+            "hoarding": {
+              "$ref": "#/definitions/Integer"
+            },
+            "other": {
+              "$ref": "#/definitions/Integer"
+            },
+            "projecting": {
+              "$ref": "#/definitions/Integer"
+            }
+          },
+          "required": [
+            "other",
+            "fascia",
+            "hoarding",
+            "projecting"
+          ],
+          "type": "object"
         },
         "boundary": {
           "$ref": "#/definitions/GeoBoundary",
           "description": "Location plan boundary proposed by the user, commonly referred to as the red line boundary"
         },
         "communityConsultation": {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "type": "string"
-            }
-          },
-          "required": [
-            "description"
-          ],
-          "type": "object"
+          "type": "boolean"
         },
-        "completed": {
-          "additionalProperties": false,
-          "properties": {
-            "date": {
-              "$ref": "#/definitions/Date"
-            }
-          },
-          "required": [
-            "date"
-          ],
-          "type": "object"
+        "date": {
+          "$ref": "#/definitions/ProposalDates"
         },
         "existingAdvertRemovedOrReplaced": {
           "type": "boolean"
@@ -451,20 +446,7 @@
           "type": "boolean"
         },
         "started": {
-          "additionalProperties": false,
-          "properties": {
-            "date": {
-              "$ref": "#/definitions/Date"
-            },
-            "description": {
-              "type": "string"
-            }
-          },
-          "required": [
-            "description",
-            "date"
-          ],
-          "type": "object"
+          "type": "boolean"
         },
         "visibility": {
           "additionalProperties": false,
@@ -483,7 +465,7 @@
         "advertType",
         "advertisementDetails",
         "communityConsultation",
-        "completed",
+        "date",
         "existingAdvertRemovedOrReplaced",
         "highwayProjection",
         "otherAdvertisements",
@@ -15929,6 +15911,11 @@
         {
           "const": "accessRoadsRightsOfWayDetails",
           "description": "Details of impact on access, roads, and rights of way",
+          "type": "string"
+        },
+        {
+          "const": "advertsDrawings",
+          "description": "Drawings for advertisement consent",
           "type": "string"
         },
         {
