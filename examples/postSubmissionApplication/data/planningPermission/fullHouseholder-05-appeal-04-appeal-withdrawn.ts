@@ -61,8 +61,10 @@ export const planningPermissionFullHouseholderPostSubmission: PostSubmissionAppl
         ),
         reason:
           "We don't believe the council took into consideration the environmental impact alleviation approach during their assessment.",
-        withdrawnAt: realisticDates.appeal.withdrawnAt.toISOString(),
-        withdrawnReason: 'Applicant has decided to withdraw the application.',
+        decision: 'withdrawn',
+        decisionDate: formatDateToYYYYMMDD(
+          realisticDates.appeal.decidedAt.toISOString(),
+        ),
       },
       caseOfficer: {
         name: 'Casey Officer',

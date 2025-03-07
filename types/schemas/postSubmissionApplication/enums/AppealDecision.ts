@@ -9,9 +9,9 @@ type allowed = 'allowed';
 type dismissed = 'dismissed';
 
 /**
- * @description split_decision
+ * @description splitDecision
  */
-type split_decision = 'split_decision';
+type splitDecision = 'splitDecision';
 
 /**
  * @description withdrawn
@@ -22,4 +22,4 @@ type withdrawn = 'withdrawn';
  * @id #AppealDecision
  * @description Types of comments
  */
-export type AppealDecision = allowed | dismissed | split_decision | withdrawn;
+export type AppealDecision = allowed | dismissed | splitDecision | withdrawn;
