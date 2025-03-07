@@ -6,15 +6,38 @@ import {AssessmentDecision} from '../enums/AssessmentDecision';
  * Council decision is planningOfficerDecision || committeeDecision
  * Council decision date is planningOfficerDecisionDate || committeeDecisionDate
  */
-export type AssessmentBase = {
+/**
+ * @description Assessment for a post submission application
+ */
+export type PostSubmissionAssessment = AssessmentBase &
+  AssessmentDecisionSection &
+  AssessmentCommittee;
+
+/**
+ * @description Base type for all assessments
+ */
+type AssessmentBase = {
   /**
    * The decision has to be made before this date if not an appeal can be made on the grounds of non-determination
    * @todo After this the determination can be shown as "Non-Determination: would have granted Non-Determination: would have refused" by some councils do we need to show this or will decisionDate being after expiryDate be enough?
    */
   expiryDate: Date;
+
+  /**
+   * The url to the decision notice
+   * A decision notice is issued when an application is determined or withdrawn
+   *
+   */
+  decisionNotice?: {
+    url: string;
+  };
 };
 
-export type PostSubmissionAssessment = AssessmentBase & {
+/**
+ * @description AssessmentDecisionSection
+ * When a decision is made by a planning officer(s) in a LPA
+ */
+type AssessmentDecisionSection = {
   /**
    * This is the decision made by planning officer(s) in a LPA
    */
@@ -24,7 +47,13 @@ export type PostSubmissionAssessment = AssessmentBase & {
    * This is the date the decision was made by planning officer(s) in a LPA
    */
   planningOfficerDecisionDate?: Date;
+};
 
+/**
+ * @description AssessmentCommittee
+ * When a decision is made by a committee in a LPA
+ */
+type AssessmentCommittee = {
   /**
    * This is the recommendation made by planning officer(s) to the committee
    * This is an alternative to a decision - either planningOfficerDecision or planningOfficerRecommendation can be set not both
@@ -46,27 +75,18 @@ export type PostSubmissionAssessment = AssessmentBase & {
    * The date the committee made their decision
    */
   committeeDecisionDate?: Date;
-  /**
-   * The url to the decision notice
-   * A decision notice is issued when an application is determined or withdrawn
-   *
-   */
-  decisionNotice?: {
-    url: string;
-  };
 };
 
-export type PriorApprovalAssessmentBase = PostSubmissionAssessment & {
+/**
+ * @description Assessment for a post submission application with type prior approval
+ */
+export type PriorApprovalAssessment = PostSubmissionAssessment & {
   /**
    * Only applies for prior approval applications so we can work out
    * 'Prior approval required and approved', 'Prior approval not required', 'Prior approval required and refused'
    */
-  priorApprovalRequired: boolean;
+  priorApprovalRequired?: boolean;
 };
-
-export type PriorApprovalAssessment =
-  | AssessmentBase
-  | PriorApprovalAssessmentBase;
 
 /**
  * TypeMap of PrimaryApplicationTypes to their specific Assessment models
