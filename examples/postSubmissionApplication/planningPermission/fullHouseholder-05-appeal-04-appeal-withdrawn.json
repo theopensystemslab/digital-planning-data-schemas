@@ -33,8 +33,8 @@
     "appeal": {
       "lodgedDate": "2024-05-01",
       "reason": "We don't believe the council took into consideration the environmental impact alleviation approach during their assessment.",
-      "withdrawnAt": "2024-05-02T15:54:31.021Z",
-      "withdrawnReason": "Applicant has decided to withdraw the application."
+      "decision": "withdrawn",
+      "decisionDate": "2024-05-07"
     },
     "caseOfficer": {
       "name": "Casey Officer"

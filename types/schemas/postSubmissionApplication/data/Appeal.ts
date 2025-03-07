@@ -1,8 +1,15 @@
-import {Date, DateTime} from '../../../shared/utils';
+import {Date} from '../../../shared/utils';
 import {PrimaryApplicationType} from '../../prototypeApplication/enums/ApplicationType';
 import {AppealDecision} from '../enums/AppealDecision';
 import {PostSubmissionFile} from './File';
 
+/**
+ * This schema represents the appeal process for a planning application currently based on the implentation in BOPS and DPR
+ * @todo We need to confirm if withdrawn is a decision or a status
+ * Status: Appeal lapsed https://acp.planninginspectorate.gov.uk/ViewCase.aspx?CaseID=3174076&CoID=0
+ * Status: Appeal withdrawn https://acp.planninginspectorate.gov.uk/ViewCase.aspx?CaseID=3174654&CoID=0
+ * Status: Complete: Notice Withdrawn https://acp.planninginspectorate.gov.uk/ViewCase.aspx?CaseID=3062094&CoID=0
+ */
 type AppealBase = {
   /**
    * Reason for appeal
@@ -43,12 +50,9 @@ type AppealBase = {
 
   /**
    * Date the appeal was withdrawn
+   * @todo removed until we have more information on if withdrawn is a status or not for now use decision
    */
-  withdrawnAt?: DateTime;
-  /**
-   * The reason the appeal was withdrawn
-   */
-  withdrawnReason?: string;
+  // withdrawnAt?: DateTime;
 
   /**
    *
