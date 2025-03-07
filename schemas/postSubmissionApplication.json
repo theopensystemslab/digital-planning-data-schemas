@@ -352,44 +352,14 @@
       "additionalProperties": false,
       "description": "Council decision is planningOfficerDecision || committeeDecision Council decision date is planningOfficerDecisionDate || committeeDecisionDate",
       "properties": {
-        "committeeDecision": {
-          "$ref": "#/definitions/AssessmentDecision",
-          "description": "If an application went to committee what was their decision"
-        },
-        "committeeDecisionDate": {
+        "expiryDate": {
           "$ref": "#/definitions/Date",
-          "description": "YYYY-MM-DD The date the committee made their decision"
-        },
-        "committeeSentDate": {
-          "$ref": "#/definitions/Date",
-          "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD the date that the application went to committee it is also the date that planningOfficerRecommendation was set"
-        },
-        "decisionNotice": {
-          "additionalProperties": false,
-          "description": "The url to the decision notice A decision notice is issued when an application is determined or withdrawn",
-          "properties": {
-            "url": {
-              "type": "string"
-            }
-          },
-          "required": [
-            "url"
-          ],
-          "type": "object"
-        },
-        "planningOfficerDecision": {
-          "$ref": "#/definitions/AssessmentDecision",
-          "description": "This is the decision made by planning officer(s) in a LPA"
-        },
-        "planningOfficerDecisionDate": {
-          "$ref": "#/definitions/Date",
-          "description": "YYYY-MM-DD This is the date the decision was made by planning officer(s) in a LPA"
-        },
-        "planningOfficerRecommendation": {
-          "$ref": "#/definitions/AssessmentDecision",
-          "description": "This is the recommendation made by planning officer(s) to the committee This is an alternative to a decision - either planningOfficerDecision or planningOfficerRecommendation can be set not both"
+          "description": "The decision has to be made before this date if not an appeal can be made on the grounds of non-determination"
         }
       },
+      "required": [
+        "expiryDate"
+      ],
       "type": "object"
     },
     "AssessmentDecision": {
@@ -11836,7 +11806,7 @@
               "type": "object"
             },
             "assessment": {
-              "$ref": "#/definitions/AssessmentBase"
+              "$ref": "#/definitions/PostSubmissionAssessment"
             },
             "caseOfficer": {
               "additionalProperties": false,
@@ -12045,7 +12015,7 @@
               "type": "object"
             },
             "assessment": {
-              "$ref": "#/definitions/AssessmentBase"
+              "$ref": "#/definitions/PostSubmissionAssessment"
             },
             "caseOfficer": {
               "additionalProperties": false,
@@ -12254,7 +12224,7 @@
               "type": "object"
             },
             "assessment": {
-              "$ref": "#/definitions/AssessmentBase"
+              "$ref": "#/definitions/PostSubmissionAssessment"
             },
             "caseOfficer": {
               "additionalProperties": false,
@@ -12361,6 +12331,56 @@
       ],
       "type": "object"
     },
+    "PostSubmissionAssessment": {
+      "additionalProperties": false,
+      "properties": {
+        "committeeDecision": {
+          "$ref": "#/definitions/AssessmentDecision",
+          "description": "If an application went to committee what was their decision"
+        },
+        "committeeDecisionDate": {
+          "$ref": "#/definitions/Date",
+          "description": "YYYY-MM-DD The date the committee made their decision"
+        },
+        "committeeSentDate": {
+          "$ref": "#/definitions/Date",
+          "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD the date that the application went to committee it is also the date that planningOfficerRecommendation was set"
+        },
+        "decisionNotice": {
+          "additionalProperties": false,
+          "description": "The url to the decision notice A decision notice is issued when an application is determined or withdrawn",
+          "properties": {
+            "url": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "url"
+          ],
+          "type": "object"
+        },
+        "expiryDate": {
+          "$ref": "#/definitions/Date",
+          "description": "The decision has to be made before this date if not an appeal can be made on the grounds of non-determination"
+        },
+        "planningOfficerDecision": {
+          "$ref": "#/definitions/AssessmentDecision",
+          "description": "This is the decision made by planning officer(s) in a LPA"
+        },
+        "planningOfficerDecisionDate": {
+          "$ref": "#/definitions/Date",
+          "description": "YYYY-MM-DD This is the date the decision was made by planning officer(s) in a LPA"
+        },
+        "planningOfficerRecommendation": {
+          "$ref": "#/definitions/AssessmentDecision",
+          "description": "This is the recommendation made by planning officer(s) to the committee This is an alternative to a decision - either planningOfficerDecision or planningOfficerRecommendation can be set not both"
+        }
+      },
+      "required": [
+        "expiryDate"
+      ],
+      "type": "object"
+    },
     "PostSubmissionComplianceConfirmation": {
       "additionalProperties": false,
       "properties": {
@@ -12463,7 +12483,7 @@
               "type": "object"
             },
             "assessment": {
-              "$ref": "#/definitions/AssessmentBase"
+              "$ref": "#/definitions/PostSubmissionAssessment"
             },
             "caseOfficer": {
               "additionalProperties": false,
@@ -12672,7 +12692,7 @@
               "type": "object"
             },
             "assessment": {
-              "$ref": "#/definitions/AssessmentBase"
+              "$ref": "#/definitions/PostSubmissionAssessment"
             },
             "caseOfficer": {
               "additionalProperties": false,
@@ -12938,7 +12958,7 @@
               "type": "object"
             },
             "assessment": {
-              "$ref": "#/definitions/AssessmentBase"
+              "$ref": "#/definitions/PostSubmissionAssessment"
             },
             "caseOfficer": {
               "additionalProperties": false,
@@ -13147,7 +13167,7 @@
               "type": "object"
             },
             "assessment": {
-              "$ref": "#/definitions/AssessmentBase"
+              "$ref": "#/definitions/PostSubmissionAssessment"
             },
             "caseOfficer": {
               "additionalProperties": false,
@@ -13356,7 +13376,7 @@
               "type": "object"
             },
             "assessment": {
-              "$ref": "#/definitions/AssessmentBase"
+              "$ref": "#/definitions/PostSubmissionAssessment"
             },
             "caseOfficer": {
               "additionalProperties": false,
@@ -13565,7 +13585,7 @@
               "type": "object"
             },
             "assessment": {
-              "$ref": "#/definitions/AssessmentBase"
+              "$ref": "#/definitions/PostSubmissionAssessment"
             },
             "caseOfficer": {
               "additionalProperties": false,
@@ -13774,7 +13794,7 @@
               "type": "object"
             },
             "assessment": {
-              "$ref": "#/definitions/AssessmentBase"
+              "$ref": "#/definitions/PostSubmissionAssessment"
             },
             "caseOfficer": {
               "additionalProperties": false,
@@ -14091,7 +14111,7 @@
               "type": "object"
             },
             "assessment": {
-              "$ref": "#/definitions/AssessmentBase"
+              "$ref": "#/definitions/PostSubmissionAssessment"
             },
             "caseOfficer": {
               "additionalProperties": false,
@@ -14300,7 +14320,7 @@
               "type": "object"
             },
             "assessment": {
-              "$ref": "#/definitions/AssessmentBase"
+              "$ref": "#/definitions/PostSubmissionAssessment"
             },
             "caseOfficer": {
               "additionalProperties": false,
@@ -14509,7 +14529,7 @@
               "type": "object"
             },
             "assessment": {
-              "$ref": "#/definitions/AssessmentBase"
+              "$ref": "#/definitions/PostSubmissionAssessment"
             },
             "caseOfficer": {
               "additionalProperties": false,
@@ -14927,7 +14947,7 @@
               "type": "object"
             },
             "assessment": {
-              "$ref": "#/definitions/AssessmentBase"
+              "$ref": "#/definitions/PostSubmissionAssessment"
             },
             "caseOfficer": {
               "additionalProperties": false,
@@ -15136,7 +15156,7 @@
               "type": "object"
             },
             "assessment": {
-              "$ref": "#/definitions/AssessmentBase"
+              "$ref": "#/definitions/PostSubmissionAssessment"
             },
             "caseOfficer": {
               "additionalProperties": false,
@@ -15345,7 +15365,7 @@
               "type": "object"
             },
             "assessment": {
-              "$ref": "#/definitions/AssessmentBase"
+              "$ref": "#/definitions/PostSubmissionAssessment"
             },
             "caseOfficer": {
               "additionalProperties": false,
@@ -15497,6 +15517,16 @@
       "type": "array"
     },
     "PriorApprovalAssessment": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/AssessmentBase"
+        },
+        {
+          "$ref": "#/definitions/PriorApprovalAssessmentBase"
+        }
+      ]
+    },
+    "PriorApprovalAssessmentBase": {
       "additionalProperties": false,
       "properties": {
         "committeeDecision": {
@@ -15524,6 +15554,10 @@
           ],
           "type": "object"
         },
+        "expiryDate": {
+          "$ref": "#/definitions/Date",
+          "description": "The decision has to be made before this date if not an appeal can be made on the grounds of non-determination"
+        },
         "planningOfficerDecision": {
           "$ref": "#/definitions/AssessmentDecision",
           "description": "This is the decision made by planning officer(s) in a LPA"
@@ -15542,6 +15576,7 @@
         }
       },
       "required": [
+        "expiryDate",
         "priorApprovalRequired"
       ],
       "type": "object"

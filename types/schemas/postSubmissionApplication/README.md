@@ -165,7 +165,7 @@ undetermined:::status
 submission --> validation
 validation --> consultation
 consultation --> assessment
-assessment -.-> appeal
+assessment -.-> |After determination made or if assessment expiryDate passed|appeal
 appeal -.-> highCourtAppeal
 
 

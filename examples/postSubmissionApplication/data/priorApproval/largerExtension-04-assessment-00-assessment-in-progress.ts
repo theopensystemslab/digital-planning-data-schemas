@@ -43,6 +43,11 @@ export const priorApprovalLargerExtensionPostSubmission: PostSubmissionApplicati
         ),
         siteNotice: true,
       },
+      assessment: {
+        expiryDate: formatDateToYYYYMMDD(
+          realisticDates.assessment.expiryAt.toISOString(),
+        ),
+      },
       caseOfficer: {
         name: 'Casey Officer',
       },

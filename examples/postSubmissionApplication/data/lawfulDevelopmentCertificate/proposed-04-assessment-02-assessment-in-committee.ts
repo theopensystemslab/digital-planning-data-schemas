@@ -35,6 +35,9 @@ export const lawfulDevelopmentCertificateProposedPostSubmission: PostSubmissionA
         isValid: true,
       },
       assessment: {
+        expiryDate: formatDateToYYYYMMDD(
+          realisticDates.assessment.expiryAt.toISOString(),
+        ),
         planningOfficerRecommendation: 'refused',
         committeeSentDate: formatDateToYYYYMMDD(
           realisticDates.assessment.committeeSentAt.toISOString(),

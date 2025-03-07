@@ -44,6 +44,9 @@ export const planningPermissionFullHouseholderPostSubmission: PostSubmissionAppl
         siteNotice: true,
       },
       assessment: {
+        expiryDate: formatDateToYYYYMMDD(
+          realisticDates.assessment.expiryAt.toISOString(),
+        ),
         planningOfficerDecision: 'granted',
         planningOfficerDecisionDate: formatDateToYYYYMMDD(
           realisticDates.assessment.planningOfficerDecisionAt.toISOString(),

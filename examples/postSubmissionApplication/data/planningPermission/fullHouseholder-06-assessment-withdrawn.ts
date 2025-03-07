@@ -46,6 +46,11 @@ export const planningPermissionFullHouseholderPostSubmission: PostSubmissionAppl
         ),
         siteNotice: true,
       },
+      assessment: {
+        expiryDate: formatDateToYYYYMMDD(
+          realisticDates.assessment.expiryAt.toISOString(),
+        ),
+      },
       caseOfficer: {
         name: 'Casey Officer',
       },

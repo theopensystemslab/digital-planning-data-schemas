@@ -45,6 +45,9 @@ export const priorApprovalLargerExtensionPostSubmission: PostSubmissionApplicati
         siteNotice: true,
       },
       assessment: {
+        expiryDate: formatDateToYYYYMMDD(
+          realisticDates.assessment.expiryAt.toISOString(),
+        ),
         planningOfficerDecision: 'granted',
         planningOfficerDecisionDate: formatDateToYYYYMMDD(
           realisticDates.assessment.planningOfficerDecisionAt.toISOString(),
