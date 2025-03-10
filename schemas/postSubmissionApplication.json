@@ -265,8 +265,8 @@
           "type": "string"
         },
         {
-          "const": "split_decision",
-          "description": "split_decision",
+          "const": "splitDecision",
+          "description": "splitDecision",
           "type": "string"
         },
         {
@@ -11713,6 +11713,7 @@
           "properties": {
             "appeal": {
               "additionalProperties": false,
+              "description": "This schema represents the appeal process for a planning application currently based on the implentation in BOPS and DPR",
               "properties": {
                 "decision": {
                   "$ref": "#/definitions/AppealDecision",
@@ -11744,14 +11745,6 @@
                 "validatedDate": {
                   "$ref": "#/definitions/Date",
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the appeal was confirmed to be valid. This appeal can now be examined in detail by the planning inspectorate."
-                },
-                "withdrawnAt": {
-                  "$ref": "#/definitions/DateTime",
-                  "description": "Date the appeal was withdrawn"
-                },
-                "withdrawnReason": {
-                  "description": "The reason the appeal was withdrawn",
-                  "type": "string"
                 }
               },
               "required": [
@@ -11922,6 +11915,7 @@
           "properties": {
             "appeal": {
               "additionalProperties": false,
+              "description": "This schema represents the appeal process for a planning application currently based on the implentation in BOPS and DPR",
               "properties": {
                 "decision": {
                   "$ref": "#/definitions/AppealDecision",
@@ -11953,14 +11947,6 @@
                 "validatedDate": {
                   "$ref": "#/definitions/Date",
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the appeal was confirmed to be valid. This appeal can now be examined in detail by the planning inspectorate."
-                },
-                "withdrawnAt": {
-                  "$ref": "#/definitions/DateTime",
-                  "description": "Date the appeal was withdrawn"
-                },
-                "withdrawnReason": {
-                  "description": "The reason the appeal was withdrawn",
-                  "type": "string"
                 }
               },
               "required": [
@@ -12131,6 +12117,7 @@
           "properties": {
             "appeal": {
               "additionalProperties": false,
+              "description": "This schema represents the appeal process for a planning application currently based on the implentation in BOPS and DPR",
               "properties": {
                 "decision": {
                   "$ref": "#/definitions/AppealDecision",
@@ -12162,14 +12149,6 @@
                 "validatedDate": {
                   "$ref": "#/definitions/Date",
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the appeal was confirmed to be valid. This appeal can now be examined in detail by the planning inspectorate."
-                },
-                "withdrawnAt": {
-                  "$ref": "#/definitions/DateTime",
-                  "description": "Date the appeal was withdrawn"
-                },
-                "withdrawnReason": {
-                  "description": "The reason the appeal was withdrawn",
-                  "type": "string"
                 }
               },
               "required": [
@@ -12391,6 +12370,7 @@
           "properties": {
             "appeal": {
               "additionalProperties": false,
+              "description": "This schema represents the appeal process for a planning application currently based on the implentation in BOPS and DPR",
               "properties": {
                 "decision": {
                   "$ref": "#/definitions/AppealDecision",
@@ -12422,14 +12402,6 @@
                 "validatedDate": {
                   "$ref": "#/definitions/Date",
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the appeal was confirmed to be valid. This appeal can now be examined in detail by the planning inspectorate."
-                },
-                "withdrawnAt": {
-                  "$ref": "#/definitions/DateTime",
-                  "description": "Date the appeal was withdrawn"
-                },
-                "withdrawnReason": {
-                  "description": "The reason the appeal was withdrawn",
-                  "type": "string"
                 }
               },
               "required": [
@@ -12600,6 +12572,7 @@
           "properties": {
             "appeal": {
               "additionalProperties": false,
+              "description": "This schema represents the appeal process for a planning application currently based on the implentation in BOPS and DPR",
               "properties": {
                 "decision": {
                   "$ref": "#/definitions/AppealDecision",
@@ -12631,14 +12604,6 @@
                 "validatedDate": {
                   "$ref": "#/definitions/Date",
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the appeal was confirmed to be valid. This appeal can now be examined in detail by the planning inspectorate."
-                },
-                "withdrawnAt": {
-                  "$ref": "#/definitions/DateTime",
-                  "description": "Date the appeal was withdrawn"
-                },
-                "withdrawnReason": {
-                  "description": "The reason the appeal was withdrawn",
-                  "type": "string"
                 }
               },
               "required": [
@@ -12866,6 +12831,7 @@
           "properties": {
             "appeal": {
               "additionalProperties": false,
+              "description": "This schema represents the appeal process for a planning application currently based on the implentation in BOPS and DPR",
               "properties": {
                 "decision": {
                   "$ref": "#/definitions/AppealDecision",
@@ -12897,14 +12863,6 @@
                 "validatedDate": {
                   "$ref": "#/definitions/Date",
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the appeal was confirmed to be valid. This appeal can now be examined in detail by the planning inspectorate."
-                },
-                "withdrawnAt": {
-                  "$ref": "#/definitions/DateTime",
-                  "description": "Date the appeal was withdrawn"
-                },
-                "withdrawnReason": {
-                  "description": "The reason the appeal was withdrawn",
-                  "type": "string"
                 }
               },
               "required": [
@@ -13075,6 +13033,7 @@
           "properties": {
             "appeal": {
               "additionalProperties": false,
+              "description": "This schema represents the appeal process for a planning application currently based on the implentation in BOPS and DPR",
               "properties": {
                 "decision": {
                   "$ref": "#/definitions/AppealDecision",
@@ -13106,14 +13065,6 @@
                 "validatedDate": {
                   "$ref": "#/definitions/Date",
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the appeal was confirmed to be valid. This appeal can now be examined in detail by the planning inspectorate."
-                },
-                "withdrawnAt": {
-                  "$ref": "#/definitions/DateTime",
-                  "description": "Date the appeal was withdrawn"
-                },
-                "withdrawnReason": {
-                  "description": "The reason the appeal was withdrawn",
-                  "type": "string"
                 }
               },
               "required": [
@@ -13284,6 +13235,7 @@
           "properties": {
             "appeal": {
               "additionalProperties": false,
+              "description": "This schema represents the appeal process for a planning application currently based on the implentation in BOPS and DPR",
               "properties": {
                 "decision": {
                   "$ref": "#/definitions/AppealDecision",
@@ -13315,14 +13267,6 @@
                 "validatedDate": {
                   "$ref": "#/definitions/Date",
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the appeal was confirmed to be valid. This appeal can now be examined in detail by the planning inspectorate."
-                },
-                "withdrawnAt": {
-                  "$ref": "#/definitions/DateTime",
-                  "description": "Date the appeal was withdrawn"
-                },
-                "withdrawnReason": {
-                  "description": "The reason the appeal was withdrawn",
-                  "type": "string"
                 }
               },
               "required": [
@@ -13493,6 +13437,7 @@
           "properties": {
             "appeal": {
               "additionalProperties": false,
+              "description": "This schema represents the appeal process for a planning application currently based on the implentation in BOPS and DPR",
               "properties": {
                 "decision": {
                   "$ref": "#/definitions/AppealDecision",
@@ -13524,14 +13469,6 @@
                 "validatedDate": {
                   "$ref": "#/definitions/Date",
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the appeal was confirmed to be valid. This appeal can now be examined in detail by the planning inspectorate."
-                },
-                "withdrawnAt": {
-                  "$ref": "#/definitions/DateTime",
-                  "description": "Date the appeal was withdrawn"
-                },
-                "withdrawnReason": {
-                  "description": "The reason the appeal was withdrawn",
-                  "type": "string"
                 }
               },
               "required": [
@@ -13702,6 +13639,7 @@
           "properties": {
             "appeal": {
               "additionalProperties": false,
+              "description": "This schema represents the appeal process for a planning application currently based on the implentation in BOPS and DPR",
               "properties": {
                 "decision": {
                   "$ref": "#/definitions/AppealDecision",
@@ -13733,14 +13671,6 @@
                 "validatedDate": {
                   "$ref": "#/definitions/Date",
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the appeal was confirmed to be valid. This appeal can now be examined in detail by the planning inspectorate."
-                },
-                "withdrawnAt": {
-                  "$ref": "#/definitions/DateTime",
-                  "description": "Date the appeal was withdrawn"
-                },
-                "withdrawnReason": {
-                  "description": "The reason the appeal was withdrawn",
-                  "type": "string"
                 }
               },
               "required": [
@@ -14019,6 +13949,7 @@
           "properties": {
             "appeal": {
               "additionalProperties": false,
+              "description": "This schema represents the appeal process for a planning application currently based on the implentation in BOPS and DPR",
               "properties": {
                 "decision": {
                   "$ref": "#/definitions/AppealDecision",
@@ -14050,14 +13981,6 @@
                 "validatedDate": {
                   "$ref": "#/definitions/Date",
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the appeal was confirmed to be valid. This appeal can now be examined in detail by the planning inspectorate."
-                },
-                "withdrawnAt": {
-                  "$ref": "#/definitions/DateTime",
-                  "description": "Date the appeal was withdrawn"
-                },
-                "withdrawnReason": {
-                  "description": "The reason the appeal was withdrawn",
-                  "type": "string"
                 }
               },
               "required": [
@@ -14228,6 +14151,7 @@
           "properties": {
             "appeal": {
               "additionalProperties": false,
+              "description": "This schema represents the appeal process for a planning application currently based on the implentation in BOPS and DPR",
               "properties": {
                 "decision": {
                   "$ref": "#/definitions/AppealDecision",
@@ -14259,14 +14183,6 @@
                 "validatedDate": {
                   "$ref": "#/definitions/Date",
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the appeal was confirmed to be valid. This appeal can now be examined in detail by the planning inspectorate."
-                },
-                "withdrawnAt": {
-                  "$ref": "#/definitions/DateTime",
-                  "description": "Date the appeal was withdrawn"
-                },
-                "withdrawnReason": {
-                  "description": "The reason the appeal was withdrawn",
-                  "type": "string"
                 }
               },
               "required": [
@@ -14437,6 +14353,7 @@
           "properties": {
             "appeal": {
               "additionalProperties": false,
+              "description": "This schema represents the appeal process for a planning application currently based on the implentation in BOPS and DPR",
               "properties": {
                 "decision": {
                   "$ref": "#/definitions/AppealDecision",
@@ -14468,14 +14385,6 @@
                 "validatedDate": {
                   "$ref": "#/definitions/Date",
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the appeal was confirmed to be valid. This appeal can now be examined in detail by the planning inspectorate."
-                },
-                "withdrawnAt": {
-                  "$ref": "#/definitions/DateTime",
-                  "description": "Date the appeal was withdrawn"
-                },
-                "withdrawnReason": {
-                  "description": "The reason the appeal was withdrawn",
-                  "type": "string"
                 }
               },
               "required": [
@@ -14646,6 +14555,7 @@
           "properties": {
             "appeal": {
               "additionalProperties": false,
+              "description": "This schema represents the appeal process for a planning application currently based on the implentation in BOPS and DPR",
               "properties": {
                 "decision": {
                   "$ref": "#/definitions/AppealDecision",
@@ -14677,14 +14587,6 @@
                 "validatedDate": {
                   "$ref": "#/definitions/Date",
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the appeal was confirmed to be valid. This appeal can now be examined in detail by the planning inspectorate."
-                },
-                "withdrawnAt": {
-                  "$ref": "#/definitions/DateTime",
-                  "description": "Date the appeal was withdrawn"
-                },
-                "withdrawnReason": {
-                  "description": "The reason the appeal was withdrawn",
-                  "type": "string"
                 }
               },
               "required": [
@@ -14855,6 +14757,7 @@
           "properties": {
             "appeal": {
               "additionalProperties": false,
+              "description": "This schema represents the appeal process for a planning application currently based on the implentation in BOPS and DPR",
               "properties": {
                 "decision": {
                   "$ref": "#/definitions/AppealDecision",
@@ -14886,14 +14789,6 @@
                 "validatedDate": {
                   "$ref": "#/definitions/Date",
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the appeal was confirmed to be valid. This appeal can now be examined in detail by the planning inspectorate."
-                },
-                "withdrawnAt": {
-                  "$ref": "#/definitions/DateTime",
-                  "description": "Date the appeal was withdrawn"
-                },
-                "withdrawnReason": {
-                  "description": "The reason the appeal was withdrawn",
-                  "type": "string"
                 }
               },
               "required": [
@@ -15064,6 +14959,7 @@
           "properties": {
             "appeal": {
               "additionalProperties": false,
+              "description": "This schema represents the appeal process for a planning application currently based on the implentation in BOPS and DPR",
               "properties": {
                 "decision": {
                   "$ref": "#/definitions/AppealDecision",
@@ -15095,14 +14991,6 @@
                 "validatedDate": {
                   "$ref": "#/definitions/Date",
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the appeal was confirmed to be valid. This appeal can now be examined in detail by the planning inspectorate."
-                },
-                "withdrawnAt": {
-                  "$ref": "#/definitions/DateTime",
-                  "description": "Date the appeal was withdrawn"
-                },
-                "withdrawnReason": {
-                  "description": "The reason the appeal was withdrawn",
-                  "type": "string"
                 }
               },
               "required": [
@@ -15273,6 +15161,7 @@
           "properties": {
             "appeal": {
               "additionalProperties": false,
+              "description": "This schema represents the appeal process for a planning application currently based on the implentation in BOPS and DPR",
               "properties": {
                 "decision": {
                   "$ref": "#/definitions/AppealDecision",
@@ -15304,14 +15193,6 @@
                 "validatedDate": {
                   "$ref": "#/definitions/Date",
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the appeal was confirmed to be valid. This appeal can now be examined in detail by the planning inspectorate."
-                },
-                "withdrawnAt": {
-                  "$ref": "#/definitions/DateTime",
-                  "description": "Date the appeal was withdrawn"
-                },
-                "withdrawnReason": {
-                  "description": "The reason the appeal was withdrawn",
-                  "type": "string"
                 }
               },
               "required": [
