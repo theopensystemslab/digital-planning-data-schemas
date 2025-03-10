@@ -107,7 +107,6 @@ export const advertConsentPrototype: PrototypeApplication = {
         projecting: 1,
       },
       otherAdvertisements: true,
-      started: false,
       existingAdvertRemovedOrReplaced: false,
       highwayProjection: false,
       visibility: {public: true},
