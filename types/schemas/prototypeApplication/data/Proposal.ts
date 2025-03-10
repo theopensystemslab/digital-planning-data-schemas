@@ -311,7 +311,6 @@ export type AdvertConsentProposal = Pick<ProposalBase, 'boundary'> & {
     projecting: Integer;
   };
   otherAdvertisements: boolean;
-  started: boolean;
   existingAdvertRemovedOrReplaced: boolean;
   highwayProjection: boolean;
   visibility: {public: boolean};
