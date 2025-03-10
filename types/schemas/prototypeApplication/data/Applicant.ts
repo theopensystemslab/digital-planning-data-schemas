@@ -109,6 +109,12 @@ export type HedgerowRemovalNoticeApplicant = ApplicantBase & {
   };
 };
 
+export type AdvertConsentApplicant = ApplicantBase & {
+  ownership: {
+    interest: OwnersInterest | 'owner.sole' | 'owner.co';
+  };
+};
+
 /**
  * TypeMap of PrimaryApplicationTypes to their specific Applicant models
  */
@@ -119,6 +125,7 @@ interface ApplicantVariants {
   listed: PPApplicant;
   wtt: WTTApplicant;
   hedgerowRemovalNotice: HedgerowRemovalNoticeApplicant;
+  advertConsent: AdvertConsentApplicant;
 }
 
 /**

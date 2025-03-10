@@ -83,6 +83,7 @@ interface PropertyVariants {
   pp: PPProperty;
   wtt: EnglandProperty;
   hedgerowRemovalNotice: EnglandProperty;
+  advertConsent: EnglandProperty;
 }
 
 /**
