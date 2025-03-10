@@ -348,20 +348,6 @@
       ],
       "type": "object"
     },
-    "AssessmentBase": {
-      "additionalProperties": false,
-      "description": "Council decision is planningOfficerDecision || committeeDecision Council decision date is planningOfficerDecisionDate || committeeDecisionDate",
-      "properties": {
-        "expiryDate": {
-          "$ref": "#/definitions/Date",
-          "description": "The decision has to be made before this date if not an appeal can be made on the grounds of non-determination"
-        }
-      },
-      "required": [
-        "expiryDate"
-      ],
-      "type": "object"
-    },
     "AssessmentDecision": {
       "$id": "#AssessmentDecision",
       "anyOf": [
@@ -12333,6 +12319,7 @@
     },
     "PostSubmissionAssessment": {
       "additionalProperties": false,
+      "description": "Assessment for a post submission application",
       "properties": {
         "committeeDecision": {
           "$ref": "#/definitions/AssessmentDecision",
@@ -15517,17 +15504,8 @@
       "type": "array"
     },
     "PriorApprovalAssessment": {
-      "anyOf": [
-        {
-          "$ref": "#/definitions/AssessmentBase"
-        },
-        {
-          "$ref": "#/definitions/PriorApprovalAssessmentBase"
-        }
-      ]
-    },
-    "PriorApprovalAssessmentBase": {
       "additionalProperties": false,
+      "description": "Assessment for a post submission application with type prior approval",
       "properties": {
         "committeeDecision": {
           "$ref": "#/definitions/AssessmentDecision",
@@ -15576,8 +15554,7 @@
         }
       },
       "required": [
-        "expiryDate",
-        "priorApprovalRequired"
+        "expiryDate"
       ],
       "type": "object"
     },
