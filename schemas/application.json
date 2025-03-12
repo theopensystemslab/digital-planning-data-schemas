@@ -12496,7 +12496,7 @@
       "type": "object"
     },
     "Position": {
-      "description": "A Position is an array of coordinates. https://tools.ietf.org/html/rfc7946#section-3.1.1 Array should contain between two and three elements. The previous GeoJSON specification allowed more elements (e.g., which could be used to represent M values), but the current specification only allows X, Y, and (optionally) Z to be defined.",
+      "description": "A Position is an array of coordinates. https://tools.ietf.org/html/rfc7946#section-3.1.1 Array should contain between two and three elements. The previous GeoJSON specification allowed more elements (e.g., which could be used to represent M values), but the current specification only allows X, Y, and (optionally) Z to be defined.\n\nNote: the type will not be narrowed down to `[number, number] | [number, number, number]` due to marginal benefits and the large impact of breaking change.\n\nSee previous discussions on the type narrowing:\n-  {@link  https://github.com/DefinitelyTyped/DefinitelyTyped/pull/21590 Nov 2017 } \n-  {@link  https://github.com/DefinitelyTyped/DefinitelyTyped/discussions/67773 Dec 2023 } \n-  {@link  https://github.com/DefinitelyTyped/DefinitelyTyped/discussions/71441 Dec 2024 } \n\nOne can use a  {@link  https://www.typescriptlang.org/docs/handbook/2/narrowing.html#using-type-predicates user-defined type guard that returns a type predicate }  to determine if a position is a 2D or 3D position.",
       "items": {
         "type": "number"
       },

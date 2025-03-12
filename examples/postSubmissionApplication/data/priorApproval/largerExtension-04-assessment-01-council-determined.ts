@@ -74,7 +74,7 @@ export const priorApprovalLargerExtensionPostSubmission: PostSubmissionApplicati
     },
     metadata: {
       organisation: 'LBH',
-      id: 'ABC-123-XYZ',
+      id: 'faae04cd-0ec2-479e-b7fb-14b3e7acae35',
       submittedAt: realisticDates.submission.submittedAt.toISOString(),
       publishedAt: realisticDates.publishedAt.toISOString(),
       schema: `https://theopensystemslab.github.io/digital-planning-data-schemas/${version}/schemas/postSubmissionApplication.json`,
