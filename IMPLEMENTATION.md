@@ -202,7 +202,7 @@ For listing, searching and filtering planning applications that are currently av
 > | `resultsPerPage`         |          | number               | `10`         |                              | Control the number of results per page                                                                                                                                             |
 > | `page`                   |          | number               | `0`          |                              | Current page (Zero indexed)                                                                                                                                                        |
 > | `sortBy`                 |          | string               | `receivedAt` | See **SortBy options** below | Set the sort type for the results                                                                                                                                                  |
-> | `orderBy`                |          | string               | `asc`        | See **SortBy options** below | Set the sort order for the results                                                                                                                                                 |
+> | `orderBy`                |          | string               | `desc`       | See **SortBy options** below | Set the sort order for the results                                                                                                                                                 |
 > | `query`                  |          | string               |              |                              | Searches records by the text in the `data.application.reference`, `submission.proposal.description` and `submission.property.address` fields                                       |
 > | `reference`              |          | string               |              |                              | `data.application.reference`                                                                                                                                                       |
 > | `description`            |          | string               |              |                              | `submission.proposal.description`                                                                                                                                                  |
@@ -271,11 +271,11 @@ For more information see [Location based searching](#location-based-searching)
 
 > | SortBy                | Default OrderBy | OrderBy       | Description                                                                      |
 > | --------------------- | --------------- | ------------- | -------------------------------------------------------------------------------- |
-> | `receivedAt`          | `asc`           | `asc`, `desc` |                                                                                  |
-> | `id`                  | `asc`           | `asc`, `desc` |                                                                                  |
-> | `councilDecisionDate` | `asc`           | `asc`, `desc` | `assessment.planningOfficerDecisionDate` \|\| `assessment.committeeDecisionDate` |
-> | `consultationEndDate` | `asc`           | `asc`, `desc` |                                                                                  |
-> | `status`              | `asc`           | `asc`, `desc` | Most progressed to least progressed                                              |
+> | `receivedAt`          | `desc`          | `asc`, `desc` |                                                                                  |
+> | `id`                  | `desc`          | `asc`, `desc` |                                                                                  |
+> | `councilDecisionDate` | `desc`          | `asc`, `desc` | `assessment.planningOfficerDecisionDate` \|\| `assessment.committeeDecisionDate` |
+> | `consultationEndDate` | `desc`          | `asc`, `desc` |                                                                                  |
+> | `status`              | `desc`          | `asc`, `desc` | Most progressed to least progressed                                              |
 
 ##### Example cURL
 
@@ -337,7 +337,7 @@ For listing, searching and filtering documents related to the specific public pl
 > | `resultsPerPage` |          | number   | `10`        |                              | Control the number of results per page                                                  |
 > | `page`           |          | number   | `0`         |                              | Current page (Zero indexed)                                                             |
 > | `sortBy`         |          | string   | `createdAt` | See **SortBy options** below | Set the sort type for the results                                                       |
-> | `orderBy`        |          | string   | `asc`       | See **SortBy options** below | Set the sort order for the results                                                      |
+> | `orderBy`        |          | string   | `desc`      | See **SortBy options** below | Set the sort order for the results                                                      |
 > | `query`          |          | string   |             |                              | Search records by `name`, `type`, `description`                                         |
 > | `name`           |          | string   |             |                              | `name`                                                                                  |
 > | `type`           |          | FileType |             |                              | Supports `AND` and `OR` filtering see [Filter based searching](#filter-based-searching) |
@@ -366,11 +366,11 @@ For more information see [Date based searching](#date-based-searching)
 
 > | SortBy        | Default OrderBy | OrderBy       | Description |
 > | ------------- | --------------- | ------------- | ----------- |
-> | `createdAt`   | `asc`           | `asc`, `desc` |             |
-> | `uploadedAt`  | `asc`           | `asc`, `desc` |             |
-> | `publishedAt` | `asc`           | `asc`, `desc` |             |
-> | `name`        | `asc`           | `asc`, `desc` |             |
-> | `id`          | `asc`           | `asc`, `desc` |             |
+> | `createdAt`   | `desc`          | `asc`, `desc` |             |
+> | `uploadedAt`  | `desc`          | `asc`, `desc` |             |
+> | `publishedAt` | `desc`          | `asc`, `desc` |             |
+> | `name`        | `desc`          | `asc`, `desc` |             |
+> | `id`          | `desc`          | `asc`, `desc` |             |
 
 ##### Example cURL
 
@@ -396,7 +396,7 @@ For listing, searching and filtering public (neighbour) comments related to the 
 > | `resultsPerPage` |          | number                               | `10`         |                              | Control the number of results per page                                                                                |
 > | `page`           |          | number                               | `0`          |                              | Current page (Zero indexed)                                                                                           |
 > | `sortBy`         |          | string                               | `receivedAt` | See **SortBy options** below | Set the sort type for the results                                                                                     |
-> | `orderBy`        |          | string                               | `asc`        | See **SortBy options** below | Set the sort order for the results                                                                                    |
+> | `orderBy`        |          | string                               | `desc`       | See **SortBy options** below | Set the sort order for the results                                                                                    |
 > | `query`          |          | TopicAndComments.question \|\|string |              |                              | Search records by `comment`                                                                                           |
 > | `sentiment`      |          | CommentSentiment[]                   |              |                              | Search records by `sentiment` Supports `AND` and `OR` filtering see [Filter based searching](#filter-based-searching) |
 > | `topic`          |          | TopicAndComments.topic[]             |              |                              | Search records by `topic` Supports `AND` and `OR` filtering see [Filter based searching](#filter-based-searching)     |
@@ -421,8 +421,8 @@ For more information see [Date based searching](#date-based-searching)
 
 > | SortBy       | Default OrderBy | OrderBy       | Description |
 > | ------------ | --------------- | ------------- | ----------- |
-> | `receivedAt` | `asc`           | `asc`, `desc` |             |
-> | `id`         | `asc`           | `asc`, `desc` |             |
+> | `receivedAt` | `desc`          | `asc`, `desc` |             |
+> | `id`         | `desc`          | `asc`, `desc` |             |
 
 ##### Example cURL
 
@@ -444,7 +444,7 @@ For listing, searching and filtering specialist comments related to the specific
 > | `resultsPerPage` |          | number                               | `10`         |                              | Control the number of results per page                                                                                |
 > | `page`           |          | number                               | `0`          |                              | Current page (Zero indexed)                                                                                           |
 > | `sortBy`         |          | string                               | `receivedAt` | See **SortBy options** below | Set the sort type for the results                                                                                     |
-> | `orderBy`        |          | string                               | `asc`        | See **SortBy options** below | Set the sort order for the results                                                                                    |
+> | `orderBy`        |          | string                               | `desc`       | See **SortBy options** below | Set the sort order for the results                                                                                    |
 > | `query`          |          | TopicAndComments.question \|\|string |              |                              | Search records by `comment`                                                                                           |
 > | `sentiment`      |          | CommentSentiment[]                   |              |                              | Search records by `sentiment` Supports `AND` and `OR` filtering see [Filter based searching](#filter-based-searching) |
 > | `topic`          |          | TopicAndComments.topic[]             |              |                              | Search records by `topic` Supports `AND` and `OR` filtering see [Filter based searching](#filter-based-searching)     |
@@ -469,8 +469,8 @@ For more information see [Date based searching](#date-based-searching)
 
 > | SortBy       | Default OrderBy | OrderBy       | Description |
 > | ------------ | --------------- | ------------- | ----------- |
-> | `receivedAt` | `asc`           | `asc`, `desc` |             |
-> | `id`         | `asc`           | `asc`, `desc` |             |
+> | `receivedAt` | `desc`          | `asc`, `desc` |             |
+> | `id`         | `desc`          | `asc`, `desc` |             |
 
 ##### Example cURL
 
