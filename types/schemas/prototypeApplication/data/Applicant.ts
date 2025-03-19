@@ -115,6 +115,12 @@ export type AdvertConsentApplicant = ApplicantBase & {
   };
 };
 
+export type ComplianceConfirmationApplicant = ApplicantBase & {
+  ownership: {
+    interest: OwnersInterest | 'owner.sole' | 'owner.co';
+  };
+};
+
 /**
  * TypeMap of PrimaryApplicationTypes to their specific Applicant models
  */
@@ -126,6 +132,7 @@ interface ApplicantVariants {
   wtt: WTTApplicant;
   hedgerowRemovalNotice: HedgerowRemovalNoticeApplicant;
   advertConsent: AdvertConsentApplicant;
+  complianceConfirmation: ComplianceConfirmationApplicant;
 }
 
 /**
