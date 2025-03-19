@@ -2170,6 +2170,18 @@
       },
       "type": "object"
     },
+    "CaseOfficerBase": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "type": "object"
+    },
     "CommentAuthor": {
       "additionalProperties": false,
       "properties": {
@@ -12194,16 +12206,7 @@
               "$ref": "#/definitions/PostSubmissionAssessment"
             },
             "caseOfficer": {
-              "additionalProperties": false,
-              "properties": {
-                "name": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "name"
-              ],
-              "type": "object"
+              "$ref": "#/definitions/CaseOfficerBase"
             },
             "consultation": {
               "additionalProperties": false,
@@ -12396,16 +12399,7 @@
               "$ref": "#/definitions/PostSubmissionAssessment"
             },
             "caseOfficer": {
-              "additionalProperties": false,
-              "properties": {
-                "name": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "name"
-              ],
-              "type": "object"
+              "$ref": "#/definitions/CaseOfficerBase"
             },
             "consultation": {
               "additionalProperties": false,
@@ -12598,16 +12592,7 @@
               "$ref": "#/definitions/PostSubmissionAssessment"
             },
             "caseOfficer": {
-              "additionalProperties": false,
-              "properties": {
-                "name": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "name"
-              ],
-              "type": "object"
+              "$ref": "#/definitions/CaseOfficerBase"
             },
             "consultation": {
               "additionalProperties": false,
@@ -12851,16 +12836,7 @@
               "$ref": "#/definitions/PostSubmissionAssessment"
             },
             "caseOfficer": {
-              "additionalProperties": false,
-              "properties": {
-                "name": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "name"
-              ],
-              "type": "object"
+              "$ref": "#/definitions/CaseOfficerBase"
             },
             "consultation": {
               "additionalProperties": false,
@@ -13053,16 +13029,7 @@
               "$ref": "#/definitions/PostSubmissionAssessment"
             },
             "caseOfficer": {
-              "additionalProperties": false,
-              "properties": {
-                "name": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "name"
-              ],
-              "type": "object"
+              "$ref": "#/definitions/CaseOfficerBase"
             },
             "consultation": {
               "additionalProperties": false,
@@ -13158,7 +13125,7 @@
       "type": "object"
     },
     "PostSubmissionFile": {
-      "$id": "#File",
+      "$id": "#PostSubmissionFile",
       "additionalProperties": false,
       "description": "File uploaded and labeled by the user to support the application",
       "properties": {
@@ -13312,16 +13279,7 @@
               "$ref": "#/definitions/PostSubmissionAssessment"
             },
             "caseOfficer": {
-              "additionalProperties": false,
-              "properties": {
-                "name": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "name"
-              ],
-              "type": "object"
+              "$ref": "#/definitions/CaseOfficerBase"
             },
             "consultation": {
               "additionalProperties": false,
@@ -13514,16 +13472,7 @@
               "$ref": "#/definitions/PostSubmissionAssessment"
             },
             "caseOfficer": {
-              "additionalProperties": false,
-              "properties": {
-                "name": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "name"
-              ],
-              "type": "object"
+              "$ref": "#/definitions/CaseOfficerBase"
             },
             "consultation": {
               "additionalProperties": false,
@@ -13716,16 +13665,7 @@
               "$ref": "#/definitions/PostSubmissionAssessment"
             },
             "caseOfficer": {
-              "additionalProperties": false,
-              "properties": {
-                "name": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "name"
-              ],
-              "type": "object"
+              "$ref": "#/definitions/CaseOfficerBase"
             },
             "consultation": {
               "additionalProperties": false,
@@ -13918,16 +13858,7 @@
               "$ref": "#/definitions/PostSubmissionAssessment"
             },
             "caseOfficer": {
-              "additionalProperties": false,
-              "properties": {
-                "name": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "name"
-              ],
-              "type": "object"
+              "$ref": "#/definitions/CaseOfficerBase"
             },
             "consultation": {
               "additionalProperties": false,
@@ -14120,16 +14051,7 @@
               "$ref": "#/definitions/PostSubmissionAssessment"
             },
             "caseOfficer": {
-              "additionalProperties": false,
-              "properties": {
-                "name": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "name"
-              ],
-              "type": "object"
+              "$ref": "#/definitions/CaseOfficerBase"
             },
             "consultation": {
               "additionalProperties": false,
@@ -14430,16 +14352,7 @@
               "$ref": "#/definitions/PostSubmissionAssessment"
             },
             "caseOfficer": {
-              "additionalProperties": false,
-              "properties": {
-                "name": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "name"
-              ],
-              "type": "object"
+              "$ref": "#/definitions/CaseOfficerBase"
             },
             "consultation": {
               "additionalProperties": false,
@@ -14632,16 +14545,7 @@
               "$ref": "#/definitions/PostSubmissionAssessment"
             },
             "caseOfficer": {
-              "additionalProperties": false,
-              "properties": {
-                "name": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "name"
-              ],
-              "type": "object"
+              "$ref": "#/definitions/CaseOfficerBase"
             },
             "consultation": {
               "additionalProperties": false,
@@ -14834,16 +14738,7 @@
               "$ref": "#/definitions/PostSubmissionAssessment"
             },
             "caseOfficer": {
-              "additionalProperties": false,
-              "properties": {
-                "name": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "name"
-              ],
-              "type": "object"
+              "$ref": "#/definitions/CaseOfficerBase"
             },
             "consultation": {
               "additionalProperties": false,
@@ -15036,16 +14931,7 @@
               "$ref": "#/definitions/PriorApprovalAssessment"
             },
             "caseOfficer": {
-              "additionalProperties": false,
-              "properties": {
-                "name": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "name"
-              ],
-              "type": "object"
+              "$ref": "#/definitions/CaseOfficerBase"
             },
             "consultation": {
               "additionalProperties": false,
@@ -15238,16 +15124,7 @@
               "$ref": "#/definitions/PostSubmissionAssessment"
             },
             "caseOfficer": {
-              "additionalProperties": false,
-              "properties": {
-                "name": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "name"
-              ],
-              "type": "object"
+              "$ref": "#/definitions/CaseOfficerBase"
             },
             "consultation": {
               "additionalProperties": false,
@@ -15440,16 +15317,7 @@
               "$ref": "#/definitions/PostSubmissionAssessment"
             },
             "caseOfficer": {
-              "additionalProperties": false,
-              "properties": {
-                "name": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "name"
-              ],
-              "type": "object"
+              "$ref": "#/definitions/CaseOfficerBase"
             },
             "consultation": {
               "additionalProperties": false,
@@ -15642,16 +15510,7 @@
               "$ref": "#/definitions/PostSubmissionAssessment"
             },
             "caseOfficer": {
-              "additionalProperties": false,
-              "properties": {
-                "name": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "name"
-              ],
-              "type": "object"
+              "$ref": "#/definitions/CaseOfficerBase"
             },
             "consultation": {
               "additionalProperties": false,
