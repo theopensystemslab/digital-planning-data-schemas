@@ -388,10 +388,6 @@ Then it starts
 
 appeal is determined
 
-#### 05 04 Appeal withdrawn
-
-At any point between appeal lodged and a decision an appeal can be withdrawn
-
 #### 06 Application withdrawn
 
 An application can be with drawn only after validation and before a decision is made
