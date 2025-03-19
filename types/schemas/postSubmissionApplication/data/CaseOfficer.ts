@@ -1,6 +1,6 @@
 import {PrimaryApplicationType} from '../../prototypeApplication/enums/ApplicationType';
 
-type CaseOfficerBase = {
+export type CaseOfficerBase = {
   name: string;
 };
 
