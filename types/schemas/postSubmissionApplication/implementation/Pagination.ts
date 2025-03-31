@@ -41,16 +41,3 @@ export interface CursorPagination {
    */
   totalItems: number;
 }
-
-/**
- * @description #ApiResponse
- */
-export interface ApiResponse<T> {
-  data: T | null;
-  pagination?: Pagination | CursorPagination;
-  status?: {
-    code: number;
-    message: string;
-    detail?: string;
-  };
-}
