@@ -6645,13 +6645,28 @@
         "boundary": {
           "type": "string"
         },
+        "ceiling": {
+          "type": "string"
+        },
+        "chimney": {
+          "type": "string"
+        },
         "door": {
+          "type": "string"
+        },
+        "doorInternal": {
+          "type": "string"
+        },
+        "floor": {
           "type": "string"
         },
         "lighting": {
           "type": "string"
         },
         "other": {
+          "type": "string"
+        },
+        "rainwater": {
           "type": "string"
         },
         "roof": {
@@ -6661,6 +6676,9 @@
           "type": "string"
         },
         "wall": {
+          "type": "string"
+        },
+        "wallInternal": {
           "type": "string"
         },
         "window": {

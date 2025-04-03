@@ -500,417 +500,6 @@
     "Agent": {
       "additionalProperties": false,
       "properties": {
-        "applicationType": {
-          "$ref": "#/definitions/AdvertConsentApplicationType"
-        },
-        "data": {
-          "additionalProperties": false,
-          "properties": {
-            "applicant": {
-              "$ref": "#/definitions/AdvertConsentApplicant"
-            },
-            "application": {
-              "$ref": "#/definitions/FeeCarryingApplicationData"
-            },
-            "property": {
-              "$ref": "#/definitions/EnglandProperty"
-            },
-            "proposal": {
-              "$ref": "#/definitions/AdvertConsentProposal"
-            },
-            "user": {
-              "$ref": "#/definitions/UserBase"
-            }
-          },
-          "required": [
-            "user",
-            "applicant",
-            "application",
-            "property",
-            "proposal"
-          ],
-          "type": "object"
-        },
-        "files": {
-          "items": {
-            "$ref": "#/definitions/File"
-          },
-          "type": "array"
-        },
-        "metadata": {
-          "$ref": "#/definitions/PrototypePlanXMetadata"
-        },
-        "preAssessment": {
-          "$ref": "#/definitions/PreAssessment"
-        },
-        "responses": {
-          "$ref": "#/definitions/Responses"
-        }
-      },
-      "required": [
-        "applicationType",
-        "data",
-        "responses",
-        "files",
-        "metadata"
-      ],
-      "type": "object"
-    },
-    "AdvertConsentApplicant": {
-      "anyOf": [
-        {
-          "additionalProperties": false,
-          "properties": {
-            "address": {
-              "$ref": "#/definitions/UserAddress",
-              "description": "Address information for the applicant"
-            },
-            "company": {
-              "additionalProperties": false,
-              "properties": {
-                "name": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "name"
-              ],
-              "type": "object"
-            },
-            "email": {
-              "$ref": "#/definitions/Email"
-            },
-            "name": {
-              "additionalProperties": false,
-              "properties": {
-                "first": {
-                  "type": "string"
-                },
-                "last": {
-                  "type": "string"
-                },
-                "title": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "first",
-                "last"
-              ],
-              "type": "object"
-            },
-            "ownership": {
-              "additionalProperties": false,
-              "properties": {
-                "interest": {
-                  "anyOf": [
-                    {
-                      "$ref": "#/definitions/OwnersInterest"
-                    },
-                    {
-                      "const": "owner.sole",
-                      "type": "string"
-                    },
-                    {
-                      "const": "owner.co",
-                      "type": "string"
-                    }
-                  ]
-                }
-              },
-              "required": [
-                "interest"
-              ],
-              "type": "object"
-            },
-            "phone": {
-              "additionalProperties": false,
-              "properties": {
-                "primary": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "primary"
-              ],
-              "type": "object"
-            },
-            "siteContact": {
-              "$ref": "#/definitions/SiteContact",
-              "description": "Contact information for the site visit"
-            },
-            "type": {
-              "description": "The type of applicant",
-              "enum": [
-                "individual",
-                "company",
-                "charity",
-                "public",
-                "parishCouncil"
-              ],
-              "type": "string"
-            }
-          },
-          "required": [
-            "address",
-            "email",
-            "name",
-            "ownership",
-            "phone",
-            "siteContact"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "address": {
-              "$ref": "#/definitions/UserAddress",
-              "description": "Address information for the applicant"
-            },
-            "agent": {
-              "additionalProperties": false,
-              "description": "Contact information for the agent or proxy",
-              "properties": {
-                "address": {
-                  "$ref": "#/definitions/Address"
-                },
-                "company": {
-                  "additionalProperties": false,
-                  "properties": {
-                    "name": {
-                      "type": "string"
-                    }
-                  },
-                  "required": [
-                    "name"
-                  ],
-                  "type": "object"
-                },
-                "email": {
-                  "$ref": "#/definitions/Email"
-                },
-                "name": {
-                  "additionalProperties": false,
-                  "properties": {
-                    "first": {
-                      "type": "string"
-                    },
-                    "last": {
-                      "type": "string"
-                    },
-                    "title": {
-                      "type": "string"
-                    }
-                  },
-                  "required": [
-                    "first",
-                    "last"
-                  ],
-                  "type": "object"
-                },
-                "phone": {
-                  "additionalProperties": false,
-                  "properties": {
-                    "primary": {
-                      "type": "string"
-                    }
-                  },
-                  "required": [
-                    "primary"
-                  ],
-                  "type": "object"
-                }
-              },
-              "required": [
-                "address",
-                "email",
-                "name",
-                "phone"
-              ],
-              "type": "object"
-            },
-            "company": {
-              "additionalProperties": false,
-              "properties": {
-                "name": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "name"
-              ],
-              "type": "object"
-            },
-            "email": {
-              "$ref": "#/definitions/Email"
-            },
-            "name": {
-              "additionalProperties": false,
-              "properties": {
-                "first": {
-                  "type": "string"
-                },
-                "last": {
-                  "type": "string"
-                },
-                "title": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "first",
-                "last"
-              ],
-              "type": "object"
-            },
-            "ownership": {
-              "additionalProperties": false,
-              "properties": {
-                "interest": {
-                  "anyOf": [
-                    {
-                      "$ref": "#/definitions/OwnersInterest"
-                    },
-                    {
-                      "const": "owner.sole",
-                      "type": "string"
-                    },
-                    {
-                      "const": "owner.co",
-                      "type": "string"
-                    }
-                  ]
-                }
-              },
-              "required": [
-                "interest"
-              ],
-              "type": "object"
-            },
-            "phone": {
-              "additionalProperties": false,
-              "properties": {
-                "primary": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "primary"
-              ],
-              "type": "object"
-            },
-            "siteContact": {
-              "$ref": "#/definitions/SiteContact",
-              "description": "Contact information for the site visit"
-            },
-            "type": {
-              "description": "The type of applicant",
-              "enum": [
-                "individual",
-                "company",
-                "charity",
-                "public",
-                "parishCouncil"
-              ],
-              "type": "string"
-            }
-          },
-          "required": [
-            "address",
-            "agent",
-            "email",
-            "name",
-            "ownership",
-            "phone",
-            "siteContact"
-          ],
-          "type": "object"
-        }
-      ]
-    },
-    "AdvertConsentApplicationType": {
-      "const": "advertConsent",
-      "description": "Consent to display an advertisement",
-      "type": "string"
-    },
-    "AdvertConsentProposal": {
-      "additionalProperties": false,
-      "properties": {
-        "advertType": {
-          "type": "string"
-        },
-        "advertisementDetails": {
-          "additionalProperties": false,
-          "properties": {
-            "fascia": {
-              "$ref": "#/definitions/Integer"
-            },
-            "hoarding": {
-              "$ref": "#/definitions/Integer"
-            },
-            "other": {
-              "$ref": "#/definitions/Integer"
-            },
-            "projecting": {
-              "$ref": "#/definitions/Integer"
-            }
-          },
-          "required": [
-            "other",
-            "fascia",
-            "hoarding",
-            "projecting"
-          ],
-          "type": "object"
-        },
-        "boundary": {
-          "$ref": "#/definitions/GeoBoundary",
-          "description": "Location plan boundary proposed by the user, commonly referred to as the red line boundary"
-        },
-        "communityConsultation": {
-          "type": "boolean"
-        },
-        "date": {
-          "$ref": "#/definitions/ProposalDates"
-        },
-        "existingAdvertRemovedOrReplaced": {
-          "type": "boolean"
-        },
-        "highwayProjection": {
-          "type": "boolean"
-        },
-        "otherAdvertisements": {
-          "type": "boolean"
-        },
-        "visibility": {
-          "additionalProperties": false,
-          "properties": {
-            "public": {
-              "type": "boolean"
-            }
-          },
-          "required": [
-            "public"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "advertType",
-        "advertisementDetails",
-        "communityConsultation",
-        "date",
-        "existingAdvertRemovedOrReplaced",
-        "highwayProjection",
-        "otherAdvertisements",
-        "visibility"
-      ],
-      "type": "object"
-    },
-    "Agent": {
-      "additionalProperties": false,
-      "properties": {
         "address": {
           "$ref": "#/definitions/UserAddress",
           "description": "Address information for the applicant"
@@ -7333,13 +6922,28 @@
         "boundary": {
           "type": "string"
         },
+        "ceiling": {
+          "type": "string"
+        },
+        "chimney": {
+          "type": "string"
+        },
         "door": {
+          "type": "string"
+        },
+        "doorInternal": {
+          "type": "string"
+        },
+        "floor": {
           "type": "string"
         },
         "lighting": {
           "type": "string"
         },
         "other": {
+          "type": "string"
+        },
+        "rainwater": {
           "type": "string"
         },
         "roof": {
@@ -7349,6 +6953,9 @@
           "type": "string"
         },
         "wall": {
+          "type": "string"
+        },
+        "wallInternal": {
           "type": "string"
         },
         "window": {
@@ -12845,7 +12452,7 @@
       "type": "object"
     },
     "Position": {
-      "description": "A Position is an array of coordinates. https://tools.ietf.org/html/rfc7946#section-3.1.1 Array should contain between two and three elements. The previous GeoJSON specification allowed more elements (e.g., which could be used to represent M values), but the current specification only allows X, Y, and (optionally) Z to be defined.",
+      "description": "A Position is an array of coordinates. https://tools.ietf.org/html/rfc7946#section-3.1.1 Array should contain between two and three elements. The previous GeoJSON specification allowed more elements (e.g., which could be used to represent M values), but the current specification only allows X, Y, and (optionally) Z to be defined.\n\nNote: the type will not be narrowed down to `[number, number] | [number, number, number]` due to marginal benefits and the large impact of breaking change.\n\nSee previous discussions on the type narrowing:\n-  {@link  https://github.com/DefinitelyTyped/DefinitelyTyped/pull/21590 Nov 2017 } \n-  {@link  https://github.com/DefinitelyTyped/DefinitelyTyped/discussions/67773 Dec 2023 } \n-  {@link  https://github.com/DefinitelyTyped/DefinitelyTyped/discussions/71441 Dec 2024 } \n\nOne can use a  {@link  https://www.typescriptlang.org/docs/handbook/2/narrowing.html#using-type-predicates user-defined type guard that returns a type predicate }  to determine if a position is a 2D or 3D position.",
       "items": {
         "type": "number"
       },
