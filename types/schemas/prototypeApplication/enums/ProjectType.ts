@@ -376,19 +376,14 @@ type AlterHighwaysAccessUnclassified = 'alter.highways.access.unclassified';
 type AlterHighwaysDropKerb = 'alter.highways.dropKerb';
 
 /**
- * @description Changes to a dropped kerb
- */
-type AlterHighwaysDroppedKerb = 'alter.highways.droppedKerb';
-
-/**
  * @description Add a dropped kerb
  */
-type AlterHighwaysDroppedKerbAdd = 'alter.highways.droppedKerb.add';
+type AlterHighwaysDropKerbAdd = 'alter.highways.dropKerb.add';
 
 /**
  * @description Remove a dropped kerb
  */
-type AlterHighwaysDroppedKerbRemove = 'alter.highways.droppedKerb.remove';
+type AlterHighwaysDropKerbRemove = 'alter.highways.dropKerb.remove';
 
 /**
  * @description Changes to a road
