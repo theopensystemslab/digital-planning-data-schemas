@@ -1562,9 +1562,8 @@ export type ProjectType =
   | AlterHighwaysAccess
   | AlterHighwaysAccessUnclassified
   | AlterHighwaysDropKerb
-  | AlterHighwaysDroppedKerb
-  | AlterHighwaysDroppedKerbAdd
-  | AlterHighwaysDroppedKerbRemove
+  | AlterHighwaysDropKerbAdd
+  | AlterHighwaysDropKerbRemove
   | AlterHighwaysRoad
   | AlterHighwaysRoadAdd
   | AlterHighwaysRoadRemove
