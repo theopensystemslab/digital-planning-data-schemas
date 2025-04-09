@@ -12536,17 +12536,12 @@
           "type": "string"
         },
         {
-          "const": "alter.highways.droppedKerb",
-          "description": "Changes to a dropped kerb",
-          "type": "string"
-        },
-        {
-          "const": "alter.highways.droppedKerb.add",
+          "const": "alter.highways.dropKerb.add",
           "description": "Add a dropped kerb",
           "type": "string"
         },
         {
-          "const": "alter.highways.droppedKerb.remove",
+          "const": "alter.highways.dropKerb.remove",
           "description": "Remove a dropped kerb",
           "type": "string"
         },
@@ -13406,11 +13401,6 @@
           "type": "string"
         },
         {
-          "const": "extend.roof.hiptogable",
-          "description": "Convert a hip roof to a gable",
-          "type": "string"
-        },
-        {
           "const": "extend.roof.hipToGable",
           "description": "Convert a hip roof to a gable",
           "type": "string"
@@ -13418,11 +13408,6 @@
         {
           "const": "extend.roof.mansard",
           "description": "Convert to a mansard roof",
-          "type": "string"
-        },
-        {
-          "const": "extend.roof.newstorey",
-          "description": "Add one or more new storeys",
           "type": "string"
         },
         {
