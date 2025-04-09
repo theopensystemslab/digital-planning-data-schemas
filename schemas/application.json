@@ -13890,29 +13890,11 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Changes to a dropped kerb",
-              "type": "string"
-            },
-            "value": {
-              "const": "alter.highways.droppedKerb",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
               "const": "Add a dropped kerb",
               "type": "string"
             },
             "value": {
-              "const": "alter.highways.droppedKerb.add",
+              "const": "alter.highways.dropKerb.add",
               "type": "string"
             }
           },
@@ -13930,7 +13912,7 @@
               "type": "string"
             },
             "value": {
-              "const": "alter.highways.droppedKerb.remove",
+              "const": "alter.highways.dropKerb.remove",
               "type": "string"
             }
           },
@@ -17026,24 +17008,6 @@
               "type": "string"
             },
             "value": {
-              "const": "extend.roof.hiptogable",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "Convert a hip roof to a gable",
-              "type": "string"
-            },
-            "value": {
               "const": "extend.roof.hipToGable",
               "type": "string"
             }
@@ -17063,24 +17027,6 @@
             },
             "value": {
               "const": "extend.roof.mansard",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "Add one or more new storeys",
-              "type": "string"
-            },
-            "value": {
-              "const": "extend.roof.newstorey",
               "type": "string"
             }
           },
