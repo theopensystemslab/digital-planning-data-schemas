@@ -87,9 +87,8 @@ export const ProjectTypes = {
   'alter.highways.access.unclassified':
     'Create a point of access to an unclassified road',
   'alter.highways.dropKerb': 'Changes to a dropped kerb',
-  'alter.highways.droppedKerb': 'Changes to a dropped kerb',
-  'alter.highways.droppedKerb.add': 'Add a dropped kerb',
-  'alter.highways.droppedKerb.remove': 'Remove a dropped kerb',
+  'alter.highways.dropKerb.add': 'Add a dropped kerb',
+  'alter.highways.dropKerb.remove': 'Remove a dropped kerb',
   'alter.highways.road': 'Changes to a road',
   'alter.highways.road.add': 'Add a road',
   'alter.highways.road.remove': 'Remove a road',
