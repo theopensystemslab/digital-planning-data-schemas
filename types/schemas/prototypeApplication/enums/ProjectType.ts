@@ -1735,10 +1735,8 @@ export type ProjectType =
   | ExtendRoofDormerMansard
   | ExtendRoofDormerRear
   | ExtendRoofDormerSide
-  | ExtendRoofHiptogable
   | ExtendRoofHipToGable
   | ExtendRoofMansard
-  | ExtendRoofNewstorey
   | ExtendRoofNewStorey
   | ExtendRoofSlope
   | ExtendSide
