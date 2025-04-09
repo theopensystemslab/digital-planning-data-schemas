@@ -1256,22 +1256,12 @@ type ExtendRoofDormerSide = 'extend.roof.dormer.side';
 /**
  * @description Convert a hip roof to a gable
  */
-type ExtendRoofHiptogable = 'extend.roof.hiptogable';
-
-/**
- * @description Convert a hip roof to a gable
- */
 type ExtendRoofHipToGable = 'extend.roof.hipToGable';
 
 /**
  * @description Convert to a mansard roof
  */
 type ExtendRoofMansard = 'extend.roof.mansard';
-
-/**
- * @description Add one or more new storeys
- */
-type ExtendRoofNewstorey = 'extend.roof.newstorey';
 
 /**
  * @description Add one or more new storeys
