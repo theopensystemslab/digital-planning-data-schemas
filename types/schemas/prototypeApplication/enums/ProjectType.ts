@@ -376,19 +376,14 @@ type AlterHighwaysAccessUnclassified = 'alter.highways.access.unclassified';
 type AlterHighwaysDropKerb = 'alter.highways.dropKerb';
 
 /**
- * @description Changes to a dropped kerb
- */
-type AlterHighwaysDroppedKerb = 'alter.highways.droppedKerb';
-
-/**
  * @description Add a dropped kerb
  */
-type AlterHighwaysDroppedKerbAdd = 'alter.highways.droppedKerb.add';
+type AlterHighwaysDropKerbAdd = 'alter.highways.dropKerb.add';
 
 /**
  * @description Remove a dropped kerb
  */
-type AlterHighwaysDroppedKerbRemove = 'alter.highways.droppedKerb.remove';
+type AlterHighwaysDropKerbRemove = 'alter.highways.dropKerb.remove';
 
 /**
  * @description Changes to a road
@@ -1256,22 +1251,12 @@ type ExtendRoofDormerSide = 'extend.roof.dormer.side';
 /**
  * @description Convert a hip roof to a gable
  */
-type ExtendRoofHiptogable = 'extend.roof.hiptogable';
-
-/**
- * @description Convert a hip roof to a gable
- */
 type ExtendRoofHipToGable = 'extend.roof.hipToGable';
 
 /**
  * @description Convert to a mansard roof
  */
 type ExtendRoofMansard = 'extend.roof.mansard';
-
-/**
- * @description Add one or more new storeys
- */
-type ExtendRoofNewstorey = 'extend.roof.newstorey';
 
 /**
  * @description Add one or more new storeys
@@ -1577,9 +1562,8 @@ export type ProjectType =
   | AlterHighwaysAccess
   | AlterHighwaysAccessUnclassified
   | AlterHighwaysDropKerb
-  | AlterHighwaysDroppedKerb
-  | AlterHighwaysDroppedKerbAdd
-  | AlterHighwaysDroppedKerbRemove
+  | AlterHighwaysDropKerbAdd
+  | AlterHighwaysDropKerbRemove
   | AlterHighwaysRoad
   | AlterHighwaysRoadAdd
   | AlterHighwaysRoadRemove
@@ -1751,10 +1735,8 @@ export type ProjectType =
   | ExtendRoofDormerMansard
   | ExtendRoofDormerRear
   | ExtendRoofDormerSide
-  | ExtendRoofHiptogable
   | ExtendRoofHipToGable
   | ExtendRoofMansard
-  | ExtendRoofNewstorey
   | ExtendRoofNewStorey
   | ExtendRoofSlope
   | ExtendSide
