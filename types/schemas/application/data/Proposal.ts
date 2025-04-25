@@ -1,16 +1,16 @@
-import {GeoBoundary} from './../../../shared/Boundaries';
-import {Materials} from '../../../shared/Materials';
-import {BuildingRegulation} from '../enums/BuildingRegulations';
-import {DevelopmentType} from '../enums/DevelopmentTypes';
-import {GLAHousingProvider} from '../enums/HousingProviders';
-import {OpenSpaceDesignation, OpenSpaceType} from '../enums/OpenSpaces';
-import {ProjectType} from '../enums/ProjectTypes';
-import {ProtectedSpaceDesignation} from '../enums/ProtectedSpaces';
-import {GLAResidentialUnitType} from '../enums/ResidentialUnitTypes';
-import {GLATenureType} from '../enums/TenureTypes';
-import {Area, Date} from '../../../shared/utils';
-import {ResidentialUnits} from './shared';
-import {ProposedLondonParking} from '../../../shared/Parking';
+import { BuildingRegulation } from '../../../shared/BuildingRegulations';
+import { Materials } from '../../../shared/Materials';
+import { ProposedLondonParking } from '../../../shared/Parking';
+import { Area, Date } from '../../../shared/utils';
+import { DevelopmentType } from '../enums/DevelopmentTypes';
+import { GLAHousingProvider } from '../enums/HousingProviders';
+import { OpenSpaceDesignation, OpenSpaceType } from '../enums/OpenSpaces';
+import { ProjectType } from '../enums/ProjectTypes';
+import { ProtectedSpaceDesignation } from '../enums/ProtectedSpaces';
+import { GLAResidentialUnitType } from '../enums/ResidentialUnitTypes';
+import { GLATenureType } from '../enums/TenureTypes';
+import { GeoBoundary } from './../../../shared/Boundaries';
+import { ResidentialUnits } from './shared';
 
 /**
  * @id #Proposal

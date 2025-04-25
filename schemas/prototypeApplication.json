@@ -2004,30 +2004,82 @@
       ]
     },
     "BuildingRegulation": {
-      "$id": "#BuildingRegulation",
       "anyOf": [
         {
-          "const": "m42",
-          "description": "Part M4(2) of the Building Regulations 2010",
-          "type": "string"
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Part M4(2) of the Building Regulations 2010",
+              "type": "string"
+            },
+            "value": {
+              "const": "m42",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
         },
         {
-          "const": "m432a",
-          "description": "Part M4(3)(2a) of the Building Regulations 2010",
-          "type": "string"
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Part M4(3)(2a) of the Building Regulations 2010",
+              "type": "string"
+            },
+            "value": {
+              "const": "m432a",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
         },
         {
-          "const": "m432b",
-          "description": "Part M4(3)(2b) of the Building Regulations 2010",
-          "type": "string"
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Part M4(3)(2b) of the Building Regulations 2010",
+              "type": "string"
+            },
+            "value": {
+              "const": "m432b",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
         },
         {
-          "const": "none",
-          "description": "None of these",
-          "type": "string"
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "None of these",
+              "type": "string"
+            },
+            "value": {
+              "const": "none",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
         }
       ],
-      "description": "Building regulations"
+      "description": "Building regulation",
+      "title": "Building regulation"
     },
     "CalculateMetadata": {
       "$id": "#CalculateMetadata",

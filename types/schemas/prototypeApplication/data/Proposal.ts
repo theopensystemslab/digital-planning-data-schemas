@@ -1,17 +1,17 @@
-import {GeoBoundary} from '../../../shared/Boundaries';
-import {Materials} from '../../../shared/Materials';
-import {ProposedLondonParking} from '../../../shared/Parking';
-import {Area, Date, Integer} from '../../../shared/utils';
-import {PrimaryApplicationType} from '../enums/ApplicationType';
-import {BuildingRegulation} from '../enums/BuildingRegulation';
-import {DevelopmentType} from '../enums/DevelopmentType';
-import {GLAHousingProvider} from '../enums/HousingProvider';
-import {OpenSpaceDesignation, OpenSpaceType} from '../enums/OpenSpace';
-import {ProjectType} from '../enums/ProjectType';
-import {ProtectedSpaceDesignation} from '../enums/ProtectedSpaceDesignation';
-import {GLAResidentialUnitType} from '../enums/ResidentialUnitType';
-import {GLATenureType} from '../enums/TenureType';
-import {ResidentialUnits} from './shared';
+import { GeoBoundary } from '../../../shared/Boundaries';
+import { BuildingRegulation } from '../../../shared/BuildingRegulations';
+import { Materials } from '../../../shared/Materials';
+import { ProposedLondonParking } from '../../../shared/Parking';
+import { Area, Date, Integer } from '../../../shared/utils';
+import { PrimaryApplicationType } from '../enums/ApplicationType';
+import { DevelopmentType } from '../enums/DevelopmentType';
+import { GLAHousingProvider } from '../enums/HousingProvider';
+import { OpenSpaceDesignation, OpenSpaceType } from '../enums/OpenSpace';
+import { ProjectType } from '../enums/ProjectType';
+import { ProtectedSpaceDesignation } from '../enums/ProtectedSpaceDesignation';
+import { GLAResidentialUnitType } from '../enums/ResidentialUnitType';
+import { GLATenureType } from '../enums/TenureType';
+import { ResidentialUnits } from './shared';
 
 export interface ProposalBase {
   description: string;
