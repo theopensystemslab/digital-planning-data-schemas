@@ -104,7 +104,7 @@ export const ProjectTypes = {
   'alter.landscape': 'Landscaping works',
   'alter.landscape.gardens': 'Add or remove a residential lawn or garden',
   'alter.landscape.ponds': 'Add or remove a pond',
-  'alter.loadingBay': 'Alter a loading bay', 
+  'alter.loadingBay': 'Alter a loading bay',
   'alter.openings': 'Change a door or window opening',
   'alter.openings.add': 'Add a door or window opening',
   'alter.openings.add.door': 'Add one or more new doorways',
