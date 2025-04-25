@@ -13,6 +13,7 @@ export const PlanningDesignations = {
   aquifer: 'Aquifer',
   'aquifer.principal': 'Principal aquifer',
   'aquifer.secondary': 'Secondary aquifer',
+  battlefield: 'Historic battlefield',
   brownfieldSite: 'Brownfield site',
   coastalChangeManagementArea: 'Coastal change management area',
   communityAsset: 'Community asset',

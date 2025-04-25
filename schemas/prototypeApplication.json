@@ -889,6 +889,24 @@
           "additionalProperties": false,
           "properties": {
             "description": {
+              "const": "Historic battlefield",
+              "type": "string"
+            },
+            "value": {
+              "const": "battlefield",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
               "const": "Brownfield site",
               "type": "string"
             },
@@ -8645,6 +8663,29 @@
               "additionalProperties": false,
               "properties": {
                 "description": {
+                  "const": "Historic battlefield",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "battlefield",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
                   "const": "Brownfield site",
                   "type": "string"
                 },
@@ -10272,6 +10313,35 @@
                 },
                 "value": {
                   "const": "aquifer.secondary",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Historic battlefield",
+                  "type": "string"
+                },
+                "entities": {
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "battlefield",
                   "type": "string"
                 }
               },
