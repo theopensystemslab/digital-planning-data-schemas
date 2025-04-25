@@ -1,5 +1,5 @@
 import {Date} from '../../../shared/utils';
-import {PrimaryApplicationType} from '../../prototypeApplication/enums/ApplicationType';
+import {ApplicationType} from '../../prototypeApplication/enums/ApplicationType';
 
 type ConsultationBase = {
   /**
@@ -24,14 +24,14 @@ type ConsultationBase = {
 };
 
 /**
- * TypeMap of PrimaryApplicationTypes to their specific Consultation models
+ * TypeMap of granular application types to their specific Consultation models
  */
 type ConsultationVariants = {};
 
 /**
- * @internal Conditional type to return a specific or generic Property model, based on PrimaryApplicationType
+ * @internal Conditional type to return a specific or generic Property model
  */
-export type Consultation<TPrimary extends PrimaryApplicationType> =
-  TPrimary extends keyof ConsultationVariants
-    ? ConsultationVariants[TPrimary]
+export type Consultation<T extends ApplicationType> =
+  T extends keyof ConsultationVariants
+    ? ConsultationVariants[T]
     : ConsultationBase;

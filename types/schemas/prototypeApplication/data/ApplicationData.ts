@@ -1,4 +1,3 @@
-import {PrimaryApplicationType} from '../enums/ApplicationType';
 import {Declaration} from '../../../shared/Declarations';
 import {Fee, FeeNotApplicable} from '../../../shared/Fees';
 import {CommunityInfrastructureLevy} from '../../../shared/CommunityInfrastructureLevy';
@@ -6,6 +5,7 @@ import {
   PlanningApplication,
   PreApplication,
 } from '../../../shared/LinkedApplications';
+import { ApplicationType } from '../enums/ApplicationType';
 
 export type ApplicationDataBase =
   | EnglandApplicationData
@@ -58,25 +58,30 @@ export type PPApplicationData = FeeCarryingApplicationData & {
 };
 
 /**
- * TypeMap of PrimaryApplicationTypes to their specific ApplicationData models
+ * TypeMap of granular application types to their specific ApplicationData models
  */
 export interface ApplicationDataVariants {
-  ldc: FeeCarryingApplicationData;
-  pa: FeeCarryingApplicationData;
-  pp: PPApplicationData;
-  listed: NonFeeCarryingApplicationData;
-  landDrainageConsent: FeeCarryingApplicationData;
-  wtt: NonFeeCarryingApplicationData;
-  hedgerowRemovalNotice: NonFeeCarryingApplicationData;
+  'ldc.breachOfCondition': FeeCarryingApplicationData;
+  'ldc.existing': FeeCarryingApplicationData;
+  'ldc.listedBuildingWorks': NonFeeCarryingApplicationData;
+  'ldc.proposed': FeeCarryingApplicationData;
+  'pp.full.householder.retro': PPApplicationData
+  'pp.full.householder': PPApplicationData;
+  'wtt.consent': NonFeeCarryingApplicationData;
+  'wtt.notice': NonFeeCarryingApplicationData;
   advertConsent: FeeCarryingApplicationData;
   complianceConfirmation: FeeCarryingApplicationData;
+  hedgerowRemovalNotice: NonFeeCarryingApplicationData;
+  landDrainageConsent: FeeCarryingApplicationData;
+  listed: NonFeeCarryingApplicationData;
+  pa: FeeCarryingApplicationData;
 }
 
 /**
  * @internal
- * Conditional type to return a specific or generic ApplicationData model, based on PrimaryApplicationType
+ * Conditional type to return a specific or generic ApplicationData model
  */
-export type ApplicationData<TPrimary extends PrimaryApplicationType> =
-  TPrimary extends keyof ApplicationDataVariants
-    ? ApplicationDataVariants[TPrimary]
+export type ApplicationData<T extends ApplicationType> =
+  T extends keyof ApplicationDataVariants
+    ? ApplicationDataVariants[T]
     : ApplicationDataBase;

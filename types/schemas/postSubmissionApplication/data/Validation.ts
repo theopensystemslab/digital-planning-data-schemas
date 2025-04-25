@@ -1,5 +1,5 @@
-import {DateTime} from '../../../shared/utils';
-import {PrimaryApplicationType} from '../../prototypeApplication/enums/ApplicationType';
+import { DateTime } from '../../../shared/utils';
+import { ApplicationType } from '../../prototypeApplication/enums/ApplicationType';
 
 type ValidationBase = {
   /**
@@ -23,14 +23,14 @@ type ValidationBase = {
 };
 
 /**
- * TypeMap of PrimaryApplicationTypes to their specific Validation models
+ * TypeMap of granular application types to their specific Validation models
  */
 type ValidationVariants = {};
 
 /**
- * @internal Conditional type to return a specific or generic Property model, based on PrimaryApplicationType
+ * @internal Conditional type to return a specific or generic Property model
  */
-export type Validation<TPrimary extends PrimaryApplicationType> =
-  TPrimary extends keyof ValidationVariants
-    ? ValidationVariants[TPrimary]
+export type Validation<T extends ApplicationType> =
+  T extends keyof ValidationVariants
+    ? ValidationVariants[T]
     : ValidationBase;

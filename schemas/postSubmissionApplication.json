@@ -90,7 +90,8 @@
       "additionalProperties": false,
       "properties": {
         "applicationType": {
-          "$ref": "#/definitions/AdvertConsentApplicationType"
+          "const": "advertConsent",
+          "type": "string"
         },
         "data": {
           "additionalProperties": false,
@@ -418,11 +419,6 @@
         }
       ]
     },
-    "AdvertConsentApplicationType": {
-      "const": "advertConsent",
-      "description": "Consent to display an advertisement",
-      "type": "string"
-    },
     "AdvertConsentProposal": {
       "additionalProperties": false,
       "properties": {
@@ -638,25 +634,6 @@
       ],
       "type": "object"
     },
-    "AmendmentApplicationType": {
-      "anyOf": [
-        {
-          "const": "amendment",
-          "description": "Consent to make small changes to a project with Planning Permission",
-          "type": "string"
-        },
-        {
-          "const": "amendment.minorMaterial",
-          "description": "Consent to make small (minor material) changes to a project with Planning Permission",
-          "type": "string"
-        },
-        {
-          "const": "amendment.nonMaterial",
-          "description": "Consent to make small (non-material) changes to a project with Planning Permission",
-          "type": "string"
-        }
-      ]
-    },
     "AppealDecision": {
       "$id": "#AppealDecision",
       "anyOf": [
@@ -718,25 +695,6 @@
         }
       ],
       "description": "Stages of the planning application process"
-    },
-    "ApprovalApplicationType": {
-      "anyOf": [
-        {
-          "const": "approval",
-          "description": "Planning approval",
-          "type": "string"
-        },
-        {
-          "const": "approval.conditions",
-          "description": "Approval of details reserved by condition",
-          "type": "string"
-        },
-        {
-          "const": "approval.reservedMatters",
-          "description": "Approval of reserved matters",
-          "type": "string"
-        }
-      ]
     },
     "Area": {
       "$id": "#Area",
@@ -2646,7 +2604,8 @@
       "additionalProperties": false,
       "properties": {
         "applicationType": {
-          "$ref": "#/definitions/ComplianceConfirmationApplicationType"
+          "const": "complianceConfirmation",
+          "type": "string"
         },
         "data": {
           "additionalProperties": false,
@@ -2973,11 +2932,6 @@
           "type": "object"
         }
       ]
-    },
-    "ComplianceConfirmationApplicationType": {
-      "const": "complianceConfirmation",
-      "description": "Written confirmation of compliance with a planning condition",
-      "type": "string"
     },
     "ContactDetails": {
       "additionalProperties": false,
@@ -3645,25 +3599,6 @@
       ],
       "title": "Designated entity",
       "type": "object"
-    },
-    "EnvironmentalImpactApplicationType": {
-      "anyOf": [
-        {
-          "const": "environmentalImpact",
-          "description": "Environmental Impact Decision",
-          "type": "string"
-        },
-        {
-          "const": "environmentalImpact.scoping",
-          "description": "Environmental Impact Decision - Scoping",
-          "type": "string"
-        },
-        {
-          "const": "environmentalImpact.screening",
-          "description": "Environmental Impact Decision - Screening",
-          "type": "string"
-        }
-      ]
     },
     "ExistingLondonParking": {
       "additionalProperties": false,
@@ -4521,16 +4456,12 @@
       ],
       "type": "object"
     },
-    "HazardousSubstanceConsentApplicationType": {
-      "const": "hazardousSubstanceConsent",
-      "description": "Consent to move and dispose of hazardous substances",
-      "type": "string"
-    },
     "HedgerowRemovalNotice": {
       "additionalProperties": false,
       "properties": {
         "applicationType": {
-          "$ref": "#/definitions/HedgerowRemovalNoticeApplicationType"
+          "const": "hedgerowRemovalNotice",
+          "type": "string"
         },
         "data": {
           "additionalProperties": false,
@@ -4858,11 +4789,6 @@
         }
       ]
     },
-    "HedgerowRemovalNoticeApplicationType": {
-      "const": "hedgerowRemovalNotice",
-      "description": "Notice to remove a hedge",
-      "type": "string"
-    },
     "HedgerowRemovalNoticeProposal": {
       "additionalProperties": false,
       "properties": {
@@ -4899,65 +4825,6 @@
     "Integer": {
       "format": "integer",
       "type": "number"
-    },
-    "LDC": {
-      "additionalProperties": false,
-      "properties": {
-        "applicationType": {
-          "$ref": "#/definitions/LDCApplicationType"
-        },
-        "data": {
-          "additionalProperties": false,
-          "properties": {
-            "applicant": {
-              "$ref": "#/definitions/LDCApplicant"
-            },
-            "application": {
-              "$ref": "#/definitions/FeeCarryingApplicationData"
-            },
-            "property": {
-              "$ref": "#/definitions/PropertyBase"
-            },
-            "proposal": {
-              "$ref": "#/definitions/GeographyBasedProposal"
-            },
-            "user": {
-              "$ref": "#/definitions/UserBase"
-            }
-          },
-          "required": [
-            "user",
-            "applicant",
-            "application",
-            "property",
-            "proposal"
-          ],
-          "type": "object"
-        },
-        "files": {
-          "items": {
-            "$ref": "#/definitions/File"
-          },
-          "type": "array"
-        },
-        "metadata": {
-          "$ref": "#/definitions/PrototypePlanXMetadata"
-        },
-        "preAssessment": {
-          "$ref": "#/definitions/PreAssessment"
-        },
-        "responses": {
-          "$ref": "#/definitions/Responses"
-        }
-      },
-      "required": [
-        "applicationType",
-        "data",
-        "responses",
-        "files",
-        "metadata"
-      ],
-      "type": "object"
     },
     "LDCApplicant": {
       "anyOf": [
@@ -5334,40 +5201,252 @@
         }
       ]
     },
-    "LDCApplicationType": {
-      "anyOf": [
-        {
-          "const": "ldc",
-          "description": "Lawful Development Certificate",
-          "type": "string"
-        },
-        {
+    "LDCBreachOfCondition": {
+      "additionalProperties": false,
+      "properties": {
+        "applicationType": {
           "const": "ldc.breachOfCondition",
-          "description": "Lawful Development Certificate - Existing use lawful not to comply with a condition (S191C)",
           "type": "string"
         },
-        {
-          "const": "ldc.existing",
-          "description": "Lawful Development Certificate - Existing use",
-          "type": "string"
+        "data": {
+          "additionalProperties": false,
+          "properties": {
+            "applicant": {
+              "$ref": "#/definitions/LDCApplicant"
+            },
+            "application": {
+              "$ref": "#/definitions/FeeCarryingApplicationData"
+            },
+            "property": {
+              "$ref": "#/definitions/PropertyBase"
+            },
+            "proposal": {
+              "$ref": "#/definitions/GeographyBasedProposal"
+            },
+            "user": {
+              "$ref": "#/definitions/UserBase"
+            }
+          },
+          "required": [
+            "user",
+            "applicant",
+            "application",
+            "property",
+            "proposal"
+          ],
+          "type": "object"
         },
-        {
-          "const": "ldc.listedBuildingWorks",
-          "description": "Lawful Development Certificate - Works to a Listed Building (S26H)",
-          "type": "string"
+        "files": {
+          "items": {
+            "$ref": "#/definitions/File"
+          },
+          "type": "array"
         },
-        {
-          "const": "ldc.proposed",
-          "description": "Lawful Development Certificate - Proposed use",
-          "type": "string"
+        "metadata": {
+          "$ref": "#/definitions/PrototypePlanXMetadata"
+        },
+        "preAssessment": {
+          "$ref": "#/definitions/PreAssessment"
+        },
+        "responses": {
+          "$ref": "#/definitions/Responses"
         }
-      ]
+      },
+      "required": [
+        "applicationType",
+        "data",
+        "responses",
+        "files",
+        "metadata"
+      ],
+      "type": "object"
+    },
+    "LDCExisting": {
+      "additionalProperties": false,
+      "properties": {
+        "applicationType": {
+          "const": "ldc.existing",
+          "type": "string"
+        },
+        "data": {
+          "additionalProperties": false,
+          "properties": {
+            "applicant": {
+              "$ref": "#/definitions/LDCApplicant"
+            },
+            "application": {
+              "$ref": "#/definitions/FeeCarryingApplicationData"
+            },
+            "property": {
+              "$ref": "#/definitions/PropertyBase"
+            },
+            "proposal": {
+              "$ref": "#/definitions/GeographyBasedProposal"
+            },
+            "user": {
+              "$ref": "#/definitions/UserBase"
+            }
+          },
+          "required": [
+            "user",
+            "applicant",
+            "application",
+            "property",
+            "proposal"
+          ],
+          "type": "object"
+        },
+        "files": {
+          "items": {
+            "$ref": "#/definitions/File"
+          },
+          "type": "array"
+        },
+        "metadata": {
+          "$ref": "#/definitions/PrototypePlanXMetadata"
+        },
+        "preAssessment": {
+          "$ref": "#/definitions/PreAssessment"
+        },
+        "responses": {
+          "$ref": "#/definitions/Responses"
+        }
+      },
+      "required": [
+        "applicationType",
+        "data",
+        "responses",
+        "files",
+        "metadata"
+      ],
+      "type": "object"
+    },
+    "LDCListedBuildingWorks": {
+      "additionalProperties": false,
+      "properties": {
+        "applicationType": {
+          "const": "ldc.listedBuildingWorks",
+          "type": "string"
+        },
+        "data": {
+          "additionalProperties": false,
+          "properties": {
+            "applicant": {
+              "$ref": "#/definitions/ApplicantBase"
+            },
+            "application": {
+              "$ref": "#/definitions/NonFeeCarryingApplicationData"
+            },
+            "property": {
+              "$ref": "#/definitions/PropertyBase"
+            },
+            "proposal": {
+              "$ref": "#/definitions/GeographyBasedProposal"
+            },
+            "user": {
+              "$ref": "#/definitions/UserBase"
+            }
+          },
+          "required": [
+            "user",
+            "applicant",
+            "application",
+            "property",
+            "proposal"
+          ],
+          "type": "object"
+        },
+        "files": {
+          "items": {
+            "$ref": "#/definitions/File"
+          },
+          "type": "array"
+        },
+        "metadata": {
+          "$ref": "#/definitions/PrototypePlanXMetadata"
+        },
+        "preAssessment": {
+          "$ref": "#/definitions/PreAssessment"
+        },
+        "responses": {
+          "$ref": "#/definitions/Responses"
+        }
+      },
+      "required": [
+        "applicationType",
+        "data",
+        "responses",
+        "files",
+        "metadata"
+      ],
+      "type": "object"
+    },
+    "LDCProposed": {
+      "additionalProperties": false,
+      "properties": {
+        "applicationType": {
+          "const": "ldc.proposed",
+          "type": "string"
+        },
+        "data": {
+          "additionalProperties": false,
+          "properties": {
+            "applicant": {
+              "$ref": "#/definitions/LDCApplicant"
+            },
+            "application": {
+              "$ref": "#/definitions/FeeCarryingApplicationData"
+            },
+            "property": {
+              "$ref": "#/definitions/PropertyBase"
+            },
+            "proposal": {
+              "$ref": "#/definitions/ProposalBase"
+            },
+            "user": {
+              "$ref": "#/definitions/UserBase"
+            }
+          },
+          "required": [
+            "user",
+            "applicant",
+            "application",
+            "property",
+            "proposal"
+          ],
+          "type": "object"
+        },
+        "files": {
+          "items": {
+            "$ref": "#/definitions/File"
+          },
+          "type": "array"
+        },
+        "metadata": {
+          "$ref": "#/definitions/PrototypePlanXMetadata"
+        },
+        "preAssessment": {
+          "$ref": "#/definitions/PreAssessment"
+        },
+        "responses": {
+          "$ref": "#/definitions/Responses"
+        }
+      },
+      "required": [
+        "applicationType",
+        "data",
+        "responses",
+        "files",
+        "metadata"
+      ],
+      "type": "object"
     },
     "LandDrainageConsent": {
       "additionalProperties": false,
       "properties": {
         "applicationType": {
-          "$ref": "#/definitions/LandDrainageConsentApplicationType"
+          "const": "landDrainageConsent",
+          "type": "string"
         },
         "data": {
           "additionalProperties": false,
@@ -5703,11 +5782,6 @@
         }
       ]
     },
-    "LandDrainageConsentApplicationType": {
-      "const": "landDrainageConsent",
-      "description": "Consent to do works affecting ordinary watercourses or land drainage",
-      "type": "string"
-    },
     "LeadDeveloper": {
       "additionalProperties": false,
       "properties": {
@@ -5767,11 +5841,12 @@
       ],
       "type": "object"
     },
-    "Listed": {
+    "ListedBuildingConsent": {
       "additionalProperties": false,
       "properties": {
         "applicationType": {
-          "$ref": "#/definitions/ListedApplicationType"
+          "const": "listed",
+          "type": "string"
         },
         "data": {
           "additionalProperties": false,
@@ -5825,11 +5900,6 @@
         "metadata"
       ],
       "type": "object"
-    },
-    "ListedApplicationType": {
-      "const": "listed",
-      "description": "Consent to do works to a Listed Building",
-      "type": "string"
     },
     "LondonProperty": {
       "additionalProperties": false,
@@ -7165,11 +7235,6 @@
       ],
       "description": "ApplicationData required for application types that do not have a fee"
     },
-    "NotifyCompletionApplicationType": {
-      "const": "notifyCompletion",
-      "description": "Notification of completion",
-      "type": "string"
-    },
     "OSAddress": {
       "additionalProperties": false,
       "description": "Address information for sites with a known address sourced from Ordnance Survey AddressBase Premium LPI source",
@@ -7261,64 +7326,6 @@
       ],
       "title": "OS site address",
       "type": "object"
-    },
-    "ObligationApplicationType": {
-      "anyOf": [
-        {
-          "const": "obligation",
-          "description": "Planning obligation",
-          "type": "string"
-        },
-        {
-          "const": "obligation.discharge",
-          "description": "Discharge a planning obligation",
-          "type": "string"
-        },
-        {
-          "const": "obligation.modify",
-          "description": "Modify a planning obligation",
-          "type": "string"
-        }
-      ]
-    },
-    "OnshoreExtractionOilAndGasApplicationType": {
-      "anyOf": [
-        {
-          "const": "onshoreExtractionOilAndGas",
-          "description": "Onshore extraction of oil and gas",
-          "type": "string"
-        },
-        {
-          "const": "onshoreExtractionOilAndGas.other",
-          "description": "Onshore extraction of oil and gas - Other",
-          "type": "string"
-        },
-        {
-          "const": "onshoreExtractionOilAndGas.pp.extension",
-          "description": "Onshore extraction of oil and gas - Full planning permission for an extension to an existing site including associated development",
-          "type": "string"
-        },
-        {
-          "const": "onshoreExtractionOilAndGas.pp.waste",
-          "description": "Onshore extraction of oil and gas - Full planning permission for waste development",
-          "type": "string"
-        },
-        {
-          "const": "onshoreExtractionOilAndGas.pp.working",
-          "description": "Onshore extraction of oil and gas - Full planning permission for oil and gas working including exploratory, appraisal and production phases",
-          "type": "string"
-        },
-        {
-          "const": "onshoreExtractionOilAndGas.review",
-          "description": "Onshore extraction of oil and gas - Review of conditions applying to Mineral Permissions (ROMPs)",
-          "type": "string"
-        },
-        {
-          "const": "onshoreExtractionOilAndGas.variation",
-          "description": "Onshore extraction of oil and gas - Variation of conditions",
-          "type": "string"
-        }
-      ]
     },
     "OpenSpaceDesignation": {
       "$id": "#OpenSpaceDesignation",
@@ -7502,338 +7509,6 @@
         "interest",
         "name",
         "noticeGiven"
-      ],
-      "type": "object"
-    },
-    "PA": {
-      "additionalProperties": false,
-      "properties": {
-        "applicationType": {
-          "$ref": "#/definitions/PAApplicationType"
-        },
-        "data": {
-          "additionalProperties": false,
-          "properties": {
-            "applicant": {
-              "$ref": "#/definitions/ApplicantBase"
-            },
-            "application": {
-              "$ref": "#/definitions/FeeCarryingApplicationData"
-            },
-            "property": {
-              "$ref": "#/definitions/PropertyBase"
-            },
-            "proposal": {
-              "$ref": "#/definitions/GeographyBasedProposal"
-            },
-            "user": {
-              "$ref": "#/definitions/UserBase"
-            }
-          },
-          "required": [
-            "user",
-            "applicant",
-            "application",
-            "property",
-            "proposal"
-          ],
-          "type": "object"
-        },
-        "files": {
-          "items": {
-            "$ref": "#/definitions/File"
-          },
-          "type": "array"
-        },
-        "metadata": {
-          "$ref": "#/definitions/PrototypePlanXMetadata"
-        },
-        "preAssessment": {
-          "$ref": "#/definitions/PreAssessment"
-        },
-        "responses": {
-          "$ref": "#/definitions/Responses"
-        }
-      },
-      "required": [
-        "applicationType",
-        "data",
-        "responses",
-        "files",
-        "metadata"
-      ],
-      "type": "object"
-    },
-    "PAApplicationType": {
-      "anyOf": [
-        {
-          "const": "pa",
-          "description": "Prior Approval",
-          "type": "string"
-        },
-        {
-          "const": "pa.part1.classA",
-          "description": "Prior Approval - Larger extension to a house",
-          "type": "string"
-        },
-        {
-          "const": "pa.part1.classAA",
-          "description": "Prior Approval - Adding storeys to a house",
-          "type": "string"
-        },
-        {
-          "const": "pa.part3.classG",
-          "description": "Prior Approval - Convert a commercial building to mixed use",
-          "type": "string"
-        },
-        {
-          "const": "pa.part3.classM",
-          "description": "Prior Approval - Convert a mixed use building into a home",
-          "type": "string"
-        },
-        {
-          "const": "pa.part3.classMA",
-          "description": "Prior Approval - Convert a commercial building into a home or homes",
-          "type": "string"
-        },
-        {
-          "const": "pa.part3.classN",
-          "description": "Prior Approval - Convert a casino or amusement arcade into a home or homes",
-          "type": "string"
-        },
-        {
-          "const": "pa.part3.classQ",
-          "description": "Prior Approval - Convert an agricultural building into a home",
-          "type": "string"
-        },
-        {
-          "const": "pa.part3.classR",
-          "description": "Prior Approval - Convert an agricultural building to a commercial use",
-          "type": "string"
-        },
-        {
-          "const": "pa.part3.classS",
-          "description": "Prior Approval - Convert an agricultural building to a school",
-          "type": "string"
-        },
-        {
-          "const": "pa.part3.classT",
-          "description": "Prior Approval - Convert a commercial building to a school",
-          "type": "string"
-        },
-        {
-          "const": "pa.part3.classV",
-          "description": "Prior Approval - Changes of use permitted under a permission granted on an application",
-          "type": "string"
-        },
-        {
-          "const": "pa.part4.classBB",
-          "description": "Prior Approval - Put up a temporary structure",
-          "type": "string"
-        },
-        {
-          "const": "pa.part4.classBC",
-          "description": "Prior Approval - Develop a temporary campsite",
-          "type": "string"
-        },
-        {
-          "const": "pa.part4.classCA",
-          "description": "Prior Approval - Put temporary school buildings on vacant commercial land",
-          "type": "string"
-        },
-        {
-          "const": "pa.part4.classE",
-          "description": "Prior Approval - Use a building or land to shoot a film",
-          "type": "string"
-        },
-        {
-          "const": "pa.part6",
-          "description": "Prior Approval - Alter or add new buildings to agricultural or forestry sites",
-          "type": "string"
-        },
-        {
-          "const": "pa.part6.classA",
-          "description": "Prior Approval - Build new agricultural buildings on a unit of 5 hectares or more",
-          "type": "string"
-        },
-        {
-          "const": "pa.part6.classB",
-          "description": "Prior Approval - Build new agricultural buildings on a unit of less than 5 hectares",
-          "type": "string"
-        },
-        {
-          "const": "pa.part6.classE",
-          "description": "Prior Approval - Build new forestry buildings",
-          "type": "string"
-        },
-        {
-          "const": "pa.part7.classC",
-          "description": "Prior Approval - Install click and collect facilities",
-          "type": "string"
-        },
-        {
-          "const": "pa.part7.classM",
-          "description": "Prior Approval - Extend a school, college, university, prison or hospital",
-          "type": "string"
-        },
-        {
-          "const": "pa.part9.classD",
-          "description": "Prior Approval - Development of toll facilities",
-          "type": "string"
-        },
-        {
-          "const": "pa.part11.classB",
-          "description": "Prior Approval - Demolish a building",
-          "type": "string"
-        },
-        {
-          "const": "pa.part14.classA",
-          "description": "Prior Approval - Install or change solar equipment on domestic premises",
-          "type": "string"
-        },
-        {
-          "const": "pa.part14.classB",
-          "description": "Prior Approval - Install or change stand-alone solar equipment on domestic premises",
-          "type": "string"
-        },
-        {
-          "const": "pa.part14.classJ",
-          "description": "Prior Approval - Install or change solar panels",
-          "type": "string"
-        },
-        {
-          "const": "pa.part14.classK",
-          "description": "Prior Approval - Install or change stand-alone solar equipment on non-domestic premises",
-          "type": "string"
-        },
-        {
-          "const": "pa.part14.classOA",
-          "description": "Prior Approval - Installation of a solar canopy on non-domestic, off-street parking",
-          "type": "string"
-        },
-        {
-          "const": "pa.part16.classA",
-          "description": "Prior Approval - Install telecommunications equipment",
-          "type": "string"
-        },
-        {
-          "const": "pa.part17",
-          "description": "Prior Approval - Coal mining",
-          "type": "string"
-        },
-        {
-          "const": "pa.part17.classB",
-          "description": "Prior Approval - Other developments ancillary to mining operations",
-          "type": "string"
-        },
-        {
-          "const": "pa.part17.classC",
-          "description": "Prior Approval - Developments for maintenance or safety",
-          "type": "string"
-        },
-        {
-          "const": "pa.part17.classG",
-          "description": "Prior Approval - Coal mining development by the Coal Authority for maintenance or safety",
-          "type": "string"
-        },
-        {
-          "const": "pa.part18.classA",
-          "description": "Prior Approval - Development under private acts or orders",
-          "type": "string"
-        },
-        {
-          "const": "pa.part19.classTA",
-          "description": "Prior Approval - Development on a closed defence site",
-          "type": "string"
-        },
-        {
-          "const": "pa.part20.classA",
-          "description": "Prior Approval - Build homes on a detached blocks of flats",
-          "type": "string"
-        },
-        {
-          "const": "pa.part20.classAA",
-          "description": "Prior Approval - Build homes on a detached commercial building",
-          "type": "string"
-        },
-        {
-          "const": "pa.part20.classAB",
-          "description": "Prior Approval - Build homes on an adjoining commercial or mixed use building",
-          "type": "string"
-        },
-        {
-          "const": "pa.part20.classAC",
-          "description": "Prior Approval - Build homes on adjoining houses",
-          "type": "string"
-        },
-        {
-          "const": "pa.part20.classAD",
-          "description": "Prior Approval - Build homes on detached houses",
-          "type": "string"
-        },
-        {
-          "const": "pa.part20.classZA",
-          "description": "Prior Approval - Demolish buildings and build homes in their place",
-          "type": "string"
-        }
-      ]
-    },
-    "PP": {
-      "additionalProperties": false,
-      "properties": {
-        "applicationType": {
-          "$ref": "#/definitions/PPApplicationType"
-        },
-        "data": {
-          "additionalProperties": false,
-          "properties": {
-            "applicant": {
-              "$ref": "#/definitions/PPApplicant"
-            },
-            "application": {
-              "$ref": "#/definitions/PPApplicationData"
-            },
-            "property": {
-              "$ref": "#/definitions/PPProperty"
-            },
-            "proposal": {
-              "$ref": "#/definitions/GeographyBasedProposal"
-            },
-            "user": {
-              "$ref": "#/definitions/UserBase"
-            }
-          },
-          "required": [
-            "user",
-            "applicant",
-            "application",
-            "property",
-            "proposal"
-          ],
-          "type": "object"
-        },
-        "files": {
-          "items": {
-            "$ref": "#/definitions/File"
-          },
-          "type": "array"
-        },
-        "metadata": {
-          "$ref": "#/definitions/PrototypePlanXMetadata"
-        },
-        "preAssessment": {
-          "$ref": "#/definitions/PreAssessment"
-        },
-        "responses": {
-          "$ref": "#/definitions/Responses"
-        }
-      },
-      "required": [
-        "applicationType",
-        "data",
-        "responses",
-        "files",
-        "metadata"
       ],
       "type": "object"
     },
@@ -8315,149 +7990,125 @@
       ],
       "description": "Specific ApplicationData required for \"Planning Permission\" applications"
     },
-    "PPApplicationType": {
-      "anyOf": [
-        {
-          "const": "pp",
-          "description": "Planning Permission",
-          "type": "string"
-        },
-        {
-          "const": "pp.full",
-          "description": "Planning Permission for development, including all householder, minor, and major applications",
-          "type": "string"
-        },
-        {
-          "const": "pp.full.advertConsent",
-          "description": "Full Planning Permission and consent to display an advert",
-          "type": "string"
-        },
-        {
-          "const": "pp.full.demolition",
-          "description": "Full Planning Permission including demolition in a Conservation Area",
-          "type": "string"
-        },
-        {
-          "const": "pp.full.fastTrack.affordable",
-          "description": "Full Planning Permission - Fast track for the purposes of Affordable Housing",
-          "type": "string"
-        },
-        {
+    "PPFullHouseholder": {
+      "additionalProperties": false,
+      "properties": {
+        "applicationType": {
           "const": "pp.full.householder",
-          "description": "Planning Permission - Full householder",
           "type": "string"
         },
-        {
-          "const": "pp.full.householder.listed",
-          "description": "Planning Permission - Full householder with consent to do works to a Listed Building",
-          "type": "string"
+        "data": {
+          "additionalProperties": false,
+          "properties": {
+            "applicant": {
+              "$ref": "#/definitions/PPApplicant"
+            },
+            "application": {
+              "$ref": "#/definitions/PPApplicationData"
+            },
+            "property": {
+              "$ref": "#/definitions/PPProperty"
+            },
+            "proposal": {
+              "$ref": "#/definitions/GeographyBasedProposal"
+            },
+            "user": {
+              "$ref": "#/definitions/UserBase"
+            }
+          },
+          "required": [
+            "user",
+            "applicant",
+            "application",
+            "property",
+            "proposal"
+          ],
+          "type": "object"
         },
-        {
-          "const": "pp.full.householder.retro",
-          "description": "Planning Permission - Full householder retrospective",
-          "type": "string"
+        "files": {
+          "items": {
+            "$ref": "#/definitions/File"
+          },
+          "type": "array"
         },
-        {
-          "const": "pp.full.major",
-          "description": "Planning Permission - Major application",
-          "type": "string"
+        "metadata": {
+          "$ref": "#/definitions/PrototypePlanXMetadata"
         },
-        {
-          "const": "pp.full.major.technicalDetails",
-          "description": "Planning Permission - Technical details consent for major development",
-          "type": "string"
+        "preAssessment": {
+          "$ref": "#/definitions/PreAssessment"
         },
-        {
-          "const": "pp.full.major.technicalDetails.waste",
-          "description": "Planning Permission - Technical details consent for waste development",
-          "type": "string"
-        },
-        {
-          "const": "pp.full.major.waste",
-          "description": "Planning Permission - Full planning permission for waste development",
-          "type": "string"
-        },
-        {
-          "const": "pp.full.minor",
-          "description": "Planning Permission - Minor application",
-          "type": "string"
-        },
-        {
-          "const": "pp.full.minor.listed",
-          "description": "Planning Permission - Minor application and consent to do works to a Listed Building",
-          "type": "string"
-        },
-        {
-          "const": "pp.full.minor.technicalDetails",
-          "description": "Planning Permission - Technical details consent for minor development",
-          "type": "string"
-        },
-        {
-          "const": "pp.mineralExtraction",
-          "description": "Planning Permission - Consent to extract minerals and related development, such as temporary buildings and roads",
-          "type": "string"
-        },
-        {
-          "const": "pp.outline",
-          "description": "Planning permission - Outline for proposed development",
-          "type": "string"
-        },
-        {
-          "const": "pp.outline.all",
-          "description": "Outline Planning Permission - Consent for the principle of a project witholding all details",
-          "type": "string"
-        },
-        {
-          "const": "pp.outline.some",
-          "description": "Outline Planning Permission - Consent for the principle of a project specifying some details",
-          "type": "string"
-        },
-        {
-          "const": "pp.outline.minor",
-          "description": "Planning permission - Outline for proposed development (minor)",
-          "type": "string"
-        },
-        {
-          "const": "pp.outline.minor.all",
-          "description": "Outline Planning Permission - Consent for the principle of a project witholding all details (minor)",
-          "type": "string"
-        },
-        {
-          "const": "pp.outline.minor.some",
-          "description": "Outline Planning Permission - Consent for the principle of a project specifying some details (minor)",
-          "type": "string"
-        },
-        {
-          "const": "pp.outline.major",
-          "description": "Planning permission - Outline for proposed development (major)",
-          "type": "string"
-        },
-        {
-          "const": "pp.outline.major.all",
-          "description": "Outline Planning Permission - Consent for the principle of a project witholding all details (major)",
-          "type": "string"
-        },
-        {
-          "const": "pp.outline.major.all.waste",
-          "description": "Outline Planning Permission - Consent for the principle of waste development witholding all details",
-          "type": "string"
-        },
-        {
-          "const": "pp.outline.major.some",
-          "description": "Outline Planning Permission - Consent for the principle of a project specifying some details (major)",
-          "type": "string"
-        },
-        {
-          "const": "pp.outline.major.some.waste",
-          "description": "Outline Planning Permission - Consent for the principle of waste development witholding some details",
-          "type": "string"
-        },
-        {
-          "const": "pp.pip",
-          "description": "Planning Permission in Principle - Consent for the principle of a project with less than 1000 square metres floor area on a site of less than 1 hectare",
-          "type": "string"
+        "responses": {
+          "$ref": "#/definitions/Responses"
         }
-      ]
+      },
+      "required": [
+        "applicationType",
+        "data",
+        "responses",
+        "files",
+        "metadata"
+      ],
+      "type": "object"
+    },
+    "PPFullHouseholderRetro": {
+      "additionalProperties": false,
+      "properties": {
+        "applicationType": {
+          "const": "pp.full.householder.retro",
+          "type": "string"
+        },
+        "data": {
+          "additionalProperties": false,
+          "properties": {
+            "applicant": {
+              "$ref": "#/definitions/PPApplicant"
+            },
+            "application": {
+              "$ref": "#/definitions/PPApplicationData"
+            },
+            "property": {
+              "$ref": "#/definitions/PPProperty"
+            },
+            "proposal": {
+              "$ref": "#/definitions/GeographyBasedProposal"
+            },
+            "user": {
+              "$ref": "#/definitions/UserBase"
+            }
+          },
+          "required": [
+            "user",
+            "applicant",
+            "application",
+            "property",
+            "proposal"
+          ],
+          "type": "object"
+        },
+        "files": {
+          "items": {
+            "$ref": "#/definitions/File"
+          },
+          "type": "array"
+        },
+        "metadata": {
+          "$ref": "#/definitions/PrototypePlanXMetadata"
+        },
+        "preAssessment": {
+          "$ref": "#/definitions/PreAssessment"
+        },
+        "responses": {
+          "$ref": "#/definitions/Responses"
+        }
+      },
+      "required": [
+        "applicationType",
+        "data",
+        "responses",
+        "files",
+        "metadata"
+      ],
+      "type": "object"
     },
     "PPProperty": {
       "anyOf": [
@@ -12532,7 +12183,8 @@
       "additionalProperties": false,
       "properties": {
         "applicationType": {
-          "$ref": "#/definitions/AdvertConsentApplicationType"
+          "const": "advertConsent",
+          "type": "string"
         },
         "comments": {
           "additionalProperties": false,
@@ -12725,7 +12377,8 @@
       "additionalProperties": false,
       "properties": {
         "applicationType": {
-          "$ref": "#/definitions/AmendmentApplicationType"
+          "const": "amendment",
+          "type": "string"
         },
         "comments": {
           "additionalProperties": false,
@@ -12918,7 +12571,8 @@
       "additionalProperties": false,
       "properties": {
         "applicationType": {
-          "$ref": "#/definitions/ApprovalApplicationType"
+          "const": "approval",
+          "type": "string"
         },
         "comments": {
           "additionalProperties": false,
@@ -13162,7 +12816,8 @@
       "additionalProperties": false,
       "properties": {
         "applicationType": {
-          "$ref": "#/definitions/ComplianceConfirmationApplicationType"
+          "const": "complianceConfirmation",
+          "type": "string"
         },
         "comments": {
           "additionalProperties": false,
@@ -13355,7 +13010,8 @@
       "additionalProperties": false,
       "properties": {
         "applicationType": {
-          "$ref": "#/definitions/EnvironmentalImpactApplicationType"
+          "const": "environmentalImpact",
+          "type": "string"
         },
         "comments": {
           "additionalProperties": false,
@@ -13605,7 +13261,8 @@
       "additionalProperties": false,
       "properties": {
         "applicationType": {
-          "$ref": "#/definitions/HazardousSubstanceConsentApplicationType"
+          "const": "hazardousSubstanceConsent",
+          "type": "string"
         },
         "comments": {
           "additionalProperties": false,
@@ -13798,7 +13455,8 @@
       "additionalProperties": false,
       "properties": {
         "applicationType": {
-          "$ref": "#/definitions/HedgerowRemovalNoticeApplicationType"
+          "const": "hedgerowRemovalNotice",
+          "type": "string"
         },
         "comments": {
           "additionalProperties": false,
@@ -13991,7 +13649,8 @@
       "additionalProperties": false,
       "properties": {
         "applicationType": {
-          "$ref": "#/definitions/LDCApplicationType"
+          "const": "ldc",
+          "type": "string"
         },
         "comments": {
           "additionalProperties": false,
@@ -14184,7 +13843,8 @@
       "additionalProperties": false,
       "properties": {
         "applicationType": {
-          "$ref": "#/definitions/LandDrainageConsentApplicationType"
+          "const": "landDrainageConsent",
+          "type": "string"
         },
         "comments": {
           "additionalProperties": false,
@@ -14377,7 +14037,8 @@
       "additionalProperties": false,
       "properties": {
         "applicationType": {
-          "$ref": "#/definitions/ListedApplicationType"
+          "const": "listed",
+          "type": "string"
         },
         "comments": {
           "additionalProperties": false,
@@ -14678,7 +14339,8 @@
       "additionalProperties": false,
       "properties": {
         "applicationType": {
-          "$ref": "#/definitions/NotifyCompletionApplicationType"
+          "const": "notifyCompletion",
+          "type": "string"
         },
         "comments": {
           "additionalProperties": false,
@@ -14871,7 +14533,8 @@
       "additionalProperties": false,
       "properties": {
         "applicationType": {
-          "$ref": "#/definitions/ObligationApplicationType"
+          "const": "obligation",
+          "type": "string"
         },
         "comments": {
           "additionalProperties": false,
@@ -15064,7 +14727,8 @@
       "additionalProperties": false,
       "properties": {
         "applicationType": {
-          "$ref": "#/definitions/OnshoreExtractionOilAndGasApplicationType"
+          "const": "onshoreExtractionOilAndGas",
+          "type": "string"
         },
         "comments": {
           "additionalProperties": false,
@@ -15257,7 +14921,8 @@
       "additionalProperties": false,
       "properties": {
         "applicationType": {
-          "$ref": "#/definitions/PAApplicationType"
+          "const": "pa",
+          "type": "string"
         },
         "comments": {
           "additionalProperties": false,
@@ -15450,7 +15115,8 @@
       "additionalProperties": false,
       "properties": {
         "applicationType": {
-          "$ref": "#/definitions/PPApplicationType"
+          "const": "pp",
+          "type": "string"
         },
         "comments": {
           "additionalProperties": false,
@@ -15643,7 +15309,8 @@
       "additionalProperties": false,
       "properties": {
         "applicationType": {
-          "$ref": "#/definitions/RightsOfWayOrderApplicationType"
+          "const": "rightsOfWayOrder",
+          "type": "string"
         },
         "comments": {
           "additionalProperties": false,
@@ -15836,7 +15503,8 @@
       "additionalProperties": false,
       "properties": {
         "applicationType": {
-          "$ref": "#/definitions/WTTApplicationType"
+          "const": "wtt",
+          "type": "string"
         },
         "comments": {
           "additionalProperties": false,
@@ -16068,6 +15736,66 @@
         "type": "object"
       },
       "type": "array"
+    },
+    "PriorApproval": {
+      "additionalProperties": false,
+      "properties": {
+        "applicationType": {
+          "const": "pa",
+          "type": "string"
+        },
+        "data": {
+          "additionalProperties": false,
+          "properties": {
+            "applicant": {
+              "$ref": "#/definitions/ApplicantBase"
+            },
+            "application": {
+              "$ref": "#/definitions/FeeCarryingApplicationData"
+            },
+            "property": {
+              "$ref": "#/definitions/PropertyBase"
+            },
+            "proposal": {
+              "$ref": "#/definitions/GeographyBasedProposal"
+            },
+            "user": {
+              "$ref": "#/definitions/UserBase"
+            }
+          },
+          "required": [
+            "user",
+            "applicant",
+            "application",
+            "property",
+            "proposal"
+          ],
+          "type": "object"
+        },
+        "files": {
+          "items": {
+            "$ref": "#/definitions/File"
+          },
+          "type": "array"
+        },
+        "metadata": {
+          "$ref": "#/definitions/PrototypePlanXMetadata"
+        },
+        "preAssessment": {
+          "$ref": "#/definitions/PreAssessment"
+        },
+        "responses": {
+          "$ref": "#/definitions/Responses"
+        }
+      },
+      "required": [
+        "applicationType",
+        "data",
+        "responses",
+        "files",
+        "metadata"
+      ],
+      "type": "object"
     },
     "PriorApprovalAssessment": {
       "additionalProperties": false,
@@ -20245,31 +19973,46 @@
     "PrototypeApplication": {
       "anyOf": [
         {
-          "$ref": "#/definitions/LDC"
+          "$ref": "#/definitions/AdvertConsent"
         },
         {
-          "$ref": "#/definitions/PA"
-        },
-        {
-          "$ref": "#/definitions/PP"
-        },
-        {
-          "$ref": "#/definitions/Listed"
-        },
-        {
-          "$ref": "#/definitions/LandDrainageConsent"
-        },
-        {
-          "$ref": "#/definitions/WTT"
+          "$ref": "#/definitions/ComplianceConfirmation"
         },
         {
           "$ref": "#/definitions/HedgerowRemovalNotice"
         },
         {
-          "$ref": "#/definitions/AdvertConsent"
+          "$ref": "#/definitions/LandDrainageConsent"
         },
         {
-          "$ref": "#/definitions/ComplianceConfirmation"
+          "$ref": "#/definitions/LDCBreachOfCondition"
+        },
+        {
+          "$ref": "#/definitions/LDCExisting"
+        },
+        {
+          "$ref": "#/definitions/LDCListedBuildingWorks"
+        },
+        {
+          "$ref": "#/definitions/LDCProposed"
+        },
+        {
+          "$ref": "#/definitions/ListedBuildingConsent"
+        },
+        {
+          "$ref": "#/definitions/PriorApproval"
+        },
+        {
+          "$ref": "#/definitions/PPFullHouseholder"
+        },
+        {
+          "$ref": "#/definitions/PPFullHouseholderRetro"
+        },
+        {
+          "$ref": "#/definitions/WTTConsent"
+        },
+        {
+          "$ref": "#/definitions/WTTNotice"
         }
       ],
       "description": "The (prototype) root specification for a planning application in England generated by a digital planning service",
@@ -21145,11 +20888,6 @@
       },
       "type": "array"
     },
-    "RightsOfWayOrderApplicationType": {
-      "const": "rightsOfWayOrder",
-      "description": "Rights of Way Order - Apply to move or close a path",
-      "type": "string"
-    },
     "SiteContact": {
       "anyOf": [
         {
@@ -21646,65 +21384,6 @@
       ],
       "type": "string"
     },
-    "WTT": {
-      "additionalProperties": false,
-      "properties": {
-        "applicationType": {
-          "$ref": "#/definitions/WTTApplicationType"
-        },
-        "data": {
-          "additionalProperties": false,
-          "properties": {
-            "applicant": {
-              "$ref": "#/definitions/WTTApplicant"
-            },
-            "application": {
-              "$ref": "#/definitions/NonFeeCarryingApplicationData"
-            },
-            "property": {
-              "$ref": "#/definitions/EnglandProperty"
-            },
-            "proposal": {
-              "$ref": "#/definitions/ProposalBase"
-            },
-            "user": {
-              "$ref": "#/definitions/UserBase"
-            }
-          },
-          "required": [
-            "user",
-            "applicant",
-            "application",
-            "property",
-            "proposal"
-          ],
-          "type": "object"
-        },
-        "files": {
-          "items": {
-            "$ref": "#/definitions/File"
-          },
-          "type": "array"
-        },
-        "metadata": {
-          "$ref": "#/definitions/PrototypePlanXMetadata"
-        },
-        "preAssessment": {
-          "$ref": "#/definitions/PreAssessment"
-        },
-        "responses": {
-          "$ref": "#/definitions/Responses"
-        }
-      },
-      "required": [
-        "applicationType",
-        "data",
-        "responses",
-        "files",
-        "metadata"
-      ],
-      "type": "object"
-    },
     "WTTApplicant": {
       "additionalProperties": false,
       "properties": {
@@ -21841,24 +21520,125 @@
       ],
       "type": "object"
     },
-    "WTTApplicationType": {
-      "anyOf": [
-        {
-          "const": "wtt",
-          "description": "Works to trees",
-          "type": "string"
-        },
-        {
+    "WTTConsent": {
+      "additionalProperties": false,
+      "properties": {
+        "applicationType": {
           "const": "wtt.consent",
-          "description": "Consent to carry out works to a tree with a Tree Preservation Order",
           "type": "string"
         },
-        {
-          "const": "wtt.notice",
-          "description": "Notification of proposed works to a tree in a Conservation Area",
-          "type": "string"
+        "data": {
+          "additionalProperties": false,
+          "properties": {
+            "applicant": {
+              "$ref": "#/definitions/WTTApplicant"
+            },
+            "application": {
+              "$ref": "#/definitions/NonFeeCarryingApplicationData"
+            },
+            "property": {
+              "$ref": "#/definitions/EnglandProperty"
+            },
+            "proposal": {
+              "$ref": "#/definitions/ProposalBase"
+            },
+            "user": {
+              "$ref": "#/definitions/UserBase"
+            }
+          },
+          "required": [
+            "user",
+            "applicant",
+            "application",
+            "property",
+            "proposal"
+          ],
+          "type": "object"
+        },
+        "files": {
+          "items": {
+            "$ref": "#/definitions/File"
+          },
+          "type": "array"
+        },
+        "metadata": {
+          "$ref": "#/definitions/PrototypePlanXMetadata"
+        },
+        "preAssessment": {
+          "$ref": "#/definitions/PreAssessment"
+        },
+        "responses": {
+          "$ref": "#/definitions/Responses"
         }
-      ]
+      },
+      "required": [
+        "applicationType",
+        "data",
+        "responses",
+        "files",
+        "metadata"
+      ],
+      "type": "object"
+    },
+    "WTTNotice": {
+      "additionalProperties": false,
+      "properties": {
+        "applicationType": {
+          "const": "wtt.notice",
+          "type": "string"
+        },
+        "data": {
+          "additionalProperties": false,
+          "properties": {
+            "applicant": {
+              "$ref": "#/definitions/WTTApplicant"
+            },
+            "application": {
+              "$ref": "#/definitions/NonFeeCarryingApplicationData"
+            },
+            "property": {
+              "$ref": "#/definitions/EnglandProperty"
+            },
+            "proposal": {
+              "$ref": "#/definitions/ProposalBase"
+            },
+            "user": {
+              "$ref": "#/definitions/UserBase"
+            }
+          },
+          "required": [
+            "user",
+            "applicant",
+            "application",
+            "property",
+            "proposal"
+          ],
+          "type": "object"
+        },
+        "files": {
+          "items": {
+            "$ref": "#/definitions/File"
+          },
+          "type": "array"
+        },
+        "metadata": {
+          "$ref": "#/definitions/PrototypePlanXMetadata"
+        },
+        "preAssessment": {
+          "$ref": "#/definitions/PreAssessment"
+        },
+        "responses": {
+          "$ref": "#/definitions/Responses"
+        }
+      },
+      "required": [
+        "applicationType",
+        "data",
+        "responses",
+        "files",
+        "metadata"
+      ],
+      "type": "object"
     }
   },
   "description": "The root specification for a planning application in England after it has been through a digital planning service and into a back office system",

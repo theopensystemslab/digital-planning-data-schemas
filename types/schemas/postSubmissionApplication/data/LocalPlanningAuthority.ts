@@ -1,4 +1,4 @@
-import {PrimaryApplicationType} from '../../prototypeApplication/enums/ApplicationType';
+import { ApplicationType } from '../../prototypeApplication/enums/ApplicationType';
 
 type LocalPlanningAuthorityBase = {
   /**
@@ -17,7 +17,7 @@ type LocalPlanningAuthorityVariants = {};
 /**
  * @internal Conditional type to return a specific or generic Property model, based on PrimaryLocalPlanningAuthorityType
  */
-export type LocalPlanningAuthority<TPrimary extends PrimaryApplicationType> =
-  TPrimary extends keyof LocalPlanningAuthorityVariants
-    ? LocalPlanningAuthorityVariants[TPrimary]
+export type LocalPlanningAuthority<T extends ApplicationType> =
+  T extends keyof LocalPlanningAuthorityVariants
+    ? LocalPlanningAuthorityVariants[T]
     : LocalPlanningAuthorityBase;

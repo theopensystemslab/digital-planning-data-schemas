@@ -9,7 +9,7 @@ import {
 } from '../../../shared/Ownership';
 import {SiteContact} from '../../../shared/SiteContact';
 import {Date} from '../../../shared/utils';
-import {PrimaryApplicationType} from '../enums/ApplicationType';
+import { ApplicationType } from '../enums/ApplicationType';
 
 export type ApplicantBase = BaseApplicant | Agent;
 
@@ -122,23 +122,28 @@ export type ComplianceConfirmationApplicant = ApplicantBase & {
 };
 
 /**
- * TypeMap of PrimaryApplicationTypes to their specific Applicant models
+ * TypeMap of granular application types to their specific Applicant models
  */
 interface ApplicantVariants {
-  ldc: LDCApplicant;
-  pp: PPApplicant;
-  landDrainageConsent: LandDrainageConsentApplicant;
-  listed: PPApplicant;
-  wtt: WTTApplicant;
-  hedgerowRemovalNotice: HedgerowRemovalNoticeApplicant;
+  'ldc.breachOfCondition': LDCApplicant;
+  'ldc.existing': LDCApplicant;
+  'ldc.proposed': LDCApplicant;
+  'ldc.worksToListedBuilding': LDCApplicant;
+  'pp.full.householder.retro': PPApplicant;
+  'pp.full.householder': PPApplicant;
+  'wtt.consent': WTTApplicant;
+  'wtt.notice': WTTApplicant;
   advertConsent: AdvertConsentApplicant;
   complianceConfirmation: ComplianceConfirmationApplicant;
+  hedgerowRemovalNotice: HedgerowRemovalNoticeApplicant;
+  landDrainageConsent: LandDrainageConsentApplicant;
+  listed: PPApplicant;
 }
 
 /**
- * @internal Conditional type to return a specific or generic Applicant model, based on PrimaryApplicationType
+ * @internal Conditional type to return a specific or generic Applicant model
  */
-export type Applicant<TPrimary extends PrimaryApplicationType> =
-  TPrimary extends keyof ApplicantVariants
-    ? ApplicantVariants[TPrimary]
+export type Applicant<T extends ApplicationType> =
+  T extends keyof ApplicantVariants
+    ? ApplicantVariants[T]
     : ApplicantBase;

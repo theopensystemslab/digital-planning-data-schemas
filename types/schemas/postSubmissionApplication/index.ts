@@ -1,57 +1,36 @@
+import { PrototypeApplication } from '../prototypeApplication';
 import {
-  AdvertConsentApplicationType,
-  AmendmentApplicationType,
-  ApplicationType,
-  ApprovalApplicationType,
-  ComplianceConfirmationApplicationType,
-  EnvironmentalImpactApplicationType,
-  HazardousSubstanceConsentApplicationType,
-  HedgerowRemovalNoticeApplicationType,
-  LandDrainageConsentApplicationType,
-  LDCApplicationType,
-  ListedApplicationType,
-  NotifyCompletionApplicationType,
-  ObligationApplicationType,
-  OnshoreExtractionOilAndGasApplicationType,
-  PAApplicationType,
-  PPApplicationType,
-  PrimaryApplicationType,
-  RightsOfWayOrderApplicationType,
-  WTTApplicationType,
+  ApplicationType
 } from '../prototypeApplication/enums/ApplicationType';
-import {PrototypeApplication} from '../prototypeApplication';
-import {PostSubmissionMetadata} from './Metadata';
-import {CaseOfficer} from './data/CaseOfficer';
-import {PublicComments, SpecialistComments} from './data/Comment';
-import {Submission} from './data/Submission';
-import {Validation} from './data/Validation';
-import {Consultation} from './data/Consultation';
-import {Assessment} from './data/Assessment';
-import {Appeal} from './data/Appeal';
-import {Application} from './data/Application';
-import {LocalPlanningAuthority} from './data/LocalPlanningAuthority';
+import { PostSubmissionMetadata } from './Metadata';
+import { Appeal } from './data/Appeal';
+import { Application } from './data/Application';
+import { Assessment } from './data/Assessment';
+import { CaseOfficer } from './data/CaseOfficer';
+import { PublicComments, SpecialistComments } from './data/Comment';
+import { Consultation } from './data/Consultation';
+import { LocalPlanningAuthority } from './data/LocalPlanningAuthority';
+import { Submission } from './data/Submission';
+import { Validation } from './data/Validation';
+
 /**
  * @internal
  * The generic base type for all applications
  * Takes a primary and granular application type which allows child properties to differ based on these inputs
- * Deriving `TPrimary` from `TGranular` is possible in TS, but not in a way which is currently compatible with ts-json-schema-generator
  *
  * @todo create redacted form of PrototypeApplication
  */
-interface ApplicationSpecification<
-  TPrimary extends PrimaryApplicationType,
-  TGranular extends ApplicationType,
-> {
-  applicationType: TGranular;
+interface ApplicationSpecification<T extends ApplicationType> {
+  applicationType: T;
   data: {
-    application: Application<TPrimary>;
-    localPlanningAuthority: LocalPlanningAuthority<TPrimary>;
-    submission: Submission<TPrimary>;
-    validation?: Validation<TPrimary>;
-    consultation?: Consultation<TPrimary>;
-    assessment?: Assessment<TPrimary>;
-    appeal?: Appeal<TPrimary>;
-    caseOfficer: CaseOfficer<TPrimary>;
+    application: Application<T>;
+    localPlanningAuthority: LocalPlanningAuthority<T>;
+    submission: Submission<T>;
+    validation?: Validation<T>;
+    consultation?: Consultation<T>;
+    assessment?: Assessment<T>;
+    appeal?: Appeal<T>;
+    caseOfficer: CaseOfficer<T>;
   };
   comments?: {
     public?: PublicComments;
@@ -61,74 +40,23 @@ interface ApplicationSpecification<
   metadata: PostSubmissionMetadata;
 }
 
-export type PostSubmissionAdvertConsent = ApplicationSpecification<
-  'advertConsent',
-  AdvertConsentApplicationType
->;
-export type PostSubmissionAmendment = ApplicationSpecification<
-  'amendment',
-  AmendmentApplicationType
->;
-export type PostSubmissionApproval = ApplicationSpecification<
-  'approval',
-  ApprovalApplicationType
->;
-export type PostSubmissionComplianceConfirmation = ApplicationSpecification<
-  'complianceConfirmation',
-  ComplianceConfirmationApplicationType
->;
-export type PostSubmissionEnvironmentalImpact = ApplicationSpecification<
-  'environmentalImpact',
-  EnvironmentalImpactApplicationType
->;
-export type PostSubmissionHazardousSubstanceConsent = ApplicationSpecification<
-  'hazardousSubstanceConsent',
-  HazardousSubstanceConsentApplicationType
->;
-export type PostSubmissionHedgerowRemovalNotice = ApplicationSpecification<
-  'hedgerowRemovalNotice',
-  HedgerowRemovalNoticeApplicationType
->;
-export type PostSubmissionLandDrainageConsent = ApplicationSpecification<
-  'landDrainageConsent',
-  LandDrainageConsentApplicationType
->;
-export type PostSubmissionLDC = ApplicationSpecification<
-  'ldc',
-  LDCApplicationType
->;
-export type PostSubmissionListed = ApplicationSpecification<
-  'listed',
-  ListedApplicationType
->;
-export type PostSubmissionNotifyCompletion = ApplicationSpecification<
-  'notifyCompletion',
-  NotifyCompletionApplicationType
->;
-export type PostSubmissionObligation = ApplicationSpecification<
-  'obligation',
-  ObligationApplicationType
->;
-export type PostSubmissionOnshoreExtractionOilAndGas = ApplicationSpecification<
-  'onshoreExtractionOilAndGas',
-  OnshoreExtractionOilAndGasApplicationType
->;
-export type PostSubmissionPA = ApplicationSpecification<
-  'pa',
-  PAApplicationType
->;
-export type PostSubmissionPP = ApplicationSpecification<
-  'pp',
-  PPApplicationType
->;
-export type PostSubmissionRightsOfWayOrder = ApplicationSpecification<
-  'rightsOfWayOrder',
-  RightsOfWayOrderApplicationType
->;
-export type PostSubmissionWTT = ApplicationSpecification<
-  'wtt',
-  WTTApplicationType
->;
+export type PostSubmissionAdvertConsent = ApplicationSpecification<'advertConsent'>;
+export type PostSubmissionAmendment = ApplicationSpecification<'amendment'>;
+export type PostSubmissionApproval = ApplicationSpecification<'approval'>;
+export type PostSubmissionComplianceConfirmation = ApplicationSpecification<'complianceConfirmation'>;
+export type PostSubmissionEnvironmentalImpact = ApplicationSpecification<'environmentalImpact'>;
+export type PostSubmissionHazardousSubstanceConsent = ApplicationSpecification<'hazardousSubstanceConsent'>;
+export type PostSubmissionHedgerowRemovalNotice = ApplicationSpecification<'hedgerowRemovalNotice'>;
+export type PostSubmissionLandDrainageConsent = ApplicationSpecification<'landDrainageConsent'>;
+export type PostSubmissionLDC = ApplicationSpecification<'ldc'>;
+export type PostSubmissionListed = ApplicationSpecification<'listed'>;
+export type PostSubmissionNotifyCompletion = ApplicationSpecification<'notifyCompletion'>;
+export type PostSubmissionObligation = ApplicationSpecification<'obligation'>;
+export type PostSubmissionOnshoreExtractionOilAndGas = ApplicationSpecification<'onshoreExtractionOilAndGas'>;
+export type PostSubmissionPA = ApplicationSpecification<'pa'>;
+export type PostSubmissionPP = ApplicationSpecification<'pp'>;
+export type PostSubmissionRightsOfWayOrder = ApplicationSpecification<'rightsOfWayOrder'>;
+export type PostSubmissionWTT = ApplicationSpecification<'wtt'>;
 
 /**
  * @title PostSubmissionApplication
