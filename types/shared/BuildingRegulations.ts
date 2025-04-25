@@ -20,8 +20,8 @@ type BuildingRegulationMap = {
 };
 
 /**
- * @id #BuildingRegulation
- * @description Building regulations
+ * @title Building regulation
+ * @description Building regulation
  */
 export type BuildingRegulation =
   BuildingRegulationMap[keyof BuildingRegulationMap];

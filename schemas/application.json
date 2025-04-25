@@ -2659,7 +2659,6 @@
       "type": "object"
     },
     "BuildingRegulation": {
-      "$id": "#BuildingRegulation",
       "anyOf": [
         {
           "additionalProperties": false,
@@ -2734,7 +2733,8 @@
           "type": "object"
         }
       ],
-      "description": "Building regulations"
+      "description": "Building regulation",
+      "title": "Building regulation"
     },
     "CalculateMetadata": {
       "$id": "#CalculateMetadata",

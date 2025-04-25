@@ -422,7 +422,22 @@ export const priorApprovalConvertCommercialToHomePrototype: PrototypeApplication
                 garden: false,
                 sheltered: false,
                 olderPersons: false,
-                compliance: ['m42', 'm432a', 'm432b'],
+                compliance: [
+                  {
+                    value: 'm42',
+                    description: 'Part M4(2) of the Building Regulations 2010',
+                  },
+                  {
+                    value: 'm432a',
+                    description:
+                      'Part M4(3)(2a) of the Building Regulations 2010',
+                  },
+                  {
+                    value: 'm432b',
+                    description:
+                      'Part M4(3)(2b) of the Building Regulations 2010',
+                  },
+                ],
                 identicalUnits: 1,
               },
             ],

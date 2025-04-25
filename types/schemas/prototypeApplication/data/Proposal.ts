@@ -1,9 +1,9 @@
 import {GeoBoundary} from '../../../shared/Boundaries';
+import {BuildingRegulation} from '../../../shared/BuildingRegulations';
 import {Materials} from '../../../shared/Materials';
 import {ProposedLondonParking} from '../../../shared/Parking';
 import {Area, Date, Integer} from '../../../shared/utils';
 import {PrimaryApplicationType} from '../enums/ApplicationType';
-import {BuildingRegulation} from '../enums/BuildingRegulation';
 import {DevelopmentType} from '../enums/DevelopmentType';
 import {GLAHousingProvider} from '../enums/HousingProvider';
 import {OpenSpaceDesignation, OpenSpaceType} from '../enums/OpenSpace';
