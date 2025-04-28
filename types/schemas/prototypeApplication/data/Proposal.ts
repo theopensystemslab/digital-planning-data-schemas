@@ -2,7 +2,7 @@ import {GeoBoundary} from '../../../shared/Boundaries';
 import {Materials} from '../../../shared/Materials';
 import {ProposedLondonParking} from '../../../shared/Parking';
 import {Area, Date, Integer} from '../../../shared/utils';
-import {PrimaryApplicationType} from '../enums/ApplicationType';
+import {ApplicationType} from '../enums/ApplicationType';
 import {BuildingRegulation} from '../enums/BuildingRegulation';
 import {DevelopmentType} from '../enums/DevelopmentType';
 import {GLAHousingProvider} from '../enums/HousingProvider';
@@ -317,22 +317,30 @@ export type AdvertConsentProposal = Pick<ProposalBase, 'boundary'> & {
 };
 
 /**
- * TypeMap of PrimaryApplicationTypes to their specific Proposal models
+ * TypeMap of granular application types to their specific Proposal models
  */
 type ProposalVariants = {
-  pp: GeographyBasedProposal;
-  ldc: GeographyBasedProposal;
-  pa: GeographyBasedProposal;
-  listed: GeographyBasedProposal;
-  landDrainageConsent: GeographyBasedProposal;
-  hedgerowRemovalNotice: HedgerowRemovalNoticeProposal;
+  'ldc.breachOfCondition': GeographyBasedProposal;
+  'ldc.existing': GeographyBasedProposal;
+  'ldc.listedBuildingWorks': GeographyBasedProposal;
+  'ldc.proposed': GeographyBasedProposal;
+  'pp.full.householder.retro': GeographyBasedProposal;
+  'pp.full.householder': GeographyBasedProposal;
+  'pp.full.major': GeographyBasedProposal;
+  'pp.full.minor': GeographyBasedProposal;
   advertConsent: AdvertConsentProposal;
+  hedgerowRemovalNotice: HedgerowRemovalNoticeProposal;
+  landDrainageConsent: GeographyBasedProposal;
+  listed: GeographyBasedProposal;
+  'pa.part1.classA': GeographyBasedProposal;
+  'pa.part3.classMA': GeographyBasedProposal;
+  'pa.part7.classM': GeographyBasedProposal;
+  'pa.part14.classJ': GeographyBasedProposal;
+  'pa.part20.classAB': GeographyBasedProposal;
 };
 
 /**
- * @internal Conditional type to return a specific or generic Proposal model, based on PrimaryApplicationType
+ * @internal Conditional type to return a specific or generic Proposal model
  */
-export type Proposal<TPrimary extends PrimaryApplicationType> =
-  TPrimary extends keyof ProposalVariants
-    ? ProposalVariants[TPrimary]
-    : ProposalBase;
+export type Proposal<T extends ApplicationType> =
+  T extends keyof ProposalVariants ? ProposalVariants[T] : ProposalBase;

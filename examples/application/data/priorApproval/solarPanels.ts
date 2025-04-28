@@ -1293,7 +1293,7 @@ export const priorApprovalSolarPanels: Application = {
     source: 'PlanX',
     service: {
       flowId: 'c6628103-c648-4663-81e1-bfa0a1a18340',
-      url: 'https://editor.planx.uk/southwark/apply-for-prior-approval/published',
+      url: 'https://editor.planx.dev/southwark/apply-for-prior-approval/published',
       files: {
         required: [
           {

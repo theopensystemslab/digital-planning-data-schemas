@@ -1,5 +1,5 @@
 import {DateTime} from '../../../shared/utils';
-import {PrimaryApplicationType} from '../../prototypeApplication/enums/ApplicationType';
+import {ApplicationType} from '../../prototypeApplication/enums/ApplicationType';
 
 type SubmissionBase = {
   /**
@@ -11,14 +11,12 @@ type SubmissionBase = {
 };
 
 /**
- * TypeMap of PrimaryApplicationTypes to their specific Submission models
+ * TypeMap of granular application types to their specific Submission models
  */
 type SubmissionVariants = {};
 
 /**
- * @internal Conditional type to return a specific or generic Property model, based on PrimaryApplicationType
+ * @internal Conditional type to return a specific or generic Property model
  */
-export type Submission<TPrimary extends PrimaryApplicationType> =
-  TPrimary extends keyof SubmissionVariants
-    ? SubmissionVariants[TPrimary]
-    : SubmissionBase;
+export type Submission<T extends ApplicationType> =
+  T extends keyof SubmissionVariants ? SubmissionVariants[T] : SubmissionBase;

@@ -1,7 +1,7 @@
 /**
  * @description Consent to display an advertisement
  */
-export type AdvertConsentApplicationType = 'advertConsent';
+type AdvertConsent = 'advertConsent';
 
 /**
  * @description Consent to make small changes to a project with Planning Permission
@@ -18,11 +18,6 @@ type AmendmentMinorMaterial = 'amendment.minorMaterial';
  */
 type AmendmentNonMaterial = 'amendment.nonMaterial';
 
-export type AmendmentApplicationType =
-  | Amendment
-  | AmendmentMinorMaterial
-  | AmendmentNonMaterial;
-
 /**
  * @description Planning approval
  */
@@ -38,15 +33,10 @@ type ApprovalConditions = 'approval.conditions';
  */
 type ApprovalReservedMatters = 'approval.reservedMatters';
 
-export type ApprovalApplicationType =
-  | Approval
-  | ApprovalConditions
-  | ApprovalReservedMatters;
-
 /**
  * @description Written confirmation of compliance with a planning condition
  */
-export type ComplianceConfirmationApplicationType = 'complianceConfirmation';
+type ComplianceConfirmation = 'complianceConfirmation';
 
 /**
  * @description Environmental Impact Decision
@@ -63,26 +53,20 @@ type EnvironmentalImpactScoping = 'environmentalImpact.scoping';
  */
 type EnvironmentalImpactScreening = 'environmentalImpact.screening';
 
-export type EnvironmentalImpactApplicationType =
-  | EnvironmentalImpact
-  | EnvironmentalImpactScoping
-  | EnvironmentalImpactScreening;
-
 /**
  * @description Consent to move and dispose of hazardous substances
  */
-export type HazardousSubstanceConsentApplicationType =
-  'hazardousSubstanceConsent';
+type HazardousSubstanceConsent = 'hazardousSubstanceConsent';
 
 /**
  * @description Notice to remove a hedge
  */
-export type HedgerowRemovalNoticeApplicationType = 'hedgerowRemovalNotice';
+type HedgerowRemovalNotice = 'hedgerowRemovalNotice';
 
 /**
  * @description Consent to do works affecting ordinary watercourses or land drainage
  */
-export type LandDrainageConsentApplicationType = 'landDrainageConsent';
+type LandDrainageConsent = 'landDrainageConsent';
 
 /**
  * @description Lawful Development Certificate
@@ -109,22 +93,15 @@ type LDCListedBuildingWorks = 'ldc.listedBuildingWorks';
  */
 type LDCProposed = 'ldc.proposed';
 
-export type LDCApplicationType =
-  | LDC
-  | LDCBreachOfCondition
-  | LDCExisting
-  | LDCListedBuildingWorks
-  | LDCProposed;
-
 /**
  * @description Consent to do works to a Listed Building
  */
-export type ListedApplicationType = 'listed';
+type Listed = 'listed';
 
 /**
  * @description Notification of completion
  */
-export type NotifyCompletionApplicationType = 'notifyCompletion';
+type NotifyCompletion = 'notifyCompletion';
 
 /**
  * @description Planning obligation
@@ -140,11 +117,6 @@ type ObligationDischarge = 'obligation.discharge';
  * @description Modify a planning obligation
  */
 type ObligationModify = 'obligation.modify';
-
-export type ObligationApplicationType =
-  | Obligation
-  | ObligationDischarge
-  | ObligationModify;
 
 /**
  * @description Onshore extraction of oil and gas
@@ -183,15 +155,6 @@ type OnshoreExtractionOilAndGasReview = 'onshoreExtractionOilAndGas.review';
  */
 type OnshoreExtractionOilAndGasVariation =
   'onshoreExtractionOilAndGas.variation';
-
-export type OnshoreExtractionOilAndGasApplicationType =
-  | OnshoreExtractionOilAndGas
-  | OnshoreExtractionOilAndGasOther
-  | OnshoreExtractionOilAndGasPPExtension
-  | OnshoreExtractionOilAndGasPPWaste
-  | OnshoreExtractionOilAndGasPPWorking
-  | OnshoreExtractionOilAndGasReview
-  | OnshoreExtractionOilAndGasVariation;
 
 /**
  * @description Prior Approval
@@ -403,50 +366,6 @@ type PAPart20ClassAD = 'pa.part20.classAD';
  */
 type PAPart20ClassZA = 'pa.part20.classZA';
 
-export type PAApplicationType =
-  | PA
-  | PAPart1ClassA
-  | PAPart1ClassAA
-  | PAPart3ClassG
-  | PAPart3ClassM
-  | PAPart3ClassMA
-  | PAPart3ClassN
-  | PAPart3ClassQ
-  | PAPart3ClassR
-  | PAPart3ClassS
-  | PAPart3ClassT
-  | PAPart3ClassV
-  | PAPart4ClassBB
-  | PAPart4ClassBC
-  | PAPart4ClassCA
-  | PAPart4ClassE
-  | PAPart6
-  | PAPart6ClassA
-  | PAPart6ClassB
-  | PAPart6ClassE
-  | PAPart7ClassC
-  | PAPart7ClassM
-  | PAPart9ClassD
-  | PAPart11ClassB
-  | PAPart14ClassA
-  | PAPart14ClassB
-  | PAPart14ClassJ
-  | PAPart14ClassK
-  | PAPart14ClassOA
-  | PAPart16ClassA
-  | PAPart17
-  | PAPart17ClassB
-  | PAPart17ClassC
-  | PAPart17ClassG
-  | PAPart18ClassA
-  | PAPart19ClassTA
-  | PAPart20ClassA
-  | PAPart20ClassAA
-  | PAPart20ClassAB
-  | PAPart20ClassAC
-  | PAPart20ClassAD
-  | PAPart20ClassZA;
-
 /**
  * @description Planning Permission
  */
@@ -587,9 +506,106 @@ type PPOutlineMajorSomeWaste = 'pp.outline.major.some.waste';
  */
 type PPPip = 'pp.pip';
 
-export type PPApplicationType =
-  | PP
-  | PPFull
+/**
+ * @description Rights of Way Order - Apply to move or close a path
+ */
+type RightsOfWayOrder = 'rightsOfWayOrder';
+
+/**
+ * @description Works to trees
+ */
+type WTT = 'wtt';
+
+/**
+ * @description Consent to carry out works to a tree with a Tree Preservation Order
+ */
+type WTTConsent = 'wtt.consent';
+
+/**
+ * @description Notification of proposed works to a tree in a Conservation Area
+ */
+type WTTNotice = 'wtt.notice';
+
+/**
+ * @id #ApplicationType
+ * @description Planning application types
+ */
+export type ApplicationType =
+  | AdvertConsent
+  | Amendment // Service descriptor, not actually submittable
+  | AmendmentMinorMaterial
+  | AmendmentNonMaterial
+  | Approval // Service descriptor, not actually submittable
+  | ApprovalConditions
+  | ApprovalReservedMatters
+  | ComplianceConfirmation
+  | EnvironmentalImpact
+  | EnvironmentalImpactScoping
+  | EnvironmentalImpactScreening
+  | HazardousSubstanceConsent
+  | HedgerowRemovalNotice
+  | LandDrainageConsent
+  | LDC // Service descriptor, not actually submittable
+  | LDCBreachOfCondition
+  | LDCExisting
+  | LDCListedBuildingWorks
+  | LDCProposed
+  | Listed
+  | NotifyCompletion
+  | Obligation // Service descriptor, not actually submittable
+  | ObligationDischarge
+  | ObligationModify
+  | OnshoreExtractionOilAndGas // Service descriptor, not actually submittable
+  | OnshoreExtractionOilAndGasOther
+  | OnshoreExtractionOilAndGasPPExtension
+  | OnshoreExtractionOilAndGasPPWaste
+  | OnshoreExtractionOilAndGasPPWorking
+  | OnshoreExtractionOilAndGasReview
+  | OnshoreExtractionOilAndGasVariation
+  | PA // Service descriptor, not actually submittable
+  | PAPart1ClassA
+  | PAPart1ClassAA
+  | PAPart3ClassG
+  | PAPart3ClassM
+  | PAPart3ClassMA
+  | PAPart3ClassN
+  | PAPart3ClassQ
+  | PAPart3ClassR
+  | PAPart3ClassS
+  | PAPart3ClassT
+  | PAPart3ClassV
+  | PAPart4ClassBB
+  | PAPart4ClassBC
+  | PAPart4ClassCA
+  | PAPart4ClassE
+  | PAPart6
+  | PAPart6ClassA
+  | PAPart6ClassB
+  | PAPart6ClassE
+  | PAPart7ClassC
+  | PAPart7ClassM
+  | PAPart9ClassD
+  | PAPart11ClassB
+  | PAPart14ClassA
+  | PAPart14ClassB
+  | PAPart14ClassJ
+  | PAPart14ClassK
+  | PAPart14ClassOA
+  | PAPart16ClassA
+  | PAPart17
+  | PAPart17ClassB
+  | PAPart17ClassC
+  | PAPart17ClassG
+  | PAPart18ClassA
+  | PAPart19ClassTA
+  | PAPart20ClassA
+  | PAPart20ClassAA
+  | PAPart20ClassAB
+  | PAPart20ClassAC
+  | PAPart20ClassAD
+  | PAPart20ClassZA
+  | PP // Service descriptor, not actually submittable
+  | PPFull // Service descriptor, not actually submittable
   | PPFullAdvertConsent
   | PPFullDemolition
   | PPFullFastTrackAffordable
@@ -615,52 +631,11 @@ export type PPApplicationType =
   | PPOutlineMajorAllWaste
   | PPOutlineMajorSome
   | PPOutlineMajorSomeWaste
-  | PPPip;
-
-/**
- * @description Rights of Way Order - Apply to move or close a path
- */
-export type RightsOfWayOrderApplicationType = 'rightsOfWayOrder';
-
-/**
- * @description Works to trees
- */
-type WTT = 'wtt';
-
-/**
- * @description Consent to carry out works to a tree with a Tree Preservation Order
- */
-type WTTConstent = 'wtt.consent';
-
-/**
- * @description Notification of proposed works to a tree in a Conservation Area
- */
-type WTTNotice = 'wtt.notice';
-
-export type WTTApplicationType = WTT | WTTConstent | WTTNotice;
-
-/**
- * @id #ApplicationType
- * @description Planning application types
- */
-export type ApplicationType =
-  | AdvertConsentApplicationType
-  | AmendmentApplicationType
-  | ApprovalApplicationType
-  | ComplianceConfirmationApplicationType
-  | EnvironmentalImpactApplicationType
-  | HazardousSubstanceConsentApplicationType
-  | HedgerowRemovalNoticeApplicationType
-  | LandDrainageConsentApplicationType
-  | LDCApplicationType
-  | ListedApplicationType
-  | NotifyCompletionApplicationType
-  | ObligationApplicationType
-  | OnshoreExtractionOilAndGasApplicationType
-  | PAApplicationType
-  | PPApplicationType
-  | RightsOfWayOrderApplicationType
-  | WTTApplicationType;
+  | PPPip
+  | RightsOfWayOrder
+  | WTT // Service descriptor, not actually submittable
+  | WTTConsent
+  | WTTNotice;
 
 /**
  * @internal
@@ -668,6 +643,7 @@ export type ApplicationType =
 type ExtractPrimaryKeys<T> = T extends `${infer K}.${string}` ? K : T;
 
 /**
- * @internal The first segment of the application type hierarchical codes
+ * @title Primary application type
+ * @description The first segment of the application type hierarchical code
  */
 export type PrimaryApplicationType = ExtractPrimaryKeys<ApplicationType>;

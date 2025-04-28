@@ -1,5 +1,5 @@
 import {Date} from '../../../shared/utils';
-import {PrimaryApplicationType} from '../../prototypeApplication/enums/ApplicationType';
+import {ApplicationType} from '../../prototypeApplication/enums/ApplicationType';
 import {AssessmentDecision} from '../enums/AssessmentDecision';
 
 /**
@@ -89,16 +89,20 @@ export type PriorApprovalAssessment = PostSubmissionAssessment & {
 };
 
 /**
- * TypeMap of PrimaryApplicationTypes to their specific Assessment models
+ * TypeMap of granular application types to their specific Assessment models
  */
 type AssessmentVariants = {
-  pa: PriorApprovalAssessment;
+  'pa.part1.classA': PriorApprovalAssessment;
+  'pa.part3.classMA': PriorApprovalAssessment;
+  'pa.part7.classM': PriorApprovalAssessment;
+  'pa.part14.classJ': PriorApprovalAssessment;
+  'pa.part20.classAB': PriorApprovalAssessment;
 };
 
 /**
- * @internal Conditional type to return a specific or generic Property model, based on PrimaryApplicationType
+ * @internal Conditional type to return a specific or generic Property model
  */
-export type Assessment<TPrimary extends PrimaryApplicationType> =
-  TPrimary extends keyof AssessmentVariants
-    ? AssessmentVariants[TPrimary]
+export type Assessment<T extends ApplicationType> =
+  T extends keyof AssessmentVariants
+    ? AssessmentVariants[T]
     : PostSubmissionAssessment;

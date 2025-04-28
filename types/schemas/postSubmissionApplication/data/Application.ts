@@ -1,5 +1,5 @@
 import {DateTime} from '../../../shared/utils';
-import {PrimaryApplicationType} from '../../prototypeApplication/enums/ApplicationType';
+import {ApplicationType} from '../../prototypeApplication/enums/ApplicationType';
 import {ApplicationStatus} from '../enums/ApplicationStatus';
 import {ProcessStage} from '../enums/ProcessStage';
 
@@ -31,14 +31,14 @@ type ApplicationBase = {
 };
 
 /**
- * TypeMap of PrimaryApplicationTypes to their specific Application models
+ * TypeMap of granular application types to their specific Application models
  */
 type ApplicationVariants = {};
 
 /**
- * @internal Conditional type to return a specific or generic Property model, based on PrimaryApplicationType
+ * @internal Conditional type to return a specific or generic Property model
  */
-export type Application<TPrimary extends PrimaryApplicationType> =
-  TPrimary extends keyof ApplicationVariants
-    ? ApplicationVariants[TPrimary]
+export type Application<T extends ApplicationType> =
+  T extends keyof ApplicationVariants
+    ? ApplicationVariants[T]
     : ApplicationBase;

@@ -1789,7 +1789,7 @@
     "source": "PlanX",
     "service": {
       "flowId": "bba306e7-15c8-438f-a71e-a1e5d3a99caf",
-      "url": "https://editor.planx.uk/southwark/apply-for-planning-permission/published",
+      "url": "https://editor.planx.dev/southwark/apply-for-planning-permission/published",
       "files": {
         "required": [
           {
