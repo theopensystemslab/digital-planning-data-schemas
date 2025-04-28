@@ -636,3 +636,14 @@ export type ApplicationType =
   | WTT // Service descriptor, not actually submittable
   | WTTConsent
   | WTTNotice;
+
+/**
+ * @internal
+ */
+type ExtractPrimaryKeys<T> = T extends `${infer K}.${string}` ? K : T;
+
+/**
+ * @title Primary application type
+ * @description The first segment of the application type hierarchical code
+ */
+export type PrimaryApplicationType = ExtractPrimaryKeys<ApplicationType>;
