@@ -9,7 +9,7 @@ import {
 } from '../../../shared/Ownership';
 import {SiteContact} from '../../../shared/SiteContact';
 import {Date} from '../../../shared/utils';
-import { ApplicationType } from '../enums/ApplicationType';
+import {ApplicationType} from '../enums/ApplicationType';
 
 export type ApplicantBase = BaseApplicant | Agent;
 
@@ -131,6 +131,8 @@ interface ApplicantVariants {
   'ldc.worksToListedBuilding': LDCApplicant;
   'pp.full.householder.retro': PPApplicant;
   'pp.full.householder': PPApplicant;
+  'pp.full.major': PPApplicant;
+  'pp.full.minor': PPApplicant;
   'wtt.consent': WTTApplicant;
   'wtt.notice': WTTApplicant;
   advertConsent: AdvertConsentApplicant;
@@ -144,6 +146,4 @@ interface ApplicantVariants {
  * @internal Conditional type to return a specific or generic Applicant model
  */
 export type Applicant<T extends ApplicationType> =
-  T extends keyof ApplicantVariants
-    ? ApplicantVariants[T]
-    : ApplicantBase;
+  T extends keyof ApplicantVariants ? ApplicantVariants[T] : ApplicantBase;

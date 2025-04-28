@@ -532,7 +532,7 @@
     "source": "PlanX",
     "service": {
       "flowId": "4ab8165c-aa19-4126-a684-450395afe96a",
-      "url": "https://editor.planx.uk/southwark/apply-for-works-to-trees/published",
+      "url": "https://editor.planx.dev/southwark/apply-for-works-to-trees/published",
       "files": {
         "required": [
           "sketchPlan",

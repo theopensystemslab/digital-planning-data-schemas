@@ -1,6 +1,6 @@
-import { Date } from '../../../shared/utils';
-import { ApplicationType } from '../../prototypeApplication/enums/ApplicationType';
-import { AssessmentDecision } from '../enums/AssessmentDecision';
+import {Date} from '../../../shared/utils';
+import {ApplicationType} from '../../prototypeApplication/enums/ApplicationType';
+import {AssessmentDecision} from '../enums/AssessmentDecision';
 
 /**
  * Council decision is planningOfficerDecision || committeeDecision
@@ -92,7 +92,11 @@ export type PriorApprovalAssessment = PostSubmissionAssessment & {
  * TypeMap of granular application types to their specific Assessment models
  */
 type AssessmentVariants = {
-  pa: PriorApprovalAssessment;
+  'pa.part1.classA': PriorApprovalAssessment;
+  'pa.part3.classMA': PriorApprovalAssessment;
+  'pa.part7.classM': PriorApprovalAssessment;
+  'pa.part14.classJ': PriorApprovalAssessment;
+  'pa.part20.classAB': PriorApprovalAssessment;
 };
 
 /**

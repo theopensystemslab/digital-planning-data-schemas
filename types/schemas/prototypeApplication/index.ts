@@ -23,27 +23,67 @@ interface ApplicationSpecification<T extends ApplicationType> {
     property: Property<T>;
     proposal: Proposal<T>;
   };
-  preAssessment?: PreAssessment;
   responses: Responses;
   files: File[];
   metadata: PrototypePlanXMetadata;
 }
 
-export type AdvertConsent = ApplicationSpecification<'advertConsent'>;
-export type ComplianceConfirmation = ApplicationSpecification<'complianceConfirmation'>;
-export type HedgerowRemovalNotice = ApplicationSpecification<'hedgerowRemovalNotice'>;
-export type LandDrainageConsent = ApplicationSpecification<'landDrainageConsent'>;
-export type LDCBreachOfCondition = ApplicationSpecification<'ldc.breachOfCondition'>;
-export type LDCExisting = ApplicationSpecification<'ldc.existing'>;
-export type LDCListedBuildingWorks = ApplicationSpecification<'ldc.listedBuildingWorks'>;
-export type LDCProposed = ApplicationSpecification<'ldc.proposed'>;
-export type ListedBuildingConsent = ApplicationSpecification<'listed'>;
-export type PriorApproval = ApplicationSpecification<'pa'>;
-export type PPFullHouseholder = ApplicationSpecification<'pp.full.householder'>;
-export type PPFullHouseholderRetro = ApplicationSpecification<'pp.full.householder.retro'>;
-export type WTTConsent = ApplicationSpecification<'wtt.consent'>;
-export type WTTNotice = ApplicationSpecification<'wtt.notice'>;
-// TODO: All the rest!
+/**
+ * @internal
+ * The generic base type for all application types which include a pre-assessment result
+ * Child properties may differ based on a granular application type parameter
+ */
+interface ApplicationSpecificationWithPreAssessment<T extends ApplicationType> {
+  applicationType: T;
+  data: {
+    user: UserBase;
+    applicant: Applicant<T>;
+    application: ApplicationData<T>;
+    property: Property<T>;
+    proposal: Proposal<T>;
+  };
+  preAssessment: PreAssessment;
+  responses: Responses;
+  files: File[];
+  metadata: PrototypePlanXMetadata;
+}
+
+/**
+ * @internal This list of variants should only includes submittable application types, not generic PlanX "service" prefixes like 'ldc'
+ *   See https://docs.google.com/spreadsheets/d/1FgULPemnwuwysrYGEkReYFXz3n3T7W0nWziU00taZE4/edit?gid=0#gid=0 as reference for which are 'WithPreAssessment'
+ */
+type AdvertConsent = ApplicationSpecification<'advertConsent'>;
+type ComplianceConfirmation =
+  ApplicationSpecification<'complianceConfirmation'>;
+type HedgerowRemovalNotice = ApplicationSpecification<'hedgerowRemovalNotice'>;
+type LandDrainageConsent = ApplicationSpecification<'landDrainageConsent'>;
+type LawfulDevelopmentCertificateBreachOfCondition =
+  ApplicationSpecification<'ldc.breachOfCondition'>;
+type LawfulDevelopmentCertificateExisting =
+  ApplicationSpecificationWithPreAssessment<'ldc.existing'>;
+type LawfulDevelopmentCertificateListedBuildingWorks =
+  ApplicationSpecification<'ldc.listedBuildingWorks'>;
+type LawfulDevelopmentCertificateProposed =
+  ApplicationSpecificationWithPreAssessment<'ldc.proposed'>;
+type ListedBuildingConsent = ApplicationSpecification<'listed'>;
+type PriorApprovalPart1ClassA =
+  ApplicationSpecificationWithPreAssessment<'pa.part1.classA'>;
+type PriorApprovalPart3ClassMA =
+  ApplicationSpecificationWithPreAssessment<'pa.part3.classMA'>;
+type PriorApprovalPart7ClassM =
+  ApplicationSpecificationWithPreAssessment<'pa.part7.classM'>;
+type PriorApprovalPart14ClassJ =
+  ApplicationSpecificationWithPreAssessment<'pa.part14.classJ'>;
+type PriorApprovalPart20ClassAB =
+  ApplicationSpecificationWithPreAssessment<'pa.part20.classAB'>;
+type PlanningPermissionHouseholder =
+  ApplicationSpecification<'pp.full.householder'>;
+type PlanningPermissionHouseholderRetrospective =
+  ApplicationSpecification<'pp.full.householder.retro'>;
+type PlanningPermissionMajor = ApplicationSpecification<'pp.full.major'>;
+type PlanningPermissionMinor = ApplicationSpecification<'pp.full.minor'>;
+type WorksToTreesConsent = ApplicationSpecification<'wtt.consent'>;
+type WorksToTreesNotice = ApplicationSpecification<'wtt.notice'>;
 
 /**
  * @title PrototypeApplication
@@ -54,13 +94,19 @@ export type PrototypeApplication =
   | ComplianceConfirmation
   | HedgerowRemovalNotice
   | LandDrainageConsent
-  | LDCBreachOfCondition
-  | LDCExisting
-  | LDCListedBuildingWorks
-  | LDCProposed
+  | LawfulDevelopmentCertificateBreachOfCondition
+  | LawfulDevelopmentCertificateExisting
+  | LawfulDevelopmentCertificateListedBuildingWorks
+  | LawfulDevelopmentCertificateProposed
   | ListedBuildingConsent
-  | PriorApproval
-  | PPFullHouseholder
-  | PPFullHouseholderRetro
-  | WTTConsent
-  | WTTNotice;
+  | PriorApprovalPart1ClassA
+  | PriorApprovalPart3ClassMA
+  | PriorApprovalPart7ClassM
+  | PriorApprovalPart14ClassJ
+  | PriorApprovalPart20ClassAB
+  | PlanningPermissionHouseholder
+  | PlanningPermissionHouseholderRetrospective
+  | PlanningPermissionMajor
+  | PlanningPermissionMinor
+  | WorksToTreesConsent
+  | WorksToTreesNotice;

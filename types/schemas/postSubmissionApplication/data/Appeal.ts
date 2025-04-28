@@ -1,7 +1,7 @@
-import { Date } from '../../../shared/utils';
-import { ApplicationType } from '../../prototypeApplication/enums/ApplicationType';
-import { AppealDecision } from '../enums/AppealDecision';
-import { PostSubmissionFile } from './File';
+import {Date} from '../../../shared/utils';
+import {ApplicationType} from '../../prototypeApplication/enums/ApplicationType';
+import {AppealDecision} from '../enums/AppealDecision';
+import {PostSubmissionFile} from './File';
 
 /**
  * This schema represents the appeal process for a planning application currently based on the implentation in BOPS and DPR
@@ -71,5 +71,6 @@ type AppealVariants = {};
 /**
  * @internal Conditional type to return a specific or generic Property model
  */
-export type Appeal<T extends ApplicationType> =
-  T extends keyof AppealVariants ? AppealVariants[T] : AppealBase;
+export type Appeal<T extends ApplicationType> = T extends keyof AppealVariants
+  ? AppealVariants[T]
+  : AppealBase;

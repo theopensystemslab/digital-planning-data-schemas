@@ -1,5 +1,5 @@
-import { DateTime } from '../../../shared/utils';
-import { ApplicationType } from '../../prototypeApplication/enums/ApplicationType';
+import {DateTime} from '../../../shared/utils';
+import {ApplicationType} from '../../prototypeApplication/enums/ApplicationType';
 
 type ValidationBase = {
   /**
@@ -31,6 +31,4 @@ type ValidationVariants = {};
  * @internal Conditional type to return a specific or generic Property model
  */
 export type Validation<T extends ApplicationType> =
-  T extends keyof ValidationVariants
-    ? ValidationVariants[T]
-    : ValidationBase;
+  T extends keyof ValidationVariants ? ValidationVariants[T] : ValidationBase;

@@ -1,4 +1,4 @@
-import { ApplicationType } from '../../prototypeApplication/enums/ApplicationType';
+import {ApplicationType} from '../../prototypeApplication/enums/ApplicationType';
 
 export type CaseOfficerBase = {
   name: string;

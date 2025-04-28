@@ -5,7 +5,7 @@ import {
   PlanningApplication,
   PreApplication,
 } from '../../../shared/LinkedApplications';
-import { ApplicationType } from '../enums/ApplicationType';
+import {ApplicationType} from '../enums/ApplicationType';
 
 export type ApplicationDataBase =
   | EnglandApplicationData
@@ -65,8 +65,10 @@ export interface ApplicationDataVariants {
   'ldc.existing': FeeCarryingApplicationData;
   'ldc.listedBuildingWorks': NonFeeCarryingApplicationData;
   'ldc.proposed': FeeCarryingApplicationData;
-  'pp.full.householder.retro': PPApplicationData
+  'pp.full.householder.retro': PPApplicationData;
   'pp.full.householder': PPApplicationData;
+  'pp.full.major': PPApplicationData;
+  'pp.full.minor': PPApplicationData;
   'wtt.consent': NonFeeCarryingApplicationData;
   'wtt.notice': NonFeeCarryingApplicationData;
   advertConsent: FeeCarryingApplicationData;
@@ -74,7 +76,11 @@ export interface ApplicationDataVariants {
   hedgerowRemovalNotice: NonFeeCarryingApplicationData;
   landDrainageConsent: FeeCarryingApplicationData;
   listed: NonFeeCarryingApplicationData;
-  pa: FeeCarryingApplicationData;
+  'pa.part1.classA': FeeCarryingApplicationData;
+  'pa.part3.classMA': FeeCarryingApplicationData;
+  'pa.part7.classM': FeeCarryingApplicationData;
+  'pa.part14.classJ': FeeCarryingApplicationData;
+  'pa.part20.classAB': FeeCarryingApplicationData;
 }
 
 /**

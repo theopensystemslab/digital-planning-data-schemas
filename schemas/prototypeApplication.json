@@ -3,81 +3,6 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "anyOf": [
     {
-      "$ref": "#/definitions/AdvertConsent"
-    },
-    {
-      "$ref": "#/definitions/ComplianceConfirmation"
-    },
-    {
-      "$ref": "#/definitions/HedgerowRemovalNotice"
-    },
-    {
-      "$ref": "#/definitions/LandDrainageConsent"
-    },
-    {
-      "$ref": "#/definitions/LDCBreachOfCondition"
-    },
-    {
-      "$ref": "#/definitions/LDCExisting"
-    },
-    {
-      "$ref": "#/definitions/LDCListedBuildingWorks"
-    },
-    {
-      "$ref": "#/definitions/LDCProposed"
-    },
-    {
-      "$ref": "#/definitions/ListedBuildingConsent"
-    },
-    {
-      "$ref": "#/definitions/PriorApproval"
-    },
-    {
-      "$ref": "#/definitions/PPFullHouseholder"
-    },
-    {
-      "$ref": "#/definitions/PPFullHouseholderRetro"
-    },
-    {
-      "$ref": "#/definitions/WTTConsent"
-    },
-    {
-      "$ref": "#/definitions/WTTNotice"
-    }
-  ],
-  "definitions": {
-    "Address": {
-      "additionalProperties": false,
-      "description": "Address information for a person associated with this application not at the site address",
-      "properties": {
-        "country": {
-          "type": "string"
-        },
-        "county": {
-          "type": "string"
-        },
-        "line1": {
-          "type": "string"
-        },
-        "line2": {
-          "type": "string"
-        },
-        "postcode": {
-          "type": "string"
-        },
-        "town": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "line1",
-        "town",
-        "postcode"
-      ],
-      "title": "Contact address",
-      "type": "object"
-    },
-    "AdvertConsent": {
       "additionalProperties": false,
       "properties": {
         "applicationType": {
@@ -121,8 +46,62 @@
         "metadata": {
           "$ref": "#/definitions/PrototypePlanXMetadata"
         },
-        "preAssessment": {
-          "$ref": "#/definitions/PreAssessment"
+        "responses": {
+          "$ref": "#/definitions/Responses"
+        }
+      },
+      "required": [
+        "applicationType",
+        "data",
+        "responses",
+        "files",
+        "metadata"
+      ],
+      "type": "object"
+    },
+    {
+      "additionalProperties": false,
+      "properties": {
+        "applicationType": {
+          "const": "complianceConfirmation",
+          "type": "string"
+        },
+        "data": {
+          "additionalProperties": false,
+          "properties": {
+            "applicant": {
+              "$ref": "#/definitions/ComplianceConfirmationApplicant"
+            },
+            "application": {
+              "$ref": "#/definitions/FeeCarryingApplicationData"
+            },
+            "property": {
+              "$ref": "#/definitions/EnglandProperty"
+            },
+            "proposal": {
+              "$ref": "#/definitions/ProposalBase"
+            },
+            "user": {
+              "$ref": "#/definitions/UserBase"
+            }
+          },
+          "required": [
+            "user",
+            "applicant",
+            "application",
+            "property",
+            "proposal"
+          ],
+          "type": "object"
+        },
+        "files": {
+          "items": {
+            "$ref": "#/definitions/File"
+          },
+          "type": "array"
+        },
+        "metadata": {
+          "$ref": "#/definitions/PrototypePlanXMetadata"
         },
         "responses": {
           "$ref": "#/definitions/Responses"
@@ -135,6 +114,1093 @@
         "files",
         "metadata"
       ],
+      "type": "object"
+    },
+    {
+      "additionalProperties": false,
+      "properties": {
+        "applicationType": {
+          "const": "hedgerowRemovalNotice",
+          "type": "string"
+        },
+        "data": {
+          "additionalProperties": false,
+          "properties": {
+            "applicant": {
+              "$ref": "#/definitions/HedgerowRemovalNoticeApplicant"
+            },
+            "application": {
+              "$ref": "#/definitions/NonFeeCarryingApplicationData"
+            },
+            "property": {
+              "$ref": "#/definitions/EnglandProperty"
+            },
+            "proposal": {
+              "$ref": "#/definitions/HedgerowRemovalNoticeProposal"
+            },
+            "user": {
+              "$ref": "#/definitions/UserBase"
+            }
+          },
+          "required": [
+            "user",
+            "applicant",
+            "application",
+            "property",
+            "proposal"
+          ],
+          "type": "object"
+        },
+        "files": {
+          "items": {
+            "$ref": "#/definitions/File"
+          },
+          "type": "array"
+        },
+        "metadata": {
+          "$ref": "#/definitions/PrototypePlanXMetadata"
+        },
+        "responses": {
+          "$ref": "#/definitions/Responses"
+        }
+      },
+      "required": [
+        "applicationType",
+        "data",
+        "responses",
+        "files",
+        "metadata"
+      ],
+      "type": "object"
+    },
+    {
+      "additionalProperties": false,
+      "properties": {
+        "applicationType": {
+          "const": "landDrainageConsent",
+          "type": "string"
+        },
+        "data": {
+          "additionalProperties": false,
+          "properties": {
+            "applicant": {
+              "$ref": "#/definitions/LandDrainageConsentApplicant"
+            },
+            "application": {
+              "$ref": "#/definitions/FeeCarryingApplicationData"
+            },
+            "property": {
+              "$ref": "#/definitions/PropertyBase"
+            },
+            "proposal": {
+              "$ref": "#/definitions/GeographyBasedProposal"
+            },
+            "user": {
+              "$ref": "#/definitions/UserBase"
+            }
+          },
+          "required": [
+            "user",
+            "applicant",
+            "application",
+            "property",
+            "proposal"
+          ],
+          "type": "object"
+        },
+        "files": {
+          "items": {
+            "$ref": "#/definitions/File"
+          },
+          "type": "array"
+        },
+        "metadata": {
+          "$ref": "#/definitions/PrototypePlanXMetadata"
+        },
+        "responses": {
+          "$ref": "#/definitions/Responses"
+        }
+      },
+      "required": [
+        "applicationType",
+        "data",
+        "responses",
+        "files",
+        "metadata"
+      ],
+      "type": "object"
+    },
+    {
+      "additionalProperties": false,
+      "properties": {
+        "applicationType": {
+          "const": "ldc.breachOfCondition",
+          "type": "string"
+        },
+        "data": {
+          "additionalProperties": false,
+          "properties": {
+            "applicant": {
+              "$ref": "#/definitions/LDCApplicant"
+            },
+            "application": {
+              "$ref": "#/definitions/FeeCarryingApplicationData"
+            },
+            "property": {
+              "$ref": "#/definitions/PropertyBase"
+            },
+            "proposal": {
+              "$ref": "#/definitions/GeographyBasedProposal"
+            },
+            "user": {
+              "$ref": "#/definitions/UserBase"
+            }
+          },
+          "required": [
+            "user",
+            "applicant",
+            "application",
+            "property",
+            "proposal"
+          ],
+          "type": "object"
+        },
+        "files": {
+          "items": {
+            "$ref": "#/definitions/File"
+          },
+          "type": "array"
+        },
+        "metadata": {
+          "$ref": "#/definitions/PrototypePlanXMetadata"
+        },
+        "responses": {
+          "$ref": "#/definitions/Responses"
+        }
+      },
+      "required": [
+        "applicationType",
+        "data",
+        "responses",
+        "files",
+        "metadata"
+      ],
+      "type": "object"
+    },
+    {
+      "additionalProperties": false,
+      "properties": {
+        "applicationType": {
+          "const": "ldc.existing",
+          "type": "string"
+        },
+        "data": {
+          "additionalProperties": false,
+          "properties": {
+            "applicant": {
+              "$ref": "#/definitions/LDCApplicant"
+            },
+            "application": {
+              "$ref": "#/definitions/FeeCarryingApplicationData"
+            },
+            "property": {
+              "$ref": "#/definitions/PropertyBase"
+            },
+            "proposal": {
+              "$ref": "#/definitions/GeographyBasedProposal"
+            },
+            "user": {
+              "$ref": "#/definitions/UserBase"
+            }
+          },
+          "required": [
+            "user",
+            "applicant",
+            "application",
+            "property",
+            "proposal"
+          ],
+          "type": "object"
+        },
+        "files": {
+          "items": {
+            "$ref": "#/definitions/File"
+          },
+          "type": "array"
+        },
+        "metadata": {
+          "$ref": "#/definitions/PrototypePlanXMetadata"
+        },
+        "preAssessment": {
+          "$ref": "#/definitions/PreAssessment"
+        },
+        "responses": {
+          "$ref": "#/definitions/Responses"
+        }
+      },
+      "required": [
+        "applicationType",
+        "data",
+        "preAssessment",
+        "responses",
+        "files",
+        "metadata"
+      ],
+      "type": "object"
+    },
+    {
+      "additionalProperties": false,
+      "properties": {
+        "applicationType": {
+          "const": "ldc.listedBuildingWorks",
+          "type": "string"
+        },
+        "data": {
+          "additionalProperties": false,
+          "properties": {
+            "applicant": {
+              "$ref": "#/definitions/ApplicantBase"
+            },
+            "application": {
+              "$ref": "#/definitions/NonFeeCarryingApplicationData"
+            },
+            "property": {
+              "$ref": "#/definitions/PropertyBase"
+            },
+            "proposal": {
+              "$ref": "#/definitions/GeographyBasedProposal"
+            },
+            "user": {
+              "$ref": "#/definitions/UserBase"
+            }
+          },
+          "required": [
+            "user",
+            "applicant",
+            "application",
+            "property",
+            "proposal"
+          ],
+          "type": "object"
+        },
+        "files": {
+          "items": {
+            "$ref": "#/definitions/File"
+          },
+          "type": "array"
+        },
+        "metadata": {
+          "$ref": "#/definitions/PrototypePlanXMetadata"
+        },
+        "responses": {
+          "$ref": "#/definitions/Responses"
+        }
+      },
+      "required": [
+        "applicationType",
+        "data",
+        "responses",
+        "files",
+        "metadata"
+      ],
+      "type": "object"
+    },
+    {
+      "additionalProperties": false,
+      "properties": {
+        "applicationType": {
+          "const": "ldc.proposed",
+          "type": "string"
+        },
+        "data": {
+          "additionalProperties": false,
+          "properties": {
+            "applicant": {
+              "$ref": "#/definitions/LDCApplicant"
+            },
+            "application": {
+              "$ref": "#/definitions/FeeCarryingApplicationData"
+            },
+            "property": {
+              "$ref": "#/definitions/PropertyBase"
+            },
+            "proposal": {
+              "$ref": "#/definitions/GeographyBasedProposal"
+            },
+            "user": {
+              "$ref": "#/definitions/UserBase"
+            }
+          },
+          "required": [
+            "user",
+            "applicant",
+            "application",
+            "property",
+            "proposal"
+          ],
+          "type": "object"
+        },
+        "files": {
+          "items": {
+            "$ref": "#/definitions/File"
+          },
+          "type": "array"
+        },
+        "metadata": {
+          "$ref": "#/definitions/PrototypePlanXMetadata"
+        },
+        "preAssessment": {
+          "$ref": "#/definitions/PreAssessment"
+        },
+        "responses": {
+          "$ref": "#/definitions/Responses"
+        }
+      },
+      "required": [
+        "applicationType",
+        "data",
+        "preAssessment",
+        "responses",
+        "files",
+        "metadata"
+      ],
+      "type": "object"
+    },
+    {
+      "additionalProperties": false,
+      "properties": {
+        "applicationType": {
+          "const": "listed",
+          "type": "string"
+        },
+        "data": {
+          "additionalProperties": false,
+          "properties": {
+            "applicant": {
+              "$ref": "#/definitions/PPApplicant"
+            },
+            "application": {
+              "$ref": "#/definitions/NonFeeCarryingApplicationData"
+            },
+            "property": {
+              "$ref": "#/definitions/PropertyBase"
+            },
+            "proposal": {
+              "$ref": "#/definitions/GeographyBasedProposal"
+            },
+            "user": {
+              "$ref": "#/definitions/UserBase"
+            }
+          },
+          "required": [
+            "user",
+            "applicant",
+            "application",
+            "property",
+            "proposal"
+          ],
+          "type": "object"
+        },
+        "files": {
+          "items": {
+            "$ref": "#/definitions/File"
+          },
+          "type": "array"
+        },
+        "metadata": {
+          "$ref": "#/definitions/PrototypePlanXMetadata"
+        },
+        "responses": {
+          "$ref": "#/definitions/Responses"
+        }
+      },
+      "required": [
+        "applicationType",
+        "data",
+        "responses",
+        "files",
+        "metadata"
+      ],
+      "type": "object"
+    },
+    {
+      "additionalProperties": false,
+      "properties": {
+        "applicationType": {
+          "const": "pa.part1.classA",
+          "type": "string"
+        },
+        "data": {
+          "additionalProperties": false,
+          "properties": {
+            "applicant": {
+              "$ref": "#/definitions/ApplicantBase"
+            },
+            "application": {
+              "$ref": "#/definitions/FeeCarryingApplicationData"
+            },
+            "property": {
+              "$ref": "#/definitions/PropertyBase"
+            },
+            "proposal": {
+              "$ref": "#/definitions/GeographyBasedProposal"
+            },
+            "user": {
+              "$ref": "#/definitions/UserBase"
+            }
+          },
+          "required": [
+            "user",
+            "applicant",
+            "application",
+            "property",
+            "proposal"
+          ],
+          "type": "object"
+        },
+        "files": {
+          "items": {
+            "$ref": "#/definitions/File"
+          },
+          "type": "array"
+        },
+        "metadata": {
+          "$ref": "#/definitions/PrototypePlanXMetadata"
+        },
+        "preAssessment": {
+          "$ref": "#/definitions/PreAssessment"
+        },
+        "responses": {
+          "$ref": "#/definitions/Responses"
+        }
+      },
+      "required": [
+        "applicationType",
+        "data",
+        "preAssessment",
+        "responses",
+        "files",
+        "metadata"
+      ],
+      "type": "object"
+    },
+    {
+      "additionalProperties": false,
+      "properties": {
+        "applicationType": {
+          "const": "pa.part3.classMA",
+          "type": "string"
+        },
+        "data": {
+          "additionalProperties": false,
+          "properties": {
+            "applicant": {
+              "$ref": "#/definitions/ApplicantBase"
+            },
+            "application": {
+              "$ref": "#/definitions/FeeCarryingApplicationData"
+            },
+            "property": {
+              "$ref": "#/definitions/PropertyBase"
+            },
+            "proposal": {
+              "$ref": "#/definitions/GeographyBasedProposal"
+            },
+            "user": {
+              "$ref": "#/definitions/UserBase"
+            }
+          },
+          "required": [
+            "user",
+            "applicant",
+            "application",
+            "property",
+            "proposal"
+          ],
+          "type": "object"
+        },
+        "files": {
+          "items": {
+            "$ref": "#/definitions/File"
+          },
+          "type": "array"
+        },
+        "metadata": {
+          "$ref": "#/definitions/PrototypePlanXMetadata"
+        },
+        "preAssessment": {
+          "$ref": "#/definitions/PreAssessment"
+        },
+        "responses": {
+          "$ref": "#/definitions/Responses"
+        }
+      },
+      "required": [
+        "applicationType",
+        "data",
+        "preAssessment",
+        "responses",
+        "files",
+        "metadata"
+      ],
+      "type": "object"
+    },
+    {
+      "additionalProperties": false,
+      "properties": {
+        "applicationType": {
+          "const": "pa.part7.classM",
+          "type": "string"
+        },
+        "data": {
+          "additionalProperties": false,
+          "properties": {
+            "applicant": {
+              "$ref": "#/definitions/ApplicantBase"
+            },
+            "application": {
+              "$ref": "#/definitions/FeeCarryingApplicationData"
+            },
+            "property": {
+              "$ref": "#/definitions/PropertyBase"
+            },
+            "proposal": {
+              "$ref": "#/definitions/GeographyBasedProposal"
+            },
+            "user": {
+              "$ref": "#/definitions/UserBase"
+            }
+          },
+          "required": [
+            "user",
+            "applicant",
+            "application",
+            "property",
+            "proposal"
+          ],
+          "type": "object"
+        },
+        "files": {
+          "items": {
+            "$ref": "#/definitions/File"
+          },
+          "type": "array"
+        },
+        "metadata": {
+          "$ref": "#/definitions/PrototypePlanXMetadata"
+        },
+        "preAssessment": {
+          "$ref": "#/definitions/PreAssessment"
+        },
+        "responses": {
+          "$ref": "#/definitions/Responses"
+        }
+      },
+      "required": [
+        "applicationType",
+        "data",
+        "preAssessment",
+        "responses",
+        "files",
+        "metadata"
+      ],
+      "type": "object"
+    },
+    {
+      "additionalProperties": false,
+      "properties": {
+        "applicationType": {
+          "const": "pa.part14.classJ",
+          "type": "string"
+        },
+        "data": {
+          "additionalProperties": false,
+          "properties": {
+            "applicant": {
+              "$ref": "#/definitions/ApplicantBase"
+            },
+            "application": {
+              "$ref": "#/definitions/FeeCarryingApplicationData"
+            },
+            "property": {
+              "$ref": "#/definitions/PropertyBase"
+            },
+            "proposal": {
+              "$ref": "#/definitions/GeographyBasedProposal"
+            },
+            "user": {
+              "$ref": "#/definitions/UserBase"
+            }
+          },
+          "required": [
+            "user",
+            "applicant",
+            "application",
+            "property",
+            "proposal"
+          ],
+          "type": "object"
+        },
+        "files": {
+          "items": {
+            "$ref": "#/definitions/File"
+          },
+          "type": "array"
+        },
+        "metadata": {
+          "$ref": "#/definitions/PrototypePlanXMetadata"
+        },
+        "preAssessment": {
+          "$ref": "#/definitions/PreAssessment"
+        },
+        "responses": {
+          "$ref": "#/definitions/Responses"
+        }
+      },
+      "required": [
+        "applicationType",
+        "data",
+        "preAssessment",
+        "responses",
+        "files",
+        "metadata"
+      ],
+      "type": "object"
+    },
+    {
+      "additionalProperties": false,
+      "properties": {
+        "applicationType": {
+          "const": "pa.part20.classAB",
+          "type": "string"
+        },
+        "data": {
+          "additionalProperties": false,
+          "properties": {
+            "applicant": {
+              "$ref": "#/definitions/ApplicantBase"
+            },
+            "application": {
+              "$ref": "#/definitions/FeeCarryingApplicationData"
+            },
+            "property": {
+              "$ref": "#/definitions/PropertyBase"
+            },
+            "proposal": {
+              "$ref": "#/definitions/GeographyBasedProposal"
+            },
+            "user": {
+              "$ref": "#/definitions/UserBase"
+            }
+          },
+          "required": [
+            "user",
+            "applicant",
+            "application",
+            "property",
+            "proposal"
+          ],
+          "type": "object"
+        },
+        "files": {
+          "items": {
+            "$ref": "#/definitions/File"
+          },
+          "type": "array"
+        },
+        "metadata": {
+          "$ref": "#/definitions/PrototypePlanXMetadata"
+        },
+        "preAssessment": {
+          "$ref": "#/definitions/PreAssessment"
+        },
+        "responses": {
+          "$ref": "#/definitions/Responses"
+        }
+      },
+      "required": [
+        "applicationType",
+        "data",
+        "preAssessment",
+        "responses",
+        "files",
+        "metadata"
+      ],
+      "type": "object"
+    },
+    {
+      "additionalProperties": false,
+      "properties": {
+        "applicationType": {
+          "const": "pp.full.householder",
+          "type": "string"
+        },
+        "data": {
+          "additionalProperties": false,
+          "properties": {
+            "applicant": {
+              "$ref": "#/definitions/PPApplicant"
+            },
+            "application": {
+              "$ref": "#/definitions/PPApplicationData"
+            },
+            "property": {
+              "$ref": "#/definitions/PPProperty"
+            },
+            "proposal": {
+              "$ref": "#/definitions/GeographyBasedProposal"
+            },
+            "user": {
+              "$ref": "#/definitions/UserBase"
+            }
+          },
+          "required": [
+            "user",
+            "applicant",
+            "application",
+            "property",
+            "proposal"
+          ],
+          "type": "object"
+        },
+        "files": {
+          "items": {
+            "$ref": "#/definitions/File"
+          },
+          "type": "array"
+        },
+        "metadata": {
+          "$ref": "#/definitions/PrototypePlanXMetadata"
+        },
+        "responses": {
+          "$ref": "#/definitions/Responses"
+        }
+      },
+      "required": [
+        "applicationType",
+        "data",
+        "responses",
+        "files",
+        "metadata"
+      ],
+      "type": "object"
+    },
+    {
+      "additionalProperties": false,
+      "properties": {
+        "applicationType": {
+          "const": "pp.full.householder.retro",
+          "type": "string"
+        },
+        "data": {
+          "additionalProperties": false,
+          "properties": {
+            "applicant": {
+              "$ref": "#/definitions/PPApplicant"
+            },
+            "application": {
+              "$ref": "#/definitions/PPApplicationData"
+            },
+            "property": {
+              "$ref": "#/definitions/PPProperty"
+            },
+            "proposal": {
+              "$ref": "#/definitions/GeographyBasedProposal"
+            },
+            "user": {
+              "$ref": "#/definitions/UserBase"
+            }
+          },
+          "required": [
+            "user",
+            "applicant",
+            "application",
+            "property",
+            "proposal"
+          ],
+          "type": "object"
+        },
+        "files": {
+          "items": {
+            "$ref": "#/definitions/File"
+          },
+          "type": "array"
+        },
+        "metadata": {
+          "$ref": "#/definitions/PrototypePlanXMetadata"
+        },
+        "responses": {
+          "$ref": "#/definitions/Responses"
+        }
+      },
+      "required": [
+        "applicationType",
+        "data",
+        "responses",
+        "files",
+        "metadata"
+      ],
+      "type": "object"
+    },
+    {
+      "additionalProperties": false,
+      "properties": {
+        "applicationType": {
+          "const": "pp.full.major",
+          "type": "string"
+        },
+        "data": {
+          "additionalProperties": false,
+          "properties": {
+            "applicant": {
+              "$ref": "#/definitions/PPApplicant"
+            },
+            "application": {
+              "$ref": "#/definitions/PPApplicationData"
+            },
+            "property": {
+              "$ref": "#/definitions/PPProperty"
+            },
+            "proposal": {
+              "$ref": "#/definitions/GeographyBasedProposal"
+            },
+            "user": {
+              "$ref": "#/definitions/UserBase"
+            }
+          },
+          "required": [
+            "user",
+            "applicant",
+            "application",
+            "property",
+            "proposal"
+          ],
+          "type": "object"
+        },
+        "files": {
+          "items": {
+            "$ref": "#/definitions/File"
+          },
+          "type": "array"
+        },
+        "metadata": {
+          "$ref": "#/definitions/PrototypePlanXMetadata"
+        },
+        "responses": {
+          "$ref": "#/definitions/Responses"
+        }
+      },
+      "required": [
+        "applicationType",
+        "data",
+        "responses",
+        "files",
+        "metadata"
+      ],
+      "type": "object"
+    },
+    {
+      "additionalProperties": false,
+      "properties": {
+        "applicationType": {
+          "const": "pp.full.minor",
+          "type": "string"
+        },
+        "data": {
+          "additionalProperties": false,
+          "properties": {
+            "applicant": {
+              "$ref": "#/definitions/PPApplicant"
+            },
+            "application": {
+              "$ref": "#/definitions/PPApplicationData"
+            },
+            "property": {
+              "$ref": "#/definitions/PPProperty"
+            },
+            "proposal": {
+              "$ref": "#/definitions/GeographyBasedProposal"
+            },
+            "user": {
+              "$ref": "#/definitions/UserBase"
+            }
+          },
+          "required": [
+            "user",
+            "applicant",
+            "application",
+            "property",
+            "proposal"
+          ],
+          "type": "object"
+        },
+        "files": {
+          "items": {
+            "$ref": "#/definitions/File"
+          },
+          "type": "array"
+        },
+        "metadata": {
+          "$ref": "#/definitions/PrototypePlanXMetadata"
+        },
+        "responses": {
+          "$ref": "#/definitions/Responses"
+        }
+      },
+      "required": [
+        "applicationType",
+        "data",
+        "responses",
+        "files",
+        "metadata"
+      ],
+      "type": "object"
+    },
+    {
+      "additionalProperties": false,
+      "properties": {
+        "applicationType": {
+          "const": "wtt.consent",
+          "type": "string"
+        },
+        "data": {
+          "additionalProperties": false,
+          "properties": {
+            "applicant": {
+              "$ref": "#/definitions/WTTApplicant"
+            },
+            "application": {
+              "$ref": "#/definitions/NonFeeCarryingApplicationData"
+            },
+            "property": {
+              "$ref": "#/definitions/EnglandProperty"
+            },
+            "proposal": {
+              "$ref": "#/definitions/ProposalBase"
+            },
+            "user": {
+              "$ref": "#/definitions/UserBase"
+            }
+          },
+          "required": [
+            "user",
+            "applicant",
+            "application",
+            "property",
+            "proposal"
+          ],
+          "type": "object"
+        },
+        "files": {
+          "items": {
+            "$ref": "#/definitions/File"
+          },
+          "type": "array"
+        },
+        "metadata": {
+          "$ref": "#/definitions/PrototypePlanXMetadata"
+        },
+        "responses": {
+          "$ref": "#/definitions/Responses"
+        }
+      },
+      "required": [
+        "applicationType",
+        "data",
+        "responses",
+        "files",
+        "metadata"
+      ],
+      "type": "object"
+    },
+    {
+      "additionalProperties": false,
+      "properties": {
+        "applicationType": {
+          "const": "wtt.notice",
+          "type": "string"
+        },
+        "data": {
+          "additionalProperties": false,
+          "properties": {
+            "applicant": {
+              "$ref": "#/definitions/WTTApplicant"
+            },
+            "application": {
+              "$ref": "#/definitions/NonFeeCarryingApplicationData"
+            },
+            "property": {
+              "$ref": "#/definitions/EnglandProperty"
+            },
+            "proposal": {
+              "$ref": "#/definitions/ProposalBase"
+            },
+            "user": {
+              "$ref": "#/definitions/UserBase"
+            }
+          },
+          "required": [
+            "user",
+            "applicant",
+            "application",
+            "property",
+            "proposal"
+          ],
+          "type": "object"
+        },
+        "files": {
+          "items": {
+            "$ref": "#/definitions/File"
+          },
+          "type": "array"
+        },
+        "metadata": {
+          "$ref": "#/definitions/PrototypePlanXMetadata"
+        },
+        "responses": {
+          "$ref": "#/definitions/Responses"
+        }
+      },
+      "required": [
+        "applicationType",
+        "data",
+        "responses",
+        "files",
+        "metadata"
+      ],
+      "type": "object"
+    }
+  ],
+  "definitions": {
+    "Address": {
+      "additionalProperties": false,
+      "description": "Address information for a person associated with this application not at the site address",
+      "properties": {
+        "country": {
+          "type": "string"
+        },
+        "county": {
+          "type": "string"
+        },
+        "line1": {
+          "type": "string"
+        },
+        "line2": {
+          "type": "string"
+        },
+        "postcode": {
+          "type": "string"
+        },
+        "town": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "line1",
+        "town",
+        "postcode"
+      ],
+      "title": "Contact address",
       "type": "object"
     },
     "AdvertConsentApplicant": {
@@ -2400,66 +3466,6 @@
       "description": "Details about the Community Infrastructure Levy planning charge according to Form 1: Additional information, if applicable",
       "title": "Community Infrastructure Levy (CIL) Form 1"
     },
-    "ComplianceConfirmation": {
-      "additionalProperties": false,
-      "properties": {
-        "applicationType": {
-          "const": "complianceConfirmation",
-          "type": "string"
-        },
-        "data": {
-          "additionalProperties": false,
-          "properties": {
-            "applicant": {
-              "$ref": "#/definitions/ComplianceConfirmationApplicant"
-            },
-            "application": {
-              "$ref": "#/definitions/FeeCarryingApplicationData"
-            },
-            "property": {
-              "$ref": "#/definitions/EnglandProperty"
-            },
-            "proposal": {
-              "$ref": "#/definitions/ProposalBase"
-            },
-            "user": {
-              "$ref": "#/definitions/UserBase"
-            }
-          },
-          "required": [
-            "user",
-            "applicant",
-            "application",
-            "property",
-            "proposal"
-          ],
-          "type": "object"
-        },
-        "files": {
-          "items": {
-            "$ref": "#/definitions/File"
-          },
-          "type": "array"
-        },
-        "metadata": {
-          "$ref": "#/definitions/PrototypePlanXMetadata"
-        },
-        "preAssessment": {
-          "$ref": "#/definitions/PreAssessment"
-        },
-        "responses": {
-          "$ref": "#/definitions/Responses"
-        }
-      },
-      "required": [
-        "applicationType",
-        "data",
-        "responses",
-        "files",
-        "metadata"
-      ],
-      "type": "object"
-    },
     "ComplianceConfirmationApplicant": {
       "anyOf": [
         {
@@ -4256,66 +5262,6 @@
       ],
       "type": "object"
     },
-    "HedgerowRemovalNotice": {
-      "additionalProperties": false,
-      "properties": {
-        "applicationType": {
-          "const": "hedgerowRemovalNotice",
-          "type": "string"
-        },
-        "data": {
-          "additionalProperties": false,
-          "properties": {
-            "applicant": {
-              "$ref": "#/definitions/HedgerowRemovalNoticeApplicant"
-            },
-            "application": {
-              "$ref": "#/definitions/NonFeeCarryingApplicationData"
-            },
-            "property": {
-              "$ref": "#/definitions/EnglandProperty"
-            },
-            "proposal": {
-              "$ref": "#/definitions/HedgerowRemovalNoticeProposal"
-            },
-            "user": {
-              "$ref": "#/definitions/UserBase"
-            }
-          },
-          "required": [
-            "user",
-            "applicant",
-            "application",
-            "property",
-            "proposal"
-          ],
-          "type": "object"
-        },
-        "files": {
-          "items": {
-            "$ref": "#/definitions/File"
-          },
-          "type": "array"
-        },
-        "metadata": {
-          "$ref": "#/definitions/PrototypePlanXMetadata"
-        },
-        "preAssessment": {
-          "$ref": "#/definitions/PreAssessment"
-        },
-        "responses": {
-          "$ref": "#/definitions/Responses"
-        }
-      },
-      "required": [
-        "applicationType",
-        "data",
-        "responses",
-        "files",
-        "metadata"
-      ],
-      "type": "object"
-    },
     "HedgerowRemovalNoticeApplicant": {
       "anyOf": [
         {
@@ -5001,306 +5947,6 @@
         }
       ]
     },
-    "LDCBreachOfCondition": {
-      "additionalProperties": false,
-      "properties": {
-        "applicationType": {
-          "const": "ldc.breachOfCondition",
-          "type": "string"
-        },
-        "data": {
-          "additionalProperties": false,
-          "properties": {
-            "applicant": {
-              "$ref": "#/definitions/LDCApplicant"
-            },
-            "application": {
-              "$ref": "#/definitions/FeeCarryingApplicationData"
-            },
-            "property": {
-              "$ref": "#/definitions/PropertyBase"
-            },
-            "proposal": {
-              "$ref": "#/definitions/GeographyBasedProposal"
-            },
-            "user": {
-              "$ref": "#/definitions/UserBase"
-            }
-          },
-          "required": [
-            "user",
-            "applicant",
-            "application",
-            "property",
-            "proposal"
-          ],
-          "type": "object"
-        },
-        "files": {
-          "items": {
-            "$ref": "#/definitions/File"
-          },
-          "type": "array"
-        },
-        "metadata": {
-          "$ref": "#/definitions/PrototypePlanXMetadata"
-        },
-        "preAssessment": {
-          "$ref": "#/definitions/PreAssessment"
-        },
-        "responses": {
-          "$ref": "#/definitions/Responses"
-        }
-      },
-      "required": [
-        "applicationType",
-        "data",
-        "responses",
-        "files",
-        "metadata"
-      ],
-      "type": "object"
-    },
-    "LDCExisting": {
-      "additionalProperties": false,
-      "properties": {
-        "applicationType": {
-          "const": "ldc.existing",
-          "type": "string"
-        },
-        "data": {
-          "additionalProperties": false,
-          "properties": {
-            "applicant": {
-              "$ref": "#/definitions/LDCApplicant"
-            },
-            "application": {
-              "$ref": "#/definitions/FeeCarryingApplicationData"
-            },
-            "property": {
-              "$ref": "#/definitions/PropertyBase"
-            },
-            "proposal": {
-              "$ref": "#/definitions/GeographyBasedProposal"
-            },
-            "user": {
-              "$ref": "#/definitions/UserBase"
-            }
-          },
-          "required": [
-            "user",
-            "applicant",
-            "application",
-            "property",
-            "proposal"
-          ],
-          "type": "object"
-        },
-        "files": {
-          "items": {
-            "$ref": "#/definitions/File"
-          },
-          "type": "array"
-        },
-        "metadata": {
-          "$ref": "#/definitions/PrototypePlanXMetadata"
-        },
-        "preAssessment": {
-          "$ref": "#/definitions/PreAssessment"
-        },
-        "responses": {
-          "$ref": "#/definitions/Responses"
-        }
-      },
-      "required": [
-        "applicationType",
-        "data",
-        "responses",
-        "files",
-        "metadata"
-      ],
-      "type": "object"
-    },
-    "LDCListedBuildingWorks": {
-      "additionalProperties": false,
-      "properties": {
-        "applicationType": {
-          "const": "ldc.listedBuildingWorks",
-          "type": "string"
-        },
-        "data": {
-          "additionalProperties": false,
-          "properties": {
-            "applicant": {
-              "$ref": "#/definitions/ApplicantBase"
-            },
-            "application": {
-              "$ref": "#/definitions/NonFeeCarryingApplicationData"
-            },
-            "property": {
-              "$ref": "#/definitions/PropertyBase"
-            },
-            "proposal": {
-              "$ref": "#/definitions/GeographyBasedProposal"
-            },
-            "user": {
-              "$ref": "#/definitions/UserBase"
-            }
-          },
-          "required": [
-            "user",
-            "applicant",
-            "application",
-            "property",
-            "proposal"
-          ],
-          "type": "object"
-        },
-        "files": {
-          "items": {
-            "$ref": "#/definitions/File"
-          },
-          "type": "array"
-        },
-        "metadata": {
-          "$ref": "#/definitions/PrototypePlanXMetadata"
-        },
-        "preAssessment": {
-          "$ref": "#/definitions/PreAssessment"
-        },
-        "responses": {
-          "$ref": "#/definitions/Responses"
-        }
-      },
-      "required": [
-        "applicationType",
-        "data",
-        "responses",
-        "files",
-        "metadata"
-      ],
-      "type": "object"
-    },
-    "LDCProposed": {
-      "additionalProperties": false,
-      "properties": {
-        "applicationType": {
-          "const": "ldc.proposed",
-          "type": "string"
-        },
-        "data": {
-          "additionalProperties": false,
-          "properties": {
-            "applicant": {
-              "$ref": "#/definitions/LDCApplicant"
-            },
-            "application": {
-              "$ref": "#/definitions/FeeCarryingApplicationData"
-            },
-            "property": {
-              "$ref": "#/definitions/PropertyBase"
-            },
-            "proposal": {
-              "$ref": "#/definitions/ProposalBase"
-            },
-            "user": {
-              "$ref": "#/definitions/UserBase"
-            }
-          },
-          "required": [
-            "user",
-            "applicant",
-            "application",
-            "property",
-            "proposal"
-          ],
-          "type": "object"
-        },
-        "files": {
-          "items": {
-            "$ref": "#/definitions/File"
-          },
-          "type": "array"
-        },
-        "metadata": {
-          "$ref": "#/definitions/PrototypePlanXMetadata"
-        },
-        "preAssessment": {
-          "$ref": "#/definitions/PreAssessment"
-        },
-        "responses": {
-          "$ref": "#/definitions/Responses"
-        }
-      },
-      "required": [
-        "applicationType",
-        "data",
-        "responses",
-        "files",
-        "metadata"
-      ],
-      "type": "object"
-    },
-    "LandDrainageConsent": {
-      "additionalProperties": false,
-      "properties": {
-        "applicationType": {
-          "const": "landDrainageConsent",
-          "type": "string"
-        },
-        "data": {
-          "additionalProperties": false,
-          "properties": {
-            "applicant": {
-              "$ref": "#/definitions/LandDrainageConsentApplicant"
-            },
-            "application": {
-              "$ref": "#/definitions/FeeCarryingApplicationData"
-            },
-            "property": {
-              "$ref": "#/definitions/PropertyBase"
-            },
-            "proposal": {
-              "$ref": "#/definitions/GeographyBasedProposal"
-            },
-            "user": {
-              "$ref": "#/definitions/UserBase"
-            }
-          },
-          "required": [
-            "user",
-            "applicant",
-            "application",
-            "property",
-            "proposal"
-          ],
-          "type": "object"
-        },
-        "files": {
-          "items": {
-            "$ref": "#/definitions/File"
-          },
-          "type": "array"
-        },
-        "metadata": {
-          "$ref": "#/definitions/PrototypePlanXMetadata"
-        },
-        "preAssessment": {
-          "$ref": "#/definitions/PreAssessment"
-        },
-        "responses": {
-          "$ref": "#/definitions/Responses"
-        }
-      },
-      "required": [
-        "applicationType",
-        "data",
-        "responses",
-        "files",
-        "metadata"
-      ],
-      "type": "object"
-    },
     "LandDrainageConsentApplicant": {
       "anyOf": [
         {
@@ -5638,66 +6284,6 @@
       "required": [
         "coordinates",
         "type"
-      ],
-      "type": "object"
-    },
-    "ListedBuildingConsent": {
-      "additionalProperties": false,
-      "properties": {
-        "applicationType": {
-          "const": "listed",
-          "type": "string"
-        },
-        "data": {
-          "additionalProperties": false,
-          "properties": {
-            "applicant": {
-              "$ref": "#/definitions/PPApplicant"
-            },
-            "application": {
-              "$ref": "#/definitions/NonFeeCarryingApplicationData"
-            },
-            "property": {
-              "$ref": "#/definitions/PropertyBase"
-            },
-            "proposal": {
-              "$ref": "#/definitions/GeographyBasedProposal"
-            },
-            "user": {
-              "$ref": "#/definitions/UserBase"
-            }
-          },
-          "required": [
-            "user",
-            "applicant",
-            "application",
-            "property",
-            "proposal"
-          ],
-          "type": "object"
-        },
-        "files": {
-          "items": {
-            "$ref": "#/definitions/File"
-          },
-          "type": "array"
-        },
-        "metadata": {
-          "$ref": "#/definitions/PrototypePlanXMetadata"
-        },
-        "preAssessment": {
-          "$ref": "#/definitions/PreAssessment"
-        },
-        "responses": {
-          "$ref": "#/definitions/Responses"
-        }
-      },
-      "required": [
-        "applicationType",
-        "data",
-        "responses",
-        "files",
-        "metadata"
       ],
       "type": "object"
     },
@@ -7789,126 +8375,6 @@
         }
       ],
       "description": "Specific ApplicationData required for \"Planning Permission\" applications"
-    },
-    "PPFullHouseholder": {
-      "additionalProperties": false,
-      "properties": {
-        "applicationType": {
-          "const": "pp.full.householder",
-          "type": "string"
-        },
-        "data": {
-          "additionalProperties": false,
-          "properties": {
-            "applicant": {
-              "$ref": "#/definitions/PPApplicant"
-            },
-            "application": {
-              "$ref": "#/definitions/PPApplicationData"
-            },
-            "property": {
-              "$ref": "#/definitions/PPProperty"
-            },
-            "proposal": {
-              "$ref": "#/definitions/GeographyBasedProposal"
-            },
-            "user": {
-              "$ref": "#/definitions/UserBase"
-            }
-          },
-          "required": [
-            "user",
-            "applicant",
-            "application",
-            "property",
-            "proposal"
-          ],
-          "type": "object"
-        },
-        "files": {
-          "items": {
-            "$ref": "#/definitions/File"
-          },
-          "type": "array"
-        },
-        "metadata": {
-          "$ref": "#/definitions/PrototypePlanXMetadata"
-        },
-        "preAssessment": {
-          "$ref": "#/definitions/PreAssessment"
-        },
-        "responses": {
-          "$ref": "#/definitions/Responses"
-        }
-      },
-      "required": [
-        "applicationType",
-        "data",
-        "responses",
-        "files",
-        "metadata"
-      ],
-      "type": "object"
-    },
-    "PPFullHouseholderRetro": {
-      "additionalProperties": false,
-      "properties": {
-        "applicationType": {
-          "const": "pp.full.householder.retro",
-          "type": "string"
-        },
-        "data": {
-          "additionalProperties": false,
-          "properties": {
-            "applicant": {
-              "$ref": "#/definitions/PPApplicant"
-            },
-            "application": {
-              "$ref": "#/definitions/PPApplicationData"
-            },
-            "property": {
-              "$ref": "#/definitions/PPProperty"
-            },
-            "proposal": {
-              "$ref": "#/definitions/GeographyBasedProposal"
-            },
-            "user": {
-              "$ref": "#/definitions/UserBase"
-            }
-          },
-          "required": [
-            "user",
-            "applicant",
-            "application",
-            "property",
-            "proposal"
-          ],
-          "type": "object"
-        },
-        "files": {
-          "items": {
-            "$ref": "#/definitions/File"
-          },
-          "type": "array"
-        },
-        "metadata": {
-          "$ref": "#/definitions/PrototypePlanXMetadata"
-        },
-        "preAssessment": {
-          "$ref": "#/definitions/PreAssessment"
-        },
-        "responses": {
-          "$ref": "#/definitions/Responses"
-        }
-      },
-      "required": [
-        "applicationType",
-        "data",
-        "responses",
-        "files",
-        "metadata"
-      ],
-      "type": "object"
     },
     "PPProperty": {
       "anyOf": [
@@ -12022,66 +12488,6 @@
         "type": "object"
       },
       "type": "array"
-    },
-    "PriorApproval": {
-      "additionalProperties": false,
-      "properties": {
-        "applicationType": {
-          "const": "pa",
-          "type": "string"
-        },
-        "data": {
-          "additionalProperties": false,
-          "properties": {
-            "applicant": {
-              "$ref": "#/definitions/ApplicantBase"
-            },
-            "application": {
-              "$ref": "#/definitions/FeeCarryingApplicationData"
-            },
-            "property": {
-              "$ref": "#/definitions/PropertyBase"
-            },
-            "proposal": {
-              "$ref": "#/definitions/GeographyBasedProposal"
-            },
-            "user": {
-              "$ref": "#/definitions/UserBase"
-            }
-          },
-          "required": [
-            "user",
-            "applicant",
-            "application",
-            "property",
-            "proposal"
-          ],
-          "type": "object"
-        },
-        "files": {
-          "items": {
-            "$ref": "#/definitions/File"
-          },
-          "type": "array"
-        },
-        "metadata": {
-          "$ref": "#/definitions/PrototypePlanXMetadata"
-        },
-        "preAssessment": {
-          "$ref": "#/definitions/PreAssessment"
-        },
-        "responses": {
-          "$ref": "#/definitions/Responses"
-        }
-      },
-      "required": [
-        "applicationType",
-        "data",
-        "responses",
-        "files",
-        "metadata"
-      ],
-      "type": "object"
     },
     "ProjectType": {
       "$id": "#ProjectType",
@@ -17409,126 +17815,6 @@
         "phone",
         "address",
         "agent"
-      ],
-      "type": "object"
-    },
-    "WTTConsent": {
-      "additionalProperties": false,
-      "properties": {
-        "applicationType": {
-          "const": "wtt.consent",
-          "type": "string"
-        },
-        "data": {
-          "additionalProperties": false,
-          "properties": {
-            "applicant": {
-              "$ref": "#/definitions/WTTApplicant"
-            },
-            "application": {
-              "$ref": "#/definitions/NonFeeCarryingApplicationData"
-            },
-            "property": {
-              "$ref": "#/definitions/EnglandProperty"
-            },
-            "proposal": {
-              "$ref": "#/definitions/ProposalBase"
-            },
-            "user": {
-              "$ref": "#/definitions/UserBase"
-            }
-          },
-          "required": [
-            "user",
-            "applicant",
-            "application",
-            "property",
-            "proposal"
-          ],
-          "type": "object"
-        },
-        "files": {
-          "items": {
-            "$ref": "#/definitions/File"
-          },
-          "type": "array"
-        },
-        "metadata": {
-          "$ref": "#/definitions/PrototypePlanXMetadata"
-        },
-        "preAssessment": {
-          "$ref": "#/definitions/PreAssessment"
-        },
-        "responses": {
-          "$ref": "#/definitions/Responses"
-        }
-      },
-      "required": [
-        "applicationType",
-        "data",
-        "responses",
-        "files",
-        "metadata"
-      ],
-      "type": "object"
-    },
-    "WTTNotice": {
-      "additionalProperties": false,
-      "properties": {
-        "applicationType": {
-          "const": "wtt.notice",
-          "type": "string"
-        },
-        "data": {
-          "additionalProperties": false,
-          "properties": {
-            "applicant": {
-              "$ref": "#/definitions/WTTApplicant"
-            },
-            "application": {
-              "$ref": "#/definitions/NonFeeCarryingApplicationData"
-            },
-            "property": {
-              "$ref": "#/definitions/EnglandProperty"
-            },
-            "proposal": {
-              "$ref": "#/definitions/ProposalBase"
-            },
-            "user": {
-              "$ref": "#/definitions/UserBase"
-            }
-          },
-          "required": [
-            "user",
-            "applicant",
-            "application",
-            "property",
-            "proposal"
-          ],
-          "type": "object"
-        },
-        "files": {
-          "items": {
-            "$ref": "#/definitions/File"
-          },
-          "type": "array"
-        },
-        "metadata": {
-          "$ref": "#/definitions/PrototypePlanXMetadata"
-        },
-        "preAssessment": {
-          "$ref": "#/definitions/PreAssessment"
-        },
-        "responses": {
-          "$ref": "#/definitions/Responses"
-        }
-      },
-      "required": [
-        "applicationType",
-        "data",
-        "responses",
-        "files",
-        "metadata"
       ],
       "type": "object"
     }

@@ -49,10 +49,6 @@ export const complianceConfirmationPrototype: PrototypeApplication = {
       localAuthorityDistrict: ['Lambeth'],
       region: 'London',
       type: 'residential.dwelling.house.terrace',
-      planning: {
-        sources: [],
-        designations: [],
-      },
       boundary: {
         site: {
           type: 'Feature',
@@ -93,27 +89,6 @@ export const complianceConfirmationPrototype: PrototypeApplication = {
       fee: {
         calculated: 43,
         payable: 43,
-        category: {
-          one: 0,
-          two: 0,
-          three: 0,
-          four: 0,
-          five: 0,
-          sixAndSeven: 0,
-          eight: 0,
-          nine: 0,
-          ten: 0,
-          eleven: {
-            one: 0,
-            two: 0,
-          },
-          twelve: {
-            one: 0,
-            two: 0,
-          },
-          thirteen: 0,
-          fourteen: 0,
-        },
         exemption: {
           disability: false,
           resubmission: false,
@@ -172,7 +147,7 @@ export const complianceConfirmationPrototype: PrototypeApplication = {
   },
   responses: [
     {
-      question: 'Is the property in [COUNCIL NAME]?',
+      question: 'Is the property in Lambeth?',
       responses: [
         {
           value: 'Yes',
@@ -347,7 +322,7 @@ export const complianceConfirmationPrototype: PrototypeApplication = {
     source: 'PlanX',
     service: {
       flowId: '03d800dc-a318-4814-9c37-4cd5771cb8a2',
-      url: 'https://editor.planx.uk/templates/request-written-confirmation-of-compliance-with-a-planning-condition-template/published',
+      url: 'https://editor.planx.dev/templates/request-written-confirmation-of-compliance-with-a-planning-condition-template/published',
       files: {
         required: [],
         recommended: ['relevantInformation'],
@@ -356,26 +331,6 @@ export const complianceConfirmationPrototype: PrototypeApplication = {
       fee: {
         calculated: [],
         payable: [],
-        category: {
-          one: [],
-          two: [],
-          three: [],
-          four: [],
-          five: [],
-          sixAndSeven: [],
-          eight: [],
-          nine: [],
-          ten: [],
-          eleven: {
-            one: [],
-          },
-          twelve: {
-            one: [],
-            two: [],
-          },
-          thirteen: [],
-          fourteen: [],
-        },
       },
     },
     schema: `https://theopensystemslab.github.io/digital-planning-data-schemas/${version}/schemas/application.json`,

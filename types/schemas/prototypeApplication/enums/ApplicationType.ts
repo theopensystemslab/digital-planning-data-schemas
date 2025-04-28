@@ -552,10 +552,10 @@ export type ApplicationType =
   | LDCProposed
   | Listed
   | NotifyCompletion
-  | Obligation
+  | Obligation // Service descriptor, not actually submittable
   | ObligationDischarge
   | ObligationModify
-  | OnshoreExtractionOilAndGas
+  | OnshoreExtractionOilAndGas // Service descriptor, not actually submittable
   | OnshoreExtractionOilAndGasOther
   | OnshoreExtractionOilAndGasPPExtension
   | OnshoreExtractionOilAndGasPPWaste

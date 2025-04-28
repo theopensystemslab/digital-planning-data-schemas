@@ -1751,7 +1751,7 @@ export const priorApprovalBuildHomes: Application = {
     source: 'PlanX',
     service: {
       flowId: '6f76e837-7a42-40f3-80e9-a9482dce5982',
-      url: 'https://editor.planx.uk/buckinghamshire/apply-for-prior-approval/published',
+      url: 'https://editor.planx.dev/buckinghamshire/apply-for-prior-approval/published',
       files: {
         required: [
           {

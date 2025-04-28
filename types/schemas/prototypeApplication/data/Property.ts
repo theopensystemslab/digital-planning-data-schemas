@@ -9,7 +9,7 @@ import {
 } from '../../../shared/Constraints';
 import {PropertyType} from '../enums/PropertyTypes';
 import {ExistingLondonParking} from '../../../shared/Parking';
-import { ApplicationType } from '../enums/ApplicationType';
+import {ApplicationType} from '../enums/ApplicationType';
 
 export type PropertyBase = EnglandProperty | LondonProperty;
 
@@ -82,6 +82,8 @@ export type PPProperty = PropertyBase & {
 interface PropertyVariants {
   'pp.full.householder': PPProperty;
   'pp.full.householder.retro': PPProperty;
+  'pp.full.major': PPProperty;
+  'pp.full.minor': PPProperty;
   'wtt.consent': EnglandProperty;
   'wtt.notice': EnglandProperty;
   hedgerowRemovalNotice: EnglandProperty;
@@ -93,6 +95,4 @@ interface PropertyVariants {
  * @internal Conditional type to return a specific or generic Property model
  */
 export type Property<T extends ApplicationType> =
-  T extends keyof PropertyVariants
-    ? PropertyVariants[T]
-    : PropertyBase;
+  T extends keyof PropertyVariants ? PropertyVariants[T] : PropertyBase;

@@ -599,7 +599,7 @@ export const preApplication: PreApplication = {
     source: 'PlanX',
     service: {
       flowId: '426494e7-34a2-4a94-a554-8ecc5e20e3ef',
-      url: 'https://editor.planx.uk/doncaster/pre-application-advice/published',
+      url: 'https://editor.planx.dev/doncaster/pre-application-advice/published',
       files: {
         required: [
           {value: 'sitePlan.proposed', description: 'Site plan - proposed'},
