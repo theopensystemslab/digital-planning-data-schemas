@@ -114,7 +114,7 @@
   },
   "responses": [
     {
-      "question": "Is the property in [COUNCIL NAME]?",
+      "question": "Is the property in Barnet?",
       "responses": [
         {
           "value": "Yes"
@@ -341,7 +341,7 @@
     "source": "PlanX",
     "service": {
       "flowId": "4a95512b-c0b2-4891-b433-441ae5a4d132",
-      "url": "https://editor.planx.uk/templates/submit-a-hedgerow-removal-notice-template/published",
+      "url": "https://editor.planx.dev/templates/submit-a-hedgerow-removal-notice-template/published",
       "files": {
         "required": [
           "hedgerowsInformation"

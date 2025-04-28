@@ -4,17 +4,7 @@ import {ApplicationData} from './data/ApplicationData';
 import {Property} from './data/Property';
 import {Proposal} from './data/Proposal';
 import {UserBase} from './data/User';
-import {
-  ApplicationType,
-  LandDrainageConsentApplicationType,
-  LDCApplicationType,
-  ListedApplicationType,
-  PAApplicationType,
-  PPApplicationType,
-  PrimaryApplicationType,
-  WTTApplicationType,
-  HedgerowRemovalNoticeApplicationType,
-} from './enums/ApplicationType';
+import {ApplicationType} from './enums/ApplicationType';
 import {File} from './File';
 import {PrototypePlanXMetadata} from './Metadata';
 import {PreAssessment} from './PreAssessment';
@@ -22,51 +12,101 @@ import {PreAssessment} from './PreAssessment';
 /**
  * @internal
  * The generic base type for all applications
- * Takes a primary and granular application type which allows child properties to differ based on these inputs
- * Deriving `TPrimary` from `TGranular` is possible in TS, but not in a way which is currently compatible with ts-json-schema-generator
+ * Child properties may differ based on a granular application type parameter
  */
-interface ApplicationSpecification<
-  TPrimary extends PrimaryApplicationType,
-  TGranular extends ApplicationType,
-> {
-  applicationType: TGranular;
+interface ApplicationSpecification<T extends ApplicationType> {
+  applicationType: T;
   data: {
     user: UserBase;
-    applicant: Applicant<TPrimary>;
-    application: ApplicationData<TPrimary>;
-    property: Property<TPrimary>;
-    proposal: Proposal<TPrimary>;
+    applicant: Applicant<T>;
+    application: ApplicationData<T>;
+    property: Property<T>;
+    proposal: Proposal<T>;
   };
-  preAssessment?: PreAssessment;
   responses: Responses;
   files: File[];
   metadata: PrototypePlanXMetadata;
 }
 
-export type LDC = ApplicationSpecification<'ldc', LDCApplicationType>;
-export type PA = ApplicationSpecification<'pa', PAApplicationType>;
-export type PP = ApplicationSpecification<'pp', PPApplicationType>;
-export type Listed = ApplicationSpecification<'listed', ListedApplicationType>;
-export type LandDrainageConsent = ApplicationSpecification<
-  'landDrainageConsent',
-  LandDrainageConsentApplicationType
->;
-export type WTT = ApplicationSpecification<'wtt', WTTApplicationType>;
-export type HedgerowRemovalNotice = ApplicationSpecification<
-  'hedgerowRemovalNotice',
-  HedgerowRemovalNoticeApplicationType
->;
-// TODO: All the rest!
+/**
+ * @internal
+ * The generic base type for all application types which include a pre-assessment result
+ * Child properties may differ based on a granular application type parameter
+ */
+interface ApplicationSpecificationWithPreAssessment<T extends ApplicationType> {
+  applicationType: T;
+  data: {
+    user: UserBase;
+    applicant: Applicant<T>;
+    application: ApplicationData<T>;
+    property: Property<T>;
+    proposal: Proposal<T>;
+  };
+  preAssessment: PreAssessment;
+  responses: Responses;
+  files: File[];
+  metadata: PrototypePlanXMetadata;
+}
+
+/**
+ * @internal This list of variants should only includes submittable application types, not generic PlanX "service" prefixes like 'ldc'
+ *   See https://docs.google.com/spreadsheets/d/1FgULPemnwuwysrYGEkReYFXz3n3T7W0nWziU00taZE4/edit?gid=0#gid=0 as reference for which are 'WithPreAssessment'
+ */
+type AdvertConsent = ApplicationSpecification<'advertConsent'>;
+type ComplianceConfirmation =
+  ApplicationSpecification<'complianceConfirmation'>;
+type HedgerowRemovalNotice = ApplicationSpecification<'hedgerowRemovalNotice'>;
+type LandDrainageConsent = ApplicationSpecification<'landDrainageConsent'>;
+type LawfulDevelopmentCertificateBreachOfCondition =
+  ApplicationSpecification<'ldc.breachOfCondition'>;
+type LawfulDevelopmentCertificateExisting =
+  ApplicationSpecificationWithPreAssessment<'ldc.existing'>;
+type LawfulDevelopmentCertificateListedBuildingWorks =
+  ApplicationSpecification<'ldc.listedBuildingWorks'>;
+type LawfulDevelopmentCertificateProposed =
+  ApplicationSpecificationWithPreAssessment<'ldc.proposed'>;
+type ListedBuildingConsent = ApplicationSpecification<'listed'>;
+type PriorApprovalPart1ClassA =
+  ApplicationSpecificationWithPreAssessment<'pa.part1.classA'>;
+type PriorApprovalPart3ClassMA =
+  ApplicationSpecificationWithPreAssessment<'pa.part3.classMA'>;
+type PriorApprovalPart7ClassM =
+  ApplicationSpecificationWithPreAssessment<'pa.part7.classM'>;
+type PriorApprovalPart14ClassJ =
+  ApplicationSpecificationWithPreAssessment<'pa.part14.classJ'>;
+type PriorApprovalPart20ClassAB =
+  ApplicationSpecificationWithPreAssessment<'pa.part20.classAB'>;
+type PlanningPermissionHouseholder =
+  ApplicationSpecification<'pp.full.householder'>;
+type PlanningPermissionHouseholderRetrospective =
+  ApplicationSpecification<'pp.full.householder.retro'>;
+type PlanningPermissionMajor = ApplicationSpecification<'pp.full.major'>;
+type PlanningPermissionMinor = ApplicationSpecification<'pp.full.minor'>;
+type WorksToTreesConsent = ApplicationSpecification<'wtt.consent'>;
+type WorksToTreesNotice = ApplicationSpecification<'wtt.notice'>;
 
 /**
  * @title PrototypeApplication
  * @description The (prototype) root specification for a planning application in England generated by a digital planning service
  */
 export type PrototypeApplication =
-  | LDC
-  | PA
-  | PP
-  | Listed
+  | AdvertConsent
+  | ComplianceConfirmation
+  | HedgerowRemovalNotice
   | LandDrainageConsent
-  | WTT
-  | HedgerowRemovalNotice;
+  | LawfulDevelopmentCertificateBreachOfCondition
+  | LawfulDevelopmentCertificateExisting
+  | LawfulDevelopmentCertificateListedBuildingWorks
+  | LawfulDevelopmentCertificateProposed
+  | ListedBuildingConsent
+  | PriorApprovalPart1ClassA
+  | PriorApprovalPart3ClassMA
+  | PriorApprovalPart7ClassM
+  | PriorApprovalPart14ClassJ
+  | PriorApprovalPart20ClassAB
+  | PlanningPermissionHouseholder
+  | PlanningPermissionHouseholderRetrospective
+  | PlanningPermissionMajor
+  | PlanningPermissionMinor
+  | WorksToTreesConsent
+  | WorksToTreesNotice;

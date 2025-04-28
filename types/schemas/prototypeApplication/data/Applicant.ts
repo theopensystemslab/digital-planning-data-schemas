@@ -9,7 +9,7 @@ import {
 } from '../../../shared/Ownership';
 import {SiteContact} from '../../../shared/SiteContact';
 import {Date} from '../../../shared/utils';
-import {PrimaryApplicationType} from '../enums/ApplicationType';
+import {ApplicationType} from '../enums/ApplicationType';
 
 export type ApplicantBase = BaseApplicant | Agent;
 
@@ -40,7 +40,12 @@ export type LDCApplicant = ApplicantBase & {
    * @description Information about the property owners, if different than the applicant
    */
   ownership:
-    | {interest: Extract<OwnersInterest, 'owner'>}
+    | {interest: Extract<OwnersInterest, 'owner'>} // sole owner does not report `owners`
+    | {
+        interest: Extract<OwnersInterest, 'other'>;
+        interestDescription: string; // "other" interest uniquely requires a free text description
+        owners: (OwnersNoticeGiven | OwnersNoNoticeGiven)[];
+      }
     | {
         interest: OwnersInterest; // `Exclude<OwnershipInterest, "owner">` ? But I think you can be co-owner & report other owners?
         owners: (OwnersNoticeGiven | OwnersNoNoticeGiven)[];
@@ -104,22 +109,41 @@ export type HedgerowRemovalNoticeApplicant = ApplicantBase & {
   };
 };
 
+export type AdvertConsentApplicant = ApplicantBase & {
+  ownership: {
+    interest: OwnersInterest | 'owner.sole' | 'owner.co';
+  };
+};
+
+export type ComplianceConfirmationApplicant = ApplicantBase & {
+  ownership: {
+    interest: OwnersInterest | 'owner.sole' | 'owner.co';
+  };
+};
+
 /**
- * TypeMap of PrimaryApplicationTypes to their specific Applicant models
+ * TypeMap of granular application types to their specific Applicant models
  */
 interface ApplicantVariants {
-  ldc: LDCApplicant;
-  pp: PPApplicant;
+  'ldc.breachOfCondition': LDCApplicant;
+  'ldc.existing': LDCApplicant;
+  'ldc.proposed': LDCApplicant;
+  'ldc.worksToListedBuilding': LDCApplicant;
+  'pp.full.householder.retro': PPApplicant;
+  'pp.full.householder': PPApplicant;
+  'pp.full.major': PPApplicant;
+  'pp.full.minor': PPApplicant;
+  'wtt.consent': WTTApplicant;
+  'wtt.notice': WTTApplicant;
+  advertConsent: AdvertConsentApplicant;
+  complianceConfirmation: ComplianceConfirmationApplicant;
+  hedgerowRemovalNotice: HedgerowRemovalNoticeApplicant;
   landDrainageConsent: LandDrainageConsentApplicant;
   listed: PPApplicant;
-  wtt: WTTApplicant;
-  hedgerowRemovalNotice: HedgerowRemovalNoticeApplicant;
 }
 
 /**
- * @internal Conditional type to return a specific or generic Applicant model, based on PrimaryApplicationType
+ * @internal Conditional type to return a specific or generic Applicant model
  */
-export type Applicant<TPrimary extends PrimaryApplicationType> =
-  TPrimary extends keyof ApplicantVariants
-    ? ApplicantVariants[TPrimary]
-    : ApplicantBase;
+export type Applicant<T extends ApplicationType> =
+  T extends keyof ApplicantVariants ? ApplicantVariants[T] : ApplicantBase;

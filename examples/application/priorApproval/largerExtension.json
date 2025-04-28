@@ -57,17 +57,17 @@
           },
           {
             "value": "flood",
-            "description": "Flood Risk Zone",
+            "description": "Flood risk",
             "intersects": false
           },
           {
             "value": "listed",
-            "description": "Listed Building",
+            "description": "Listed building",
             "intersects": false
           },
           {
             "value": "articleFour",
-            "description": "Article 4 Direction area",
+            "description": "Article 4 direction area",
             "intersects": false
           },
           {
@@ -77,7 +77,7 @@
           },
           {
             "value": "greenBelt",
-            "description": "Green Belt",
+            "description": "Green belt",
             "intersects": false
           },
           {
@@ -112,12 +112,12 @@
           },
           {
             "value": "designated.WHS",
-            "description": "UNESCO World Heritage Site or buffer zone",
+            "description": "UNESCO World Heritage Site (WHS)",
             "intersects": false
           },
           {
             "value": "registeredPark",
-            "description": "Historic Park or Garden",
+            "description": "Registered parks and gardens",
             "intersects": false
           },
           {
@@ -137,7 +137,7 @@
           },
           {
             "value": "designated.conservationArea",
-            "description": "Conservation Area",
+            "description": "Conservation area",
             "intersects": false
           },
           {
@@ -147,7 +147,7 @@
           },
           {
             "value": "road.classified",
-            "description": "Classified Road",
+            "description": "Classified road",
             "intersects": false
           }
         ]
@@ -1502,7 +1502,7 @@
     "source": "PlanX",
     "service": {
       "flowId": "c6628103-c648-4663-81e1-bfa0a1a18340",
-      "url": "https://editor.planx.uk/southwark/apply-for-prior-approval/published",
+      "url": "https://editor.planx.dev/southwark/apply-for-prior-approval/published",
       "files": {
         "required": [
           {

@@ -11,6 +11,7 @@ import prototypeApplicationSchema from '../schemas/prototypeApplication.json';
 import {Application} from '../types/schemas/application';
 import {PreApplication} from '../types/schemas/preApplication';
 import {PrototypeApplication} from '../types/schemas/prototypeApplication';
+// import {PostSubmissionApplication} from '../types/schemas/postSubmissionApplication';
 
 /**
  * Helper function to walk /examples directory and collect generated JSON files
@@ -55,6 +56,13 @@ const schemas = [
     schema: prototypeApplicationSchema,
     examples: getJSONExamples<PrototypeApplication>('prototypeApplication'),
   },
+  // {
+  //   name: 'PostSubmissionApplication',
+  //   schema: postSubmissionApplicationSchema,
+  //   examples: getJSONExamples<PostSubmissionApplication>(
+  //     'postSubmissionApplication',
+  //   ),
+  // },
 ];
 
 describe.each(schemas)('$name', ({schema, examples}) => {

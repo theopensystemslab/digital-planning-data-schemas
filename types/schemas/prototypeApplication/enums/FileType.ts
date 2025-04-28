@@ -4,6 +4,11 @@
 type AccessRoadsRightsOfWayDetails = 'accessRoadsRightsOfWayDetails';
 
 /**
+ * @description Drawings for advertisement consent
+ */
+type AdvertsDrawings = 'advertsDrawings';
+
+/**
  * @description Affordable housing statement
  */
 type AffordableHousingStatement = 'affordableHousingStatement';
@@ -512,6 +517,7 @@ type WaterEnvironmentAssessment = 'waterEnvironmentAssessment';
  */
 export type PrototypeFileType =
   | AccessRoadsRightsOfWayDetails
+  | AdvertsDrawings
   | AffordableHousingStatement
   | ArboriculturistReport
   | BankStatement

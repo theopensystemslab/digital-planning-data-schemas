@@ -3,13 +3,13 @@ import {GeoBoundary} from './../../../shared/Boundaries';
 import {Materials} from '../../../shared/Materials';
 import {Region} from '../../../shared/Regions';
 import {URL} from '../../../shared/utils';
-import {PrimaryApplicationType} from '../enums/ApplicationType';
 import {
   PlanningConstraint,
   PlanningDesignation,
-} from '../enums/PlanningDesignation';
+} from '../../../shared/Constraints';
 import {PropertyType} from '../enums/PropertyTypes';
 import {ExistingLondonParking} from '../../../shared/Parking';
+import {ApplicationType} from '../enums/ApplicationType';
 
 export type PropertyBase = EnglandProperty | LondonProperty;
 
@@ -77,18 +77,22 @@ export type PPProperty = PropertyBase & {
 };
 
 /**
- * TypeMap of PrimaryApplicationTypes to their specific Property models
+ * TypeMap of granular application types to their specific Property models
  */
 interface PropertyVariants {
-  pp: PPProperty;
-  wtt: EnglandProperty;
+  'pp.full.householder': PPProperty;
+  'pp.full.householder.retro': PPProperty;
+  'pp.full.major': PPProperty;
+  'pp.full.minor': PPProperty;
+  'wtt.consent': EnglandProperty;
+  'wtt.notice': EnglandProperty;
   hedgerowRemovalNotice: EnglandProperty;
+  advertConsent: EnglandProperty;
+  complianceConfirmation: EnglandProperty;
 }
 
 /**
- * @internal Conditional type to return a specific or generic Property model, based on PrimaryApplicationType
+ * @internal Conditional type to return a specific or generic Property model
  */
-export type Property<TPrimary extends PrimaryApplicationType> =
-  TPrimary extends keyof PropertyVariants
-    ? PropertyVariants[TPrimary]
-    : PropertyBase;
+export type Property<T extends ApplicationType> =
+  T extends keyof PropertyVariants ? PropertyVariants[T] : PropertyBase;

@@ -62,17 +62,17 @@ export const preApplication: PreApplication = {
           },
           {
             value: 'flood',
-            description: 'Flood Risk Zone',
+            description: 'Flood risk',
             intersects: false,
           },
           {
             value: 'listed',
-            description: 'Listed Building',
+            description: 'Listed building',
             intersects: false,
           },
           {
             value: 'articleFour',
-            description: 'Article 4 Direction area',
+            description: 'Article 4 direction area',
             intersects: false,
           },
           {
@@ -82,7 +82,7 @@ export const preApplication: PreApplication = {
           },
           {
             value: 'greenBelt',
-            description: 'Green Belt',
+            description: 'Green belt',
             intersects: false,
           },
           {
@@ -117,12 +117,12 @@ export const preApplication: PreApplication = {
           },
           {
             value: 'designated.WHS',
-            description: 'UNESCO World Heritage Site or buffer zone',
+            description: 'UNESCO World Heritage Site (WHS)',
             intersects: false,
           },
           {
             value: 'registeredPark',
-            description: 'Historic Park or Garden',
+            description: 'Registered parks and gardens',
             intersects: false,
           },
           {
@@ -142,7 +142,7 @@ export const preApplication: PreApplication = {
           },
           {
             value: 'designated.conservationArea',
-            description: 'Conservation Area',
+            description: 'Conservation area',
             intersects: false,
           },
           {
@@ -152,7 +152,7 @@ export const preApplication: PreApplication = {
           },
           {
             value: 'road.classified',
-            description: 'Classified Road',
+            description: 'Classified road',
             intersects: true,
             entities: [
               {
@@ -599,7 +599,7 @@ export const preApplication: PreApplication = {
     source: 'PlanX',
     service: {
       flowId: '426494e7-34a2-4a94-a554-8ecc5e20e3ef',
-      url: 'https://editor.planx.uk/doncaster/pre-application-advice/published',
+      url: 'https://editor.planx.dev/doncaster/pre-application-advice/published',
       files: {
         required: [
           {value: 'sitePlan.proposed', description: 'Site plan - proposed'},
