@@ -9,6 +9,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 The minor version will be incremented upon a breaking change and the patch version will be
 incremented for features.
 
+## [0.7.4] - 2025-04-28
+
+### Added
+- Addition of "Historic battlefields" to `PlanningDesignations` enum ([#334](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/334))
+
+### Changed
+- `ProjectTypes` enum values tidied up to remove duplicates and better align to GDPO classes ([#332](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/332), [#335](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/335))
+- `Materials` properties now account for Listed Building Consent variances ([#331](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/331))
+
 ## [0.7.3] - 2025-02-27
 
 ### Added
