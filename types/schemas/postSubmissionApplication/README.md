@@ -1,8 +1,36 @@
-# Post Submission Application Schema
+# Postsubmission Application Schema
 
-The Post Submission Application schema is designed to represent an application, post-submission, within an application.
+## Overview
 
-Future iterations will create redacted versions of this, and the `PrototypeApplication` schema, which will act as a 'published' schema for applications such as the [DPR](https://planningregister.org/).
+The `PostsubmissionApplication` schema is designed to represent the state of an application after it has been submitted. It serves as a model for tracking an application's journey through the planning process.
+
+The schema builds on the `PrototypeApplication` schema adding additional fields that capture:
+
+- The current stage of the application in the planning process
+- A history of where the application has been within that process
+- Additional documents added to the application after submission
+- Comments from members of the public and any specialists consulted
+
+> [!WARNING]  
+> Future work will introduce a redacted version of this schema known as the `PublishedApplication` schema.  
+> This will build on a redacted version of the `PrototypeApplication` schema.  
+> The `PublishedApplication` schema is intended for public-facing applications such as the [Digital Planning Register (DPR)](https://planningregister.org/).
+
+![Diagram showing the future structure of the schemas](future.png)
+
+## Purpose
+
+The schema has been developed with two main goals:
+
+1. **Human Readability**  
+   It is structured to be easily understood by non-technical users and those without a planning background, ensuring transparency and accessibility throughout the planning journey.
+
+1. **Machine Usability**  
+   It is also designed to function as an API model for use within applications, allowing seamless integration into digital systems that need to interact with or display post-submission application data.
+
+## Implementation
+
+Please see the [implementation documentation](https://github.com/theopensystemslab/digital-planning-data-schemas/blob/main/IMPLEMENTATION.md)
 
 ## The Application Process
 
