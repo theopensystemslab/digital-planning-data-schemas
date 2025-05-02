@@ -16,7 +16,7 @@ export const worksToTreesPrototype: PrototypeApplication = {
       },
       email: 'annie@besant.com',
       phone: {
-        primary: 'Not provided by agent',
+        primary: '0123456789',
       },
       address: {
         sameAsSiteAddress: true,
@@ -232,6 +232,7 @@ export const worksToTreesPrototype: PrototypeApplication = {
           },
         },
         area: {
+          hectares: 0.013942,
           squareMetres: 139.42,
         },
       },

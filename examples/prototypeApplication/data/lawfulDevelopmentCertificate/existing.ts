@@ -192,7 +192,7 @@ export const lawfulDevelopmentCertificateExistingPrototype: PrototypeApplication
             },
             {
               value: 'monument',
-              description: 'Site of a Scheduled Monumnet',
+              description: 'Site of a Scheduled Monument',
               intersects: false,
             },
             {
@@ -207,7 +207,7 @@ export const lawfulDevelopmentCertificateExistingPrototype: PrototypeApplication
             },
             {
               value: 'nature.ASNW',
-              description: 'Ancient Semi-Natural Woodland (ANSW)',
+              description: 'Ancient Semi-Natural Woodland (ASNW)',
               intersects: false,
             },
             {

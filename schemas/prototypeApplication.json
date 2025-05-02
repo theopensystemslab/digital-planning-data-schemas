@@ -5268,7 +5268,6 @@
       "type": "object"
     },
     "Integer": {
-      "format": "integer",
       "type": "number"
     },
     "LDCApplicant": {
