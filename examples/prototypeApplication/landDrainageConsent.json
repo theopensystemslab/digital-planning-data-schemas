@@ -21,9 +21,6 @@
       "address": {
         "sameAsSiteAddress": true
       },
-      "siteContact": {
-        "role": "applicant"
-      },
       "ownership": {
         "interest": "other"
       },

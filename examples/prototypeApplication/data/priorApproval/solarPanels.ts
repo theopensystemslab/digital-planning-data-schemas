@@ -21,9 +21,6 @@ export const priorApprovalSolarPanelsPrototype: PrototypeApplication = {
       address: {
         sameAsSiteAddress: true,
       },
-      siteContact: {
-        role: 'applicant',
-      },
     },
     property: {
       address: {

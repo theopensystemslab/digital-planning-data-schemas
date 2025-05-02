@@ -17,9 +17,6 @@
       "address": {
         "sameAsSiteAddress": true
       },
-      "siteContact": {
-        "role": "agent"
-      },
       "agent": {
         "name": {
           "first": "Alan",
