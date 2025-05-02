@@ -13,8 +13,8 @@ export type PreApplicant = BasePreApplicant | Agent;
  * @id #BasePreApplicant
  * @description Information about the user who completed the pre-application for themself, or information about the person who the user applied on behalf of
  */
-export type BasePreApplicant = ContactDetails & {
-  type: 'individual' | 'company' | 'charity' | 'public' | 'parishCouncil';
-  address: UserAddress;
-  siteContact: SiteContact;
-};
+export type BasePreApplicant = ContactDetails &
+  SiteContact & {
+    type: 'individual' | 'company' | 'charity' | 'public' | 'parishCouncil';
+    address: UserAddress;
+  };

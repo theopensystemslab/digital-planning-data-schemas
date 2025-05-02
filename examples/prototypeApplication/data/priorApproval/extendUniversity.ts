@@ -21,9 +21,6 @@ export const priorApprovalExtendUniversityPrototype: PrototypeApplication = {
       address: {
         sameAsSiteAddress: true,
       },
-      siteContact: {
-        role: 'applicant',
-      },
     },
     property: {
       address: {

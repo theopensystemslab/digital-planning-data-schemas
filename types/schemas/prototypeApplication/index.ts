@@ -7,7 +7,6 @@ import {UserBase} from './data/User';
 import {ApplicationType} from './enums/ApplicationType';
 import {File} from './File';
 import {PrototypePlanXMetadata} from './Metadata';
-import {PreAssessment} from './PreAssessment';
 
 /**
  * @internal
@@ -29,19 +28,19 @@ interface Application<T extends ApplicationType> {
 }
 
 /**
- * @internal
- * Some application types will have an extra property 'preAssessment' which contains the PlanX "result"
- * Ref https://docs.google.com/spreadsheets/d/1FgULPemnwuwysrYGEkReYFXz3n3T7W0nWziU00taZE4/edit?gid=0#gid=0
+ * @title PlanX pre-assessment
+ * @description The result of the application based on information provided by the user, prior to assessment by a planning officer
  */
-interface PlanXPreAssessment {
-  preAssessment: PreAssessment;
-}
+export type PlanXPreAssessment = {
+  preAssessment: {
+    value: string;
+    description: string;
+  }[];
+};
 
-/**
- * @internal
- * Types below should only include "submittable" application types only, not PlanX service-level-only prefixes like 'ldc'
- * All types are exported and acronymns are spelled out in full as they'll become the top-level toggles here https://theopensystemslab.github.io/digital-planning-data-schemas-docs/
- */
+// Types below should include "submittable" application types only, not PlanX service-level-only prefixes like 'ldc'
+// All types are exported and acronymns are spelled out in full as they'll become the top-level toggles here https://theopensystemslab.github.io/digital-planning-data-schemas-docs/
+
 export type AdvertConsent = Application<'advertConsent'>;
 
 export type AmendmentMinorMaterial = Application<'amendment.minorMaterial'>;
