@@ -3,61 +3,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "anyOf": [
     {
-      "additionalProperties": false,
-      "properties": {
-        "applicationType": {
-          "const": "advertConsent",
-          "type": "string"
-        },
-        "data": {
-          "additionalProperties": false,
-          "properties": {
-            "applicant": {
-              "$ref": "#/definitions/AdvertConsentApplicant"
-            },
-            "application": {
-              "$ref": "#/definitions/FeeCarryingApplicationData"
-            },
-            "property": {
-              "$ref": "#/definitions/EnglandProperty"
-            },
-            "proposal": {
-              "$ref": "#/definitions/AdvertConsentProposal"
-            },
-            "user": {
-              "$ref": "#/definitions/UserBase"
-            }
-          },
-          "required": [
-            "user",
-            "applicant",
-            "application",
-            "property",
-            "proposal"
-          ],
-          "type": "object"
-        },
-        "files": {
-          "items": {
-            "$ref": "#/definitions/File"
-          },
-          "type": "array"
-        },
-        "metadata": {
-          "$ref": "#/definitions/PrototypePlanXMetadata"
-        },
-        "responses": {
-          "$ref": "#/definitions/Responses"
-        }
-      },
-      "required": [
-        "applicationType",
-        "data",
-        "responses",
-        "files",
-        "metadata"
-      ],
-      "type": "object"
+      "$ref": "#/definitions/AdvertConsent"
     },
     {
       "$ref": "#/definitions/AmendmentMinorMaterial"
@@ -374,278 +320,348 @@
       "title": "Contact address",
       "type": "object"
     },
-    "AdvertConsentApplicant": {
-      "anyOf": [
-        {
+    "AdvertConsent": {
+      "additionalProperties": false,
+      "properties": {
+        "applicationType": {
+          "const": "advertConsent",
+          "type": "string"
+        },
+        "data": {
           "additionalProperties": false,
           "properties": {
-            "address": {
-              "$ref": "#/definitions/UserAddress",
-              "description": "Address information for the applicant"
-            },
-            "company": {
-              "additionalProperties": false,
-              "properties": {
-                "name": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "name"
-              ],
-              "type": "object"
-            },
-            "email": {
-              "$ref": "#/definitions/Email"
-            },
-            "name": {
-              "additionalProperties": false,
-              "properties": {
-                "first": {
-                  "type": "string"
-                },
-                "last": {
-                  "type": "string"
-                },
-                "title": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "first",
-                "last"
-              ],
-              "type": "object"
-            },
-            "ownership": {
-              "additionalProperties": false,
-              "properties": {
-                "interest": {
-                  "anyOf": [
-                    {
-                      "$ref": "#/definitions/OwnersInterest"
+            "applicant": {
+              "anyOf": [
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "address": {
+                      "$ref": "#/definitions/UserAddress",
+                      "description": "Address information for the applicant"
                     },
-                    {
-                      "const": "owner.sole",
-                      "type": "string"
+                    "company": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "name"
+                      ],
+                      "type": "object"
                     },
-                    {
-                      "const": "owner.co",
+                    "email": {
+                      "$ref": "#/definitions/Email"
+                    },
+                    "name": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "first": {
+                          "type": "string"
+                        },
+                        "last": {
+                          "type": "string"
+                        },
+                        "title": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "first",
+                        "last"
+                      ],
+                      "type": "object"
+                    },
+                    "ownership": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "interest": {
+                          "$ref": "#/definitions/OwnersInterest"
+                        }
+                      },
+                      "required": [
+                        "interest"
+                      ],
+                      "type": "object"
+                    },
+                    "phone": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "primary": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "primary"
+                      ],
+                      "type": "object"
+                    },
+                    "siteContact": {
+                      "anyOf": [
+                        {
+                          "additionalProperties": false,
+                          "properties": {
+                            "role": {
+                              "enum": [
+                                "applicant",
+                                "agent",
+                                "proxy"
+                              ],
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "role"
+                          ],
+                          "type": "object"
+                        },
+                        {
+                          "$ref": "#/definitions/SiteContactOther"
+                        }
+                      ]
+                    },
+                    "type": {
+                      "description": "The type of applicant",
+                      "enum": [
+                        "individual",
+                        "company",
+                        "charity",
+                        "public",
+                        "parishCouncil"
+                      ],
                       "type": "string"
                     }
-                  ]
+                  },
+                  "required": [
+                    "address",
+                    "email",
+                    "name",
+                    "ownership",
+                    "phone",
+                    "siteContact"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "address": {
+                      "$ref": "#/definitions/UserAddress",
+                      "description": "Address information for the applicant"
+                    },
+                    "agent": {
+                      "additionalProperties": false,
+                      "description": "Contact information for the agent or proxy",
+                      "properties": {
+                        "address": {
+                          "$ref": "#/definitions/Address"
+                        },
+                        "company": {
+                          "additionalProperties": false,
+                          "properties": {
+                            "name": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "name"
+                          ],
+                          "type": "object"
+                        },
+                        "email": {
+                          "$ref": "#/definitions/Email"
+                        },
+                        "name": {
+                          "additionalProperties": false,
+                          "properties": {
+                            "first": {
+                              "type": "string"
+                            },
+                            "last": {
+                              "type": "string"
+                            },
+                            "title": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "first",
+                            "last"
+                          ],
+                          "type": "object"
+                        },
+                        "phone": {
+                          "additionalProperties": false,
+                          "properties": {
+                            "primary": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "primary"
+                          ],
+                          "type": "object"
+                        }
+                      },
+                      "required": [
+                        "address",
+                        "email",
+                        "name",
+                        "phone"
+                      ],
+                      "type": "object"
+                    },
+                    "company": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "name"
+                      ],
+                      "type": "object"
+                    },
+                    "email": {
+                      "$ref": "#/definitions/Email"
+                    },
+                    "name": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "first": {
+                          "type": "string"
+                        },
+                        "last": {
+                          "type": "string"
+                        },
+                        "title": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "first",
+                        "last"
+                      ],
+                      "type": "object"
+                    },
+                    "ownership": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "interest": {
+                          "$ref": "#/definitions/OwnersInterest"
+                        }
+                      },
+                      "required": [
+                        "interest"
+                      ],
+                      "type": "object"
+                    },
+                    "phone": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "primary": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "primary"
+                      ],
+                      "type": "object"
+                    },
+                    "siteContact": {
+                      "anyOf": [
+                        {
+                          "additionalProperties": false,
+                          "properties": {
+                            "role": {
+                              "enum": [
+                                "applicant",
+                                "agent",
+                                "proxy"
+                              ],
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "role"
+                          ],
+                          "type": "object"
+                        },
+                        {
+                          "$ref": "#/definitions/SiteContactOther"
+                        }
+                      ]
+                    },
+                    "type": {
+                      "description": "The type of applicant",
+                      "enum": [
+                        "individual",
+                        "company",
+                        "charity",
+                        "public",
+                        "parishCouncil"
+                      ],
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "address",
+                    "agent",
+                    "email",
+                    "name",
+                    "ownership",
+                    "phone",
+                    "siteContact"
+                  ],
+                  "type": "object"
                 }
-              },
-              "required": [
-                "interest"
-              ],
-              "type": "object"
+              ]
             },
-            "phone": {
-              "additionalProperties": false,
-              "properties": {
-                "primary": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "primary"
-              ],
-              "type": "object"
+            "application": {
+              "$ref": "#/definitions/FeeCarryingApplicationData"
             },
-            "siteContact": {
-              "$ref": "#/definitions/SiteContact",
-              "description": "Contact information for the site visit"
+            "property": {
+              "$ref": "#/definitions/EnglandProperty"
             },
-            "type": {
-              "description": "The type of applicant",
-              "enum": [
-                "individual",
-                "company",
-                "charity",
-                "public",
-                "parishCouncil"
-              ],
-              "type": "string"
+            "proposal": {
+              "$ref": "#/definitions/AdvertConsentProposal"
+            },
+            "user": {
+              "$ref": "#/definitions/UserBase"
             }
           },
           "required": [
-            "address",
-            "email",
-            "name",
-            "ownership",
-            "phone",
-            "siteContact"
+            "user",
+            "applicant",
+            "application",
+            "property",
+            "proposal"
           ],
           "type": "object"
         },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "address": {
-              "$ref": "#/definitions/UserAddress",
-              "description": "Address information for the applicant"
-            },
-            "agent": {
-              "additionalProperties": false,
-              "description": "Contact information for the agent or proxy",
-              "properties": {
-                "address": {
-                  "$ref": "#/definitions/Address"
-                },
-                "company": {
-                  "additionalProperties": false,
-                  "properties": {
-                    "name": {
-                      "type": "string"
-                    }
-                  },
-                  "required": [
-                    "name"
-                  ],
-                  "type": "object"
-                },
-                "email": {
-                  "$ref": "#/definitions/Email"
-                },
-                "name": {
-                  "additionalProperties": false,
-                  "properties": {
-                    "first": {
-                      "type": "string"
-                    },
-                    "last": {
-                      "type": "string"
-                    },
-                    "title": {
-                      "type": "string"
-                    }
-                  },
-                  "required": [
-                    "first",
-                    "last"
-                  ],
-                  "type": "object"
-                },
-                "phone": {
-                  "additionalProperties": false,
-                  "properties": {
-                    "primary": {
-                      "type": "string"
-                    }
-                  },
-                  "required": [
-                    "primary"
-                  ],
-                  "type": "object"
-                }
-              },
-              "required": [
-                "address",
-                "email",
-                "name",
-                "phone"
-              ],
-              "type": "object"
-            },
-            "company": {
-              "additionalProperties": false,
-              "properties": {
-                "name": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "name"
-              ],
-              "type": "object"
-            },
-            "email": {
-              "$ref": "#/definitions/Email"
-            },
-            "name": {
-              "additionalProperties": false,
-              "properties": {
-                "first": {
-                  "type": "string"
-                },
-                "last": {
-                  "type": "string"
-                },
-                "title": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "first",
-                "last"
-              ],
-              "type": "object"
-            },
-            "ownership": {
-              "additionalProperties": false,
-              "properties": {
-                "interest": {
-                  "anyOf": [
-                    {
-                      "$ref": "#/definitions/OwnersInterest"
-                    },
-                    {
-                      "const": "owner.sole",
-                      "type": "string"
-                    },
-                    {
-                      "const": "owner.co",
-                      "type": "string"
-                    }
-                  ]
-                }
-              },
-              "required": [
-                "interest"
-              ],
-              "type": "object"
-            },
-            "phone": {
-              "additionalProperties": false,
-              "properties": {
-                "primary": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "primary"
-              ],
-              "type": "object"
-            },
-            "siteContact": {
-              "$ref": "#/definitions/SiteContact",
-              "description": "Contact information for the site visit"
-            },
-            "type": {
-              "description": "The type of applicant",
-              "enum": [
-                "individual",
-                "company",
-                "charity",
-                "public",
-                "parishCouncil"
-              ],
-              "type": "string"
-            }
+        "files": {
+          "items": {
+            "$ref": "#/definitions/File"
           },
-          "required": [
-            "address",
-            "agent",
-            "email",
-            "name",
-            "ownership",
-            "phone",
-            "siteContact"
-          ],
-          "type": "object"
+          "type": "array"
+        },
+        "metadata": {
+          "$ref": "#/definitions/PrototypePlanXMetadata"
+        },
+        "responses": {
+          "$ref": "#/definitions/Responses"
         }
-      ]
+      },
+      "required": [
+        "applicationType",
+        "data",
+        "responses",
+        "files",
+        "metadata"
+      ],
+      "type": "object"
     },
     "AdvertConsentProposal": {
       "additionalProperties": false,
@@ -718,147 +734,6 @@
         "highwayProjection",
         "otherAdvertisements",
         "visibility"
-      ],
-      "type": "object"
-    },
-    "Agent": {
-      "additionalProperties": false,
-      "properties": {
-        "address": {
-          "$ref": "#/definitions/UserAddress",
-          "description": "Address information for the applicant"
-        },
-        "agent": {
-          "additionalProperties": false,
-          "description": "Contact information for the agent or proxy",
-          "properties": {
-            "address": {
-              "$ref": "#/definitions/Address"
-            },
-            "company": {
-              "additionalProperties": false,
-              "properties": {
-                "name": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "name"
-              ],
-              "type": "object"
-            },
-            "email": {
-              "$ref": "#/definitions/Email"
-            },
-            "name": {
-              "additionalProperties": false,
-              "properties": {
-                "first": {
-                  "type": "string"
-                },
-                "last": {
-                  "type": "string"
-                },
-                "title": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "first",
-                "last"
-              ],
-              "type": "object"
-            },
-            "phone": {
-              "additionalProperties": false,
-              "properties": {
-                "primary": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "primary"
-              ],
-              "type": "object"
-            }
-          },
-          "required": [
-            "address",
-            "email",
-            "name",
-            "phone"
-          ],
-          "type": "object"
-        },
-        "company": {
-          "additionalProperties": false,
-          "properties": {
-            "name": {
-              "type": "string"
-            }
-          },
-          "required": [
-            "name"
-          ],
-          "type": "object"
-        },
-        "email": {
-          "$ref": "#/definitions/Email"
-        },
-        "name": {
-          "additionalProperties": false,
-          "properties": {
-            "first": {
-              "type": "string"
-            },
-            "last": {
-              "type": "string"
-            },
-            "title": {
-              "type": "string"
-            }
-          },
-          "required": [
-            "first",
-            "last"
-          ],
-          "type": "object"
-        },
-        "phone": {
-          "additionalProperties": false,
-          "properties": {
-            "primary": {
-              "type": "string"
-            }
-          },
-          "required": [
-            "primary"
-          ],
-          "type": "object"
-        },
-        "siteContact": {
-          "$ref": "#/definitions/SiteContact",
-          "description": "Contact information for the site visit"
-        },
-        "type": {
-          "description": "The type of applicant",
-          "enum": [
-            "individual",
-            "company",
-            "charity",
-            "public",
-            "parishCouncil"
-          ],
-          "type": "string"
-        }
-      },
-      "required": [
-        "address",
-        "agent",
-        "email",
-        "name",
-        "phone",
-        "siteContact"
       ],
       "type": "object"
     },
@@ -982,9 +857,147 @@
           "$ref": "#/definitions/BaseApplicant"
         },
         {
-          "$ref": "#/definitions/Agent"
+          "$ref": "#/definitions/ApplicantWithAgent"
         }
       ]
+    },
+    "ApplicantWithAgent": {
+      "additionalProperties": false,
+      "description": "Details about the applicant and the agent or proxy applying on their behalf",
+      "properties": {
+        "address": {
+          "$ref": "#/definitions/UserAddress",
+          "description": "Address information for the applicant"
+        },
+        "agent": {
+          "additionalProperties": false,
+          "description": "Contact information for the agent or proxy",
+          "properties": {
+            "address": {
+              "$ref": "#/definitions/Address"
+            },
+            "company": {
+              "additionalProperties": false,
+              "properties": {
+                "name": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name"
+              ],
+              "type": "object"
+            },
+            "email": {
+              "$ref": "#/definitions/Email"
+            },
+            "name": {
+              "additionalProperties": false,
+              "properties": {
+                "first": {
+                  "type": "string"
+                },
+                "last": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "first",
+                "last"
+              ],
+              "type": "object"
+            },
+            "phone": {
+              "additionalProperties": false,
+              "properties": {
+                "primary": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "primary"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "address",
+            "email",
+            "name",
+            "phone"
+          ],
+          "type": "object"
+        },
+        "company": {
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "name"
+          ],
+          "type": "object"
+        },
+        "email": {
+          "$ref": "#/definitions/Email"
+        },
+        "name": {
+          "additionalProperties": false,
+          "properties": {
+            "first": {
+              "type": "string"
+            },
+            "last": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "first",
+            "last"
+          ],
+          "type": "object"
+        },
+        "phone": {
+          "additionalProperties": false,
+          "properties": {
+            "primary": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "primary"
+          ],
+          "type": "object"
+        },
+        "type": {
+          "description": "The type of applicant",
+          "enum": [
+            "individual",
+            "company",
+            "charity",
+            "public",
+            "parishCouncil"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "address",
+        "agent",
+        "email",
+        "name",
+        "phone"
+      ],
+      "title": "Applicant with agent",
+      "type": "object"
     },
     "ApplicationDataBase": {
       "anyOf": [
@@ -1149,6 +1162,7 @@
     },
     "BaseApplicant": {
       "additionalProperties": false,
+      "description": "Details about the applicant",
       "properties": {
         "address": {
           "$ref": "#/definitions/UserAddress",
@@ -1200,10 +1214,6 @@
           ],
           "type": "object"
         },
-        "siteContact": {
-          "$ref": "#/definitions/SiteContact",
-          "description": "Contact information for the site visit"
-        },
         "type": {
           "description": "The type of applicant",
           "enum": [
@@ -1220,9 +1230,9 @@
         "address",
         "email",
         "name",
-        "phone",
-        "siteContact"
+        "phone"
       ],
+      "title": "Applicant",
       "type": "object"
     },
     "BasePlanningDesignation": {
@@ -2886,7 +2896,243 @@
           "additionalProperties": false,
           "properties": {
             "applicant": {
-              "$ref": "#/definitions/ComplianceConfirmationApplicant"
+              "anyOf": [
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "address": {
+                      "$ref": "#/definitions/UserAddress",
+                      "description": "Address information for the applicant"
+                    },
+                    "company": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "name"
+                      ],
+                      "type": "object"
+                    },
+                    "email": {
+                      "$ref": "#/definitions/Email"
+                    },
+                    "name": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "first": {
+                          "type": "string"
+                        },
+                        "last": {
+                          "type": "string"
+                        },
+                        "title": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "first",
+                        "last"
+                      ],
+                      "type": "object"
+                    },
+                    "ownership": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "interest": {
+                          "$ref": "#/definitions/OwnersInterest"
+                        }
+                      },
+                      "required": [
+                        "interest"
+                      ],
+                      "type": "object"
+                    },
+                    "phone": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "primary": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "primary"
+                      ],
+                      "type": "object"
+                    },
+                    "type": {
+                      "description": "The type of applicant",
+                      "enum": [
+                        "individual",
+                        "company",
+                        "charity",
+                        "public",
+                        "parishCouncil"
+                      ],
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "address",
+                    "email",
+                    "name",
+                    "ownership",
+                    "phone"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "address": {
+                      "$ref": "#/definitions/UserAddress",
+                      "description": "Address information for the applicant"
+                    },
+                    "agent": {
+                      "additionalProperties": false,
+                      "description": "Contact information for the agent or proxy",
+                      "properties": {
+                        "address": {
+                          "$ref": "#/definitions/Address"
+                        },
+                        "company": {
+                          "additionalProperties": false,
+                          "properties": {
+                            "name": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "name"
+                          ],
+                          "type": "object"
+                        },
+                        "email": {
+                          "$ref": "#/definitions/Email"
+                        },
+                        "name": {
+                          "additionalProperties": false,
+                          "properties": {
+                            "first": {
+                              "type": "string"
+                            },
+                            "last": {
+                              "type": "string"
+                            },
+                            "title": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "first",
+                            "last"
+                          ],
+                          "type": "object"
+                        },
+                        "phone": {
+                          "additionalProperties": false,
+                          "properties": {
+                            "primary": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "primary"
+                          ],
+                          "type": "object"
+                        }
+                      },
+                      "required": [
+                        "address",
+                        "email",
+                        "name",
+                        "phone"
+                      ],
+                      "type": "object"
+                    },
+                    "company": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "name"
+                      ],
+                      "type": "object"
+                    },
+                    "email": {
+                      "$ref": "#/definitions/Email"
+                    },
+                    "name": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "first": {
+                          "type": "string"
+                        },
+                        "last": {
+                          "type": "string"
+                        },
+                        "title": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "first",
+                        "last"
+                      ],
+                      "type": "object"
+                    },
+                    "ownership": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "interest": {
+                          "$ref": "#/definitions/OwnersInterest"
+                        }
+                      },
+                      "required": [
+                        "interest"
+                      ],
+                      "type": "object"
+                    },
+                    "phone": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "primary": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "primary"
+                      ],
+                      "type": "object"
+                    },
+                    "type": {
+                      "description": "The type of applicant",
+                      "enum": [
+                        "individual",
+                        "company",
+                        "charity",
+                        "public",
+                        "parishCouncil"
+                      ],
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "address",
+                    "agent",
+                    "email",
+                    "name",
+                    "ownership",
+                    "phone"
+                  ],
+                  "type": "object"
+                }
+              ]
             },
             "application": {
               "$ref": "#/definitions/FeeCarryingApplicationData"
@@ -2931,279 +3177,6 @@
         "metadata"
       ],
       "type": "object"
-    },
-    "ComplianceConfirmationApplicant": {
-      "anyOf": [
-        {
-          "additionalProperties": false,
-          "properties": {
-            "address": {
-              "$ref": "#/definitions/UserAddress",
-              "description": "Address information for the applicant"
-            },
-            "company": {
-              "additionalProperties": false,
-              "properties": {
-                "name": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "name"
-              ],
-              "type": "object"
-            },
-            "email": {
-              "$ref": "#/definitions/Email"
-            },
-            "name": {
-              "additionalProperties": false,
-              "properties": {
-                "first": {
-                  "type": "string"
-                },
-                "last": {
-                  "type": "string"
-                },
-                "title": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "first",
-                "last"
-              ],
-              "type": "object"
-            },
-            "ownership": {
-              "additionalProperties": false,
-              "properties": {
-                "interest": {
-                  "anyOf": [
-                    {
-                      "$ref": "#/definitions/OwnersInterest"
-                    },
-                    {
-                      "const": "owner.sole",
-                      "type": "string"
-                    },
-                    {
-                      "const": "owner.co",
-                      "type": "string"
-                    }
-                  ]
-                }
-              },
-              "required": [
-                "interest"
-              ],
-              "type": "object"
-            },
-            "phone": {
-              "additionalProperties": false,
-              "properties": {
-                "primary": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "primary"
-              ],
-              "type": "object"
-            },
-            "siteContact": {
-              "$ref": "#/definitions/SiteContact",
-              "description": "Contact information for the site visit"
-            },
-            "type": {
-              "description": "The type of applicant",
-              "enum": [
-                "individual",
-                "company",
-                "charity",
-                "public",
-                "parishCouncil"
-              ],
-              "type": "string"
-            }
-          },
-          "required": [
-            "address",
-            "email",
-            "name",
-            "ownership",
-            "phone",
-            "siteContact"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "address": {
-              "$ref": "#/definitions/UserAddress",
-              "description": "Address information for the applicant"
-            },
-            "agent": {
-              "additionalProperties": false,
-              "description": "Contact information for the agent or proxy",
-              "properties": {
-                "address": {
-                  "$ref": "#/definitions/Address"
-                },
-                "company": {
-                  "additionalProperties": false,
-                  "properties": {
-                    "name": {
-                      "type": "string"
-                    }
-                  },
-                  "required": [
-                    "name"
-                  ],
-                  "type": "object"
-                },
-                "email": {
-                  "$ref": "#/definitions/Email"
-                },
-                "name": {
-                  "additionalProperties": false,
-                  "properties": {
-                    "first": {
-                      "type": "string"
-                    },
-                    "last": {
-                      "type": "string"
-                    },
-                    "title": {
-                      "type": "string"
-                    }
-                  },
-                  "required": [
-                    "first",
-                    "last"
-                  ],
-                  "type": "object"
-                },
-                "phone": {
-                  "additionalProperties": false,
-                  "properties": {
-                    "primary": {
-                      "type": "string"
-                    }
-                  },
-                  "required": [
-                    "primary"
-                  ],
-                  "type": "object"
-                }
-              },
-              "required": [
-                "address",
-                "email",
-                "name",
-                "phone"
-              ],
-              "type": "object"
-            },
-            "company": {
-              "additionalProperties": false,
-              "properties": {
-                "name": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "name"
-              ],
-              "type": "object"
-            },
-            "email": {
-              "$ref": "#/definitions/Email"
-            },
-            "name": {
-              "additionalProperties": false,
-              "properties": {
-                "first": {
-                  "type": "string"
-                },
-                "last": {
-                  "type": "string"
-                },
-                "title": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "first",
-                "last"
-              ],
-              "type": "object"
-            },
-            "ownership": {
-              "additionalProperties": false,
-              "properties": {
-                "interest": {
-                  "anyOf": [
-                    {
-                      "$ref": "#/definitions/OwnersInterest"
-                    },
-                    {
-                      "const": "owner.sole",
-                      "type": "string"
-                    },
-                    {
-                      "const": "owner.co",
-                      "type": "string"
-                    }
-                  ]
-                }
-              },
-              "required": [
-                "interest"
-              ],
-              "type": "object"
-            },
-            "phone": {
-              "additionalProperties": false,
-              "properties": {
-                "primary": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "primary"
-              ],
-              "type": "object"
-            },
-            "siteContact": {
-              "$ref": "#/definitions/SiteContact",
-              "description": "Contact information for the site visit"
-            },
-            "type": {
-              "description": "The type of applicant",
-              "enum": [
-                "individual",
-                "company",
-                "charity",
-                "public",
-                "parishCouncil"
-              ],
-              "type": "string"
-            }
-          },
-          "required": [
-            "address",
-            "agent",
-            "email",
-            "name",
-            "ownership",
-            "phone",
-            "siteContact"
-          ],
-          "type": "object"
-        }
-      ]
     },
     "ContactDetails": {
       "additionalProperties": false,
@@ -4929,7 +4902,293 @@
           "additionalProperties": false,
           "properties": {
             "applicant": {
-              "$ref": "#/definitions/HedgerowRemovalNoticeApplicant"
+              "anyOf": [
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "address": {
+                      "$ref": "#/definitions/UserAddress",
+                      "description": "Address information for the applicant"
+                    },
+                    "company": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "name"
+                      ],
+                      "type": "object"
+                    },
+                    "email": {
+                      "$ref": "#/definitions/Email"
+                    },
+                    "name": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "first": {
+                          "type": "string"
+                        },
+                        "last": {
+                          "type": "string"
+                        },
+                        "title": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "first",
+                        "last"
+                      ],
+                      "type": "object"
+                    },
+                    "ownership": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "interest": {
+                          "$ref": "#/definitions/OwnersInterest"
+                        }
+                      },
+                      "required": [
+                        "interest"
+                      ],
+                      "type": "object"
+                    },
+                    "phone": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "primary": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "primary"
+                      ],
+                      "type": "object"
+                    },
+                    "siteContact": {
+                      "anyOf": [
+                        {
+                          "additionalProperties": false,
+                          "properties": {
+                            "role": {
+                              "enum": [
+                                "applicant",
+                                "agent",
+                                "proxy"
+                              ],
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "role"
+                          ],
+                          "type": "object"
+                        },
+                        {
+                          "$ref": "#/definitions/SiteContactOther"
+                        }
+                      ]
+                    },
+                    "type": {
+                      "description": "The type of applicant",
+                      "enum": [
+                        "individual",
+                        "company",
+                        "charity",
+                        "public",
+                        "parishCouncil"
+                      ],
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "address",
+                    "email",
+                    "name",
+                    "ownership",
+                    "phone",
+                    "siteContact"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "address": {
+                      "$ref": "#/definitions/UserAddress",
+                      "description": "Address information for the applicant"
+                    },
+                    "agent": {
+                      "additionalProperties": false,
+                      "description": "Contact information for the agent or proxy",
+                      "properties": {
+                        "address": {
+                          "$ref": "#/definitions/Address"
+                        },
+                        "company": {
+                          "additionalProperties": false,
+                          "properties": {
+                            "name": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "name"
+                          ],
+                          "type": "object"
+                        },
+                        "email": {
+                          "$ref": "#/definitions/Email"
+                        },
+                        "name": {
+                          "additionalProperties": false,
+                          "properties": {
+                            "first": {
+                              "type": "string"
+                            },
+                            "last": {
+                              "type": "string"
+                            },
+                            "title": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "first",
+                            "last"
+                          ],
+                          "type": "object"
+                        },
+                        "phone": {
+                          "additionalProperties": false,
+                          "properties": {
+                            "primary": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "primary"
+                          ],
+                          "type": "object"
+                        }
+                      },
+                      "required": [
+                        "address",
+                        "email",
+                        "name",
+                        "phone"
+                      ],
+                      "type": "object"
+                    },
+                    "company": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "name"
+                      ],
+                      "type": "object"
+                    },
+                    "email": {
+                      "$ref": "#/definitions/Email"
+                    },
+                    "name": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "first": {
+                          "type": "string"
+                        },
+                        "last": {
+                          "type": "string"
+                        },
+                        "title": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "first",
+                        "last"
+                      ],
+                      "type": "object"
+                    },
+                    "ownership": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "interest": {
+                          "$ref": "#/definitions/OwnersInterest"
+                        }
+                      },
+                      "required": [
+                        "interest"
+                      ],
+                      "type": "object"
+                    },
+                    "phone": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "primary": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "primary"
+                      ],
+                      "type": "object"
+                    },
+                    "siteContact": {
+                      "anyOf": [
+                        {
+                          "additionalProperties": false,
+                          "properties": {
+                            "role": {
+                              "enum": [
+                                "applicant",
+                                "agent",
+                                "proxy"
+                              ],
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "role"
+                          ],
+                          "type": "object"
+                        },
+                        {
+                          "$ref": "#/definitions/SiteContactOther"
+                        }
+                      ]
+                    },
+                    "type": {
+                      "description": "The type of applicant",
+                      "enum": [
+                        "individual",
+                        "company",
+                        "charity",
+                        "public",
+                        "parishCouncil"
+                      ],
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "address",
+                    "agent",
+                    "email",
+                    "name",
+                    "ownership",
+                    "phone",
+                    "siteContact"
+                  ],
+                  "type": "object"
+                }
+              ]
             },
             "application": {
               "$ref": "#/definitions/NonFeeCarryingApplicationData"
@@ -4974,279 +5233,6 @@
         "metadata"
       ],
       "type": "object"
-    },
-    "HedgerowRemovalNoticeApplicant": {
-      "anyOf": [
-        {
-          "additionalProperties": false,
-          "properties": {
-            "address": {
-              "$ref": "#/definitions/UserAddress",
-              "description": "Address information for the applicant"
-            },
-            "company": {
-              "additionalProperties": false,
-              "properties": {
-                "name": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "name"
-              ],
-              "type": "object"
-            },
-            "email": {
-              "$ref": "#/definitions/Email"
-            },
-            "name": {
-              "additionalProperties": false,
-              "properties": {
-                "first": {
-                  "type": "string"
-                },
-                "last": {
-                  "type": "string"
-                },
-                "title": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "first",
-                "last"
-              ],
-              "type": "object"
-            },
-            "ownership": {
-              "additionalProperties": false,
-              "properties": {
-                "interest": {
-                  "anyOf": [
-                    {
-                      "$ref": "#/definitions/OwnersInterest"
-                    },
-                    {
-                      "const": "owner.sole",
-                      "type": "string"
-                    },
-                    {
-                      "const": "owner.co",
-                      "type": "string"
-                    }
-                  ]
-                }
-              },
-              "required": [
-                "interest"
-              ],
-              "type": "object"
-            },
-            "phone": {
-              "additionalProperties": false,
-              "properties": {
-                "primary": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "primary"
-              ],
-              "type": "object"
-            },
-            "siteContact": {
-              "$ref": "#/definitions/SiteContact",
-              "description": "Contact information for the site visit"
-            },
-            "type": {
-              "description": "The type of applicant",
-              "enum": [
-                "individual",
-                "company",
-                "charity",
-                "public",
-                "parishCouncil"
-              ],
-              "type": "string"
-            }
-          },
-          "required": [
-            "address",
-            "email",
-            "name",
-            "ownership",
-            "phone",
-            "siteContact"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "address": {
-              "$ref": "#/definitions/UserAddress",
-              "description": "Address information for the applicant"
-            },
-            "agent": {
-              "additionalProperties": false,
-              "description": "Contact information for the agent or proxy",
-              "properties": {
-                "address": {
-                  "$ref": "#/definitions/Address"
-                },
-                "company": {
-                  "additionalProperties": false,
-                  "properties": {
-                    "name": {
-                      "type": "string"
-                    }
-                  },
-                  "required": [
-                    "name"
-                  ],
-                  "type": "object"
-                },
-                "email": {
-                  "$ref": "#/definitions/Email"
-                },
-                "name": {
-                  "additionalProperties": false,
-                  "properties": {
-                    "first": {
-                      "type": "string"
-                    },
-                    "last": {
-                      "type": "string"
-                    },
-                    "title": {
-                      "type": "string"
-                    }
-                  },
-                  "required": [
-                    "first",
-                    "last"
-                  ],
-                  "type": "object"
-                },
-                "phone": {
-                  "additionalProperties": false,
-                  "properties": {
-                    "primary": {
-                      "type": "string"
-                    }
-                  },
-                  "required": [
-                    "primary"
-                  ],
-                  "type": "object"
-                }
-              },
-              "required": [
-                "address",
-                "email",
-                "name",
-                "phone"
-              ],
-              "type": "object"
-            },
-            "company": {
-              "additionalProperties": false,
-              "properties": {
-                "name": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "name"
-              ],
-              "type": "object"
-            },
-            "email": {
-              "$ref": "#/definitions/Email"
-            },
-            "name": {
-              "additionalProperties": false,
-              "properties": {
-                "first": {
-                  "type": "string"
-                },
-                "last": {
-                  "type": "string"
-                },
-                "title": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "first",
-                "last"
-              ],
-              "type": "object"
-            },
-            "ownership": {
-              "additionalProperties": false,
-              "properties": {
-                "interest": {
-                  "anyOf": [
-                    {
-                      "$ref": "#/definitions/OwnersInterest"
-                    },
-                    {
-                      "const": "owner.sole",
-                      "type": "string"
-                    },
-                    {
-                      "const": "owner.co",
-                      "type": "string"
-                    }
-                  ]
-                }
-              },
-              "required": [
-                "interest"
-              ],
-              "type": "object"
-            },
-            "phone": {
-              "additionalProperties": false,
-              "properties": {
-                "primary": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "primary"
-              ],
-              "type": "object"
-            },
-            "siteContact": {
-              "$ref": "#/definitions/SiteContact",
-              "description": "Contact information for the site visit"
-            },
-            "type": {
-              "description": "The type of applicant",
-              "enum": [
-                "individual",
-                "company",
-                "charity",
-                "public",
-                "parishCouncil"
-              ],
-              "type": "string"
-            }
-          },
-          "required": [
-            "address",
-            "agent",
-            "email",
-            "name",
-            "ownership",
-            "phone",
-            "siteContact"
-          ],
-          "type": "object"
-        }
-      ]
     },
     "HedgerowRemovalNoticeProposal": {
       "additionalProperties": false,
@@ -5416,8 +5402,28 @@
               "type": "object"
             },
             "siteContact": {
-              "$ref": "#/definitions/SiteContact",
-              "description": "Contact information for the site visit"
+              "anyOf": [
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "role": {
+                      "enum": [
+                        "applicant",
+                        "agent",
+                        "proxy"
+                      ],
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "role"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "$ref": "#/definitions/SiteContactOther"
+                }
+              ]
             },
             "type": {
               "description": "The type of applicant",
@@ -5632,8 +5638,28 @@
               "type": "object"
             },
             "siteContact": {
-              "$ref": "#/definitions/SiteContact",
-              "description": "Contact information for the site visit"
+              "anyOf": [
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "role": {
+                      "enum": [
+                        "applicant",
+                        "agent",
+                        "proxy"
+                      ],
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "role"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "$ref": "#/definitions/SiteContactOther"
+                }
+              ]
             },
             "type": {
               "description": "The type of applicant",
@@ -5671,7 +5697,299 @@
           "additionalProperties": false,
           "properties": {
             "applicant": {
-              "$ref": "#/definitions/LandDrainageConsentApplicant"
+              "anyOf": [
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "address": {
+                      "$ref": "#/definitions/UserAddress",
+                      "description": "Address information for the applicant"
+                    },
+                    "company": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "name"
+                      ],
+                      "type": "object"
+                    },
+                    "email": {
+                      "$ref": "#/definitions/Email"
+                    },
+                    "maintenanceContact": {
+                      "items": {
+                        "additionalProperties": false,
+                        "properties": {
+                          "address": {
+                            "$ref": "#/definitions/Address"
+                          },
+                          "contact": {
+                            "$ref": "#/definitions/ContactDetails"
+                          },
+                          "when": {
+                            "enum": [
+                              "duringConstruction",
+                              "afterConstruction",
+                              "duringAndAfterConstruction"
+                            ],
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "when",
+                          "address",
+                          "contact"
+                        ],
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "name": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "first": {
+                          "type": "string"
+                        },
+                        "last": {
+                          "type": "string"
+                        },
+                        "title": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "first",
+                        "last"
+                      ],
+                      "type": "object"
+                    },
+                    "ownership": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "interest": {
+                          "$ref": "#/definitions/OwnersInterest"
+                        }
+                      },
+                      "required": [
+                        "interest"
+                      ],
+                      "type": "object"
+                    },
+                    "phone": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "primary": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "primary"
+                      ],
+                      "type": "object"
+                    },
+                    "type": {
+                      "description": "The type of applicant",
+                      "enum": [
+                        "individual",
+                        "company",
+                        "charity",
+                        "public",
+                        "parishCouncil"
+                      ],
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "address",
+                    "email",
+                    "name",
+                    "ownership",
+                    "phone"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "address": {
+                      "$ref": "#/definitions/UserAddress",
+                      "description": "Address information for the applicant"
+                    },
+                    "agent": {
+                      "additionalProperties": false,
+                      "description": "Contact information for the agent or proxy",
+                      "properties": {
+                        "address": {
+                          "$ref": "#/definitions/Address"
+                        },
+                        "company": {
+                          "additionalProperties": false,
+                          "properties": {
+                            "name": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "name"
+                          ],
+                          "type": "object"
+                        },
+                        "email": {
+                          "$ref": "#/definitions/Email"
+                        },
+                        "name": {
+                          "additionalProperties": false,
+                          "properties": {
+                            "first": {
+                              "type": "string"
+                            },
+                            "last": {
+                              "type": "string"
+                            },
+                            "title": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "first",
+                            "last"
+                          ],
+                          "type": "object"
+                        },
+                        "phone": {
+                          "additionalProperties": false,
+                          "properties": {
+                            "primary": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "primary"
+                          ],
+                          "type": "object"
+                        }
+                      },
+                      "required": [
+                        "address",
+                        "email",
+                        "name",
+                        "phone"
+                      ],
+                      "type": "object"
+                    },
+                    "company": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "name"
+                      ],
+                      "type": "object"
+                    },
+                    "email": {
+                      "$ref": "#/definitions/Email"
+                    },
+                    "maintenanceContact": {
+                      "items": {
+                        "additionalProperties": false,
+                        "properties": {
+                          "address": {
+                            "$ref": "#/definitions/Address"
+                          },
+                          "contact": {
+                            "$ref": "#/definitions/ContactDetails"
+                          },
+                          "when": {
+                            "enum": [
+                              "duringConstruction",
+                              "afterConstruction",
+                              "duringAndAfterConstruction"
+                            ],
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "when",
+                          "address",
+                          "contact"
+                        ],
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "name": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "first": {
+                          "type": "string"
+                        },
+                        "last": {
+                          "type": "string"
+                        },
+                        "title": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "first",
+                        "last"
+                      ],
+                      "type": "object"
+                    },
+                    "ownership": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "interest": {
+                          "$ref": "#/definitions/OwnersInterest"
+                        }
+                      },
+                      "required": [
+                        "interest"
+                      ],
+                      "type": "object"
+                    },
+                    "phone": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "primary": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "primary"
+                      ],
+                      "type": "object"
+                    },
+                    "type": {
+                      "description": "The type of applicant",
+                      "enum": [
+                        "individual",
+                        "company",
+                        "charity",
+                        "public",
+                        "parishCouncil"
+                      ],
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "address",
+                    "agent",
+                    "email",
+                    "name",
+                    "ownership",
+                    "phone"
+                  ],
+                  "type": "object"
+                }
+              ]
             },
             "application": {
               "$ref": "#/definitions/FeeCarryingApplicationData"
@@ -5716,287 +6034,6 @@
         "metadata"
       ],
       "type": "object"
-    },
-    "LandDrainageConsentApplicant": {
-      "anyOf": [
-        {
-          "additionalProperties": false,
-          "properties": {
-            "address": {
-              "$ref": "#/definitions/UserAddress",
-              "description": "Address information for the applicant"
-            },
-            "company": {
-              "additionalProperties": false,
-              "properties": {
-                "name": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "name"
-              ],
-              "type": "object"
-            },
-            "email": {
-              "$ref": "#/definitions/Email"
-            },
-            "maintenanceContact": {
-              "$ref": "#/definitions/MaintenanceContacts",
-              "description": "Contact information for the person(s) responsible for maintenace while the works are carried out"
-            },
-            "name": {
-              "additionalProperties": false,
-              "properties": {
-                "first": {
-                  "type": "string"
-                },
-                "last": {
-                  "type": "string"
-                },
-                "title": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "first",
-                "last"
-              ],
-              "type": "object"
-            },
-            "ownership": {
-              "additionalProperties": false,
-              "properties": {
-                "interest": {
-                  "anyOf": [
-                    {
-                      "$ref": "#/definitions/OwnersInterest"
-                    },
-                    {
-                      "const": "owner.sole",
-                      "type": "string"
-                    },
-                    {
-                      "const": "owner.co",
-                      "type": "string"
-                    }
-                  ]
-                }
-              },
-              "required": [
-                "interest"
-              ],
-              "type": "object"
-            },
-            "phone": {
-              "additionalProperties": false,
-              "properties": {
-                "primary": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "primary"
-              ],
-              "type": "object"
-            },
-            "siteContact": {
-              "$ref": "#/definitions/SiteContact",
-              "description": "Contact information for the site visit"
-            },
-            "type": {
-              "description": "The type of applicant",
-              "enum": [
-                "individual",
-                "company",
-                "charity",
-                "public",
-                "parishCouncil"
-              ],
-              "type": "string"
-            }
-          },
-          "required": [
-            "address",
-            "email",
-            "name",
-            "ownership",
-            "phone",
-            "siteContact"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "address": {
-              "$ref": "#/definitions/UserAddress",
-              "description": "Address information for the applicant"
-            },
-            "agent": {
-              "additionalProperties": false,
-              "description": "Contact information for the agent or proxy",
-              "properties": {
-                "address": {
-                  "$ref": "#/definitions/Address"
-                },
-                "company": {
-                  "additionalProperties": false,
-                  "properties": {
-                    "name": {
-                      "type": "string"
-                    }
-                  },
-                  "required": [
-                    "name"
-                  ],
-                  "type": "object"
-                },
-                "email": {
-                  "$ref": "#/definitions/Email"
-                },
-                "name": {
-                  "additionalProperties": false,
-                  "properties": {
-                    "first": {
-                      "type": "string"
-                    },
-                    "last": {
-                      "type": "string"
-                    },
-                    "title": {
-                      "type": "string"
-                    }
-                  },
-                  "required": [
-                    "first",
-                    "last"
-                  ],
-                  "type": "object"
-                },
-                "phone": {
-                  "additionalProperties": false,
-                  "properties": {
-                    "primary": {
-                      "type": "string"
-                    }
-                  },
-                  "required": [
-                    "primary"
-                  ],
-                  "type": "object"
-                }
-              },
-              "required": [
-                "address",
-                "email",
-                "name",
-                "phone"
-              ],
-              "type": "object"
-            },
-            "company": {
-              "additionalProperties": false,
-              "properties": {
-                "name": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "name"
-              ],
-              "type": "object"
-            },
-            "email": {
-              "$ref": "#/definitions/Email"
-            },
-            "maintenanceContact": {
-              "$ref": "#/definitions/MaintenanceContacts",
-              "description": "Contact information for the person(s) responsible for maintenace while the works are carried out"
-            },
-            "name": {
-              "additionalProperties": false,
-              "properties": {
-                "first": {
-                  "type": "string"
-                },
-                "last": {
-                  "type": "string"
-                },
-                "title": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "first",
-                "last"
-              ],
-              "type": "object"
-            },
-            "ownership": {
-              "additionalProperties": false,
-              "properties": {
-                "interest": {
-                  "anyOf": [
-                    {
-                      "$ref": "#/definitions/OwnersInterest"
-                    },
-                    {
-                      "const": "owner.sole",
-                      "type": "string"
-                    },
-                    {
-                      "const": "owner.co",
-                      "type": "string"
-                    }
-                  ]
-                }
-              },
-              "required": [
-                "interest"
-              ],
-              "type": "object"
-            },
-            "phone": {
-              "additionalProperties": false,
-              "properties": {
-                "primary": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "primary"
-              ],
-              "type": "object"
-            },
-            "siteContact": {
-              "$ref": "#/definitions/SiteContact",
-              "description": "Contact information for the site visit"
-            },
-            "type": {
-              "description": "The type of applicant",
-              "enum": [
-                "individual",
-                "company",
-                "charity",
-                "public",
-                "parishCouncil"
-              ],
-              "type": "string"
-            }
-          },
-          "required": [
-            "address",
-            "agent",
-            "email",
-            "name",
-            "ownership",
-            "phone",
-            "siteContact"
-          ],
-          "type": "object"
-        }
-      ]
     },
     "LawfulDevelopmentCertificateBreachOfCondition": {
       "additionalProperties": false,
@@ -6100,7 +6137,23 @@
           "$ref": "#/definitions/PrototypePlanXMetadata"
         },
         "preAssessment": {
-          "$ref": "#/definitions/PreAssessment"
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "description": {
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "value",
+              "description"
+            ],
+            "type": "object"
+          },
+          "type": "array"
         },
         "responses": {
           "$ref": "#/definitions/Responses"
@@ -6218,7 +6271,23 @@
           "$ref": "#/definitions/PrototypePlanXMetadata"
         },
         "preAssessment": {
-          "$ref": "#/definitions/PreAssessment"
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "description": {
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "value",
+              "description"
+            ],
+            "type": "object"
+          },
+          "type": "array"
         },
         "responses": {
           "$ref": "#/definitions/Responses"
@@ -7448,36 +7517,6 @@
       ],
       "type": "object"
     },
-    "MaintenanceContacts": {
-      "description": "Contact information for the person(s) responsible for maintenance while the works are carried out",
-      "items": {
-        "additionalProperties": false,
-        "properties": {
-          "address": {
-            "$ref": "#/definitions/Address"
-          },
-          "contact": {
-            "$ref": "#/definitions/ContactDetails"
-          },
-          "when": {
-            "enum": [
-              "duringConstruction",
-              "afterConstruction",
-              "duringAndAfterConstruction"
-            ],
-            "type": "string"
-          }
-        },
-        "required": [
-          "when",
-          "address",
-          "contact"
-        ],
-        "type": "object"
-      },
-      "title": "Maintenance contacts",
-      "type": "array"
-    },
     "Materials": {
       "additionalProperties": false,
       "properties": {
@@ -8419,6 +8458,8 @@
     "OwnersInterest": {
       "enum": [
         "owner",
+        "owner.sole",
+        "owner.co",
         "lessee",
         "occupier",
         "other"
@@ -8524,8 +8565,32 @@
               "$ref": "#/definitions/Email"
             },
             "maintenanceContact": {
-              "$ref": "#/definitions/MaintenanceContacts",
-              "description": "Contact information for the person(s) responsible for maintenace while the works are carried out"
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "address": {
+                    "$ref": "#/definitions/Address"
+                  },
+                  "contact": {
+                    "$ref": "#/definitions/ContactDetails"
+                  },
+                  "when": {
+                    "enum": [
+                      "duringConstruction",
+                      "afterConstruction",
+                      "duringAndAfterConstruction"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "when",
+                  "address",
+                  "contact"
+                ],
+                "type": "object"
+              },
+              "type": "array"
             },
             "name": {
               "additionalProperties": false,
@@ -8578,19 +8643,7 @@
                   "type": "object"
                 },
                 "interest": {
-                  "anyOf": [
-                    {
-                      "$ref": "#/definitions/OwnersInterest"
-                    },
-                    {
-                      "const": "owner.sole",
-                      "type": "string"
-                    },
-                    {
-                      "const": "owner.co",
-                      "type": "string"
-                    }
-                  ]
+                  "$ref": "#/definitions/OwnersInterest"
                 },
                 "noticeGiven": {
                   "description": "Has requisite notice been given to all the known owners and agricultural tenants?",
@@ -8651,8 +8704,28 @@
               "type": "object"
             },
             "siteContact": {
-              "$ref": "#/definitions/SiteContact",
-              "description": "Contact information for the site visit"
+              "anyOf": [
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "role": {
+                      "enum": [
+                        "applicant",
+                        "agent",
+                        "proxy"
+                      ],
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "role"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "$ref": "#/definitions/SiteContactOther"
+                }
+              ]
             },
             "type": {
               "description": "The type of applicant",
@@ -8761,8 +8834,32 @@
               "$ref": "#/definitions/Email"
             },
             "maintenanceContact": {
-              "$ref": "#/definitions/MaintenanceContacts",
-              "description": "Contact information for the person(s) responsible for maintenace while the works are carried out"
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "address": {
+                    "$ref": "#/definitions/Address"
+                  },
+                  "contact": {
+                    "$ref": "#/definitions/ContactDetails"
+                  },
+                  "when": {
+                    "enum": [
+                      "duringConstruction",
+                      "afterConstruction",
+                      "duringAndAfterConstruction"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "when",
+                  "address",
+                  "contact"
+                ],
+                "type": "object"
+              },
+              "type": "array"
             },
             "name": {
               "additionalProperties": false,
@@ -8815,19 +8912,7 @@
                   "type": "object"
                 },
                 "interest": {
-                  "anyOf": [
-                    {
-                      "$ref": "#/definitions/OwnersInterest"
-                    },
-                    {
-                      "const": "owner.sole",
-                      "type": "string"
-                    },
-                    {
-                      "const": "owner.co",
-                      "type": "string"
-                    }
-                  ]
+                  "$ref": "#/definitions/OwnersInterest"
                 },
                 "noticeGiven": {
                   "description": "Has requisite notice been given to all the known owners and agricultural tenants?",
@@ -8888,8 +8973,28 @@
               "type": "object"
             },
             "siteContact": {
-              "$ref": "#/definitions/SiteContact",
-              "description": "Contact information for the site visit"
+              "anyOf": [
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "role": {
+                      "enum": [
+                        "applicant",
+                        "agent",
+                        "proxy"
+                      ],
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "role"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "$ref": "#/definitions/SiteContactOther"
+                }
+              ]
             },
             "type": {
               "description": "The type of applicant",
@@ -14551,27 +14656,6 @@
       "title": "Pre-application",
       "type": "object"
     },
-    "PreAssessment": {
-      "$id": "#PreAssessment",
-      "description": "The result of the application based on information provided by the applicant, prior to assessment by a planning officer. Results are determined by flags corresponding to responses; each application can have up to one result per flagset",
-      "items": {
-        "additionalProperties": false,
-        "properties": {
-          "description": {
-            "type": "string"
-          },
-          "value": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "value",
-          "description"
-        ],
-        "type": "object"
-      },
-      "type": "array"
-    },
     "PriorApprovalPart11ClassB": {
       "additionalProperties": false,
       "properties": {
@@ -14617,7 +14701,23 @@
           "$ref": "#/definitions/PrototypePlanXMetadata"
         },
         "preAssessment": {
-          "$ref": "#/definitions/PreAssessment"
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "description": {
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "value",
+              "description"
+            ],
+            "type": "object"
+          },
+          "type": "array"
         },
         "responses": {
           "$ref": "#/definitions/Responses"
@@ -14678,7 +14778,23 @@
           "$ref": "#/definitions/PrototypePlanXMetadata"
         },
         "preAssessment": {
-          "$ref": "#/definitions/PreAssessment"
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "description": {
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "value",
+              "description"
+            ],
+            "type": "object"
+          },
+          "type": "array"
         },
         "responses": {
           "$ref": "#/definitions/Responses"
@@ -14739,7 +14855,23 @@
           "$ref": "#/definitions/PrototypePlanXMetadata"
         },
         "preAssessment": {
-          "$ref": "#/definitions/PreAssessment"
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "description": {
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "value",
+              "description"
+            ],
+            "type": "object"
+          },
+          "type": "array"
         },
         "responses": {
           "$ref": "#/definitions/Responses"
@@ -14800,7 +14932,23 @@
           "$ref": "#/definitions/PrototypePlanXMetadata"
         },
         "preAssessment": {
-          "$ref": "#/definitions/PreAssessment"
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "description": {
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "value",
+              "description"
+            ],
+            "type": "object"
+          },
+          "type": "array"
         },
         "responses": {
           "$ref": "#/definitions/Responses"
@@ -14861,7 +15009,23 @@
           "$ref": "#/definitions/PrototypePlanXMetadata"
         },
         "preAssessment": {
-          "$ref": "#/definitions/PreAssessment"
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "description": {
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "value",
+              "description"
+            ],
+            "type": "object"
+          },
+          "type": "array"
         },
         "responses": {
           "$ref": "#/definitions/Responses"
@@ -14922,7 +15086,23 @@
           "$ref": "#/definitions/PrototypePlanXMetadata"
         },
         "preAssessment": {
-          "$ref": "#/definitions/PreAssessment"
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "description": {
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "value",
+              "description"
+            ],
+            "type": "object"
+          },
+          "type": "array"
         },
         "responses": {
           "$ref": "#/definitions/Responses"
@@ -14983,7 +15163,23 @@
           "$ref": "#/definitions/PrototypePlanXMetadata"
         },
         "preAssessment": {
-          "$ref": "#/definitions/PreAssessment"
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "description": {
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "value",
+              "description"
+            ],
+            "type": "object"
+          },
+          "type": "array"
         },
         "responses": {
           "$ref": "#/definitions/Responses"
@@ -15044,7 +15240,23 @@
           "$ref": "#/definitions/PrototypePlanXMetadata"
         },
         "preAssessment": {
-          "$ref": "#/definitions/PreAssessment"
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "description": {
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "value",
+              "description"
+            ],
+            "type": "object"
+          },
+          "type": "array"
         },
         "responses": {
           "$ref": "#/definitions/Responses"
@@ -15105,7 +15317,23 @@
           "$ref": "#/definitions/PrototypePlanXMetadata"
         },
         "preAssessment": {
-          "$ref": "#/definitions/PreAssessment"
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "description": {
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "value",
+              "description"
+            ],
+            "type": "object"
+          },
+          "type": "array"
         },
         "responses": {
           "$ref": "#/definitions/Responses"
@@ -15166,7 +15394,23 @@
           "$ref": "#/definitions/PrototypePlanXMetadata"
         },
         "preAssessment": {
-          "$ref": "#/definitions/PreAssessment"
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "description": {
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "value",
+              "description"
+            ],
+            "type": "object"
+          },
+          "type": "array"
         },
         "responses": {
           "$ref": "#/definitions/Responses"
@@ -15227,7 +15471,23 @@
           "$ref": "#/definitions/PrototypePlanXMetadata"
         },
         "preAssessment": {
-          "$ref": "#/definitions/PreAssessment"
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "description": {
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "value",
+              "description"
+            ],
+            "type": "object"
+          },
+          "type": "array"
         },
         "responses": {
           "$ref": "#/definitions/Responses"
@@ -15288,7 +15548,23 @@
           "$ref": "#/definitions/PrototypePlanXMetadata"
         },
         "preAssessment": {
-          "$ref": "#/definitions/PreAssessment"
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "description": {
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "value",
+              "description"
+            ],
+            "type": "object"
+          },
+          "type": "array"
         },
         "responses": {
           "$ref": "#/definitions/Responses"
@@ -15349,7 +15625,23 @@
           "$ref": "#/definitions/PrototypePlanXMetadata"
         },
         "preAssessment": {
-          "$ref": "#/definitions/PreAssessment"
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "description": {
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "value",
+              "description"
+            ],
+            "type": "object"
+          },
+          "type": "array"
         },
         "responses": {
           "$ref": "#/definitions/Responses"
@@ -15410,7 +15702,23 @@
           "$ref": "#/definitions/PrototypePlanXMetadata"
         },
         "preAssessment": {
-          "$ref": "#/definitions/PreAssessment"
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "description": {
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "value",
+              "description"
+            ],
+            "type": "object"
+          },
+          "type": "array"
         },
         "responses": {
           "$ref": "#/definitions/Responses"
@@ -15471,7 +15779,23 @@
           "$ref": "#/definitions/PrototypePlanXMetadata"
         },
         "preAssessment": {
-          "$ref": "#/definitions/PreAssessment"
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "description": {
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "value",
+              "description"
+            ],
+            "type": "object"
+          },
+          "type": "array"
         },
         "responses": {
           "$ref": "#/definitions/Responses"
@@ -15532,7 +15856,23 @@
           "$ref": "#/definitions/PrototypePlanXMetadata"
         },
         "preAssessment": {
-          "$ref": "#/definitions/PreAssessment"
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "description": {
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "value",
+              "description"
+            ],
+            "type": "object"
+          },
+          "type": "array"
         },
         "responses": {
           "$ref": "#/definitions/Responses"
@@ -15593,7 +15933,23 @@
           "$ref": "#/definitions/PrototypePlanXMetadata"
         },
         "preAssessment": {
-          "$ref": "#/definitions/PreAssessment"
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "description": {
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "value",
+              "description"
+            ],
+            "type": "object"
+          },
+          "type": "array"
         },
         "responses": {
           "$ref": "#/definitions/Responses"
@@ -15654,7 +16010,23 @@
           "$ref": "#/definitions/PrototypePlanXMetadata"
         },
         "preAssessment": {
-          "$ref": "#/definitions/PreAssessment"
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "description": {
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "value",
+              "description"
+            ],
+            "type": "object"
+          },
+          "type": "array"
         },
         "responses": {
           "$ref": "#/definitions/Responses"
@@ -15715,7 +16087,23 @@
           "$ref": "#/definitions/PrototypePlanXMetadata"
         },
         "preAssessment": {
-          "$ref": "#/definitions/PreAssessment"
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "description": {
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "value",
+              "description"
+            ],
+            "type": "object"
+          },
+          "type": "array"
         },
         "responses": {
           "$ref": "#/definitions/Responses"
@@ -15776,7 +16164,23 @@
           "$ref": "#/definitions/PrototypePlanXMetadata"
         },
         "preAssessment": {
-          "$ref": "#/definitions/PreAssessment"
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "description": {
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "value",
+              "description"
+            ],
+            "type": "object"
+          },
+          "type": "array"
         },
         "responses": {
           "$ref": "#/definitions/Responses"
@@ -15837,7 +16241,23 @@
           "$ref": "#/definitions/PrototypePlanXMetadata"
         },
         "preAssessment": {
-          "$ref": "#/definitions/PreAssessment"
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "description": {
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "value",
+              "description"
+            ],
+            "type": "object"
+          },
+          "type": "array"
         },
         "responses": {
           "$ref": "#/definitions/Responses"
@@ -15898,7 +16318,23 @@
           "$ref": "#/definitions/PrototypePlanXMetadata"
         },
         "preAssessment": {
-          "$ref": "#/definitions/PreAssessment"
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "description": {
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "value",
+              "description"
+            ],
+            "type": "object"
+          },
+          "type": "array"
         },
         "responses": {
           "$ref": "#/definitions/Responses"
@@ -15959,7 +16395,23 @@
           "$ref": "#/definitions/PrototypePlanXMetadata"
         },
         "preAssessment": {
-          "$ref": "#/definitions/PreAssessment"
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "description": {
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "value",
+              "description"
+            ],
+            "type": "object"
+          },
+          "type": "array"
         },
         "responses": {
           "$ref": "#/definitions/Responses"
@@ -16020,7 +16472,23 @@
           "$ref": "#/definitions/PrototypePlanXMetadata"
         },
         "preAssessment": {
-          "$ref": "#/definitions/PreAssessment"
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "description": {
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "value",
+              "description"
+            ],
+            "type": "object"
+          },
+          "type": "array"
         },
         "responses": {
           "$ref": "#/definitions/Responses"
@@ -16081,7 +16549,23 @@
           "$ref": "#/definitions/PrototypePlanXMetadata"
         },
         "preAssessment": {
-          "$ref": "#/definitions/PreAssessment"
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "description": {
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "value",
+              "description"
+            ],
+            "type": "object"
+          },
+          "type": "array"
         },
         "responses": {
           "$ref": "#/definitions/Responses"
@@ -16142,7 +16626,23 @@
           "$ref": "#/definitions/PrototypePlanXMetadata"
         },
         "preAssessment": {
-          "$ref": "#/definitions/PreAssessment"
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "description": {
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "value",
+              "description"
+            ],
+            "type": "object"
+          },
+          "type": "array"
         },
         "responses": {
           "$ref": "#/definitions/Responses"
@@ -16203,7 +16703,23 @@
           "$ref": "#/definitions/PrototypePlanXMetadata"
         },
         "preAssessment": {
-          "$ref": "#/definitions/PreAssessment"
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "description": {
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "value",
+              "description"
+            ],
+            "type": "object"
+          },
+          "type": "array"
         },
         "responses": {
           "$ref": "#/definitions/Responses"
@@ -16264,7 +16780,23 @@
           "$ref": "#/definitions/PrototypePlanXMetadata"
         },
         "preAssessment": {
-          "$ref": "#/definitions/PreAssessment"
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "description": {
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "value",
+              "description"
+            ],
+            "type": "object"
+          },
+          "type": "array"
         },
         "responses": {
           "$ref": "#/definitions/Responses"
@@ -16325,7 +16857,23 @@
           "$ref": "#/definitions/PrototypePlanXMetadata"
         },
         "preAssessment": {
-          "$ref": "#/definitions/PreAssessment"
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "description": {
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "value",
+              "description"
+            ],
+            "type": "object"
+          },
+          "type": "array"
         },
         "responses": {
           "$ref": "#/definitions/Responses"
@@ -16386,7 +16934,23 @@
           "$ref": "#/definitions/PrototypePlanXMetadata"
         },
         "preAssessment": {
-          "$ref": "#/definitions/PreAssessment"
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "description": {
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "value",
+              "description"
+            ],
+            "type": "object"
+          },
+          "type": "array"
         },
         "responses": {
           "$ref": "#/definitions/Responses"
@@ -16447,7 +17011,23 @@
           "$ref": "#/definitions/PrototypePlanXMetadata"
         },
         "preAssessment": {
-          "$ref": "#/definitions/PreAssessment"
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "description": {
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "value",
+              "description"
+            ],
+            "type": "object"
+          },
+          "type": "array"
         },
         "responses": {
           "$ref": "#/definitions/Responses"
@@ -16508,7 +17088,23 @@
           "$ref": "#/definitions/PrototypePlanXMetadata"
         },
         "preAssessment": {
-          "$ref": "#/definitions/PreAssessment"
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "description": {
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "value",
+              "description"
+            ],
+            "type": "object"
+          },
+          "type": "array"
         },
         "responses": {
           "$ref": "#/definitions/Responses"
@@ -16569,7 +17165,23 @@
           "$ref": "#/definitions/PrototypePlanXMetadata"
         },
         "preAssessment": {
-          "$ref": "#/definitions/PreAssessment"
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "description": {
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "value",
+              "description"
+            ],
+            "type": "object"
+          },
+          "type": "array"
         },
         "responses": {
           "$ref": "#/definitions/Responses"
@@ -16630,7 +17242,23 @@
           "$ref": "#/definitions/PrototypePlanXMetadata"
         },
         "preAssessment": {
-          "$ref": "#/definitions/PreAssessment"
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "description": {
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "value",
+              "description"
+            ],
+            "type": "object"
+          },
+          "type": "array"
         },
         "responses": {
           "$ref": "#/definitions/Responses"
@@ -16691,7 +17319,23 @@
           "$ref": "#/definitions/PrototypePlanXMetadata"
         },
         "preAssessment": {
-          "$ref": "#/definitions/PreAssessment"
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "description": {
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "value",
+              "description"
+            ],
+            "type": "object"
+          },
+          "type": "array"
         },
         "responses": {
           "$ref": "#/definitions/Responses"
@@ -16752,7 +17396,23 @@
           "$ref": "#/definitions/PrototypePlanXMetadata"
         },
         "preAssessment": {
-          "$ref": "#/definitions/PreAssessment"
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "description": {
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "value",
+              "description"
+            ],
+            "type": "object"
+          },
+          "type": "array"
         },
         "responses": {
           "$ref": "#/definitions/Responses"
@@ -16813,7 +17473,23 @@
           "$ref": "#/definitions/PrototypePlanXMetadata"
         },
         "preAssessment": {
-          "$ref": "#/definitions/PreAssessment"
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "description": {
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "value",
+              "description"
+            ],
+            "type": "object"
+          },
+          "type": "array"
         },
         "responses": {
           "$ref": "#/definitions/Responses"
@@ -16874,7 +17550,23 @@
           "$ref": "#/definitions/PrototypePlanXMetadata"
         },
         "preAssessment": {
-          "$ref": "#/definitions/PreAssessment"
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "description": {
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "value",
+              "description"
+            ],
+            "type": "object"
+          },
+          "type": "array"
         },
         "responses": {
           "$ref": "#/definitions/Responses"
@@ -16935,7 +17627,23 @@
           "$ref": "#/definitions/PrototypePlanXMetadata"
         },
         "preAssessment": {
-          "$ref": "#/definitions/PreAssessment"
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "description": {
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "value",
+              "description"
+            ],
+            "type": "object"
+          },
+          "type": "array"
         },
         "responses": {
           "$ref": "#/definitions/Responses"
@@ -16996,7 +17704,23 @@
           "$ref": "#/definitions/PrototypePlanXMetadata"
         },
         "preAssessment": {
-          "$ref": "#/definitions/PreAssessment"
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "description": {
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "value",
+              "description"
+            ],
+            "type": "object"
+          },
+          "type": "array"
         },
         "responses": {
           "$ref": "#/definitions/Responses"
@@ -17057,7 +17781,23 @@
           "$ref": "#/definitions/PrototypePlanXMetadata"
         },
         "preAssessment": {
-          "$ref": "#/definitions/PreAssessment"
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "description": {
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "value",
+              "description"
+            ],
+            "type": "object"
+          },
+          "type": "array"
         },
         "responses": {
           "$ref": "#/definitions/Responses"
@@ -21991,32 +22731,6 @@
       ],
       "type": "object"
     },
-    "SiteContact": {
-      "anyOf": [
-        {
-          "additionalProperties": false,
-          "properties": {
-            "role": {
-              "enum": [
-                "applicant",
-                "agent",
-                "proxy"
-              ],
-              "type": "string"
-            }
-          },
-          "required": [
-            "role"
-          ],
-          "type": "object"
-        },
-        {
-          "$ref": "#/definitions/SiteContactOther"
-        }
-      ],
-      "description": "Contact information for the site visit",
-      "title": "Site contact"
-    },
     "SiteContactOther": {
       "additionalProperties": false,
       "description": "Contact information for the site visit when the SiteContact's role is 'other'",
@@ -22041,6 +22755,7 @@
         "email",
         "phone"
       ],
+      "title": "Site contact other",
       "type": "object"
     },
     "UKResidentialUnitType": {
@@ -22323,142 +23038,6 @@
       ],
       "type": "string"
     },
-    "WTTApplicant": {
-      "additionalProperties": false,
-      "properties": {
-        "address": {
-          "$ref": "#/definitions/UserAddress",
-          "description": "Address information for the applicant"
-        },
-        "agent": {
-          "additionalProperties": false,
-          "description": "Contact information for the agent or proxy",
-          "properties": {
-            "address": {
-              "$ref": "#/definitions/Address"
-            },
-            "company": {
-              "additionalProperties": false,
-              "properties": {
-                "name": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "name"
-              ],
-              "type": "object"
-            },
-            "email": {
-              "$ref": "#/definitions/Email"
-            },
-            "name": {
-              "additionalProperties": false,
-              "properties": {
-                "first": {
-                  "type": "string"
-                },
-                "last": {
-                  "type": "string"
-                },
-                "title": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "first",
-                "last"
-              ],
-              "type": "object"
-            },
-            "phone": {
-              "additionalProperties": false,
-              "properties": {
-                "primary": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "primary"
-              ],
-              "type": "object"
-            }
-          },
-          "required": [
-            "address",
-            "email",
-            "name",
-            "phone"
-          ],
-          "type": "object"
-        },
-        "company": {
-          "additionalProperties": false,
-          "properties": {
-            "name": {
-              "type": "string"
-            }
-          },
-          "required": [
-            "name"
-          ],
-          "type": "object"
-        },
-        "email": {
-          "$ref": "#/definitions/Email"
-        },
-        "name": {
-          "additionalProperties": false,
-          "properties": {
-            "first": {
-              "type": "string"
-            },
-            "last": {
-              "type": "string"
-            },
-            "title": {
-              "type": "string"
-            }
-          },
-          "required": [
-            "first",
-            "last"
-          ],
-          "type": "object"
-        },
-        "phone": {
-          "additionalProperties": false,
-          "properties": {
-            "primary": {
-              "type": "string"
-            }
-          },
-          "required": [
-            "primary"
-          ],
-          "type": "object"
-        },
-        "type": {
-          "description": "The type of applicant",
-          "enum": [
-            "individual",
-            "company",
-            "charity",
-            "public",
-            "parishCouncil"
-          ],
-          "type": "string"
-        }
-      },
-      "required": [
-        "name",
-        "email",
-        "phone",
-        "address",
-        "agent"
-      ],
-      "type": "object"
-    },
     "WorksToTreesConsent": {
       "additionalProperties": false,
       "properties": {
@@ -22470,7 +23049,7 @@
           "additionalProperties": false,
           "properties": {
             "applicant": {
-              "$ref": "#/definitions/WTTApplicant"
+              "$ref": "#/definitions/ApplicantBase"
             },
             "application": {
               "$ref": "#/definitions/NonFeeCarryingApplicationData"
@@ -22527,7 +23106,7 @@
           "additionalProperties": false,
           "properties": {
             "applicant": {
-              "$ref": "#/definitions/WTTApplicant"
+              "$ref": "#/definitions/ApplicantBase"
             },
             "application": {
               "$ref": "#/definitions/NonFeeCarryingApplicationData"

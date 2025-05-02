@@ -119,7 +119,32 @@
           "$ref": "#/definitions/Email"
         },
         "maintenanceContact": {
-          "$ref": "#/definitions/MaintenanceContacts"
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "address": {
+                "$ref": "#/definitions/Address"
+              },
+              "contact": {
+                "$ref": "#/definitions/ContactDetails"
+              },
+              "when": {
+                "enum": [
+                  "duringConstruction",
+                  "afterConstruction",
+                  "duringAndAfterConstruction"
+                ],
+                "type": "string"
+              }
+            },
+            "required": [
+              "when",
+              "address",
+              "contact"
+            ],
+            "type": "object"
+          },
+          "type": "array"
         },
         "name": {
           "additionalProperties": false,
@@ -156,7 +181,28 @@
           "type": "object"
         },
         "siteContact": {
-          "$ref": "#/definitions/SiteContact"
+          "anyOf": [
+            {
+              "additionalProperties": false,
+              "properties": {
+                "role": {
+                  "enum": [
+                    "applicant",
+                    "agent",
+                    "proxy"
+                  ],
+                  "type": "string"
+                }
+              },
+              "required": [
+                "role"
+              ],
+              "type": "object"
+            },
+            {
+              "$ref": "#/definitions/SiteContactOther"
+            }
+          ]
         },
         "type": {
           "enum": [
@@ -2195,7 +2241,32 @@
           "$ref": "#/definitions/Email"
         },
         "maintenanceContact": {
-          "$ref": "#/definitions/MaintenanceContacts"
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "address": {
+                "$ref": "#/definitions/Address"
+              },
+              "contact": {
+                "$ref": "#/definitions/ContactDetails"
+              },
+              "when": {
+                "enum": [
+                  "duringConstruction",
+                  "afterConstruction",
+                  "duringAndAfterConstruction"
+                ],
+                "type": "string"
+              }
+            },
+            "required": [
+              "when",
+              "address",
+              "contact"
+            ],
+            "type": "object"
+          },
+          "type": "array"
         },
         "name": {
           "additionalProperties": false,
@@ -2232,7 +2303,28 @@
           "type": "object"
         },
         "siteContact": {
-          "$ref": "#/definitions/SiteContact"
+          "anyOf": [
+            {
+              "additionalProperties": false,
+              "properties": {
+                "role": {
+                  "enum": [
+                    "applicant",
+                    "agent",
+                    "proxy"
+                  ],
+                  "type": "string"
+                }
+              },
+              "required": [
+                "role"
+              ],
+              "type": "object"
+            },
+            {
+              "$ref": "#/definitions/SiteContactOther"
+            }
+          ]
         },
         "type": {
           "enum": [
@@ -7872,36 +7964,6 @@
       ],
       "type": "object"
     },
-    "MaintenanceContacts": {
-      "description": "Contact information for the person(s) responsible for maintenance while the works are carried out",
-      "items": {
-        "additionalProperties": false,
-        "properties": {
-          "address": {
-            "$ref": "#/definitions/Address"
-          },
-          "contact": {
-            "$ref": "#/definitions/ContactDetails"
-          },
-          "when": {
-            "enum": [
-              "duringConstruction",
-              "afterConstruction",
-              "duringAndAfterConstruction"
-            ],
-            "type": "string"
-          }
-        },
-        "required": [
-          "when",
-          "address",
-          "contact"
-        ],
-        "type": "object"
-      },
-      "title": "Maintenance contacts",
-      "type": "array"
-    },
     "Materials": {
       "additionalProperties": false,
       "properties": {
@@ -8537,6 +8599,8 @@
     "OwnersInterest": {
       "enum": [
         "owner",
+        "owner.sole",
+        "owner.co",
         "lessee",
         "occupier",
         "other"
@@ -8649,19 +8713,7 @@
           "type": "object"
         },
         "interest": {
-          "anyOf": [
-            {
-              "$ref": "#/definitions/OwnersInterest"
-            },
-            {
-              "const": "owner.sole",
-              "type": "string"
-            },
-            {
-              "const": "owner.co",
-              "type": "string"
-            }
-          ]
+          "$ref": "#/definitions/OwnersInterest"
         },
         "interestDescription": {
           "type": "string"
@@ -30108,32 +30160,6 @@
       ],
       "description": "The result of a single flagset"
     },
-    "SiteContact": {
-      "anyOf": [
-        {
-          "additionalProperties": false,
-          "properties": {
-            "role": {
-              "enum": [
-                "applicant",
-                "agent",
-                "proxy"
-              ],
-              "type": "string"
-            }
-          },
-          "required": [
-            "role"
-          ],
-          "type": "object"
-        },
-        {
-          "$ref": "#/definitions/SiteContactOther"
-        }
-      ],
-      "description": "Contact information for the site visit",
-      "title": "Site contact"
-    },
     "SiteContactOther": {
       "additionalProperties": false,
       "description": "Contact information for the site visit when the SiteContact's role is 'other'",
@@ -30158,6 +30184,7 @@
         "email",
         "phone"
       ],
+      "title": "Site contact other",
       "type": "object"
     },
     "UKProperty": {

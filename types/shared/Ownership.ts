@@ -1,14 +1,30 @@
 import {Address} from './Addresses';
 import {Date} from './utils';
 
-export type OwnersInterest = 'owner' | 'lessee' | 'occupier' | 'other';
+export type OwnersInterest =
+  | 'owner'
+  | 'owner.sole'
+  | 'owner.co'
+  | 'lessee'
+  | 'occupier'
+  | 'other';
+
+/**
+ * @title Ownership interest
+ * @description Information about the applicant's relationship to the property owners
+ */
+export type OwnershipInterest = {
+  ownership: {
+    interest: OwnersInterest;
+  };
+};
 
 /**
  * @title #Ownership
  * @description Information about the ownership certificate and property owners, if different than the applicant
  */
 export interface Ownership {
-  interest?: OwnersInterest | 'owner.sole' | 'owner.co';
+  interest?: OwnersInterest;
   interestDescription?: string;
   certificate?: 'a' | 'b' | 'c' | 'd';
   /**

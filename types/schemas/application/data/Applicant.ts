@@ -14,13 +14,13 @@ export type Applicant = BaseApplicant | Agent;
  * @id #BaseApplicant
  * @description Information about the user who completed the application for themself, or information about the person who the user applied on behalf of
  */
-export type BaseApplicant = ContactDetails & {
-  type: 'individual' | 'company' | 'charity' | 'public' | 'parishCouncil';
-  address: UserAddress;
-  ownership?: Ownership;
-  siteContact: SiteContact;
-  maintenanceContact?: MaintenanceContacts;
-};
+export type BaseApplicant = ContactDetails &
+  SiteContact &
+  MaintenanceContacts & {
+    type: 'individual' | 'company' | 'charity' | 'public' | 'parishCouncil';
+    address: UserAddress;
+    ownership?: Ownership;
+  };
 
 /**
  * @id #Agent

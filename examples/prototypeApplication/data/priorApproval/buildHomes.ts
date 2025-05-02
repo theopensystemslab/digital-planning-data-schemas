@@ -21,9 +21,6 @@ export const priorApprovalBuildHomesPrototype: PrototypeApplication = {
       address: {
         sameAsSiteAddress: true,
       },
-      siteContact: {
-        role: 'applicant',
-      },
     },
     property: {
       address: {

@@ -22,9 +22,6 @@ export const priorApprovalConvertCommercialToHomePrototype: PrototypeApplication
         address: {
           sameAsSiteAddress: true,
         },
-        siteContact: {
-          role: 'agent',
-        },
         agent: {
           name: {
             first: 'Alan',

@@ -25,9 +25,6 @@ export const landDrainageConsentPrototype: PrototypeApplication = {
       address: {
         sameAsSiteAddress: true,
       },
-      siteContact: {
-        role: 'applicant',
-      },
       ownership: {
         interest: 'other',
       },
