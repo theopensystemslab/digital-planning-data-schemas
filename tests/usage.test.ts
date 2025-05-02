@@ -1,17 +1,17 @@
 import * as fs from 'fs';
 import * as path from 'path';
-
 import Ajv from 'ajv';
 import addFormats from 'ajv-formats';
 import {Schema, Validator} from 'jsonschema';
 import {describe, expect, test} from 'vitest';
 import applicationSchema from '../schemas/application.json';
+// import postSubmissionApplicationSchema from '../schemas/postSubmissionApplication.json';
 import preApplicationSchema from '../schemas/preApplication.json';
 import prototypeApplicationSchema from '../schemas/prototypeApplication.json';
 import {Application} from '../types/schemas/application';
+// import { PostSubmissionApplication } from '../types/schemas/postSubmissionApplication';
 import {PreApplication} from '../types/schemas/preApplication';
 import {PrototypeApplication} from '../types/schemas/prototypeApplication';
-// import {PostSubmissionApplication} from '../types/schemas/postSubmissionApplication';
 
 /**
  * Helper function to walk /examples directory and collect generated JSON files
