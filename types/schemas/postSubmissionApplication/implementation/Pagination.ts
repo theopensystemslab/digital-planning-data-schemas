@@ -15,9 +15,13 @@ export interface Pagination {
    */
   totalPages: number;
   /**
-   * Total number of items eg 100
+   * Represents the total number of results returned by current query
    */
-  totalItems: number;
+  totalResults: number;
+  /**
+   * Represents the total number of items available in the database (#nofilter)
+   */
+  totalAvailableItems?: number;
 }
 
 /**
@@ -37,7 +41,11 @@ export interface CursorPagination {
    */
   prevCursor: string | null;
   /**
-   * Total number of items eg 100
+   * Represents the total number of results returned by current query
    */
-  totalItems: number;
+  totalResults: number;
+  /**
+   * Represents the total number of items available in the database (#nofilter)
+   */
+  totalAvailableItems?: number;
 }
