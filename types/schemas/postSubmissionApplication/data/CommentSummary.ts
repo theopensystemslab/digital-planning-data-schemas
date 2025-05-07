@@ -7,8 +7,14 @@ interface CommentSummaryBase {
    * How many comments have there been
    */
   totalComments: number;
+}
+
+/**
+ * @id #PublicCommentsSummary
+ */
+export interface PublicCommentSummary extends CommentSummaryBase {
   /**
-   * Comment numbet broken down by sentiment count
+   * Comment number broken down by sentiment count
    */
   sentiment: {
     supportive: number;
@@ -18,11 +24,6 @@ interface CommentSummaryBase {
 }
 
 /**
- * @id #PublicCommentsSummary
- */
-export type PublicCommentSummary = CommentSummaryBase;
-
-/**
  * @id #SpecialistCommentsSummary
  */
 export interface SpecialistCommentSummary extends CommentSummaryBase {
@@ -30,4 +31,12 @@ export interface SpecialistCommentSummary extends CommentSummaryBase {
    * The total number of specialists consulted
    */
   totalConsulted: number;
+  /**
+   * Comment number broken down by sentiment count
+   */
+  sentiment: {
+    approved: number;
+    amendmentsNeeded: number;
+    objected: number;
+  };
 }
