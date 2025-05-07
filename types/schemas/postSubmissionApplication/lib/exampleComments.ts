@@ -246,14 +246,14 @@ export const specialistComments: SpecialistComments = {
     totalConsulted: 4,
     totalComments: 1,
     sentiment: {
-      supportive: 1,
-      objection: 0,
-      neutral: 0,
+      approved: 1,
+      amendmentsNeeded: 0,
+      objected: 0,
     },
   },
   comments: [
     {
-      sentiment: 'supportive',
+      sentiment: 'approved',
       constraints: [
         {
           value: 'monument',
@@ -283,7 +283,7 @@ export const specialistComments: SpecialistComments = {
       respondedAt: '2025-01-27T12:50:49+0000',
       responses: [
         {
-          sentiment: 'supportive',
+          sentiment: 'approved',
           comment: 'lalala',
           author: {
             name: {

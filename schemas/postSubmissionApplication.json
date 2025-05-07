@@ -41762,11 +41762,10 @@
     "PublicCommentSummary": {
       "$id": "#PublicCommentsSummary",
       "additionalProperties": false,
-      "description": "Shows the summary of comments on a submission",
       "properties": {
         "sentiment": {
           "additionalProperties": false,
-          "description": "Comment numbet broken down by sentiment count",
+          "description": "Comment number broken down by sentiment count",
           "properties": {
             "neutral": {
               "type": "number"
@@ -41791,8 +41790,8 @@
         }
       },
       "required": [
-        "totalComments",
-        "sentiment"
+        "sentiment",
+        "totalComments"
       ],
       "type": "object"
     },
@@ -42107,7 +42106,7 @@
           "type": "array"
         },
         "sentiment": {
-          "$ref": "#/definitions/CommentSentiment"
+          "$ref": "#/definitions/SpecialistCommentSentiment"
         }
       },
       "required": [
@@ -42149,28 +42148,49 @@
       ],
       "type": "object"
     },
+    "SpecialistCommentSentiment": {
+      "$id": "#SpecialistCommentSentiment",
+      "anyOf": [
+        {
+          "const": "approved",
+          "description": "Approved",
+          "type": "string"
+        },
+        {
+          "const": "amendmentsNeeded",
+          "description": "Amendments needed",
+          "type": "string"
+        },
+        {
+          "const": "objected",
+          "description": "Objected",
+          "type": "string"
+        }
+      ],
+      "description": "Types of comments"
+    },
     "SpecialistCommentSummary": {
       "$id": "#SpecialistCommentsSummary",
       "additionalProperties": false,
       "properties": {
         "sentiment": {
           "additionalProperties": false,
-          "description": "Comment numbet broken down by sentiment count",
+          "description": "Comment number broken down by sentiment count",
           "properties": {
-            "neutral": {
+            "amendmentsNeeded": {
               "type": "number"
             },
-            "objection": {
+            "approved": {
               "type": "number"
             },
-            "supportive": {
+            "objected": {
               "type": "number"
             }
           },
           "required": [
-            "supportive",
-            "objection",
-            "neutral"
+            "approved",
+            "amendmentsNeeded",
+            "objected"
           ],
           "type": "object"
         },
