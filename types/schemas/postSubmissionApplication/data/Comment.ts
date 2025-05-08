@@ -50,13 +50,13 @@ export interface CommentMetaData {
    */
   submittedAt: DateTime;
   /**
-   * When comment was made public
-   */
-  publishedAt: DateTime;
-  /**
    * When comment was validated
    */
   validAt: DateTime;
+  /**
+   * When comment was made public
+   */
+  publishedAt: DateTime;
 }
 
 /**

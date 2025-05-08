@@ -2673,8 +2673,8 @@
       },
       "required": [
         "submittedAt",
-        "publishedAt",
-        "validAt"
+        "validAt",
+        "publishedAt"
       ],
       "type": "object"
     },
