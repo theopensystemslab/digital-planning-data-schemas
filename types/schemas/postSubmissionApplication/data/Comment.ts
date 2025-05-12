@@ -4,7 +4,10 @@
 
 import {PlanningConstraint} from '../../../shared/Constraints';
 import {DateTime} from '../../../shared/utils';
-import {CommentSentiment} from '../enums/CommentSentiment';
+import {
+  CommentSentiment,
+  SpecialistCommentSentiment,
+} from '../enums/CommentSentiment';
 import {CommentTopic} from '../enums/CommentTopic';
 import {PublicCommentSummary, SpecialistCommentSummary} from './CommentSummary';
 import {PostSubmissionFile} from './File';
@@ -82,11 +85,7 @@ export interface SpecialistCommentAuthor extends CommentAuthor {
  * @todo is reason/constraint the same thing? is one or both required?
  */
 export interface SpecialistComment {
-  /**
-   * @todo how do we get from CommentSentiment to SpecialistCommentSentiment?
-   */
-  // acceptance: SpecialistCommentSentiment;
-  sentiment: CommentSentiment;
+  sentiment: SpecialistCommentSentiment;
   /**
    * @todo fix we get a clash in the schema if we use the shared PlanningConstraint type here
    */
