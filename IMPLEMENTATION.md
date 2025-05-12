@@ -399,15 +399,15 @@ For listing, searching and filtering public (neighbour) comments related to the 
 
 ##### Parameters
 
-> | name             | required | type                                 | default      | options                      | description                                                                                                           |
-> | ---------------- | -------- | ------------------------------------ | ------------ | ---------------------------- | --------------------------------------------------------------------------------------------------------------------- |
-> | `resultsPerPage` |          | number                               | `10`         |                              | Control the number of results per page                                                                                |
-> | `page`           |          | number                               | `0`          |                              | Current page (Zero indexed)                                                                                           |
-> | `sortBy`         |          | string                               | `receivedAt` | See **SortBy options** below | Set the sort type for the results                                                                                     |
-> | `orderBy`        |          | string                               | `desc`       | See **SortBy options** below | Set the sort order for the results                                                                                    |
-> | `query`          |          | TopicAndComments.question \|\|string |              |                              | Search records by `comment`                                                                                           |
-> | `sentiment`      |          | CommentSentiment[]                   |              |                              | Search records by `sentiment` Supports `AND` and `OR` filtering see [Filter based searching](#filter-based-searching) |
-> | `topic`          |          | TopicAndComments.topic[]             |              |                              | Search records by `topic` Supports `AND` and `OR` filtering see [Filter based searching](#filter-based-searching)     |
+> | name             | required | type                                 | default       | options                      | description                                                                                                           |
+> | ---------------- | -------- | ------------------------------------ | ------------- | ---------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+> | `resultsPerPage` |          | number                               | `10`          |                              | Control the number of results per page                                                                                |
+> | `page`           |          | number                               | `0`           |                              | Current page (Zero indexed)                                                                                           |
+> | `sortBy`         |          | string                               | `publishedAt` | See **SortBy options** below | Set the sort type for the results                                                                                     |
+> | `orderBy`        |          | string                               | `desc`        | See **SortBy options** below | Set the sort order for the results                                                                                    |
+> | `query`          |          | TopicAndComments.question \|\|string |               |                              | Search records by `comment`                                                                                           |
+> | `sentiment`      |          | CommentSentiment[]                   |               |                              | Search records by `sentiment` Supports `AND` and `OR` filtering see [Filter based searching](#filter-based-searching) |
+> | `topic`          |          | TopicAndComments.topic[]             |               |                              | Search records by `topic` Supports `AND` and `OR` filtering see [Filter based searching](#filter-based-searching)     |
 
 ##### Date Parameters
 
@@ -415,6 +415,10 @@ For more information see [Date based searching](#date-based-searching)
 
 > | name              | required                   | type     | default | description   |
 > | ----------------- | -------------------------- | -------- | ------- | ------------- |
+> | `submittedAtFrom` | Requires `submittedAtTo`   | datetime |         | `submittedAt` |
+> | `submittedAtTo`   | Requires `submittedAtFrom` | datetime |         | `submittedAt` |
+> | `validAtFrom`     | Requires `validAtTo`       | datetime |         | `validAt`     |
+> | `validAtTo`       | Requires `validAtFrom`     | datetime |         | `validAt`     |
 > | `publishedAtFrom` | Requires `publishedAtTo`   | datetime |         | `publishedAt` |
 > | `publishedAtTo`   | Requires `publishedAtFrom` | datetime |         | `publishedAt` |
 
@@ -427,10 +431,12 @@ For more information see [Date based searching](#date-based-searching)
 
 ##### SortBy options
 
-> | SortBy       | Default OrderBy | OrderBy       | Description |
-> | ------------ | --------------- | ------------- | ----------- |
-> | `receivedAt` | `desc`          | `asc`, `desc` |             |
-> | `id`         | `desc`          | `asc`, `desc` |             |
+> | SortBy        | Default OrderBy | OrderBy       | Description |
+> | ------------- | --------------- | ------------- | ----------- |
+> | `submittedAt` | `desc`          | `asc`, `desc` |             |
+> | `validAt`     | `desc`          | `asc`, `desc` |             |
+> | `publishedAt` | `desc`          | `asc`, `desc` |             |
+> | `id`          | `desc`          | `asc`, `desc` |             |
 
 ##### Example cURL
 
@@ -447,15 +453,15 @@ For listing, searching and filtering specialist comments related to the specific
 
 ##### Parameters
 
-> | name             | required | type                                 | default      | options                      | description                                                                                                           |
-> | ---------------- | -------- | ------------------------------------ | ------------ | ---------------------------- | --------------------------------------------------------------------------------------------------------------------- |
-> | `resultsPerPage` |          | number                               | `10`         |                              | Control the number of results per page                                                                                |
-> | `page`           |          | number                               | `0`          |                              | Current page (Zero indexed)                                                                                           |
-> | `sortBy`         |          | string                               | `receivedAt` | See **SortBy options** below | Set the sort type for the results                                                                                     |
-> | `orderBy`        |          | string                               | `desc`       | See **SortBy options** below | Set the sort order for the results                                                                                    |
-> | `query`          |          | TopicAndComments.question \|\|string |              |                              | Search records by `comment`                                                                                           |
-> | `sentiment`      |          | CommentSentiment[]                   |              |                              | Search records by `sentiment` Supports `AND` and `OR` filtering see [Filter based searching](#filter-based-searching) |
-> | `topic`          |          | TopicAndComments.topic[]             |              |                              | Search records by `topic` Supports `AND` and `OR` filtering see [Filter based searching](#filter-based-searching)     |
+> | name             | required | type                                 | default       | options                      | description                                                                                                           |
+> | ---------------- | -------- | ------------------------------------ | ------------- | ---------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+> | `resultsPerPage` |          | number                               | `10`          |                              | Control the number of results per page                                                                                |
+> | `page`           |          | number                               | `0`           |                              | Current page (Zero indexed)                                                                                           |
+> | `sortBy`         |          | string                               | `publishedAt` | See **SortBy options** below | Set the sort type for the results                                                                                     |
+> | `orderBy`        |          | string                               | `desc`        | See **SortBy options** below | Set the sort order for the results                                                                                    |
+> | `query`          |          | TopicAndComments.question \|\|string |               |                              | Search records by `comment`                                                                                           |
+> | `sentiment`      |          | SpecialistCommentSentiment[]         |               |                              | Search records by `sentiment` Supports `AND` and `OR` filtering see [Filter based searching](#filter-based-searching) |
+> | `topic`          |          | TopicAndComments.topic[]             |               |                              | Search records by `topic` Supports `AND` and `OR` filtering see [Filter based searching](#filter-based-searching)     |
 
 ##### Date Parameters
 
@@ -463,6 +469,10 @@ For more information see [Date based searching](#date-based-searching)
 
 > | name              | required                   | type     | default | description   |
 > | ----------------- | -------------------------- | -------- | ------- | ------------- |
+> | `submittedAtFrom` | Requires `submittedAtTo`   | datetime |         | `submittedAt` |
+> | `submittedAtTo`   | Requires `submittedAtFrom` | datetime |         | `submittedAt` |
+> | `validAtFrom`     | Requires `validAtTo`       | datetime |         | `validAt`     |
+> | `validAtTo`       | Requires `validAtFrom`     | datetime |         | `validAt`     |
 > | `publishedAtFrom` | Requires `publishedAtTo`   | datetime |         | `publishedAt` |
 > | `publishedAtTo`   | Requires `publishedAtFrom` | datetime |         | `publishedAt` |
 
@@ -475,10 +485,12 @@ For more information see [Date based searching](#date-based-searching)
 
 ##### SortBy options
 
-> | SortBy       | Default OrderBy | OrderBy       | Description |
-> | ------------ | --------------- | ------------- | ----------- |
-> | `receivedAt` | `desc`          | `asc`, `desc` |             |
-> | `id`         | `desc`          | `asc`, `desc` |             |
+> | SortBy        | Default OrderBy | OrderBy       | Description |
+> | ------------- | --------------- | ------------- | ----------- |
+> | `submittedAt` | `desc`          | `asc`, `desc` |             |
+> | `validAt`     | `desc`          | `asc`, `desc` |             |
+> | `publishedAt` | `desc`          | `asc`, `desc` |             |
+> | `id`          | `desc`          | `asc`, `desc` |             |
 
 ##### Example cURL
 
