@@ -22,6 +22,7 @@ export type PublicComments = {
 };
 
 export interface PublicComment {
+  id: number;
   sentiment: CommentSentiment;
   comment: TopicAndComments[] | string;
   author: CommentAuthor;
@@ -85,6 +86,7 @@ export interface SpecialistCommentAuthor extends CommentAuthor {
  * @todo is reason/constraint the same thing? is one or both required?
  */
 export interface SpecialistComment {
+  id: number;
   sentiment: SpecialistCommentSentiment;
   /**
    * @todo fix we get a clash in the schema if we use the shared PlanningConstraint type here
