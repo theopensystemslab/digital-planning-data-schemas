@@ -41745,6 +41745,9 @@
             }
           ]
         },
+        "id": {
+          "type": "number"
+        },
         "metadata": {
           "$ref": "#/definitions/CommentMetaData"
         },
@@ -41753,6 +41756,7 @@
         }
       },
       "required": [
+        "id",
         "sentiment",
         "comment",
         "author"
@@ -42090,6 +42094,9 @@
           },
           "type": "array"
         },
+        "id": {
+          "type": "number"
+        },
         "metadata": {
           "$ref": "#/definitions/CommentMetaData"
         },
@@ -42110,6 +42117,7 @@
         }
       },
       "required": [
+        "id",
         "sentiment",
         "comment",
         "author",

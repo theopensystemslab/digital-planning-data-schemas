@@ -11,6 +11,7 @@ export const publicComments: PublicComments = {
   },
   comments: [
     {
+      id: 1,
       sentiment: 'supportive',
       comment: [
         {
@@ -68,6 +69,7 @@ export const publicComments: PublicComments = {
       },
     },
     {
+      id: 2,
       sentiment: 'objection',
       comment: [
         {
@@ -125,6 +127,7 @@ export const publicComments: PublicComments = {
       },
     },
     {
+      id: 3,
       sentiment: 'objection',
       comment: [
         {
@@ -182,6 +185,7 @@ export const publicComments: PublicComments = {
       },
     },
     {
+      id: 4,
       sentiment: 'neutral',
       comment: [
         {
@@ -253,6 +257,7 @@ export const specialistComments: SpecialistComments = {
   },
   comments: [
     {
+      id: 1,
       sentiment: 'approved',
       constraints: [
         {
@@ -283,6 +288,7 @@ export const specialistComments: SpecialistComments = {
       respondedAt: '2025-01-27T12:50:49+0000',
       responses: [
         {
+          id: 1,
           sentiment: 'approved',
           comment: 'lalala',
           author: {
