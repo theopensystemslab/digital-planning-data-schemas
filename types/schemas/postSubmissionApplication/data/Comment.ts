@@ -17,36 +17,82 @@ import {PostSubmissionFile} from './File';
  * @description The ordered list of public comments any associated metadata
  */
 export type PublicComments = {
+  /**
+   * Summarises the public comments
+   */
   summary: PublicCommentSummary;
+  /**
+   * The ordered list of public comments
+   */
   comments: PublicComment[];
 };
 
+/**
+ * @id #PublicComment
+ * @description A public comment and any associated metadata
+ */
 export interface PublicComment {
+  /**
+   * Unique identifier for the comment
+   */
   id: number;
+  /**
+   * What is the sentiment of the comment?
+   */
   sentiment: CommentSentiment;
+  /**
+   * The comment itself, either a single comment or a list of comments divided by topic
+   */
   comment: TopicAndComments[] | string;
-  author: CommentAuthor;
+  /**
+   * The author of the comment
+   */
+  author: PublicCommentAuthor;
+  /**
+   * Further information about the comment
+   */
   metadata?: CommentMetaData;
 }
 
-export interface TopicAndComments {
-  topic: CommentTopic;
+/**
+ * @id #PublicCommentAuthor
+ * @description The author of a public comment
+ */
+export interface PublicCommentAuthor {
   /**
-   * @todo not sure if we want this in here but it does follow the responses convention?
+   * The author of the comment
    */
-  question: string;
-  comment: string;
-}
-
-export interface CommentAuthor {
   name: {
+    /**
+     * The name of the author of the comment in the format 'First Last'
+     */
     singleLine: string;
   };
 }
 
 /**
- * @todo these will end up depending on the final approval process
- * eg are the comments validated at a different time to when the application is published
+ * @id #TopicAndComments
+ * @description A comment on an application, divided by topic
+ */
+export interface TopicAndComments {
+  /**
+   * The topic of the comment
+   */
+  topic: CommentTopic;
+  /**
+   * What question was asked
+   * Follows convention of Responses
+   */
+  question: string;
+  /**
+   * The comment about the topic
+   */
+  comment: string;
+}
+
+/**
+ * @id #CommentMetaData
+ * @description Metadata about a comment
  */
 export interface CommentMetaData {
   /**
@@ -68,43 +114,74 @@ export interface CommentMetaData {
  * @description The ordered list of specialist comments any associated metadata
  */
 export type SpecialistComments = {
+  /**
+   * Summarises the specialist comments
+   */
   summary: SpecialistCommentSummary;
-  comments: SpecialistComment[];
+  /**
+   * The list of specialists and their comments
+   */
+  comments: Specialist[];
 };
 
 /**
- * @todo Organisation / Specialism is one or both required?
- * @todo We might want to do different subtypes for different types of specialist
+ * @id #Specialist
+ * @description Details of a specialist and their comments on an application
  */
-export interface SpecialistCommentAuthor extends CommentAuthor {
-  organisation?: string;
-  specialism?: string;
+export interface Specialist {
+  /**
+   * unique identifier for the specialist
+   */
+  id: number;
+  /**
+   * What is the specialists organisation or specialism?
+   */
+  organisationSpecialism: string;
+  /**
+   * What is their job title?
+   */
   jobTitle?: string;
+  /**
+   * What is the reason for asking this specialist to comment?
+   */
+  reason?: 'constraint' | string;
+  /**
+   * if reason is constraint, what are the constraints?
+   */
+  constraints?: PlanningConstraint[];
+  /**
+   * the first date the specialist was consulted?
+   */
+  firstConsultedAt: DateTime;
+  /**
+   * List of comments made by the specialist in order of latest first
+   */
+  comments: SpecialistComment[];
 }
 
 /**
- * @todo is reason/constraint the same thing? is one or both required?
+ * @id #SpecialistComment
+ * @description A specialist comment and any associated metadata
  */
 export interface SpecialistComment {
+  /**
+   * Unique identifier for the comment
+   */
   id: number;
+  /**
+   * What is the sentiment of the comment?
+   */
   sentiment: SpecialistCommentSentiment;
   /**
-   * @todo fix we get a clash in the schema if we use the shared PlanningConstraint type here
+   * The comment itself
    */
-  constraints?: PlanningConstraint[];
-  reason?: string;
   comment: string;
-  author: SpecialistCommentAuthor;
-  consultedAt: DateTime;
   /**
-   * @todo responded at is different to published at?
+   * Did the author include any files with the comment?
    */
-  respondedAt: DateTime;
   files?: PostSubmissionFile[];
   /**
-   * @todo nested comments probably needs a better structure no?
-   * @todo do these have as much data as the parent?
+   * Further information about the comment
    */
-  responses?: SpecialistComment[];
   metadata?: CommentMetaData;
 }

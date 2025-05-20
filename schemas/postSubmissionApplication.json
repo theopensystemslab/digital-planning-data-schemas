@@ -2634,29 +2634,10 @@
       ],
       "type": "object"
     },
-    "CommentAuthor": {
-      "additionalProperties": false,
-      "properties": {
-        "name": {
-          "additionalProperties": false,
-          "properties": {
-            "singleLine": {
-              "type": "string"
-            }
-          },
-          "required": [
-            "singleLine"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "name"
-      ],
-      "type": "object"
-    },
     "CommentMetaData": {
+      "$id": "#CommentMetaData",
       "additionalProperties": false,
+      "description": "Metadata about a comment",
       "properties": {
         "publishedAt": {
           "$ref": "#/definitions/DateTime",
@@ -41727,10 +41708,13 @@
       "type": "object"
     },
     "PublicComment": {
+      "$id": "#PublicComment",
       "additionalProperties": false,
+      "description": "A public comment and any associated metadata",
       "properties": {
         "author": {
-          "$ref": "#/definitions/CommentAuthor"
+          "$ref": "#/definitions/PublicCommentAuthor",
+          "description": "The author of the comment"
         },
         "comment": {
           "anyOf": [
@@ -41743,16 +41727,20 @@
             {
               "type": "string"
             }
-          ]
+          ],
+          "description": "The comment itself, either a single comment or a list of comments divided by topic"
         },
         "id": {
+          "description": "Unique identifier for the comment",
           "type": "number"
         },
         "metadata": {
-          "$ref": "#/definitions/CommentMetaData"
+          "$ref": "#/definitions/CommentMetaData",
+          "description": "Further information about the comment"
         },
         "sentiment": {
-          "$ref": "#/definitions/CommentSentiment"
+          "$ref": "#/definitions/CommentSentiment",
+          "description": "What is the sentiment of the comment?"
         }
       },
       "required": [
@@ -41763,12 +41751,39 @@
       ],
       "type": "object"
     },
+    "PublicCommentAuthor": {
+      "$id": "#PublicCommentAuthor",
+      "additionalProperties": false,
+      "description": "The author of a public comment",
+      "properties": {
+        "name": {
+          "additionalProperties": false,
+          "description": "The author of the comment",
+          "properties": {
+            "singleLine": {
+              "description": "The name of the author of the comment in the format 'First Last'",
+              "type": "string"
+            }
+          },
+          "required": [
+            "singleLine"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "type": "object"
+    },
     "PublicCommentSummary": {
       "$id": "#PublicCommentsSummary",
       "additionalProperties": false,
       "properties": {
         "sentiment": {
-          "additionalProperties": false,
+          "additionalProperties": {
+            "type": "number"
+          },
           "description": "Comment number broken down by sentiment count",
           "properties": {
             "neutral": {
@@ -41782,9 +41797,9 @@
             }
           },
           "required": [
-            "supportive",
             "objection",
-            "neutral"
+            "neutral",
+            "supportive"
           ],
           "type": "object"
         },
@@ -41805,13 +41820,15 @@
       "description": "The ordered list of public comments any associated metadata",
       "properties": {
         "comments": {
+          "description": "The ordered list of public comments",
           "items": {
             "$ref": "#/definitions/PublicComment"
           },
           "type": "array"
         },
         "summary": {
-          "$ref": "#/definitions/PublicCommentSummary"
+          "$ref": "#/definitions/PublicCommentSummary",
+          "description": "Summarises the public comments"
         }
       },
       "required": [
@@ -42070,89 +42087,87 @@
       "title": "Site contact other",
       "type": "object"
     },
-    "SpecialistComment": {
+    "Specialist": {
+      "$id": "#Specialist",
       "additionalProperties": false,
+      "description": "Details of a specialist and their comments on an application",
       "properties": {
-        "author": {
-          "$ref": "#/definitions/SpecialistCommentAuthor"
-        },
-        "comment": {
-          "type": "string"
+        "comments": {
+          "description": "List of comments made by the specialist in order of latest first",
+          "items": {
+            "$ref": "#/definitions/SpecialistComment"
+          },
+          "type": "array"
         },
         "constraints": {
+          "description": "if reason is constraint, what are the constraints?",
           "items": {
             "$ref": "#/definitions/PlanningConstraint"
           },
           "type": "array"
         },
-        "consultedAt": {
-          "$ref": "#/definitions/DateTime"
+        "firstConsultedAt": {
+          "$ref": "#/definitions/DateTime",
+          "description": "the first date the specialist was consulted?"
+        },
+        "id": {
+          "description": "unique identifier for the specialist",
+          "type": "number"
+        },
+        "jobTitle": {
+          "description": "What is their job title?",
+          "type": "string"
+        },
+        "organisationSpecialism": {
+          "description": "What is the specialists organisation or specialism?",
+          "type": "string"
+        },
+        "reason": {
+          "description": "What is the reason for asking this specialist to comment?",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "organisationSpecialism",
+        "firstConsultedAt",
+        "comments"
+      ],
+      "type": "object"
+    },
+    "SpecialistComment": {
+      "$id": "#SpecialistComment",
+      "additionalProperties": false,
+      "description": "A specialist comment and any associated metadata",
+      "properties": {
+        "comment": {
+          "description": "The comment itself",
+          "type": "string"
         },
         "files": {
+          "description": "Did the author include any files with the comment?",
           "items": {
             "$ref": "#/definitions/PostSubmissionFile"
           },
           "type": "array"
         },
         "id": {
+          "description": "Unique identifier for the comment",
           "type": "number"
         },
         "metadata": {
-          "$ref": "#/definitions/CommentMetaData"
-        },
-        "reason": {
-          "type": "string"
-        },
-        "respondedAt": {
-          "$ref": "#/definitions/DateTime"
-        },
-        "responses": {
-          "items": {
-            "$ref": "#/definitions/SpecialistComment"
-          },
-          "type": "array"
+          "$ref": "#/definitions/CommentMetaData",
+          "description": "Further information about the comment"
         },
         "sentiment": {
-          "$ref": "#/definitions/SpecialistCommentSentiment"
+          "$ref": "#/definitions/SpecialistCommentSentiment",
+          "description": "What is the sentiment of the comment?"
         }
       },
       "required": [
         "id",
         "sentiment",
-        "comment",
-        "author",
-        "consultedAt",
-        "respondedAt"
-      ],
-      "type": "object"
-    },
-    "SpecialistCommentAuthor": {
-      "additionalProperties": false,
-      "properties": {
-        "jobTitle": {
-          "type": "string"
-        },
-        "name": {
-          "additionalProperties": false,
-          "properties": {
-            "singleLine": {
-              "type": "string"
-            }
-          },
-          "required": [
-            "singleLine"
-          ],
-          "type": "object"
-        },
-        "organisation": {
-          "type": "string"
-        },
-        "specialism": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "name"
+        "comment"
       ],
       "type": "object"
     },
@@ -42182,7 +42197,9 @@
       "additionalProperties": false,
       "properties": {
         "sentiment": {
-          "additionalProperties": false,
+          "additionalProperties": {
+            "type": "number"
+          },
           "description": "Comment number broken down by sentiment count",
           "properties": {
             "amendmentsNeeded": {
@@ -42224,13 +42241,15 @@
       "description": "The ordered list of specialist comments any associated metadata",
       "properties": {
         "comments": {
+          "description": "The list of specialists and their comments",
           "items": {
-            "$ref": "#/definitions/SpecialistComment"
+            "$ref": "#/definitions/Specialist"
           },
           "type": "array"
         },
         "summary": {
-          "$ref": "#/definitions/SpecialistCommentSummary"
+          "$ref": "#/definitions/SpecialistCommentSummary",
+          "description": "Summarises the specialist comments"
         }
       },
       "required": [
@@ -42240,16 +42259,21 @@
       "type": "object"
     },
     "TopicAndComments": {
+      "$id": "#TopicAndComments",
       "additionalProperties": false,
+      "description": "A comment on an application, divided by topic",
       "properties": {
         "comment": {
+          "description": "The comment about the topic",
           "type": "string"
         },
         "question": {
+          "description": "What question was asked Follows convention of Responses",
           "type": "string"
         },
         "topic": {
-          "$ref": "#/definitions/CommentTopic"
+          "$ref": "#/definitions/CommentTopic",
+          "description": "The topic of the comment"
         }
       },
       "required": [

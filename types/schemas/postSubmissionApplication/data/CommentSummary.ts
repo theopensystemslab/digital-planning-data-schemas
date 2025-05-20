@@ -2,6 +2,11 @@
  * Shows the summary of comments on a submission
  */
 
+import {
+  CommentSentiment,
+  SpecialistCommentSentiment,
+} from '../enums/CommentSentiment';
+
 interface CommentSummaryBase {
   /**
    * How many comments have there been
@@ -16,11 +21,7 @@ export interface PublicCommentSummary extends CommentSummaryBase {
   /**
    * Comment number broken down by sentiment count
    */
-  sentiment: {
-    supportive: number;
-    objection: number;
-    neutral: number;
-  };
+  sentiment: Record<CommentSentiment, number>;
 }
 
 /**
@@ -34,9 +35,5 @@ export interface SpecialistCommentSummary extends CommentSummaryBase {
   /**
    * Comment number broken down by sentiment count
    */
-  sentiment: {
-    approved: number;
-    amendmentsNeeded: number;
-    objected: number;
-  };
+  sentiment: Record<SpecialistCommentSentiment, number>;
 }

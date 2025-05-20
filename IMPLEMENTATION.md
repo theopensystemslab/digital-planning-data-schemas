@@ -536,6 +536,7 @@ Allows submission of specialist (consultee) comments
 > | name        | required | type   | default | options | description                                   |
 > | ----------- | -------- | ------ | ------- | ------- | --------------------------------------------- |
 > | `reference` |          | string |         |         | Application reference number eg `ABC-123-XYZ` |
+> | `id`        |          | number |         |         | Specialist id number eg `1`                   |
 
 ##### Responses
 
@@ -554,5 +555,4 @@ Allows submission of specialist (consultee) comments
 
 ## TODO
 
-- [ ] Define sorting applications by status: Most progressed to least progressed
 - [ ] What happens if priorApprovalRequired is requested for multiple application types - return error or only apply to the relevant application type?
