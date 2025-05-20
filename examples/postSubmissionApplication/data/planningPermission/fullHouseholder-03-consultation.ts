@@ -24,7 +24,7 @@ export const planningPermissionFullHouseholderPostSubmission: PostSubmissionAppl
         status: 'undetermined',
       },
       localPlanningAuthority: {
-        commentsAcceptedUntilDecision: false,
+        publicCommentsAcceptedUntilDecision: false,
       },
       submission: {
         submittedAt: realisticDates.submission.submittedAt.toISOString(),

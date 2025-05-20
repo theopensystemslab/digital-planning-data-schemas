@@ -6,7 +6,7 @@ type LocalPlanningAuthorityBase = {
    * However some LPA's allow comments until a decision regardles of whether there is a consultation stage
    * This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process
    */
-  commentsAcceptedUntilDecision: boolean;
+  publicCommentsAcceptedUntilDecision: boolean;
 };
 
 /**

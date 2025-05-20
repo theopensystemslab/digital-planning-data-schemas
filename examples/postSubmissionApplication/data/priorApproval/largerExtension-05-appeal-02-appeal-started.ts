@@ -24,7 +24,7 @@ export const priorApprovalLargerExtensionPostSubmission: PostSubmissionApplicati
         status: 'determined',
       },
       localPlanningAuthority: {
-        commentsAcceptedUntilDecision: false,
+        publicCommentsAcceptedUntilDecision: false,
       },
       submission: {
         submittedAt: realisticDates.submission.submittedAt.toISOString(),

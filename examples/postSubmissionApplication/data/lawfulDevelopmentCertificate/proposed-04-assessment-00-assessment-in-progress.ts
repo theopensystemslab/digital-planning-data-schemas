@@ -24,7 +24,7 @@ export const lawfulDevelopmentCertificateProposedPostSubmission: PostSubmissionA
         status: 'undetermined',
       },
       localPlanningAuthority: {
-        commentsAcceptedUntilDecision: true,
+        publicCommentsAcceptedUntilDecision: true,
       },
       submission: {
         submittedAt: realisticDates.submission.submittedAt.toISOString(),

@@ -27,7 +27,7 @@ export const lawfulDevelopmentCertificateProposedPostSubmission: PostSubmissionA
           'The applicant has decided not to proceed with the application',
       },
       localPlanningAuthority: {
-        commentsAcceptedUntilDecision: true,
+        publicCommentsAcceptedUntilDecision: true,
       },
       submission: {
         submittedAt: realisticDates.submission.submittedAt.toISOString(),

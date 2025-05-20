@@ -27,7 +27,7 @@ export const planningPermissionFullHouseholderPostSubmission: PostSubmissionAppl
           'The applicant has decided not to proceed with the application',
       },
       localPlanningAuthority: {
-        commentsAcceptedUntilDecision: false,
+        publicCommentsAcceptedUntilDecision: false,
       },
       submission: {
         submittedAt: realisticDates.submission.submittedAt.toISOString(),
