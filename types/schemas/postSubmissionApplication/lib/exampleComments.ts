@@ -65,7 +65,7 @@ export const publicComments: PublicComments = {
       metadata: {
         submittedAt: '2024-02-20T15:54:31.021Z',
         publishedAt: '2024-02-21T15:54:31.021Z',
-        validAt: '2024-02-21T15:54:31.021Z',
+        validatedAt: '2024-02-21T15:54:31.021Z',
       },
     },
     {
@@ -123,7 +123,7 @@ export const publicComments: PublicComments = {
       metadata: {
         submittedAt: '2024-02-20T15:54:31.021Z',
         publishedAt: '2024-02-21T15:54:31.021Z',
-        validAt: '2024-02-21T15:54:31.021Z',
+        validatedAt: '2024-02-21T15:54:31.021Z',
       },
     },
     {
@@ -181,7 +181,7 @@ export const publicComments: PublicComments = {
       metadata: {
         submittedAt: '2024-02-20T15:54:31.021Z',
         publishedAt: '2024-02-21T15:54:31.021Z',
-        validAt: '2024-02-21T15:54:31.021Z',
+        validatedAt: '2024-02-21T15:54:31.021Z',
       },
     },
     {
@@ -239,7 +239,7 @@ export const publicComments: PublicComments = {
       metadata: {
         submittedAt: '2024-02-20T15:54:31.021Z',
         publishedAt: '2024-02-21T15:54:31.021Z',
-        validAt: '2024-02-21T15:54:31.021Z',
+        validatedAt: '2024-02-21T15:54:31.021Z',
       },
     },
   ],
@@ -285,7 +285,7 @@ export const specialistComments: SpecialistComments = {
           metadata: {
             submittedAt: '2024-02-20T15:54:31.021Z',
             publishedAt: '2024-02-21T15:54:31.021Z',
-            validAt: '2024-02-21T15:54:31.021Z',
+            validatedAt: '2024-02-21T15:54:31.021Z',
           },
         },
         {
@@ -295,7 +295,7 @@ export const specialistComments: SpecialistComments = {
           metadata: {
             submittedAt: '2024-02-20T15:54:31.021Z',
             publishedAt: '2024-02-21T15:54:31.021Z',
-            validAt: '2024-02-21T15:54:31.021Z',
+            validatedAt: '2024-02-21T15:54:31.021Z',
           },
         },
       ],

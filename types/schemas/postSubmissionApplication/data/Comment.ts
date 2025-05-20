@@ -102,7 +102,7 @@ export interface CommentMetaData {
   /**
    * When comment was validated
    */
-  validAt: DateTime;
+  validatedAt: DateTime;
   /**
    * When comment was made public
    */

@@ -2647,14 +2647,14 @@
           "$ref": "#/definitions/DateTime",
           "description": "When comment was submitted"
         },
-        "validAt": {
+        "validatedAt": {
           "$ref": "#/definitions/DateTime",
           "description": "When comment was validated"
         }
       },
       "required": [
         "submittedAt",
-        "validAt",
+        "validatedAt",
         "publishedAt"
       ],
       "type": "object"
