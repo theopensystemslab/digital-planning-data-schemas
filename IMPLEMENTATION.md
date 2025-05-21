@@ -417,8 +417,8 @@ For more information see [Date based searching](#date-based-searching)
 > | ----------------- | -------------------------- | -------- | ------- | ------------- |
 > | `submittedAtFrom` | Requires `submittedAtTo`   | datetime |         | `submittedAt` |
 > | `submittedAtTo`   | Requires `submittedAtFrom` | datetime |         | `submittedAt` |
-> | `validAtFrom`     | Requires `validAtTo`       | datetime |         | `validAt`     |
-> | `validAtTo`       | Requires `validAtFrom`     | datetime |         | `validAt`     |
+> | `validatedAtFrom` | Requires `validatedAtTo`   | datetime |         | `validatedAt` |
+> | `validatedAtTo`   | Requires `validatedAtFrom` | datetime |         | `validatedAt` |
 > | `publishedAtFrom` | Requires `publishedAtTo`   | datetime |         | `publishedAt` |
 > | `publishedAtTo`   | Requires `publishedAtFrom` | datetime |         | `publishedAt` |
 
@@ -434,7 +434,7 @@ For more information see [Date based searching](#date-based-searching)
 > | SortBy        | Default OrderBy | OrderBy       | Description |
 > | ------------- | --------------- | ------------- | ----------- |
 > | `submittedAt` | `desc`          | `asc`, `desc` |             |
-> | `validAt`     | `desc`          | `asc`, `desc` |             |
+> | `validatedAt` | `desc`          | `asc`, `desc` |             |
 > | `publishedAt` | `desc`          | `asc`, `desc` |             |
 > | `id`          | `desc`          | `asc`, `desc` |             |
 
@@ -453,28 +453,31 @@ For listing, searching and filtering specialist comments related to the specific
 
 ##### Parameters
 
-> | name             | required | type                                 | default       | options                      | description                                                                                                           |
-> | ---------------- | -------- | ------------------------------------ | ------------- | ---------------------------- | --------------------------------------------------------------------------------------------------------------------- |
-> | `resultsPerPage` |          | number                               | `10`          |                              | Control the number of results per page                                                                                |
-> | `page`           |          | number                               | `0`           |                              | Current page (Zero indexed)                                                                                           |
-> | `sortBy`         |          | string                               | `publishedAt` | See **SortBy options** below | Set the sort type for the results                                                                                     |
-> | `orderBy`        |          | string                               | `desc`        | See **SortBy options** below | Set the sort order for the results                                                                                    |
-> | `query`          |          | TopicAndComments.question \|\|string |               |                              | Search records by `comment`                                                                                           |
-> | `sentiment`      |          | SpecialistCommentSentiment[]         |               |                              | Search records by `sentiment` Supports `AND` and `OR` filtering see [Filter based searching](#filter-based-searching) |
-> | `topic`          |          | TopicAndComments.topic[]             |               |                              | Search records by `topic` Supports `AND` and `OR` filtering see [Filter based searching](#filter-based-searching)     |
+> | name             | required | type                                 | default       | options                             | description                                                                                                           |
+> | ---------------- | -------- | ------------------------------------ | ------------- | ----------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+> | `resultsPerPage` |          | number                               | `10`          |                                     | Control the number of results per page                                                                                |
+> | `page`           |          | number                               | `0`           |                                     | Current page (Zero indexed)                                                                                           |
+> | `sortBy`         |          | string                               | `publishedAt` | See **SortBy options** below        | Set the sort type for the results based on the latest comment made by specialist                                      |
+> | `orderBy`        |          | string                               | `desc`        | See **SortBy options** below        | Set the sort order for the results based on the latest comment made by specialist                                     |
+> | `query`          |          | TopicAndComments.question \|\|string |               |                                     | Search records by `comment`                                                                                           |
+> | `sentiment`      |          | SpecialistCommentSentiment[]         |               |                                     | Search records by `sentiment` Supports `AND` and `OR` filtering see [Filter based searching](#filter-based-searching) |
+> | `topic`          |          | TopicAndComments.topic[]             |               |                                     | Search records by `topic` Supports `AND` and `OR` filtering see [Filter based searching](#filter-based-searching)     |
+> | `latestOnly`     |          | boolean                              |               |                                     | Only returns the latest comment for the specialist in the comments section                                            |
+> | `commentSortBy`  |          | string                               | `publishedAt` | See **CommentSortBy options** below | Set the sort type for the specialists comments field                                                                  |
+> | `commentOrderBy` |          | string                               | `desc`        | See **CommentSortBy options** below | Set the sort order for the specialists comments field                                                                 |
 
 ##### Date Parameters
 
 For more information see [Date based searching](#date-based-searching)
 
-> | name              | required                   | type     | default | description   |
-> | ----------------- | -------------------------- | -------- | ------- | ------------- |
-> | `submittedAtFrom` | Requires `submittedAtTo`   | datetime |         | `submittedAt` |
-> | `submittedAtTo`   | Requires `submittedAtFrom` | datetime |         | `submittedAt` |
-> | `validAtFrom`     | Requires `validAtTo`       | datetime |         | `validAt`     |
-> | `validAtTo`       | Requires `validAtFrom`     | datetime |         | `validAt`     |
-> | `publishedAtFrom` | Requires `publishedAtTo`   | datetime |         | `publishedAt` |
-> | `publishedAtTo`   | Requires `publishedAtFrom` | datetime |         | `publishedAt` |
+> | name              | required                   | type     | default | description     |
+> | ----------------- | -------------------------- | -------- | ------- | --------------- |
+> | `submittedAtFrom` | Requires `submittedAtTo`   | datetime |         | `submittedAt`   |
+> | `submittedAtTo`   | Requires `submittedAtFrom` | datetime |         | `submittedAt`   |
+> | `validatedAtFrom` | Requires `validatedAtTo`   | datetime |         | `validatedAtAt` |
+> | `validatedAtTo`   | Requires `validatedAtFrom` | datetime |         | `validatedAtAt` |
+> | `publishedAtFrom` | Requires `publishedAtTo`   | datetime |         | `publishedAt`   |
+> | `publishedAtTo`   | Requires `publishedAtFrom` | datetime |         | `publishedAt`   |
 
 ##### Responses
 
@@ -485,12 +488,20 @@ For more information see [Date based searching](#date-based-searching)
 
 ##### SortBy options
 
-> | SortBy        | Default OrderBy | OrderBy       | Description |
-> | ------------- | --------------- | ------------- | ----------- |
-> | `submittedAt` | `desc`          | `asc`, `desc` |             |
-> | `validAt`     | `desc`          | `asc`, `desc` |             |
-> | `publishedAt` | `desc`          | `asc`, `desc` |             |
-> | `id`          | `desc`          | `asc`, `desc` |             |
+> | SortBy        | Default OrderBy | OrderBy       | Description                                                             |
+> | ------------- | --------------- | ------------- | ----------------------------------------------------------------------- |
+> | `submittedAt` | `desc`          | `asc`, `desc` | Sorts by the submittedAt field of the last comment made by a specialist |
+> | `validatedAt` | `desc`          | `asc`, `desc` | Sorts by the validatedAt field of the last comment made by a specialist |
+> | `publishedAt` | `desc`          | `asc`, `desc` | Sorts by the publishedAt field of the last comment made by a specialist |
+
+##### CommentSortBy options
+
+> | SortBy        | Default OrderBy | OrderBy       | Description                                              |
+> | ------------- | --------------- | ------------- | -------------------------------------------------------- |
+> | `submittedAt` | `desc`          | `asc`, `desc` | Sorts specialist comments field by the submittedAt field |
+> | `validatedAt` | `desc`          | `asc`, `desc` | Sorts specialist comments field by the validatedAt field |
+> | `publishedAt` | `desc`          | `asc`, `desc` | Sorts specialist comments field by the publishedAt field |
+> | `id`          | `desc`          | `asc`, `desc` | Sorts specialist comments field by the id field          |
 
 ##### Example cURL
 
@@ -536,6 +547,7 @@ Allows submission of specialist (consultee) comments
 > | name        | required | type   | default | options | description                                   |
 > | ----------- | -------- | ------ | ------- | ------- | --------------------------------------------- |
 > | `reference` |          | string |         |         | Application reference number eg `ABC-123-XYZ` |
+> | `id`        |          | number |         |         | Specialist id number eg `1`                   |
 
 ##### Responses
 
@@ -554,5 +566,4 @@ Allows submission of specialist (consultee) comments
 
 ## TODO
 
-- [ ] Define sorting applications by status: Most progressed to least progressed
 - [ ] What happens if priorApprovalRequired is requested for multiple application types - return error or only apply to the relevant application type?

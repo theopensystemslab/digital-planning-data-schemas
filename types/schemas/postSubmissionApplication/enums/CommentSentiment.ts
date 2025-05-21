@@ -37,5 +37,7 @@ type Objected = 'objected';
 /**
  * @id #SpecialistCommentSentiment
  * @description Types of comments
+ *
+ * @TODO this will move to something like these in the future "Amendments needed before recommendation can be made", "Accepted", "Accepted, subject to conditions", "Objected", "No comment"
  */
 export type SpecialistCommentSentiment = Approved | AmendmentsNeeded | Objected;
