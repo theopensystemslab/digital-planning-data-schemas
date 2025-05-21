@@ -7,7 +7,7 @@
       "status": "returned"
     },
     "localPlanningAuthority": {
-      "commentsAcceptedUntilDecision": false
+      "publicCommentsAcceptedUntilDecision": false
     },
     "submission": {
       "submittedAt": "2024-02-18T15:54:30.821Z"

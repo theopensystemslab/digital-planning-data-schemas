@@ -14949,13 +14949,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -15143,13 +15143,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -15337,13 +15337,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -15531,13 +15531,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -15725,13 +15725,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -15970,13 +15970,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -16164,13 +16164,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -16358,13 +16358,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -16609,13 +16609,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -16803,13 +16803,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -16997,13 +16997,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -17191,13 +17191,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -17385,13 +17385,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -17579,13 +17579,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -17773,13 +17773,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -17967,13 +17967,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -18269,13 +18269,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -18463,13 +18463,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -18657,13 +18657,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -18851,13 +18851,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -19045,13 +19045,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -19239,13 +19239,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -19433,13 +19433,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -19627,13 +19627,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -19821,13 +19821,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -20015,13 +20015,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -20209,13 +20209,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -20403,13 +20403,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -20597,13 +20597,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -20791,13 +20791,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -20985,13 +20985,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -21179,13 +21179,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -21373,13 +21373,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -21567,13 +21567,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -21761,13 +21761,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -21955,13 +21955,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -22149,13 +22149,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -22343,13 +22343,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -22537,13 +22537,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -22731,13 +22731,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -22925,13 +22925,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -23119,13 +23119,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -23313,13 +23313,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -23507,13 +23507,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -23701,13 +23701,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -23895,13 +23895,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -24089,13 +24089,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -24283,13 +24283,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -24477,13 +24477,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -24671,13 +24671,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -24865,13 +24865,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -25059,13 +25059,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -25253,13 +25253,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -25447,13 +25447,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -25641,13 +25641,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -25835,13 +25835,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -26029,13 +26029,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -26223,13 +26223,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -26417,13 +26417,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -26611,13 +26611,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -26805,13 +26805,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -26999,13 +26999,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -27193,13 +27193,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -27387,13 +27387,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -27581,13 +27581,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -27775,13 +27775,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -27969,13 +27969,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -28163,13 +28163,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -28357,13 +28357,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -28551,13 +28551,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -28745,13 +28745,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -28939,13 +28939,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -29133,13 +29133,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -29327,13 +29327,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -29521,13 +29521,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -29715,13 +29715,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -29909,13 +29909,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -30103,13 +30103,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -30297,13 +30297,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -30491,13 +30491,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -30685,13 +30685,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -30879,13 +30879,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -31073,13 +31073,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -31267,13 +31267,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -31461,13 +31461,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -31655,13 +31655,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -31849,13 +31849,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -32043,13 +32043,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -32237,13 +32237,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -32431,13 +32431,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -32625,13 +32625,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -32819,13 +32819,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -33013,13 +33013,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -33207,13 +33207,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },
@@ -33401,13 +33401,13 @@
             "localPlanningAuthority": {
               "additionalProperties": false,
               "properties": {
-                "commentsAcceptedUntilDecision": {
+                "publicCommentsAcceptedUntilDecision": {
                   "description": "When an application is validated it immediately goes into the consultation stage (if the application type allows it) However some LPA's allow comments until a decision regardles of whether there is a consultation stage This field allows LPA's to set this behaviour per application in their back office and not obstruct the planning process",
                   "type": "boolean"
                 }
               },
               "required": [
-                "commentsAcceptedUntilDecision"
+                "publicCommentsAcceptedUntilDecision"
               ],
               "type": "object"
             },

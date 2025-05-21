@@ -335,7 +335,7 @@ Rather than repeat the same data for the Post Submission version, I've attached 
 
 Comments can be submitted during the consultation period, which can bet determiend by looking in the `data.consultation.startDate` and `data.consultation.endDate` fields.
 
-Not all applications have a consultation period, however some LPA's accept comments until a decision is made. I have added the `data.localPlanningAuthority.commentsAcceptedUntilDecision` flag so that each LPA can set this and this flag will allow the DPR to determine whether or not comments can be sent - without complicating the application process
+Not all applications have a consultation period, however some LPA's accept comments until a decision is made. I have added the `data.localPlanningAuthority.publicCommentsAcceptedUntilDecision` flag so that each LPA can set this and this flag will allow the DPR to determine whether or not comments can be sent - without complicating the application process
 
 ## Technical Notes on the Implementation
 
@@ -351,7 +351,7 @@ One more diagram! [flow.png](flow.png)
 
 - ldc (Lawful Development Certificate)
   - doesn't have a consultation period
-  - Camden allow comments through localPlanningAuthority.commentsAcceptedUntilDecision
+  - Camden allow comments through localPlanningAuthority.publicCommentsAcceptedUntilDecision
 - pa (Prior Approval)
   - has an additional field in assessment to generate an alternate decision
 - pp

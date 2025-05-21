@@ -7,7 +7,7 @@
       "status": "undetermined"
     },
     "localPlanningAuthority": {
-      "commentsAcceptedUntilDecision": false
+      "publicCommentsAcceptedUntilDecision": false
     },
     "submission": {
       "submittedAt": "2024-02-18T15:54:30.821Z"
@@ -38,6 +38,7 @@
       },
       "comments": [
         {
+          "id": 1,
           "sentiment": "supportive",
           "comment": [
             {
@@ -93,6 +94,7 @@
           }
         },
         {
+          "id": 2,
           "sentiment": "objection",
           "comment": [
             {
@@ -148,6 +150,7 @@
           }
         },
         {
+          "id": 3,
           "sentiment": "objection",
           "comment": [
             {
@@ -203,6 +206,7 @@
           }
         },
         {
+          "id": 4,
           "sentiment": "neutral",
           "comment": [
             {
@@ -271,6 +275,7 @@
       },
       "comments": [
         {
+          "id": 1,
           "sentiment": "approved",
           "constraints": [
             {
@@ -301,6 +306,7 @@
           "respondedAt": "2025-01-27T12:50:49+0000",
           "responses": [
             {
+              "id": 1,
               "sentiment": "approved",
               "comment": "lalala",
               "author": {

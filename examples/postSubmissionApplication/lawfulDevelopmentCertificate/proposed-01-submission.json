@@ -7,7 +7,7 @@
       "status": "undetermined"
     },
     "localPlanningAuthority": {
-      "commentsAcceptedUntilDecision": true
+      "publicCommentsAcceptedUntilDecision": true
     },
     "submission": {
       "submittedAt": "2024-02-18T15:54:30.821Z"

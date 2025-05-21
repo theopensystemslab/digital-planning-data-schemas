@@ -20,7 +20,7 @@ export const priorApprovalLargerExtensionPostSubmission: PostSubmissionApplicati
         status: 'returned',
       },
       localPlanningAuthority: {
-        commentsAcceptedUntilDecision: false,
+        publicCommentsAcceptedUntilDecision: false,
       },
       submission: {
         submittedAt: realisticDates.submission.submittedAt.toISOString(),

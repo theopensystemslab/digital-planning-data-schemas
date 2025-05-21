@@ -20,7 +20,7 @@ export const lawfulDevelopmentCertificateProposedPostSubmission: PostSubmissionA
         status: 'returned',
       },
       localPlanningAuthority: {
-        commentsAcceptedUntilDecision: true,
+        publicCommentsAcceptedUntilDecision: true,
       },
       submission: {
         submittedAt: realisticDates.submission.submittedAt.toISOString(),
