@@ -1,16 +1,14 @@
-import {OSAddress, ProposedAddress} from '../../../shared/Addresses';
-import {GeoBoundary} from './../../../shared/Boundaries';
-import {Materials} from '../../../shared/Materials';
-import {Site} from '../../../shared/Sites';
-import {Region} from '../../../shared/Regions';
-import {URL} from '../../../shared/utils';
 import {
   PlanningConstraint,
   PlanningDesignation,
 } from '../../../shared/Constraints';
-import {PropertyType} from '../enums/PropertyTypes';
+import {Materials} from '../../../shared/Materials';
 import {ExistingLondonParking} from '../../../shared/Parking';
+import {Region} from '../../../shared/Regions';
+import {Site} from '../../../shared/Sites';
+import {URL} from '../../../shared/utils';
 import {ApplicationType} from '../enums/ApplicationType';
+import {PropertyType} from '../enums/PropertyTypes';
 
 export type PropertyBase = EnglandProperty | LondonProperty;
 
