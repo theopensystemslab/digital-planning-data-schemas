@@ -46,6 +46,7 @@
         "Tower Hamlets"
       ],
       "region": "London",
+      "ward": "Whitechapel",
       "type": "other.unsupported",
       "planning": {
         "sources": [],

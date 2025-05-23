@@ -52,6 +52,7 @@ export const planningPermissionMinor: Application = {
       },
       localAuthorityDistrict: ['Aylesbury Vale', 'Buckinghamshire'],
       region: 'South East',
+      ward: 'Winslow',
       type: {
         value: 'commercial.community.hall',
         description: 'Public / Village Hall / Other Community Facility',

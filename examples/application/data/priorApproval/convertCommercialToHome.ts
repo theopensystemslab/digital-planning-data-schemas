@@ -61,6 +61,7 @@ export const priorApprovalConvertCommercialToHome: Application = {
         postcode: 'SW9 0RE',
         singleLine: '87, HACKFORD ROAD, LONDON, LAMBETH, SW9 0RE',
       },
+      ward: 'Stockwell East',
       localAuthorityDistrict: ['Lambeth'],
       region: 'London',
       type: {

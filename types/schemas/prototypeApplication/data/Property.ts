@@ -1,6 +1,7 @@
 import {OSAddress, ProposedAddress} from '../../../shared/Addresses';
 import {GeoBoundary} from './../../../shared/Boundaries';
 import {Materials} from '../../../shared/Materials';
+import {Site} from '../../../shared/Sites';
 import {Region} from '../../../shared/Regions';
 import {URL} from '../../../shared/utils';
 import {
@@ -16,18 +17,8 @@ export type PropertyBase = EnglandProperty | LondonProperty;
 /**
  * @description Property details for sites anywhere in England
  */
-export interface EnglandProperty {
-  address: ProposedAddress | OSAddress;
-  region: Region;
-  /**
-   * @description Current and historic England Local Authority Districts that contain this address sourced from planning.data.gov.uk/dataset/local-authority-district
-   */
-  localAuthorityDistrict: string[];
+export type EnglandProperty = Site & {
   type: PropertyType;
-  /**
-   * @description HM Land Registry Index polygon for this property, commonly referred to as the blue-line or title boundary, sourced from planning.data.gov.uk/dataset/title-boundary
-   */
-  boundary?: GeoBoundary;
   /**
    * @description Planning constraints and policies that intersect with this site and may impact or restrict development
    */
@@ -44,12 +35,12 @@ export interface EnglandProperty {
       neighbourhood: PlanningConstraint[];
     };
   };
-}
+};
 
 /**
  * @description Property details for sites within the Greater London Authority (GLA) area
  */
-export interface LondonProperty extends EnglandProperty {
+export type LondonProperty = EnglandProperty & {
   region: Extract<Region, 'London'>;
   titleNumber?: {
     known: 'Yes' | 'No';
@@ -67,7 +58,7 @@ export interface LondonProperty extends EnglandProperty {
     number?: string;
   };
   parking?: ExistingLondonParking;
-}
+};
 
 export type PPProperty = PropertyBase & {
   materials?: Materials;

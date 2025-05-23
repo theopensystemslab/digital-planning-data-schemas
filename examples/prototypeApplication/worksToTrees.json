@@ -38,6 +38,7 @@
         "Southwark"
       ],
       "region": "London",
+      "ward": "Dulwich Wood",
       "type": "residential.dwelling.house.terrace",
       "planning": {
         "sources": [

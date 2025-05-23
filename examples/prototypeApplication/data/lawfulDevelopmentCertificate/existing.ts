@@ -268,6 +268,7 @@ export const lawfulDevelopmentCertificateExistingPrototype: PrototypeApplication
         },
         localAuthorityDistrict: ['Buckinghamshire', 'Chiltern'],
         region: 'South East',
+        ward: 'Great Missenden',
         type: 'residential.dwelling.house.detached',
       },
       proposal: {

@@ -6993,7 +6993,8 @@
             {
               "$ref": "#/definitions/OSAddress"
             }
-          ]
+          ],
+          "description": "The property address"
         },
         "boundary": {
           "$ref": "#/definitions/GeoBoundary",
@@ -7030,17 +7031,23 @@
           "type": "object"
         },
         "region": {
-          "$ref": "#/definitions/Region"
+          "$ref": "#/definitions/Region",
+          "description": "Name of the region sourced from planning.data.gov.uk/dataset/region; \"London\" is a proxy for the Greater London Authority"
         },
         "type": {
           "$ref": "#/definitions/PropertyType"
+        },
+        "ward": {
+          "description": "Name of the ward sourced from planning.data.gov.uk/dataset/ward",
+          "type": "string"
         }
       },
       "required": [
         "address",
-        "region",
         "localAuthorityDistrict",
-        "type"
+        "region",
+        "type",
+        "ward"
       ],
       "type": "object"
     },

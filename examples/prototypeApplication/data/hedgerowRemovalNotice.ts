@@ -49,6 +49,7 @@ export const hedgerowRemovalNoticePrototype: PrototypeApplication = {
       },
       localAuthorityDistrict: ['Barnet', 'Tower Hamlets'],
       region: 'London',
+      ward: 'Whitechapel',
       type: 'other.unsupported',
       planning: {
         sources: [],

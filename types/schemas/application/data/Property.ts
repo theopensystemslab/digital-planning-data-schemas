@@ -1,4 +1,3 @@
-import {OSAddress, ProposedAddress} from '../../../shared/Addresses';
 import {
   PlanningConstraint,
   PlanningDesignation,
@@ -6,9 +5,9 @@ import {
 import {Materials} from '../../../shared/Materials';
 import {ExistingLondonParking} from '../../../shared/Parking';
 import {Region} from '../../../shared/Regions';
+import {Site} from '../../../shared/Sites';
 import {Date, URL} from '../../../shared/utils';
 import {PropertyType} from '../enums/PropertyTypes';
-import {GeoBoundary} from './../../../shared/Boundaries';
 import {ResidentialUnits} from './shared';
 
 /**
@@ -21,18 +20,8 @@ export type Property = UKProperty | LondonProperty;
  * @id #UKProperty
  * @description Property details for sites anywhere in the UK
  */
-export interface UKProperty {
-  address: ProposedAddress | OSAddress;
-  region: Region;
-  /**
-   * @description Current and historic UK Local Authority Districts that contain this address sourced from planning.data.gov.uk/dataset/local-authority-district
-   */
-  localAuthorityDistrict: string[];
+export type UKProperty = Site & {
   type: PropertyType;
-  /**
-   * @description HM Land Registry Index polygon for this property, commonly referred to as the blue line boundary, sourced from planning.data.gov.uk/dataset/title-boundary
-   */
-  boundary?: GeoBoundary;
   /**
    * @description Planning constraints and policies that intersect with this site and may impact or restrict development
    */
@@ -77,13 +66,13 @@ export interface UKProperty {
     adjacent: boolean;
   };
   units?: ResidentialUnits;
-}
+};
 
 /**
  * @id #LondonProperty
  * @description Property details for sites within the Greater London Authority (GLA) area
  */
-export interface LondonProperty extends UKProperty {
+export type LondonProperty = UKProperty & {
   region: Extract<Region, 'London'>;
   titleNumber?: {
     known: 'Yes' | 'No';
@@ -117,4 +106,4 @@ export interface LondonProperty extends UKProperty {
     status: 'occupied' | 'partVacant' | 'vacant';
   };
   parking?: ExistingLondonParking;
-}
+};
