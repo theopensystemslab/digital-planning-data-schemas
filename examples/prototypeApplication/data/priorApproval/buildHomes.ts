@@ -40,6 +40,7 @@ export const priorApprovalBuildHomesPrototype: PrototypeApplication = {
       },
       localAuthorityDistrict: ['Buckinghamshire', 'South Bucks'],
       region: 'South East',
+      ward: 'Beaconsfield',
       type: 'commercial.office',
       planning: {
         sources: [

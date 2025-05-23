@@ -38,6 +38,7 @@ export const priorApprovalExtendUniversityPrototype: PrototypeApplication = {
         postcode: 'N6 6NP',
         singleLine: '31, HIGHGATE WEST HILL, LONDON, CAMDEN, N6 6NP',
       },
+      ward: 'Highgate',
       localAuthorityDistrict: ['Camden'],
       region: 'London',
       type: 'commercial.education.university',

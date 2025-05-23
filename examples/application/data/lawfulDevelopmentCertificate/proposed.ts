@@ -71,6 +71,7 @@ export const lawfulDevelopmentCertificateProposed: Application = {
         town: 'BEACONSFIELD',
         postcode: 'HP9 2LX',
       },
+      ward: 'Beaconsfield',
       boundary: {
         site: {
           type: 'Feature',

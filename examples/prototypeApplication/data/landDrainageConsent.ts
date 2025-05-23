@@ -86,6 +86,7 @@ export const landDrainageConsentPrototype: PrototypeApplication = {
       },
       localAuthorityDistrict: ['Medway'],
       region: 'South East',
+      ward: 'Rochester West & Borstal',
       type: 'object.monument.ruin',
       planning: {
         sources: [

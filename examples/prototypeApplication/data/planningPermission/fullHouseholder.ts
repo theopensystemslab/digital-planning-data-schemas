@@ -95,6 +95,7 @@ export const planningPermissionFullHouseholderPrototype: PrototypeApplication =
           town: 'LONDON',
           postcode: 'SW9 9RZ',
         },
+        ward: 'Brixton North',
         boundary: {
           site: {
             type: 'Feature',

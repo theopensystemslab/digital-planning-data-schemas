@@ -42,6 +42,7 @@ export const priorApprovalSolarPanels: Application = {
         singleLine:
           'INTERNATIONAL SHAKESPEARE GLOBE CENTRE LTD, SHAKESPEARE GLOBE THEATRE, 21, NEW GLOBE WALK, LONDON, SOUTHWARK, SE1 9DT',
       },
+      ward: 'Borough & Bankside',
       localAuthorityDistrict: ['Southwark'],
       region: 'London',
       type: {

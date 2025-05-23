@@ -40,6 +40,7 @@ export const priorApprovalBuildHomes: Application = {
         postcode: 'HP9 2LX',
         singleLine: '7, BLYTON CLOSE, BEACONSFIELD, BUCKINGHAMSHIRE, HP9 2LX',
       },
+      ward: 'Beaconsfield',
       localAuthorityDistrict: ['Buckinghamshire', 'South Bucks'],
       region: 'South East',
       type: {

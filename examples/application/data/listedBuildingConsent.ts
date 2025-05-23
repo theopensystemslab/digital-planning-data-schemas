@@ -78,6 +78,7 @@ export const listedBuildingConsent: Application = {
         postcode: 'NW3 1PA',
         singleLine: '50, DOWNSHIRE HILL, LONDON, CAMDEN, NW3 1PA',
       },
+      ward: 'Hampstead Town',
       localAuthorityDistrict: ['Camden'],
       region: 'London',
       type: {

@@ -45,6 +45,7 @@ export const complianceConfirmationPrototype: PrototypeApplication = {
       },
       localAuthorityDistrict: ['Lambeth'],
       region: 'London',
+      ward: 'Clapham Town',
       type: 'residential.dwelling.house.terrace',
       boundary: {
         site: {

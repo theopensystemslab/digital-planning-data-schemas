@@ -40,6 +40,7 @@ export const priorApprovalLargerExtension: Application = {
         postcode: 'CR8 2DL',
         singleLine: '32 ST JAMES ROAD, PURLEY, CROYDON, CR8 2DL',
       },
+      ward: 'Purley & Woodcote',
       localAuthorityDistrict: ['Croydon'],
       region: 'London',
       type: {
