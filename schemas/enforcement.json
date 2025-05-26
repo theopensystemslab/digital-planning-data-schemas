@@ -1,0 +1,2792 @@
+{
+  "$id": "@next",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "definitions": {
+    "Address": {
+      "additionalProperties": false,
+      "description": "Address information for a person associated with this application not at the site address",
+      "properties": {
+        "country": {
+          "type": "string"
+        },
+        "county": {
+          "type": "string"
+        },
+        "line1": {
+          "type": "string"
+        },
+        "line2": {
+          "type": "string"
+        },
+        "postcode": {
+          "type": "string"
+        },
+        "town": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "line1",
+        "town",
+        "postcode"
+      ],
+      "title": "Contact address",
+      "type": "object"
+    },
+    "Area": {
+      "$id": "#Area",
+      "additionalProperties": false,
+      "properties": {
+        "hectares": {
+          "type": "number"
+        },
+        "squareMetres": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "squareMetres"
+      ],
+      "type": "object"
+    },
+    "BBox": {
+      "anyOf": [
+        {
+          "items": {
+            "type": "number"
+          },
+          "maxItems": 4,
+          "minItems": 4,
+          "type": "array"
+        },
+        {
+          "items": {
+            "type": "number"
+          },
+          "maxItems": 6,
+          "minItems": 6,
+          "type": "array"
+        }
+      ],
+      "description": "Bounding box https://tools.ietf.org/html/rfc7946#section-5"
+    },
+    "CalculateMetadata": {
+      "$id": "#CalculateMetadata",
+      "additionalProperties": false,
+      "description": "Metadata associated with PlanX Calculate components used to determine fees throughout a service",
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "policyRefs": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "text": {
+                "type": "string"
+              },
+              "url": {
+                "$ref": "#/definitions/URL"
+              }
+            },
+            "required": [
+              "text"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "Complainant": {
+      "additionalProperties": false,
+      "description": "Contact details for the complainant filing the enforcement report",
+      "properties": {
+        "address": {
+          "$ref": "#/definitions/Address"
+        },
+        "company": {
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "name"
+          ],
+          "type": "object"
+        },
+        "email": {
+          "$ref": "#/definitions/Email"
+        },
+        "name": {
+          "additionalProperties": false,
+          "properties": {
+            "first": {
+              "type": "string"
+            },
+            "last": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "first",
+            "last"
+          ],
+          "type": "object"
+        },
+        "phone": {
+          "additionalProperties": false,
+          "properties": {
+            "primary": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "primary"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "address",
+        "email",
+        "name",
+        "phone"
+      ],
+      "title": "Complainant",
+      "type": "object"
+    },
+    "DateTime": {
+      "description": "Regex-based implementation of iso-date-time until available in ajv-formats@3.0.0",
+      "format": "date-time",
+      "pattern": "^([0-9]+)-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])[Tt]([01][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9]|60)(\\.[0-9]+)?(([Zz])|([\\+|\\-]([01][0-9]|2[0-3]):[0-5][0-9]))$",
+      "type": "string"
+    },
+    "Email": {
+      "format": "email",
+      "type": "string"
+    },
+    "Feature<Geometry,GeoJsonProperties>": {
+      "additionalProperties": false,
+      "description": "A feature object which contains a geometry and associated properties. https://tools.ietf.org/html/rfc7946#section-3.2",
+      "properties": {
+        "bbox": {
+          "$ref": "#/definitions/BBox",
+          "description": "Bounding box of the coordinate range of the object's Geometries, Features, or Feature Collections. The value of the bbox member is an array of length 2*n where n is the number of dimensions represented in the contained geometries, with all axes of the most southwesterly point followed by all axes of the more northeasterly point. The axes order of a bbox follows the axes order of geometries. https://tools.ietf.org/html/rfc7946#section-5"
+        },
+        "geometry": {
+          "$ref": "#/definitions/Geometry",
+          "description": "The feature's geometry"
+        },
+        "id": {
+          "description": "A value that uniquely identifies this feature in a https://tools.ietf.org/html/rfc7946#section-3.2.",
+          "type": [
+            "string",
+            "number"
+          ]
+        },
+        "properties": {
+          "$ref": "#/definitions/GeoJsonProperties",
+          "description": "Properties associated with this feature."
+        },
+        "type": {
+          "const": "Feature",
+          "description": "Specifies the type of GeoJSON object.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "geometry",
+        "properties",
+        "type"
+      ],
+      "type": "object"
+    },
+    "FeatureCollection<Geometry,GeoJsonProperties>": {
+      "additionalProperties": false,
+      "description": "A collection of feature objects.  https://tools.ietf.org/html/rfc7946#section-3.3",
+      "properties": {
+        "bbox": {
+          "$ref": "#/definitions/BBox",
+          "description": "Bounding box of the coordinate range of the object's Geometries, Features, or Feature Collections. The value of the bbox member is an array of length 2*n where n is the number of dimensions represented in the contained geometries, with all axes of the most southwesterly point followed by all axes of the more northeasterly point. The axes order of a bbox follows the axes order of geometries. https://tools.ietf.org/html/rfc7946#section-5"
+        },
+        "features": {
+          "items": {
+            "$ref": "#/definitions/Feature%3CGeometry%2CGeoJsonProperties%3E"
+          },
+          "type": "array"
+        },
+        "type": {
+          "const": "FeatureCollection",
+          "description": "Specifies the type of GeoJSON object.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "features",
+        "type"
+      ],
+      "type": "object"
+    },
+    "FeeExplanation": {
+      "$id": "#FeeExplanation",
+      "additionalProperties": false,
+      "description": "An explanation, including policy references, of the fees associated with this application",
+      "properties": {
+        "calculated": {
+          "items": {
+            "$ref": "#/definitions/CalculateMetadata"
+          },
+          "type": "array"
+        },
+        "category": {
+          "additionalProperties": false,
+          "description": "Breakdown of calculated fee by category of development, based on the scales defined in The Town and Country Planning Regulations https://www.legislation.gov.uk/uksi/2012/2920/schedule/1/part/2",
+          "properties": {
+            "eight": {
+              "items": {
+                "$ref": "#/definitions/CalculateMetadata"
+              },
+              "type": "array"
+            },
+            "eleven": {
+              "additionalProperties": false,
+              "properties": {
+                "one": {
+                  "items": {
+                    "$ref": "#/definitions/CalculateMetadata"
+                  },
+                  "type": "array"
+                }
+              },
+              "required": [
+                "one"
+              ],
+              "type": "object"
+            },
+            "five": {
+              "items": {
+                "$ref": "#/definitions/CalculateMetadata"
+              },
+              "type": "array"
+            },
+            "four": {
+              "items": {
+                "$ref": "#/definitions/CalculateMetadata"
+              },
+              "type": "array"
+            },
+            "fourteen": {
+              "items": {
+                "$ref": "#/definitions/CalculateMetadata"
+              },
+              "type": "array"
+            },
+            "nine": {
+              "items": {
+                "$ref": "#/definitions/CalculateMetadata"
+              },
+              "type": "array"
+            },
+            "one": {
+              "items": {
+                "$ref": "#/definitions/CalculateMetadata"
+              },
+              "type": "array"
+            },
+            "sixAndSeven": {
+              "items": {
+                "$ref": "#/definitions/CalculateMetadata"
+              },
+              "type": "array"
+            },
+            "ten": {
+              "items": {
+                "$ref": "#/definitions/CalculateMetadata"
+              },
+              "type": "array"
+            },
+            "thirteen": {
+              "items": {
+                "$ref": "#/definitions/CalculateMetadata"
+              },
+              "type": "array"
+            },
+            "three": {
+              "items": {
+                "$ref": "#/definitions/CalculateMetadata"
+              },
+              "type": "array"
+            },
+            "twelve": {
+              "additionalProperties": false,
+              "properties": {
+                "one": {
+                  "items": {
+                    "$ref": "#/definitions/CalculateMetadata"
+                  },
+                  "type": "array"
+                },
+                "two": {
+                  "items": {
+                    "$ref": "#/definitions/CalculateMetadata"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            },
+            "two": {
+              "items": {
+                "$ref": "#/definitions/CalculateMetadata"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        },
+        "payable": {
+          "items": {
+            "$ref": "#/definitions/CalculateMetadata"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "calculated",
+        "payable"
+      ],
+      "type": "object"
+    },
+    "FeeExplanationNotApplicable": {
+      "$id": "#FeeExplanationNotApplicable",
+      "additionalProperties": false,
+      "description": "An indicator that an application fee does not apply to this application type or journey, therefore there is not an explanation of how it was calculated",
+      "properties": {
+        "notApplicable": {
+          "const": true,
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "notApplicable"
+      ],
+      "type": "object"
+    },
+    "File": {
+      "$id": "#File",
+      "additionalProperties": false,
+      "description": "File uploaded and labeled by the user to support the application",
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "type": {
+          "items": {
+            "$ref": "#/definitions/FileType"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "name",
+        "type"
+      ],
+      "type": "object"
+    },
+    "FileType": {
+      "$id": "#FileType",
+      "anyOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Details of impact on access, roads, and rights of way",
+              "type": "string"
+            },
+            "value": {
+              "const": "accessRoadsRightsOfWayDetails",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Affordable housing statement",
+              "type": "string"
+            },
+            "value": {
+              "const": "affordableHousingStatement",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Arboriculturist report",
+              "type": "string"
+            },
+            "value": {
+              "const": "arboriculturistReport",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Bank statement",
+              "type": "string"
+            },
+            "value": {
+              "const": "bankStatement",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Basement impact statement",
+              "type": "string"
+            },
+            "value": {
+              "const": "basementImpactStatement",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Bio-aerosol assessment",
+              "type": "string"
+            },
+            "value": {
+              "const": "bioaerosolAssessment",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Birdstrike risk management plan",
+              "type": "string"
+            },
+            "value": {
+              "const": "birdstrikeRiskManagementPlan",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Borehole or trial pit analysis",
+              "type": "string"
+            },
+            "value": {
+              "const": "boreholeOrTrialPitAnalysis",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Building control certificate",
+              "type": "string"
+            },
+            "value": {
+              "const": "buildingControlCertificate",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Structural or building condition survey",
+              "type": "string"
+            },
+            "value": {
+              "const": "conditionSurvey",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Construction invoice",
+              "type": "string"
+            },
+            "value": {
+              "const": "constructionInvoice",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Contamination report",
+              "type": "string"
+            },
+            "value": {
+              "const": "contaminationReport",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Council tax bill",
+              "type": "string"
+            },
+            "value": {
+              "const": "councilTaxBill",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Crime prevention strategy",
+              "type": "string"
+            },
+            "value": {
+              "const": "crimePreventionStrategy",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Design and Access Statement",
+              "type": "string"
+            },
+            "value": {
+              "const": "designAndAccessStatement",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Evidence for application fee exemption - disability",
+              "type": "string"
+            },
+            "value": {
+              "const": "disabilityExemptionEvidence",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Ecology report",
+              "type": "string"
+            },
+            "value": {
+              "const": "ecologyReport",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Elevations - existing",
+              "type": "string"
+            },
+            "value": {
+              "const": "elevations.existing",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Elevations - proposed",
+              "type": "string"
+            },
+            "value": {
+              "const": "elevations.proposed",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Scheme for mitigation and monitoring of emissions (dust, odour and vibrations)",
+              "type": "string"
+            },
+            "value": {
+              "const": "emissionsMitigationAndMonitoringScheme",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Energy statement",
+              "type": "string"
+            },
+            "value": {
+              "const": "energyStatement",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Environmental Impact Assessment (EIA)",
+              "type": "string"
+            },
+            "value": {
+              "const": "environmentalImpactAssessment",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "External materials details",
+              "type": "string"
+            },
+            "value": {
+              "const": "externalMaterialsDetails",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Fire safety report",
+              "type": "string"
+            },
+            "value": {
+              "const": "fireSafetyReport",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Flood risk assessment (FRA)",
+              "type": "string"
+            },
+            "value": {
+              "const": "floodRiskAssessment",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Floor plan - existing",
+              "type": "string"
+            },
+            "value": {
+              "const": "floorPlan.existing",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Floor plan - proposed",
+              "type": "string"
+            },
+            "value": {
+              "const": "floorPlan.proposed",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Foul drainage assessment",
+              "type": "string"
+            },
+            "value": {
+              "const": "foulDrainageAssessment",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Geodiversity assessment",
+              "type": "string"
+            },
+            "value": {
+              "const": "geodiversityAssessment",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Plans showing the stretches of hedgerows to be removed",
+              "type": "string"
+            },
+            "value": {
+              "const": "hedgerowsInformation",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Evidence of the date of planting of the removed hedgerows",
+              "type": "string"
+            },
+            "value": {
+              "const": "hedgerowsInformation.plantingDate",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Heritage Statement",
+              "type": "string"
+            },
+            "value": {
+              "const": "heritageStatement",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Hydrological and hydrogeological assessment",
+              "type": "string"
+            },
+            "value": {
+              "const": "hydrologicalAssessment",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Hydrology report",
+              "type": "string"
+            },
+            "value": {
+              "const": "hydrologyReport",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Internal elevations",
+              "type": "string"
+            },
+            "value": {
+              "const": "internalElevations",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Internal sections",
+              "type": "string"
+            },
+            "value": {
+              "const": "internalSections",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Joiner's report",
+              "type": "string"
+            },
+            "value": {
+              "const": "joinersReport",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Joinery section report",
+              "type": "string"
+            },
+            "value": {
+              "const": "joinerySections",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Land contamination assessment",
+              "type": "string"
+            },
+            "value": {
+              "const": "landContaminationAssessment",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Landscape and visual impact assessment (LVIA)",
+              "type": "string"
+            },
+            "value": {
+              "const": "landscapeAndVisualImpactAssessment",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Landscape strategy or landscape plan",
+              "type": "string"
+            },
+            "value": {
+              "const": "landscapeStrategy",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Lighting assessment",
+              "type": "string"
+            },
+            "value": {
+              "const": "lightingAssessment",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Details of litter, vermin and bird control",
+              "type": "string"
+            },
+            "value": {
+              "const": "litterVerminAndBirdControlDetails",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Location plan",
+              "type": "string"
+            },
+            "value": {
+              "const": "locationPlan",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Method statement",
+              "type": "string"
+            },
+            "value": {
+              "const": "methodStatement",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Minerals and waste assessment",
+              "type": "string"
+            },
+            "value": {
+              "const": "mineralsAndWasteAssessment",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Information the authority considers necessary for the application",
+              "type": "string"
+            },
+            "value": {
+              "const": "necessaryInformation",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "New dwellings schedule",
+              "type": "string"
+            },
+            "value": {
+              "const": "newDwellingsSchedule",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Noise assessment",
+              "type": "string"
+            },
+            "value": {
+              "const": "noiseAssessment",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Open space assessment",
+              "type": "string"
+            },
+            "value": {
+              "const": "openSpaceAssessment",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Other - document",
+              "type": "string"
+            },
+            "value": {
+              "const": "otherDocument",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Other - drawing",
+              "type": "string"
+            },
+            "value": {
+              "const": "otherDrawing",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Other - evidence or correspondence",
+              "type": "string"
+            },
+            "value": {
+              "const": "otherEvidence",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Other - supporting document",
+              "type": "string"
+            },
+            "value": {
+              "const": "otherSupporting",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Parking plan",
+              "type": "string"
+            },
+            "value": {
+              "const": "parkingPlan",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Photographs - existing",
+              "type": "string"
+            },
+            "value": {
+              "const": "photographs.existing",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Photographs - proposed",
+              "type": "string"
+            },
+            "value": {
+              "const": "photographs.proposed",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Planning statement",
+              "type": "string"
+            },
+            "value": {
+              "const": "planningStatement",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Recyclable waste storage details",
+              "type": "string"
+            },
+            "value": {
+              "const": "recycleWasteStorageDetails",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Information the applicant considers relevant to the application",
+              "type": "string"
+            },
+            "value": {
+              "const": "relevantInformation",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Residential units details",
+              "type": "string"
+            },
+            "value": {
+              "const": "residentialUnitsDetails",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Roof plan - existing",
+              "type": "string"
+            },
+            "value": {
+              "const": "roofPlan.existing",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Roof plan - proposed",
+              "type": "string"
+            },
+            "value": {
+              "const": "roofPlan.proposed",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Sections - existing",
+              "type": "string"
+            },
+            "value": {
+              "const": "sections.existing",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Sections - proposed",
+              "type": "string"
+            },
+            "value": {
+              "const": "sections.proposed",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Site plan - existing",
+              "type": "string"
+            },
+            "value": {
+              "const": "sitePlan.existing",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Site plan - proposed",
+              "type": "string"
+            },
+            "value": {
+              "const": "sitePlan.proposed",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Sketch plan",
+              "type": "string"
+            },
+            "value": {
+              "const": "sketchPlan",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Statement of community involvement",
+              "type": "string"
+            },
+            "value": {
+              "const": "statementOfCommunityInvolvement",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Statutory declaration",
+              "type": "string"
+            },
+            "value": {
+              "const": "statutoryDeclaration",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Details of storage treatment or disposal of waste",
+              "type": "string"
+            },
+            "value": {
+              "const": "storageTreatmentAndWasteDisposalDetails",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Street scene drawing",
+              "type": "string"
+            },
+            "value": {
+              "const": "streetScene",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Subsidence report",
+              "type": "string"
+            },
+            "value": {
+              "const": "subsidenceReport",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Sunlight and daylight report",
+              "type": "string"
+            },
+            "value": {
+              "const": "sunlightAndDaylightReport",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Sustainability statement",
+              "type": "string"
+            },
+            "value": {
+              "const": "sustainabilityStatement",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Technical evidence",
+              "type": "string"
+            },
+            "value": {
+              "const": "technicalEvidence",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Technical specification",
+              "type": "string"
+            },
+            "value": {
+              "const": "technicalSpecification",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Tenancy agreement",
+              "type": "string"
+            },
+            "value": {
+              "const": "tenancyAgreement",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Tenancy invoice",
+              "type": "string"
+            },
+            "value": {
+              "const": "tenancyInvoice",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Town centre uses - Impact assessment",
+              "type": "string"
+            },
+            "value": {
+              "const": "townCentreImpactAssessment",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Town centre uses - Sequential assessment",
+              "type": "string"
+            },
+            "value": {
+              "const": "townCentreSequentialAssessment",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Transport assessment",
+              "type": "string"
+            },
+            "value": {
+              "const": "transportAssessment",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Travel plan",
+              "type": "string"
+            },
+            "value": {
+              "const": "travelPlan",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Location of trees and hedges",
+              "type": "string"
+            },
+            "value": {
+              "const": "treeAndHedgeLocation",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Removed or pruned trees and hedges",
+              "type": "string"
+            },
+            "value": {
+              "const": "treeAndHedgeRemovedOrPruned",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Tree canopy calculator",
+              "type": "string"
+            },
+            "value": {
+              "const": "treeCanopyCalculator",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Tree condition report",
+              "type": "string"
+            },
+            "value": {
+              "const": "treeConditionReport",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Trees report",
+              "type": "string"
+            },
+            "value": {
+              "const": "treesReport",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Tree survey",
+              "type": "string"
+            },
+            "value": {
+              "const": "treeSurvey",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Unit plan - existing",
+              "type": "string"
+            },
+            "value": {
+              "const": "unitPlan.existing",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Unit plan - proposed",
+              "type": "string"
+            },
+            "value": {
+              "const": "unitPlan.proposed",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Use plan - existing",
+              "type": "string"
+            },
+            "value": {
+              "const": "usePlan.existing",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Use plan - proposed",
+              "type": "string"
+            },
+            "value": {
+              "const": "usePlan.proposed",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Utility bill",
+              "type": "string"
+            },
+            "value": {
+              "const": "utilityBill",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Utilities statement",
+              "type": "string"
+            },
+            "value": {
+              "const": "utilitiesStatement",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Ventilation or extraction statement",
+              "type": "string"
+            },
+            "value": {
+              "const": "ventilationStatement",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Viability Appraisal",
+              "type": "string"
+            },
+            "value": {
+              "const": "viabilityAppraisal",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Visualisations",
+              "type": "string"
+            },
+            "value": {
+              "const": "visualisations",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Waste and recycling strategy",
+              "type": "string"
+            },
+            "value": {
+              "const": "wasteAndRecyclingStrategy",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Waste storage details",
+              "type": "string"
+            },
+            "value": {
+              "const": "wasteStorageDetails",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Water environment assessment",
+              "type": "string"
+            },
+            "value": {
+              "const": "waterEnvironmentAssessment",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        }
+      ],
+      "description": "Types of planning documents and drawings"
+    },
+    "GeoBoundary": {
+      "additionalProperties": false,
+      "properties": {
+        "area": {
+          "$ref": "#/definitions/Area"
+        },
+        "site": {
+          "$ref": "#/definitions/GeoJSON"
+        }
+      },
+      "required": [
+        "site",
+        "area"
+      ],
+      "type": "object"
+    },
+    "GeoJSON": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/Geometry"
+        },
+        {
+          "$ref": "#/definitions/Feature%3CGeometry%2CGeoJsonProperties%3E"
+        },
+        {
+          "$ref": "#/definitions/FeatureCollection%3CGeometry%2CGeoJsonProperties%3E"
+        }
+      ],
+      "description": "Union of GeoJSON objects."
+    },
+    "GeoJsonProperties": {
+      "anyOf": [
+        {
+          "type": "object"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "Geometry": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/Point"
+        },
+        {
+          "$ref": "#/definitions/MultiPoint"
+        },
+        {
+          "$ref": "#/definitions/LineString"
+        },
+        {
+          "$ref": "#/definitions/MultiLineString"
+        },
+        {
+          "$ref": "#/definitions/Polygon"
+        },
+        {
+          "$ref": "#/definitions/MultiPolygon"
+        },
+        {
+          "$ref": "#/definitions/GeometryCollection"
+        }
+      ],
+      "description": "Geometry object. https://tools.ietf.org/html/rfc7946#section-3"
+    },
+    "GeometryCollection": {
+      "additionalProperties": false,
+      "description": "Geometry Collection https://tools.ietf.org/html/rfc7946#section-3.1.8",
+      "properties": {
+        "bbox": {
+          "$ref": "#/definitions/BBox",
+          "description": "Bounding box of the coordinate range of the object's Geometries, Features, or Feature Collections. The value of the bbox member is an array of length 2*n where n is the number of dimensions represented in the contained geometries, with all axes of the most southwesterly point followed by all axes of the more northeasterly point. The axes order of a bbox follows the axes order of geometries. https://tools.ietf.org/html/rfc7946#section-5"
+        },
+        "geometries": {
+          "items": {
+            "$ref": "#/definitions/Geometry"
+          },
+          "type": "array"
+        },
+        "type": {
+          "const": "GeometryCollection",
+          "description": "Specifies the type of GeoJSON object.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "geometries",
+        "type"
+      ],
+      "type": "object"
+    },
+    "LineString": {
+      "additionalProperties": false,
+      "description": "LineString geometry object. https://tools.ietf.org/html/rfc7946#section-3.1.4",
+      "properties": {
+        "bbox": {
+          "$ref": "#/definitions/BBox",
+          "description": "Bounding box of the coordinate range of the object's Geometries, Features, or Feature Collections. The value of the bbox member is an array of length 2*n where n is the number of dimensions represented in the contained geometries, with all axes of the most southwesterly point followed by all axes of the more northeasterly point. The axes order of a bbox follows the axes order of geometries. https://tools.ietf.org/html/rfc7946#section-5"
+        },
+        "coordinates": {
+          "items": {
+            "$ref": "#/definitions/Position"
+          },
+          "type": "array"
+        },
+        "type": {
+          "const": "LineString",
+          "description": "Specifies the type of GeoJSON object.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "coordinates",
+        "type"
+      ],
+      "type": "object"
+    },
+    "MultiLineString": {
+      "additionalProperties": false,
+      "description": "MultiLineString geometry object. https://tools.ietf.org/html/rfc7946#section-3.1.5",
+      "properties": {
+        "bbox": {
+          "$ref": "#/definitions/BBox",
+          "description": "Bounding box of the coordinate range of the object's Geometries, Features, or Feature Collections. The value of the bbox member is an array of length 2*n where n is the number of dimensions represented in the contained geometries, with all axes of the most southwesterly point followed by all axes of the more northeasterly point. The axes order of a bbox follows the axes order of geometries. https://tools.ietf.org/html/rfc7946#section-5"
+        },
+        "coordinates": {
+          "items": {
+            "items": {
+              "$ref": "#/definitions/Position"
+            },
+            "type": "array"
+          },
+          "type": "array"
+        },
+        "type": {
+          "const": "MultiLineString",
+          "description": "Specifies the type of GeoJSON object.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "coordinates",
+        "type"
+      ],
+      "type": "object"
+    },
+    "MultiPoint": {
+      "additionalProperties": false,
+      "description": "MultiPoint geometry object.  https://tools.ietf.org/html/rfc7946#section-3.1.3",
+      "properties": {
+        "bbox": {
+          "$ref": "#/definitions/BBox",
+          "description": "Bounding box of the coordinate range of the object's Geometries, Features, or Feature Collections. The value of the bbox member is an array of length 2*n where n is the number of dimensions represented in the contained geometries, with all axes of the most southwesterly point followed by all axes of the more northeasterly point. The axes order of a bbox follows the axes order of geometries. https://tools.ietf.org/html/rfc7946#section-5"
+        },
+        "coordinates": {
+          "items": {
+            "$ref": "#/definitions/Position"
+          },
+          "type": "array"
+        },
+        "type": {
+          "const": "MultiPoint",
+          "description": "Specifies the type of GeoJSON object.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "coordinates",
+        "type"
+      ],
+      "type": "object"
+    },
+    "MultiPolygon": {
+      "additionalProperties": false,
+      "description": "MultiPolygon geometry object. https://tools.ietf.org/html/rfc7946#section-3.1.7",
+      "properties": {
+        "bbox": {
+          "$ref": "#/definitions/BBox",
+          "description": "Bounding box of the coordinate range of the object's Geometries, Features, or Feature Collections. The value of the bbox member is an array of length 2*n where n is the number of dimensions represented in the contained geometries, with all axes of the most southwesterly point followed by all axes of the more northeasterly point. The axes order of a bbox follows the axes order of geometries. https://tools.ietf.org/html/rfc7946#section-5"
+        },
+        "coordinates": {
+          "items": {
+            "items": {
+              "items": {
+                "$ref": "#/definitions/Position"
+              },
+              "type": "array"
+            },
+            "type": "array"
+          },
+          "type": "array"
+        },
+        "type": {
+          "const": "MultiPolygon",
+          "description": "Specifies the type of GeoJSON object.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "coordinates",
+        "type"
+      ],
+      "type": "object"
+    },
+    "PlanXMetadata": {
+      "$id": "#PlanXMetadata",
+      "additionalProperties": false,
+      "description": "Additional metadata associated with applications submitted via PlanX",
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/UUID",
+          "description": "Unique identifier for this application"
+        },
+        "organisation": {
+          "description": "The reference code for the organisation responsible for processing this planning application, sourced from planning.data.gov.uk/dataset/local-authority",
+          "maxLength": 4,
+          "type": "string"
+        },
+        "schema": {
+          "$ref": "#/definitions/URL"
+        },
+        "service": {
+          "additionalProperties": false,
+          "properties": {
+            "fee": {
+              "anyOf": [
+                {
+                  "$ref": "#/definitions/FeeExplanation"
+                },
+                {
+                  "$ref": "#/definitions/FeeExplanationNotApplicable"
+                }
+              ]
+            },
+            "files": {
+              "$ref": "#/definitions/RequestedFiles"
+            },
+            "flowId": {
+              "$ref": "#/definitions/UUID"
+            },
+            "url": {
+              "$ref": "#/definitions/URL"
+            }
+          },
+          "required": [
+            "flowId",
+            "url",
+            "files",
+            "fee"
+          ],
+          "type": "object"
+        },
+        "source": {
+          "const": "PlanX",
+          "type": "string"
+        },
+        "submittedAt": {
+          "$ref": "#/definitions/DateTime"
+        }
+      },
+      "required": [
+        "id",
+        "organisation",
+        "schema",
+        "service",
+        "source",
+        "submittedAt"
+      ],
+      "type": "object"
+    },
+    "Point": {
+      "additionalProperties": false,
+      "description": "Point geometry object. https://tools.ietf.org/html/rfc7946#section-3.1.2",
+      "properties": {
+        "bbox": {
+          "$ref": "#/definitions/BBox",
+          "description": "Bounding box of the coordinate range of the object's Geometries, Features, or Feature Collections. The value of the bbox member is an array of length 2*n where n is the number of dimensions represented in the contained geometries, with all axes of the most southwesterly point followed by all axes of the more northeasterly point. The axes order of a bbox follows the axes order of geometries. https://tools.ietf.org/html/rfc7946#section-5"
+        },
+        "coordinates": {
+          "$ref": "#/definitions/Position"
+        },
+        "type": {
+          "const": "Point",
+          "description": "Specifies the type of GeoJSON object.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "coordinates",
+        "type"
+      ],
+      "type": "object"
+    },
+    "Polygon": {
+      "additionalProperties": false,
+      "description": "Polygon geometry object. https://tools.ietf.org/html/rfc7946#section-3.1.6",
+      "properties": {
+        "bbox": {
+          "$ref": "#/definitions/BBox",
+          "description": "Bounding box of the coordinate range of the object's Geometries, Features, or Feature Collections. The value of the bbox member is an array of length 2*n where n is the number of dimensions represented in the contained geometries, with all axes of the most southwesterly point followed by all axes of the more northeasterly point. The axes order of a bbox follows the axes order of geometries. https://tools.ietf.org/html/rfc7946#section-5"
+        },
+        "coordinates": {
+          "items": {
+            "items": {
+              "$ref": "#/definitions/Position"
+            },
+            "type": "array"
+          },
+          "type": "array"
+        },
+        "type": {
+          "const": "Polygon",
+          "description": "Specifies the type of GeoJSON object.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "coordinates",
+        "type"
+      ],
+      "type": "object"
+    },
+    "Position": {
+      "description": "A Position is an array of coordinates. https://tools.ietf.org/html/rfc7946#section-3.1.1 Array should contain between two and three elements. The previous GeoJSON specification allowed more elements (e.g., which could be used to represent M values), but the current specification only allows X, Y, and (optionally) Z to be defined.\n\nNote: the type will not be narrowed down to `[number, number] | [number, number, number]` due to marginal benefits and the large impact of breaking change.\n\nSee previous discussions on the type narrowing:\n-  {@link  https://github.com/DefinitelyTyped/DefinitelyTyped/pull/21590 Nov 2017 } \n-  {@link  https://github.com/DefinitelyTyped/DefinitelyTyped/discussions/67773 Dec 2023 } \n-  {@link  https://github.com/DefinitelyTyped/DefinitelyTyped/discussions/71441 Dec 2024 } \n\nOne can use a  {@link  https://www.typescriptlang.org/docs/handbook/2/narrowing.html#using-type-predicates user-defined type guard that returns a type predicate }  to determine if a position is a 2D or 3D position.",
+      "items": {
+        "type": "number"
+      },
+      "type": "array"
+    },
+    "QuestionAndResponses": {
+      "additionalProperties": false,
+      "properties": {
+        "metadata": {
+          "$ref": "#/definitions/QuestionMetaData"
+        },
+        "question": {
+          "type": "string"
+        },
+        "responses": {
+          "anyOf": [
+            {
+              "items": {
+                "$ref": "#/definitions/Response"
+              },
+              "type": "array"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "question",
+        "responses"
+      ],
+      "type": "object"
+    },
+    "QuestionMetaData": {
+      "additionalProperties": false,
+      "properties": {
+        "autoAnswered": {
+          "type": "boolean"
+        },
+        "policyRefs": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "text": {
+                "type": "string"
+              },
+              "url": {
+                "$ref": "#/definitions/URL"
+              }
+            },
+            "required": [
+              "text"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "sectionName": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "RequestedFiles": {
+      "$id": "#RequestedFiles",
+      "additionalProperties": false,
+      "description": "File types requested by this service. Schema[\"files\"] will be a subset of this list based on the user's journey through the service",
+      "properties": {
+        "optional": {
+          "items": {
+            "$ref": "#/definitions/FileType"
+          },
+          "type": "array"
+        },
+        "recommended": {
+          "items": {
+            "$ref": "#/definitions/FileType"
+          },
+          "type": "array"
+        },
+        "required": {
+          "items": {
+            "$ref": "#/definitions/FileType"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "required",
+        "recommended",
+        "optional"
+      ],
+      "type": "object"
+    },
+    "Response": {
+      "additionalProperties": false,
+      "properties": {
+        "metadata": {
+          "$ref": "#/definitions/ResponseMetaData"
+        },
+        "value": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "value"
+      ],
+      "type": "object"
+    },
+    "ResponseMetaData": {
+      "additionalProperties": false,
+      "properties": {
+        "flags": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "options": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "items": {
+                "$ref": "#/definitions/Response"
+              },
+              "type": "array"
+            }
+          ]
+        }
+      },
+      "type": "object"
+    },
+    "Responses": {
+      "$id": "#Responses",
+      "description": "The ordered list of questions, answers, and their metadata for the application",
+      "items": {
+        "$ref": "#/definitions/QuestionAndResponses"
+      },
+      "type": "array"
+    },
+    "URL": {
+      "format": "uri",
+      "pattern": "^https?://",
+      "type": "string"
+    },
+    "UUID": {
+      "format": "uuid",
+      "type": "string"
+    }
+  },
+  "description": "The root specification for an enforcement report in England generated by a digital planning service",
+  "properties": {
+    "data": {
+      "additionalProperties": false,
+      "properties": {
+        "application": {
+          "additionalProperties": false,
+          "properties": {
+            "type": {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Report a planning breach",
+                  "type": "string"
+                },
+                "value": {
+                  "const": "breach",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "value",
+                "description"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "type"
+          ],
+          "type": "object"
+        },
+        "complainant": {
+          "$ref": "#/definitions/Complainant"
+        },
+        "property": {
+          "additionalProperties": false,
+          "type": "object"
+        },
+        "proposal": {
+          "additionalProperties": false,
+          "properties": {
+            "boundary": {
+              "$ref": "#/definitions/GeoBoundary"
+            }
+          },
+          "required": [
+            "boundary"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "application",
+        "complainant",
+        "property",
+        "proposal"
+      ],
+      "type": "object"
+    },
+    "files": {
+      "items": {
+        "$ref": "#/definitions/File"
+      },
+      "type": "array"
+    },
+    "metadata": {
+      "$ref": "#/definitions/PlanXMetadata"
+    },
+    "responses": {
+      "$ref": "#/definitions/Responses"
+    }
+  },
+  "required": [
+    "data",
+    "responses",
+    "metadata"
+  ],
+  "title": "Enforcement",
+  "type": "object"
+}
