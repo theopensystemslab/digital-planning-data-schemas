@@ -3532,14 +3532,15 @@
             {
               "$ref": "#/definitions/OSAddress"
             }
-          ]
+          ],
+          "description": "The property address"
         },
         "boundary": {
           "$ref": "#/definitions/GeoBoundary",
-          "description": "HM Land Registry Index polygon for this property, commonly referred to as the blue-line or title boundary, sourced from planning.data.gov.uk/dataset/title-boundary"
+          "description": "HM Land Registry Index polygon for this property, commonly referred to as the blue line boundary, sourced from planning.data.gov.uk/dataset/title-boundary"
         },
         "localAuthorityDistrict": {
-          "description": "Current and historic England Local Authority Districts that contain this address sourced from planning.data.gov.uk/dataset/local-authority-district",
+          "description": "Current and historic UK Local Authority Districts that contain this address sourced from planning.data.gov.uk/dataset/local-authority-district",
           "items": {
             "type": "string"
           },
@@ -3603,17 +3604,23 @@
           "type": "object"
         },
         "region": {
-          "$ref": "#/definitions/Region"
+          "$ref": "#/definitions/Region",
+          "description": "Name of the region sourced from planning.data.gov.uk/dataset/region; \"London\" is a proxy for the Greater London Authority"
         },
         "type": {
           "$ref": "#/definitions/PropertyType"
+        },
+        "ward": {
+          "description": "Name of the ward sourced from planning.data.gov.uk/dataset/ward",
+          "type": "string"
         }
       },
       "required": [
         "address",
-        "region",
         "localAuthorityDistrict",
-        "type"
+        "region",
+        "type",
+        "ward"
       ],
       "type": "object"
     },
@@ -6649,14 +6656,15 @@
             {
               "$ref": "#/definitions/OSAddress"
             }
-          ]
+          ],
+          "description": "The property address"
         },
         "boundary": {
           "$ref": "#/definitions/GeoBoundary",
-          "description": "HM Land Registry Index polygon for this property, commonly referred to as the blue-line or title boundary, sourced from planning.data.gov.uk/dataset/title-boundary"
+          "description": "HM Land Registry Index polygon for this property, commonly referred to as the blue line boundary, sourced from planning.data.gov.uk/dataset/title-boundary"
         },
         "localAuthorityDistrict": {
-          "description": "Current and historic England Local Authority Districts that contain this address sourced from planning.data.gov.uk/dataset/local-authority-district",
+          "description": "Current and historic UK Local Authority Districts that contain this address sourced from planning.data.gov.uk/dataset/local-authority-district",
           "items": {
             "type": "string"
           },
@@ -6723,8 +6731,8 @@
           "type": "object"
         },
         "region": {
-          "const": "London",
-          "type": "string"
+          "$ref": "#/definitions/Region",
+          "description": "Name of the region sourced from planning.data.gov.uk/dataset/region; \"London\" is a proxy for the Greater London Authority"
         },
         "titleNumber": {
           "additionalProperties": false,
@@ -6747,13 +6755,18 @@
         },
         "type": {
           "$ref": "#/definitions/PropertyType"
+        },
+        "ward": {
+          "description": "Name of the ward sourced from planning.data.gov.uk/dataset/ward",
+          "type": "string"
         }
       },
       "required": [
         "address",
         "localAuthorityDistrict",
         "region",
-        "type"
+        "type",
+        "ward"
       ],
       "type": "object"
     },
@@ -9266,14 +9279,15 @@
                 {
                   "$ref": "#/definitions/OSAddress"
                 }
-              ]
+              ],
+              "description": "The property address"
             },
             "boundary": {
               "$ref": "#/definitions/GeoBoundary",
-              "description": "HM Land Registry Index polygon for this property, commonly referred to as the blue-line or title boundary, sourced from planning.data.gov.uk/dataset/title-boundary"
+              "description": "HM Land Registry Index polygon for this property, commonly referred to as the blue line boundary, sourced from planning.data.gov.uk/dataset/title-boundary"
             },
             "localAuthorityDistrict": {
-              "description": "Current and historic England Local Authority Districts that contain this address sourced from planning.data.gov.uk/dataset/local-authority-district",
+              "description": "Current and historic UK Local Authority Districts that contain this address sourced from planning.data.gov.uk/dataset/local-authority-district",
               "items": {
                 "type": "string"
               },
@@ -9340,7 +9354,8 @@
               "type": "object"
             },
             "region": {
-              "$ref": "#/definitions/Region"
+              "$ref": "#/definitions/Region",
+              "description": "Name of the region sourced from planning.data.gov.uk/dataset/region; \"London\" is a proxy for the Greater London Authority"
             },
             "type": {
               "$ref": "#/definitions/PropertyType"
@@ -9356,13 +9371,18 @@
                 "description"
               ],
               "type": "object"
+            },
+            "ward": {
+              "description": "Name of the ward sourced from planning.data.gov.uk/dataset/ward",
+              "type": "string"
             }
           },
           "required": [
             "address",
             "localAuthorityDistrict",
             "region",
-            "type"
+            "type",
+            "ward"
           ],
           "type": "object"
         },
@@ -9399,14 +9419,15 @@
                 {
                   "$ref": "#/definitions/OSAddress"
                 }
-              ]
+              ],
+              "description": "The property address"
             },
             "boundary": {
               "$ref": "#/definitions/GeoBoundary",
-              "description": "HM Land Registry Index polygon for this property, commonly referred to as the blue-line or title boundary, sourced from planning.data.gov.uk/dataset/title-boundary"
+              "description": "HM Land Registry Index polygon for this property, commonly referred to as the blue line boundary, sourced from planning.data.gov.uk/dataset/title-boundary"
             },
             "localAuthorityDistrict": {
-              "description": "Current and historic England Local Authority Districts that contain this address sourced from planning.data.gov.uk/dataset/local-authority-district",
+              "description": "Current and historic UK Local Authority Districts that contain this address sourced from planning.data.gov.uk/dataset/local-authority-district",
               "items": {
                 "type": "string"
               },
@@ -9476,8 +9497,8 @@
               "type": "object"
             },
             "region": {
-              "const": "London",
-              "type": "string"
+              "$ref": "#/definitions/Region",
+              "description": "Name of the region sourced from planning.data.gov.uk/dataset/region; \"London\" is a proxy for the Greater London Authority"
             },
             "titleNumber": {
               "additionalProperties": false,
@@ -9512,13 +9533,18 @@
                 "description"
               ],
               "type": "object"
+            },
+            "ward": {
+              "description": "Name of the ward sourced from planning.data.gov.uk/dataset/ward",
+              "type": "string"
             }
           },
           "required": [
             "address",
             "localAuthorityDistrict",
             "region",
-            "type"
+            "type",
+            "ward"
           ],
           "type": "object"
         }

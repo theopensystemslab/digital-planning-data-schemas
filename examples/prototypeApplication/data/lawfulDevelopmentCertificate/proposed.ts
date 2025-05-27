@@ -69,6 +69,7 @@ export const lawfulDevelopmentCertificateProposedPrototype: PrototypeApplication
           town: 'BEACONSFIELD',
           postcode: 'HP9 2LX',
         },
+        ward: 'Beaconsfield',
         boundary: {
           site: {
             type: 'Feature',

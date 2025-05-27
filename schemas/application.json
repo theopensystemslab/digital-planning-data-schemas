@@ -6791,7 +6791,8 @@
             {
               "$ref": "#/definitions/OSAddress"
             }
-          ]
+          ],
+          "description": "The property address"
         },
         "boundary": {
           "$ref": "#/definitions/GeoBoundary",
@@ -6918,8 +6919,8 @@
           "type": "object"
         },
         "region": {
-          "const": "London",
-          "type": "string"
+          "$ref": "#/definitions/Region",
+          "description": "Name of the region sourced from planning.data.gov.uk/dataset/region; \"London\" is a proxy for the Greater London Authority"
         },
         "socialLandlord": {
           "anyOf": [
@@ -7022,13 +7023,18 @@
             "description"
           ],
           "type": "object"
+        },
+        "ward": {
+          "description": "Name of the ward sourced from planning.data.gov.uk/dataset/ward",
+          "type": "string"
         }
       },
       "required": [
         "address",
         "localAuthorityDistrict",
         "region",
-        "type"
+        "type",
+        "ward"
       ],
       "type": "object"
     },
@@ -30200,7 +30206,8 @@
             {
               "$ref": "#/definitions/OSAddress"
             }
-          ]
+          ],
+          "description": "The property address"
         },
         "boundary": {
           "$ref": "#/definitions/GeoBoundary",
@@ -30288,7 +30295,8 @@
           "type": "object"
         },
         "region": {
-          "$ref": "#/definitions/Region"
+          "$ref": "#/definitions/Region",
+          "description": "Name of the region sourced from planning.data.gov.uk/dataset/region; \"London\" is a proxy for the Greater London Authority"
         },
         "trees": {
           "additionalProperties": false,
@@ -30337,13 +30345,18 @@
             "description"
           ],
           "type": "object"
+        },
+        "ward": {
+          "description": "Name of the ward sourced from planning.data.gov.uk/dataset/ward",
+          "type": "string"
         }
       },
       "required": [
         "address",
-        "region",
         "localAuthorityDistrict",
-        "type"
+        "region",
+        "type",
+        "ward"
       ],
       "type": "object"
     },

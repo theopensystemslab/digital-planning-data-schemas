@@ -153,6 +153,7 @@ export const lawfulDevelopmentCertificateExisting: Application = {
         town: 'GREAT MISSENDEN',
         postcode: 'HP16 0BP',
       },
+      ward: 'Great Missenden',
       boundary: {
         site: {
           type: 'Feature',

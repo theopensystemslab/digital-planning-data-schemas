@@ -87,6 +87,7 @@ export const landDrainageConsent: Application = {
         postcode: 'ME1 1SW',
         singleLine: 'ROCHESTER CASTLE, CASTLE HILL, ROCHESTER, MEDWAY, ME1 1SW',
       },
+      ward: 'Rochester West & Borstal',
       localAuthorityDistrict: ['Medway'],
       region: 'South East',
       type: {

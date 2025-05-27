@@ -40,6 +40,7 @@ export const priorApprovalLargerExtensionPrototype: PrototypeApplication = {
       },
       localAuthorityDistrict: ['Croydon'],
       region: 'London',
+      ward: 'Purley & Woodcote',
       type: 'residential.dwelling.house.detached',
       planning: {
         sources: [

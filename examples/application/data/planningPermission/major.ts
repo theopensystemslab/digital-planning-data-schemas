@@ -84,6 +84,7 @@ export const planningPermissionMajor: Application = {
         title: 'House McHouseface Housing',
         source: 'Proposed by applicant',
       },
+      ward: 'Beaconsfield',
       localAuthorityDistrict: ['Buckinghamshire', 'South Bucks'],
       region: 'South East',
       type: {

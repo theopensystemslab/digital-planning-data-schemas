@@ -43,6 +43,7 @@ export const preApplication: PreApplication = {
         postcode: 'DN9 3HW',
         singleLine: '75, MAIN STREET, AUCKLEY, DONCASTER, DN9 3HW',
       },
+      ward: 'Finningley',
       localAuthorityDistrict: ['Doncaster'],
       region: 'Yorkshire and The Humber',
       type: {
