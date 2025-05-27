@@ -50,6 +50,7 @@ export const planningPermissionMinorPrototype: PrototypeApplication = {
         singleLine:
           'WHADDON JUBILEE HALL, STOCK LANE, WHADDON, BUCKINGHAMSHIRE, MK17 0LS',
       },
+      ward: 'Winslow',
       localAuthorityDistrict: ['Aylesbury Vale', 'Buckinghamshire'],
       region: 'South East',
       type: 'commercial.community.hall',

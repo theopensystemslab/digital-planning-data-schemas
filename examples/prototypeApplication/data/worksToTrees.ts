@@ -40,6 +40,7 @@ export const worksToTreesPrototype: PrototypeApplication = {
       },
       localAuthorityDistrict: ['Southwark'],
       region: 'London',
+      ward: 'Dulwich Wood',
       type: 'residential.dwelling.house.terrace',
       planning: {
         sources: [

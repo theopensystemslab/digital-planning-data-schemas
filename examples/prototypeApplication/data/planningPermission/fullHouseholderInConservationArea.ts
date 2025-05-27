@@ -95,6 +95,7 @@ export const planningPermissionFullHouseholderInConservationAreaPrototype: Proto
           town: 'LONDON',
           postcode: 'SE22 8UR',
         },
+        ward: 'Dulwich Village',
         boundary: {
           site: {
             type: 'Feature',

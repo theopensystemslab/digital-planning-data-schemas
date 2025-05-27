@@ -45,6 +45,7 @@ export const advertConsentPrototype: PrototypeApplication = {
       },
       localAuthorityDistrict: ['Lambeth', 'Islington'],
       region: 'London',
+      ward: "St Peter's & Canalside",
       type: 'residential.dwelling.house.terrace',
     },
     application: {
