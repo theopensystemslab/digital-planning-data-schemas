@@ -1,6 +1,10 @@
 import {GeoBoundary} from '../../shared/Boundaries';
 import {PlanXMetadata} from '../../shared/Metadata';
 import {Responses} from '../../shared/Responses';
+import {Site} from '../../shared/Sites';
+import {Date} from '../../shared/utils';
+import {ProjectType} from '../application/enums/ProjectTypes';
+import {PropertyType} from '../application/enums/PropertyTypes';
 import {File} from '../application/File';
 import {Complainant} from './data/Complainant';
 
@@ -17,11 +21,24 @@ export interface Enforcement {
       };
     };
     complainant: Complainant;
-    property: {
-      // TODO - relies on PR #353
-    };
+    property: Site & {type: PropertyType};
     proposal: {
       boundary: GeoBoundary;
+      /**
+       * @description Start and end date of the enforcement breach if applicable; ongoing breaches will not have an end date
+       */
+      date?: {
+        start: Date;
+        end?: Date;
+      };
+      /**
+       * @description Description of the enforcement breach
+       */
+      description?: string;
+      /**
+       * @description Categorical type of enforcement breach
+       */
+      projectType?: ProjectType[];
     };
   };
   responses: Responses;
