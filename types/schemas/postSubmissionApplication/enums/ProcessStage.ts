@@ -40,3 +40,24 @@ export type ProcessStage =
   | assessment
   | appeal
   | highCourtAppeal;
+
+/**
+ * Export a record of process stages
+ * @example
+ * {
+ *   submission: 'Submission',
+ *   validation: 'Validation',
+ *   consultation: 'Consultation',
+ *   assessment: 'Assessment',
+ *   appeal: 'Appeal',
+ *   highCourtAppeal: 'High court appeal',
+ * }
+ */
+export const processStage: Record<ProcessStage, string> = {
+  submission: 'Submission',
+  validation: 'Validation',
+  consultation: 'Consultation',
+  assessment: 'Assessment',
+  appeal: 'Appeal',
+  highCourtAppeal: 'High court appeal',
+};

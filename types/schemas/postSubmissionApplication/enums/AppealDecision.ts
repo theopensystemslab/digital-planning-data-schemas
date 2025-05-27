@@ -1,20 +1,20 @@
 /**
- * @description allowed
+ * @description Allowed
  */
 type allowed = 'allowed';
 
 /**
- * @description dismissed
+ * @description Dismissed
  */
 type dismissed = 'dismissed';
 
 /**
- * @description splitDecision
+ * @description Split decision
  */
 type splitDecision = 'splitDecision';
 
 /**
- * @description withdrawn
+ * @description Withdrawn
  */
 type withdrawn = 'withdrawn';
 
@@ -23,3 +23,20 @@ type withdrawn = 'withdrawn';
  * @description Types of comments
  */
 export type AppealDecision = allowed | dismissed | splitDecision | withdrawn;
+
+/**
+ * Export a record of appeal decisions
+ * @example
+ * {
+ *   allowed: 'Allowed',
+ *   dismissed: 'Dismissed',
+ *   splitDecision: 'Split decision',
+ *   withdrawn: 'Withdrawn',
+ * }
+ */
+export const appealDecision: Record<AppealDecision, string> = {
+  allowed: 'Allowed',
+  dismissed: 'Dismissed',
+  splitDecision: 'Split decision',
+  withdrawn: 'Withdrawn',
+};

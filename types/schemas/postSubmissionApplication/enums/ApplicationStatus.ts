@@ -31,3 +31,20 @@ export type ApplicationStatus =
   | withdrawn
   | determined
   | undetermined;
+
+/**
+ * Export a record of application statuses
+ * @example
+ * {
+ *   returned: 'Returned',
+ *   withdrawn: 'Withdrawn',
+ *   determined: 'Determined',
+ *   undetermined: 'Undetermined',
+ * }
+ */
+export const applicationStatus: Record<ApplicationStatus, string> = {
+  returned: 'Returned',
+  withdrawn: 'Withdrawn',
+  determined: 'Determined',
+  undetermined: 'Undetermined',
+};

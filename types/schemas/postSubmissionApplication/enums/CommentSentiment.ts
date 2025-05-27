@@ -20,6 +20,21 @@ type Supportive = 'supportive';
 export type CommentSentiment = Objection | Neutral | Supportive;
 
 /**
+ * Export a record of comment sentiments
+ * @example
+ * {
+ *   objection: 'Objection',
+ *   neutral: 'Neutral',
+ *   supportive: 'Supportive',
+ * }
+ */
+export const commentSentiment: Record<CommentSentiment, string> = {
+  objection: 'Objection',
+  neutral: 'Neutral',
+  supportive: 'Supportive',
+};
+
+/**
  * @description Approved
  */
 type Approved = 'approved';
@@ -41,3 +56,21 @@ type Objected = 'objected';
  * @TODO this will move to something like these in the future "Amendments needed before recommendation can be made", "Accepted", "Accepted, subject to conditions", "Objected", "No comment"
  */
 export type SpecialistCommentSentiment = Approved | AmendmentsNeeded | Objected;
+
+/**
+ * Export a record of specialist comment sentiments
+ * @example
+ * {
+ *   approved: 'Approved',
+ *   amendmentsNeeded: 'Amendments needed',
+ *   objected: 'Objected',
+ * }
+ */
+export const specialistCommentSentiment: Record<
+  SpecialistCommentSentiment,
+  string
+> = {
+  approved: 'Approved',
+  amendmentsNeeded: 'Amendments needed',
+  objected: 'Objected',
+};

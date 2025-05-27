@@ -856,22 +856,22 @@
       "anyOf": [
         {
           "const": "allowed",
-          "description": "allowed",
+          "description": "Allowed",
           "type": "string"
         },
         {
           "const": "dismissed",
-          "description": "dismissed",
+          "description": "Dismissed",
           "type": "string"
         },
         {
           "const": "splitDecision",
-          "description": "splitDecision",
+          "description": "Split decision",
           "type": "string"
         },
         {
           "const": "withdrawn",
-          "description": "withdrawn",
+          "description": "Withdrawn",
           "type": "string"
         }
       ],
