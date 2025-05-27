@@ -19272,6 +19272,7 @@
         },
         "property": {
           "additionalProperties": false,
+          "description": "Details of the site",
           "properties": {
             "address": {
               "anyOf": [
@@ -19316,11 +19317,13 @@
           ],
           "type": "object"
         },
-        "proposal": {
+        "report": {
           "additionalProperties": false,
+          "description": "Details of the enforcement report",
           "properties": {
             "boundary": {
-              "$ref": "#/definitions/GeoBoundary"
+              "$ref": "#/definitions/GeoBoundary",
+              "description": "Boundary of the enforcement breach"
             },
             "date": {
               "additionalProperties": false,
@@ -19360,7 +19363,7 @@
         "application",
         "complainant",
         "property",
-        "proposal"
+        "report"
       ],
       "type": "object"
     },

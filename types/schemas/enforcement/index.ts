@@ -21,8 +21,17 @@ export interface Enforcement {
       };
     };
     complainant: Complainant;
+    /**
+     * @description Details of the site
+     */
     property: Site & {type: PropertyType};
-    proposal: {
+    /**
+     * @description Details of the enforcement report
+     */
+    report: {
+      /**
+       * @description Boundary of the enforcement breach
+       */
       boundary: GeoBoundary;
       /**
        * @description Start and end date of the enforcement breach if applicable; ongoing breaches will not have an end date

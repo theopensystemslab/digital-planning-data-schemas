@@ -105,7 +105,7 @@ export const reportAPlanningBreach: Enforcement = {
         description: 'Report a planning breach',
       },
     },
-    proposal: {
+    report: {
       boundary: {
         site: {
           type: 'Feature',
