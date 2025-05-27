@@ -1,6 +1,6 @@
 import {PostSubmissionApplication} from '../../../../types/schemas/postSubmissionApplication';
 import {planningPermissionFullHouseholderPrototype} from '../../../prototypeApplication/data/planningPermission/fullHouseholder';
-import {generateRealisticDates} from '../../../../types/schemas/postSubmissionApplication/lib/realisticDates';
+import {generateRealisticDates} from '../../../../types/schemas/postSubmissionApplication/utils/realisticDates';
 
 const version = process.env['VERSION'] || '@next';
 

@@ -1,11 +1,11 @@
 import {PostSubmissionApplication} from '../../../../types/schemas/postSubmissionApplication';
 import {lawfulDevelopmentCertificateProposedPrototype} from '../../../prototypeApplication/data/lawfulDevelopmentCertificate/proposed';
-import {generateRealisticDates} from '../../../../types/schemas/postSubmissionApplication/lib/realisticDates';
+import {generateRealisticDates} from '../../../../types/schemas/postSubmissionApplication/utils/realisticDates';
 import {
   publicComments,
   specialistComments,
-} from '../../../../types/schemas/postSubmissionApplication/lib/exampleComments';
-import {formatDateToYYYYMMDD} from '../../../../types/schemas/postSubmissionApplication/lib/formatDates';
+} from '../../../../types/schemas/postSubmissionApplication/utils/exampleComments';
+import {formatDateToYYYYMMDD} from '../../../../types/schemas/postSubmissionApplication/utils/formatDates';
 
 const version = process.env['VERSION'] || '@next';
 

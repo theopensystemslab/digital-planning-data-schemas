@@ -1,6 +1,6 @@
 import {PostSubmissionApplication} from '../../../../types/schemas/postSubmissionApplication';
 import {priorApprovalLargerExtensionPrototype} from '../../../prototypeApplication/data/priorApproval/largerExtension';
-import {generateRealisticDates} from '../../../../types/schemas/postSubmissionApplication/lib/realisticDates';
+import {generateRealisticDates} from '../../../../types/schemas/postSubmissionApplication/utils/realisticDates';
 
 const version = process.env['VERSION'] || '@next';
 
