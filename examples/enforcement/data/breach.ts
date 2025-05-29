@@ -105,7 +105,7 @@ export const reportAPlanningBreach: Enforcement = {
         description: 'Report a planning breach',
       },
     },
-    proposal: {
+    report: {
       boundary: {
         site: {
           type: 'Feature',
@@ -135,6 +135,16 @@ export const reportAPlanningBreach: Enforcement = {
         area: {
           squareMetres: 309.97,
         },
+      },
+      description: 'Unauthorised erection of a library in the front garden',
+      projectType: [
+        {
+          value: 'outbuilding',
+          description: 'New or modified outbuilding (eg garage or shed)',
+        },
+      ],
+      date: {
+        start: '2024-12-25',
       },
     },
   },
@@ -210,7 +220,7 @@ export const reportAPlanningBreach: Enforcement = {
       question: 'Describe the work suspected to be a breach',
       responses: [
         {
-          value: 'Erection of a library in the rear garden',
+          value: 'Unathorised erection of a library in the front garden',
         },
       ],
       metadata: {},
