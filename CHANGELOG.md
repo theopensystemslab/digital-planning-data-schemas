@@ -9,6 +9,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 The minor version will be incremented upon a breaking change and the patch version will be
 incremented for features.
 
+## [0.7.5] - 2025-05-29
+
+### Added 
+- Adds "wards" to structured `property` data across all schemas, sourced from Planning Data ([#353](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/353))
+- Adds a work-in-progress `Enforcement` schema, including example payloads ([#354](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/354))
+
 ## [0.7.4] - 2025-04-28
 
 ### Added
