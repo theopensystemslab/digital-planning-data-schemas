@@ -3,10 +3,10 @@ import {PlanXMetadata} from '../../shared/Metadata';
 import {Responses} from '../../shared/Responses';
 import {Site} from '../../shared/Sites';
 import {Date} from '../../shared/utils';
-import {ProjectType} from '../application/enums/ProjectTypes';
 import {PropertyType} from '../application/enums/PropertyTypes';
 import {File} from '../application/File';
 import {Complainant} from './data/Complainant';
+import {BreachType} from './enums/BreachTypes';
 
 /**
  * @title Enforcement
@@ -47,7 +47,7 @@ export interface Enforcement {
       /**
        * @description Categorical type of enforcement breach
        */
-      projectType?: ProjectType[];
+      projectType?: (BreachType | {value: string; description?: string})[];
     };
   };
   responses: Responses;
