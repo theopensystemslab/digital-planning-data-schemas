@@ -4,7 +4,66 @@
     "application": {
       "reference": "ABC-123-XYZ",
       "stage": "assessment",
-      "status": "undetermined"
+      "status": "undetermined",
+      "files": [
+        {
+          "id": 1,
+          "name": "location%20plan_proposed_01.jpg",
+          "association": "application",
+          "url": "https://api.editor.planx.dev/file/private/dfaz9qu5/location%20plan_proposed_01.jpg",
+          "type": [
+            "sitePlan.proposed"
+          ],
+          "metadata": {
+            "size": {
+              "bytes": 123456
+            },
+            "mimeType": "application/pdf",
+            "createdAt": "2024-02-18T15:54:30.821Z",
+            "submittedAt": "2024-02-18T15:54:30.821Z",
+            "validatedAt": "2024-02-19T15:54:31.021Z",
+            "publishedAt": "2024-02-19T15:54:31.221Z"
+          }
+        },
+        {
+          "id": 2,
+          "name": "elevations_existing_01.jpg",
+          "association": "application",
+          "url": "https://api.editor.planx.dev/file/private/avilhq1j/elevations_existing_01.jpg",
+          "type": [
+            "elevations.existing"
+          ],
+          "metadata": {
+            "size": {
+              "bytes": 123456
+            },
+            "mimeType": "application/pdf",
+            "createdAt": "2024-02-18T15:54:30.821Z",
+            "submittedAt": "2024-02-18T15:54:30.821Z",
+            "validatedAt": "2024-02-19T15:54:31.021Z",
+            "publishedAt": "2024-02-19T15:54:31.221Z"
+          }
+        },
+        {
+          "id": 3,
+          "name": "elevations_proposed_01.jpg",
+          "association": "application",
+          "url": "https://api.editor.planx.dev/file/private/tis6f8hh/elevations_proposed_01.jpg",
+          "type": [
+            "elevations.proposed"
+          ],
+          "metadata": {
+            "size": {
+              "bytes": 123456
+            },
+            "mimeType": "application/pdf",
+            "createdAt": "2024-02-18T15:54:30.821Z",
+            "submittedAt": "2024-02-18T15:54:30.821Z",
+            "validatedAt": "2024-02-19T15:54:31.021Z",
+            "publishedAt": "2024-02-19T15:54:31.221Z"
+          }
+        }
+      ]
     },
     "localPlanningAuthority": {
       "publicCommentsAcceptedUntilDecision": false

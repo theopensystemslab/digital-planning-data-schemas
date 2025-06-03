@@ -6,6 +6,7 @@ import {
   publicComments,
   specialistComments,
 } from '../../../../types/schemas/postSubmissionApplication/lib/exampleComments';
+import {ppApplicationDocuments} from '../../../../types/schemas/postSubmissionApplication/lib/exampleDocuments';
 
 const version = process.env['VERSION'] || '@next';
 
@@ -25,6 +26,11 @@ export const planningPermissionFullHouseholderPostSubmission: PostSubmissionAppl
         withdrawnAt: realisticDates.application.withdrawnAt.toISOString(),
         withdrawnReason:
           'The applicant has decided not to proceed with the application',
+        files: ppApplicationDocuments(
+          realisticDates.submission.submittedAt.toISOString(),
+          realisticDates.validation.validatedAt.toISOString(),
+          realisticDates.publishedAt.toISOString(),
+        ),
       },
       localPlanningAuthority: {
         publicCommentsAcceptedUntilDecision: false,

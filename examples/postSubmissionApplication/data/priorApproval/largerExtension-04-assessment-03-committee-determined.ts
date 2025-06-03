@@ -6,6 +6,7 @@ import {
   publicComments,
   specialistComments,
 } from '../../../../types/schemas/postSubmissionApplication/lib/exampleComments';
+import {paApplicationDocuments} from '../../../../types/schemas/postSubmissionApplication/lib/exampleDocuments';
 
 const version = process.env['VERSION'] || '@next';
 
@@ -23,6 +24,11 @@ export const priorApprovalLargerExtensionPostSubmission: PostSubmissionApplicati
         reference: 'ABC-123-XYZ',
         stage: 'assessment',
         status: 'determined',
+        files: paApplicationDocuments(
+          realisticDates.submission.submittedAt.toISOString(),
+          realisticDates.validation.validatedAt.toISOString(),
+          realisticDates.publishedAt.toISOString(),
+        ),
       },
       localPlanningAuthority: {
         publicCommentsAcceptedUntilDecision: false,

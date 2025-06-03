@@ -1,6 +1,7 @@
 import {PostSubmissionApplication} from '../../../../types/schemas/postSubmissionApplication';
 import {priorApprovalLargerExtensionPrototype} from '../../../prototypeApplication/data/priorApproval/largerExtension';
 import {generateRealisticDates} from '../../../../types/schemas/postSubmissionApplication/lib/realisticDates';
+import {paApplicationDocuments} from '../../../../types/schemas/postSubmissionApplication/lib/exampleDocuments';
 
 const version = process.env['VERSION'] || '@next';
 
@@ -18,6 +19,11 @@ export const priorApprovalLargerExtensionPostSubmission: PostSubmissionApplicati
         reference: 'ABC-123-XYZ',
         stage: 'validation',
         status: 'returned',
+        files: paApplicationDocuments(
+          realisticDates.submission.submittedAt.toISOString(),
+          realisticDates.validation.validatedAt.toISOString(),
+          realisticDates.publishedAt.toISOString(),
+        ),
       },
       localPlanningAuthority: {
         publicCommentsAcceptedUntilDecision: false,

@@ -4,7 +4,89 @@
     "application": {
       "reference": "ABC-123-XYZ",
       "stage": "appeal",
-      "status": "determined"
+      "status": "determined",
+      "files": [
+        {
+          "id": 1,
+          "name": "myPlans.pdf",
+          "association": "application",
+          "url": "https://api.editor.planx.dev/file/private/tbp4kiba/myPlans.pdf",
+          "type": [
+            "roofPlan.existing",
+            "roofPlan.proposed"
+          ],
+          "metadata": {
+            "size": {
+              "bytes": 123456
+            },
+            "mimeType": "application/pdf",
+            "createdAt": "2024-02-18T15:54:30.821Z",
+            "submittedAt": "2024-02-18T15:54:30.821Z",
+            "validatedAt": "2024-02-19T15:54:31.021Z",
+            "publishedAt": "2024-02-19T15:54:31.221Z"
+          }
+        },
+        {
+          "id": 2,
+          "name": "other.pdf",
+          "association": "application",
+          "url": "https://api.editor.planx.dev/file/private/5w5v8s8z/other.pdf",
+          "type": [
+            "sitePlan.existing",
+            "sitePlan.proposed"
+          ],
+          "metadata": {
+            "size": {
+              "bytes": 123456
+            },
+            "mimeType": "application/pdf",
+            "createdAt": "2024-02-18T15:54:30.821Z",
+            "submittedAt": "2024-02-18T15:54:30.821Z",
+            "validatedAt": "2024-02-19T15:54:31.021Z",
+            "publishedAt": "2024-02-19T15:54:31.221Z"
+          }
+        },
+        {
+          "id": 3,
+          "name": "elevations.pdf",
+          "association": "application",
+          "url": "https://api.editor.planx.dev/file/private/7nrefxnn/elevations.pdf",
+          "type": [
+            "elevations.existing",
+            "elevations.proposed"
+          ],
+          "metadata": {
+            "size": {
+              "bytes": 123456
+            },
+            "mimeType": "application/pdf",
+            "createdAt": "2024-02-18T15:54:30.821Z",
+            "submittedAt": "2024-02-18T15:54:30.821Z",
+            "validatedAt": "2024-02-19T15:54:31.021Z",
+            "publishedAt": "2024-02-19T15:54:31.221Z"
+          }
+        },
+        {
+          "id": 4,
+          "name": "floor_plans.pdf",
+          "association": "application",
+          "url": "https://api.editor.planx.dev/file/private/311w2id6/floor_plans.pdf",
+          "type": [
+            "floorPlan.existing",
+            "floorPlan.proposed"
+          ],
+          "metadata": {
+            "size": {
+              "bytes": 123456
+            },
+            "mimeType": "application/pdf",
+            "createdAt": "2024-02-18T15:54:30.821Z",
+            "submittedAt": "2024-02-18T15:54:30.821Z",
+            "validatedAt": "2024-02-19T15:54:31.021Z",
+            "publishedAt": "2024-02-19T15:54:31.221Z"
+          }
+        }
+      ]
     },
     "localPlanningAuthority": {
       "publicCommentsAcceptedUntilDecision": false

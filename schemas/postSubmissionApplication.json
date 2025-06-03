@@ -14865,7 +14865,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -14897,6 +14897,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -15059,7 +15066,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -15091,6 +15098,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -15253,7 +15267,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -15285,6 +15299,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -15447,7 +15468,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -15479,6 +15500,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -15641,7 +15669,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -15673,6 +15701,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -15886,7 +15921,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -15918,6 +15953,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -16080,7 +16122,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -16112,6 +16154,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -16274,7 +16323,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -16306,6 +16355,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -16438,53 +16494,106 @@
       "additionalProperties": false,
       "description": "File uploaded and labeled by the user to support the application",
       "properties": {
-        "description": {
+        "association": {
+          "description": "Which part of the application this file is associated with.",
+          "enum": [
+            "application",
+            "appeal",
+            "specialistComment",
+            "publicComment"
+          ],
           "type": "string"
+        },
+        "description": {
+          "description": "Optional description of the file",
+          "type": "string"
+        },
+        "id": {
+          "description": "Unique identifier for the file",
+          "type": "number"
         },
         "metadata": {
           "additionalProperties": false,
-          "description": "Metadata about the file",
+          "description": "Metadata for the file",
           "properties": {
-            "byteSize": {
-              "type": "number"
-            },
             "createdAt": {
-              "$ref": "#/definitions/DateTime"
+              "$ref": "#/definitions/DateTime",
+              "description": "Date and time when the file itself was created"
             },
             "mimeType": {
+              "description": "MIME type of the file, e.g. 'image/png', 'application/pdf'",
               "type": "string"
             },
             "publishedAt": {
-              "$ref": "#/definitions/DateTime"
+              "$ref": "#/definitions/DateTime",
+              "description": "Date and time when the file was published"
             },
-            "uploadedAt": {
-              "$ref": "#/definitions/DateTime"
+            "size": {
+              "additionalProperties": false,
+              "description": "file size in bytes, allows for more units in the future if needed",
+              "properties": {
+                "bytes": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "bytes"
+              ],
+              "type": "object"
+            },
+            "submittedAt": {
+              "$ref": "#/definitions/DateTime",
+              "description": "Date and time the file was received by the system or uploaded. This will usually match the submittedAt date of the application, but if the file is amended or uploaded later it will differ."
+            },
+            "validatedAt": {
+              "$ref": "#/definitions/DateTime",
+              "description": "Date and time when the file was validated"
             }
           },
           "required": [
-            "byteSize",
+            "size",
             "mimeType",
             "createdAt",
-            "uploadedAt",
-            "publishedAt"
+            "submittedAt"
           ],
           "type": "object"
         },
         "name": {
+          "description": "Filename or title of the file",
+          "type": "string"
+        },
+        "referencesInDocument": {
+          "description": "Optional list of document references in the file. Where documents contain multiple drawings, include the references here eg [\"25A-V2\", \"25B-V2\"]).",
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "thumbnailUrl": {
+          "description": "URL to a thumbnail image of the file, if applicable",
           "type": "string"
         },
         "type": {
+          "description": "What type of file this is. This is an array to allow for multiple types, as a file can be associated with more than one type.",
           "items": {
             "$ref": "#/definitions/PrototypeFileType"
           },
           "type": "array"
         },
         "url": {
+          "description": "URL where the file can be accessed",
           "type": "string"
+        },
+        "version": {
+          "description": "Version of the file, used to track changes or updates",
+          "type": "number"
         }
       },
       "required": [
+        "id",
         "name",
+        "association",
+        "type",
         "url",
         "metadata"
       ],
@@ -16525,7 +16634,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -16557,6 +16666,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -16719,7 +16835,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -16751,6 +16867,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -16913,7 +17036,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -16945,6 +17068,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -17107,7 +17237,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -17139,6 +17269,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -17301,7 +17438,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -17333,6 +17470,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -17495,7 +17639,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -17527,6 +17671,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -17689,7 +17840,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -17721,6 +17872,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -17883,7 +18041,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -17915,6 +18073,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -18185,7 +18350,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -18217,6 +18382,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -18379,7 +18551,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -18411,6 +18583,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -18573,7 +18752,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -18605,6 +18784,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -18767,7 +18953,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -18799,6 +18985,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -18961,7 +19154,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -18993,6 +19186,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -19155,7 +19355,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -19187,6 +19387,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -19349,7 +19556,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -19381,6 +19588,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -19543,7 +19757,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -19575,6 +19789,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -19737,7 +19958,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -19769,6 +19990,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -19931,7 +20159,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -19963,6 +20191,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -20125,7 +20360,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -20157,6 +20392,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -20319,7 +20561,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -20351,6 +20593,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -20513,7 +20762,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -20545,6 +20794,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -20707,7 +20963,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -20739,6 +20995,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -20901,7 +21164,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -20933,6 +21196,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -21095,7 +21365,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -21127,6 +21397,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -21289,7 +21566,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -21321,6 +21598,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -21483,7 +21767,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -21515,6 +21799,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -21677,7 +21968,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -21709,6 +22000,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -21871,7 +22169,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -21903,6 +22201,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -22065,7 +22370,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -22097,6 +22402,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -22259,7 +22571,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -22291,6 +22603,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -22453,7 +22772,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -22485,6 +22804,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -22647,7 +22973,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -22679,6 +23005,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -22841,7 +23174,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -22873,6 +23206,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -23035,7 +23375,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -23067,6 +23407,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -23229,7 +23576,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -23261,6 +23608,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -23423,7 +23777,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -23455,6 +23809,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -23617,7 +23978,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -23649,6 +24010,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -23811,7 +24179,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -23843,6 +24211,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -24005,7 +24380,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -24037,6 +24412,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -24199,7 +24581,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -24231,6 +24613,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -24393,7 +24782,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -24425,6 +24814,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -24587,7 +24983,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -24619,6 +25015,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -24781,7 +25184,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -24813,6 +25216,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -24975,7 +25385,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -25007,6 +25417,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -25169,7 +25586,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -25201,6 +25618,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -25363,7 +25787,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -25395,6 +25819,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -25557,7 +25988,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -25589,6 +26020,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -25751,7 +26189,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -25783,6 +26221,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -25945,7 +26390,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -25977,6 +26422,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -26139,7 +26591,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -26171,6 +26623,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -26333,7 +26792,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -26365,6 +26824,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -26527,7 +26993,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -26559,6 +27025,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -26721,7 +27194,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -26753,6 +27226,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -26915,7 +27395,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -26947,6 +27427,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -27109,7 +27596,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -27141,6 +27628,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -27303,7 +27797,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -27335,6 +27829,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -27497,7 +27998,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -27529,6 +28030,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -27691,7 +28199,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -27723,6 +28231,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -27885,7 +28400,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -27917,6 +28432,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -28079,7 +28601,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -28111,6 +28633,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -28273,7 +28802,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -28305,6 +28834,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -28467,7 +29003,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -28499,6 +29035,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -28661,7 +29204,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -28693,6 +29236,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -28855,7 +29405,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -28887,6 +29437,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -29049,7 +29606,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -29081,6 +29638,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -29243,7 +29807,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -29275,6 +29839,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -29437,7 +30008,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -29469,6 +30040,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -29631,7 +30209,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -29663,6 +30241,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -29825,7 +30410,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -29857,6 +30442,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -30019,7 +30611,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -30051,6 +30643,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -30213,7 +30812,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -30245,6 +30844,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -30407,7 +31013,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -30439,6 +31045,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -30601,7 +31214,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -30633,6 +31246,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -30795,7 +31415,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -30827,6 +31447,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -30989,7 +31616,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -31021,6 +31648,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -31183,7 +31817,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -31215,6 +31849,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -31377,7 +32018,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -31409,6 +32050,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -31571,7 +32219,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -31603,6 +32251,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -31765,7 +32420,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -31797,6 +32452,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -31959,7 +32621,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -31991,6 +32653,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -32153,7 +32822,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -32185,6 +32854,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -32347,7 +33023,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -32379,6 +33055,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -32541,7 +33224,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -32573,6 +33256,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -32735,7 +33425,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -32767,6 +33457,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -32929,7 +33626,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -32961,6 +33658,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -33123,7 +33827,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -33155,6 +33859,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"
@@ -33317,7 +34028,7 @@
                   "description": "YYYY-MM-DD Follows convention of if date in the name it is YYYY-MM-DD The date the planning inspectorate published their decision about the appeal. This decision is final."
                 },
                 "files": {
-                  "description": "Any files returned from PINS as part of the appeal process",
+                  "description": "Any files uploaded as part of the appeal process",
                   "items": {
                     "$ref": "#/definitions/PostSubmissionFile"
                   },
@@ -33349,6 +34060,13 @@
             "application": {
               "additionalProperties": false,
               "properties": {
+                "files": {
+                  "description": "Files associated with the application",
+                  "items": {
+                    "$ref": "#/definitions/PostSubmissionFile"
+                  },
+                  "type": "array"
+                },
                 "reference": {
                   "description": "Unique reference for the application from start to finish",
                   "type": "string"

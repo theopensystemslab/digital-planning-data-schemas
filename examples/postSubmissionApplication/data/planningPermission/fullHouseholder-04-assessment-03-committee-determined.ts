@@ -6,6 +6,7 @@ import {
   publicComments,
   specialistComments,
 } from '../../../../types/schemas/postSubmissionApplication/lib/exampleComments';
+import {ppApplicationDocuments} from '../../../../types/schemas/postSubmissionApplication/lib/exampleDocuments';
 
 const version = process.env['VERSION'] || '@next';
 
@@ -22,6 +23,11 @@ export const planningPermissionFullHouseholderPostSubmission: PostSubmissionAppl
         reference: 'ABC-123-XYZ',
         stage: 'assessment',
         status: 'determined',
+        files: ppApplicationDocuments(
+          realisticDates.submission.submittedAt.toISOString(),
+          realisticDates.validation.validatedAt.toISOString(),
+          realisticDates.publishedAt.toISOString(),
+        ),
       },
       localPlanningAuthority: {
         publicCommentsAcceptedUntilDecision: false,

@@ -1,6 +1,7 @@
 import {PostSubmissionApplication} from '../../../../types/schemas/postSubmissionApplication';
 import {planningPermissionFullHouseholderPrototype} from '../../../prototypeApplication/data/planningPermission/fullHouseholder';
 import {generateRealisticDates} from '../../../../types/schemas/postSubmissionApplication/lib/realisticDates';
+import {ppApplicationDocuments} from '../../../../types/schemas/postSubmissionApplication/lib/exampleDocuments';
 
 const version = process.env['VERSION'] || '@next';
 
@@ -17,6 +18,11 @@ export const planningPermissionFullHouseholderPostSubmission: PostSubmissionAppl
         reference: 'ABC-123-XYZ',
         stage: 'submission',
         status: 'undetermined',
+        files: ppApplicationDocuments(
+          realisticDates.submission.submittedAt.toISOString(),
+          realisticDates.validation.validatedAt.toISOString(),
+          realisticDates.publishedAt.toISOString(),
+        ),
       },
       localPlanningAuthority: {
         publicCommentsAcceptedUntilDecision: false,
