@@ -340,16 +340,16 @@ For listing, searching and filtering documents related to the specific public pl
 
 ##### Parameters
 
-> | name             | required | type                          | default     | options                      | description                                                                             |
-> | ---------------- | -------- | ----------------------------- | ----------- | ---------------------------- | --------------------------------------------------------------------------------------- |
-> | `resultsPerPage` |          | number                        | `10`        |                              | Control the number of results per page                                                  |
-> | `page`           |          | number                        | `0`         |                              | Current page (Zero indexed)                                                             |
-> | `sortBy`         |          | string                        | `createdAt` | See **SortBy options** below | Set the sort type for the results                                                       |
-> | `orderBy`        |          | string                        | `desc`      | See **SortBy options** below | Set the sort order for the results                                                      |
-> | `query`          |          | string                        |             |                              | Search records by `name`, `type`, `description`                                         |
-> | `name`           |          | string                        |             |                              | Search records by `name`                                                                |
-> | `type`           |          | FileType                      |             |                              | Supports `AND` and `OR` filtering see [Filter based searching](#filter-based-searching) |
-> | `association`    |          | PostSubmissionFileAssociation |             |                              | Supports `AND` and `OR` filtering see [Filter based searching](#filter-based-searching) |
+> | name             | required | type                          | default       | options                      | description                                                                             |
+> | ---------------- | -------- | ----------------------------- | ------------- | ---------------------------- | --------------------------------------------------------------------------------------- |
+> | `resultsPerPage` |          | number                        | `10`          |                              | Control the number of results per page                                                  |
+> | `page`           |          | number                        | `0`           |                              | Current page (Zero indexed)                                                             |
+> | `sortBy`         |          | string                        | `submittedAt` | See **SortBy options** below | Set the sort type for the results                                                       |
+> | `orderBy`        |          | string                        | `desc`        | See **SortBy options** below | Set the sort order for the results                                                      |
+> | `query`          |          | string                        |               |                              | Search records by `name`, `type`, `description`                                         |
+> | `name`           |          | string                        |               |                              | Search records by `name`                                                                |
+> | `type`           |          | FileType                      |               |                              | Supports `AND` and `OR` filtering see [Filter based searching](#filter-based-searching) |
+> | `association`    |          | PostSubmissionFileAssociation |               |                              | Supports `AND` and `OR` filtering see [Filter based searching](#filter-based-searching) |
 
 ##### Date Parameters
 
