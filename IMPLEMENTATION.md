@@ -340,15 +340,16 @@ For listing, searching and filtering documents related to the specific public pl
 
 ##### Parameters
 
-> | name             | required | type     | default     | options                      | description                                                                             |
-> | ---------------- | -------- | -------- | ----------- | ---------------------------- | --------------------------------------------------------------------------------------- |
-> | `resultsPerPage` |          | number   | `10`        |                              | Control the number of results per page                                                  |
-> | `page`           |          | number   | `0`         |                              | Current page (Zero indexed)                                                             |
-> | `sortBy`         |          | string   | `createdAt` | See **SortBy options** below | Set the sort type for the results                                                       |
-> | `orderBy`        |          | string   | `desc`      | See **SortBy options** below | Set the sort order for the results                                                      |
-> | `query`          |          | string   |             |                              | Search records by `name`, `type`, `description`                                         |
-> | `name`           |          | string   |             |                              | `name`                                                                                  |
-> | `type`           |          | FileType |             |                              | Supports `AND` and `OR` filtering see [Filter based searching](#filter-based-searching) |
+> | name             | required | type                          | default     | options                      | description                                                                             |
+> | ---------------- | -------- | ----------------------------- | ----------- | ---------------------------- | --------------------------------------------------------------------------------------- |
+> | `resultsPerPage` |          | number                        | `10`        |                              | Control the number of results per page                                                  |
+> | `page`           |          | number                        | `0`         |                              | Current page (Zero indexed)                                                             |
+> | `sortBy`         |          | string                        | `createdAt` | See **SortBy options** below | Set the sort type for the results                                                       |
+> | `orderBy`        |          | string                        | `desc`      | See **SortBy options** below | Set the sort order for the results                                                      |
+> | `query`          |          | string                        |             |                              | Search records by `name`, `type`, `description`                                         |
+> | `name`           |          | string                        |             |                              | Search records by `name`                                                                |
+> | `type`           |          | FileType                      |             |                              | Supports `AND` and `OR` filtering see [Filter based searching](#filter-based-searching) |
+> | `association`    |          | PostSubmissionFileAssociation |             |                              | Supports `AND` and `OR` filtering see [Filter based searching](#filter-based-searching) |
 
 ##### Date Parameters
 
@@ -358,8 +359,10 @@ For more information see [Date based searching](#date-based-searching)
 > | ----------------- | -------------------------- | -------- | ------- | ---------------------- |
 > | `createdAtFrom`   | Requires `createdAtTo`     | datetime |         | `metadata.createdAt`   |
 > | `createdAtTo`     | Requires `createdAtFrom`   | datetime |         | `metadata.createdAt`   |
-> | `uploadedAtFrom`  | Requires `uploadedAtTo`    | datetime |         | `metadata.uploadedAt`  |
-> | `uploadedAtTo`    | Requires `uploadedAtFrom`  | datetime |         | `metadata.uploadedAt`  |
+> | `submittedAtFrom` | Requires `submittedAtTo`   | datetime |         | `metadata.submittedAt` |
+> | `submittedAtTo`   | Requires `submittedAtFrom` | datetime |         | `metadata.submittedAt` |
+> | `validatedAtFrom` | Requires `validatedAtTo`   | datetime |         | `metadata.validatedAt` |
+> | `validatedAtTo`   | Requires `validatedAtFrom` | datetime |         | `metadata.validatedAt` |
 > | `publishedAtFrom` | Requires `publishedAtTo`   | datetime |         | `metadata.publishedAt` |
 > | `publishedAtTo`   | Requires `publishedAtFrom` | datetime |         | `metadata.publishedAt` |
 
@@ -375,7 +378,8 @@ For more information see [Date based searching](#date-based-searching)
 > | SortBy        | Default OrderBy | OrderBy       | Description |
 > | ------------- | --------------- | ------------- | ----------- |
 > | `createdAt`   | `desc`          | `asc`, `desc` |             |
-> | `uploadedAt`  | `desc`          | `asc`, `desc` |             |
+> | `submittedAt` | `desc`          | `asc`, `desc` |             |
+> | `validatedAt` | `desc`          | `asc`, `desc` |             |
 > | `publishedAt` | `desc`          | `asc`, `desc` |             |
 > | `name`        | `desc`          | `asc`, `desc` |             |
 > | `id`          | `desc`          | `asc`, `desc` |             |

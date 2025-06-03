@@ -16495,14 +16495,8 @@
       "description": "File uploaded and labeled by the user to support the application",
       "properties": {
         "association": {
-          "description": "Which part of the application this file is associated with.",
-          "enum": [
-            "application",
-            "appeal",
-            "specialistComment",
-            "publicComment"
-          ],
-          "type": "string"
+          "$ref": "#/definitions/PostSubmissionFileAssociation",
+          "description": "Which part of the application this file is associated with."
         },
         "description": {
           "description": "Optional description of the file",
@@ -16598,6 +16592,17 @@
         "metadata"
       ],
       "type": "object"
+    },
+    "PostSubmissionFileAssociation": {
+      "$id": "#PostSubmissionFileAssociation",
+      "description": "Type of file association for a post-submission file.",
+      "enum": [
+        "application",
+        "appeal",
+        "specialistComment",
+        "publicComment"
+      ],
+      "type": "string"
     },
     "PostSubmissionHazardousSubstanceConsent": {
       "additionalProperties": false,

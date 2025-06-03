@@ -1,5 +1,6 @@
 import {DateTime} from '../../../shared/utils';
 import {PrototypeFileType as FileType} from '../../prototypeApplication/enums/FileType';
+import {PostSubmissionFileAssociation} from '../enums/FileAssociation';
 
 /**
  * @id #PostSubmissionFile
@@ -17,7 +18,7 @@ export interface PostSubmissionFile {
   /**
    * Which part of the application this file is associated with.
    */
-  association: 'application' | 'appeal' | 'specialistComment' | 'publicComment';
+  association: PostSubmissionFileAssociation;
   /**
    * Version of the file, used to track changes or updates
    */
