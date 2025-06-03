@@ -2,12 +2,12 @@
 
 ## Overview
 
-The `PostsubmissionApplication` schema is designed to represent the state of an application after it has been submitted. It serves as a model for tracking an application's journey through the planning process.
+The `PostsubmissionApplication` schema is designed to represent the state of an application _after_ it has been submitted. It serves as a model for tracking an application's journey through the planning process.
 
 The schema builds on the `PrototypeApplication` schema adding additional fields that capture:
 
 - The current stage of the application in the planning process
-- A history of where the application has been within that process
+- A history of which stages the application has been through in the planning process
 - Additional documents added to the application after submission
 - Comments from members of the public and any specialists consulted
 
