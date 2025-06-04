@@ -12,5 +12,6 @@ export type Materials = {
   wall?: string;
   wallInternal?: string;
   window?: string;
+  windowsGetItHehe?: string;
   other?: string;
 };

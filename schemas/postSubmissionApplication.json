@@ -1040,22 +1040,22 @@
       "anyOf": [
         {
           "const": "returned",
-          "description": "returned\nAn application is only returned if it is invalid",
+          "description": "returned\r\nAn application is only returned if it is invalid",
           "type": "string"
         },
         {
           "const": "withdrawn",
-          "description": "withdrawn\nAn application can be withdrawn after submitssion and until a decision is made",
+          "description": "withdrawn\r\nAn application can be withdrawn after submitssion and until a decision is made",
           "type": "string"
         },
         {
           "const": "determined",
-          "description": "determined\nAn application is determined if it has a decision, even if appeal is pending",
+          "description": "determined\r\nAn application is determined if it has a decision, even if appeal is pending",
           "type": "string"
         },
         {
           "const": "undetermined",
-          "description": "undetermined\nAn application is undetermined if it has no decision yet, it can be in consultation or validation and be undetermined",
+          "description": "undetermined\r\nAn application is undetermined if it has no decision yet, it can be in consultation or validation and be undetermined",
           "type": "string"
         }
       ],
@@ -7744,6 +7744,9 @@
           "type": "string"
         },
         "window": {
+          "type": "string"
+        },
+        "windowsGetItHehe": {
           "type": "string"
         }
       },
@@ -14824,7 +14827,7 @@
       "type": "object"
     },
     "Position": {
-      "description": "A Position is an array of coordinates. https://tools.ietf.org/html/rfc7946#section-3.1.1 Array should contain between two and three elements. The previous GeoJSON specification allowed more elements (e.g., which could be used to represent M values), but the current specification only allows X, Y, and (optionally) Z to be defined.\n\nNote: the type will not be narrowed down to `[number, number] | [number, number, number]` due to marginal benefits and the large impact of breaking change.\n\nSee previous discussions on the type narrowing:\n-  {@link  https://github.com/DefinitelyTyped/DefinitelyTyped/pull/21590 Nov 2017 } \n-  {@link  https://github.com/DefinitelyTyped/DefinitelyTyped/discussions/67773 Dec 2023 } \n-  {@link  https://github.com/DefinitelyTyped/DefinitelyTyped/discussions/71441 Dec 2024 } \n\nOne can use a  {@link  https://www.typescriptlang.org/docs/handbook/2/narrowing.html#using-type-predicates user-defined type guard that returns a type predicate }  to determine if a position is a 2D or 3D position.",
+      "description": "A Position is an array of coordinates. https://tools.ietf.org/html/rfc7946#section-3.1.1 Array should contain between two and three elements. The previous GeoJSON specification allowed more elements (e.g., which could be used to represent M values), but the current specification only allows X, Y, and (optionally) Z to be defined.",
       "items": {
         "type": "number"
       },
@@ -37454,7 +37457,7 @@
         },
         {
           "const": "assessment",
-          "description": "Assessment\nAn application is in the assessment stage regardless of a decision being made",
+          "description": "Assessment\r\nAn application is in the assessment stage regardless of a decision being made",
           "type": "string"
         },
         {

@@ -1,0 +1,481 @@
+{
+  "applicationType": "advertConsent",
+  "data": {
+    "user": {
+      "role": "applicant"
+    },
+    "applicant": {
+      "name": {
+        "first": "Caroline",
+        "last": "Chisholm"
+      },
+      "email": "caroline@chisholm.com",
+      "phone": {
+        "primary": "7946 0000 "
+      },
+      "address": {
+        "sameAsSiteAddress": true
+      },
+      "siteContact": {
+        "role": "applicant"
+      },
+      "ownership": {
+        "interest": "owner"
+      }
+    },
+    "property": {
+      "address": {
+        "latitude": 51.5345753,
+        "longitude": -0.1030664,
+        "x": 531665,
+        "y": 183446,
+        "title": "32, CHARLTON PLACE, LONDON",
+        "source": "Ordnance Survey",
+        "uprn": "005300018831",
+        "usrn": "21604494",
+        "pao": "32",
+        "street": "CHARLTON PLACE",
+        "town": "LONDON",
+        "postcode": "N1 8AJ",
+        "singleLine": "32, CHARLTON PLACE, LONDON, ISLINGTON, N1 8AJ"
+      },
+      "localAuthorityDistrict": [
+        "Lambeth",
+        "Islington"
+      ],
+      "region": "London",
+      "ward": "St Peter's & Canalside",
+      "type": "residential.dwelling.house.terrace"
+    },
+    "application": {
+      "fee": {
+        "calculated": 165,
+        "payable": 165,
+        "exemption": {
+          "disability": false,
+          "resubmission": false
+        },
+        "reduction": {
+          "sports": false,
+          "parishCouncil": false,
+          "alternative": false
+        }
+      },
+      "declaration": {
+        "accurate": true,
+        "connection": {
+          "value": "none"
+        }
+      }
+    },
+    "proposal": {
+      "advertType": "onPremise",
+      "date": {
+        "start": "2025-03-20",
+        "completion": "2025-08-20"
+      },
+      "communityConsultation": true,
+      "advertisementDetails": {
+        "other": 1,
+        "fascia": 1,
+        "hoarding": 1,
+        "projecting": 1
+      },
+      "otherAdvertisements": true,
+      "existingAdvertRemovedOrReplaced": false,
+      "highwayProjection": false,
+      "visibility": {
+        "public": true
+      },
+      "boundary": {
+        "site": {
+          "type": "Feature",
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  -0.103119532150956,
+                  51.5345720056254
+                ],
+                [
+                  -0.103084555513111,
+                  51.5346355722643
+                ],
+                [
+                  -0.103028424790429,
+                  51.5346195952392
+                ],
+                [
+                  -0.103059552750763,
+                  51.534558608242
+                ],
+                [
+                  -0.103119532150956,
+                  51.5345720056254
+                ]
+              ]
+            ]
+          },
+          "properties": {
+            "label": "1",
+            "area.hectares": 0.003154,
+            "area.squareMetres": 31.54,
+            "planx_user_action": "Drew a custom boundary"
+          }
+        },
+        "area": {
+          "squareMetres": 31.54
+        }
+      }
+    }
+  },
+  "responses": [
+    {
+      "question": "Is the property in Lambeth?",
+      "responses": [
+        {
+          "value": "Yes"
+        }
+      ],
+      "metadata": {
+        "autoAnswered": true,
+        "sectionName": "The property"
+      }
+    },
+    {
+      "question": "What type of property is it?",
+      "responses": [
+        {
+          "value": "House"
+        }
+      ],
+      "metadata": {
+        "autoAnswered": true,
+        "sectionName": "The property"
+      }
+    },
+    {
+      "question": "What type of house is it?",
+      "responses": [
+        {
+          "value": "Terrace"
+        }
+      ],
+      "metadata": {
+        "autoAnswered": true,
+        "sectionName": "The property"
+      }
+    },
+    {
+      "question": "What best describes the advertisements you are applying for?",
+      "responses": [
+        {
+          "value": "Adverts relating to a business and situated on its premises"
+        }
+      ],
+      "metadata": {
+        "sectionName": "Your application"
+      }
+    },
+    {
+      "question": "Have you consulted your neighbours or the local community about the proposal?",
+      "responses": [
+        {
+          "value": "Yes"
+        }
+      ],
+      "metadata": {
+        "sectionName": "Your application"
+      }
+    },
+    {
+      "question": "How were the neighbours and the local community consulted?",
+      "responses": [
+        {
+          "value": "community meeting"
+        }
+      ],
+      "metadata": {
+        "sectionName": "Your application"
+      }
+    },
+    {
+      "question": "How many fascia signs are you applying for?",
+      "responses": [
+        {
+          "value": "1"
+        }
+      ],
+      "metadata": {
+        "sectionName": "Your application"
+      }
+    },
+    {
+      "question": "How many projecting or hanging signs are you applying for?",
+      "responses": [
+        {
+          "value": "1"
+        }
+      ],
+      "metadata": {
+        "sectionName": "Your application"
+      }
+    },
+    {
+      "question": "How many hoardings are you applying for?",
+      "responses": [
+        {
+          "value": "1"
+        }
+      ],
+      "metadata": {
+        "sectionName": "Your application"
+      }
+    },
+    {
+      "question": "How many other advertisements are you applying for?",
+      "responses": [
+        {
+          "value": "1"
+        }
+      ],
+      "metadata": {
+        "sectionName": "Your application"
+      }
+    },
+    {
+      "question": "Does the proposal include any other advertisements?",
+      "responses": [
+        {
+          "value": "Yes"
+        }
+      ],
+      "metadata": {
+        "autoAnswered": true,
+        "sectionName": "Your application"
+      }
+    },
+    {
+      "question": "Please describe the other advertisements",
+      "responses": [
+        {
+          "value": "All for the same business"
+        }
+      ],
+      "metadata": {
+        "sectionName": "Your application"
+      }
+    },
+    {
+      "question": "Is any of the advertisements you are applying for already in place?",
+      "responses": [
+        {
+          "value": "No"
+        }
+      ],
+      "metadata": {
+        "sectionName": "Your application"
+      }
+    },
+    {
+      "question": "Is an existing advertisement to be removed and replaced by an advertisement in this proposal?",
+      "responses": [
+        {
+          "value": "No"
+        }
+      ],
+      "metadata": {
+        "sectionName": "Your application"
+      }
+    },
+    {
+      "question": "Will any of the proposed advertisements project over a footpath or other public highway?",
+      "responses": [
+        {
+          "value": "No"
+        }
+      ],
+      "metadata": {
+        "sectionName": "Your application"
+      }
+    },
+    {
+      "question": "From what date are you seeking consent to display the advertisements?",
+      "responses": [
+        {
+          "value": "2025-03-20"
+        }
+      ],
+      "metadata": {
+        "sectionName": "Your application"
+      }
+    },
+    {
+      "question": "Until what date are you seeking consent to display the advertisements?",
+      "responses": [
+        {
+          "value": "2025-08-20"
+        }
+      ],
+      "metadata": {
+        "sectionName": "Your application"
+      }
+    },
+    {
+      "question": "Did you get any pre-application advice from the council before making this application?",
+      "responses": [
+        {
+          "value": "No"
+        }
+      ],
+      "metadata": {
+        "sectionName": "Your application"
+      }
+    },
+    {
+      "question": "In the 3 months before making this application, did you use our free guidance service to find out if you need planning permission?",
+      "responses": [
+        {
+          "value": "No"
+        }
+      ],
+      "metadata": {
+        "sectionName": "Your application"
+      }
+    },
+    {
+      "question": "Are you applying on behalf of someone else?",
+      "responses": [
+        {
+          "value": "No"
+        }
+      ],
+      "metadata": {
+        "sectionName": "About you"
+      }
+    },
+    {
+      "question": "Your contact details",
+      "responses": [
+        {
+          "value": "Caroline Chisholm 7946 0000  caroline@chisholm.com"
+        }
+      ],
+      "metadata": {
+        "sectionName": "About you"
+      }
+    },
+    {
+      "question": "Is your contact address the same as the property address?",
+      "responses": [
+        {
+          "value": "Yes"
+        }
+      ],
+      "metadata": {
+        "sectionName": "About you"
+      }
+    },
+    {
+      "question": "Do you own the land or buildings where the adverts are to be placed?",
+      "responses": [
+        {
+          "value": "Yes"
+        }
+      ],
+      "metadata": {
+        "sectionName": "About you"
+      }
+    },
+    {
+      "question": "Can a planning officer see the site from public land?",
+      "responses": [
+        {
+          "value": "Yes, it's visible from the road or somewhere else"
+        }
+      ],
+      "metadata": {
+        "sectionName": "About you"
+      }
+    },
+    {
+      "question": "We may need to visit the site to assess the application. If we do, who should we contact to arrange the visit?",
+      "responses": [
+        {
+          "value": "The applicant"
+        }
+      ],
+      "metadata": {
+        "sectionName": "About you"
+      }
+    },
+    {
+      "question": "Which Local Planning authority is it?",
+      "responses": [
+        {
+          "value": "Lambeth"
+        }
+      ],
+      "metadata": {
+        "sectionName": "Review and confirm"
+      }
+    },
+    {
+      "question": "Connections with London Borough of Lambeth",
+      "responses": [
+        {
+          "value": "None of the above apply to me"
+        }
+      ],
+      "metadata": {
+        "sectionName": "Review and confirm"
+      }
+    },
+    {
+      "question": "I confirm that:",
+      "responses": [
+        {
+          "value": "The information contained in this application is truthful, accurate and complete, to the best of my knowledge"
+        }
+      ],
+      "metadata": {
+        "sectionName": "Review and confirm"
+      }
+    }
+  ],
+  "files": [
+    {
+      "name": "https://api.editor.planx.dev/file/private/5djluga5/Screenshot%202025-01-30%20at%2013.48.33.png",
+      "type": [
+        "advertsDrawings",
+        "sitePlan.proposed"
+      ]
+    }
+  ],
+  "metadata": {
+    "id": "5276b1c3-89fb-4c7b-98eb-59493f76e046",
+    "organisation": "BBD",
+    "submittedAt": "2025-03-06T11:29:56.751Z",
+    "source": "PlanX",
+    "service": {
+      "flowId": "0cb70043-c498-4c34-bd42-de64b4c61107",
+      "url": "https://editor.planx.dev/templates/apply-to-display-an-advert-template/published",
+      "files": {
+        "required": [
+          "advertsDrawings",
+          "sitePlan.proposed"
+        ],
+        "recommended": [
+          "relevantInformation"
+        ],
+        "optional": []
+      },
+      "fee": {
+        "calculated": [],
+        "payable": []
+      }
+    },
+    "schema": "https://theopensystemslab.github.io/digital-planning-data-schemas/@next/schemas/application.json"
+  }
+}
