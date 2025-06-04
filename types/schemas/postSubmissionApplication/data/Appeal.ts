@@ -55,10 +55,7 @@ type AppealBase = {
   // withdrawnAt?: DateTime;
 
   /**
-   *
-   * Any files returned from PINS as part of the appeal process
-   * @todo Will documents always be returned?
-   * @todo is there a max limit - should they live here or with all the other documents?
+   * Any files uploaded as part of the appeal process
    */
   files?: PostSubmissionFile[];
 };

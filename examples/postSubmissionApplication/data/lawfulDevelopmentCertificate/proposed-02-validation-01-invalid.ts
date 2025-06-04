@@ -1,6 +1,7 @@
 import {PostSubmissionApplication} from '../../../../types/schemas/postSubmissionApplication';
 import {lawfulDevelopmentCertificateProposedPrototype} from '../../../prototypeApplication/data/lawfulDevelopmentCertificate/proposed';
 import {generateRealisticDates} from '../../../../types/schemas/postSubmissionApplication/lib/realisticDates';
+import {ldcApplicationDocuments} from '../../../../types/schemas/postSubmissionApplication/lib/exampleDocuments';
 
 const version = process.env['VERSION'] || '@next';
 
@@ -18,6 +19,11 @@ export const lawfulDevelopmentCertificateProposedPostSubmission: PostSubmissionA
         reference: 'ABC-123-XYZ',
         stage: 'validation',
         status: 'returned',
+        files: ldcApplicationDocuments(
+          realisticDates.submission.submittedAt.toISOString(),
+          realisticDates.validation.validatedAt.toISOString(),
+          realisticDates.publishedAt.toISOString(),
+        ),
       },
       localPlanningAuthority: {
         publicCommentsAcceptedUntilDecision: true,
