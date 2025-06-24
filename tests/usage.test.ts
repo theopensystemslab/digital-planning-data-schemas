@@ -6,11 +6,13 @@ import {Schema, Validator} from 'jsonschema';
 import {describe, expect, test} from 'vitest';
 import applicationSchema from '../schemas/application.json';
 // import postSubmissionApplicationSchema from '../schemas/postSubmissionApplication.json';
+// import postSubmissionPublishedApplicationSchema from '../schemas/postSubmissionPublishedApplication.json';
 import preApplicationSchema from '../schemas/preApplication.json';
 import prototypeApplicationSchema from '../schemas/prototypeApplication.json';
 import enforcementSchema from '../schemas/enforcement.json';
 import {Application} from '../types/schemas/application';
 // import { PostSubmissionApplication } from '../types/schemas/postSubmissionApplication';
+// import { PostSubmissionPublishedApplication } from '../types/schemas/postSubmissionPublishedApplication';
 import {PreApplication} from '../types/schemas/preApplication';
 import {PrototypeApplication} from '../types/schemas/prototypeApplication';
 import {Enforcement} from '../types/schemas/enforcement';
@@ -68,6 +70,13 @@ const schemas = [
   //   schema: postSubmissionApplicationSchema,
   //   examples: getJSONExamples<PostSubmissionApplication>(
   //     'postSubmissionApplication',
+  //   ),
+  // },
+  // {
+  //   name: 'PostSubmissionPublishedApplication',
+  //   schema: postSubmissionPublishedApplicationSchema,
+  //   examples: getJSONExamples<PostSubmissionPublishedApplication>(
+  //     'postSubmissionPublishedApplication',
   //   ),
   // },
 ];

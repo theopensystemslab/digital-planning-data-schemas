@@ -411,7 +411,7 @@ For listing, searching and filtering public (neighbour) comments related to the 
 > | `orderBy`        |          | string                               | `desc`        | See **SortBy options** below | Set the sort order for the results                                                                                    |
 > | `query`          |          | TopicAndComments.question \|\|string |               |                              | Search records by `comment`                                                                                           |
 > | `sentiment`      |          | CommentSentiment[]                   |               |                              | Search records by `sentiment` Supports `AND` and `OR` filtering see [Filter based searching](#filter-based-searching) |
-> | `topic`          |          | TopicAndComments.topic[]             |               |                              | Search records by `topic` Supports `AND` and `OR` filtering see [Filter based searching](#filter-based-searching)     |
+> | `topic`          |          | CommentTopic[]                       |               |                              | Search records by `topic` Supports `AND` and `OR` filtering see [Filter based searching](#filter-based-searching)     |
 
 ##### Date Parameters
 

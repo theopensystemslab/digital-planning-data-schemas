@@ -5,52 +5,7 @@
       "reference": "ABC-123-XYZ",
       "stage": "assessment",
       "status": "determined",
-      "files": [
-        {
-          "id": 1,
-          "name": "myPlans.pdf",
-          "association": "application",
-          "url": "https://api.editor.planx.dev/file/private/tbp4kiba/myPlans.pdf",
-          "type": [
-            "roofPlan.existing",
-            "roofPlan.proposed",
-            "sitePlan.existing",
-            "sitePlan.proposed",
-            "elevations.existing",
-            "elevations.proposed"
-          ],
-          "metadata": {
-            "size": {
-              "bytes": 123456
-            },
-            "mimeType": "application/pdf",
-            "createdAt": "2024-02-18T15:54:30.821Z",
-            "submittedAt": "2024-02-18T15:54:30.821Z",
-            "validatedAt": "2024-02-19T15:54:31.021Z",
-            "publishedAt": "2024-02-19T15:54:31.221Z"
-          }
-        },
-        {
-          "id": 2,
-          "name": "floor_plans.pdf",
-          "association": "application",
-          "url": "https://api.editor.planx.dev/file/private/311w2id6/floor_plans.pdf",
-          "type": [
-            "floorPlan.existing",
-            "floorPlan.proposed"
-          ],
-          "metadata": {
-            "size": {
-              "bytes": 123456
-            },
-            "mimeType": "application/pdf",
-            "createdAt": "2024-02-18T15:54:30.821Z",
-            "submittedAt": "2024-02-18T15:54:30.821Z",
-            "validatedAt": "2024-02-19T15:54:31.021Z",
-            "publishedAt": "2024-02-19T15:54:31.221Z"
-          }
-        }
-      ]
+      "publishedAt": "2024-02-19T15:54:31.021Z"
     },
     "localPlanningAuthority": {
       "publicCommentsAcceptedUntilDecision": true
@@ -89,7 +44,7 @@
       },
       "comments": [
         {
-          "id": 1,
+          "id": "1",
           "sentiment": "supportive",
           "comment": [
             {
@@ -133,6 +88,48 @@
               "comment": "lalala"
             }
           ],
+          "commentRedacted": [
+            {
+              "topic": "design",
+              "question": "Comment on the design, size or height of new buildings or extensions *********",
+              "comment": "lalala"
+            },
+            {
+              "topic": "use",
+              "question": "Comment on the use and function of the proposed development *********",
+              "comment": "lalala"
+            },
+            {
+              "topic": "light",
+              "question": "Comment on impacts on natural light *********",
+              "comment": "lalala"
+            },
+            {
+              "topic": "privacy",
+              "question": "Comment on impacts to the privacy of neighbours *********",
+              "comment": "lalala"
+            },
+            {
+              "topic": "access",
+              "question": "Comment on impacts on disabled persons' access *********",
+              "comment": "lalala"
+            },
+            {
+              "topic": "noise",
+              "question": "Comment on any noise from new uses *********",
+              "comment": "lalala"
+            },
+            {
+              "topic": "traffic",
+              "question": "Comment on impacts to traffic, parking or road safety *********",
+              "comment": "lalala"
+            },
+            {
+              "topic": "other",
+              "question": "Comment on other things *********",
+              "comment": "lalala"
+            }
+          ],
           "author": {
             "name": {
               "singleLine": "John Doe"
@@ -140,12 +137,110 @@
           },
           "metadata": {
             "submittedAt": "2024-02-20T15:54:31.021Z",
-            "publishedAt": "2024-02-21T15:54:31.021Z",
-            "validatedAt": "2024-02-21T15:54:31.021Z"
+            "validatedAt": "2024-02-21T15:54:31.021Z",
+            "publishedAt": "2024-02-21T15:54:31.021Z"
           }
         },
         {
-          "id": 2,
+          "id": "2",
+          "sentiment": "objection",
+          "comment": [
+            {
+              "topic": "design",
+              "question": "Comment on the design, size or height of new buildings or extensions",
+              "comment": "lalala"
+            },
+            {
+              "topic": "use",
+              "question": "Comment on the use and function of the proposed development",
+              "comment": "lalala"
+            },
+            {
+              "topic": "light",
+              "question": "Comment on impacts on natural light",
+              "comment": "lalala"
+            },
+            {
+              "topic": "privacy",
+              "question": "Comment on impacts to the privacy of neighbours",
+              "comment": "lalala"
+            },
+            {
+              "topic": "access",
+              "question": "Comment on impacts on disabled persons' access",
+              "comment": "lalala"
+            },
+            {
+              "topic": "noise",
+              "question": "Comment on any noise from new uses",
+              "comment": "lalala"
+            },
+            {
+              "topic": "traffic",
+              "question": "Comment on impacts to traffic, parking or road safety",
+              "comment": "lalala"
+            },
+            {
+              "topic": "other",
+              "question": "Comment on other things",
+              "comment": "lalala"
+            }
+          ],
+          "commentRedacted": [
+            {
+              "topic": "design",
+              "question": "Comment on the design, size or height of new buildings or extensions *********",
+              "comment": "lalala"
+            },
+            {
+              "topic": "use",
+              "question": "Comment on the use and function of the proposed development *********",
+              "comment": "lalala"
+            },
+            {
+              "topic": "light",
+              "question": "Comment on impacts on natural light *********",
+              "comment": "lalala"
+            },
+            {
+              "topic": "privacy",
+              "question": "Comment on impacts to the privacy of neighbours *********",
+              "comment": "lalala"
+            },
+            {
+              "topic": "access",
+              "question": "Comment on impacts on disabled persons' access *********",
+              "comment": "lalala"
+            },
+            {
+              "topic": "noise",
+              "question": "Comment on any noise from new uses *********",
+              "comment": "lalala"
+            },
+            {
+              "topic": "traffic",
+              "question": "Comment on impacts to traffic, parking or road safety *********",
+              "comment": "lalala"
+            },
+            {
+              "topic": "other",
+              "question": "Comment on other things *********",
+              "comment": "lalala"
+            }
+          ],
+          "author": {
+            "name": {
+              "singleLine": "John Doe"
+            }
+          },
+          "metadata": {
+            "submittedAt": "2024-02-20T15:54:31.021Z",
+            "validatedAt": "2024-02-21T15:54:31.021Z",
+            "publishedAt": "2024-02-21T15:54:31.021Z"
+          }
+        },
+        {
+          "id": "3",
           "sentiment": "objection",
           "comment": [
             {
@@ -195,69 +290,11 @@
             }
           },
           "metadata": {
-            "submittedAt": "2024-02-20T15:54:31.021Z",
-            "publishedAt": "2024-02-21T15:54:31.021Z",
-            "validatedAt": "2024-02-21T15:54:31.021Z"
+            "submittedAt": "2024-02-20T15:54:31.021Z"
           }
         },
         {
-          "id": 3,
-          "sentiment": "objection",
-          "comment": [
-            {
-              "topic": "design",
-              "question": "Comment on the design, size or height of new buildings or extensions",
-              "comment": "lalala"
-            },
-            {
-              "topic": "use",
-              "question": "Comment on the use and function of the proposed development",
-              "comment": "lalala"
-            },
-            {
-              "topic": "light",
-              "question": "Comment on impacts on natural light",
-              "comment": "lalala"
-            },
-            {
-              "topic": "privacy",
-              "question": "Comment on impacts to the privacy of neighbours",
-              "comment": "lalala"
-            },
-            {
-              "topic": "access",
-              "question": "Comment on impacts on disabled persons' access",
-              "comment": "lalala"
-            },
-            {
-              "topic": "noise",
-              "question": "Comment on any noise from new uses",
-              "comment": "lalala"
-            },
-            {
-              "topic": "traffic",
-              "question": "Comment on impacts to traffic, parking or road safety",
-              "comment": "lalala"
-            },
-            {
-              "topic": "other",
-              "question": "Comment on other things",
-              "comment": "lalala"
-            }
-          ],
-          "author": {
-            "name": {
-              "singleLine": "John Doe"
-            }
-          },
-          "metadata": {
-            "submittedAt": "2024-02-20T15:54:31.021Z",
-            "publishedAt": "2024-02-21T15:54:31.021Z",
-            "validatedAt": "2024-02-21T15:54:31.021Z"
-          }
-        },
-        {
-          "id": 4,
+          "id": "4",
           "sentiment": "neutral",
           "comment": [
             {
@@ -308,7 +345,6 @@
           },
           "metadata": {
             "submittedAt": "2024-02-20T15:54:31.021Z",
-            "publishedAt": "2024-02-21T15:54:31.021Z",
             "validatedAt": "2024-02-21T15:54:31.021Z"
           }
         }
@@ -317,16 +353,16 @@
     "specialist": {
       "summary": {
         "totalConsulted": 4,
-        "totalComments": 1,
+        "totalComments": 12,
         "sentiment": {
-          "approved": 1,
-          "amendmentsNeeded": 0,
+          "approved": 4,
+          "amendmentsNeeded": 8,
           "objected": 0
         }
       },
       "comments": [
         {
-          "id": 1,
+          "id": "1",
           "organisationSpecialism": "Historic England",
           "reason": "constraint",
           "constraints": [
@@ -348,23 +384,187 @@
           "firstConsultedAt": "2024-02-20T15:54:31.021Z",
           "comments": [
             {
-              "id": 2,
+              "id": "3",
+              "sentiment": "amendmentsNeeded",
+              "comment": "Actually I forgot to mention something",
+              "metadata": {
+                "submittedAt": "2024-02-20T15:54:31.021Z"
+              }
+            },
+            {
+              "id": "2",
               "sentiment": "approved",
               "comment": "I approve of this application after amendments",
               "metadata": {
                 "submittedAt": "2024-02-20T15:54:31.021Z",
-                "publishedAt": "2024-02-21T15:54:31.021Z",
                 "validatedAt": "2024-02-21T15:54:31.021Z"
               }
             },
             {
-              "id": 1,
+              "id": "1",
               "sentiment": "amendmentsNeeded",
               "comment": "Please amend this application",
+              "commentRedacted": "Please amend this application *********",
               "metadata": {
                 "submittedAt": "2024-02-20T15:54:31.021Z",
-                "publishedAt": "2024-02-21T15:54:31.021Z",
+                "validatedAt": "2024-02-21T15:54:31.021Z",
+                "publishedAt": "2024-02-21T15:54:31.021Z"
+              }
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "organisationSpecialism": "Historic England",
+          "reason": "constraint",
+          "constraints": [
+            {
+              "value": "monument",
+              "description": "Site of a Scheduled Monument",
+              "intersects": true,
+              "entities": [
+                {
+                  "name": "Rochester Castle",
+                  "source": {
+                    "text": "Planning Data",
+                    "url": "https://www.planning.data.gov.uk/entity/13909855"
+                  }
+                }
+              ]
+            }
+          ],
+          "firstConsultedAt": "2024-02-20T15:54:31.021Z",
+          "comments": [
+            {
+              "id": "3",
+              "sentiment": "amendmentsNeeded",
+              "comment": "Actually I forgot to mention something",
+              "metadata": {
+                "submittedAt": "2024-02-20T15:54:31.021Z"
+              }
+            },
+            {
+              "id": "2",
+              "sentiment": "approved",
+              "comment": "I approve of this application after amendments",
+              "metadata": {
+                "submittedAt": "2024-02-20T15:54:31.021Z",
                 "validatedAt": "2024-02-21T15:54:31.021Z"
+              }
+            },
+            {
+              "id": "1",
+              "sentiment": "amendmentsNeeded",
+              "comment": "Please amend this application",
+              "commentRedacted": "Please amend this application *********",
+              "metadata": {
+                "submittedAt": "2024-02-20T15:54:31.021Z",
+                "validatedAt": "2024-02-21T15:54:31.021Z",
+                "publishedAt": "2024-02-21T15:54:31.021Z"
+              }
+            }
+          ]
+        },
+        {
+          "id": "3",
+          "organisationSpecialism": "Historic England",
+          "reason": "constraint",
+          "constraints": [
+            {
+              "value": "monument",
+              "description": "Site of a Scheduled Monument",
+              "intersects": true,
+              "entities": [
+                {
+                  "name": "Rochester Castle",
+                  "source": {
+                    "text": "Planning Data",
+                    "url": "https://www.planning.data.gov.uk/entity/13909855"
+                  }
+                }
+              ]
+            }
+          ],
+          "firstConsultedAt": "2024-02-20T15:54:31.021Z",
+          "comments": [
+            {
+              "id": "3",
+              "sentiment": "amendmentsNeeded",
+              "comment": "Actually I forgot to mention something",
+              "metadata": {
+                "submittedAt": "2024-02-20T15:54:31.021Z"
+              }
+            },
+            {
+              "id": "2",
+              "sentiment": "approved",
+              "comment": "I approve of this application after amendments",
+              "metadata": {
+                "submittedAt": "2024-02-20T15:54:31.021Z",
+                "validatedAt": "2024-02-21T15:54:31.021Z"
+              }
+            },
+            {
+              "id": "1",
+              "sentiment": "amendmentsNeeded",
+              "comment": "Please amend this application",
+              "commentRedacted": "Please amend this application *********",
+              "metadata": {
+                "submittedAt": "2024-02-20T15:54:31.021Z",
+                "validatedAt": "2024-02-21T15:54:31.021Z",
+                "publishedAt": "2024-02-21T15:54:31.021Z"
+              }
+            }
+          ]
+        },
+        {
+          "id": "4",
+          "organisationSpecialism": "Historic England",
+          "reason": "constraint",
+          "constraints": [
+            {
+              "value": "monument",
+              "description": "Site of a Scheduled Monument",
+              "intersects": true,
+              "entities": [
+                {
+                  "name": "Rochester Castle",
+                  "source": {
+                    "text": "Planning Data",
+                    "url": "https://www.planning.data.gov.uk/entity/13909855"
+                  }
+                }
+              ]
+            }
+          ],
+          "firstConsultedAt": "2024-02-20T15:54:31.021Z",
+          "comments": [
+            {
+              "id": "3",
+              "sentiment": "amendmentsNeeded",
+              "comment": "Actually I forgot to mention something",
+              "metadata": {
+                "submittedAt": "2024-02-20T15:54:31.021Z"
+              }
+            },
+            {
+              "id": "2",
+              "sentiment": "approved",
+              "comment": "I approve of this application after amendments",
+              "metadata": {
+                "submittedAt": "2024-02-20T15:54:31.021Z",
+                "validatedAt": "2024-02-21T15:54:31.021Z"
+              }
+            },
+            {
+              "id": "1",
+              "sentiment": "amendmentsNeeded",
+              "comment": "Please amend this application",
+              "commentRedacted": "Please amend this application *********",
+              "metadata": {
+                "submittedAt": "2024-02-20T15:54:31.021Z",
+                "validatedAt": "2024-02-21T15:54:31.021Z",
+                "publishedAt": "2024-02-21T15:54:31.021Z"
               }
             }
           ]
@@ -372,6 +572,52 @@
       ]
     }
   },
+  "files": [
+    {
+      "id": 1,
+      "name": "myPlans.pdf",
+      "association": "application",
+      "url": "https://api.editor.planx.dev/file/private/tbp4kiba/myPlans.pdf",
+      "type": [
+        "roofPlan.existing",
+        "roofPlan.proposed",
+        "sitePlan.existing",
+        "sitePlan.proposed",
+        "elevations.existing",
+        "elevations.proposed"
+      ],
+      "metadata": {
+        "size": {
+          "bytes": 123456
+        },
+        "mimeType": "application/pdf",
+        "createdAt": "2024-02-18T15:54:30.821Z",
+        "submittedAt": "2024-02-18T15:54:30.821Z",
+        "validatedAt": "2024-02-19T15:54:31.021Z",
+        "publishedAt": "2024-02-19T15:54:31.021Z"
+      }
+    },
+    {
+      "id": 2,
+      "name": "floor_plans.pdf",
+      "association": "application",
+      "url": "https://api.editor.planx.dev/file/private/311w2id6/floor_plans.pdf",
+      "type": [
+        "floorPlan.existing",
+        "floorPlan.proposed"
+      ],
+      "metadata": {
+        "size": {
+          "bytes": 123456
+        },
+        "mimeType": "application/pdf",
+        "createdAt": "2024-02-18T15:54:30.821Z",
+        "submittedAt": "2024-02-18T15:54:30.821Z",
+        "validatedAt": "2024-02-19T15:54:31.021Z",
+        "publishedAt": "2024-02-19T15:54:31.021Z"
+      }
+    }
+  ],
   "submission": {
     "applicationType": "ldc.proposed",
     "data": {
@@ -1592,7 +1838,7 @@
     "organisation": "LBH",
     "id": "faae04cd-0ec2-479e-b7fb-14b3e7acae35",
     "submittedAt": "2024-02-18T15:54:30.821Z",
-    "publishedAt": "2024-02-19T15:54:31.221Z",
+    "generatedAt": "2025-02-18T15:54:30.821Z",
     "schema": "https://theopensystemslab.github.io/digital-planning-data-schemas/@next/schemas/postSubmissionApplication.json"
   }
 }

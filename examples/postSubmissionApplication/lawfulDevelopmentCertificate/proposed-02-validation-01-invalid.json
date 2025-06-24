@@ -4,53 +4,7 @@
     "application": {
       "reference": "ABC-123-XYZ",
       "stage": "validation",
-      "status": "returned",
-      "files": [
-        {
-          "id": 1,
-          "name": "myPlans.pdf",
-          "association": "application",
-          "url": "https://api.editor.planx.dev/file/private/tbp4kiba/myPlans.pdf",
-          "type": [
-            "roofPlan.existing",
-            "roofPlan.proposed",
-            "sitePlan.existing",
-            "sitePlan.proposed",
-            "elevations.existing",
-            "elevations.proposed"
-          ],
-          "metadata": {
-            "size": {
-              "bytes": 123456
-            },
-            "mimeType": "application/pdf",
-            "createdAt": "2024-02-18T15:54:30.821Z",
-            "submittedAt": "2024-02-18T15:54:30.821Z",
-            "validatedAt": "2024-02-19T15:54:31.021Z",
-            "publishedAt": "2024-02-19T15:54:31.221Z"
-          }
-        },
-        {
-          "id": 2,
-          "name": "floor_plans.pdf",
-          "association": "application",
-          "url": "https://api.editor.planx.dev/file/private/311w2id6/floor_plans.pdf",
-          "type": [
-            "floorPlan.existing",
-            "floorPlan.proposed"
-          ],
-          "metadata": {
-            "size": {
-              "bytes": 123456
-            },
-            "mimeType": "application/pdf",
-            "createdAt": "2024-02-18T15:54:30.821Z",
-            "submittedAt": "2024-02-18T15:54:30.821Z",
-            "validatedAt": "2024-02-19T15:54:31.021Z",
-            "publishedAt": "2024-02-19T15:54:31.221Z"
-          }
-        }
-      ]
+      "status": "returned"
     },
     "localPlanningAuthority": {
       "publicCommentsAcceptedUntilDecision": true
@@ -67,6 +21,52 @@
       "name": "Casey Officer"
     }
   },
+  "files": [
+    {
+      "id": 1,
+      "name": "myPlans.pdf",
+      "association": "application",
+      "url": "https://api.editor.planx.dev/file/private/tbp4kiba/myPlans.pdf",
+      "type": [
+        "roofPlan.existing",
+        "roofPlan.proposed",
+        "sitePlan.existing",
+        "sitePlan.proposed",
+        "elevations.existing",
+        "elevations.proposed"
+      ],
+      "metadata": {
+        "size": {
+          "bytes": 123456
+        },
+        "mimeType": "application/pdf",
+        "createdAt": "2024-02-18T15:54:30.821Z",
+        "submittedAt": "2024-02-18T15:54:30.821Z",
+        "validatedAt": "2024-02-19T15:54:31.021Z",
+        "publishedAt": "2024-02-19T15:54:31.021Z"
+      }
+    },
+    {
+      "id": 2,
+      "name": "floor_plans.pdf",
+      "association": "application",
+      "url": "https://api.editor.planx.dev/file/private/311w2id6/floor_plans.pdf",
+      "type": [
+        "floorPlan.existing",
+        "floorPlan.proposed"
+      ],
+      "metadata": {
+        "size": {
+          "bytes": 123456
+        },
+        "mimeType": "application/pdf",
+        "createdAt": "2024-02-18T15:54:30.821Z",
+        "submittedAt": "2024-02-18T15:54:30.821Z",
+        "validatedAt": "2024-02-19T15:54:31.021Z",
+        "publishedAt": "2024-02-19T15:54:31.021Z"
+      }
+    }
+  ],
   "submission": {
     "applicationType": "ldc.proposed",
     "data": {
@@ -1287,7 +1287,7 @@
     "organisation": "LBH",
     "id": "faae04cd-0ec2-479e-b7fb-14b3e7acae35",
     "submittedAt": "2024-02-18T15:54:30.821Z",
-    "publishedAt": "2024-02-19T15:54:31.221Z",
+    "generatedAt": "2025-02-18T15:54:30.821Z",
     "schema": "https://theopensystemslab.github.io/digital-planning-data-schemas/@next/schemas/postSubmissionApplication.json"
   }
 }

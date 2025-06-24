@@ -3,8 +3,8 @@
   "data": {
     "application": {
       "reference": "ABC-123-XYZ",
-      "stage": "appeal",
-      "status": "determined",
+      "stage": "assessment",
+      "status": "undetermined",
       "publishedAt": "2024-02-19T15:54:31.021Z"
     },
     "localPlanningAuthority": {
@@ -25,19 +25,8 @@
     },
     "assessment": {
       "expiryDate": "2024-04-11",
-      "planningOfficerDecision": "granted",
-      "planningOfficerDecisionDate": "2024-03-21",
-      "decisionNotice": {
-        "url": "https://planningregister.org"
-      }
-    },
-    "appeal": {
-      "lodgedDate": "2024-05-01",
-      "reason": "We don't believe the council took into consideration the environmental impact alleviation approach during their assessment.",
-      "validatedDate": "2024-05-02",
-      "startedDate": "2024-05-02",
-      "decisionDate": "2024-05-07",
-      "decision": "allowed"
+      "planningOfficerRecommendation": "refused",
+      "committeeSentDate": "2024-03-22"
     },
     "caseOfficer": {
       "name": "Casey Officer"
@@ -46,59 +35,17 @@
   "comments": {
     "public": {
       "summary": {
-        "totalComments": 4,
+        "totalComments": 2,
         "sentiment": {
           "supportive": 1,
-          "objection": 2,
-          "neutral": 1
+          "objection": 1,
+          "neutral": 0
         }
       },
       "comments": [
         {
           "id": "1",
           "sentiment": "supportive",
-          "comment": [
-            {
-              "topic": "design",
-              "question": "Comment on the design, size or height of new buildings or extensions",
-              "comment": "lalala"
-            },
-            {
-              "topic": "use",
-              "question": "Comment on the use and function of the proposed development",
-              "comment": "lalala"
-            },
-            {
-              "topic": "light",
-              "question": "Comment on impacts on natural light",
-              "comment": "lalala"
-            },
-            {
-              "topic": "privacy",
-              "question": "Comment on impacts to the privacy of neighbours",
-              "comment": "lalala"
-            },
-            {
-              "topic": "access",
-              "question": "Comment on impacts on disabled persons' access",
-              "comment": "lalala"
-            },
-            {
-              "topic": "noise",
-              "question": "Comment on any noise from new uses",
-              "comment": "lalala"
-            },
-            {
-              "topic": "traffic",
-              "question": "Comment on impacts to traffic, parking or road safety",
-              "comment": "lalala"
-            },
-            {
-              "topic": "other",
-              "question": "Comment on other things",
-              "comment": "lalala"
-            }
-          ],
           "commentRedacted": [
             {
               "topic": "design",
@@ -155,48 +102,6 @@
         {
           "id": "2",
           "sentiment": "objection",
-          "comment": [
-            {
-              "topic": "design",
-              "question": "Comment on the design, size or height of new buildings or extensions",
-              "comment": "lalala"
-            },
-            {
-              "topic": "use",
-              "question": "Comment on the use and function of the proposed development",
-              "comment": "lalala"
-            },
-            {
-              "topic": "light",
-              "question": "Comment on impacts on natural light",
-              "comment": "lalala"
-            },
-            {
-              "topic": "privacy",
-              "question": "Comment on impacts to the privacy of neighbours",
-              "comment": "lalala"
-            },
-            {
-              "topic": "access",
-              "question": "Comment on impacts on disabled persons' access",
-              "comment": "lalala"
-            },
-            {
-              "topic": "noise",
-              "question": "Comment on any noise from new uses",
-              "comment": "lalala"
-            },
-            {
-              "topic": "traffic",
-              "question": "Comment on impacts to traffic, parking or road safety",
-              "comment": "lalala"
-            },
-            {
-              "topic": "other",
-              "question": "Comment on other things",
-              "comment": "lalala"
-            }
-          ],
           "commentRedacted": [
             {
               "topic": "design",
@@ -249,125 +154,16 @@
             "validatedAt": "2024-02-21T15:54:31.021Z",
             "publishedAt": "2024-02-21T15:54:31.021Z"
           }
-        },
-        {
-          "id": "3",
-          "sentiment": "objection",
-          "comment": [
-            {
-              "topic": "design",
-              "question": "Comment on the design, size or height of new buildings or extensions",
-              "comment": "lalala"
-            },
-            {
-              "topic": "use",
-              "question": "Comment on the use and function of the proposed development",
-              "comment": "lalala"
-            },
-            {
-              "topic": "light",
-              "question": "Comment on impacts on natural light",
-              "comment": "lalala"
-            },
-            {
-              "topic": "privacy",
-              "question": "Comment on impacts to the privacy of neighbours",
-              "comment": "lalala"
-            },
-            {
-              "topic": "access",
-              "question": "Comment on impacts on disabled persons' access",
-              "comment": "lalala"
-            },
-            {
-              "topic": "noise",
-              "question": "Comment on any noise from new uses",
-              "comment": "lalala"
-            },
-            {
-              "topic": "traffic",
-              "question": "Comment on impacts to traffic, parking or road safety",
-              "comment": "lalala"
-            },
-            {
-              "topic": "other",
-              "question": "Comment on other things",
-              "comment": "lalala"
-            }
-          ],
-          "author": {
-            "name": {
-              "singleLine": "John Doe"
-            }
-          },
-          "metadata": {
-            "submittedAt": "2024-02-20T15:54:31.021Z"
-          }
-        },
-        {
-          "id": "4",
-          "sentiment": "neutral",
-          "comment": [
-            {
-              "topic": "design",
-              "question": "Comment on the design, size or height of new buildings or extensions",
-              "comment": "lalala"
-            },
-            {
-              "topic": "use",
-              "question": "Comment on the use and function of the proposed development",
-              "comment": "lalala"
-            },
-            {
-              "topic": "light",
-              "question": "Comment on impacts on natural light",
-              "comment": "lalala"
-            },
-            {
-              "topic": "privacy",
-              "question": "Comment on impacts to the privacy of neighbours",
-              "comment": "lalala"
-            },
-            {
-              "topic": "access",
-              "question": "Comment on impacts on disabled persons' access",
-              "comment": "lalala"
-            },
-            {
-              "topic": "noise",
-              "question": "Comment on any noise from new uses",
-              "comment": "lalala"
-            },
-            {
-              "topic": "traffic",
-              "question": "Comment on impacts to traffic, parking or road safety",
-              "comment": "lalala"
-            },
-            {
-              "topic": "other",
-              "question": "Comment on other things",
-              "comment": "lalala"
-            }
-          ],
-          "author": {
-            "name": {
-              "singleLine": "John Doe"
-            }
-          },
-          "metadata": {
-            "submittedAt": "2024-02-20T15:54:31.021Z",
-            "validatedAt": "2024-02-21T15:54:31.021Z"
-          }
         }
       ]
     },
     "specialist": {
       "summary": {
         "totalConsulted": 4,
-        "totalComments": 12,
+        "totalComments": 4,
         "sentiment": {
-          "approved": 4,
-          "amendmentsNeeded": 8,
+          "approved": 0,
+          "amendmentsNeeded": 4,
           "objected": 0
         }
       },
@@ -395,26 +191,8 @@
           "firstConsultedAt": "2024-02-20T15:54:31.021Z",
           "comments": [
             {
-              "id": "3",
-              "sentiment": "amendmentsNeeded",
-              "comment": "Actually I forgot to mention something",
-              "metadata": {
-                "submittedAt": "2024-02-20T15:54:31.021Z"
-              }
-            },
-            {
-              "id": "2",
-              "sentiment": "approved",
-              "comment": "I approve of this application after amendments",
-              "metadata": {
-                "submittedAt": "2024-02-20T15:54:31.021Z",
-                "validatedAt": "2024-02-21T15:54:31.021Z"
-              }
-            },
-            {
               "id": "1",
               "sentiment": "amendmentsNeeded",
-              "comment": "Please amend this application",
               "commentRedacted": "Please amend this application *********",
               "metadata": {
                 "submittedAt": "2024-02-20T15:54:31.021Z",
@@ -447,26 +225,8 @@
           "firstConsultedAt": "2024-02-20T15:54:31.021Z",
           "comments": [
             {
-              "id": "3",
-              "sentiment": "amendmentsNeeded",
-              "comment": "Actually I forgot to mention something",
-              "metadata": {
-                "submittedAt": "2024-02-20T15:54:31.021Z"
-              }
-            },
-            {
-              "id": "2",
-              "sentiment": "approved",
-              "comment": "I approve of this application after amendments",
-              "metadata": {
-                "submittedAt": "2024-02-20T15:54:31.021Z",
-                "validatedAt": "2024-02-21T15:54:31.021Z"
-              }
-            },
-            {
               "id": "1",
               "sentiment": "amendmentsNeeded",
-              "comment": "Please amend this application",
               "commentRedacted": "Please amend this application *********",
               "metadata": {
                 "submittedAt": "2024-02-20T15:54:31.021Z",
@@ -499,26 +259,8 @@
           "firstConsultedAt": "2024-02-20T15:54:31.021Z",
           "comments": [
             {
-              "id": "3",
-              "sentiment": "amendmentsNeeded",
-              "comment": "Actually I forgot to mention something",
-              "metadata": {
-                "submittedAt": "2024-02-20T15:54:31.021Z"
-              }
-            },
-            {
-              "id": "2",
-              "sentiment": "approved",
-              "comment": "I approve of this application after amendments",
-              "metadata": {
-                "submittedAt": "2024-02-20T15:54:31.021Z",
-                "validatedAt": "2024-02-21T15:54:31.021Z"
-              }
-            },
-            {
               "id": "1",
               "sentiment": "amendmentsNeeded",
-              "comment": "Please amend this application",
               "commentRedacted": "Please amend this application *********",
               "metadata": {
                 "submittedAt": "2024-02-20T15:54:31.021Z",
@@ -551,26 +293,8 @@
           "firstConsultedAt": "2024-02-20T15:54:31.021Z",
           "comments": [
             {
-              "id": "3",
-              "sentiment": "amendmentsNeeded",
-              "comment": "Actually I forgot to mention something",
-              "metadata": {
-                "submittedAt": "2024-02-20T15:54:31.021Z"
-              }
-            },
-            {
-              "id": "2",
-              "sentiment": "approved",
-              "comment": "I approve of this application after amendments",
-              "metadata": {
-                "submittedAt": "2024-02-20T15:54:31.021Z",
-                "validatedAt": "2024-02-21T15:54:31.021Z"
-              }
-            },
-            {
               "id": "1",
               "sentiment": "amendmentsNeeded",
-              "comment": "Please amend this application",
               "commentRedacted": "Please amend this application *********",
               "metadata": {
                 "submittedAt": "2024-02-20T15:54:31.021Z",
