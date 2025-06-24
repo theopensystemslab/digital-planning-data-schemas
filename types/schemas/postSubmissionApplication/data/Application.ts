@@ -2,7 +2,6 @@ import {DateTime} from '../../../shared/utils';
 import {ApplicationType} from '../../prototypeApplication/enums/ApplicationType';
 import {ApplicationStatus} from '../enums/ApplicationStatus';
 import {ProcessStage} from '../enums/ProcessStage';
-import {PostSubmissionFile} from './File';
 
 type ApplicationBase = {
   /**
@@ -30,9 +29,11 @@ type ApplicationBase = {
    */
   withdrawnReason?: string;
   /**
-   * Files associated with the application
+   * The date the application was made available to the public
+   * Should be the same as the consultation start date or the
+   * date the application was validated if no consultation stage
    */
-  files?: PostSubmissionFile[];
+  publishedAt?: DateTime;
 };
 
 /**

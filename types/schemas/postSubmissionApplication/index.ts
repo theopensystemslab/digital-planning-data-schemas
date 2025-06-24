@@ -7,6 +7,7 @@ import {Assessment} from './data/Assessment';
 import {CaseOfficer} from './data/CaseOfficer';
 import {PublicComments, SpecialistComments} from './data/Comment';
 import {Consultation} from './data/Consultation';
+import {PostSubmissionFile} from './data/File';
 import {LocalPlanningAuthority} from './data/LocalPlanningAuthority';
 import {Submission} from './data/Submission';
 import {Validation} from './data/Validation';
@@ -18,7 +19,7 @@ import {Validation} from './data/Validation';
  *
  * @todo create redacted form of PrototypeApplication
  */
-interface ApplicationSpecification<T extends ApplicationType> {
+export interface ApplicationSpecification<T extends ApplicationType> {
   applicationType: T;
   data: {
     application: Application<T>;
@@ -34,6 +35,7 @@ interface ApplicationSpecification<T extends ApplicationType> {
     public?: PublicComments;
     specialist?: SpecialistComments;
   };
+  files?: PostSubmissionFile[];
   submission: PrototypeApplication;
   metadata: PostSubmissionMetadata;
 }

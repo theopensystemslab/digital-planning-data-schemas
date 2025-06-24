@@ -1,29 +1,28 @@
-import {PostSubmissionApplication} from '../../../../types/schemas/postSubmissionApplication';
-import {priorApprovalLargerExtensionPrototype} from '../../../prototypeApplication/data/priorApproval/largerExtension';
+import {PostSubmissionPublishedApplication} from '../../../../types/schemas/postSubmissionPublishedApplication';
+import {planningPermissionFullHouseholderPrototype} from '../../../prototypeApplication/data/planningPermission/fullHouseholder';
 import {generateRealisticDates} from '../../../../types/schemas/postSubmissionApplication/lib/realisticDates';
 import {formatDateToYYYYMMDD} from '../../../../types/schemas/postSubmissionApplication/lib/formatDates';
 import {
-  publicComments,
-  specialistComments,
+  publicCommentsRedacted,
+  specialistCommentsRedacted,
 } from '../../../../types/schemas/postSubmissionApplication/lib/exampleComments';
-import {paApplicationDocuments} from '../../../../types/schemas/postSubmissionApplication/lib/exampleDocuments';
+import {ppApplicationDocuments} from '../../../../types/schemas/postSubmissionApplication/lib/exampleDocuments';
 
 const version = process.env['VERSION'] || '@next';
 
 const realisticDates = generateRealisticDates();
 
 /**
- * This example is for a prior approval larger home extension application that has a committee decision
- * Prior approval applications also have priorApprovalRequired flag which help determine the 'Prior approval required and approved', 'Prior approval not required', 'Prior approval required and refused' status
+ * This example is for full householder planning permission application that has gone to committee
  */
-export const priorApprovalLargerExtensionPostSubmission: PostSubmissionApplication =
+export const planningPermissionFullHouseholderPostSubmission: PostSubmissionPublishedApplication =
   {
-    applicationType: 'pa.part1.classA',
+    applicationType: 'pp.full.householder',
     data: {
       application: {
         reference: 'ABC-123-XYZ',
         stage: 'assessment',
-        status: 'determined',
+        status: 'undetermined',
         publishedAt: realisticDates.publishedAt.toISOString(),
       },
       localPlanningAuthority: {
@@ -50,36 +49,28 @@ export const priorApprovalLargerExtensionPostSubmission: PostSubmissionApplicati
         expiryDate: formatDateToYYYYMMDD(
           realisticDates.assessment.expiryAt.toISOString(),
         ),
-        priorApprovalRequired: true,
         planningOfficerRecommendation: 'refused',
         committeeSentDate: formatDateToYYYYMMDD(
           realisticDates.assessment.committeeSentAt.toISOString(),
         ),
-        committeeDecision: 'granted',
-        committeeDecisionDate: formatDateToYYYYMMDD(
-          realisticDates.assessment.committeeDecisionAt.toISOString(),
-        ),
-        decisionNotice: {
-          url: 'https://planningregister.org',
-        },
       },
       caseOfficer: {
         name: 'Casey Officer',
       },
     },
     comments: {
-      public: publicComments,
-      specialist: specialistComments,
+      public: publicCommentsRedacted,
+      specialist: specialistCommentsRedacted,
     },
-    files: paApplicationDocuments(
+    files: ppApplicationDocuments(
       realisticDates.submission.submittedAt.toISOString(),
       realisticDates.validation.validatedAt.toISOString(),
       realisticDates.publishedAt.toISOString(),
     ),
     submission: {
-      ...priorApprovalLargerExtensionPrototype,
+      ...planningPermissionFullHouseholderPrototype,
       metadata: {
-        ...priorApprovalLargerExtensionPrototype.metadata,
+        ...planningPermissionFullHouseholderPrototype.metadata,
         submittedAt: realisticDates.submission.submittedAt.toISOString(),
       },
     },
