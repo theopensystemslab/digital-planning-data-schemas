@@ -23,11 +23,7 @@ export const priorApprovalLargerExtensionPostSubmission: PostSubmissionApplicati
         reference: 'ABC-123-XYZ',
         stage: 'assessment',
         status: 'undetermined',
-        files: paApplicationDocuments(
-          realisticDates.submission.submittedAt.toISOString(),
-          realisticDates.validation.validatedAt.toISOString(),
-          realisticDates.publishedAt.toISOString(),
-        ),
+        publishedAt: realisticDates.publishedAt.toISOString(),
       },
       localPlanningAuthority: {
         publicCommentsAcceptedUntilDecision: false,
@@ -62,6 +58,11 @@ export const priorApprovalLargerExtensionPostSubmission: PostSubmissionApplicati
       public: publicComments,
       specialist: specialistComments,
     },
+    files: paApplicationDocuments(
+      realisticDates.submission.submittedAt.toISOString(),
+      realisticDates.validation.validatedAt.toISOString(),
+      realisticDates.publishedAt.toISOString(),
+    ),
     submission: {
       ...priorApprovalLargerExtensionPrototype,
       metadata: {
@@ -73,7 +74,7 @@ export const priorApprovalLargerExtensionPostSubmission: PostSubmissionApplicati
       organisation: 'LBH',
       id: 'faae04cd-0ec2-479e-b7fb-14b3e7acae35',
       submittedAt: realisticDates.submission.submittedAt.toISOString(),
-      publishedAt: realisticDates.publishedAt.toISOString(),
+      generatedAt: realisticDates.generatedAt.toISOString(),
       schema: `https://theopensystemslab.github.io/digital-planning-data-schemas/${version}/schemas/postSubmissionApplication.json`,
     },
   };

@@ -27,6 +27,7 @@ type RealisticDates = {
     decidedAt: Date;
     withdrawnAt: Date;
   };
+  generatedAt: Date;
 };
 
 /**
@@ -59,8 +60,8 @@ export const generateRealisticDates = (
   // application validated in back office system the next day
   const validatedAt = addDays(receivedAt, 1);
 
-  // when its validated the reviewer sets it to be published (not always at this stage but it will be for these examples)
-  const publishedAt = addMilliseconds(validatedAt, 200);
+  // when an application is validated and isValid the application is considered public
+  const publishedAt = validatedAt;
 
   // consultation (depending on application type) starts once it's valid and lasts 21 days (theres more nuance around business days etc but this is accurate enough)
   // startDate - as soon as validated
@@ -98,6 +99,12 @@ export const generateRealisticDates = (
   // appeal is withdrawn any time between appealLodgedAt and appealDecidedAt
   const appealWithdrawnAt = addDays(appealLodgedAt, 1);
 
+  // when the data is generated it is given a generatedAt date,
+  // if it was an API this would be the current date and time
+  // but if it was a static file this would be the date the file was generated
+  // in this case we are using a fixed date for consistency in tests
+  const generatedAt = new Date('2025-02-18T15:54:30.821Z');
+
   const dates: RealisticDates = {
     application: {
       withdrawnAt: withdrawnAt,
@@ -127,6 +134,7 @@ export const generateRealisticDates = (
       decidedAt: appealDecidedAt,
       withdrawnAt: appealWithdrawnAt,
     },
+    generatedAt: generatedAt,
   };
   return dates;
 };

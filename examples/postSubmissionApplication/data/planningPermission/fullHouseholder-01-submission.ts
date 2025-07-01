@@ -18,11 +18,6 @@ export const planningPermissionFullHouseholderPostSubmission: PostSubmissionAppl
         reference: 'ABC-123-XYZ',
         stage: 'submission',
         status: 'undetermined',
-        files: ppApplicationDocuments(
-          realisticDates.submission.submittedAt.toISOString(),
-          realisticDates.validation.validatedAt.toISOString(),
-          realisticDates.publishedAt.toISOString(),
-        ),
       },
       localPlanningAuthority: {
         publicCommentsAcceptedUntilDecision: false,
@@ -34,6 +29,11 @@ export const planningPermissionFullHouseholderPostSubmission: PostSubmissionAppl
         name: 'Casey Officer',
       },
     },
+    files: ppApplicationDocuments(
+      realisticDates.submission.submittedAt.toISOString(),
+      realisticDates.validation.validatedAt.toISOString(),
+      realisticDates.publishedAt.toISOString(),
+    ),
     submission: {
       ...planningPermissionFullHouseholderPrototype,
       metadata: {
@@ -45,7 +45,7 @@ export const planningPermissionFullHouseholderPostSubmission: PostSubmissionAppl
       organisation: 'LBH',
       id: 'faae04cd-0ec2-479e-b7fb-14b3e7acae35',
       submittedAt: realisticDates.submission.submittedAt.toISOString(),
-      publishedAt: realisticDates.publishedAt.toISOString(),
+      generatedAt: realisticDates.generatedAt.toISOString(),
       schema: `https://theopensystemslab.github.io/digital-planning-data-schemas/${version}/schemas/postSubmissionApplication.json`,
     },
   };

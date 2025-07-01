@@ -26,11 +26,7 @@ export const lawfulDevelopmentCertificateProposedPostSubmission: PostSubmissionA
         withdrawnAt: realisticDates.application.withdrawnAt.toISOString(),
         withdrawnReason:
           'The applicant has decided not to proceed with the application',
-        files: ldcApplicationDocuments(
-          realisticDates.submission.submittedAt.toISOString(),
-          realisticDates.validation.validatedAt.toISOString(),
-          realisticDates.publishedAt.toISOString(),
-        ),
+        publishedAt: realisticDates.publishedAt.toISOString(),
       },
       localPlanningAuthority: {
         publicCommentsAcceptedUntilDecision: true,
@@ -56,6 +52,11 @@ export const lawfulDevelopmentCertificateProposedPostSubmission: PostSubmissionA
       public: publicComments,
       specialist: specialistComments,
     },
+    files: ldcApplicationDocuments(
+      realisticDates.submission.submittedAt.toISOString(),
+      realisticDates.validation.validatedAt.toISOString(),
+      realisticDates.publishedAt.toISOString(),
+    ),
     submission: {
       ...lawfulDevelopmentCertificateProposedPrototype,
       metadata: {
@@ -67,7 +68,7 @@ export const lawfulDevelopmentCertificateProposedPostSubmission: PostSubmissionA
       organisation: 'LBH',
       id: 'faae04cd-0ec2-479e-b7fb-14b3e7acae35',
       submittedAt: realisticDates.submission.submittedAt.toISOString(),
-      publishedAt: realisticDates.publishedAt.toISOString(),
+      generatedAt: realisticDates.generatedAt.toISOString(),
       schema: `https://theopensystemslab.github.io/digital-planning-data-schemas/${version}/schemas/postSubmissionApplication.json`,
     },
   };
