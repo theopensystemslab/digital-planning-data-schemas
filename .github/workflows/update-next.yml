@@ -2,6 +2,9 @@
 
 name: Update @next schema versions
 
+permissions:
+  pull-requests: read
+
 on:
   push:
     branches:
