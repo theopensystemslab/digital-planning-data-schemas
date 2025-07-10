@@ -3,6 +3,16 @@
   "version": "0.7.5",
   "description": "Digital Planning Data schemas",
   "main": "schema/schema.json",
+  "files": [
+    "types",
+    "schemas",
+    "examples"
+  ],
+  "exports": {
+    "./types/*": "./types/*",
+    "./schemas/*": "./schemas/*",
+    "./examples/*": "./examples/*"
+  },
   "scripts": {
     "build": "pnpm build-schema && pnpm build-json-examples",
     "build-json-examples": "pnpm ts-node scripts/build-json-examples.ts",
@@ -11,7 +21,10 @@
     "check": "tsc --noEmit",
     "fix": "gts fix",
     "test": "pnpm build-schema && vitest",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "compile": "tsc",
+    "config": "tsc --showConfig",
+    "package": "pnpm build && pnpm compile && pnpm pack"
   },
   "keywords": [],
   "author": "Open Systems Lab",
