@@ -18,6 +18,28 @@ There's two main options for integrating with Digital Planning Data schemas:
 
 1. Clone this repository and reference the local schema files programmatically in your own code using tools that support JSON Schema validation
 
+1. Create a package to install in your project locally
+
+   Run `pnpm package` and copy the `digital-planning-data-schemas-{version}.tgz` file to your project
+
+   Then run either
+
+   ```sh
+   npm install digital-planning-data-schemas-{version}.tgz`
+   ```
+
+   or add the following to your `package.json`
+
+   ```
+   "digital-planning-data-schemas": "file:digital-planning-data-schemas-{version}.tgz",
+   ```
+
+   Import files and types from the `digital-planning-data-schemas` package
+
+   ```ts
+   import type {CommentType} from 'digital-planning-data-schemas/types/schemas/postSubmissionApplication/enums/CommentType.ts';
+   ```
+
 For more detailed info on integrating and validating schemas, please refer to the examples and tests in this repo.
 
 ## Implementation
