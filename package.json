@@ -24,7 +24,9 @@
     "prepare": "husky install",
     "compile": "tsc",
     "config": "tsc --showConfig",
-    "package": "pnpm build && pnpm compile && pnpm pack"
+    "package": "pnpm build && pnpm compile && pnpm package:copy-dts && pnpm pack && pnpm package:clean-dts",
+    "package:copy-dts": "cpx \"build/types/**/*.d.ts*\" types",
+    "package:clean-dts": "rimraf --verbose --glob types/**/*.d.ts*"
   },
   "keywords": [],
   "author": "Open Systems Lab",
@@ -32,9 +34,11 @@
   "devDependencies": {
     "@types/geojson": "^7946.0.16",
     "@types/node": "18.16.1",
+    "cpx": "^1.5.0",
     "gts": "^6.0.2",
     "husky": "^8.0.0",
     "jsonschema": "^1.4.1",
+    "rimraf": "^6.0.1",
     "typescript": "~5.5.4",
     "vitest": "^3.2.4"
   },
