@@ -39,10 +39,10 @@ type Traffic = 'traffic';
 type Other = 'other';
 
 /**
- * @id #CommentTopic
+ * @id #PublicCommentTopic
  * @description Types of comments
  */
-export type CommentTopic =
+export type PublicCommentTopic =
   | Design
   | Use
   | Light

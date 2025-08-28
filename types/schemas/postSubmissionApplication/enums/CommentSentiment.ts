@@ -14,10 +14,10 @@ type Neutral = 'neutral';
 type Supportive = 'supportive';
 
 /**
- * @id #CommentSentiment
+ * @id #PublicCommentSentiment
  * @description Types of comments
  */
-export type CommentSentiment = Objection | Neutral | Supportive;
+export type PublicCommentSentiment = Objection | Neutral | Supportive;
 
 /**
  * @description Approved
