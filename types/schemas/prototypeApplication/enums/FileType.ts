@@ -14,6 +14,11 @@ type AdvertsDrawings = 'advertsDrawings';
 type AffordableHousingStatement = 'affordableHousingStatement';
 
 /**
+ * @description Application submission
+ */
+type ApplicationSubmission = 'applicationSubmission';
+
+/**
  * @description Arboriculturist report
  */
 type ArboriculturistReport = 'arboriculturistReport';
@@ -72,6 +77,11 @@ type CouncilTaxBill = 'councilTaxBill';
  * @description Crime prevention strategy
  */
 type CrimePreventionStrategy = 'crimePreventionStrategy';
+
+/**
+ * @description Decision notice
+ */
+type DecisionNotice = 'decisionNotice';
 
 /**
  * @description Design and Access Statement
@@ -519,6 +529,7 @@ export type PrototypeFileType =
   | AccessRoadsRightsOfWayDetails
   | AdvertsDrawings
   | AffordableHousingStatement
+  | ApplicationSubmission
   | ArboriculturistReport
   | BankStatement
   | BasementImpactStatement
@@ -531,6 +542,7 @@ export type PrototypeFileType =
   | ContaminationReport
   | CouncilTaxBill
   | CrimePreventionStrategy
+  | DecisionNotice
   | DesignAndAccessStatement
   | DisabilityExemptionEvidence
   | EcologyReport

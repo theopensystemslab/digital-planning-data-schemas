@@ -42055,6 +42055,11 @@
           "type": "string"
         },
         {
+          "const": "applicationSubmission",
+          "description": "Application submission",
+          "type": "string"
+        },
+        {
           "const": "arboriculturistReport",
           "description": "Arboriculturist report",
           "type": "string"
@@ -42112,6 +42117,11 @@
         {
           "const": "crimePreventionStrategy",
           "description": "Crime prevention strategy",
+          "type": "string"
+        },
+        {
+          "const": "decisionNotice",
+          "description": "Decision notice",
           "type": "string"
         },
         {
