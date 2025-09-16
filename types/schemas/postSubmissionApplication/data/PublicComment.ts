@@ -1,5 +1,5 @@
-import {CommentSentiment} from '../enums/CommentSentiment';
-import {CommentTopic} from '../enums/CommentTopic';
+import {PublicCommentSentiment} from '../enums/CommentSentiment';
+import {PublicCommentTopic} from '../enums/CommentTopic';
 import {CommentMetaData} from './Comment';
 
 /**
@@ -13,7 +13,7 @@ interface PublicCommentBase {
   /**
    * What is the sentiment of the comment?
    */
-  sentiment: CommentSentiment;
+  sentiment: PublicCommentSentiment;
   /**
    * The author of the comment
    */
@@ -78,7 +78,7 @@ export interface TopicAndComments {
   /**
    * The topic of the comment
    */
-  topic: CommentTopic;
+  topic: PublicCommentTopic;
   /**
    * What question was asked
    * Follows convention of Responses

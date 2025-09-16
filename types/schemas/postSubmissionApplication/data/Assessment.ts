@@ -11,7 +11,7 @@ import {AssessmentDecision} from '../enums/AssessmentDecision';
  */
 export type PostSubmissionAssessment = AssessmentBase &
   AssessmentDecisionSection &
-  AssessmentCommittee;
+  AssessmentCommitteeDecision;
 
 /**
  * @description Base type for all assessments
@@ -50,10 +50,10 @@ type AssessmentDecisionSection = {
 };
 
 /**
- * @description AssessmentCommittee
+ * @description AssessmentCommitteeDecision
  * When a decision is made by a committee in a LPA
  */
-type AssessmentCommittee = {
+type AssessmentCommitteeDecision = {
   /**
    * This is the recommendation made by planning officer(s) to the committee
    * This is an alternative to a decision - either planningOfficerDecision or planningOfficerRecommendation can be set not both

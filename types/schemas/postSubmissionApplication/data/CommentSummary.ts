@@ -3,7 +3,7 @@
  */
 
 import {
-  CommentSentiment,
+  PublicCommentSentiment,
   SpecialistCommentSentiment,
 } from '../enums/CommentSentiment';
 
@@ -21,7 +21,7 @@ export interface PublicCommentSummary extends CommentSummaryBase {
   /**
    * Comment number broken down by sentiment count
    */
-  sentiment: Record<CommentSentiment, number>;
+  sentiment: Record<PublicCommentSentiment, number>;
 }
 
 /**

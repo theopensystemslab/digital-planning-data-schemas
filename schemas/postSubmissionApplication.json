@@ -2657,73 +2657,6 @@
       ],
       "type": "object"
     },
-    "CommentSentiment": {
-      "$id": "#CommentSentiment",
-      "anyOf": [
-        {
-          "const": "objection",
-          "description": "Objection comment",
-          "type": "string"
-        },
-        {
-          "const": "neutral",
-          "description": "Neutral comment",
-          "type": "string"
-        },
-        {
-          "const": "supportive",
-          "description": "Supportive comment",
-          "type": "string"
-        }
-      ],
-      "description": "Types of comments"
-    },
-    "CommentTopic": {
-      "$id": "#CommentTopic",
-      "anyOf": [
-        {
-          "const": "design",
-          "description": "Comment on the design, size or height of new buildings or extensions",
-          "type": "string"
-        },
-        {
-          "const": "use",
-          "description": "Comment on the use and function of the proposed development",
-          "type": "string"
-        },
-        {
-          "const": "light",
-          "description": "Comment on impacts on natural light",
-          "type": "string"
-        },
-        {
-          "const": "privacy",
-          "description": "Comment on impacts to the privacy of neighbours",
-          "type": "string"
-        },
-        {
-          "const": "access",
-          "description": "Comment on impacts on disabled persons' access",
-          "type": "string"
-        },
-        {
-          "const": "noise",
-          "description": "Comment on any noise from new uses",
-          "type": "string"
-        },
-        {
-          "const": "traffic",
-          "description": "Comment on impacts to traffic, parking or road safety",
-          "type": "string"
-        },
-        {
-          "const": "other",
-          "description": "Comment on other things",
-          "type": "string"
-        }
-      ],
-      "description": "Types of comments"
-    },
     "CommunityInfrastructureLevy": {
       "anyOf": [
         {
@@ -42785,7 +42718,7 @@
           "description": "Further information about the comment"
         },
         "sentiment": {
-          "$ref": "#/definitions/CommentSentiment",
+          "$ref": "#/definitions/PublicCommentSentiment",
           "description": "What is the sentiment of the comment?"
         }
       },
@@ -42822,6 +42755,27 @@
         "name"
       ],
       "type": "object"
+    },
+    "PublicCommentSentiment": {
+      "$id": "#PublicCommentSentiment",
+      "anyOf": [
+        {
+          "const": "objection",
+          "description": "Objection comment",
+          "type": "string"
+        },
+        {
+          "const": "neutral",
+          "description": "Neutral comment",
+          "type": "string"
+        },
+        {
+          "const": "supportive",
+          "description": "Supportive comment",
+          "type": "string"
+        }
+      ],
+      "description": "Types of comments"
     },
     "PublicCommentSummary": {
       "$id": "#PublicCommentsSummary",
@@ -42860,6 +42814,52 @@
         "totalComments"
       ],
       "type": "object"
+    },
+    "PublicCommentTopic": {
+      "$id": "#PublicCommentTopic",
+      "anyOf": [
+        {
+          "const": "design",
+          "description": "Comment on the design, size or height of new buildings or extensions",
+          "type": "string"
+        },
+        {
+          "const": "use",
+          "description": "Comment on the use and function of the proposed development",
+          "type": "string"
+        },
+        {
+          "const": "light",
+          "description": "Comment on impacts on natural light",
+          "type": "string"
+        },
+        {
+          "const": "privacy",
+          "description": "Comment on impacts to the privacy of neighbours",
+          "type": "string"
+        },
+        {
+          "const": "access",
+          "description": "Comment on impacts on disabled persons' access",
+          "type": "string"
+        },
+        {
+          "const": "noise",
+          "description": "Comment on any noise from new uses",
+          "type": "string"
+        },
+        {
+          "const": "traffic",
+          "description": "Comment on impacts to traffic, parking or road safety",
+          "type": "string"
+        },
+        {
+          "const": "other",
+          "description": "Comment on other things",
+          "type": "string"
+        }
+      ],
+      "description": "Types of comments"
     },
     "PublicComments": {
       "$id": "#PublicComments",
@@ -43324,7 +43324,7 @@
           "type": "string"
         },
         "topic": {
-          "$ref": "#/definitions/CommentTopic",
+          "$ref": "#/definitions/PublicCommentTopic",
           "description": "The topic of the comment"
         }
       },
