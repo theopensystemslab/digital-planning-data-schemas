@@ -43187,8 +43187,7 @@
       "required": [
         "comments",
         "firstConsultedAt",
-        "id",
-        "organisationSpecialism"
+        "id"
       ],
       "type": "object"
     },
