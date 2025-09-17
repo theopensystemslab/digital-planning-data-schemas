@@ -15,7 +15,7 @@ interface SpecialistBase {
   /**
    * What is the specialists organisation or specialism?
    */
-  organisationSpecialism: string;
+  organisationSpecialism?: string;
   /**
    * What is their job title?
    */
