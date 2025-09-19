@@ -1,5 +1,5 @@
 import {PublicCommentSentiment} from '../enums/CommentSentiment';
-import {PublicCommentTopic} from '../enums/CommentTopic';
+import {PublicCommentTopic} from '../enums/PublicCommentTopic';
 import {CommentMetaData} from './Comment';
 
 /**
