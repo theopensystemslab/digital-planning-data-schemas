@@ -93,7 +93,7 @@ export const generateRealisticDates = (
   // appeal decided
   const appealDecidedAt = addDays(appealStartedAt, 5);
 
-  // application can be withdrawn any time between consultationStartAt and planningOfficerDecisionAt
+  // application can be withdrawn any time before planningOfficerDecisionAt committeeDecisionAt
   const withdrawnAt = addDays(consultationStartAt, 1);
 
   // appeal is withdrawn any time between appealLodgedAt and appealDecidedAt
