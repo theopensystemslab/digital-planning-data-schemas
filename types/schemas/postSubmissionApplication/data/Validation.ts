@@ -5,7 +5,7 @@ type ValidationBase = {
   /**
    * ISO 8601
    * DateTime
-   * This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process.
+   * This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process.
    */
   receivedAt: DateTime;
   /**
