@@ -3,6 +3,16 @@
   "version": "0.7.5",
   "description": "Digital Planning Data schemas",
   "main": "schema/schema.json",
+  "files": [
+    "types",
+    "schemas",
+    "examples"
+  ],
+  "exports": {
+    "./types/*": "./types/*",
+    "./schemas/*": "./schemas/*",
+    "./examples/*": "./examples/*"
+  },
   "scripts": {
     "build": "pnpm build-schema && pnpm build-json-examples",
     "build-json-examples": "pnpm ts-node scripts/build-json-examples.ts",
@@ -11,7 +21,12 @@
     "check": "tsc --noEmit",
     "fix": "gts fix",
     "test": "pnpm build-schema && vitest",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "compile": "tsc",
+    "config": "tsc --showConfig",
+    "package": "pnpm build && pnpm compile && pnpm package:copy-dts && pnpm pack && pnpm package:clean-dts",
+    "package:copy-dts": "cpx \"build/types/**/*.d.ts*\" types",
+    "package:clean-dts": "rimraf --verbose --glob types/**/*.d.ts*"
   },
   "keywords": [],
   "author": "Open Systems Lab",
@@ -19,9 +34,11 @@
   "devDependencies": {
     "@types/geojson": "^7946.0.16",
     "@types/node": "18.16.1",
+    "cpx": "^1.5.0",
     "gts": "^6.0.2",
     "husky": "^8.0.0",
     "jsonschema": "^1.4.1",
+    "rimraf": "^6.0.1",
     "typescript": "~5.5.4",
     "vitest": "^3.2.4"
   },
