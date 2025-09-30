@@ -1,7 +1,7 @@
 /**
- * @description #Pagination
+ * @description #OffsetPagination
  */
-export interface Pagination {
+export interface OffsetPagination {
   /**
    * Number of results per page eg 10
    */
