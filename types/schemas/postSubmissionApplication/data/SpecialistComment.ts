@@ -1,3 +1,4 @@
+import {Address} from '../../../shared/Addresses';
 import {PlanningConstraint} from '../../../shared/Constraints';
 import {DateTime} from '../../../shared/utils';
 import {SpecialistCommentSentiment} from '../enums/CommentSentiment';
@@ -40,7 +41,7 @@ interface SpecialistBase {
  * @id #Specialist
  * @description Details of a specialist and their comments on an application
  */
-export interface Specialist extends SpecialistBase {
+export interface Specialist extends SpecialistBase, SpecialistCommentAuthor {
   /**
    * List of comments made by the specialist in order of latest first
    */
@@ -51,7 +52,9 @@ export interface Specialist extends SpecialistBase {
  * @id #SpecialistRedacted
  * @description Details of a specialist and their comments on an application
  */
-export interface SpecialistRedacted extends SpecialistBase {
+export interface SpecialistRedacted
+  extends SpecialistBase,
+    SpecialistCommentAuthorRedacted {
   /**
    * List of comments made by the specialist in order of latest first
    */
@@ -108,4 +111,37 @@ export interface SpecialistCommentRedacted extends SpecialistCommentBase {
    * All metadata fields are required in the redacted version
    */
   metadata: Required<CommentMetaData>;
+}
+
+/**
+ * @id #SpecialistCommentAuthor
+ * @description The author of a public comment
+ */
+export interface SpecialistCommentAuthor {
+  /**
+   * The author of the comment
+   */
+  name: {
+    /**
+     * The name of the author of the comment in the format 'First Last'
+     */
+    singleLine: string;
+  };
+  address: Address;
+}
+
+/**
+ * @id #SpecialistCommentAuthorRedacted
+ * @description The author of a public comment
+ */
+export interface SpecialistCommentAuthorRedacted {
+  /**
+   * The author of the comment
+   */
+  name: {
+    /**
+     * The name of the author of the comment in the format 'First Last'
+     */
+    singleLine: string;
+  };
 }

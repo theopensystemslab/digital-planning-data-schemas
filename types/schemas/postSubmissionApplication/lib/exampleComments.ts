@@ -265,6 +265,14 @@ export const specialistComments: SpecialistComments = {
       id: '1',
       organisationSpecialism: 'Historic England',
       reason: 'constraint',
+      name: {
+        singleLine: 'Jane Smith',
+      },
+      address: {
+        line1: '1 Some Street',
+        town: 'Some Town',
+        postcode: 'AA1 1AA',
+      },
       constraints: [
         {
           value: 'monument',
@@ -288,6 +296,14 @@ export const specialistComments: SpecialistComments = {
       id: '2',
       organisationSpecialism: 'Historic England',
       reason: 'constraint',
+      name: {
+        singleLine: 'Jane Smith',
+      },
+      address: {
+        line1: '1 Some Street',
+        town: 'Some Town',
+        postcode: 'AA1 1AA',
+      },
       constraints: [
         {
           value: 'monument',
@@ -311,6 +327,14 @@ export const specialistComments: SpecialistComments = {
       id: '3',
       organisationSpecialism: 'Historic England',
       reason: 'constraint',
+      name: {
+        singleLine: 'Jane Smith',
+      },
+      address: {
+        line1: '1 Some Street',
+        town: 'Some Town',
+        postcode: 'AA1 1AA',
+      },
       constraints: [
         {
           value: 'monument',
@@ -334,6 +358,14 @@ export const specialistComments: SpecialistComments = {
       id: '4',
       organisationSpecialism: 'Historic England',
       reason: 'constraint',
+      name: {
+        singleLine: 'Jane Smith',
+      },
+      address: {
+        line1: '1 Some Street',
+        town: 'Some Town',
+        postcode: 'AA1 1AA',
+      },
       constraints: [
         {
           value: 'monument',
@@ -371,6 +403,9 @@ export const specialistCommentsRedacted: SpecialistCommentsRedacted = {
       id: '1',
       organisationSpecialism: 'Historic England',
       reason: 'constraint',
+      name: {
+        singleLine: 'Jane Smith',
+      },
       constraints: [
         {
           value: 'monument',
@@ -394,6 +429,9 @@ export const specialistCommentsRedacted: SpecialistCommentsRedacted = {
       id: '2',
       organisationSpecialism: 'Historic England',
       reason: 'constraint',
+      name: {
+        singleLine: 'Jane Smith',
+      },
       constraints: [
         {
           value: 'monument',
@@ -417,6 +455,9 @@ export const specialistCommentsRedacted: SpecialistCommentsRedacted = {
       id: '3',
       organisationSpecialism: 'Historic England',
       reason: 'constraint',
+      name: {
+        singleLine: 'Jane Smith',
+      },
       constraints: [
         {
           value: 'monument',
@@ -440,6 +481,9 @@ export const specialistCommentsRedacted: SpecialistCommentsRedacted = {
       id: '4',
       organisationSpecialism: 'Historic England',
       reason: 'constraint',
+      name: {
+        singleLine: 'Jane Smith',
+      },
       constraints: [
         {
           value: 'monument',

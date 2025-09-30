@@ -172,6 +172,9 @@
           "id": "1",
           "organisationSpecialism": "Historic England",
           "reason": "constraint",
+          "name": {
+            "singleLine": "Jane Smith"
+          },
           "constraints": [
             {
               "value": "monument",
@@ -206,6 +209,9 @@
           "id": "2",
           "organisationSpecialism": "Historic England",
           "reason": "constraint",
+          "name": {
+            "singleLine": "Jane Smith"
+          },
           "constraints": [
             {
               "value": "monument",
@@ -240,6 +246,9 @@
           "id": "3",
           "organisationSpecialism": "Historic England",
           "reason": "constraint",
+          "name": {
+            "singleLine": "Jane Smith"
+          },
           "constraints": [
             {
               "value": "monument",
@@ -274,6 +283,9 @@
           "id": "4",
           "organisationSpecialism": "Historic England",
           "reason": "constraint",
+          "name": {
+            "singleLine": "Jane Smith"
+          },
           "constraints": [
             {
               "value": "monument",

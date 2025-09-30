@@ -43157,6 +43157,9 @@
       "additionalProperties": false,
       "description": "Details of a specialist and their comments on an application",
       "properties": {
+        "address": {
+          "$ref": "#/definitions/Address"
+        },
         "comments": {
           "description": "List of comments made by the specialist in order of latest first",
           "items": {
@@ -43183,6 +43186,20 @@
           "description": "What is their job title?",
           "type": "string"
         },
+        "name": {
+          "additionalProperties": false,
+          "description": "The author of the comment",
+          "properties": {
+            "singleLine": {
+              "description": "The name of the author of the comment in the format 'First Last'",
+              "type": "string"
+            }
+          },
+          "required": [
+            "singleLine"
+          ],
+          "type": "object"
+        },
         "organisationSpecialism": {
           "description": "What is the specialists organisation or specialism?",
           "type": "string"
@@ -43193,7 +43210,9 @@
         }
       },
       "required": [
-        "id"
+        "address",
+        "id",
+        "name"
       ],
       "type": "object"
     },
