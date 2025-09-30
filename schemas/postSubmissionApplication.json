@@ -43173,7 +43173,7 @@
         },
         "firstConsultedAt": {
           "$ref": "#/definitions/DateTime",
-          "description": "the first date the specialist was consulted?"
+          "description": "the first date the specialist was consulted, this may be undefined if the specialist has not yet been consulted but has been setup in the system"
         },
         "id": {
           "description": "unique identifier for the specialist",
