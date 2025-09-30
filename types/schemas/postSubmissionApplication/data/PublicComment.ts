@@ -1,7 +1,7 @@
 import {Address} from '../../../shared/Addresses';
 import {PublicCommentSentiment} from '../enums/CommentSentiment';
 import {PublicCommentTopic} from '../enums/PublicCommentTopic';
-import {CommentMetaData} from './Comment';
+import {CommentMetaData} from './CommentMetaData';
 
 /**
  * @internal All the required fields for a public or private public comment

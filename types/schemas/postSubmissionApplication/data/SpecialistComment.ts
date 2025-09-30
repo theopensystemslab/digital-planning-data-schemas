@@ -1,7 +1,7 @@
 import {PlanningConstraint} from '../../../shared/Constraints';
 import {DateTime} from '../../../shared/utils';
 import {SpecialistCommentSentiment} from '../enums/CommentSentiment';
-import {CommentMetaData} from './Comment';
+import {CommentMetaData} from './CommentMetaData';
 import {PostSubmissionFile} from './File';
 
 /**
