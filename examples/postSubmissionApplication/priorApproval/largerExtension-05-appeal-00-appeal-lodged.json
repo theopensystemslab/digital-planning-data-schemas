@@ -141,6 +141,11 @@
           "author": {
             "name": {
               "singleLine": "John Doe"
+            },
+            "address": {
+              "line1": "1 Some Street",
+              "town": "Some Town",
+              "postcode": "AA1 1AA"
             }
           },
           "metadata": {
@@ -239,6 +244,11 @@
           "author": {
             "name": {
               "singleLine": "John Doe"
+            },
+            "address": {
+              "line1": "1 Some Street",
+              "town": "Some Town",
+              "postcode": "AA1 1AA"
             }
           },
           "metadata": {
@@ -295,6 +305,11 @@
           "author": {
             "name": {
               "singleLine": "John Doe"
+            },
+            "address": {
+              "line1": "1 Some Street",
+              "town": "Some Town",
+              "postcode": "AA1 1AA"
             }
           },
           "metadata": {
@@ -349,6 +364,11 @@
           "author": {
             "name": {
               "singleLine": "John Doe"
+            },
+            "address": {
+              "line1": "1 Some Street",
+              "town": "Some Town",
+              "postcode": "AA1 1AA"
             }
           },
           "metadata": {
@@ -586,6 +606,7 @@
       "name": "location%20plan_proposed_01.jpg",
       "association": "application",
       "url": "https://api.editor.planx.dev/file/private/dfaz9qu5/location%20plan_proposed_01.jpg",
+      "redactedUrl": "https://api.editor.planx.dev/file/private/dfaz9qu5/location%20plan_proposed_01.jpg",
       "type": [
         "sitePlan.proposed"
       ],

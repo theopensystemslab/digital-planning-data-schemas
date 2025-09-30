@@ -16511,6 +16511,10 @@
           "description": "Filename or title of the file",
           "type": "string"
         },
+        "redactedUrl": {
+          "description": "URL where the redacted file can be accessed",
+          "type": "string"
+        },
         "referencesInDocument": {
           "description": "Optional list of document references in the file. Where documents contain multiple drawings, include the references here eg [\"25A-V2\", \"25B-V2\"]).",
           "items": {
@@ -16539,12 +16543,12 @@
         }
       },
       "required": [
-        "id",
-        "name",
         "association",
+        "id",
+        "metadata",
+        "name",
         "type",
-        "url",
-        "metadata"
+        "url"
       ],
       "type": "object"
     },
@@ -42746,6 +42750,9 @@
       "additionalProperties": false,
       "description": "The author of a public comment",
       "properties": {
+        "address": {
+          "$ref": "#/definitions/Address"
+        },
         "name": {
           "additionalProperties": false,
           "description": "The author of the comment",
@@ -42762,7 +42769,8 @@
         }
       },
       "required": [
-        "name"
+        "name",
+        "address"
       ],
       "type": "object"
     },
@@ -43185,8 +43193,6 @@
         }
       },
       "required": [
-        "comments",
-        "firstConsultedAt",
         "id"
       ],
       "type": "object"

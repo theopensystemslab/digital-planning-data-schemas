@@ -81,6 +81,11 @@ export const publicComments: PublicComments = {
         name: {
           singleLine: 'John Doe',
         },
+        address: {
+          line1: '1 Some Street',
+          town: 'Some Town',
+          postcode: 'AA1 1AA',
+        },
       },
       metadata: {
         submittedAt: '2024-02-20T15:54:31.021Z',
@@ -98,6 +103,11 @@ export const publicComments: PublicComments = {
         name: {
           singleLine: 'John Doe',
         },
+        address: {
+          line1: '1 Some Street',
+          town: 'Some Town',
+          postcode: 'AA1 1AA',
+        },
       },
       metadata: {
         submittedAt: '2024-02-20T15:54:31.021Z',
@@ -114,6 +124,11 @@ export const publicComments: PublicComments = {
         name: {
           singleLine: 'John Doe',
         },
+        address: {
+          line1: '1 Some Street',
+          town: 'Some Town',
+          postcode: 'AA1 1AA',
+        },
       },
       metadata: {
         submittedAt: '2024-02-20T15:54:31.021Z',
@@ -127,6 +142,11 @@ export const publicComments: PublicComments = {
       author: {
         name: {
           singleLine: 'John Doe',
+        },
+        address: {
+          line1: '1 Some Street',
+          town: 'Some Town',
+          postcode: 'AA1 1AA',
         },
       },
       metadata: {

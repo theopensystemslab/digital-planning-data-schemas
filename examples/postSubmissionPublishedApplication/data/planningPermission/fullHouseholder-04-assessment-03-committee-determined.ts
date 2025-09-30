@@ -6,7 +6,7 @@ import {
   publicCommentsRedacted,
   specialistCommentsRedacted,
 } from '../../../../types/schemas/postSubmissionApplication/lib/exampleComments';
-import {ppApplicationDocuments} from '../../../../types/schemas/postSubmissionApplication/lib/exampleDocuments';
+import {ppApplicationDocumentsRedacted} from '../../../../types/schemas/postSubmissionApplication/lib/exampleDocuments';
 
 const version = process.env['VERSION'] || '@next';
 
@@ -62,7 +62,7 @@ export const planningPermissionFullHouseholderPostSubmission: PostSubmissionPubl
       public: publicCommentsRedacted,
       specialist: specialistCommentsRedacted,
     },
-    files: ppApplicationDocuments(
+    files: ppApplicationDocumentsRedacted(
       realisticDates.submission.submittedAt.toISOString(),
       realisticDates.validation.validatedAt.toISOString(),
       realisticDates.publishedAt.toISOString(),

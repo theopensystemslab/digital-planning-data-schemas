@@ -131,6 +131,11 @@
           "author": {
             "name": {
               "singleLine": "John Doe"
+            },
+            "address": {
+              "line1": "1 Some Street",
+              "town": "Some Town",
+              "postcode": "AA1 1AA"
             }
           },
           "metadata": {
@@ -229,6 +234,11 @@
           "author": {
             "name": {
               "singleLine": "John Doe"
+            },
+            "address": {
+              "line1": "1 Some Street",
+              "town": "Some Town",
+              "postcode": "AA1 1AA"
             }
           },
           "metadata": {
@@ -285,6 +295,11 @@
           "author": {
             "name": {
               "singleLine": "John Doe"
+            },
+            "address": {
+              "line1": "1 Some Street",
+              "town": "Some Town",
+              "postcode": "AA1 1AA"
             }
           },
           "metadata": {
@@ -339,6 +354,11 @@
           "author": {
             "name": {
               "singleLine": "John Doe"
+            },
+            "address": {
+              "line1": "1 Some Street",
+              "town": "Some Town",
+              "postcode": "AA1 1AA"
             }
           },
           "metadata": {
@@ -576,6 +596,7 @@
       "name": "myPlans.pdf",
       "association": "application",
       "url": "https://api.editor.planx.dev/file/private/tbp4kiba/myPlans.pdf",
+      "redactedUrl": "https://api.editor.planx.dev/file/private/tbp4kiba/myPlans.pdf",
       "type": [
         "roofPlan.existing",
         "roofPlan.proposed"

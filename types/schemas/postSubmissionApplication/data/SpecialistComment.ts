@@ -29,9 +29,11 @@ interface SpecialistBase {
    */
   constraints?: PlanningConstraint[];
   /**
-   * the first date the specialist was consulted?
+   * the first date the specialist was consulted, this may be
+   * undefined if the specialist has not yet been consulted
+   * but has been setup in the system
    */
-  firstConsultedAt: DateTime;
+  firstConsultedAt?: DateTime;
 }
 
 /**
@@ -42,7 +44,7 @@ export interface Specialist extends SpecialistBase {
   /**
    * List of comments made by the specialist in order of latest first
    */
-  comments: SpecialistComment[];
+  comments?: SpecialistComment[];
 }
 
 /**

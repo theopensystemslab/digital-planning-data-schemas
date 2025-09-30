@@ -14856,6 +14856,10 @@
           "description": "Filename or title of the file",
           "type": "string"
         },
+        "redactedUrl": {
+          "description": "URL where the redacted file can be accessed",
+          "type": "string"
+        },
         "referencesInDocument": {
           "description": "Optional list of document references in the file. Where documents contain multiple drawings, include the references here eg [\"25A-V2\", \"25B-V2\"]).",
           "items": {
@@ -14884,12 +14888,12 @@
         }
       },
       "required": [
-        "id",
-        "name",
         "association",
+        "id",
+        "metadata",
+        "name",
         "type",
-        "url",
-        "metadata"
+        "url"
       ],
       "type": "object"
     },
@@ -14903,6 +14907,110 @@
         "publicComment"
       ],
       "type": "string"
+    },
+    "PostSubmissionFileRedacted": {
+      "$id": "#PostSubmissionFile",
+      "additionalProperties": false,
+      "description": "File uploaded and labeled by the user to support the application",
+      "properties": {
+        "association": {
+          "$ref": "#/definitions/PostSubmissionFileAssociation",
+          "description": "Which part of the application this file is associated with."
+        },
+        "description": {
+          "description": "Optional description of the file",
+          "type": "string"
+        },
+        "id": {
+          "description": "Unique identifier for the file",
+          "type": "number"
+        },
+        "metadata": {
+          "additionalProperties": false,
+          "description": "Metadata for the file",
+          "properties": {
+            "createdAt": {
+              "$ref": "#/definitions/DateTime",
+              "description": "Date and time when the file itself was created"
+            },
+            "mimeType": {
+              "description": "MIME type of the file, e.g. 'image/png', 'application/pdf'",
+              "type": "string"
+            },
+            "publishedAt": {
+              "$ref": "#/definitions/DateTime",
+              "description": "Date and time when the file was published"
+            },
+            "size": {
+              "additionalProperties": false,
+              "description": "file size in bytes, allows for more units in the future if needed",
+              "properties": {
+                "bytes": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "bytes"
+              ],
+              "type": "object"
+            },
+            "submittedAt": {
+              "$ref": "#/definitions/DateTime",
+              "description": "Date and time the file was received by the system or uploaded. This will usually match the submittedAt date of the application, but if the file is amended or uploaded later it will differ."
+            },
+            "validatedAt": {
+              "$ref": "#/definitions/DateTime",
+              "description": "Date and time when the file was validated"
+            }
+          },
+          "required": [
+            "size",
+            "mimeType",
+            "createdAt",
+            "submittedAt"
+          ],
+          "type": "object"
+        },
+        "name": {
+          "description": "Filename or title of the file",
+          "type": "string"
+        },
+        "redactedUrl": {
+          "description": "URL where the redacted file can be accessed",
+          "type": "string"
+        },
+        "referencesInDocument": {
+          "description": "Optional list of document references in the file. Where documents contain multiple drawings, include the references here eg [\"25A-V2\", \"25B-V2\"]).",
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "thumbnailUrl": {
+          "description": "URL to a thumbnail image of the file, if applicable",
+          "type": "string"
+        },
+        "type": {
+          "description": "What type of file this is. This is an array to allow for multiple types, as a file can be associated with more than one type.",
+          "items": {
+            "$ref": "#/definitions/PrototypeFileType"
+          },
+          "type": "array"
+        },
+        "version": {
+          "description": "Version of the file, used to track changes or updates",
+          "type": "number"
+        }
+      },
+      "required": [
+        "association",
+        "id",
+        "metadata",
+        "name",
+        "redactedUrl",
+        "type"
+      ],
+      "type": "object"
     },
     "PostSubmissionMetadata": {
       "anyOf": [
@@ -15197,7 +15305,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -15401,7 +15509,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -15605,7 +15713,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -15809,7 +15917,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -16013,7 +16121,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -16217,7 +16325,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -16421,7 +16529,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -16625,7 +16733,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -16829,7 +16937,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -17033,7 +17141,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -17237,7 +17345,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -17441,7 +17549,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -17645,7 +17753,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -17849,7 +17957,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -18053,7 +18161,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -18257,7 +18365,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -18461,7 +18569,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -18665,7 +18773,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -18869,7 +18977,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -19073,7 +19181,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -19277,7 +19385,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -19481,7 +19589,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -19685,7 +19793,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -19889,7 +19997,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -20093,7 +20201,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -20297,7 +20405,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -20501,7 +20609,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -20705,7 +20813,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -20909,7 +21017,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -21113,7 +21221,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -21317,7 +21425,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -21521,7 +21629,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -21725,7 +21833,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -21929,7 +22037,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -22133,7 +22241,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -22337,7 +22445,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -22541,7 +22649,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -22745,7 +22853,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -22949,7 +23057,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -23153,7 +23261,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -23357,7 +23465,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -23561,7 +23669,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -23765,7 +23873,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -23969,7 +24077,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -24173,7 +24281,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -24377,7 +24485,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -24581,7 +24689,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -24785,7 +24893,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -24989,7 +25097,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -25193,7 +25301,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -25397,7 +25505,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -25601,7 +25709,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -25805,7 +25913,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -26009,7 +26117,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -26213,7 +26321,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -26417,7 +26525,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -26621,7 +26729,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -26825,7 +26933,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -27029,7 +27137,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -27233,7 +27341,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -27437,7 +27545,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -27641,7 +27749,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -27845,7 +27953,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -28049,7 +28157,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -28253,7 +28361,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -28457,7 +28565,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -28661,7 +28769,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -28865,7 +28973,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -29069,7 +29177,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -29273,7 +29381,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -29477,7 +29585,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -29681,7 +29789,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -29885,7 +29993,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -30089,7 +30197,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -30293,7 +30401,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -30497,7 +30605,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -30701,7 +30809,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -30905,7 +31013,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -31109,7 +31217,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -31313,7 +31421,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -31517,7 +31625,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -31721,7 +31829,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -31925,7 +32033,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -32129,7 +32237,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -32333,7 +32441,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -32537,7 +32645,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -32741,7 +32849,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -32945,7 +33053,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -33149,7 +33257,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -33353,7 +33461,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -33557,7 +33665,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -33761,7 +33869,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -33965,7 +34073,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -34169,7 +34277,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -34373,7 +34481,7 @@
         },
         "files": {
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },
@@ -42659,8 +42767,8 @@
       ],
       "type": "object"
     },
-    "PublicCommentAuthor": {
-      "$id": "#PublicCommentAuthor",
+    "PublicCommentAuthorRedacted": {
+      "$id": "#PublicCommentAuthorRedacted",
       "additionalProperties": false,
       "description": "The author of a public comment",
       "properties": {
@@ -42690,7 +42798,7 @@
       "description": "A public comment and any associated metadata, excluding sensitive information",
       "properties": {
         "author": {
-          "$ref": "#/definitions/PublicCommentAuthor",
+          "$ref": "#/definitions/PublicCommentAuthorRedacted",
           "description": "The author of the comment"
         },
         "commentRedacted": {
@@ -43303,7 +43411,6 @@
       },
       "required": [
         "comments",
-        "firstConsultedAt",
         "id"
       ],
       "type": "object"

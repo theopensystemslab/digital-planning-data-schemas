@@ -3,10 +3,10 @@ import {PrototypeFileType as FileType} from '../../prototypeApplication/enums/Fi
 import {PostSubmissionFileAssociation} from '../enums/FileAssociation';
 
 /**
- * @id #PostSubmissionFile
+ * @id #PostSubmissionFileBase
  * @description File uploaded and labeled by the user to support the application
  */
-export interface PostSubmissionFile {
+export interface PostSubmissionFileBase {
   /**
    * Unique identifier for the file
    */
@@ -29,10 +29,6 @@ export interface PostSubmissionFile {
    */
   type: FileType[];
   /**
-   * URL where the file can be accessed
-   */
-  url: string;
-  /**
    * URL to a thumbnail image of the file, if applicable
    */
   thumbnailUrl?: string;
@@ -49,6 +45,32 @@ export interface PostSubmissionFile {
    * Metadata for the file
    */
   metadata: PostSubmissionFileMetadata;
+}
+
+/**
+ * @id #PostSubmissionFile
+ * @description File uploaded and labeled by the user to support the application
+ */
+export interface PostSubmissionFile extends PostSubmissionFileBase {
+  /**
+   * URL where the file can be accessed
+   */
+  url: string;
+  /**
+   * URL where the redacted file can be accessed
+   */
+  redactedUrl?: string;
+}
+
+/**
+ * @id #PostSubmissionFile
+ * @description File uploaded and labeled by the user to support the application
+ */
+export interface PostSubmissionFileRedacted extends PostSubmissionFileBase {
+  /**
+   * URL where the redacted file can be accessed
+   */
+  redactedUrl: string;
 }
 
 /**

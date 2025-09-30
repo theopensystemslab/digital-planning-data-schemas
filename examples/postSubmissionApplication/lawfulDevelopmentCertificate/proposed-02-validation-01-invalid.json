@@ -27,6 +27,7 @@
       "name": "myPlans.pdf",
       "association": "application",
       "url": "https://api.editor.planx.dev/file/private/tbp4kiba/myPlans.pdf",
+      "redactedUrl": "https://api.editor.planx.dev/file/private/tbp4kiba/myPlans.pdf",
       "type": [
         "roofPlan.existing",
         "roofPlan.proposed",
