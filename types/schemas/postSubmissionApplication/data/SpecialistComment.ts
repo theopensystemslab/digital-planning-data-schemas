@@ -3,7 +3,7 @@ import {PlanningConstraint} from '../../../shared/Constraints';
 import {DateTime} from '../../../shared/utils';
 import {SpecialistCommentSentiment} from '../enums/CommentSentiment';
 import {CommentMetaData} from './CommentMetaData';
-import {PostSubmissionFile} from './File';
+import {PostSubmissionFile, PostSubmissionFileRedacted} from './File';
 
 /**
  * @internal All the required fields for a public or private specialist
@@ -74,10 +74,6 @@ interface SpecialistCommentBase {
    */
   sentiment: SpecialistCommentSentiment;
   /**
-   * Did the author include any files with the comment?
-   */
-  files?: PostSubmissionFile[];
-  /**
    * Further information about the comment
    */
   metadata: CommentMetaData;
@@ -88,6 +84,10 @@ interface SpecialistCommentBase {
  * @description A specialist comment and any associated metadata
  */
 export interface SpecialistComment extends SpecialistCommentBase {
+  /**
+   * Did the author include any files with the comment?
+   */
+  files?: PostSubmissionFile[];
   /**
    * The comment itself
    */
@@ -103,6 +103,10 @@ export interface SpecialistComment extends SpecialistCommentBase {
  * @description A public comment and any associated metadata, excluding sensitive information
  */
 export interface SpecialistCommentRedacted extends SpecialistCommentBase {
+  /**
+   * Did the author include any files with the comment?
+   */
+  files?: PostSubmissionFileRedacted[];
   /**
    * The redacted version of the comment
    */
