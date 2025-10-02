@@ -142,6 +142,11 @@
           "author": {
             "name": {
               "singleLine": "John Doe"
+            },
+            "address": {
+              "line1": "1 Some Street",
+              "town": "Some Town",
+              "postcode": "AA1 1AA"
             }
           },
           "metadata": {
@@ -240,6 +245,11 @@
           "author": {
             "name": {
               "singleLine": "John Doe"
+            },
+            "address": {
+              "line1": "1 Some Street",
+              "town": "Some Town",
+              "postcode": "AA1 1AA"
             }
           },
           "metadata": {
@@ -296,6 +306,11 @@
           "author": {
             "name": {
               "singleLine": "John Doe"
+            },
+            "address": {
+              "line1": "1 Some Street",
+              "town": "Some Town",
+              "postcode": "AA1 1AA"
             }
           },
           "metadata": {
@@ -350,6 +365,11 @@
           "author": {
             "name": {
               "singleLine": "John Doe"
+            },
+            "address": {
+              "line1": "1 Some Street",
+              "town": "Some Town",
+              "postcode": "AA1 1AA"
             }
           },
           "metadata": {
@@ -374,6 +394,14 @@
           "id": "1",
           "organisationSpecialism": "Historic England",
           "reason": "constraint",
+          "name": {
+            "singleLine": "Jane Smith"
+          },
+          "address": {
+            "line1": "1 Some Street",
+            "town": "Some Town",
+            "postcode": "AA1 1AA"
+          },
           "constraints": [
             {
               "value": "monument",
@@ -426,6 +454,14 @@
           "id": "2",
           "organisationSpecialism": "Historic England",
           "reason": "constraint",
+          "name": {
+            "singleLine": "Jane Smith"
+          },
+          "address": {
+            "line1": "1 Some Street",
+            "town": "Some Town",
+            "postcode": "AA1 1AA"
+          },
           "constraints": [
             {
               "value": "monument",
@@ -478,6 +514,14 @@
           "id": "3",
           "organisationSpecialism": "Historic England",
           "reason": "constraint",
+          "name": {
+            "singleLine": "Jane Smith"
+          },
+          "address": {
+            "line1": "1 Some Street",
+            "town": "Some Town",
+            "postcode": "AA1 1AA"
+          },
           "constraints": [
             {
               "value": "monument",
@@ -530,6 +574,14 @@
           "id": "4",
           "organisationSpecialism": "Historic England",
           "reason": "constraint",
+          "name": {
+            "singleLine": "Jane Smith"
+          },
+          "address": {
+            "line1": "1 Some Street",
+            "town": "Some Town",
+            "postcode": "AA1 1AA"
+          },
           "constraints": [
             {
               "value": "monument",
@@ -587,6 +639,7 @@
       "name": "myPlans.pdf",
       "association": "application",
       "url": "https://api.editor.planx.dev/file/private/tbp4kiba/myPlans.pdf",
+      "redactedUrl": "https://api.editor.planx.dev/file/private/tbp4kiba/myPlans.pdf",
       "type": [
         "roofPlan.existing",
         "roofPlan.proposed"

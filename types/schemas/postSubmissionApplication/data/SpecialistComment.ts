@@ -1,8 +1,9 @@
+import {Address} from '../../../shared/Addresses';
 import {PlanningConstraint} from '../../../shared/Constraints';
 import {DateTime} from '../../../shared/utils';
 import {SpecialistCommentSentiment} from '../enums/CommentSentiment';
-import {CommentMetaData} from './Comment';
-import {PostSubmissionFile} from './File';
+import {CommentMetaData} from './CommentMetaData';
+import {PostSubmissionFile, PostSubmissionFileRedacted} from './File';
 
 /**
  * @internal All the required fields for a public or private specialist
@@ -29,27 +30,31 @@ interface SpecialistBase {
    */
   constraints?: PlanningConstraint[];
   /**
-   * the first date the specialist was consulted?
+   * the first date the specialist was consulted, this may be
+   * undefined if the specialist has not yet been consulted
+   * but has been setup in the system
    */
-  firstConsultedAt: DateTime;
+  firstConsultedAt?: DateTime;
 }
 
 /**
  * @id #Specialist
  * @description Details of a specialist and their comments on an application
  */
-export interface Specialist extends SpecialistBase {
+export interface Specialist extends SpecialistBase, SpecialistCommentAuthor {
   /**
    * List of comments made by the specialist in order of latest first
    */
-  comments: SpecialistComment[];
+  comments?: SpecialistComment[];
 }
 
 /**
  * @id #SpecialistRedacted
  * @description Details of a specialist and their comments on an application
  */
-export interface SpecialistRedacted extends SpecialistBase {
+export interface SpecialistRedacted
+  extends SpecialistBase,
+    SpecialistCommentAuthorRedacted {
   /**
    * List of comments made by the specialist in order of latest first
    */
@@ -69,10 +74,6 @@ interface SpecialistCommentBase {
    */
   sentiment: SpecialistCommentSentiment;
   /**
-   * Did the author include any files with the comment?
-   */
-  files?: PostSubmissionFile[];
-  /**
    * Further information about the comment
    */
   metadata: CommentMetaData;
@@ -83,6 +84,10 @@ interface SpecialistCommentBase {
  * @description A specialist comment and any associated metadata
  */
 export interface SpecialistComment extends SpecialistCommentBase {
+  /**
+   * Did the author include any files with the comment?
+   */
+  files?: PostSubmissionFile[];
   /**
    * The comment itself
    */
@@ -99,6 +104,10 @@ export interface SpecialistComment extends SpecialistCommentBase {
  */
 export interface SpecialistCommentRedacted extends SpecialistCommentBase {
   /**
+   * Did the author include any files with the comment?
+   */
+  files?: PostSubmissionFileRedacted[];
+  /**
    * The redacted version of the comment
    */
   commentRedacted: string;
@@ -106,4 +115,37 @@ export interface SpecialistCommentRedacted extends SpecialistCommentBase {
    * All metadata fields are required in the redacted version
    */
   metadata: Required<CommentMetaData>;
+}
+
+/**
+ * @id #SpecialistCommentAuthor
+ * @description The author of a public comment
+ */
+export interface SpecialistCommentAuthor {
+  /**
+   * The author of the comment
+   */
+  name: {
+    /**
+     * The name of the author of the comment in the format 'First Last'
+     */
+    singleLine: string;
+  };
+  address: Address;
+}
+
+/**
+ * @id #SpecialistCommentAuthorRedacted
+ * @description The author of a public comment
+ */
+export interface SpecialistCommentAuthorRedacted {
+  /**
+   * The author of the comment
+   */
+  name: {
+    /**
+     * The name of the author of the comment in the format 'First Last'
+     */
+    singleLine: string;
+  };
 }

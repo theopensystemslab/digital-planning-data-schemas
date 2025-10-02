@@ -242,7 +242,7 @@ Status represents whether or not an application is determined or not. So long as
 Each status reflects the high level state of which an application can be in.
 
 - An application is **returned** if it is marked as invalid.
-- An application can be **withdrawn** after submission and until a decision is made ie it is _determined_
+- An application can be **withdrawn** anytime until a decision is made ie it is _determined_
 - An application is **determined** if _any_ decision has been made about it, this could be assessment, appeal or high court appeal decisions
 - An application is set to **undetermined** at all other times
 
@@ -334,7 +334,7 @@ appeal is determined
 
 #### 06 Application withdrawn
 
-An application can be with drawn only after validation and before a decision is made
+An application can be withdrawn anytime before a decision is made
 
 ## Appendix
 
@@ -379,8 +379,7 @@ assessment --> determined
 appeal --> determined
 highCourtAppeal --> determined
 
-consultation --> withdrawn
-assessment --> |before determination made|withdrawn
+assessment --> |at any time before determination is made|withdrawn
 
 
 

@@ -1,6 +1,7 @@
+import {Address} from '../../../shared/Addresses';
 import {PublicCommentSentiment} from '../enums/CommentSentiment';
-import {PublicCommentTopic} from '../enums/CommentTopic';
-import {CommentMetaData} from './Comment';
+import {PublicCommentTopic} from '../enums/PublicCommentTopic';
+import {CommentMetaData} from './CommentMetaData';
 
 /**
  * @internal All the required fields for a public or private public comment
@@ -15,10 +16,6 @@ interface PublicCommentBase {
    */
   sentiment: PublicCommentSentiment;
   /**
-   * The author of the comment
-   */
-  author: PublicCommentAuthor;
-  /**
    * Further information about the comment
    */
   metadata: CommentMetaData;
@@ -29,6 +26,10 @@ interface PublicCommentBase {
  * @description A public comment and any associated metadata, including sensitive information
  */
 export interface PublicComment extends PublicCommentBase {
+  /**
+   * The author of the comment
+   */
+  author: PublicCommentAuthor;
   /**
    * The comment itself, either a single comment or a list of comments divided by topic
    */
@@ -45,6 +46,10 @@ export interface PublicComment extends PublicCommentBase {
  */
 export interface PublicCommentRedacted extends PublicCommentBase {
   /**
+   * The author of the comment
+   */
+  author: PublicCommentAuthorRedacted;
+  /**
    * The redacted version of the comment, either a single comment or a list of comments divided by topic
    */
   commentRedacted: TopicAndComments[] | string;
@@ -59,6 +64,23 @@ export interface PublicCommentRedacted extends PublicCommentBase {
  * @description The author of a public comment
  */
 export interface PublicCommentAuthor {
+  /**
+   * The author of the comment
+   */
+  name: {
+    /**
+     * The name of the author of the comment in the format 'First Last'
+     */
+    singleLine: string;
+  };
+  address: Address;
+}
+
+/**
+ * @id #PublicCommentAuthorRedacted
+ * @description The author of a public comment
+ */
+export interface PublicCommentAuthorRedacted {
   /**
    * The author of the comment
    */

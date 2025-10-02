@@ -1045,7 +1045,7 @@
         },
         {
           "const": "withdrawn",
-          "description": "withdrawn\nAn application can be withdrawn after submitssion and until a decision is made",
+          "description": "withdrawn\nAn application can be withdrawn anytime until a decision is made",
           "type": "string"
         },
         {
@@ -14923,7 +14923,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -15127,7 +15127,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -15331,7 +15331,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -15535,7 +15535,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -15739,7 +15739,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -15994,7 +15994,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -16198,7 +16198,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -16402,7 +16402,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -16511,6 +16511,10 @@
           "description": "Filename or title of the file",
           "type": "string"
         },
+        "redactedUrl": {
+          "description": "URL where the redacted file can be accessed",
+          "type": "string"
+        },
         "referencesInDocument": {
           "description": "Optional list of document references in the file. Where documents contain multiple drawings, include the references here eg [\"25A-V2\", \"25B-V2\"]).",
           "items": {
@@ -16539,12 +16543,12 @@
         }
       },
       "required": [
-        "id",
-        "name",
         "association",
+        "id",
+        "metadata",
+        "name",
         "type",
-        "url",
-        "metadata"
+        "url"
       ],
       "type": "object"
     },
@@ -16721,7 +16725,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -16925,7 +16929,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -17129,7 +17133,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -17333,7 +17337,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -17537,7 +17541,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -17741,7 +17745,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -17945,7 +17949,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -18149,7 +18153,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -18461,7 +18465,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -18665,7 +18669,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -18869,7 +18873,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -19073,7 +19077,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -19277,7 +19281,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -19481,7 +19485,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -19685,7 +19689,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -19889,7 +19893,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -20093,7 +20097,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -20297,7 +20301,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -20501,7 +20505,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -20705,7 +20709,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -20909,7 +20913,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -21113,7 +21117,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -21317,7 +21321,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -21521,7 +21525,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -21725,7 +21729,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -21929,7 +21933,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -22133,7 +22137,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -22337,7 +22341,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -22541,7 +22545,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -22745,7 +22749,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -22949,7 +22953,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -23153,7 +23157,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -23357,7 +23361,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -23561,7 +23565,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -23765,7 +23769,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -23969,7 +23973,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -24173,7 +24177,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -24377,7 +24381,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -24581,7 +24585,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -24785,7 +24789,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -24989,7 +24993,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -25193,7 +25197,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -25397,7 +25401,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -25601,7 +25605,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -25805,7 +25809,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -26009,7 +26013,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -26213,7 +26217,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -26417,7 +26421,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -26621,7 +26625,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -26825,7 +26829,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -27029,7 +27033,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -27233,7 +27237,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -27437,7 +27441,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -27641,7 +27645,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -27845,7 +27849,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -28049,7 +28053,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -28253,7 +28257,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -28457,7 +28461,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -28661,7 +28665,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -28865,7 +28869,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -29069,7 +29073,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -29273,7 +29277,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -29477,7 +29481,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -29681,7 +29685,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -29885,7 +29889,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -30089,7 +30093,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -30293,7 +30297,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -30497,7 +30501,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -30701,7 +30705,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -30905,7 +30909,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -31109,7 +31113,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -31313,7 +31317,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -31517,7 +31521,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -31721,7 +31725,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -31925,7 +31929,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -32129,7 +32133,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -32333,7 +32337,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -32537,7 +32541,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -32741,7 +32745,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -32945,7 +32949,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -33149,7 +33153,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -33353,7 +33357,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -33557,7 +33561,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -33761,7 +33765,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -33965,7 +33969,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -34169,7 +34173,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -34373,7 +34377,7 @@
                 },
                 "receivedAt": {
                   "$ref": "#/definitions/DateTime",
-                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was sent, if there have been delays in the submission process."
+                  "description": "ISO 8601 DateTime This is the date that the application is received by the back office system. It may not be the date it was submitted, if there have been delays in the submission process."
                 },
                 "validatedAt": {
                   "$ref": "#/definitions/DateTime",
@@ -42746,6 +42750,9 @@
       "additionalProperties": false,
       "description": "The author of a public comment",
       "properties": {
+        "address": {
+          "$ref": "#/definitions/Address"
+        },
         "name": {
           "additionalProperties": false,
           "description": "The author of the comment",
@@ -42762,7 +42769,8 @@
         }
       },
       "required": [
-        "name"
+        "name",
+        "address"
       ],
       "type": "object"
     },
@@ -43149,6 +43157,9 @@
       "additionalProperties": false,
       "description": "Details of a specialist and their comments on an application",
       "properties": {
+        "address": {
+          "$ref": "#/definitions/Address"
+        },
         "comments": {
           "description": "List of comments made by the specialist in order of latest first",
           "items": {
@@ -43165,7 +43176,7 @@
         },
         "firstConsultedAt": {
           "$ref": "#/definitions/DateTime",
-          "description": "the first date the specialist was consulted?"
+          "description": "the first date the specialist was consulted, this may be undefined if the specialist has not yet been consulted but has been setup in the system"
         },
         "id": {
           "description": "unique identifier for the specialist",
@@ -43174,6 +43185,20 @@
         "jobTitle": {
           "description": "What is their job title?",
           "type": "string"
+        },
+        "name": {
+          "additionalProperties": false,
+          "description": "The author of the comment",
+          "properties": {
+            "singleLine": {
+              "description": "The name of the author of the comment in the format 'First Last'",
+              "type": "string"
+            }
+          },
+          "required": [
+            "singleLine"
+          ],
+          "type": "object"
         },
         "organisationSpecialism": {
           "description": "What is the specialists organisation or specialism?",
@@ -43185,9 +43210,9 @@
         }
       },
       "required": [
-        "comments",
-        "firstConsultedAt",
-        "id"
+        "address",
+        "id",
+        "name"
       ],
       "type": "object"
     },

@@ -6,7 +6,7 @@ type returned = 'returned';
 
 /**
  * @description withdrawn
- * An application can be withdrawn after submitssion and until a decision is made
+ * An application can be withdrawn anytime until a decision is made
  */
 type withdrawn = 'withdrawn';
 

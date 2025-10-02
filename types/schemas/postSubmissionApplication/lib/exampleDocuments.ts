@@ -1,4 +1,4 @@
-import {PostSubmissionFile} from '../data/File';
+import {PostSubmissionFile, PostSubmissionFileRedacted} from '../data/File';
 
 export const ldcApplicationDocuments = (
   submittedAt: string,
@@ -10,6 +10,8 @@ export const ldcApplicationDocuments = (
     name: 'myPlans.pdf',
     association: 'application',
     url: 'https://api.editor.planx.dev/file/private/tbp4kiba/myPlans.pdf',
+    redactedUrl:
+      'https://api.editor.planx.dev/file/private/tbp4kiba/myPlans.pdf',
     type: [
       'roofPlan.existing',
       'roofPlan.proposed',
@@ -44,6 +46,18 @@ export const ldcApplicationDocuments = (
   },
 ];
 
+export const ldcApplicationDocumentsRedacted = (
+  submittedAt: string,
+  validatedAt: string = submittedAt,
+  publishedAt: string = submittedAt,
+): PostSubmissionFileRedacted[] =>
+  ldcApplicationDocuments(submittedAt, validatedAt, publishedAt).map(
+    ({url, ...file}) => ({
+      ...file,
+      redactedUrl: file.redactedUrl || url,
+    }),
+  );
+
 export const ppApplicationDocuments = (
   submittedAt: string,
   validatedAt: string = submittedAt,
@@ -54,6 +68,8 @@ export const ppApplicationDocuments = (
     name: 'myPlans.pdf',
     association: 'application',
     url: 'https://api.editor.planx.dev/file/private/tbp4kiba/myPlans.pdf',
+    redactedUrl:
+      'https://api.editor.planx.dev/file/private/tbp4kiba/myPlans.pdf',
     type: ['roofPlan.existing', 'roofPlan.proposed'],
     metadata: {
       size: {bytes: 123456},
@@ -111,6 +127,18 @@ export const ppApplicationDocuments = (
   },
 ];
 
+export const ppApplicationDocumentsRedacted = (
+  submittedAt: string,
+  validatedAt: string = submittedAt,
+  publishedAt: string = submittedAt,
+): PostSubmissionFileRedacted[] =>
+  ppApplicationDocuments(submittedAt, validatedAt, publishedAt).map(
+    ({url, ...file}) => ({
+      ...file,
+      redactedUrl: file.redactedUrl || url,
+    }),
+  );
+
 export const paApplicationDocuments = (
   submittedAt: string,
   validatedAt: string = submittedAt,
@@ -121,6 +149,8 @@ export const paApplicationDocuments = (
     name: 'location%20plan_proposed_01.jpg',
     association: 'application',
     url: 'https://api.editor.planx.dev/file/private/dfaz9qu5/location%20plan_proposed_01.jpg',
+    redactedUrl:
+      'https://api.editor.planx.dev/file/private/dfaz9qu5/location%20plan_proposed_01.jpg',
     type: ['sitePlan.proposed'],
     metadata: {
       size: {bytes: 123456},
@@ -162,3 +192,15 @@ export const paApplicationDocuments = (
     },
   },
 ];
+
+export const paApplicationDocumentsRedacted = (
+  submittedAt: string,
+  validatedAt: string = submittedAt,
+  publishedAt: string = submittedAt,
+): PostSubmissionFileRedacted[] =>
+  paApplicationDocuments(submittedAt, validatedAt, publishedAt).map(
+    ({url, ...file}) => ({
+      ...file,
+      redactedUrl: file.redactedUrl || url,
+    }),
+  );

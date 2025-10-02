@@ -172,6 +172,9 @@
           "id": "1",
           "organisationSpecialism": "Historic England",
           "reason": "constraint",
+          "name": {
+            "singleLine": "Jane Smith"
+          },
           "constraints": [
             {
               "value": "monument",
@@ -206,6 +209,9 @@
           "id": "2",
           "organisationSpecialism": "Historic England",
           "reason": "constraint",
+          "name": {
+            "singleLine": "Jane Smith"
+          },
           "constraints": [
             {
               "value": "monument",
@@ -240,6 +246,9 @@
           "id": "3",
           "organisationSpecialism": "Historic England",
           "reason": "constraint",
+          "name": {
+            "singleLine": "Jane Smith"
+          },
           "constraints": [
             {
               "value": "monument",
@@ -274,6 +283,9 @@
           "id": "4",
           "organisationSpecialism": "Historic England",
           "reason": "constraint",
+          "name": {
+            "singleLine": "Jane Smith"
+          },
           "constraints": [
             {
               "value": "monument",
@@ -312,7 +324,7 @@
       "id": 1,
       "name": "myPlans.pdf",
       "association": "application",
-      "url": "https://api.editor.planx.dev/file/private/tbp4kiba/myPlans.pdf",
+      "redactedUrl": "https://api.editor.planx.dev/file/private/tbp4kiba/myPlans.pdf",
       "type": [
         "roofPlan.existing",
         "roofPlan.proposed"
@@ -332,7 +344,6 @@
       "id": 2,
       "name": "other.pdf",
       "association": "application",
-      "url": "https://api.editor.planx.dev/file/private/5w5v8s8z/other.pdf",
       "type": [
         "sitePlan.existing",
         "sitePlan.proposed"
@@ -346,13 +357,13 @@
         "submittedAt": "2024-02-18T15:54:30.821Z",
         "validatedAt": "2024-02-19T15:54:31.021Z",
         "publishedAt": "2024-02-19T15:54:31.021Z"
-      }
+      },
+      "redactedUrl": "https://api.editor.planx.dev/file/private/5w5v8s8z/other.pdf"
     },
     {
       "id": 3,
       "name": "elevations.pdf",
       "association": "application",
-      "url": "https://api.editor.planx.dev/file/private/7nrefxnn/elevations.pdf",
       "type": [
         "elevations.existing",
         "elevations.proposed"
@@ -366,13 +377,13 @@
         "submittedAt": "2024-02-18T15:54:30.821Z",
         "validatedAt": "2024-02-19T15:54:31.021Z",
         "publishedAt": "2024-02-19T15:54:31.021Z"
-      }
+      },
+      "redactedUrl": "https://api.editor.planx.dev/file/private/7nrefxnn/elevations.pdf"
     },
     {
       "id": 4,
       "name": "floor_plans.pdf",
       "association": "application",
-      "url": "https://api.editor.planx.dev/file/private/311w2id6/floor_plans.pdf",
       "type": [
         "floorPlan.existing",
         "floorPlan.proposed"
@@ -386,7 +397,8 @@
         "submittedAt": "2024-02-18T15:54:30.821Z",
         "validatedAt": "2024-02-19T15:54:31.021Z",
         "publishedAt": "2024-02-19T15:54:31.021Z"
-      }
+      },
+      "redactedUrl": "https://api.editor.planx.dev/file/private/311w2id6/floor_plans.pdf"
     }
   ],
   "submission": {

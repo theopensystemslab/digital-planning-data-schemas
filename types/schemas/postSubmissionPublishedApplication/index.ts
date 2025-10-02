@@ -4,6 +4,7 @@ import {
   PublicCommentsRedacted,
   SpecialistCommentsRedacted,
 } from '../postSubmissionApplication/data/Comment';
+import {PostSubmissionFileRedacted} from '../postSubmissionApplication/data/File';
 /**
  * @internal
  * Extension of the PostSubmissionApplicationSpecification type
@@ -12,12 +13,18 @@ import {
  * @todo create redacted form of PostSubmissionApplicationSpecification & PrototypeApplication
  */
 interface ApplicationSpecification<T extends ApplicationType>
-  extends Omit<PostSubmissionApplicationSpecification<T>, 'comments'> {
+  extends Omit<
+    PostSubmissionApplicationSpecification<T>,
+    'comments' | 'files'
+  > {
   comments?: {
     public?: PublicCommentsRedacted;
     specialist?: SpecialistCommentsRedacted;
   };
+  files?: PostSubmissionFileRedacted[];
 }
+
+// @TODO add redacted file version for appeal files
 
 export type PostSubmissionPublishedAdvertConsent =
   ApplicationSpecification<'advertConsent'>;
