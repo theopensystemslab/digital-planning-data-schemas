@@ -184,15 +184,30 @@ Pass the coordinates as a comma-separated string of longitude and latitude pairs
 
 ## List of all endpoints
 
-| HTTP Method | Path                                                                     | Public | Pagination | Sort | Search |
-| ----------- | ------------------------------------------------------------------------ | ------ | ---------- | ---- | ------ |
-| GET         | `/api/@next/public/planning_application/search`                          | YES    | YES        | YES  | YES    |
-| GET         | `/api/@next/public/planning_application/{reference}`                     | YES    | NO         | NO   | NO     |
-| GET         | `/api/@next/public/planning_application/{reference}/documents`           | YES    | YES        | YES  | YES    |
-| GET         | `/api/@next/public/planning_application/{reference}/comments/public`     | YES    | YES        | YES  | YES    |
-| GET         | `/api/@next/public/planning_application/{reference}/comments/specialist` | YES    | YES        | YES  | YES    |
-| POST        | `/api/@next/planning_application/{reference}/comments/public`            | NO     | n/a        | n/a  | n/a    |
-| POST        | `/api/@next/planning_application/{reference}/comments/specialist`        | NO     | n/a        | n/a  | n/a    |
+| HTTP Method | Path                                                                               | Public | Pagination   | Sort | Search |
+| ----------- | ---------------------------------------------------------------------------------- | ------ | ------------ | ---- | ------ |
+| GET         | `/api/@next/public/applications`                                                   | YES    | YES          | YES  | YES    |
+| GET         | `/api/@next/public/applications/{applicationId}`                                   | YES    | NO           | NO   | NO     |
+| GET         | `/api/@next/public/applications/{applicationId}/documents`                         | YES    | YES          | YES  | YES    |
+| GET         | `/api/@next/public/applications/{applicationId}/documents/{documentId}`            | YES    | NO           | NO   | NO     |
+| GET         | `/api/@next/public/applications/{applicationId}/publicComments`                    | YES    | YES          | YES  | YES    |
+| GET         | `/api/@next/public/applications/{applicationId}/publicComments/{publicCommentId}`  | YES    | NO           | NO   | NO     |
+| GET         | `/api/@next/public/applications/{applicationId}/specialistComments`                | YES    | YES          | YES  | YES    |
+| GET         | `/api/@next/public/applications/{applicationId}/specialistComments/{specialistId}` | YES    | YES \*\*\*\* | YES  | YES    |
+| GET         | `/api/@next/applications`                                                          | NO     | YES          | YES  | YES    |
+| GET         | `/api/@next/applications/{applicationId}`                                          | NO     | NO           | NO   | NO     |
+| GET         | `/api/@next/applications/{applicationId}/documents`                                | NO     | YES          | YES  | YES    |
+| GET         | `/api/@next/applications/{applicationId}/documents/{documentId}`                   | NO     | NO           | NO   | NO     |
+| GET         | `/api/@next/applications/{applicationId}/publicComments`                           | NO     | YES          | YES  | YES    |
+| GET         | `/api/@next/applications/{applicationId}/publicComments/{publicCommentId}`         | NO     | NO           | NO   | NO     |
+| GET         | `/api/@next/applications/{applicationId}/specialistComments`                       | NO     | YES          | YES  | YES    |
+| GET         | `/api/@next/applications/{applicationId}/specialistComments/{specialistId}`        | NO     | YES          | YES  | YES    |
+| POST        | `/api/@next/applications/{applicationId}/publicComments`                           | NO     | n/a          | n/a  | n/a    |
+| POST        | `/api/@next/applications/{applicationId}/specialistComments`                       | NO     | n/a          | n/a  | n/a    |
+
+> [!WARNING]
+> The details below are out of date, latest details can be found in the [openapi.yaml](./openapi.yaml) file or the [openapi.json](./openapi.json) file.
+> You can see these files rendered in a more user friendly way using [Swagger Editor](https://swagger.io/tools/swagger-editor/) or using the Digital Planning Register's [API documentation page](https://dpr-backend-production-1345166d23b1.herokuapp.com/docs) ([swagger version](https://dpr-backend-production-1345166d23b1.herokuapp.com/swagger))
 
 ## Endpoints
 
