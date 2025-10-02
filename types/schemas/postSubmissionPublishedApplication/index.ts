@@ -24,6 +24,8 @@ interface ApplicationSpecification<T extends ApplicationType>
   files?: PostSubmissionFileRedacted[];
 }
 
+// @TODO add redacted file version for appeal files
+
 export type PostSubmissionPublishedAdvertConsent =
   ApplicationSpecification<'advertConsent'>;
 
