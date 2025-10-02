@@ -43,6 +43,7 @@
     "vitest": "^3.2.4"
   },
   "dependencies": {
+    "@sinclair/typebox": "^0.34.41",
     "ajv": "^8.17.1",
     "ajv-formats": "^2.1.1",
     "ts-json-schema-generator": "^2.3.0",

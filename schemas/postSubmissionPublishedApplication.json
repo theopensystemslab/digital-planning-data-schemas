@@ -43242,7 +43242,7 @@
         "files": {
           "description": "Did the author include any files with the comment?",
           "items": {
-            "$ref": "#/definitions/PostSubmissionFile"
+            "$ref": "#/definitions/PostSubmissionFileRedacted"
           },
           "type": "array"
         },

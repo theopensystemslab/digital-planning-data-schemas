@@ -1,0 +1,103 @@
+import {
+  PostSubmissionApplicationResponse,
+  PostSubmissionApplicationsQueryParams,
+  PostSubmissionApplicationsResponse,
+  PostSubmissionApplicationUrlParams,
+  PostSubmissionDocumentResponse,
+  PostSubmissionDocumentsQueryParams,
+  PostSubmissionDocumentsResponse,
+  PostSubmissionDocumentsUrlParams,
+  PostSubmissionDocumentUrlParams,
+  PostSubmissionPublicCommentsUrlParams,
+  PostSubmissionPublishedApplicationResponse,
+  PostSubmissionPublishedApplicationsQueryParams,
+  PostSubmissionPublishedApplicationsResponse,
+  PostSubmissionPublishedApplicationUrlParams,
+  PostSubmissionPublishedDocumentResponse,
+  PostSubmissionPublishedDocumentsQueryParams,
+  PostSubmissionPublishedDocumentsResponse,
+  PostSubmissionPublishedDocumentsUrlParams,
+  PostSubmissionPublishedDocumentUrlParams,
+  PostSubmissionPublicCommentsQueryParams,
+  PostSubmissionPublicCommentsResponse,
+  PostSubmissionPublicCommentUrlParams,
+  PostSubmissionPublicCommentResponse,
+  PostSubmissionPublicCommentPostUrlParams,
+  PostSubmissionPublicCommentPostBody,
+  PostSubmissionPublishedPublicCommentsUrlParams,
+  PostSubmissionPublishedPublicCommentsQueryParams,
+  PostSubmissionPublishedPublicCommentsResponse,
+  PostSubmissionPublishedPublicCommentUrlParams,
+  PostSubmissionPublishedPublicCommentResponse,
+  PostSubmissionSpecialistsUrlParams,
+  PostSubmissionSpecialistsQueryParams,
+  PostSubmissionSpecialistsResponse,
+  PostSubmissionSpecialistUrlParams,
+  PostSubmissionSpecialistResponse,
+  PostSubmissionPublishedSpecialistsUrlParams,
+  PostSubmissionPublishedSpecialistsQueryParams,
+  PostSubmissionPublishedSpecialistsResponse,
+  PostSubmissionPublishedSpecialistUrlParams,
+  PostSubmissionPublishedSpecialistResponse,
+  PostSubmissionPublishedSpecialistQueryParams,
+} from './schemas/postSubmissionApplication/implementation/Endpoints';
+import {PostSubmissionPublishedApplication} from './schemas/postSubmissionPublishedApplication';
+import {PostSubmissionApplication} from './schemas/postSubmissionApplication';
+
+export const SchemaModel = {
+  PostSubmissionPublishedApplication: PostSubmissionPublishedApplication,
+  PostSubmissionApplication: PostSubmissionApplication,
+  'applications.all.query': PostSubmissionApplicationsQueryParams,
+  'applications.all.response': PostSubmissionApplicationsResponse,
+  'applications.single.params': PostSubmissionApplicationUrlParams,
+  'applications.single.response': PostSubmissionApplicationResponse,
+  'public.applications.all.query':
+    PostSubmissionPublishedApplicationsQueryParams,
+  'public.applications.all.response':
+    PostSubmissionPublishedApplicationsResponse,
+  'public.applications.single.params':
+    PostSubmissionPublishedApplicationUrlParams,
+  'public.applications.single.response':
+    PostSubmissionPublishedApplicationResponse,
+  'documents.all.params': PostSubmissionDocumentsUrlParams,
+  'documents.all.query': PostSubmissionDocumentsQueryParams,
+  'documents.all.response': PostSubmissionDocumentsResponse,
+  'documents.single.params': PostSubmissionDocumentUrlParams,
+  'documents.single.response': PostSubmissionDocumentResponse,
+  'public.documents.all.params': PostSubmissionPublishedDocumentsUrlParams,
+  'public.documents.all.query': PostSubmissionPublishedDocumentsQueryParams,
+  'public.documents.all.response': PostSubmissionPublishedDocumentsResponse,
+  'public.documents.single.params': PostSubmissionPublishedDocumentUrlParams,
+  'public.documents.single.response': PostSubmissionPublishedDocumentResponse,
+  'publicComments.all.params': PostSubmissionPublicCommentsUrlParams,
+  'publicComments.all.query': PostSubmissionPublicCommentsQueryParams,
+  'publicComments.all.response': PostSubmissionPublicCommentsResponse,
+  'publicComments.single.params': PostSubmissionPublicCommentUrlParams,
+  'publicComments.single.response': PostSubmissionPublicCommentResponse,
+  'publicComments.submit.params': PostSubmissionPublicCommentPostUrlParams,
+  'publicComments.submit.body': PostSubmissionPublicCommentPostBody,
+  'public.publicComments.all.params':
+    PostSubmissionPublishedPublicCommentsUrlParams,
+  'public.publicComments.all.query':
+    PostSubmissionPublishedPublicCommentsQueryParams,
+  'public.publicComments.all.response':
+    PostSubmissionPublishedPublicCommentsResponse,
+  'public.publicComments.single.params':
+    PostSubmissionPublishedPublicCommentUrlParams,
+  'public.publicComments.single.response':
+    PostSubmissionPublishedPublicCommentResponse,
+  'specialists.all.params': PostSubmissionSpecialistsUrlParams,
+  'specialists.all.query': PostSubmissionSpecialistsQueryParams,
+  'specialists.all.response': PostSubmissionSpecialistsResponse,
+  'specialists.single.params': PostSubmissionSpecialistUrlParams,
+  'specialists.single.response': PostSubmissionSpecialistResponse,
+  'public.specialists.all.params': PostSubmissionPublishedSpecialistsUrlParams,
+  'public.specialists.all.query': PostSubmissionPublishedSpecialistsQueryParams,
+  'public.specialists.all.response': PostSubmissionPublishedSpecialistsResponse,
+  'public.specialists.single.params':
+    PostSubmissionPublishedSpecialistUrlParams,
+  'public.specialists.single.query':
+    PostSubmissionPublishedSpecialistQueryParams,
+  'public.specialists.single.response':
+    PostSubmissionPublishedSpecialistResponse,
+};
