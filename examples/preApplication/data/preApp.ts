@@ -23,9 +23,6 @@ export const preApplication: PreApplication = {
       address: {
         sameAsSiteAddress: true,
       },
-      siteContact: {
-        role: 'applicant',
-      },
     },
     property: {
       address: {

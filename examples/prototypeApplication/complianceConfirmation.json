@@ -18,9 +18,6 @@
       },
       "address": {
         "sameAsSiteAddress": true
-      },
-      "ownership": {
-        "interest": "owner"
       }
     },
     "property": {
