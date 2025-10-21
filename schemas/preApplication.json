@@ -897,6 +897,24 @@
           "additionalProperties": false,
           "properties": {
             "description": {
+              "const": "Biodiversity Net Gain (BNG) information",
+              "type": "string"
+            },
+            "value": {
+              "const": "biodiversityNetGainInformation",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
               "const": "Birdstrike risk management plan",
               "type": "string"
             },

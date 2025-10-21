@@ -41944,6 +41944,11 @@
           "type": "string"
         },
         {
+          "const": "biodiversityNetGainInformation",
+          "description": "Biodiversity Net Gain (BNG) information",
+          "type": "string"
+        },
+        {
           "const": "birdstrikeRiskManagementPlan",
           "description": "Birdstrike risk management plan",
           "type": "string"

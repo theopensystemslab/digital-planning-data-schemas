@@ -9,6 +9,7 @@ export const FileTypes = {
   bankStatement: 'Bank statement',
   basementImpactStatement: 'Basement impact statement',
   bioaerosolAssessment: 'Bio-aerosol assessment',
+  biodiversityNetGainInformation: 'Biodiversity Net Gain (BNG) information',
   birdstrikeRiskManagementPlan: 'Birdstrike risk management plan',
   boreholeOrTrialPitAnalysis: 'Borehole or trial pit analysis',
   buildingControlCertificate: 'Building control certificate',
