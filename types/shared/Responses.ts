@@ -6,8 +6,6 @@ import {URL} from './utils';
  */
 export type Responses = QuestionAndResponses[];
 
-export type QuestionTags = 'Sensitive data';
-
 export interface QuestionMetaData {
   autoAnswered?: boolean;
   policyRefs?: Array<{
@@ -16,7 +14,7 @@ export interface QuestionMetaData {
   }>;
   sectionName?: string;
   id?: string; // data field 'fn' or nodeId
-  tags?: Array<QuestionTags>;
+  tags?: Array<string>;
 }
 
 export interface ResponseMetaData {

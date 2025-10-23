@@ -14143,16 +14143,12 @@
         },
         "tags": {
           "items": {
-            "$ref": "#/definitions/QuestionTags"
+            "type": "string"
           },
           "type": "array"
         }
       },
       "type": "object"
-    },
-    "QuestionTags": {
-      "const": "Sensitive data",
-      "type": "string"
     },
     "Region": {
       "description": "The region in England that contains this address sourced from planning.data.gov.uk/dataset/region, where 'London' is a proxy for the Greater London Authority (GLA) area",
