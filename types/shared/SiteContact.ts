@@ -5,7 +5,7 @@ import {User} from './User';
  * @description Contact information for the site visit
  */
 export type SiteContact = {
-  siteContact: {role: User['role']} | SiteContactOther;
+  siteContact?: {role: User['role']} | SiteContactOther;
 };
 
 /**

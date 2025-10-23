@@ -438,8 +438,7 @@
                     "email",
                     "name",
                     "ownership",
-                    "phone",
-                    "siteContact"
+                    "phone"
                   ],
                   "type": "object"
                 },
@@ -612,8 +611,7 @@
                     "email",
                     "name",
                     "ownership",
-                    "phone",
-                    "siteContact"
+                    "phone"
                   ],
                   "type": "object"
                 }
@@ -2896,243 +2894,7 @@
           "additionalProperties": false,
           "properties": {
             "applicant": {
-              "anyOf": [
-                {
-                  "additionalProperties": false,
-                  "properties": {
-                    "address": {
-                      "$ref": "#/definitions/UserAddress",
-                      "description": "Address information for the applicant"
-                    },
-                    "company": {
-                      "additionalProperties": false,
-                      "properties": {
-                        "name": {
-                          "type": "string"
-                        }
-                      },
-                      "required": [
-                        "name"
-                      ],
-                      "type": "object"
-                    },
-                    "email": {
-                      "$ref": "#/definitions/Email"
-                    },
-                    "name": {
-                      "additionalProperties": false,
-                      "properties": {
-                        "first": {
-                          "type": "string"
-                        },
-                        "last": {
-                          "type": "string"
-                        },
-                        "title": {
-                          "type": "string"
-                        }
-                      },
-                      "required": [
-                        "first",
-                        "last"
-                      ],
-                      "type": "object"
-                    },
-                    "ownership": {
-                      "additionalProperties": false,
-                      "properties": {
-                        "interest": {
-                          "$ref": "#/definitions/OwnersInterest"
-                        }
-                      },
-                      "required": [
-                        "interest"
-                      ],
-                      "type": "object"
-                    },
-                    "phone": {
-                      "additionalProperties": false,
-                      "properties": {
-                        "primary": {
-                          "type": "string"
-                        }
-                      },
-                      "required": [
-                        "primary"
-                      ],
-                      "type": "object"
-                    },
-                    "type": {
-                      "description": "The type of applicant",
-                      "enum": [
-                        "individual",
-                        "company",
-                        "charity",
-                        "public",
-                        "parishCouncil"
-                      ],
-                      "type": "string"
-                    }
-                  },
-                  "required": [
-                    "address",
-                    "email",
-                    "name",
-                    "ownership",
-                    "phone"
-                  ],
-                  "type": "object"
-                },
-                {
-                  "additionalProperties": false,
-                  "properties": {
-                    "address": {
-                      "$ref": "#/definitions/UserAddress",
-                      "description": "Address information for the applicant"
-                    },
-                    "agent": {
-                      "additionalProperties": false,
-                      "description": "Contact information for the agent or proxy",
-                      "properties": {
-                        "address": {
-                          "$ref": "#/definitions/Address"
-                        },
-                        "company": {
-                          "additionalProperties": false,
-                          "properties": {
-                            "name": {
-                              "type": "string"
-                            }
-                          },
-                          "required": [
-                            "name"
-                          ],
-                          "type": "object"
-                        },
-                        "email": {
-                          "$ref": "#/definitions/Email"
-                        },
-                        "name": {
-                          "additionalProperties": false,
-                          "properties": {
-                            "first": {
-                              "type": "string"
-                            },
-                            "last": {
-                              "type": "string"
-                            },
-                            "title": {
-                              "type": "string"
-                            }
-                          },
-                          "required": [
-                            "first",
-                            "last"
-                          ],
-                          "type": "object"
-                        },
-                        "phone": {
-                          "additionalProperties": false,
-                          "properties": {
-                            "primary": {
-                              "type": "string"
-                            }
-                          },
-                          "required": [
-                            "primary"
-                          ],
-                          "type": "object"
-                        }
-                      },
-                      "required": [
-                        "address",
-                        "email",
-                        "name",
-                        "phone"
-                      ],
-                      "type": "object"
-                    },
-                    "company": {
-                      "additionalProperties": false,
-                      "properties": {
-                        "name": {
-                          "type": "string"
-                        }
-                      },
-                      "required": [
-                        "name"
-                      ],
-                      "type": "object"
-                    },
-                    "email": {
-                      "$ref": "#/definitions/Email"
-                    },
-                    "name": {
-                      "additionalProperties": false,
-                      "properties": {
-                        "first": {
-                          "type": "string"
-                        },
-                        "last": {
-                          "type": "string"
-                        },
-                        "title": {
-                          "type": "string"
-                        }
-                      },
-                      "required": [
-                        "first",
-                        "last"
-                      ],
-                      "type": "object"
-                    },
-                    "ownership": {
-                      "additionalProperties": false,
-                      "properties": {
-                        "interest": {
-                          "$ref": "#/definitions/OwnersInterest"
-                        }
-                      },
-                      "required": [
-                        "interest"
-                      ],
-                      "type": "object"
-                    },
-                    "phone": {
-                      "additionalProperties": false,
-                      "properties": {
-                        "primary": {
-                          "type": "string"
-                        }
-                      },
-                      "required": [
-                        "primary"
-                      ],
-                      "type": "object"
-                    },
-                    "type": {
-                      "description": "The type of applicant",
-                      "enum": [
-                        "individual",
-                        "company",
-                        "charity",
-                        "public",
-                        "parishCouncil"
-                      ],
-                      "type": "string"
-                    }
-                  },
-                  "required": [
-                    "address",
-                    "agent",
-                    "email",
-                    "name",
-                    "ownership",
-                    "phone"
-                  ],
-                  "type": "object"
-                }
-              ]
+              "$ref": "#/definitions/ApplicantBase"
             },
             "application": {
               "$ref": "#/definitions/FeeCarryingApplicationData"
@@ -5016,8 +4778,7 @@
                     "email",
                     "name",
                     "ownership",
-                    "phone",
-                    "siteContact"
+                    "phone"
                   ],
                   "type": "object"
                 },
@@ -5190,8 +4951,7 @@
                     "email",
                     "name",
                     "ownership",
-                    "phone",
-                    "siteContact"
+                    "phone"
                   ],
                   "type": "object"
                 }
@@ -5448,8 +5208,7 @@
             "email",
             "name",
             "ownership",
-            "phone",
-            "siteContact"
+            "phone"
           ],
           "type": "object"
         },
@@ -5685,8 +5444,7 @@
             "email",
             "name",
             "ownership",
-            "phone",
-            "siteContact"
+            "phone"
           ],
           "type": "object"
         }
@@ -8756,8 +8514,7 @@
             "email",
             "name",
             "ownership",
-            "phone",
-            "siteContact"
+            "phone"
           ],
           "type": "object"
         },
@@ -9026,8 +8783,7 @@
             "email",
             "name",
             "ownership",
-            "phone",
-            "siteContact"
+            "phone"
           ],
           "type": "object"
         }
@@ -21964,6 +21720,11 @@
           "type": "string"
         },
         {
+          "const": "biodiversityNetGainInformation",
+          "description": "Biodiversity Net Gain (BNG) information",
+          "type": "string"
+        },
+        {
           "const": "birdstrikeRiskManagementPlan",
           "description": "Birdstrike risk management plan",
           "type": "string"
@@ -22578,6 +22339,9 @@
         "autoAnswered": {
           "type": "boolean"
         },
+        "id": {
+          "type": "string"
+        },
         "policyRefs": {
           "items": {
             "additionalProperties": false,
@@ -22598,6 +22362,12 @@
         },
         "sectionName": {
           "type": "string"
+        },
+        "tags": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
         }
       },
       "type": "object"

@@ -39,6 +39,11 @@ type BasementImpactStatement = 'basementImpactStatement';
 type BioaerosolAssessment = 'bioaerosolAssessment';
 
 /**
+ * @description Biodiversity Net Gain (BNG) information
+ */
+type BiodiversityNetGainInformation = 'biodiversityNetGainInformation';
+
+/**
  * @description Birdstrike risk management plan
  */
 type BirdstrikeRiskManagementPlan = 'birdstrikeRiskManagementPlan';
@@ -534,6 +539,7 @@ export type PrototypeFileType =
   | BankStatement
   | BasementImpactStatement
   | BioaerosolAssessment
+  | BiodiversityNetGainInformation
   | BirdstrikeRiskManagementPlan
   | BoreholeOrTrialPitAnalysis
   | BuildingControlCertificate

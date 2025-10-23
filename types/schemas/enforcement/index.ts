@@ -30,9 +30,9 @@ export interface Enforcement {
      */
     report: {
       /**
-       * @description Boundary of the enforcement breach
+       * @description Boundary of the enforcement breach if provided digitally
        */
-      boundary: GeoBoundary;
+      boundary?: GeoBoundary;
       /**
        * @description Start and end date of the enforcement breach if applicable; ongoing breaches will not have an end date
        */

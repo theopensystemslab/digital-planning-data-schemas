@@ -23,9 +23,6 @@ export const complianceConfirmationPrototype: PrototypeApplication = {
       address: {
         sameAsSiteAddress: true,
       },
-      ownership: {
-        interest: 'owner',
-      },
     },
     property: {
       address: {

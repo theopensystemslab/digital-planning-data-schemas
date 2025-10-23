@@ -859,7 +859,7 @@ export const lawfulDevelopmentCertificateExisting: Application = {
       responses: [
         {value: 'Mr F Fox 0234 567 8910 f.fox@boggischickenshed.com'},
       ],
-      metadata: {},
+      metadata: {tags: ['Sensitive data']},
     },
     {
       question: "Did you already provide the applicant's email address?",
@@ -869,7 +869,7 @@ export const lawfulDevelopmentCertificateExisting: Application = {
     {
       question: "Applicant's email address",
       responses: [{value: 'r.dahl@example.com'}],
-      metadata: {},
+      metadata: {tags: ['Sensitive data']},
     },
     {
       question: "Did you already provide the applicant's telephone number?",
@@ -879,7 +879,7 @@ export const lawfulDevelopmentCertificateExisting: Application = {
     {
       question: "Applicant's telephone number",
       responses: [{value: '01098 765 432'}],
-      metadata: {},
+      metadata: {tags: ['Sensitive data']},
     },
     {
       question: 'Which of these best describes you?',
@@ -922,7 +922,7 @@ export const lawfulDevelopmentCertificateExisting: Application = {
     {
       question: 'Full name of Owner 2',
       responses: [{value: 'William Wonka'}],
-      metadata: {},
+      metadata: {tags: ['Sensitive data']},
     },
     {
       question: 'Address of Owner 2',
@@ -932,7 +932,7 @@ export const lawfulDevelopmentCertificateExisting: Application = {
             'The Factory, 10, Scrumdiddlyumptious Avenue, Oomaph upon Ouse, CH0C0L8',
         },
       ],
-      metadata: {},
+      metadata: {tags: ['Sensitive data']},
     },
     {
       question: 'Have you already notified the other owners?',
@@ -947,12 +947,12 @@ export const lawfulDevelopmentCertificateExisting: Application = {
     {
       question: 'Full name of Owner 3',
       responses: [{value: 'Matilda Wormwood'}],
-      metadata: {},
+      metadata: {tags: ['Sensitive data']},
     },
     {
       question: 'Address of Owner 3',
       responses: [{value: '9, Library Way, Reading, L1T3R8Y'}],
-      metadata: {},
+      metadata: {tags: ['Sensitive data']},
     },
     {
       question: 'Have you already notified the other owners?',

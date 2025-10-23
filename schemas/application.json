@@ -221,7 +221,6 @@
         "email",
         "name",
         "phone",
-        "siteContact",
         "type"
       ],
       "type": "object"
@@ -2342,7 +2341,6 @@
         "email",
         "name",
         "phone",
-        "siteContact",
         "type"
       ],
       "type": "object"
@@ -4128,6 +4126,24 @@
             },
             "value": {
               "const": "bioaerosolAssessment",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Biodiversity Net Gain (BNG) information",
+              "type": "string"
+            },
+            "value": {
+              "const": "biodiversityNetGainInformation",
               "type": "string"
             }
           },
@@ -29440,6 +29456,9 @@
         "autoAnswered": {
           "type": "boolean"
         },
+        "id": {
+          "type": "string"
+        },
         "policyRefs": {
           "items": {
             "additionalProperties": false,
@@ -29460,6 +29479,12 @@
         },
         "sectionName": {
           "type": "string"
+        },
+        "tags": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
         }
       },
       "type": "object"

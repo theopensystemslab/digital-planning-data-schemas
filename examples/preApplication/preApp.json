@@ -18,9 +18,6 @@
       },
       "address": {
         "sameAsSiteAddress": true
-      },
-      "siteContact": {
-        "role": "applicant"
       }
     },
     "property": {

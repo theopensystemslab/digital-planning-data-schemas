@@ -13,6 +13,8 @@ export interface QuestionMetaData {
     url?: URL;
   }>;
   sectionName?: string;
+  id?: string; // data field 'fn' or nodeId
+  tags?: Array<string>;
 }
 
 export interface ResponseMetaData {

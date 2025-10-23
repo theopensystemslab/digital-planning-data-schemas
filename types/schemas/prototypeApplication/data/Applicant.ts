@@ -102,7 +102,7 @@ export type PPApplicant = ApplicantBase &
  */
 interface ApplicantVariants {
   advertConsent: ApplicantBase & SiteContact & OwnershipInterest;
-  complianceConfirmation: ApplicantBase & OwnershipInterest;
+  complianceConfirmation: ApplicantBase;
   hedgerowRemovalNotice: ApplicantBase & SiteContact & OwnershipInterest;
   landDrainageConsent: ApplicantBase & MaintenanceContacts & OwnershipInterest;
   'ldc.breachOfCondition': LDCApplicant;
