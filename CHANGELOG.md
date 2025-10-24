@@ -9,6 +9,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 The minor version will be incremented upon a breaking change and the patch version will be
 incremented for features.
 
+## [0.7.6] - 2025-10-23
+
+### Added
+- Adds optional properties `id` and `tags` to question metadata across all schemas which include `responses` ([#383](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/383))
+- Adds file type `biodivertyNetGainInformation` to capture BNG requirements ([#383](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/383))
+
+### Changed
+- `data.report.boundary` in the `Enforcement` schema is optional, rather than required, as not all users will provide this digitally ([#383](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/383))
+- `siteContact` is optional, rather than required, for `PreApplication` as not all councils are consistently asking for this ([#383](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/383))
+- `Application` type `confirmationCompliance` has simplified `data.applicant` requirements ([#383](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/383))
+
 ## [0.7.5] - 2025-05-29
 
 ### Added 
