@@ -33,7 +33,7 @@
   "license": "MPL2",
   "devDependencies": {
     "@types/geojson": "^7946.0.16",
-    "@types/node": "18.16.1",
+    "@types/node": "25.1.0",
     "cpx": "^1.5.0",
     "gts": "^6.0.2",
     "husky": "^8.0.0",
