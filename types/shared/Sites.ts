@@ -11,9 +11,17 @@ export type Site = {
    */
   address: ProposedAddress | OSAddress;
   /**
-   * @description Current and historic UK Local Authority Districts that contain this address sourced from planning.data.gov.uk/dataset/local-authority-district
+   * @description Current and historic development corporations that contain this address sourced from planning.data.gov.uk/dataset/development-corporation-boundary
+   */
+  developmentCorporations?: string[];
+  /**
+   * @description Current and historic UK Local Authority Districts (LAD) that contain this address sourced from planning.data.gov.uk/dataset/local-authority-district
    */
   localAuthorityDistrict: string[];
+  /**
+   * @description Current and historic UK Local Planning Authorities (LPA) that contain this address sourced from planning.data.gov.uk/dataset/local-planning-authority
+   */
+  localPlanningAuthority?: string[];
   /**
    * @description Name of the ward sourced from planning.data.gov.uk/dataset/ward
    */
@@ -27,5 +35,3 @@ export type Site = {
    */
   boundary?: GeoBoundary;
 };
-
-// TODO eventually add 'type' to shared def above once enums are standardised (eg matching all fields set by PlanX's FindProperty component)

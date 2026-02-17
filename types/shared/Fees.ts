@@ -16,9 +16,41 @@ export interface Fee {
    */
   calculated: number;
   /**
+   * @desscription Total calculated VAT in GBP if applicable
+   */
+  calculatedVAT?: number;
+  /**
    * @description Total payable fee after any exemptions or reductions in GBP
    */
   payable: number;
+  /**
+   * @description Total payable VAT in GBP if applicable
+   */
+  payableVAT?: number;
+  /**
+   * @description PlanX service charge fee in GBP if applicable
+   */
+  serviceCharge?: number;
+  /**
+   * @description PlanX service charge VAT in GBP if applicable
+   */
+  serviceChargeVAT?: number;
+  /**
+   * @description Fast Track fee in GBP if applicable
+   */
+  fastTrack?: number;
+  /**
+   * @description Fast Track VAT in GBP if applicable
+   */
+  fastTrackVAT?: number;
+  /**
+   * @description Payment processing fee in GBP if applicable
+   */
+  paymentProcessing?: number;
+  /**
+   * @description Payment processing VAT in GBP if applicable
+   */
+  paymentProcessingVAT?: number;
   /**
    * @description Breakdown of calculated fee in GBP by category of development, based on the scales defined in The Town and Country Planning Regulations https://www.legislation.gov.uk/uksi/2012/2920/schedule/1/part/2
    */
@@ -102,5 +134,9 @@ export interface Fee {
      * @description GOV.UK Pay payment reference number
      */
     govPay: string; // @todo require when payable > 0
+    /**
+     * @description GOV.UK Pay metadata dictionary if applicable
+     */
+    metadata?: Record<string, string | number | boolean>;
   };
 }

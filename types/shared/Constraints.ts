@@ -15,6 +15,8 @@ export const PlanningDesignations = {
   'aquifer.secondary': 'Secondary aquifer',
   battlefield: 'Historic battlefield',
   brownfieldSite: 'Brownfield site',
+  buildingPreservationNotice: 'Building Preservation Notice (BPN)',
+  certificateOfImmunity: 'Certificate of immunity',
   coastalChangeManagementArea: 'Coastal change management area',
   communityAsset: 'Community asset',
   'communityAsset.nominated': 'Community asset - Nomimated',

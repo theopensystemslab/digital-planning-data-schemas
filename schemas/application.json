@@ -3452,6 +3452,36 @@
       "format": "email",
       "type": "string"
     },
+    "Enhancements": {
+      "$id": "#Enhancements",
+      "additionalProperties": false,
+      "description": "Metadata associated with any AI-enhanced components used throughout this service",
+      "properties": {
+        "dataProperty": {
+          "type": "string"
+        },
+        "input": {
+          "type": "string"
+        },
+        "model": {
+          "type": "string"
+        },
+        "output": {
+          "type": "string"
+        },
+        "userAction": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataProperty",
+        "input",
+        "output",
+        "userAction",
+        "model"
+      ],
+      "type": "object"
+    },
     "Entity": {
       "additionalProperties": false,
       "description": "A specific entity within an intersecting planning designation category",
@@ -3698,6 +3728,9 @@
           "description": "Total calculated fee in GBP",
           "type": "number"
         },
+        "calculatedVAT": {
+          "type": "number"
+        },
         "category": {
           "additionalProperties": false,
           "description": "Breakdown of calculated fee in GBP by category of development, based on the scales defined in The Town and Country Planning Regulations https://www.legislation.gov.uk/uksi/2012/2920/schedule/1/part/2",
@@ -3793,8 +3826,28 @@
           ],
           "type": "object"
         },
+        "fastTrack": {
+          "description": "Fast Track fee in GBP if applicable",
+          "type": "number"
+        },
+        "fastTrackVAT": {
+          "description": "Fast Track VAT in GBP if applicable",
+          "type": "number"
+        },
         "payable": {
           "description": "Total payable fee after any exemptions or reductions in GBP",
+          "type": "number"
+        },
+        "payableVAT": {
+          "description": "Total payable VAT in GBP if applicable",
+          "type": "number"
+        },
+        "paymentProcessing": {
+          "description": "Payment processing fee in GBP if applicable",
+          "type": "number"
+        },
+        "paymentProcessingVAT": {
+          "description": "Payment processing VAT in GBP if applicable",
           "type": "number"
         },
         "reduction": {
@@ -3823,12 +3876,31 @@
             "govPay": {
               "description": "GOV.UK Pay payment reference number",
               "type": "string"
+            },
+            "metadata": {
+              "additionalProperties": {
+                "type": [
+                  "string",
+                  "number",
+                  "boolean"
+                ]
+              },
+              "description": "GOV.UK Pay metadata dictionary if applicable",
+              "type": "object"
             }
           },
           "required": [
             "govPay"
           ],
           "type": "object"
+        },
+        "serviceCharge": {
+          "description": "PlanX service charge fee in GBP if applicable",
+          "type": "number"
+        },
+        "serviceChargeVAT": {
+          "description": "PlanX service charge VAT in GBP if applicable",
+          "type": "number"
         }
       },
       "required": [
@@ -6814,6 +6886,13 @@
           "$ref": "#/definitions/GeoBoundary",
           "description": "HM Land Registry Index polygon for this property, commonly referred to as the blue line boundary, sourced from planning.data.gov.uk/dataset/title-boundary"
         },
+        "developmentCorporations": {
+          "description": "Current and historic development corporations that contain this address sourced from planning.data.gov.uk/dataset/development-corporation-boundary",
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
         "flood": {
           "additionalProperties": false,
           "description": "Existing flood risk, if applicable to application.type",
@@ -6828,7 +6907,14 @@
           "type": "object"
         },
         "localAuthorityDistrict": {
-          "description": "Current and historic UK Local Authority Districts that contain this address sourced from planning.data.gov.uk/dataset/local-authority-district",
+          "description": "Current and historic UK Local Authority Districts (LAD) that contain this address sourced from planning.data.gov.uk/dataset/local-authority-district",
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "localPlanningAuthority": {
+          "description": "Current and historic UK Local Planning Authorities (LPA) that contain this address sourced from planning.data.gov.uk/dataset/local-planning-authority",
           "items": {
             "type": "string"
           },
@@ -8802,6 +8888,9 @@
         "service": {
           "additionalProperties": false,
           "properties": {
+            "enhancements": {
+              "$ref": "#/definitions/Enhancements"
+            },
             "fee": {
               "anyOf": [
                 {
@@ -9153,6 +9242,52 @@
                 },
                 "value": {
                   "const": "brownfieldSite",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Building Preservation Notice (BPN)",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "buildingPreservationNotice",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Certificate of immunity",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "certificateOfImmunity",
                   "type": "string"
                 }
               },
@@ -10829,6 +10964,64 @@
                 },
                 "value": {
                   "const": "brownfieldSite",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Building Preservation Notice (BPN)",
+                  "type": "string"
+                },
+                "entities": {
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "buildingPreservationNotice",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Certificate of immunity",
+                  "type": "string"
+                },
+                "entities": {
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "certificateOfImmunity",
                   "type": "string"
                 }
               },
@@ -30238,6 +30431,13 @@
           "$ref": "#/definitions/GeoBoundary",
           "description": "HM Land Registry Index polygon for this property, commonly referred to as the blue line boundary, sourced from planning.data.gov.uk/dataset/title-boundary"
         },
+        "developmentCorporations": {
+          "description": "Current and historic development corporations that contain this address sourced from planning.data.gov.uk/dataset/development-corporation-boundary",
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
         "flood": {
           "additionalProperties": false,
           "description": "Existing flood risk, if applicable to application.type",
@@ -30252,7 +30452,14 @@
           "type": "object"
         },
         "localAuthorityDistrict": {
-          "description": "Current and historic UK Local Authority Districts that contain this address sourced from planning.data.gov.uk/dataset/local-authority-district",
+          "description": "Current and historic UK Local Authority Districts (LAD) that contain this address sourced from planning.data.gov.uk/dataset/local-authority-district",
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "localPlanningAuthority": {
+          "description": "Current and historic UK Local Planning Authorities (LPA) that contain this address sourced from planning.data.gov.uk/dataset/local-planning-authority",
           "items": {
             "type": "string"
           },
