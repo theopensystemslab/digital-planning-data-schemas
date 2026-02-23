@@ -4083,6 +4083,10 @@
         "name": {
           "type": "string"
         },
+        "number": {
+          "description": "User-assigned unique drawing number, if applicable",
+          "type": "string"
+        },
         "type": {
           "items": {
             "$ref": "#/definitions/FileType"
@@ -6122,6 +6126,66 @@
         }
       ],
       "description": "Housing provider categories tracked by the Greater London Authority (GLA)"
+    },
+    "GLANonPermanentDwellingType": {
+      "$id": "#GLANonPermanentDwellings",
+      "anyOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Gypsy and Traveller pitches and or Travelling Showpeople or Circus people plots",
+              "type": "string"
+            },
+            "value": {
+              "const": "pitches",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Houseboat moorings used as main residence",
+              "type": "string"
+            },
+            "value": {
+              "const": "houseboats",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Other non-permanent dwellings used as main residence",
+              "type": "string"
+            },
+            "value": {
+              "const": "caravans",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        }
+      ],
+      "description": "Non-permanent dwelling details tracked by the Greater London Authority (GLA) for full planning-permission to flats"
     },
     "GLAResidentialUnitType": {
       "$id": "#GLAResidentialUnitType",
@@ -29742,11 +29806,28 @@
               "identicalUnits": {
                 "type": "number"
               },
+              "nonPermanentDwelling": {
+                "$ref": "#/definitions/GLANonPermanentDwellingType"
+              },
               "tenure": {
-                "$ref": "#/definitions/UKTenureType"
+                "anyOf": [
+                  {
+                    "$ref": "#/definitions/UKTenureType"
+                  },
+                  {
+                    "$ref": "#/definitions/GLATenureType"
+                  }
+                ]
               },
               "type": {
-                "$ref": "#/definitions/UKResidentialUnitType"
+                "anyOf": [
+                  {
+                    "$ref": "#/definitions/UKResidentialUnitType"
+                  },
+                  {
+                    "$ref": "#/definitions/GLAResidentialUnitType"
+                  }
+                ]
               }
             },
             "required": [

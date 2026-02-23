@@ -22,11 +22,6 @@ export const GLAResidentialUnitTypes = {
   terraced: 'Terraced home',
 };
 
-export const ResidentialUnitTypes = {
-  ...UKResidentialUnitTypes,
-  ...GLAResidentialUnitTypes,
-};
-
 type UKResidentialUnitTypeKeys = keyof typeof UKResidentialUnitTypes;
 
 type GenericUKResidentialUnitType<TKey extends UKResidentialUnitTypeKeys> = {
@@ -62,3 +57,30 @@ type GLAResidentialUnitTypeMap = {
  */
 export type GLAResidentialUnitType =
   GLAResidentialUnitTypeMap[keyof GLAResidentialUnitTypeMap];
+
+export const GLANonPermanentDwellings = {
+  pitches:
+    'Gypsy and Traveller pitches and or Travelling Showpeople or Circus people plots',
+  houseboats: 'Houseboat moorings used as main residence',
+  caravans: 'Other non-permanent dwellings used as main residence',
+};
+
+type GLANonPermanentDwellingsKeys = keyof typeof GLANonPermanentDwellings;
+
+type GenericGLANonPermanentDwellings<
+  TKey extends GLANonPermanentDwellingsKeys,
+> = {
+  value: TKey;
+  description: (typeof GLANonPermanentDwellings)[TKey];
+};
+
+type GLANonPermanentDwellingsTypeMap = {
+  [K in GLANonPermanentDwellingsKeys]: GenericGLANonPermanentDwellings<K>;
+};
+
+/**
+ * @id #GLANonPermanentDwellings
+ * @description Non-permanent dwelling details tracked by the Greater London Authority (GLA) for full planning-permission to flats
+ */
+export type GLANonPermanentDwellingType =
+  GLANonPermanentDwellingsTypeMap[keyof GLANonPermanentDwellingsTypeMap];

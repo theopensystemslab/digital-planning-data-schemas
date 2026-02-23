@@ -917,6 +917,10 @@
         "name": {
           "type": "string"
         },
+        "number": {
+          "description": "User-assigned unique drawing number, if applicable",
+          "type": "string"
+        },
         "type": {
           "items": {
             "$ref": "#/definitions/FileType"
