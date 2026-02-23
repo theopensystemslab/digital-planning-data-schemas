@@ -29747,10 +29747,24 @@
                 "type": "number"
               },
               "tenure": {
-                "$ref": "#/definitions/UKTenureType"
+                "anyOf": [
+                  {
+                    "$ref": "#/definitions/UKTenureType"
+                  },
+                  {
+                    "$ref": "#/definitions/GLATenureType"
+                  }
+                ]
               },
               "type": {
-                "$ref": "#/definitions/UKResidentialUnitType"
+                "anyOf": [
+                  {
+                    "$ref": "#/definitions/UKResidentialUnitType"
+                  },
+                  {
+                    "$ref": "#/definitions/GLAResidentialUnitType"
+                  }
+                ]
               }
             },
             "required": [
