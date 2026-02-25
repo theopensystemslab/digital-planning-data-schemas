@@ -3460,13 +3460,13 @@
         "dataProperty": {
           "type": "string"
         },
-        "input": {
+        "enhanced": {
           "type": "string"
         },
         "model": {
           "type": "string"
         },
-        "output": {
+        "original": {
           "type": "string"
         },
         "userAction": {
@@ -3475,8 +3475,8 @@
       },
       "required": [
         "dataProperty",
-        "input",
-        "output",
+        "original",
+        "enhanced",
         "userAction",
         "model"
       ],

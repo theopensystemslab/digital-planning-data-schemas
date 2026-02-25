@@ -99,8 +99,8 @@ export interface FeeExplanation {
  */
 export interface Enhancements {
   dataProperty: string;
-  input: string;
-  output: string;
+  original: string;
+  enhanced: string;
   userAction: string;
   model: string;
 }
