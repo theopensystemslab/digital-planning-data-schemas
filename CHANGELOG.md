@@ -15,7 +15,7 @@ incremented for features.
 - Adds two new possible planning designation enum values: `buildingPreservationNotice` and `certificateOfImmunity` ([#392](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/392))
 - Adds two new site boundary additions: `localPlanningAuthority` and `developmentCorporations` ([#392](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/392))
 - Adds metadata about any AI-enhanced components used in the service when applicable ([#392](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/392))
-- Adds more granular fee breakdowns and Gov Pay metadata when applicable ([#392](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/392))
+- Adds more granular fee breakdowns and Gov Pay metadata when applicable ([#392](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/392), [#394](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/394))
 - Adds user-defined drawing number when applicable to an uploaded file ([#392](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/392))
 
 ## [0.7.6] - 2025-10-23
