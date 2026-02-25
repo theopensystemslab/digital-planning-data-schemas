@@ -499,6 +499,36 @@
       "format": "email",
       "type": "string"
     },
+    "Enhancements": {
+      "$id": "#Enhancements",
+      "additionalProperties": false,
+      "description": "Metadata associated with any AI-enhanced components used throughout this service",
+      "properties": {
+        "dataProperty": {
+          "type": "string"
+        },
+        "enhanced": {
+          "type": "string"
+        },
+        "model": {
+          "type": "string"
+        },
+        "original": {
+          "type": "string"
+        },
+        "userAction": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataProperty",
+        "original",
+        "enhanced",
+        "userAction",
+        "model"
+      ],
+      "type": "object"
+    },
     "Entity": {
       "additionalProperties": false,
       "description": "A specific entity within an intersecting planning designation category",
@@ -767,6 +797,10 @@
           "type": "string"
         },
         "name": {
+          "type": "string"
+        },
+        "number": {
+          "description": "User-assigned unique drawing number, if applicable",
           "type": "string"
         },
         "type": {
@@ -3120,6 +3154,9 @@
         "service": {
           "additionalProperties": false,
           "properties": {
+            "enhancements": {
+              "$ref": "#/definitions/Enhancements"
+            },
             "fee": {
               "anyOf": [
                 {
@@ -3390,6 +3427,52 @@
                 },
                 "value": {
                   "const": "brownfieldSite",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Building Preservation Notice (BPN)",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "buildingPreservationNotice",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Certificate of immunity",
+                  "type": "string"
+                },
+                "intersects": {
+                  "const": false,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "certificateOfImmunity",
                   "type": "string"
                 }
               },
@@ -5066,6 +5149,64 @@
                 },
                 "value": {
                   "const": "brownfieldSite",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Building Preservation Notice (BPN)",
+                  "type": "string"
+                },
+                "entities": {
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "buildingPreservationNotice",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "intersects",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "description": {
+                  "const": "Certificate of immunity",
+                  "type": "string"
+                },
+                "entities": {
+                  "items": {
+                    "$ref": "#/definitions/Entity"
+                  },
+                  "type": "array"
+                },
+                "intersects": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "value": {
+                  "const": "certificateOfImmunity",
                   "type": "string"
                 }
               },
@@ -6910,12 +7051,27 @@
               "description": "Total payable fee after any exemptions or reductions in GBP",
               "type": "number"
             },
+            "payableVAT": {
+              "description": "Total payable VAT in GBP if applicable",
+              "type": "number"
+            },
             "reference": {
               "additionalProperties": false,
               "properties": {
                 "govPay": {
                   "description": "GOV.UK Pay payment reference number",
                   "type": "string"
+                },
+                "metadata": {
+                  "additionalProperties": {
+                    "type": [
+                      "string",
+                      "number",
+                      "boolean"
+                    ]
+                  },
+                  "description": "GOV.UK Pay metadata dictionary if applicable",
+                  "type": "object"
                 }
               },
               "required": [
@@ -7016,8 +7172,22 @@
           "$ref": "#/definitions/GeoBoundary",
           "description": "HM Land Registry Index polygon for this property, commonly referred to as the blue line boundary, sourced from planning.data.gov.uk/dataset/title-boundary"
         },
+        "developmentCorporations": {
+          "description": "Current and historic development corporations that contain this address sourced from planning.data.gov.uk/dataset/development-corporation-boundary",
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
         "localAuthorityDistrict": {
-          "description": "Current and historic UK Local Authority Districts that contain this address sourced from planning.data.gov.uk/dataset/local-authority-district",
+          "description": "Current and historic UK Local Authority Districts (LAD) that contain this address sourced from planning.data.gov.uk/dataset/local-authority-district",
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "localPlanningAuthority": {
+          "description": "Current and historic UK Local Planning Authorities (LPA) that contain this address sourced from planning.data.gov.uk/dataset/local-planning-authority",
           "items": {
             "type": "string"
           },

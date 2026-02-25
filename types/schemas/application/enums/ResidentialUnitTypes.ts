@@ -22,11 +22,6 @@ export const GLAResidentialUnitTypes = {
   terraced: 'Terraced home',
 };
 
-export const ResidentialUnitTypes = {
-  ...UKResidentialUnitTypes,
-  ...GLAResidentialUnitTypes,
-};
-
 type UKResidentialUnitTypeKeys = keyof typeof UKResidentialUnitTypes;
 
 type GenericUKResidentialUnitType<TKey extends UKResidentialUnitTypeKeys> = {

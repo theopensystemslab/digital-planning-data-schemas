@@ -94,6 +94,19 @@ export interface FeeExplanation {
 }
 
 /**
+ * @id #Enhancements
+ * @description Metadata associated with any AI-enhanced components used throughout this service
+ */
+export interface Enhancements {
+  dataProperty: string;
+  original: string;
+  enhanced: string;
+  userAction: string;
+  model: string;
+}
+[];
+
+/**
  * @id #PlanXMetadata
  * @description Additional metadata associated with applications submitted via PlanX
  */
@@ -104,5 +117,6 @@ export interface PlanXMetadata extends BaseMetadata {
     url: URL;
     files: RequestedFiles;
     fee: FeeExplanation | FeeExplanationNotApplicable;
+    enhancements?: Enhancements;
   };
 }

@@ -8,4 +8,8 @@ export interface File {
   name: string;
   type: FileType[];
   description?: string;
+  /**
+   * @description User-assigned unique drawing number, if applicable
+   */
+  number?: string;
 }

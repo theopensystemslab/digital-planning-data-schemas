@@ -24,11 +24,6 @@ export const GLATenureTypes = {
   SR: 'Social rent',
 };
 
-export const TenureTypes = {
-  ...UKTenureTypes,
-  ...GLATenureTypes,
-};
-
 type UKTenureTypeKeys = keyof typeof UKTenureTypes;
 
 type GenericUKTenureType<TKey extends UKTenureTypeKeys> = {

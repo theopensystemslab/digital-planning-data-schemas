@@ -669,6 +669,36 @@
       "format": "email",
       "type": "string"
     },
+    "Enhancements": {
+      "$id": "#Enhancements",
+      "additionalProperties": false,
+      "description": "Metadata associated with any AI-enhanced components used throughout this service",
+      "properties": {
+        "dataProperty": {
+          "type": "string"
+        },
+        "enhanced": {
+          "type": "string"
+        },
+        "model": {
+          "type": "string"
+        },
+        "original": {
+          "type": "string"
+        },
+        "userAction": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataProperty",
+        "original",
+        "enhanced",
+        "userAction",
+        "model"
+      ],
+      "type": "object"
+    },
     "Feature<Geometry,GeoJsonProperties>": {
       "additionalProperties": false,
       "description": "A feature object which contains a geometry and associated properties. https://tools.ietf.org/html/rfc7946#section-3.2",
@@ -885,6 +915,10 @@
           "type": "string"
         },
         "name": {
+          "type": "string"
+        },
+        "number": {
+          "description": "User-assigned unique drawing number, if applicable",
           "type": "string"
         },
         "type": {
@@ -3059,6 +3093,9 @@
         "service": {
           "additionalProperties": false,
           "properties": {
+            "enhancements": {
+              "$ref": "#/definitions/Enhancements"
+            },
             "fee": {
               "anyOf": [
                 {
@@ -14312,8 +14349,22 @@
               "$ref": "#/definitions/GeoBoundary",
               "description": "HM Land Registry Index polygon for this property, commonly referred to as the blue line boundary, sourced from planning.data.gov.uk/dataset/title-boundary"
             },
+            "developmentCorporations": {
+              "description": "Current and historic development corporations that contain this address sourced from planning.data.gov.uk/dataset/development-corporation-boundary",
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
             "localAuthorityDistrict": {
-              "description": "Current and historic UK Local Authority Districts that contain this address sourced from planning.data.gov.uk/dataset/local-authority-district",
+              "description": "Current and historic UK Local Authority Districts (LAD) that contain this address sourced from planning.data.gov.uk/dataset/local-authority-district",
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "localPlanningAuthority": {
+              "description": "Current and historic UK Local Planning Authorities (LPA) that contain this address sourced from planning.data.gov.uk/dataset/local-planning-authority",
               "items": {
                 "type": "string"
               },
