@@ -10,7 +10,7 @@ export interface PreApplicationData {
     value: 'preApp';
     description: 'Pre-application';
   };
-  fee: Pick<Fee, 'payable' | 'payableVAT' | 'reference'>;
+  fee: Omit<Fee, 'category' | 'exemption' | 'reduction'>;
   declaration: Declaration;
   information: {
     harmful: {
