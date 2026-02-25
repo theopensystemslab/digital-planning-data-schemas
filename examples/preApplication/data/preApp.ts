@@ -207,7 +207,12 @@ export const preApplication: PreApplication = {
         description: 'Pre-application',
       },
       fee: {
-        payable: 450,
+        calculated: 360,
+        calculatedVAT: 90,
+        serviceCharge: 40,
+        serviceChargeVAT: 8,
+        payable: 498,
+        payableVAT: 98,
         reference: {
           govPay: '8tdudifjrg7va2ud2nptc6iedf',
         },
