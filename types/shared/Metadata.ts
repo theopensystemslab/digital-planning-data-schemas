@@ -104,7 +104,6 @@ export interface Enhancements {
   userAction: string;
   model: string;
 }
-[];
 
 /**
  * @id #PlanXMetadata
