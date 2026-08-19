@@ -2,11 +2,17 @@
 
 This repository contains data specifications to describe Digital Planning services developed by [Open Digital Planning](https://opendigitalplanning.org/). Each specification is communicated via a [JSON Schema](https://json-schema.org/) document.
 
-Our initial specification defines data structures, rules, and validation logic for **planning applications** - including Lawful Development Certificate, Prior Approval, and Planning Permission services - that are being designed and submitted via [PlanX](https://www.planx.uk/).
-
 Digital Planning Data schemas aim to encourage more interoperability and consistency between systems by offering a central, version controlled specification for documenting and validating planning data.
 
-Going forward, we hope that this repository will expand beyond applications to further describe planning reference numbers, site notices, consultations, and more.
+Specifications currently found in this repository define data structures, rules, and validation logic for statutory and discretionary digital services built on [PlanX](https://www.planx.uk). 
+
+PlanX currently uses these schemas to exchange submission data directly with local authorities using Microsoft-driven integrations, the back-office planning system (BOPS), and the digital planning register (DPR).
+
+**All schemas in this repository are work-in-progress**. Changes are semantically versioned and currently released under v0.
+  - The `Application` schema is a temporary solution and is _not_ yet inclusive of all statutory requirements across all planning application types; we intend to retire it in favor of [MHCLG's forthcoming data specifications](https://github.com/digital-land/planning-application-data-specification) around autumn 2026.
+- The `PreApplication` and `Enforcement` schemas capture only lowest-common-denominator data points of highly flexible, complex and varied discretionary services, they are not inclusive of local information requirements.
+
+Going forward, this repository may expand beyond planning applications and reports to further describe planning reference numbers, site notices, consultations, and more.
 
 ## Usage
 
