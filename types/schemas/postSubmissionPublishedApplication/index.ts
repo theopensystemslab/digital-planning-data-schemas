@@ -12,11 +12,10 @@ import {PostSubmissionFileRedacted} from '../postSubmissionApplication/data/File
  *
  * @todo create redacted form of PostSubmissionApplicationSpecification & PrototypeApplication
  */
-interface ApplicationSpecification<T extends ApplicationType>
-  extends Omit<
-    PostSubmissionApplicationSpecification<T>,
-    'comments' | 'files'
-  > {
+interface ApplicationSpecification<T extends ApplicationType> extends Omit<
+  PostSubmissionApplicationSpecification<T>,
+  'comments' | 'files'
+> {
   comments?: {
     public?: PublicCommentsRedacted;
     specialist?: SpecialistCommentsRedacted;
