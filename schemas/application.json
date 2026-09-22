@@ -3454,36 +3454,33 @@
     },
     "Enhancements": {
       "$id": "#Enhancements",
+      "additionalProperties": false,
       "description": "Metadata associated with any AI-enhanced components used throughout this service",
-      "items": {
-        "additionalProperties": false,
-        "properties": {
-          "dataProperty": {
-            "type": "string"
-          },
-          "enhanced": {
-            "type": "string"
-          },
-          "model": {
-            "type": "string"
-          },
-          "original": {
-            "type": "string"
-          },
-          "userAction": {
-            "type": "string"
-          }
+      "properties": {
+        "dataProperty": {
+          "type": "string"
         },
-        "required": [
-          "dataProperty",
-          "original",
-          "enhanced",
-          "userAction",
-          "model"
-        ],
-        "type": "object"
+        "enhanced": {
+          "type": "string"
+        },
+        "model": {
+          "type": "string"
+        },
+        "original": {
+          "type": "string"
+        },
+        "userAction": {
+          "type": "string"
+        }
       },
-      "type": "array"
+      "required": [
+        "dataProperty",
+        "original",
+        "enhanced",
+        "userAction",
+        "model"
+      ],
+      "type": "object"
     },
     "Entity": {
       "additionalProperties": false,
