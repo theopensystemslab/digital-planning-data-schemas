@@ -22,15 +22,15 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Install pnpm
+        if: steps.version_check.outputs.changed == 'true'
+        uses: pnpm/action-setup@v4
+
       - name: Setup Node.js
         if: steps.version_check.outputs.changed == 'true'
         uses: actions/setup-node@v7
         with:
           node-version: '24.14.0'
-
-      - name: Install pnpm
-        if: steps.version_check.outputs.changed == 'true'
-        run: npm install -g pnpm
 
       - name: Install Dependencies
         if: steps.version_check.outputs.changed == 'true'  
