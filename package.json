@@ -16,7 +16,7 @@
   "scripts": {
     "build": "pnpm build-schema && pnpm build-json-examples",
     "build-json-examples": "pnpm ts-node scripts/build-json-examples.ts",
-    "build-schema": "./scripts/build-schema.sh",
+    "build-schema": "bash scripts/build-schema.sh",
     "lint": "gts lint",
     "check": "tsc --noEmit",
     "fix": "gts fix",

@@ -32,7 +32,7 @@ const walkDirectory = async (dir: string) => {
     } else if (path.extname(filePath) === '.ts') {
       // Write file to mirrored directory, outside the /data folder where the TS examples are stored
       const jsonExampleFilePath = path.join(
-        dir.replace('/data', ''),
+        dir.split(path.sep).filter(segment => segment !== 'data').join(path.sep),
         `${path.basename(file, '.ts')}.json`,
       );
       await convertTypeScriptObjectToJSON(filePath, jsonExampleFilePath);
