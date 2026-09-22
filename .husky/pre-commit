@@ -7,3 +7,4 @@ if [ "$branch" != "main" ]; then
 fi
 
 pnpm check && pnpm fix
+git add schemas/* examples/*

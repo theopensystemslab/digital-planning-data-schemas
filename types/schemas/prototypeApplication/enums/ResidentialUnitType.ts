@@ -73,12 +73,7 @@ type Terraced = 'terraced';
  * @description Residential unit types tracked throughout the UK
  */
 export type UKResidentialUnitType =
-  | Cluster
-  | Flat
-  | House
-  | Other
-  | Sheltered
-  | Studio;
+  Cluster | Flat | House | Other | Sheltered | Studio;
 
 /**
  * @id #GLAResidentialUnitType

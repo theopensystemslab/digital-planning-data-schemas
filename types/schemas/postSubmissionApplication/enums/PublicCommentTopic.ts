@@ -43,11 +43,4 @@ type Other = 'other';
  * @description Types of comments
  */
 export type PublicCommentTopic =
-  | Design
-  | Use
-  | Light
-  | Privacy
-  | Access
-  | Noise
-  | Traffic
-  | Other;
+  Design | Use | Light | Privacy | Access | Noise | Traffic | Other;

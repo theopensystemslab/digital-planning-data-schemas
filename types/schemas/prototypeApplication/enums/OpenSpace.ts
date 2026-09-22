@@ -112,8 +112,4 @@ export type OpenSpaceType =
  * @description Designations of natural open spaces
  */
 export type OpenSpaceDesignation =
-  | GreenBelt
-  | Local
-  | Metropolitan
-  | None
-  | Other;
+  GreenBelt | Local | Metropolitan | None | Other;
