@@ -53,8 +53,7 @@ export interface Specialist extends SpecialistBase, SpecialistCommentAuthor {
  * @description Details of a specialist and their comments on an application
  */
 export interface SpecialistRedacted
-  extends SpecialistBase,
-    SpecialistCommentAuthorRedacted {
+  extends SpecialistBase, SpecialistCommentAuthorRedacted {
   /**
    * List of comments made by the specialist in order of latest first
    */
