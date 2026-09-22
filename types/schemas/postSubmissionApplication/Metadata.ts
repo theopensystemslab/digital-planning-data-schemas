@@ -20,5 +20,4 @@ type PostSubmissionPrototypePlanXMetadata = PrototypePlanXMetadata &
   PostSubmissionMetadataBase;
 
 export type PostSubmissionMetadata =
-  | PostSubmissionBaseMetadata
-  | PostSubmissionPrototypePlanXMetadata;
+  PostSubmissionBaseMetadata | PostSubmissionPrototypePlanXMetadata;

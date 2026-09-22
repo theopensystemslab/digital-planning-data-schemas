@@ -7079,28 +7079,52 @@
               "type": "number"
             },
             "reference": {
-              "additionalProperties": false,
-              "properties": {
-                "govPay": {
-                  "description": "GOV.UK Pay payment reference number",
-                  "type": "string"
-                },
-                "metadata": {
-                  "additionalProperties": {
-                    "type": [
-                      "string",
-                      "number",
-                      "boolean"
-                    ]
+              "anyOf": [
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "govPay": {
+                      "description": "GOV.UK Pay payment reference number",
+                      "type": "string"
+                    },
+                    "metadata": {
+                      "additionalProperties": {
+                        "type": [
+                          "string",
+                          "number",
+                          "boolean"
+                        ]
+                      },
+                      "description": "GOV.UK Pay metadata dictionary if applicable",
+                      "type": "object"
+                    }
                   },
-                  "description": "GOV.UK Pay metadata dictionary if applicable",
+                  "required": [
+                    "govPay"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "metadata": {
+                      "additionalProperties": {
+                        "type": "string"
+                      },
+                      "description": "Stripe metadata dictionary if applicable (note Stripe API casts all metadata values as strings)",
+                      "type": "object"
+                    },
+                    "stripe": {
+                      "description": "Stripe payment reference number",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "stripe"
+                  ],
                   "type": "object"
                 }
-              },
-              "required": [
-                "govPay"
-              ],
-              "type": "object"
+              ]
             },
             "serviceCharge": {
               "description": "PlanX service charge fee in GBP if applicable",

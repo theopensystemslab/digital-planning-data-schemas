@@ -8,7 +8,4 @@ type publicComment = 'publicComment';
  * @description Type of file association for a post-submission file.
  */
 export type PostSubmissionFileAssociation =
-  | application
-  | appeal
-  | specialistComment
-  | publicComment;
+  application | appeal | specialistComment | publicComment;

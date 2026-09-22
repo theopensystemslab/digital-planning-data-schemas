@@ -8,8 +8,7 @@ import {
 import {ApplicationType} from '../enums/ApplicationType';
 
 export type ApplicationDataBase =
-  | EnglandApplicationData
-  | LondonApplicationData;
+  EnglandApplicationData | LondonApplicationData;
 
 /**
  * @description Application details for project sites anywhere in England

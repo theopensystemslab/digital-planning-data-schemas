@@ -2,12 +2,7 @@ import {Address} from './Addresses';
 import {Date} from './utils';
 
 export type OwnersInterest =
-  | 'owner'
-  | 'owner.sole'
-  | 'owner.co'
-  | 'lessee'
-  | 'occupier'
-  | 'other';
+  'owner' | 'owner.sole' | 'owner.co' | 'lessee' | 'occupier' | 'other';
 
 /**
  * @title Ownership interest
