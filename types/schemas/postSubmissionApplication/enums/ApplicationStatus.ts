@@ -27,7 +27,4 @@ type undetermined = 'undetermined';
  * @description Stages of the planning application process
  */
 export type ApplicationStatus =
-  | returned
-  | withdrawn
-  | determined
-  | undetermined;
+  returned | withdrawn | determined | undetermined;

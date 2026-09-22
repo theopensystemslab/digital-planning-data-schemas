@@ -8,9 +8,7 @@ import {ContactDetails} from './Contacts';
 export type MaintenanceContacts = {
   maintenanceContact?: {
     when:
-      | 'duringConstruction'
-      | 'afterConstruction'
-      | 'duringAndAfterConstruction';
+      'duringConstruction' | 'afterConstruction' | 'duringAndAfterConstruction';
     address: Address;
     contact: ContactDetails;
   }[];

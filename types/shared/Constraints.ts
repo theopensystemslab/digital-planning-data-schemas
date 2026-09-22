@@ -137,8 +137,7 @@ export type Entity = {
  * @description Planning designations that may intersect with the proposed site determined by spatial queries against Planning Data (planning.data.gov.uk) and Ordnance Survey
  */
 export type PlanningDesignation =
-  | NonIntersectingPlanningDesignation
-  | IntersectingPlanningDesignation;
+  NonIntersectingPlanningDesignation | IntersectingPlanningDesignation;
 
 /**
  * @internal Planning constraints are a generic type, while planning designations adhere to enum value/description pairs
@@ -170,5 +169,4 @@ type IntersectingPlanningConstraint = {
  * @description Planning constraints that may intersect with the proposed site
  */
 export type PlanningConstraint =
-  | NonIntersectingPlanningConstraint
-  | IntersectingPlanningConstraint;
+  NonIntersectingPlanningConstraint | IntersectingPlanningConstraint;
