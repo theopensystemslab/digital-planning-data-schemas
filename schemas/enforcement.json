@@ -671,33 +671,36 @@
     },
     "Enhancements": {
       "$id": "#Enhancements",
-      "additionalProperties": false,
       "description": "Metadata associated with any AI-enhanced components used throughout this service",
-      "properties": {
-        "dataProperty": {
-          "type": "string"
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "dataProperty": {
+            "type": "string"
+          },
+          "enhanced": {
+            "type": "string"
+          },
+          "model": {
+            "type": "string"
+          },
+          "original": {
+            "type": "string"
+          },
+          "userAction": {
+            "type": "string"
+          }
         },
-        "enhanced": {
-          "type": "string"
-        },
-        "model": {
-          "type": "string"
-        },
-        "original": {
-          "type": "string"
-        },
-        "userAction": {
-          "type": "string"
-        }
+        "required": [
+          "dataProperty",
+          "original",
+          "enhanced",
+          "userAction",
+          "model"
+        ],
+        "type": "object"
       },
-      "required": [
-        "dataProperty",
-        "original",
-        "enhanced",
-        "userAction",
-        "model"
-      ],
-      "type": "object"
+      "type": "array"
     },
     "Feature<Geometry,GeoJsonProperties>": {
       "additionalProperties": false,

@@ -97,14 +97,13 @@ export interface FeeExplanation {
  * @id #Enhancements
  * @description Metadata associated with any AI-enhanced components used throughout this service
  */
-export interface Enhancements {
+export type Enhancements = {
   dataProperty: string;
   original: string;
   enhanced: string;
   userAction: string;
   model: string;
-}
-[];
+}[];
 
 /**
  * @id #PlanXMetadata

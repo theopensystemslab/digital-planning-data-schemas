@@ -32,6 +32,8 @@
   "author": "Open Systems Lab",
   "license": "MPL2",
   "devDependencies": {
+    "@eslint/eslintrc": "^3.3.7",
+    "@eslint/js": "^10.0.1",
     "@types/geojson": "^7946.0.16",
     "@types/node": "25.6.0",
     "cpx": "^1.5.0",

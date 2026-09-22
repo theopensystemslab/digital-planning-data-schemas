@@ -1,7 +1,8 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-branch="$(git rev-parse --abbrev-ref HEAD)"
+branch="$(git rev-parse --abbrev-ref HEAD)" || exit 1
+
 if [ "$branch" != "main" ]; then
   pnpm build
 fi

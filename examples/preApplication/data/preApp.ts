@@ -214,7 +214,7 @@ export const preApplication: PreApplication = {
         payable: 498,
         payableVAT: 98,
         reference: {
-          govPay: '8tdudifjrg7va2ud2nptc6iedf',
+          stripe: '123test456',
         },
       },
       declaration: {

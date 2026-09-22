@@ -129,14 +129,25 @@ export interface Fee {
     parishCouncil: boolean;
     sports: boolean;
   };
-  reference?: {
-    /**
-     * @description GOV.UK Pay payment reference number
-     */
-    govPay: string; // @todo require when payable > 0
-    /**
-     * @description GOV.UK Pay metadata dictionary if applicable
-     */
-    metadata?: Record<string, string | number | boolean>;
-  };
+  reference?:
+    | {
+        /**
+         * @description GOV.UK Pay payment reference number
+         */
+        govPay: string; // @todo require when payable > 0
+        /**
+         * @description GOV.UK Pay metadata dictionary if applicable
+         */
+        metadata?: Record<string, string | number | boolean>;
+      }
+    | {
+        /**
+         * @description Stripe payment reference number
+         */
+        stripe: string;
+        /**
+         * @description Stripe metadata dictionary if applicable
+         */
+        metadata?: Record<string, string>;
+      };
 }
