@@ -2386,6 +2386,7 @@
       "properties": {
         "access": {
           "additionalProperties": false,
+          "description": "Proposed pedestrian & vehicle access, roads and rights of way, if applicable to application.type",
           "properties": {
             "affected": {
               "enum": [
@@ -7175,6 +7176,7 @@
       "properties": {
         "access": {
           "additionalProperties": false,
+          "description": "Proposed pedestrian & vehicle access, roads and rights of way, if applicable to application.type",
           "properties": {
             "affected": {
               "enum": [

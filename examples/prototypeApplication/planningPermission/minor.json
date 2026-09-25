@@ -170,6 +170,20 @@
       },
       "materials": {
         "boundary": "black painted timber"
+      },
+      "use": {
+        "description": "Sui generis - large HMO",
+        "vacant": true,
+        "knownContamination": false,
+        "suspectedContamination": false
+      },
+      "parking": {
+        "cars": {
+          "count": 4
+        },
+        "cycles": {
+          "count": 0
+        }
       }
     },
     "application": {
@@ -203,6 +217,10 @@
         "date": "2020-01-01",
         "officer": "Pete the Planning Person",
         "summary": "Not provided"
+      },
+      "preAppAdvice": {
+        "form": "Yes",
+        "reference": "0123456789"
       }
     },
     "proposal": {
@@ -268,6 +286,118 @@
             "identicalUnits": 1
           }
         ]
+      },
+      "started": {
+        "value": false
+      },
+      "completed": {
+        "value": false
+      },
+      "publicServiceInfrastructure": false,
+      "access": {
+        "affected": {
+          "vehicle": false,
+          "pedestrian": true,
+          "rightOfWay": false
+        },
+        "new": {
+          "publicRoad": false,
+          "rightOfWay": false
+        }
+      },
+      "wasteStorage": {
+        "affected": true,
+        "separated": "yes"
+      },
+      "BNG": {
+        "applies": true,
+        "preDevelopmentValue": {
+          "value": 0.42,
+          "calculated": {
+            "applicationDate": true
+          },
+          "metricToolPublicationDate": "2024-02-12"
+        },
+        "degradation": {
+          "value": false
+        },
+        "irreplaceableHabitat": {
+          "value": false
+        }
+      },
+      "foulSewage": {
+        "disposal": "sewer",
+        "newConnection": true
+      },
+      "flood": {
+        "atRisk": false,
+        "within20mOfWatercourse": false,
+        "increaseRiskElsewhere": false,
+        "surfaceWaterDisposal": "sustainableDrainageSystem"
+      },
+      "natureImpacts": {
+        "protectedSpeciesAffected": "false",
+        "designatedSitesAffected": "false",
+        "geologicalSitesAffected": "false"
+      },
+      "use": {
+        "vulnerableToContamination": false
+      },
+      "trees": {
+        "onSite": true,
+        "influenceDevelopment": false
+      },
+      "effluent": {
+        "disposal": false
+      },
+      "residentialUnits": {
+        "change": true
+      },
+      "nonResidentialFloorspace": {
+        "affected": true
+      },
+      "employment": {
+        "existingEmployees": {
+          "fullTime": {
+            "number": 12
+          },
+          "partTime": {
+            "number": 3
+          },
+          "fullTimeEquivalent": {
+            "number": 13.5
+          }
+        },
+        "proposedEmployees": {
+          "fullTime": {
+            "number": 0
+          },
+          "partTime": {
+            "number": 0
+          },
+          "fullTimeEquivalent": {
+            "number": 0
+          }
+        }
+      },
+      "hoursOfOperation": "not applicable",
+      "site": {
+        "hectares": 0.069395
+      },
+      "commercialProcesses": {
+        "description": "none",
+        "wasteManagement": false
+      },
+      "hazardousSubstanceStorage": false,
+      "parking": {
+        "cars": {
+          "count": 2,
+          "difference": -2
+        },
+        "cycles": {
+          "count": 4,
+          "difference": 4
+        }
       }
     }
   },

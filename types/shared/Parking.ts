@@ -34,3 +34,27 @@ export type ExistingLondonParking = {
   offStreet?: {residential: ExistingCount};
   other?: ExistingCount;
 };
+
+/**
+ * @description Proposed parking spaces by type per the national planning application form
+ */
+export type ProposedNationalParking = {
+  cars?: ProposedCount;
+  vans?: ProposedCount;
+  motorcycles?: ProposedCount;
+  cycles?: ProposedCount;
+  disabled?: ProposedCount;
+  other?: ProposedCount;
+};
+
+/**
+ * @description Existing parking spaces by type per the national planning application form
+ */
+export type ExistingNationalParking = {
+  cars?: ExistingCount;
+  vans?: ExistingCount;
+  motorcycles?: ExistingCount;
+  cycles?: ExistingCount;
+  disabled?: ExistingCount;
+  other?: ExistingCount;
+};
