@@ -1,6 +1,9 @@
 import {GeoBoundary} from '../../../shared/Boundaries';
 import {Materials} from '../../../shared/Materials';
-import {ProposedLondonParking} from '../../../shared/Parking';
+import {
+  ProposedLondonParking,
+  ProposedNationalParking,
+} from '../../../shared/Parking';
 import {Area, Date, Integer} from '../../../shared/utils';
 import {ApplicationType} from '../enums/ApplicationType';
 import {BuildingRegulation} from '../enums/BuildingRegulation';
@@ -34,7 +37,7 @@ export interface EnglandProposal extends ProposalBase {
    */
   materials?: Materials;
   /**
-   * @desription Proposed pedestrian & vehicle access, roads and rights of way, if applicable to application.type
+   * @description Proposed pedestrian & vehicle access, roads and rights of way, if applicable to application.type
    */
   access?: {
     affected?:
@@ -42,7 +45,21 @@ export interface EnglandProposal extends ProposalBase {
       | 'pedestrian'
       | 'newRoad'
       | 'rightsOfWay.newPublic'
-      | 'rightsOfWay.changes';
+      | 'rightsOfWay.changes'
+      | {
+          /** @description Is new or altered vehicle access proposed? */
+          vehicle: boolean;
+          /** @description Is new or altered pedestrian access proposed? */
+          pedestrian: boolean;
+          /** @description Are any rights of way created, diverted or extinguished? */
+          rightOfWay: boolean;
+        };
+    new?: {
+      /** @description Are new public roads provided within the site? */
+      publicRoad: boolean;
+      /** @description Are new public rights of way provided within the site? */
+      rightOfWay: boolean;
+    };
   };
   /**
    * @description Proposed utilities, if applicable to application.type
@@ -72,7 +89,15 @@ export interface EnglandProposal extends ProposalBase {
    * @description Assessment of flood risk, if applicable to application.type
    */
   flood?: {
+    /** @description Is the site at risk of flooding? */
+    atRisk?: boolean;
+    /** @description Is your project within 20 metres of a watercourse? */
+    within20mOfWatercourse?: boolean;
+    /** @description Will the proposal increase the flood risk elsewhere? */
+    increaseRiskElsewhere?: boolean;
+    /** @description How will surface water be disposed of? */
     surfaceWaterDisposal?:
+      | 'sustainableDrainageSystem'
       | 'drainageSystem'
       | 'soakaway'
       | 'sewer'
@@ -95,6 +120,8 @@ export interface EnglandProposal extends ProposalBase {
     description?: string;
     contamination?: 'known' | 'suspected' | 'vulnerable';
     storage?: string[];
+    /** @description Is the proposed use vulnerable to contamination? */
+    vulnerableToContamination?: boolean;
   };
   extend?: {
     area: Area;
@@ -135,12 +162,149 @@ export interface EnglandProposal extends ProposalBase {
     };
   };
   environmentalImpactDescription?: string;
+  started?: {
+    /** @description Has the project already started? */
+    value: boolean;
+    /** @description Date that project was started */
+    date?: Date;
+  };
+  completed?: {
+    /** @description Has the project been completed? */
+    value: boolean;
+    /** @description Date that project was completed */
+    date?: Date;
+  };
+  /**
+   * @description Is it a proposal for public service infrastructure?
+   */
+  publicServiceInfrastructure?: boolean;
+  wasteStorage?: {
+    /** @description Does the project accommodate waste storage areas? */
+    affected: boolean;
+    /** @description Will recyclable waste be stored and collected separately? */
+    separated: 'yes' | 'no' | 'not applicable';
+  };
+  /**
+   * @title Biodiversity net gain (BNG)
+   */
+  BNG?: {
+    /** @description Does the BNG condition apply? */
+    applies: boolean;
+    exemption?: {
+      /** @description Why doesn't it apply? */
+      justification?: string;
+    };
+    preDevelopmentValue?: {
+      /** @description Pre-development biodiversity value */
+      value: number;
+      calculated?: {
+        /** @description Is the date of the calculation the application date? */
+        applicationDate?: boolean;
+        /** @description Earlier date of pre-development biodiversity calculation */
+        date?: Date;
+        /** @description Justification for earlier date */
+        earlyJustification?: string;
+      };
+      /** @description Metric tool publication date for recent calculation */
+      metricToolPublicationDate?: Date;
+    };
+    degradation?: {
+      /** @description Has any degradation occured? */
+      value: boolean;
+      /** @description Provide more details of degradation */
+      details?: string;
+      /** @description Date immediately before degrading activity was carried out */
+      preStartDate?: Date;
+    };
+    preDegradationValue?: {
+      /** @description Onsite biodiversity value on the date immediately before degrading activity was carried out */
+      value: number;
+      /** @description Metric tool publication date for pre-degradation calculation */
+      metricToolPublicationDate?: Date;
+    };
+    irreplaceableHabitat?: {
+      /** @description Does the site have irreplaceable habitat? */
+      value: boolean;
+      /** @description More details about irreplaceable habitat */
+      details?: string;
+    };
+  };
+  foulSewage?: {
+    /** @description How will foul sewage be disposed of? */
+    disposal: 'sewer' | 'pit' | 'tank' | 'plant' | 'other';
+    /** @description Are you proposing to connect to the existing drainage system? */
+    newConnection: boolean;
+  };
+  natureImpacts?: {
+    /** @description Protected or priority species affected */
+    protectedSpeciesAffected: NatureImpact;
+    /** @description Designated sites, important habitats or other important features affected? */
+    designatedSitesAffected: NatureImpact;
+    /** @description Important habitats affected, either on the project site ('onSite') or near to the project site ('adjacent') */
+    importantHabitatsAffected?: 'onSite' | 'adjacent';
+    /** @description Sites of geological conservation affected? */
+    geologicalSitesAffected: NatureImpact;
+  };
+  trees?: {
+    /** @description Are there trees and hedges on the project site? */
+    onSite: boolean;
+    /** @description Are there trees or hedges adjacent to the site that could influence the development or might be important as part of the local landscape character? */
+    influenceDevelopment: boolean;
+  };
+  effluent?: {
+    /** @description Does the proposed use involve disposal of trade effluent? */
+    disposal: boolean;
+  };
+  residentialUnits?: {
+    /** @description Does the project change the number or type of residential units on the site? */
+    change: boolean;
+  };
+  nonResidentialFloorspace?: {
+    /** @description Does your proposal impact non-residential floorspace? */
+    affected: boolean;
+  };
+  employment?: {
+    /** @description Number of existing employees: full time, part time, and total full time equivalent */
+    existingEmployees: EmployeeCounts & {fullTime: {number: Integer}};
+    /** @description Number of proposed employees: full time, part time, and total full time equivalent */
+    proposedEmployees?: EmployeeCounts;
+  };
+  /**
+   * @description Hours of operation per use, or 'not applicable'
+   */
+  hoursOfOperation?: string;
+  site?: {
+    /** @description What is the site area in hectares? */
+    hectares: number;
+  };
+  commercialProcesses?: {
+    /** @description Describe activities processes carried out on the site, or 'none' */
+    description: string;
+    /** @description Is the proposal a waste management development? */
+    wasteManagement: boolean;
+  };
+  /**
+   * @description Does the proposed use involve the storage of hazardous chemicals?
+   */
+  hazardousSubstanceStorage?: boolean;
+  parking?: ProposedNationalParking;
+}
+
+type NatureImpact = 'onSite' | 'adjacent' | 'false';
+
+interface EmployeeCounts {
+  fullTime?: {number: Integer};
+  partTime?: {number: Integer};
+  fullTimeEquivalent?: {number: Integer};
 }
 
 /**
  * @description Proposal details for project sites within the Greater London Authority (GLA) area
  */
-export interface LondonProposal extends Omit<EnglandProposal, 'units'> {
+export interface LondonProposal extends Omit<
+  EnglandProposal,
+  'units' | 'parking'
+> {
   schemeName?: string;
   parking?: ProposedLondonParking;
   /**

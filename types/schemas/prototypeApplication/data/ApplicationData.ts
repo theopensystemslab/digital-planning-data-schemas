@@ -54,6 +54,12 @@ export type NonFeeCarryingApplicationData = ApplicationDataBase & {
  */
 export type PPApplicationData = FeeCarryingApplicationData & {
   CIL?: CommunityInfrastructureLevy;
+  preAppAdvice?: {
+    /** @description Has prior advice been sought? */
+    form: 'Yes' | 'No';
+    /** @description Reference */
+    reference?: string;
+  };
 };
 
 /**

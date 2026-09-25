@@ -3266,6 +3266,9 @@
           },
           "type": "array"
         },
+        "parking": {
+          "$ref": "#/definitions/ExistingNationalParking"
+        },
         "planning": {
           "additionalProperties": false,
           "description": "Planning constraints and policies that intersect with this site and may impact or restrict development",
@@ -3347,18 +3350,188 @@
     "EnglandProposal": {
       "additionalProperties": false,
       "properties": {
-        "access": {
+        "BNG": {
           "additionalProperties": false,
           "properties": {
-            "affected": {
-              "enum": [
-                "vehicle",
-                "pedestrian",
-                "newRoad",
-                "rightsOfWay.newPublic",
-                "rightsOfWay.changes"
+            "applies": {
+              "description": "Does the BNG condition apply?",
+              "type": "boolean"
+            },
+            "degradation": {
+              "additionalProperties": false,
+              "properties": {
+                "details": {
+                  "description": "Provide more details of degradation",
+                  "type": "string"
+                },
+                "preStartDate": {
+                  "$ref": "#/definitions/Date",
+                  "description": "Date immediately before degrading activity was carried out"
+                },
+                "value": {
+                  "description": "Has any degradation occured?",
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "value"
               ],
-              "type": "string"
+              "type": "object"
+            },
+            "exemption": {
+              "additionalProperties": false,
+              "properties": {
+                "justification": {
+                  "description": "Why doesn't it apply?",
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "irreplaceableHabitat": {
+              "additionalProperties": false,
+              "properties": {
+                "details": {
+                  "description": "More details about irreplaceable habitat",
+                  "type": "string"
+                },
+                "value": {
+                  "description": "Does the site have irreplaceable habitat?",
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "value"
+              ],
+              "type": "object"
+            },
+            "preDegradationValue": {
+              "additionalProperties": false,
+              "properties": {
+                "metricToolPublicationDate": {
+                  "$ref": "#/definitions/Date",
+                  "description": "Metric tool publication date for pre-degradation calculation"
+                },
+                "value": {
+                  "description": "Onsite biodiversity value on the date immediately before degrading activity was carried out",
+                  "type": "number"
+                }
+              },
+              "required": [
+                "value"
+              ],
+              "type": "object"
+            },
+            "preDevelopmentValue": {
+              "additionalProperties": false,
+              "properties": {
+                "calculated": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "applicationDate": {
+                      "description": "Is the date of the calculation the application date?",
+                      "type": "boolean"
+                    },
+                    "date": {
+                      "$ref": "#/definitions/Date",
+                      "description": "Earlier date of pre-development biodiversity calculation"
+                    },
+                    "earlyJustification": {
+                      "description": "Justification for earlier date",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "metricToolPublicationDate": {
+                  "$ref": "#/definitions/Date",
+                  "description": "Metric tool publication date for recent calculation"
+                },
+                "value": {
+                  "description": "Pre-development biodiversity value",
+                  "type": "number"
+                }
+              },
+              "required": [
+                "value"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "applies"
+          ],
+          "title": "Biodiversity net gain (BNG)",
+          "type": "object"
+        },
+        "access": {
+          "additionalProperties": false,
+          "description": "Proposed pedestrian & vehicle access, roads and rights of way, if applicable to application.type",
+          "properties": {
+            "affected": {
+              "anyOf": [
+                {
+                  "const": "vehicle",
+                  "type": "string"
+                },
+                {
+                  "const": "pedestrian",
+                  "type": "string"
+                },
+                {
+                  "const": "newRoad",
+                  "type": "string"
+                },
+                {
+                  "const": "rightsOfWay.newPublic",
+                  "type": "string"
+                },
+                {
+                  "const": "rightsOfWay.changes",
+                  "type": "string"
+                },
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "pedestrian": {
+                      "description": "Is new or altered pedestrian access proposed?",
+                      "type": "boolean"
+                    },
+                    "rightOfWay": {
+                      "description": "Are any rights of way created, diverted or extinguished?",
+                      "type": "boolean"
+                    },
+                    "vehicle": {
+                      "description": "Is new or altered vehicle access proposed?",
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "vehicle",
+                    "pedestrian",
+                    "rightOfWay"
+                  ],
+                  "type": "object"
+                }
+              ]
+            },
+            "new": {
+              "additionalProperties": false,
+              "properties": {
+                "publicRoad": {
+                  "description": "Are new public roads provided within the site?",
+                  "type": "boolean"
+                },
+                "rightOfWay": {
+                  "description": "Are new public rights of way provided within the site?",
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "publicRoad",
+                "rightOfWay"
+              ],
+              "type": "object"
             }
           },
           "type": "object"
@@ -3366,6 +3539,41 @@
         "boundary": {
           "$ref": "#/definitions/GeoBoundary",
           "description": "Location plan boundary proposed by the user, commonly referred to as the red line boundary"
+        },
+        "commercialProcesses": {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "description": "Describe activities processes carried out on the site, or 'none'",
+              "type": "string"
+            },
+            "wasteManagement": {
+              "description": "Is the proposal a waste management development?",
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "description",
+            "wasteManagement"
+          ],
+          "type": "object"
+        },
+        "completed": {
+          "additionalProperties": false,
+          "properties": {
+            "date": {
+              "$ref": "#/definitions/Date",
+              "description": "Date that project was completed"
+            },
+            "value": {
+              "description": "Has the project been completed?",
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "value"
+          ],
+          "type": "object"
         },
         "date": {
           "$ref": "#/definitions/ProposalDates"
@@ -3404,6 +3612,117 @@
           },
           "type": "object"
         },
+        "effluent": {
+          "additionalProperties": false,
+          "properties": {
+            "disposal": {
+              "description": "Does the proposed use involve disposal of trade effluent?",
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "disposal"
+          ],
+          "type": "object"
+        },
+        "employment": {
+          "additionalProperties": false,
+          "properties": {
+            "existingEmployees": {
+              "additionalProperties": false,
+              "description": "Number of existing employees: full time, part time, and total full time equivalent",
+              "properties": {
+                "fullTime": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "number": {
+                      "$ref": "#/definitions/Integer"
+                    }
+                  },
+                  "required": [
+                    "number"
+                  ],
+                  "type": "object"
+                },
+                "fullTimeEquivalent": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "number": {
+                      "$ref": "#/definitions/Integer"
+                    }
+                  },
+                  "required": [
+                    "number"
+                  ],
+                  "type": "object"
+                },
+                "partTime": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "number": {
+                      "$ref": "#/definitions/Integer"
+                    }
+                  },
+                  "required": [
+                    "number"
+                  ],
+                  "type": "object"
+                }
+              },
+              "required": [
+                "fullTime"
+              ],
+              "type": "object"
+            },
+            "proposedEmployees": {
+              "additionalProperties": false,
+              "description": "Number of proposed employees: full time, part time, and total full time equivalent",
+              "properties": {
+                "fullTime": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "number": {
+                      "$ref": "#/definitions/Integer"
+                    }
+                  },
+                  "required": [
+                    "number"
+                  ],
+                  "type": "object"
+                },
+                "fullTimeEquivalent": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "number": {
+                      "$ref": "#/definitions/Integer"
+                    }
+                  },
+                  "required": [
+                    "number"
+                  ],
+                  "type": "object"
+                },
+                "partTime": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "number": {
+                      "$ref": "#/definitions/Integer"
+                    }
+                  },
+                  "required": [
+                    "number"
+                  ],
+                  "type": "object"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "required": [
+            "existingEmployees"
+          ],
+          "type": "object"
+        },
         "environmentalImpactDescription": {
           "type": "string"
         },
@@ -3423,8 +3742,18 @@
           "additionalProperties": false,
           "description": "Assessment of flood risk, if applicable to application.type",
           "properties": {
+            "atRisk": {
+              "description": "Is the site at risk of flooding?",
+              "type": "boolean"
+            },
+            "increaseRiskElsewhere": {
+              "description": "Will the proposal increase the flood risk elsewhere?",
+              "type": "boolean"
+            },
             "surfaceWaterDisposal": {
+              "description": "How will surface water be disposed of?",
               "enum": [
+                "sustainableDrainageSystem",
                 "drainageSystem",
                 "soakaway",
                 "sewer",
@@ -3433,13 +3762,96 @@
                 "other"
               ],
               "type": "string"
+            },
+            "within20mOfWatercourse": {
+              "description": "Is your project within 20 metres of a watercourse?",
+              "type": "boolean"
             }
           },
           "type": "object"
         },
+        "foulSewage": {
+          "additionalProperties": false,
+          "properties": {
+            "disposal": {
+              "description": "How will foul sewage be disposed of?",
+              "enum": [
+                "sewer",
+                "pit",
+                "tank",
+                "plant",
+                "other"
+              ],
+              "type": "string"
+            },
+            "newConnection": {
+              "description": "Are you proposing to connect to the existing drainage system?",
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "disposal",
+            "newConnection"
+          ],
+          "type": "object"
+        },
+        "hazardousSubstanceStorage": {
+          "description": "Does the proposed use involve the storage of hazardous chemicals?",
+          "type": "boolean"
+        },
+        "hoursOfOperation": {
+          "description": "Hours of operation per use, or 'not applicable'",
+          "type": "string"
+        },
         "materials": {
           "$ref": "#/definitions/Materials",
           "description": "Proposed materials, if applicable to projectType"
+        },
+        "natureImpacts": {
+          "additionalProperties": false,
+          "properties": {
+            "designatedSitesAffected": {
+              "description": "Designated sites, important habitats or other important features affected?",
+              "enum": [
+                "onSite",
+                "adjacent",
+                "false"
+              ],
+              "type": "string"
+            },
+            "geologicalSitesAffected": {
+              "description": "Sites of geological conservation affected?",
+              "enum": [
+                "onSite",
+                "adjacent",
+                "false"
+              ],
+              "type": "string"
+            },
+            "importantHabitatsAffected": {
+              "description": "Important habitats affected, either on the project site ('onSite') or near to the project site ('adjacent')",
+              "enum": [
+                "onSite",
+                "adjacent"
+              ],
+              "type": "string"
+            },
+            "protectedSpeciesAffected": {
+              "description": "Protected or priority species affected",
+              "enum": [
+                "onSite",
+                "adjacent",
+                "false"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "protectedSpeciesAffected",
+            "designatedSitesAffected",
+            "geologicalSitesAffected"
+          ],
+          "type": "object"
         },
         "new": {
           "additionalProperties": false,
@@ -3486,11 +3898,74 @@
           },
           "type": "object"
         },
+        "nonResidentialFloorspace": {
+          "additionalProperties": false,
+          "properties": {
+            "affected": {
+              "description": "Does your proposal impact non-residential floorspace?",
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "affected"
+          ],
+          "type": "object"
+        },
+        "parking": {
+          "$ref": "#/definitions/ProposedNationalParking"
+        },
         "projectType": {
           "items": {
             "$ref": "#/definitions/ProjectType"
           },
           "type": "array"
+        },
+        "publicServiceInfrastructure": {
+          "description": "Is it a proposal for public service infrastructure?",
+          "type": "boolean"
+        },
+        "residentialUnits": {
+          "additionalProperties": false,
+          "properties": {
+            "change": {
+              "description": "Does the project change the number or type of residential units on the site?",
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "change"
+          ],
+          "type": "object"
+        },
+        "site": {
+          "additionalProperties": false,
+          "properties": {
+            "hectares": {
+              "description": "What is the site area in hectares?",
+              "type": "number"
+            }
+          },
+          "required": [
+            "hectares"
+          ],
+          "type": "object"
+        },
+        "started": {
+          "additionalProperties": false,
+          "properties": {
+            "date": {
+              "$ref": "#/definitions/Date",
+              "description": "Date that project was started"
+            },
+            "value": {
+              "description": "Has the project already started?",
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "value"
+          ],
+          "type": "object"
         },
         "structures": {
           "additionalProperties": false,
@@ -3543,6 +4018,24 @@
           ],
           "type": "object"
         },
+        "trees": {
+          "additionalProperties": false,
+          "properties": {
+            "influenceDevelopment": {
+              "description": "Are there trees or hedges adjacent to the site that could influence the development or might be important as part of the local landscape character?",
+              "type": "boolean"
+            },
+            "onSite": {
+              "description": "Are there trees and hedges on the project site?",
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "onSite",
+            "influenceDevelopment"
+          ],
+          "type": "object"
+        },
         "units": {
           "$ref": "#/definitions/ResidentialUnits"
         },
@@ -3566,6 +4059,10 @@
                 "type": "string"
               },
               "type": "array"
+            },
+            "vulnerableToContamination": {
+              "description": "Is the proposed use vulnerable to contamination?",
+              "type": "boolean"
             }
           },
           "type": "object"
@@ -3678,6 +4175,29 @@
               "type": "object"
             }
           },
+          "type": "object"
+        },
+        "wasteStorage": {
+          "additionalProperties": false,
+          "properties": {
+            "affected": {
+              "description": "Does the project accommodate waste storage areas?",
+              "type": "boolean"
+            },
+            "separated": {
+              "description": "Will recyclable waste be stored and collected separately?",
+              "enum": [
+                "yes",
+                "no",
+                "not applicable"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "affected",
+            "separated"
+          ],
           "type": "object"
         },
         "watercourse": {
@@ -3971,6 +4491,85 @@
           },
           "required": [
             "residential"
+          ],
+          "type": "object"
+        },
+        "other": {
+          "additionalProperties": false,
+          "properties": {
+            "count": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "count"
+          ],
+          "type": "object"
+        },
+        "vans": {
+          "additionalProperties": false,
+          "properties": {
+            "count": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "count"
+          ],
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
+    "ExistingNationalParking": {
+      "additionalProperties": false,
+      "description": "Existing parking spaces by type per the national planning application form",
+      "properties": {
+        "cars": {
+          "additionalProperties": false,
+          "properties": {
+            "count": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "count"
+          ],
+          "type": "object"
+        },
+        "cycles": {
+          "additionalProperties": false,
+          "properties": {
+            "count": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "count"
+          ],
+          "type": "object"
+        },
+        "disabled": {
+          "additionalProperties": false,
+          "properties": {
+            "count": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "count"
+          ],
+          "type": "object"
+        },
+        "motorcycles": {
+          "additionalProperties": false,
+          "properties": {
+            "count": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "count"
           ],
           "type": "object"
         },
@@ -6570,18 +7169,188 @@
       "additionalProperties": false,
       "description": "Proposal details for project sites within the Greater London Authority (GLA) area",
       "properties": {
-        "access": {
+        "BNG": {
           "additionalProperties": false,
           "properties": {
-            "affected": {
-              "enum": [
-                "vehicle",
-                "pedestrian",
-                "newRoad",
-                "rightsOfWay.newPublic",
-                "rightsOfWay.changes"
+            "applies": {
+              "description": "Does the BNG condition apply?",
+              "type": "boolean"
+            },
+            "degradation": {
+              "additionalProperties": false,
+              "properties": {
+                "details": {
+                  "description": "Provide more details of degradation",
+                  "type": "string"
+                },
+                "preStartDate": {
+                  "$ref": "#/definitions/Date",
+                  "description": "Date immediately before degrading activity was carried out"
+                },
+                "value": {
+                  "description": "Has any degradation occured?",
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "value"
               ],
-              "type": "string"
+              "type": "object"
+            },
+            "exemption": {
+              "additionalProperties": false,
+              "properties": {
+                "justification": {
+                  "description": "Why doesn't it apply?",
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "irreplaceableHabitat": {
+              "additionalProperties": false,
+              "properties": {
+                "details": {
+                  "description": "More details about irreplaceable habitat",
+                  "type": "string"
+                },
+                "value": {
+                  "description": "Does the site have irreplaceable habitat?",
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "value"
+              ],
+              "type": "object"
+            },
+            "preDegradationValue": {
+              "additionalProperties": false,
+              "properties": {
+                "metricToolPublicationDate": {
+                  "$ref": "#/definitions/Date",
+                  "description": "Metric tool publication date for pre-degradation calculation"
+                },
+                "value": {
+                  "description": "Onsite biodiversity value on the date immediately before degrading activity was carried out",
+                  "type": "number"
+                }
+              },
+              "required": [
+                "value"
+              ],
+              "type": "object"
+            },
+            "preDevelopmentValue": {
+              "additionalProperties": false,
+              "properties": {
+                "calculated": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "applicationDate": {
+                      "description": "Is the date of the calculation the application date?",
+                      "type": "boolean"
+                    },
+                    "date": {
+                      "$ref": "#/definitions/Date",
+                      "description": "Earlier date of pre-development biodiversity calculation"
+                    },
+                    "earlyJustification": {
+                      "description": "Justification for earlier date",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "metricToolPublicationDate": {
+                  "$ref": "#/definitions/Date",
+                  "description": "Metric tool publication date for recent calculation"
+                },
+                "value": {
+                  "description": "Pre-development biodiversity value",
+                  "type": "number"
+                }
+              },
+              "required": [
+                "value"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "applies"
+          ],
+          "title": "Biodiversity net gain (BNG)",
+          "type": "object"
+        },
+        "access": {
+          "additionalProperties": false,
+          "description": "Proposed pedestrian & vehicle access, roads and rights of way, if applicable to application.type",
+          "properties": {
+            "affected": {
+              "anyOf": [
+                {
+                  "const": "vehicle",
+                  "type": "string"
+                },
+                {
+                  "const": "pedestrian",
+                  "type": "string"
+                },
+                {
+                  "const": "newRoad",
+                  "type": "string"
+                },
+                {
+                  "const": "rightsOfWay.newPublic",
+                  "type": "string"
+                },
+                {
+                  "const": "rightsOfWay.changes",
+                  "type": "string"
+                },
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "pedestrian": {
+                      "description": "Is new or altered pedestrian access proposed?",
+                      "type": "boolean"
+                    },
+                    "rightOfWay": {
+                      "description": "Are any rights of way created, diverted or extinguished?",
+                      "type": "boolean"
+                    },
+                    "vehicle": {
+                      "description": "Is new or altered vehicle access proposed?",
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "vehicle",
+                    "pedestrian",
+                    "rightOfWay"
+                  ],
+                  "type": "object"
+                }
+              ]
+            },
+            "new": {
+              "additionalProperties": false,
+              "properties": {
+                "publicRoad": {
+                  "description": "Are new public roads provided within the site?",
+                  "type": "boolean"
+                },
+                "rightOfWay": {
+                  "description": "Are new public rights of way provided within the site?",
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "publicRoad",
+                "rightOfWay"
+              ],
+              "type": "object"
             }
           },
           "type": "object"
@@ -6619,6 +7388,41 @@
               "type": "object"
             }
           },
+          "type": "object"
+        },
+        "commercialProcesses": {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "description": "Describe activities processes carried out on the site, or 'none'",
+              "type": "string"
+            },
+            "wasteManagement": {
+              "description": "Is the proposal a waste management development?",
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "description",
+            "wasteManagement"
+          ],
+          "type": "object"
+        },
+        "completed": {
+          "additionalProperties": false,
+          "properties": {
+            "date": {
+              "$ref": "#/definitions/Date",
+              "description": "Date that project was completed"
+            },
+            "value": {
+              "description": "Has the project been completed?",
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "value"
+          ],
           "type": "object"
         },
         "cost": {
@@ -6674,6 +7478,117 @@
               "type": "string"
             }
           },
+          "type": "object"
+        },
+        "effluent": {
+          "additionalProperties": false,
+          "properties": {
+            "disposal": {
+              "description": "Does the proposed use involve disposal of trade effluent?",
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "disposal"
+          ],
+          "type": "object"
+        },
+        "employment": {
+          "additionalProperties": false,
+          "properties": {
+            "existingEmployees": {
+              "additionalProperties": false,
+              "description": "Number of existing employees: full time, part time, and total full time equivalent",
+              "properties": {
+                "fullTime": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "number": {
+                      "$ref": "#/definitions/Integer"
+                    }
+                  },
+                  "required": [
+                    "number"
+                  ],
+                  "type": "object"
+                },
+                "fullTimeEquivalent": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "number": {
+                      "$ref": "#/definitions/Integer"
+                    }
+                  },
+                  "required": [
+                    "number"
+                  ],
+                  "type": "object"
+                },
+                "partTime": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "number": {
+                      "$ref": "#/definitions/Integer"
+                    }
+                  },
+                  "required": [
+                    "number"
+                  ],
+                  "type": "object"
+                }
+              },
+              "required": [
+                "fullTime"
+              ],
+              "type": "object"
+            },
+            "proposedEmployees": {
+              "additionalProperties": false,
+              "description": "Number of proposed employees: full time, part time, and total full time equivalent",
+              "properties": {
+                "fullTime": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "number": {
+                      "$ref": "#/definitions/Integer"
+                    }
+                  },
+                  "required": [
+                    "number"
+                  ],
+                  "type": "object"
+                },
+                "fullTimeEquivalent": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "number": {
+                      "$ref": "#/definitions/Integer"
+                    }
+                  },
+                  "required": [
+                    "number"
+                  ],
+                  "type": "object"
+                },
+                "partTime": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "number": {
+                      "$ref": "#/definitions/Integer"
+                    }
+                  },
+                  "required": [
+                    "number"
+                  ],
+                  "type": "object"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "required": [
+            "existingEmployees"
+          ],
           "type": "object"
         },
         "energy": {
@@ -6783,8 +7698,18 @@
           "additionalProperties": false,
           "description": "Assessment of flood risk, if applicable to application.type",
           "properties": {
+            "atRisk": {
+              "description": "Is the site at risk of flooding?",
+              "type": "boolean"
+            },
+            "increaseRiskElsewhere": {
+              "description": "Will the proposal increase the flood risk elsewhere?",
+              "type": "boolean"
+            },
             "surfaceWaterDisposal": {
+              "description": "How will surface water be disposed of?",
               "enum": [
+                "sustainableDrainageSystem",
                 "drainageSystem",
                 "soakaway",
                 "sewer",
@@ -6793,8 +7718,37 @@
                 "other"
               ],
               "type": "string"
+            },
+            "within20mOfWatercourse": {
+              "description": "Is your project within 20 metres of a watercourse?",
+              "type": "boolean"
             }
           },
+          "type": "object"
+        },
+        "foulSewage": {
+          "additionalProperties": false,
+          "properties": {
+            "disposal": {
+              "description": "How will foul sewage be disposed of?",
+              "enum": [
+                "sewer",
+                "pit",
+                "tank",
+                "plant",
+                "other"
+              ],
+              "type": "string"
+            },
+            "newConnection": {
+              "description": "Are you proposing to connect to the existing drainage system?",
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "disposal",
+            "newConnection"
+          ],
           "type": "object"
         },
         "greenRoof": {
@@ -6809,6 +7763,14 @@
             "area"
           ],
           "type": "object"
+        },
+        "hazardousSubstanceStorage": {
+          "description": "Does the proposed use involve the storage of hazardous chemicals?",
+          "type": "boolean"
+        },
+        "hoursOfOperation": {
+          "description": "Hours of operation per use, or 'not applicable'",
+          "type": "string"
         },
         "materials": {
           "$ref": "#/definitions/Materials",
@@ -6928,6 +7890,52 @@
           },
           "type": "object"
         },
+        "natureImpacts": {
+          "additionalProperties": false,
+          "properties": {
+            "designatedSitesAffected": {
+              "description": "Designated sites, important habitats or other important features affected?",
+              "enum": [
+                "onSite",
+                "adjacent",
+                "false"
+              ],
+              "type": "string"
+            },
+            "geologicalSitesAffected": {
+              "description": "Sites of geological conservation affected?",
+              "enum": [
+                "onSite",
+                "adjacent",
+                "false"
+              ],
+              "type": "string"
+            },
+            "importantHabitatsAffected": {
+              "description": "Important habitats affected, either on the project site ('onSite') or near to the project site ('adjacent')",
+              "enum": [
+                "onSite",
+                "adjacent"
+              ],
+              "type": "string"
+            },
+            "protectedSpeciesAffected": {
+              "description": "Protected or priority species affected",
+              "enum": [
+                "onSite",
+                "adjacent",
+                "false"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "protectedSpeciesAffected",
+            "designatedSitesAffected",
+            "geologicalSitesAffected"
+          ],
+          "type": "object"
+        },
         "new": {
           "additionalProperties": false,
           "properties": {
@@ -6981,6 +7989,19 @@
           "$ref": "#/definitions/NewBuildingsOrStoreys",
           "description": "Increasing the height of existing buildings"
         },
+        "nonResidentialFloorspace": {
+          "additionalProperties": false,
+          "properties": {
+            "affected": {
+              "description": "Does your proposal impact non-residential floorspace?",
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "affected"
+          ],
+          "type": "object"
+        },
         "parking": {
           "$ref": "#/definitions/ProposedLondonParking"
         },
@@ -6990,8 +8011,55 @@
           },
           "type": "array"
         },
+        "publicServiceInfrastructure": {
+          "description": "Is it a proposal for public service infrastructure?",
+          "type": "boolean"
+        },
+        "residentialUnits": {
+          "additionalProperties": false,
+          "properties": {
+            "change": {
+              "description": "Does the project change the number or type of residential units on the site?",
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "change"
+          ],
+          "type": "object"
+        },
         "schemeName": {
           "type": "string"
+        },
+        "site": {
+          "additionalProperties": false,
+          "properties": {
+            "hectares": {
+              "description": "What is the site area in hectares?",
+              "type": "number"
+            }
+          },
+          "required": [
+            "hectares"
+          ],
+          "type": "object"
+        },
+        "started": {
+          "additionalProperties": false,
+          "properties": {
+            "date": {
+              "$ref": "#/definitions/Date",
+              "description": "Date that project was started"
+            },
+            "value": {
+              "description": "Has the project already started?",
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "value"
+          ],
+          "type": "object"
         },
         "structures": {
           "additionalProperties": false,
@@ -7041,6 +8109,24 @@
           "required": [
             "type",
             "total"
+          ],
+          "type": "object"
+        },
+        "trees": {
+          "additionalProperties": false,
+          "properties": {
+            "influenceDevelopment": {
+              "description": "Are there trees or hedges adjacent to the site that could influence the development or might be important as part of the local landscape character?",
+              "type": "boolean"
+            },
+            "onSite": {
+              "description": "Are there trees and hedges on the project site?",
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "onSite",
+            "influenceDevelopment"
           ],
           "type": "object"
         },
@@ -7297,6 +8383,10 @@
                 "type": "string"
               },
               "type": "array"
+            },
+            "vulnerableToContamination": {
+              "description": "Is the proposed use vulnerable to contamination?",
+              "type": "boolean"
             }
           },
           "type": "object"
@@ -7430,6 +8520,29 @@
           },
           "required": [
             "reuseRecycle"
+          ],
+          "type": "object"
+        },
+        "wasteStorage": {
+          "additionalProperties": false,
+          "properties": {
+            "affected": {
+              "description": "Does the project accommodate waste storage areas?",
+              "type": "boolean"
+            },
+            "separated": {
+              "description": "Will recyclable waste be stored and collected separately?",
+              "enum": [
+                "yes",
+                "no",
+                "not applicable"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "affected",
+            "separated"
           ],
           "type": "object"
         },
@@ -9018,6 +10131,27 @@
             },
             "preApp": {
               "$ref": "#/definitions/PreApplication"
+            },
+            "preAppAdvice": {
+              "additionalProperties": false,
+              "properties": {
+                "form": {
+                  "description": "Has prior advice been sought?",
+                  "enum": [
+                    "Yes",
+                    "No"
+                  ],
+                  "type": "string"
+                },
+                "reference": {
+                  "description": "Reference",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "form"
+              ],
+              "type": "object"
             }
           },
           "required": [
@@ -9046,6 +10180,27 @@
             },
             "preApp": {
               "$ref": "#/definitions/PreApplication"
+            },
+            "preAppAdvice": {
+              "additionalProperties": false,
+              "properties": {
+                "form": {
+                  "description": "Has prior advice been sought?",
+                  "enum": [
+                    "Yes",
+                    "No"
+                  ],
+                  "type": "string"
+                },
+                "reference": {
+                  "description": "Reference",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "form"
+              ],
+              "type": "object"
             },
             "vacantBuildingCredit": {
               "type": "boolean"
@@ -9103,6 +10258,9 @@
             },
             "materials": {
               "$ref": "#/definitions/Materials"
+            },
+            "parking": {
+              "$ref": "#/definitions/ExistingNationalParking"
             },
             "planning": {
               "additionalProperties": false,
@@ -9168,11 +10326,28 @@
             "type": {
               "$ref": "#/definitions/PropertyType"
             },
+            "units": {
+              "$ref": "#/definitions/ResidentialUnits",
+              "description": "Existing residential units on the site, if the project changes the number or type of residential units"
+            },
             "use": {
               "additionalProperties": false,
               "properties": {
                 "description": {
+                  "description": "Describe the current use",
                   "type": "string"
+                },
+                "knownContamination": {
+                  "description": "Is the land known to be contaminated?",
+                  "type": "boolean"
+                },
+                "suspectedContamination": {
+                  "description": "Is the land suspected of being contaminated?",
+                  "type": "boolean"
+                },
+                "vacant": {
+                  "description": "Is the site currently vacant?",
+                  "type": "boolean"
                 }
               },
               "required": [
@@ -9344,11 +10519,28 @@
             "type": {
               "$ref": "#/definitions/PropertyType"
             },
+            "units": {
+              "$ref": "#/definitions/ResidentialUnits",
+              "description": "Existing residential units on the site, if the project changes the number or type of residential units"
+            },
             "use": {
               "additionalProperties": false,
               "properties": {
                 "description": {
+                  "description": "Describe the current use",
                   "type": "string"
+                },
+                "knownContamination": {
+                  "description": "Is the land known to be contaminated?",
+                  "type": "boolean"
+                },
+                "suspectedContamination": {
+                  "description": "Is the land suspected of being contaminated?",
+                  "type": "boolean"
+                },
+                "vacant": {
+                  "description": "Is the site currently vacant?",
+                  "type": "boolean"
                 }
               },
               "required": [
@@ -41792,6 +42984,109 @@
           },
           "required": [
             "residential"
+          ],
+          "type": "object"
+        },
+        "other": {
+          "additionalProperties": false,
+          "properties": {
+            "count": {
+              "type": "number"
+            },
+            "difference": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "count",
+            "difference"
+          ],
+          "type": "object"
+        },
+        "vans": {
+          "additionalProperties": false,
+          "properties": {
+            "count": {
+              "type": "number"
+            },
+            "difference": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "count",
+            "difference"
+          ],
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
+    "ProposedNationalParking": {
+      "additionalProperties": false,
+      "description": "Proposed parking spaces by type per the national planning application form",
+      "properties": {
+        "cars": {
+          "additionalProperties": false,
+          "properties": {
+            "count": {
+              "type": "number"
+            },
+            "difference": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "count",
+            "difference"
+          ],
+          "type": "object"
+        },
+        "cycles": {
+          "additionalProperties": false,
+          "properties": {
+            "count": {
+              "type": "number"
+            },
+            "difference": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "count",
+            "difference"
+          ],
+          "type": "object"
+        },
+        "disabled": {
+          "additionalProperties": false,
+          "properties": {
+            "count": {
+              "type": "number"
+            },
+            "difference": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "count",
+            "difference"
+          ],
+          "type": "object"
+        },
+        "motorcycles": {
+          "additionalProperties": false,
+          "properties": {
+            "count": {
+              "type": "number"
+            },
+            "difference": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "count",
+            "difference"
           ],
           "type": "object"
         },

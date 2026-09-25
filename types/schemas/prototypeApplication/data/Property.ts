@@ -3,12 +3,16 @@ import {
   PlanningDesignation,
 } from '../../../shared/Constraints';
 import {Materials} from '../../../shared/Materials';
-import {ExistingLondonParking} from '../../../shared/Parking';
+import {
+  ExistingLondonParking,
+  ExistingNationalParking,
+} from '../../../shared/Parking';
 import {Region} from '../../../shared/Regions';
 import {Site} from '../../../shared/Sites';
 import {URL} from '../../../shared/utils';
 import {ApplicationType} from '../enums/ApplicationType';
 import {PropertyType} from '../enums/PropertyTypes';
+import {ResidentialUnits} from './shared';
 
 export type PropertyBase = EnglandProperty | LondonProperty;
 
@@ -33,12 +37,13 @@ export type EnglandProperty = Site & {
       neighbourhood: PlanningConstraint[];
     };
   };
+  parking?: ExistingNationalParking;
 };
 
 /**
  * @description Property details for sites within the Greater London Authority (GLA) area
  */
-export type LondonProperty = EnglandProperty & {
+export type LondonProperty = Omit<EnglandProperty, 'parking'> & {
   region: Extract<Region, 'London'>;
   titleNumber?: {
     known: 'Yes' | 'No';
@@ -61,8 +66,19 @@ export type LondonProperty = EnglandProperty & {
 export type PPProperty = PropertyBase & {
   materials?: Materials;
   use?: {
+    /** @description Describe the current use */
     description: string;
+    /** @description Is the site currently vacant? */
+    vacant?: boolean;
+    /** @description Is the land known to be contaminated? */
+    knownContamination?: boolean;
+    /** @description Is the land suspected of being contaminated? */
+    suspectedContamination?: boolean;
   };
+  /**
+   * @description Existing residential units on the site, if the project changes the number or type of residential units
+   */
+  units?: ResidentialUnits;
 };
 
 /**
