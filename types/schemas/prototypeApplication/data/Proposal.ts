@@ -303,10 +303,90 @@ interface EmployeeCounts {
  */
 export interface LondonProposal extends Omit<
   EnglandProposal,
-  'units' | 'parking'
+  'units' | 'parking' | 'utilities' | 'flood'
 > {
   schemeName?: string;
   parking?: ProposedLondonParking;
+  /**
+   * @description Proposed utilities, if applicable to application.type
+   */
+  utilities?: LondonUtilities;
+  /**
+   * @description Assessment of flood risk, if applicable to application.type
+   */
+  flood?: LondonFlood;
+  /**
+   * @description Intended commencement date
+   */
+  plannedStartDate?: Date;
+  /**
+   * @description Intended completion date
+   */
+  plannedCompletionDate?: Date;
+  /**
+   * @description Scheme phasing
+   */
+  phased?: boolean;
+  /**
+   * @description Electric vehicle charging points by speed
+   */
+  EVcharging?: {
+    /** @description Number of active EV charging points */
+    active?: EVChargingPoints;
+    /** @description Number of passive EV charging points */
+    passive?: EVChargingPoints;
+  };
+  heating?: {
+    electrical: {
+      /** @description Homes with electrical heating */
+      numberHomes: Integer;
+    };
+  };
+  buildingDetails?: {
+    main?: {
+      /** @description Main building maximum height */
+      height?: number;
+      /** @description Main building number of storeys */
+      storeys?: Integer;
+    };
+    outbuilding?: {
+      /** @description Outbuilding maximum height */
+      height?: number;
+      /** @description Outbuilding number of storeys */
+      storeys?: Integer;
+    };
+    /** @description Building reference */
+    reference?: 'main' | 'outbuilding';
+  };
+  footprint?: {
+    garden: {
+      /** @description Does your proposal involve the loss of garden land? */
+      removed: boolean;
+    };
+  };
+  /**
+   * @description Sub-division of building
+   */
+  subdivisionDetails?: string;
+  nonPermanentDwellings?: {
+    /** @description Non-permanent dwelling type */
+    type?:
+      | 'Non-permanent dwellings'
+      | 'Traveller pitches/plots'
+      | 'Houseboat moorings';
+    gained?: {
+      /** @description Non-permanent dwellings gained */
+      number: Integer;
+    };
+    lost?: {
+      /** @description Non-permanent dwellings lost */
+      number: Integer;
+    };
+  };
+  siteArea?: {
+    /** @description Site area */
+    hectares: number;
+  };
   /**
    * @description Creating new buildings
    */
@@ -351,6 +431,34 @@ export interface LondonProposal extends Omit<
       access: 'restricted' | 'unrestricted';
       area: {hectares: number};
     }[];
+    openSpace?: {
+      /** @description Open Space access type */
+      access?: 'restricted' | 'unrestricted';
+      /** @description Open Space area */
+      area?: number;
+      /** @description Open Space change type */
+      development: 'loss' | 'gain' | 'change';
+      /** @description Open Space description */
+      description?: string;
+      /** @description Open Space designation */
+      designation?: OpenSpaceDesignation;
+      /** @description Open Space land swap */
+      swap?: boolean;
+      /** @description Open Space type */
+      type?: OpenSpaceType;
+    }[];
+    protectedSpace?: {
+      /** @description Protected Space access */
+      access?: 'restricted' | 'unrestricted';
+      /** @description Protected Space area */
+      area?: number;
+      /** @description Protected Space change type */
+      development: 'loss' | 'gain' | 'change';
+      /** @description Protected Space description */
+      description?: string;
+      /** @description Protected Space nature conservation designation */
+      designation?: ProtectedSpaceDesignation;
+    }[];
   };
   /**
    * @description Water management
@@ -378,16 +486,16 @@ export interface LondonProposal extends Omit<
      */
     type: Array<'communityOwned' | 'heatPump' | 'solar'>;
     communityOwned?: {
-      /** @description Proposed total capacity of any on-site community-owned energy generation in megawatts (mW) */
-      capacity: {megawatts: number};
+      /** @description Proposed total capacity of any on-site community-owned energy generation in megawatts (mW), or Community Energy Capacity */
+      capacity: {megawatts: number} | number;
     };
     heatPumps?: {
-      /** @description Proposed total capacity of any heat pumps in megawatts (mV) */
-      capacity: {megawatts: number};
+      /** @description Proposed total capacity of any heat pumps in megawatts (mV), or CHP Heat Pump Capacity */
+      capacity: {megawatts: number} | number;
     };
     solar?: {
-      /** @description Proposed total capacity of any solar energy generation in megawatts (mV) */
-      capacity: {megawatts: number};
+      /** @description Proposed total capacity of any solar energy generation in megawatts (mV), or Solar PV Capacity */
+      capacity: {megawatts: number} | number;
     };
   };
   /**
@@ -400,13 +508,15 @@ export interface LondonProposal extends Omit<
    * @description Green roof
    */
   greenRoof?: {
-    area: Area;
+    /** @description Green roof area */
+    area: Area | number;
   };
   /**
    * @description Waste management of demolition and construction materials
    */
   waste?: {
-    reuseRecycle: {percent: number};
+    /** @description Percentage of construction material recycling */
+    reuseRecycle: {percent: number} | number;
   };
   units?: {
     residential: {
@@ -417,6 +527,58 @@ export interface LondonProposal extends Omit<
     };
   };
 }
+
+interface EVChargingPoints {
+  /** @description Number of fast EV charging points */
+  fast?: {number: Integer};
+  /** @description Number of other EV charging points */
+  other?: {number: Integer};
+  /** @description Number of rapid EV charging points */
+  rapid?: {number: Integer};
+  /** @description Number of slow EV charging points */
+  slow?: {number: Integer};
+}
+
+type EnglandUtilities = NonNullable<EnglandProposal['utilities']>;
+
+/**
+ * @description Proposed utilities for project sites within the Greater London Authority (GLA) area
+ */
+type LondonUtilities = Omit<EnglandUtilities, 'gas' | 'water' | 'internet'> & {
+  /** @description Count of new full fibre internet connections */
+  internet?: {
+    /** @description Number of non-residential units to have full fibre internet */
+    commercialUnits?: {count: Integer} | Integer;
+    /** @description Number of residential units to have full fibre internet */
+    residentialUnits?: {count: Integer} | Integer;
+  };
+  /** @description Count of new gas connections */
+  gas?: {
+    /** @description New gas connections required */
+    connections: {count: Integer} | Integer;
+  };
+  /** @description Count of new water connections */
+  water?: {
+    /** @description New water connections required */
+    connections: {count: Integer} | Integer;
+    /** @description Grey water reuse */
+    greyReuse?: boolean;
+    /** @description Internal residential water usage */
+    usage?: number;
+    /** @description Rain water harvesting */
+    rainHarvesting?: boolean;
+  };
+};
+
+/**
+ * @description Assessment of flood risk for project sites within the Greater London Authority (GLA) area
+ */
+type LondonFlood = NonNullable<EnglandProposal['flood']> & {
+  /** @description Green SuDS */
+  greenSuDS?: boolean;
+  /** @description Surface Water Discharge Percentage Reduction */
+  dischargeReduction?: number;
+};
 
 /**
  * @description Details about creating new buildings or increasing the height of existing buildings

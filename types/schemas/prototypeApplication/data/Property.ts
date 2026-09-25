@@ -45,10 +45,15 @@ export type EnglandProperty = Site & {
  */
 export type LondonProperty = Omit<EnglandProperty, 'parking'> & {
   region: Extract<Region, 'London'>;
-  titleNumber?: {
-    known: 'Yes' | 'No';
-    number?: string;
-  };
+  /**
+   * @description Title Number
+   */
+  titleNumber?:
+    | {
+        known: 'Yes' | 'No';
+        number?: string;
+      }
+    | string;
   /**
    * @title Energy Performance Certificate
    */
@@ -61,6 +66,57 @@ export type LondonProperty = Omit<EnglandProperty, 'parking'> & {
     number?: string;
   };
   parking?: ExistingLondonParking;
+  /**
+   * @description Use class
+   */
+  useClass?:
+    | 'A1'
+    | 'A2'
+    | 'A3'
+    | 'A4'
+    | 'A5'
+    | 'B1'
+    | 'B1a'
+    | 'B1b'
+    | 'B1c'
+    | 'B2'
+    | 'B8'
+    | 'C1'
+    | 'C2'
+    | 'C2a'
+    | 'C3'
+    | 'C4'
+    | 'D1'
+    | 'D2'
+    | 'SG';
+  useClassC3?: {
+    GIA: {
+      /** @description Use class C3 Gross Internal Area existing */
+      existing: number;
+      /** @description Use class C3 Gross Internal Area gained */
+      gained: number;
+      /** @description Use class C3 Gross Internal Area lost */
+      lost: number;
+    };
+  };
+  useClassC4?: {
+    GIA: {
+      /** @description Use class C4 Gross Internal Area existing */
+      existing: number;
+      /** @description Use class C4 Gross Internal Area gained */
+      gained: number;
+      /** @description Use class C4 Gross Internal Area lost */
+      lost: number;
+    };
+  };
+  socialLandlord?: {
+    /** @description Lead Registered Social Landlord */
+    description?: string;
+  };
+  ownership?: {
+    /** @description Ownership status */
+    status: 'Public' | 'Private' | 'Mixed';
+  };
 };
 
 export type PPProperty = PropertyBase & {

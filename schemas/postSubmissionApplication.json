@@ -4934,8 +4934,53 @@
             "fee": {
               "$ref": "#/definitions/Fee"
             },
+            "housingFastTrack": {
+              "description": "Affordable Housing Fast Track",
+              "type": "boolean"
+            },
             "leadDeveloper": {
               "$ref": "#/definitions/LeadDeveloper"
+            },
+            "linked": {
+              "additionalProperties": false,
+              "properties": {
+                "superseding": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "applicationNumber": {
+                      "description": "Reference number of the original application",
+                      "type": "string"
+                    },
+                    "description": {
+                      "description": "Description of the superseded components",
+                      "type": "string"
+                    },
+                    "partial": {
+                      "description": "Is the original permission only partially superseded?",
+                      "type": "boolean"
+                    },
+                    "unitReference": {
+                      "description": "Units that are being superseded",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              "type": "object"
+            },
+            "mobileNetworkOperators": {
+              "additionalProperties": false,
+              "properties": {
+                "consulted": {
+                  "description": "Mobile network operators consulted",
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "consulted"
+              ],
+              "type": "object"
             },
             "planningApp": {
               "$ref": "#/definitions/PlanningApplication"
@@ -6904,6 +6949,14 @@
           ],
           "type": "object"
         },
+        "companyName": {
+          "description": "Lead Developer name",
+          "type": "string"
+        },
+        "overseasCompanyRegistrationNumber": {
+          "description": "Overseas company number",
+          "type": "string"
+        },
         "type": {
           "enum": [
             "ukCompany",
@@ -7008,8 +7061,53 @@
         "declaration": {
           "$ref": "#/definitions/Declaration"
         },
+        "housingFastTrack": {
+          "description": "Affordable Housing Fast Track",
+          "type": "boolean"
+        },
         "leadDeveloper": {
           "$ref": "#/definitions/LeadDeveloper"
+        },
+        "linked": {
+          "additionalProperties": false,
+          "properties": {
+            "superseding": {
+              "additionalProperties": false,
+              "properties": {
+                "applicationNumber": {
+                  "description": "Reference number of the original application",
+                  "type": "string"
+                },
+                "description": {
+                  "description": "Description of the superseded components",
+                  "type": "string"
+                },
+                "partial": {
+                  "description": "Is the original permission only partially superseded?",
+                  "type": "boolean"
+                },
+                "unitReference": {
+                  "description": "Units that are being superseded",
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "type": "object"
+        },
+        "mobileNetworkOperators": {
+          "additionalProperties": false,
+          "properties": {
+            "consulted": {
+              "description": "Mobile network operators consulted",
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "consulted"
+          ],
+          "type": "object"
         },
         "planningApp": {
           "$ref": "#/definitions/PlanningApplication"
@@ -7088,6 +7186,24 @@
           },
           "type": "array"
         },
+        "ownership": {
+          "additionalProperties": false,
+          "properties": {
+            "status": {
+              "description": "Ownership status",
+              "enum": [
+                "Public",
+                "Private",
+                "Mixed"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "status"
+          ],
+          "type": "object"
+        },
         "parking": {
           "$ref": "#/definitions/ExistingLondonParking"
         },
@@ -7152,27 +7268,134 @@
           "$ref": "#/definitions/Region",
           "description": "Name of the region sourced from planning.data.gov.uk/dataset/region; \"London\" is a proxy for the Greater London Authority"
         },
-        "titleNumber": {
+        "socialLandlord": {
           "additionalProperties": false,
           "properties": {
-            "known": {
-              "enum": [
-                "Yes",
-                "No"
-              ],
-              "type": "string"
-            },
-            "number": {
+            "description": {
+              "description": "Lead Registered Social Landlord",
               "type": "string"
             }
           },
-          "required": [
-            "known"
-          ],
           "type": "object"
+        },
+        "titleNumber": {
+          "anyOf": [
+            {
+              "additionalProperties": false,
+              "properties": {
+                "known": {
+                  "enum": [
+                    "Yes",
+                    "No"
+                  ],
+                  "type": "string"
+                },
+                "number": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "known"
+              ],
+              "type": "object"
+            },
+            {
+              "type": "string"
+            }
+          ],
+          "description": "Title Number"
         },
         "type": {
           "$ref": "#/definitions/PropertyType"
+        },
+        "useClass": {
+          "description": "Use class",
+          "enum": [
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "B1",
+            "B1a",
+            "B1b",
+            "B1c",
+            "B2",
+            "B8",
+            "C1",
+            "C2",
+            "C2a",
+            "C3",
+            "C4",
+            "D1",
+            "D2",
+            "SG"
+          ],
+          "type": "string"
+        },
+        "useClassC3": {
+          "additionalProperties": false,
+          "properties": {
+            "GIA": {
+              "additionalProperties": false,
+              "properties": {
+                "existing": {
+                  "description": "Use class C3 Gross Internal Area existing",
+                  "type": "number"
+                },
+                "gained": {
+                  "description": "Use class C3 Gross Internal Area gained",
+                  "type": "number"
+                },
+                "lost": {
+                  "description": "Use class C3 Gross Internal Area lost",
+                  "type": "number"
+                }
+              },
+              "required": [
+                "existing",
+                "gained",
+                "lost"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "GIA"
+          ],
+          "type": "object"
+        },
+        "useClassC4": {
+          "additionalProperties": false,
+          "properties": {
+            "GIA": {
+              "additionalProperties": false,
+              "properties": {
+                "existing": {
+                  "description": "Use class C4 Gross Internal Area existing",
+                  "type": "number"
+                },
+                "gained": {
+                  "description": "Use class C4 Gross Internal Area gained",
+                  "type": "number"
+                },
+                "lost": {
+                  "description": "Use class C4 Gross Internal Area lost",
+                  "type": "number"
+                }
+              },
+              "required": [
+                "existing",
+                "gained",
+                "lost"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "GIA"
+          ],
+          "type": "object"
         },
         "ward": {
           "description": "Name of the ward sourced from planning.data.gov.uk/dataset/ward",
@@ -7306,6 +7529,131 @@
           "title": "Biodiversity net gain (BNG)",
           "type": "object"
         },
+        "EVcharging": {
+          "additionalProperties": false,
+          "description": "Electric vehicle charging points by speed",
+          "properties": {
+            "active": {
+              "additionalProperties": false,
+              "description": "Number of active EV charging points",
+              "properties": {
+                "fast": {
+                  "additionalProperties": false,
+                  "description": "Number of fast EV charging points",
+                  "properties": {
+                    "number": {
+                      "$ref": "#/definitions/Integer"
+                    }
+                  },
+                  "required": [
+                    "number"
+                  ],
+                  "type": "object"
+                },
+                "other": {
+                  "additionalProperties": false,
+                  "description": "Number of other EV charging points",
+                  "properties": {
+                    "number": {
+                      "$ref": "#/definitions/Integer"
+                    }
+                  },
+                  "required": [
+                    "number"
+                  ],
+                  "type": "object"
+                },
+                "rapid": {
+                  "additionalProperties": false,
+                  "description": "Number of rapid EV charging points",
+                  "properties": {
+                    "number": {
+                      "$ref": "#/definitions/Integer"
+                    }
+                  },
+                  "required": [
+                    "number"
+                  ],
+                  "type": "object"
+                },
+                "slow": {
+                  "additionalProperties": false,
+                  "description": "Number of slow EV charging points",
+                  "properties": {
+                    "number": {
+                      "$ref": "#/definitions/Integer"
+                    }
+                  },
+                  "required": [
+                    "number"
+                  ],
+                  "type": "object"
+                }
+              },
+              "type": "object"
+            },
+            "passive": {
+              "additionalProperties": false,
+              "description": "Number of passive EV charging points",
+              "properties": {
+                "fast": {
+                  "additionalProperties": false,
+                  "description": "Number of fast EV charging points",
+                  "properties": {
+                    "number": {
+                      "$ref": "#/definitions/Integer"
+                    }
+                  },
+                  "required": [
+                    "number"
+                  ],
+                  "type": "object"
+                },
+                "other": {
+                  "additionalProperties": false,
+                  "description": "Number of other EV charging points",
+                  "properties": {
+                    "number": {
+                      "$ref": "#/definitions/Integer"
+                    }
+                  },
+                  "required": [
+                    "number"
+                  ],
+                  "type": "object"
+                },
+                "rapid": {
+                  "additionalProperties": false,
+                  "description": "Number of rapid EV charging points",
+                  "properties": {
+                    "number": {
+                      "$ref": "#/definitions/Integer"
+                    }
+                  },
+                  "required": [
+                    "number"
+                  ],
+                  "type": "object"
+                },
+                "slow": {
+                  "additionalProperties": false,
+                  "description": "Number of slow EV charging points",
+                  "properties": {
+                    "number": {
+                      "$ref": "#/definitions/Integer"
+                    }
+                  },
+                  "required": [
+                    "number"
+                  ],
+                  "type": "object"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "type": "object"
+        },
         "access": {
           "additionalProperties": false,
           "description": "Proposed pedestrian & vehicle access, roads and rights of way, if applicable to application.type",
@@ -7381,6 +7729,48 @@
         "boundary": {
           "$ref": "#/definitions/GeoBoundary",
           "description": "Location plan boundary proposed by the user, commonly referred to as the red line boundary"
+        },
+        "buildingDetails": {
+          "additionalProperties": false,
+          "properties": {
+            "main": {
+              "additionalProperties": false,
+              "properties": {
+                "height": {
+                  "description": "Main building maximum height",
+                  "type": "number"
+                },
+                "storeys": {
+                  "$ref": "#/definitions/Integer",
+                  "description": "Main building number of storeys"
+                }
+              },
+              "type": "object"
+            },
+            "outbuilding": {
+              "additionalProperties": false,
+              "properties": {
+                "height": {
+                  "description": "Outbuilding maximum height",
+                  "type": "number"
+                },
+                "storeys": {
+                  "$ref": "#/definitions/Integer",
+                  "description": "Outbuilding number of storeys"
+                }
+              },
+              "type": "object"
+            },
+            "reference": {
+              "description": "Building reference",
+              "enum": [
+                "main",
+                "outbuilding"
+              ],
+              "type": "string"
+            }
+          },
+          "type": "object"
         },
         "charging": {
           "additionalProperties": false,
@@ -7622,17 +8012,24 @@
               "additionalProperties": false,
               "properties": {
                 "capacity": {
-                  "additionalProperties": false,
-                  "description": "Proposed total capacity of any on-site community-owned energy generation in megawatts (mW)",
-                  "properties": {
-                    "megawatts": {
+                  "anyOf": [
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "megawatts": {
+                          "type": "number"
+                        }
+                      },
+                      "required": [
+                        "megawatts"
+                      ],
+                      "type": "object"
+                    },
+                    {
                       "type": "number"
                     }
-                  },
-                  "required": [
-                    "megawatts"
                   ],
-                  "type": "object"
+                  "description": "Proposed total capacity of any on-site community-owned energy generation in megawatts (mW), or Community Energy Capacity"
                 }
               },
               "required": [
@@ -7644,17 +8041,24 @@
               "additionalProperties": false,
               "properties": {
                 "capacity": {
-                  "additionalProperties": false,
-                  "description": "Proposed total capacity of any heat pumps in megawatts (mV)",
-                  "properties": {
-                    "megawatts": {
+                  "anyOf": [
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "megawatts": {
+                          "type": "number"
+                        }
+                      },
+                      "required": [
+                        "megawatts"
+                      ],
+                      "type": "object"
+                    },
+                    {
                       "type": "number"
                     }
-                  },
-                  "required": [
-                    "megawatts"
                   ],
-                  "type": "object"
+                  "description": "Proposed total capacity of any heat pumps in megawatts (mV), or CHP Heat Pump Capacity"
                 }
               },
               "required": [
@@ -7666,17 +8070,24 @@
               "additionalProperties": false,
               "properties": {
                 "capacity": {
-                  "additionalProperties": false,
-                  "description": "Proposed total capacity of any solar energy generation in megawatts (mV)",
-                  "properties": {
-                    "megawatts": {
+                  "anyOf": [
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "megawatts": {
+                          "type": "number"
+                        }
+                      },
+                      "required": [
+                        "megawatts"
+                      ],
+                      "type": "object"
+                    },
+                    {
                       "type": "number"
                     }
-                  },
-                  "required": [
-                    "megawatts"
                   ],
-                  "type": "object"
+                  "description": "Proposed total capacity of any solar energy generation in megawatts (mV), or Solar PV Capacity"
                 }
               },
               "required": [
@@ -7725,6 +8136,14 @@
               "description": "Is the site at risk of flooding?",
               "type": "boolean"
             },
+            "dischargeReduction": {
+              "description": "Surface Water Discharge Percentage Reduction",
+              "type": "number"
+            },
+            "greenSuDS": {
+              "description": "Green SuDS",
+              "type": "boolean"
+            },
             "increaseRiskElsewhere": {
               "description": "Will the proposal increase the flood risk elsewhere?",
               "type": "boolean"
@@ -7747,6 +8166,28 @@
               "type": "boolean"
             }
           },
+          "type": "object"
+        },
+        "footprint": {
+          "additionalProperties": false,
+          "properties": {
+            "garden": {
+              "additionalProperties": false,
+              "properties": {
+                "removed": {
+                  "description": "Does your proposal involve the loss of garden land?",
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "removed"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "garden"
+          ],
           "type": "object"
         },
         "foulSewage": {
@@ -7779,7 +8220,15 @@
           "description": "Green roof",
           "properties": {
             "area": {
-              "$ref": "#/definitions/Area"
+              "anyOf": [
+                {
+                  "$ref": "#/definitions/Area"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "description": "Green roof area"
             }
           },
           "required": [
@@ -7790,6 +8239,28 @@
         "hazardousSubstanceStorage": {
           "description": "Does the proposed use involve the storage of hazardous chemicals?",
           "type": "boolean"
+        },
+        "heating": {
+          "additionalProperties": false,
+          "properties": {
+            "electrical": {
+              "additionalProperties": false,
+              "properties": {
+                "numberHomes": {
+                  "$ref": "#/definitions/Integer",
+                  "description": "Homes with electrical heating"
+                }
+              },
+              "required": [
+                "numberHomes"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "electrical"
+          ],
+          "type": "object"
         },
         "hoursOfOperation": {
           "description": "Hours of operation per use, or 'not applicable'",
@@ -7803,6 +8274,55 @@
           "additionalProperties": false,
           "description": "Changes that result in the loss, gain, or change of use of natural spaces",
           "properties": {
+            "openSpace": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "access": {
+                    "description": "Open Space access type",
+                    "enum": [
+                      "restricted",
+                      "unrestricted"
+                    ],
+                    "type": "string"
+                  },
+                  "area": {
+                    "description": "Open Space area",
+                    "type": "number"
+                  },
+                  "description": {
+                    "description": "Open Space description",
+                    "type": "string"
+                  },
+                  "designation": {
+                    "$ref": "#/definitions/OpenSpaceDesignation",
+                    "description": "Open Space designation"
+                  },
+                  "development": {
+                    "description": "Open Space change type",
+                    "enum": [
+                      "loss",
+                      "gain",
+                      "change"
+                    ],
+                    "type": "string"
+                  },
+                  "swap": {
+                    "description": "Open Space land swap",
+                    "type": "boolean"
+                  },
+                  "type": {
+                    "$ref": "#/definitions/OpenSpaceType",
+                    "description": "Open Space type"
+                  }
+                },
+                "required": [
+                  "development"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
             "openSpaces": {
               "items": {
                 "additionalProperties": false,
@@ -7856,6 +8376,47 @@
                   "access",
                   "area",
                   "swap"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "protectedSpace": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "access": {
+                    "description": "Protected Space access",
+                    "enum": [
+                      "restricted",
+                      "unrestricted"
+                    ],
+                    "type": "string"
+                  },
+                  "area": {
+                    "description": "Protected Space area",
+                    "type": "number"
+                  },
+                  "description": {
+                    "description": "Protected Space description",
+                    "type": "string"
+                  },
+                  "designation": {
+                    "$ref": "#/definitions/ProtectedSpaceDesignation",
+                    "description": "Protected Space nature conservation designation"
+                  },
+                  "development": {
+                    "description": "Protected Space change type",
+                    "enum": [
+                      "loss",
+                      "gain",
+                      "change"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "development"
                 ],
                 "type": "object"
               },
@@ -8012,6 +8573,47 @@
           "$ref": "#/definitions/NewBuildingsOrStoreys",
           "description": "Increasing the height of existing buildings"
         },
+        "nonPermanentDwellings": {
+          "additionalProperties": false,
+          "properties": {
+            "gained": {
+              "additionalProperties": false,
+              "properties": {
+                "number": {
+                  "$ref": "#/definitions/Integer",
+                  "description": "Non-permanent dwellings gained"
+                }
+              },
+              "required": [
+                "number"
+              ],
+              "type": "object"
+            },
+            "lost": {
+              "additionalProperties": false,
+              "properties": {
+                "number": {
+                  "$ref": "#/definitions/Integer",
+                  "description": "Non-permanent dwellings lost"
+                }
+              },
+              "required": [
+                "number"
+              ],
+              "type": "object"
+            },
+            "type": {
+              "description": "Non-permanent dwelling type",
+              "enum": [
+                "Non-permanent dwellings",
+                "Traveller pitches/plots",
+                "Houseboat moorings"
+              ],
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
         "nonResidentialFloorspace": {
           "additionalProperties": false,
           "properties": {
@@ -8027,6 +8629,18 @@
         },
         "parking": {
           "$ref": "#/definitions/ProposedLondonParking"
+        },
+        "phased": {
+          "description": "Scheme phasing",
+          "type": "boolean"
+        },
+        "plannedCompletionDate": {
+          "$ref": "#/definitions/Date",
+          "description": "Intended completion date"
+        },
+        "plannedStartDate": {
+          "$ref": "#/definitions/Date",
+          "description": "Intended commencement date"
         },
         "projectType": {
           "items": {
@@ -8059,6 +8673,19 @@
           "properties": {
             "hectares": {
               "description": "What is the site area in hectares?",
+              "type": "number"
+            }
+          },
+          "required": [
+            "hectares"
+          ],
+          "type": "object"
+        },
+        "siteArea": {
+          "additionalProperties": false,
+          "properties": {
+            "hectares": {
+              "description": "Site area",
               "type": "number"
             }
           },
@@ -8134,6 +8761,10 @@
             "total"
           ],
           "type": "object"
+        },
+        "subdivisionDetails": {
+          "description": "Sub-division of building",
+          "type": "string"
         },
         "trees": {
           "additionalProperties": false,
@@ -8447,16 +9078,24 @@
               "description": "Count of new gas connections",
               "properties": {
                 "connections": {
-                  "additionalProperties": false,
-                  "properties": {
-                    "count": {
+                  "anyOf": [
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "count": {
+                          "$ref": "#/definitions/Integer"
+                        }
+                      },
+                      "required": [
+                        "count"
+                      ],
+                      "type": "object"
+                    },
+                    {
                       "$ref": "#/definitions/Integer"
                     }
-                  },
-                  "required": [
-                    "count"
                   ],
-                  "type": "object"
+                  "description": "New gas connections required"
                 }
               },
               "required": [
@@ -8466,37 +9105,49 @@
             },
             "internet": {
               "additionalProperties": false,
-              "description": "Count of new full fibre Internet connections",
+              "description": "Count of new full fibre internet connections",
               "properties": {
                 "commercialUnits": {
-                  "additionalProperties": false,
-                  "properties": {
-                    "count": {
+                  "anyOf": [
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "count": {
+                          "$ref": "#/definitions/Integer"
+                        }
+                      },
+                      "required": [
+                        "count"
+                      ],
+                      "type": "object"
+                    },
+                    {
                       "$ref": "#/definitions/Integer"
                     }
-                  },
-                  "required": [
-                    "count"
                   ],
-                  "type": "object"
+                  "description": "Number of non-residential units to have full fibre internet"
                 },
                 "residentialUnits": {
-                  "additionalProperties": false,
-                  "properties": {
-                    "count": {
+                  "anyOf": [
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "count": {
+                          "$ref": "#/definitions/Integer"
+                        }
+                      },
+                      "required": [
+                        "count"
+                      ],
+                      "type": "object"
+                    },
+                    {
                       "$ref": "#/definitions/Integer"
                     }
-                  },
-                  "required": [
-                    "count"
                   ],
-                  "type": "object"
+                  "description": "Number of residential units to have full fibre internet"
                 }
               },
-              "required": [
-                "commercialUnits",
-                "residentialUnits"
-              ],
               "type": "object"
             },
             "water": {
@@ -8504,16 +9155,36 @@
               "description": "Count of new water connections",
               "properties": {
                 "connections": {
-                  "additionalProperties": false,
-                  "properties": {
-                    "count": {
+                  "anyOf": [
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "count": {
+                          "$ref": "#/definitions/Integer"
+                        }
+                      },
+                      "required": [
+                        "count"
+                      ],
+                      "type": "object"
+                    },
+                    {
                       "$ref": "#/definitions/Integer"
                     }
-                  },
-                  "required": [
-                    "count"
                   ],
-                  "type": "object"
+                  "description": "New water connections required"
+                },
+                "greyReuse": {
+                  "description": "Grey water reuse",
+                  "type": "boolean"
+                },
+                "rainHarvesting": {
+                  "description": "Rain water harvesting",
+                  "type": "boolean"
+                },
+                "usage": {
+                  "description": "Internal residential water usage",
+                  "type": "number"
                 }
               },
               "required": [
@@ -8529,16 +9200,24 @@
           "description": "Waste management of demolition and construction materials",
           "properties": {
             "reuseRecycle": {
-              "additionalProperties": false,
-              "properties": {
-                "percent": {
+              "anyOf": [
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "percent": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "percent"
+                  ],
+                  "type": "object"
+                },
+                {
                   "type": "number"
                 }
-              },
-              "required": [
-                "percent"
               ],
-              "type": "object"
+              "description": "Percentage of construction material recycling"
             }
           },
           "required": [
@@ -8842,8 +9521,53 @@
             "fee": {
               "$ref": "#/definitions/FeeNotApplicable"
             },
+            "housingFastTrack": {
+              "description": "Affordable Housing Fast Track",
+              "type": "boolean"
+            },
             "leadDeveloper": {
               "$ref": "#/definitions/LeadDeveloper"
+            },
+            "linked": {
+              "additionalProperties": false,
+              "properties": {
+                "superseding": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "applicationNumber": {
+                      "description": "Reference number of the original application",
+                      "type": "string"
+                    },
+                    "description": {
+                      "description": "Description of the superseded components",
+                      "type": "string"
+                    },
+                    "partial": {
+                      "description": "Is the original permission only partially superseded?",
+                      "type": "boolean"
+                    },
+                    "unitReference": {
+                      "description": "Units that are being superseded",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              "type": "object"
+            },
+            "mobileNetworkOperators": {
+              "additionalProperties": false,
+              "properties": {
+                "consulted": {
+                  "description": "Mobile network operators consulted",
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "consulted"
+              ],
+              "type": "object"
             },
             "planningApp": {
               "$ref": "#/definitions/PlanningApplication"
@@ -10195,8 +10919,53 @@
             "fee": {
               "$ref": "#/definitions/Fee"
             },
+            "housingFastTrack": {
+              "description": "Affordable Housing Fast Track",
+              "type": "boolean"
+            },
             "leadDeveloper": {
               "$ref": "#/definitions/LeadDeveloper"
+            },
+            "linked": {
+              "additionalProperties": false,
+              "properties": {
+                "superseding": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "applicationNumber": {
+                      "description": "Reference number of the original application",
+                      "type": "string"
+                    },
+                    "description": {
+                      "description": "Description of the superseded components",
+                      "type": "string"
+                    },
+                    "partial": {
+                      "description": "Is the original permission only partially superseded?",
+                      "type": "boolean"
+                    },
+                    "unitReference": {
+                      "description": "Units that are being superseded",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              "type": "object"
+            },
+            "mobileNetworkOperators": {
+              "additionalProperties": false,
+              "properties": {
+                "consulted": {
+                  "description": "Mobile network operators consulted",
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "consulted"
+              ],
+              "type": "object"
             },
             "planningApp": {
               "$ref": "#/definitions/PlanningApplication"
@@ -10456,6 +11225,24 @@
             "materials": {
               "$ref": "#/definitions/Materials"
             },
+            "ownership": {
+              "additionalProperties": false,
+              "properties": {
+                "status": {
+                  "description": "Ownership status",
+                  "enum": [
+                    "Public",
+                    "Private",
+                    "Mixed"
+                  ],
+                  "type": "string"
+                }
+              },
+              "required": [
+                "status"
+              ],
+              "type": "object"
+            },
             "parking": {
               "$ref": "#/definitions/ExistingLondonParking"
             },
@@ -10520,24 +11307,42 @@
               "$ref": "#/definitions/Region",
               "description": "Name of the region sourced from planning.data.gov.uk/dataset/region; \"London\" is a proxy for the Greater London Authority"
             },
-            "titleNumber": {
+            "socialLandlord": {
               "additionalProperties": false,
               "properties": {
-                "known": {
-                  "enum": [
-                    "Yes",
-                    "No"
-                  ],
-                  "type": "string"
-                },
-                "number": {
+                "description": {
+                  "description": "Lead Registered Social Landlord",
                   "type": "string"
                 }
               },
-              "required": [
-                "known"
-              ],
               "type": "object"
+            },
+            "titleNumber": {
+              "anyOf": [
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "known": {
+                      "enum": [
+                        "Yes",
+                        "No"
+                      ],
+                      "type": "string"
+                    },
+                    "number": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "known"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "Title Number"
             },
             "type": {
               "$ref": "#/definitions/PropertyType"
@@ -10568,6 +11373,95 @@
               },
               "required": [
                 "description"
+              ],
+              "type": "object"
+            },
+            "useClass": {
+              "description": "Use class",
+              "enum": [
+                "A1",
+                "A2",
+                "A3",
+                "A4",
+                "A5",
+                "B1",
+                "B1a",
+                "B1b",
+                "B1c",
+                "B2",
+                "B8",
+                "C1",
+                "C2",
+                "C2a",
+                "C3",
+                "C4",
+                "D1",
+                "D2",
+                "SG"
+              ],
+              "type": "string"
+            },
+            "useClassC3": {
+              "additionalProperties": false,
+              "properties": {
+                "GIA": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "existing": {
+                      "description": "Use class C3 Gross Internal Area existing",
+                      "type": "number"
+                    },
+                    "gained": {
+                      "description": "Use class C3 Gross Internal Area gained",
+                      "type": "number"
+                    },
+                    "lost": {
+                      "description": "Use class C3 Gross Internal Area lost",
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "existing",
+                    "gained",
+                    "lost"
+                  ],
+                  "type": "object"
+                }
+              },
+              "required": [
+                "GIA"
+              ],
+              "type": "object"
+            },
+            "useClassC4": {
+              "additionalProperties": false,
+              "properties": {
+                "GIA": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "existing": {
+                      "description": "Use class C4 Gross Internal Area existing",
+                      "type": "number"
+                    },
+                    "gained": {
+                      "description": "Use class C4 Gross Internal Area gained",
+                      "type": "number"
+                    },
+                    "lost": {
+                      "description": "Use class C4 Gross Internal Area lost",
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "existing",
+                    "gained",
+                    "lost"
+                  ],
+                  "type": "object"
+                }
+              },
+              "required": [
+                "GIA"
               ],
               "type": "object"
             },
