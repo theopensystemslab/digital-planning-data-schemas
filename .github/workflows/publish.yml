@@ -24,7 +24,7 @@ jobs:
 
       - name: Install pnpm
         if: steps.version_check.outputs.changed == 'true'
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@v6
 
       - name: Setup Node.js
         if: steps.version_check.outputs.changed == 'true'
