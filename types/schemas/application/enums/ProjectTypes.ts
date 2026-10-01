@@ -4,6 +4,9 @@
 export const ProjectTypes = {
   alter: 'Alter a building',
   'alter.balcony': 'Add or alter a balcony',
+  'alter.balcony.appearance': 'Change the appearance of a balcony',
+  'alter.balcony.repair': 'Repair or restore a balcony',
+  'alter.balcony.size': 'Change the size of a balcony',
   'alter.bayWindow': 'Add or remove a bay window',
   'alter.bayWindow.add': 'Add a bay window',
   'alter.bayWindow.rear': 'Add a bay window to the rear of the building',
@@ -87,6 +90,16 @@ export const ProjectTypes = {
   'alter.facades.reclad': 'Change the cladding of the facade',
   'alter.facades.repair': 'Repair the facade',
   'alter.flue': 'Add or change a flue',
+  'alter.flue.biomass': 'Add or alter a flue for a biomass boiler',
+  'alter.flue.CHP':
+    'Add or alter a flue for a CHP (combined heat and power) system',
+  'alter.flue.other': 'Add or alter another type of flue',
+  'alter.flue.SVP': 'Add or alter a soil vent pipe',
+  'alter.hedge': 'Changes to hedges',
+  'alter.hedge.letGrow': 'Let hedges grow',
+  'alter.hedge.new': 'New hedges',
+  'alter.hedge.prune': 'Prune hedges',
+  'alter.hedge.remove': 'Remove hedges',
   'alter.highways':
     'Changes to a public road, pavement or path (including drop kerb)',
   'alter.highways.access': 'Create a point of access to a highway',
@@ -105,48 +118,19 @@ export const ProjectTypes = {
   'alter.landscape.ponds': 'Add or remove a pond',
   'alter.loadingBay': 'Alter a loading bay',
   'alter.openings': 'Change a door or window opening',
-  'alter.openings.add': 'Add a door or window opening',
-  'alter.openings.add.door': 'Add one or more new doorways',
-  'alter.openings.add.door.front':
-    'Add new doorways to the front of the building',
-  'alter.openings.add.door.rear':
-    'Add new doorways to the rear of the building',
-  'alter.openings.add.door.side':
-    'Add new doorways to the side of the building',
-  'alter.openings.add.window': 'Add one or more new windows',
-  'alter.openings.add.windows': 'Add one or more new windows',
-  'alter.openings.add.windows.front':
-    'Add new windows to the front of the building',
-  'alter.openings.add.windows.high': 'Add new windows 1.7m up or higher',
-  'alter.openings.add.windows.rear':
-    'Add new windows to the rear of the building',
-  'alter.openings.add.windows.shutters': 'Add new shutters to windows',
-  'alter.openings.add.windows.side':
-    'Add new windows to the side of the building',
-  'alter.openings.alter': 'Change the size of doorways or windows',
-  'alter.openings.alter.convert.doorToWindow':
-    'Convert a doorway into a window',
-  'alter.openings.alter.convert.windowToDoor':
-    'Convert a window into a doorway',
-  'alter.openings.alter.enlarge.door': 'Enlarge a door opening',
-  'alter.openings.alter.enlarge.window': 'Enlarge a window opening',
-  'alter.openings.alter.enlarge.window.front':
-    'Enlarge a window opening on the front of a building',
-  'alter.openings.alter.enlarge.window.rear':
-    'Enlarge a window opening on the rear of a building',
-  'alter.openings.alter.enlarge.window.side':
-    'Enlarge a window opening on the side of a building',
-  'alter.openings.alter.reduce.door': 'Reduce the size of a door opening',
-  'alter.openings.alter.reduce.window': 'Reduce the size of a window opening',
-  'alter.openings.alter.reduce.window.front':
-    'Reduce the size of a window opening on the front of a building',
-  'alter.openings.alter.reduce.window.rear':
-    'Reduce the size of a window opening on the rear of a building',
-  'alter.openings.alter.reduce.window.side':
-    'Reduce the size of a window opening on the side of a building',
-  'alter.openings.remove': 'Block up doorways or windows',
-  'alter.openings.remove.door': 'Block up doorways',
-  'alter.openings.remove.window': 'Block up windows',
+  'alter.openings.door': 'Add or alter a door',
+  'alter.openings.door.add': 'Add a new door opening',
+  'alter.openings.door.alter': 'Alter or replace an existing door',
+  'alter.openings.door.alter.convertToWindow':
+    'Convert a door opening into a window',
+  'alter.openings.door.remove': 'Block up an existing door',
+  'alter.openings.window': 'Add or alter a window',
+  'alter.openings.window.add': 'Add a new window opening',
+  'alter.openings.window.alter': 'Alter or replace an existing window',
+  'alter.openings.window.alter.convertToDoor':
+    'Convert a window opening into a door',
+  'alter.openings.window.remove': 'Block up an existing window',
+  'alter.outbuilding': 'Change existing outbuildings or structures',
   'alter.pipes': 'Install pipes',
   'alter.remove': 'Remove part of a building (such as a decorative feature)',
   'alter.remove.chimney': 'Remove a chimney',
@@ -216,24 +200,20 @@ export const ProjectTypes = {
   'alter.swimmingPool': 'Install a swimming pool',
   'alter.swimmingPool.indoor': 'Install an indoor swimming pool',
   'alter.swimmingPool.outdoor': 'Install an outdoor swimming pool',
-  'alter.trees': 'Changes to trees or hedges',
-  'alter.trees.hedge': 'Changes to hedges',
-  'alter.trees.hedge.letGrow': 'Let hedges grow',
-  'alter.trees.hedge.new': 'New hedges',
-  'alter.trees.hedge.prune': 'Prune hedges',
-  'alter.trees.hedge.remove': 'Remove hedges',
-  'alter.trees.tree': 'Changes to trees',
-  'alter.trees.tree.new': 'New trees',
-  'alter.trees.tree.prune': 'Prune trees',
-  'alter.trees.tree.remove': 'Remove trees',
+  'alter.tree': 'Changes to trees',
+  'alter.tree.new': 'New trees',
+  'alter.tree.prune': 'Prune trees',
+  'alter.tree.remove': 'Remove trees',
   changeOfUse: 'Change the use of a building',
   'changeOfUse.annexe':
     'Convert part of the property into a  granny flat (residential annexe)',
   'changeOfUse.caravans': 'Use a caravan or mobile home on the property',
   'changeOfUse.extension': 'Convert an extension',
+  'changeOfUse.film': 'Use the property as a filming location',
   'changeOfUse.garage': 'Convert a garage',
   'changeOfUse.land': 'Change the use of land',
   'changeOfUse.let.part': 'Let a part of the property',
+  'changeOfUse.let.temporary': 'Short term or holiday letting',
   'changeOfUse.let.whole': 'Let the property',
   'changeOfUse.outbuilding':
     'Convert or change the use of an outbuilding (such as a shed, garage or barn)',
@@ -260,6 +240,9 @@ export const ProjectTypes = {
   'demolish.replace': 'Demolish a building and build homes in its place',
   extend: 'Extend a building or add an outbuilding',
   'extend.balcony': 'Enlarge a balcony',
+  'extend.balcony.juliet': 'Add a juliet balcony',
+  'extend.balcony.other': 'Add another type of balcony',
+  'extend.balcony.veluxCabrio': 'Add a Velux Cabrio balcony rooflight',
   'extend.basement': 'Add a basement extension',
   'extend.basement.extend': 'Enlarge a basement',
   'extend.basement.lightwell': 'Add a lightwell',
@@ -342,6 +325,7 @@ export const ProjectTypes = {
   'new.retail': 'New retail premises',
   'new.telecoms': 'Install telecommunications equipment',
   'new.temporaryStructure': 'Build a temporary structure',
+  'new.temporaryStructure.tank': 'Add a temporary tank',
   'new.trolleyStore': 'Add a trolley store',
   'new.warehouse': 'New storage or distribution premises',
   'new.wasteDeposit': 'New waste deposit',
