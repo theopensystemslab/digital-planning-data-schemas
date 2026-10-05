@@ -9,6 +9,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 The minor version will be incremented upon a breaking change and the patch version will be
 incremented for features.
 
+## [0.7.8] - 2026-10-07
+
+### Added
+- Adds Stripe payment reference and associated metadata. Each fee-carrying application type will now have a Gov Pay reference _or_ Stripe reference ([#422](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/422))
+- Adds additional `data` properties to better cover Minor planning application types and GLA requirements ([#424](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/424))
+
+### Changed
+- `ProjectType` enum values adjusted to better align to General Permitted Development Order (GDPO) ([#429](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/429))
+- Various Dependabot updates and better Windows support for local build scripts (eg [#423](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/423))
+
 ## [0.7.7] - 2026-02-25
 
 ### Added 
