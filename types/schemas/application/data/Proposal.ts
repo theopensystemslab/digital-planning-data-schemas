@@ -31,7 +31,7 @@ export interface BaseProposal {
    */
   materials?: Materials;
   /**
-   * @desription Proposed pedestrian & vehicle access, roads and rights of way, if applicable to application.type
+   * @description Proposed pedestrian & vehicle access, roads and rights of way, if applicable to application.type
    */
   access?: {
     affected?:
