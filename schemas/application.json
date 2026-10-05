@@ -12943,6 +12943,60 @@
           "additionalProperties": false,
           "properties": {
             "description": {
+              "const": "Change the appearance of a balcony",
+              "type": "string"
+            },
+            "value": {
+              "const": "alter.balcony.appearance",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Repair or restore a balcony",
+              "type": "string"
+            },
+            "value": {
+              "const": "alter.balcony.repair",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Change the size of a balcony",
+              "type": "string"
+            },
+            "value": {
+              "const": "alter.balcony.size",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
               "const": "Add or remove a bay window",
               "type": "string"
             },
@@ -14239,6 +14293,168 @@
           "additionalProperties": false,
           "properties": {
             "description": {
+              "const": "Add or alter a flue for a biomass boiler",
+              "type": "string"
+            },
+            "value": {
+              "const": "alter.flue.biomass",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Add or alter a flue for a CHP (combined heat and power) system",
+              "type": "string"
+            },
+            "value": {
+              "const": "alter.flue.CHP",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Add or alter another type of flue",
+              "type": "string"
+            },
+            "value": {
+              "const": "alter.flue.other",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Add or alter a soil vent pipe",
+              "type": "string"
+            },
+            "value": {
+              "const": "alter.flue.SVP",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Changes to hedges",
+              "type": "string"
+            },
+            "value": {
+              "const": "alter.hedge",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Let hedges grow",
+              "type": "string"
+            },
+            "value": {
+              "const": "alter.hedge.letGrow",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "New hedges",
+              "type": "string"
+            },
+            "value": {
+              "const": "alter.hedge.new",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Prune hedges",
+              "type": "string"
+            },
+            "value": {
+              "const": "alter.hedge.prune",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Remove hedges",
+              "type": "string"
+            },
+            "value": {
+              "const": "alter.hedge.remove",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
               "const": "Changes to a public road, pavement or path (including drop kerb)",
               "type": "string"
             },
@@ -14527,11 +14743,11 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Add a door or window opening",
+              "const": "Add or alter a door",
               "type": "string"
             },
             "value": {
-              "const": "alter.openings.add",
+              "const": "alter.openings.door",
               "type": "string"
             }
           },
@@ -14545,11 +14761,11 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Add one or more new doorways",
+              "const": "Add a new door opening",
               "type": "string"
             },
             "value": {
-              "const": "alter.openings.add.door",
+              "const": "alter.openings.door.add",
               "type": "string"
             }
           },
@@ -14563,11 +14779,11 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Add new doorways to the front of the building",
+              "const": "Alter or replace an existing door",
               "type": "string"
             },
             "value": {
-              "const": "alter.openings.add.door.front",
+              "const": "alter.openings.door.alter",
               "type": "string"
             }
           },
@@ -14581,11 +14797,11 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Add new doorways to the rear of the building",
+              "const": "Convert a door opening into a window",
               "type": "string"
             },
             "value": {
-              "const": "alter.openings.add.door.rear",
+              "const": "alter.openings.door.alter.convertToWindow",
               "type": "string"
             }
           },
@@ -14599,11 +14815,11 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Add new doorways to the side of the building",
+              "const": "Block up an existing door",
               "type": "string"
             },
             "value": {
-              "const": "alter.openings.add.door.side",
+              "const": "alter.openings.door.remove",
               "type": "string"
             }
           },
@@ -14617,11 +14833,11 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Add one or more new windows",
+              "const": "Add or alter a window",
               "type": "string"
             },
             "value": {
-              "const": "alter.openings.add.window",
+              "const": "alter.openings.window",
               "type": "string"
             }
           },
@@ -14635,11 +14851,11 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Add one or more new windows",
+              "const": "Add a new window opening",
               "type": "string"
             },
             "value": {
-              "const": "alter.openings.add.windows",
+              "const": "alter.openings.window.add",
               "type": "string"
             }
           },
@@ -14653,11 +14869,11 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Add new windows to the front of the building",
+              "const": "Alter or replace an existing window",
               "type": "string"
             },
             "value": {
-              "const": "alter.openings.add.windows.front",
+              "const": "alter.openings.window.alter",
               "type": "string"
             }
           },
@@ -14671,11 +14887,11 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Add new windows 1.7m up or higher",
+              "const": "Convert a window opening into a door",
               "type": "string"
             },
             "value": {
-              "const": "alter.openings.add.windows.high",
+              "const": "alter.openings.window.alter.convertToDoor",
               "type": "string"
             }
           },
@@ -14689,11 +14905,11 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Add new windows to the rear of the building",
+              "const": "Block up an existing window",
               "type": "string"
             },
             "value": {
-              "const": "alter.openings.add.windows.rear",
+              "const": "alter.openings.window.remove",
               "type": "string"
             }
           },
@@ -14707,317 +14923,11 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Add new shutters to windows",
+              "const": "Change existing outbuildings or structures",
               "type": "string"
             },
             "value": {
-              "const": "alter.openings.add.windows.shutters",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "Add new windows to the side of the building",
-              "type": "string"
-            },
-            "value": {
-              "const": "alter.openings.add.windows.side",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "Change the size of doorways or windows",
-              "type": "string"
-            },
-            "value": {
-              "const": "alter.openings.alter",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "Convert a doorway into a window",
-              "type": "string"
-            },
-            "value": {
-              "const": "alter.openings.alter.convert.doorToWindow",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "Convert a window into a doorway",
-              "type": "string"
-            },
-            "value": {
-              "const": "alter.openings.alter.convert.windowToDoor",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "Enlarge a door opening",
-              "type": "string"
-            },
-            "value": {
-              "const": "alter.openings.alter.enlarge.door",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "Enlarge a window opening",
-              "type": "string"
-            },
-            "value": {
-              "const": "alter.openings.alter.enlarge.window",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "Enlarge a window opening on the front of a building",
-              "type": "string"
-            },
-            "value": {
-              "const": "alter.openings.alter.enlarge.window.front",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "Enlarge a window opening on the rear of a building",
-              "type": "string"
-            },
-            "value": {
-              "const": "alter.openings.alter.enlarge.window.rear",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "Enlarge a window opening on the side of a building",
-              "type": "string"
-            },
-            "value": {
-              "const": "alter.openings.alter.enlarge.window.side",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "Reduce the size of a door opening",
-              "type": "string"
-            },
-            "value": {
-              "const": "alter.openings.alter.reduce.door",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "Reduce the size of a window opening",
-              "type": "string"
-            },
-            "value": {
-              "const": "alter.openings.alter.reduce.window",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "Reduce the size of a window opening on the front of a building",
-              "type": "string"
-            },
-            "value": {
-              "const": "alter.openings.alter.reduce.window.front",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "Reduce the size of a window opening on the rear of a building",
-              "type": "string"
-            },
-            "value": {
-              "const": "alter.openings.alter.reduce.window.rear",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "Reduce the size of a window opening on the side of a building",
-              "type": "string"
-            },
-            "value": {
-              "const": "alter.openings.alter.reduce.window.side",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "Block up doorways or windows",
-              "type": "string"
-            },
-            "value": {
-              "const": "alter.openings.remove",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "Block up doorways",
-              "type": "string"
-            },
-            "value": {
-              "const": "alter.openings.remove.door",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "Block up windows",
-              "type": "string"
-            },
-            "value": {
-              "const": "alter.openings.remove.window",
+              "const": "alter.outbuilding",
               "type": "string"
             }
           },
@@ -16057,119 +15967,11 @@
           "additionalProperties": false,
           "properties": {
             "description": {
-              "const": "Changes to trees or hedges",
-              "type": "string"
-            },
-            "value": {
-              "const": "alter.trees",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "Changes to hedges",
-              "type": "string"
-            },
-            "value": {
-              "const": "alter.trees.hedge",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "Let hedges grow",
-              "type": "string"
-            },
-            "value": {
-              "const": "alter.trees.hedge.letGrow",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "New hedges",
-              "type": "string"
-            },
-            "value": {
-              "const": "alter.trees.hedge.new",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "Prune hedges",
-              "type": "string"
-            },
-            "value": {
-              "const": "alter.trees.hedge.prune",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
-              "const": "Remove hedges",
-              "type": "string"
-            },
-            "value": {
-              "const": "alter.trees.hedge.remove",
-              "type": "string"
-            }
-          },
-          "required": [
-            "value",
-            "description"
-          ],
-          "type": "object"
-        },
-        {
-          "additionalProperties": false,
-          "properties": {
-            "description": {
               "const": "Changes to trees",
               "type": "string"
             },
             "value": {
-              "const": "alter.trees.tree",
+              "const": "alter.tree",
               "type": "string"
             }
           },
@@ -16187,7 +15989,7 @@
               "type": "string"
             },
             "value": {
-              "const": "alter.trees.tree.new",
+              "const": "alter.tree.new",
               "type": "string"
             }
           },
@@ -16205,7 +16007,7 @@
               "type": "string"
             },
             "value": {
-              "const": "alter.trees.tree.prune",
+              "const": "alter.tree.prune",
               "type": "string"
             }
           },
@@ -16223,7 +16025,7 @@
               "type": "string"
             },
             "value": {
-              "const": "alter.trees.tree.remove",
+              "const": "alter.tree.remove",
               "type": "string"
             }
           },
@@ -16309,6 +16111,24 @@
           "additionalProperties": false,
           "properties": {
             "description": {
+              "const": "Use the property as a filming location",
+              "type": "string"
+            },
+            "value": {
+              "const": "changeOfUse.film",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
               "const": "Convert a garage",
               "type": "string"
             },
@@ -16350,6 +16170,24 @@
             },
             "value": {
               "const": "changeOfUse.let.part",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Short term or holiday letting",
+              "type": "string"
+            },
+            "value": {
+              "const": "changeOfUse.let.temporary",
               "type": "string"
             }
           },
@@ -16764,6 +16602,60 @@
             },
             "value": {
               "const": "extend.balcony",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Add a juliet balcony",
+              "type": "string"
+            },
+            "value": {
+              "const": "extend.balcony.juliet",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Add another type of balcony",
+              "type": "string"
+            },
+            "value": {
+              "const": "extend.balcony.other",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Add a Velux Cabrio balcony rooflight",
+              "type": "string"
+            },
+            "value": {
+              "const": "extend.balcony.veluxCabrio",
               "type": "string"
             }
           },
@@ -18150,6 +18042,24 @@
             },
             "value": {
               "const": "new.temporaryStructure",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "const": "Add a temporary tank",
+              "type": "string"
+            },
+            "value": {
+              "const": "new.temporaryStructure.tank",
               "type": "string"
             }
           },

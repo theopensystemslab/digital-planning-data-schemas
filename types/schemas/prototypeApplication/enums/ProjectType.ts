@@ -9,6 +9,21 @@ type Alter = 'alter';
 type AlterBalcony = 'alter.balcony';
 
 /**
+ * @description Change the appearance of a balcony
+ */
+type AlterBalconyAppearance = 'alter.balcony.appearance';
+
+/**
+ * @description Repair or restore a balcony
+ */
+type AlterBalconyRepair = 'alter.balcony.repair';
+
+/**
+ * @description Change the size of a balcony
+ */
+type AlterBalconySize = 'alter.balcony.size';
+
+/**
  * @description Add or remove a bay window
  */
 type AlterBayWindow = 'alter.bayWindow';
@@ -356,6 +371,56 @@ type AlterFacadesReclad = 'alter.facades.reclad';
 type AlterFacadesRepair = 'alter.facades.repair';
 
 /**
+ * @description Add or change a flue
+ */
+type AlterFlue = 'alter.flue';
+
+/**
+ * @description Add or alter a flue for a biomass boiler
+ */
+type AlterFlueBiomass = 'alter.flue.biomass';
+
+/**
+ * @description Add or alter a flue for a CHP (combined heat and power) system
+ */
+type AlterFlueCHP = 'alter.flue.CHP';
+
+/**
+ * @description Add or alter another type of flue
+ */
+type AlterFlueOther = 'alter.flue.other';
+
+/**
+ * @description Add or alter a soil vent pipe
+ */
+type AlterFlueSVP = 'alter.flue.SVP';
+
+/**
+ * @description Changes to hedges
+ */
+type AlterHedge = 'alter.hedge';
+
+/**
+ * @description Let hedges grow
+ */
+type AlterHedgeLetGrow = 'alter.hedge.letGrow';
+
+/**
+ * @description New hedges
+ */
+type AlterHedgeNew = 'alter.hedge.new';
+
+/**
+ * @description Prune hedges
+ */
+type AlterHedgePrune = 'alter.hedge.prune';
+
+/**
+ * @description Remove hedges
+ */
+type AlterHedgeRemove = 'alter.hedge.remove';
+
+/**
  * @description Changes to a public road, pavement or path (including drop kerb)
  */
 type AlterHighways = 'alter.highways';
@@ -431,152 +496,61 @@ type AlterLandscapePonds = 'alter.landscape.ponds';
 type AlterOpenings = 'alter.openings';
 
 /**
- * @description Add a door or window opening
+ * @description Add or alter a door
  */
-type AlterOpeningsAdd = 'alter.openings.add';
+type AlterOpeningsDoor = 'alter.openings.door';
 
 /**
- * @description Add one or more new doorways
+ * @description Add a new door opening
  */
-type AlterOpeningsAddDoor = 'alter.openings.add.door';
+type AlterOpeningsDoorAdd = 'alter.openings.door.add';
 
 /**
- * @description Add new doorways to the front of the building
+ * @description Alter or replace an existing door
  */
-type AlterOpeningsAddDoorFront = 'alter.openings.add.door.front';
+type AlterOpeningsDoorAlter = 'alter.openings.door.alter';
 
 /**
- * @description Add new doorways to the rear of the building
+ * @description Convert a door opening into a window
  */
-type AlterOpeningsAddDoorRear = 'alter.openings.add.door.rear';
+type AlterOpeningsDoorAlterConvertToWindow =
+  'alter.openings.door.alter.convertToWindow';
 
 /**
- * @description Add new doorways to the side of the building
+ * @description Block up an existing door
  */
-type AlterOpeningsAddDoorSide = 'alter.openings.add.door.side';
+type AlterOpeningsDoorRemove = 'alter.openings.door.remove';
 
 /**
- * @description Add one or more new windows
+ * @description Add or alter a window
  */
-type AlterOpeningsAddWindow = 'alter.openings.add.window';
+type AlterOpeningsWindow = 'alter.openings.window';
 
 /**
- * @description Add one or more new windows
+ * @description Add a new window opening
  */
-type AlterOpeningsAddWindows = 'alter.openings.add.windows';
+type AlterOpeningsWindowAdd = 'alter.openings.window.add';
 
 /**
- * @description Add new windows to the front of the building
+ * @description Alter or replace an existing window
  */
-type AlterOpeningsAddWindowsFront = 'alter.openings.add.windows.front';
+type AlterOpeningsWindowAlter = 'alter.openings.window.alter';
 
 /**
- * @description Add new windows 1.7m up or higher
+ * @description Convert a window opening into a door
  */
-type AlterOpeningsAddWindowsHigh = 'alter.openings.add.windows.high';
+type AlterOpeningsWindowAlterConvertToDoor =
+  'alter.openings.window.alter.convertToDoor';
 
 /**
- * @description Add new windows to the rear of the building
+ * @description Block up an existing window
  */
-type AlterOpeningsAddWindowsRear = 'alter.openings.add.windows.rear';
+type AlterOpeningsWindowRemove = 'alter.openings.window.remove';
 
 /**
- * @description Add new shutters to windows
+ * @description Change existing outbuildings or structures
  */
-type AlterOpeningsAddWindowsShutters = 'alter.openings.add.windows.shutters';
-
-/**
- * @description Add new windows to the side of the building
- */
-type AlterOpeningsAddWindowsSide = 'alter.openings.add.windows.side';
-
-/**
- * @description Change the size of doorways or windows
- */
-type AlterOpeningsAlter = 'alter.openings.alter';
-
-/**
- * @description Convert a doorway into a window
- */
-type AlterOpeningsAlterConvertDoorToWindow =
-  'alter.openings.alter.convert.doorToWindow';
-
-/**
- * @description Convert a window into a doorway
- */
-type AlterOpeningsAlterConvertWindowToDoor =
-  'alter.openings.alter.convert.windowToDoor';
-
-/**
- * @description Enlarge a door opening
- */
-type AlterOpeningsAlterEnlargeDoor = 'alter.openings.alter.enlarge.door';
-
-/**
- * @description Enlarge a window opening
- */
-type AlterOpeningsAlterEnlargeWindow = 'alter.openings.alter.enlarge.window';
-
-/**
- * @description Enlarge a window opening on the front of a building
- */
-type AlterOpeningsAlterEnlargeWindowFront =
-  'alter.openings.alter.enlarge.window.front';
-
-/**
- * @description Enlarge a window opening on the rear of a building
- */
-type AlterOpeningsAlterEnlargeWindowRear =
-  'alter.openings.alter.enlarge.window.rear';
-
-/**
- * @description Enlarge a window opening on the side of a building
- */
-type AlterOpeningsAlterEnlargeWindowSide =
-  'alter.openings.alter.enlarge.window.side';
-
-/**
- * @description Reduce the size of a door opening
- */
-type AlterOpeningsAlterReduceDoor = 'alter.openings.alter.reduce.door';
-
-/**
- * @description Reduce the size of a window opening
- */
-type AlterOpeningsAlterReduceWindow = 'alter.openings.alter.reduce.window';
-
-/**
- * @description Reduce the size of a window opening on the front of a building
- */
-type AlterOpeningsAlterReduceWindowFront =
-  'alter.openings.alter.reduce.window.front';
-
-/**
- * @description Reduce the size of a window opening on the rear of a building
- */
-type AlterOpeningsAlterReduceWindowRear =
-  'alter.openings.alter.reduce.window.rear';
-
-/**
- * @description Reduce the size of a window opening on the side of a building
- */
-type AlterOpeningsAlterReduceWindowSide =
-  'alter.openings.alter.reduce.window.side';
-
-/**
- * @description Block up doorways or windows
- */
-type AlterOpeningsRemove = 'alter.openings.remove';
-
-/**
- * @description Block up doorways
- */
-type AlterOpeningsRemoveDoor = 'alter.openings.remove.door';
-
-/**
- * @description Block up windows
- */
-type AlterOpeningsRemoveWindow = 'alter.openings.remove.window';
+type AlterOutbuilding = 'alter.outbuilding';
 
 /**
  * @description Install pipes
@@ -854,54 +828,24 @@ type AlterSwimmingPoolIndoor = 'alter.swimmingPool.indoor';
 type AlterSwimmingPoolOutdoor = 'alter.swimmingPool.outdoor';
 
 /**
- * @description Changes to trees or hedges
- */
-type AlterTrees = 'alter.trees';
-
-/**
- * @description Changes to hedges
- */
-type AlterTreesHedge = 'alter.trees.hedge';
-
-/**
- * @description Let hedges grow
- */
-type AlterTreesHedgeLetGrow = 'alter.trees.hedge.letGrow';
-
-/**
- * @description New hedges
- */
-type AlterTreesHedgeNew = 'alter.trees.hedge.new';
-
-/**
- * @description Prune hedges
- */
-type AlterTreesHedgePrune = 'alter.trees.hedge.prune';
-
-/**
- * @description Remove hedges
- */
-type AlterTreesHedgeRemove = 'alter.trees.hedge.remove';
-
-/**
  * @description Changes to trees
  */
-type AlterTreesTree = 'alter.trees.tree';
+type AlterTree = 'alter.tree';
 
 /**
  * @description New trees
  */
-type AlterTreesTreeNew = 'alter.trees.tree.new';
+type AlterTreeNew = 'alter.tree.new';
 
 /**
  * @description Prune trees
  */
-type AlterTreesTreePrune = 'alter.trees.tree.prune';
+type AlterTreePrune = 'alter.tree.prune';
 
 /**
  * @description Remove trees
  */
-type AlterTreesTreeRemove = 'alter.trees.tree.remove';
+type AlterTreeRemove = 'alter.tree.remove';
 
 /**
  * @description Change the use of a building
@@ -924,6 +868,11 @@ type ChangeOfUseCaravans = 'changeOfUse.caravans';
 type ChangeOfUseExtension = 'changeOfUse.extension';
 
 /**
+ * @description Use the property as a filming location
+ */
+type ChangeOfUseFilm = 'changeOfUse.film';
+
+/**
  * @description Convert a garage
  */
 type ChangeOfUseGarage = 'changeOfUse.garage';
@@ -937,6 +886,11 @@ type ChangeOfUseLand = 'changeOfUse.land';
  * @description Let a part of the property
  */
 type ChangeOfUseLetPart = 'changeOfUse.let.part';
+
+/**
+ * @description Short term or holiday letting
+ */
+type ChangeOfUseLetTemporary = 'changeOfUse.let.temporary';
 
 /**
  * @description Let the property
@@ -1047,6 +1001,21 @@ type Extend = 'extend';
  * @description Enlarge a balcony
  */
 type ExtendBalcony = 'extend.balcony';
+
+/**
+ * @description Add a juliet balcony
+ */
+type ExtendBalconyJuliet = 'extend.balcony.juliet';
+
+/**
+ * @description Add another type of balcony
+ */
+type ExtendBalconyOther = 'extend.balcony.other';
+
+/**
+ * @description Add a Velux Cabrio balcony rooflight
+ */
+type ExtendBalconyVeluxCabrio = 'extend.balcony.veluxCabrio';
 
 /**
  * @description Add a basement extension
@@ -1429,6 +1398,11 @@ type NewTelecoms = 'new.telecoms';
 type NewTemporaryStructure = 'new.temporaryStructure';
 
 /**
+ * @description Add a temporary tank
+ */
+type NewTemporaryStructureTank = 'new.temporaryStructure.tank';
+
+/**
  * @description New storage or distribution premises
  */
 type NewWarehouse = 'new.warehouse';
@@ -1490,6 +1464,9 @@ type UnitSubdivide = 'unit.subdivide';
 export type ProjectType =
   | Alter
   | AlterBalcony
+  | AlterBalconyAppearance
+  | AlterBalconyRepair
+  | AlterBalconySize
   | AlterBayWindow
   | AlterBayWindowAdd
   | AlterBayWindowRear
@@ -1558,6 +1535,16 @@ export type ProjectType =
   | AlterFacadesRear
   | AlterFacadesReclad
   | AlterFacadesRepair
+  | AlterFlue
+  | AlterFlueBiomass
+  | AlterFlueCHP
+  | AlterFlueOther
+  | AlterFlueSVP
+  | AlterHedge
+  | AlterHedgeLetGrow
+  | AlterHedgeNew
+  | AlterHedgePrune
+  | AlterHedgeRemove
   | AlterHighways
   | AlterHighwaysAccess
   | AlterHighwaysAccessUnclassified
@@ -1573,34 +1560,17 @@ export type ProjectType =
   | AlterLandscapeGardens
   | AlterLandscapePonds
   | AlterOpenings
-  | AlterOpeningsAdd
-  | AlterOpeningsAddDoor
-  | AlterOpeningsAddDoorFront
-  | AlterOpeningsAddDoorRear
-  | AlterOpeningsAddDoorSide
-  | AlterOpeningsAddWindow
-  | AlterOpeningsAddWindows
-  | AlterOpeningsAddWindowsFront
-  | AlterOpeningsAddWindowsHigh
-  | AlterOpeningsAddWindowsRear
-  | AlterOpeningsAddWindowsShutters
-  | AlterOpeningsAddWindowsSide
-  | AlterOpeningsAlter
-  | AlterOpeningsAlterConvertDoorToWindow
-  | AlterOpeningsAlterConvertWindowToDoor
-  | AlterOpeningsAlterEnlargeDoor
-  | AlterOpeningsAlterEnlargeWindow
-  | AlterOpeningsAlterEnlargeWindowFront
-  | AlterOpeningsAlterEnlargeWindowRear
-  | AlterOpeningsAlterEnlargeWindowSide
-  | AlterOpeningsAlterReduceDoor
-  | AlterOpeningsAlterReduceWindow
-  | AlterOpeningsAlterReduceWindowFront
-  | AlterOpeningsAlterReduceWindowRear
-  | AlterOpeningsAlterReduceWindowSide
-  | AlterOpeningsRemove
-  | AlterOpeningsRemoveDoor
-  | AlterOpeningsRemoveWindow
+  | AlterOpeningsDoor
+  | AlterOpeningsDoorAdd
+  | AlterOpeningsDoorAlter
+  | AlterOpeningsDoorAlterConvertToWindow
+  | AlterOpeningsDoorRemove
+  | AlterOpeningsWindow
+  | AlterOpeningsWindowAdd
+  | AlterOpeningsWindowAlter
+  | AlterOpeningsWindowAlterConvertToDoor
+  | AlterOpeningsWindowRemove
+  | AlterOutbuilding
   | AlterPipes
   | AlterRemove
   | AlterRemoveChimney
@@ -1656,23 +1626,19 @@ export type ProjectType =
   | AlterSwimmingPool
   | AlterSwimmingPoolIndoor
   | AlterSwimmingPoolOutdoor
-  | AlterTrees
-  | AlterTreesHedge
-  | AlterTreesHedgeLetGrow
-  | AlterTreesHedgeNew
-  | AlterTreesHedgePrune
-  | AlterTreesHedgeRemove
-  | AlterTreesTree
-  | AlterTreesTreeNew
-  | AlterTreesTreePrune
-  | AlterTreesTreeRemove
+  | AlterTree
+  | AlterTreeNew
+  | AlterTreePrune
+  | AlterTreeRemove
   | ChangeOfUse
   | ChangeOfUseAnnexe
   | ChangeOfUseCaravans
   | ChangeOfUseExtension
+  | ChangeOfUseFilm
   | ChangeOfUseGarage
   | ChangeOfUseLand
   | ChangeOfUseLetPart
+  | ChangeOfUseLetTemporary
   | ChangeOfUseLetWhole
   | ChangeOfUseOutbuilding
   | ChangeOfUsePart
@@ -1695,6 +1661,9 @@ export type ProjectType =
   | DemolishReplace
   | Extend
   | ExtendBalcony
+  | ExtendBalconyJuliet
+  | ExtendBalconyOther
+  | ExtendBalconyVeluxCabrio
   | ExtendBasement
   | ExtendBasementExtend
   | ExtendBasementLightwell
@@ -1771,6 +1740,7 @@ export type ProjectType =
   | NewRetail
   | NewTelecoms
   | NewTemporaryStructure
+  | NewTemporaryStructureTank
   | NewWarehouse
   | Not
   | NotAlterReplace
