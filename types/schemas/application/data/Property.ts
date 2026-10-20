@@ -3,7 +3,10 @@ import {
   PlanningDesignation,
 } from '../../../shared/Constraints';
 import {Materials} from '../../../shared/Materials';
-import {ExistingLondonParking} from '../../../shared/Parking';
+import {
+  ExistingLondonParking,
+  ExistingNationalParking,
+} from '../../../shared/Parking';
 import {Region} from '../../../shared/Regions';
 import {Site} from '../../../shared/Sites';
 import {Date, URL} from '../../../shared/utils';
@@ -50,6 +53,10 @@ export type UKProperty = Site & {
     vacant?: {
       lastUseEndDate: Date;
     };
+    /** @description Is the land known to be contaminated? */
+    knownContamination?: boolean;
+    /** @description Is the land suspected of being contaminated? */
+    suspectedContamination?: boolean;
   };
   /**
    * @description Existing flood risk, if applicable to application.type
@@ -66,13 +73,14 @@ export type UKProperty = Site & {
     adjacent: boolean;
   };
   units?: ResidentialUnits;
+  parking?: ExistingNationalParking;
 };
 
 /**
  * @id #LondonProperty
  * @description Property details for sites within the Greater London Authority (GLA) area
  */
-export type LondonProperty = UKProperty & {
+export type LondonProperty = Omit<UKProperty, 'parking'> & {
   region: Extract<Region, 'London'>;
   titleNumber?: {
     known: 'Yes' | 'No';
@@ -106,4 +114,47 @@ export type LondonProperty = UKProperty & {
     status: 'occupied' | 'partVacant' | 'vacant';
   };
   parking?: ExistingLondonParking;
+  /**
+   * @description Use class
+   */
+  useClass?:
+    | 'A1'
+    | 'A2'
+    | 'A3'
+    | 'A4'
+    | 'A5'
+    | 'B1'
+    | 'B1a'
+    | 'B1b'
+    | 'B1c'
+    | 'B2'
+    | 'B8'
+    | 'C1'
+    | 'C2'
+    | 'C2a'
+    | 'C3'
+    | 'C4'
+    | 'D1'
+    | 'D2'
+    | 'SG';
+  useClassC3?: {
+    GIA: {
+      /** @description Use class C3 Gross Internal Area existing */
+      existing: number;
+      /** @description Use class C3 Gross Internal Area gained */
+      gained: number;
+      /** @description Use class C3 Gross Internal Area lost */
+      lost: number;
+    };
+  };
+  useClassC4?: {
+    GIA: {
+      /** @description Use class C4 Gross Internal Area existing */
+      existing: number;
+      /** @description Use class C4 Gross Internal Area gained */
+      gained: number;
+      /** @description Use class C4 Gross Internal Area lost */
+      lost: number;
+    };
+  };
 };
