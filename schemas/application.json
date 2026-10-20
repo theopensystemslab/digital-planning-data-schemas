@@ -2370,6 +2370,27 @@
         "preApp": {
           "$ref": "#/definitions/PreApplication"
         },
+        "preAppAdvice": {
+          "additionalProperties": false,
+          "properties": {
+            "form": {
+              "description": "Has prior advice been sought?",
+              "enum": [
+                "Yes",
+                "No"
+              ],
+              "type": "string"
+            },
+            "reference": {
+              "description": "Reference",
+              "type": "string"
+            }
+          },
+          "required": [
+            "form"
+          ],
+          "type": "object"
+        },
         "type": {
           "$ref": "#/definitions/ApplicationType"
         }
@@ -2780,6 +2801,10 @@
               "description": "Is the site at risk of flooding?",
               "type": "boolean"
             },
+            "increaseRiskElsewhere": {
+              "description": "Will the proposal increase the flood risk elsewhere?",
+              "type": "boolean"
+            },
             "surfaceWaterDisposal": {
               "description": "How will surface water be disposed of?",
               "enum": [
@@ -2792,6 +2817,10 @@
                 "other"
               ],
               "type": "string"
+            },
+            "within20mOfWatercourse": {
+              "description": "Is your project within 20 metres of a watercourse?",
+              "type": "boolean"
             }
           },
           "type": "object"
@@ -2832,6 +2861,52 @@
         "materials": {
           "$ref": "#/definitions/Materials",
           "description": "Proposed materials, if applicable to projectType"
+        },
+        "natureImpacts": {
+          "additionalProperties": false,
+          "properties": {
+            "designatedSitesAffected": {
+              "description": "Designated sites, important habitats or other important features affected?",
+              "enum": [
+                "onSite",
+                "adjacent",
+                "false"
+              ],
+              "type": "string"
+            },
+            "geologicalSitesAffected": {
+              "description": "Sites of geological conservation affected?",
+              "enum": [
+                "onSite",
+                "adjacent",
+                "false"
+              ],
+              "type": "string"
+            },
+            "importantHabitatsAffected": {
+              "description": "Important habitats affected, either on the project site ('onSite') or near to the project site ('adjacent')",
+              "enum": [
+                "onSite",
+                "adjacent"
+              ],
+              "type": "string"
+            },
+            "protectedSpeciesAffected": {
+              "description": "Protected or priority species affected",
+              "enum": [
+                "onSite",
+                "adjacent",
+                "false"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "protectedSpeciesAffected",
+            "designatedSitesAffected",
+            "geologicalSitesAffected"
+          ],
+          "type": "object"
         },
         "new": {
           "additionalProperties": false,
@@ -2996,6 +3071,24 @@
           "required": [
             "type",
             "total"
+          ],
+          "type": "object"
+        },
+        "trees": {
+          "additionalProperties": false,
+          "properties": {
+            "influenceDevelopment": {
+              "description": "Are there trees or hedges adjacent to the site that could influence the development or might be important as part of the local landscape character?",
+              "type": "boolean"
+            },
+            "onSite": {
+              "description": "Are there trees and hedges on the project site?",
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "onSite",
+            "influenceDevelopment"
           ],
           "type": "object"
         },
@@ -7316,6 +7409,14 @@
           ],
           "type": "object"
         },
+        "companyName": {
+          "description": "Lead Developer name",
+          "type": "string"
+        },
+        "overseasCompanyRegistrationNumber": {
+          "description": "Overseas company number",
+          "type": "string"
+        },
         "type": {
           "enum": [
             "ukCompany",
@@ -7430,6 +7531,27 @@
         },
         "preApp": {
           "$ref": "#/definitions/PreApplication"
+        },
+        "preAppAdvice": {
+          "additionalProperties": false,
+          "properties": {
+            "form": {
+              "description": "Has prior advice been sought?",
+              "enum": [
+                "Yes",
+                "No"
+              ],
+              "type": "string"
+            },
+            "reference": {
+              "description": "Reference",
+              "type": "string"
+            }
+          },
+          "required": [
+            "form"
+          ],
+          "type": "object"
         },
         "type": {
           "$ref": "#/definitions/ApplicationType"
@@ -8550,6 +8672,10 @@
               "description": "Green SuDS",
               "type": "boolean"
             },
+            "increaseRiskElsewhere": {
+              "description": "Will the proposal increase the flood risk elsewhere?",
+              "type": "boolean"
+            },
             "surfaceWaterDisposal": {
               "description": "How will surface water be disposed of?",
               "enum": [
@@ -8562,6 +8688,10 @@
                 "other"
               ],
               "type": "string"
+            },
+            "within20mOfWatercourse": {
+              "description": "Is your project within 20 metres of a watercourse?",
+              "type": "boolean"
             }
           },
           "type": "object"
@@ -8664,6 +8794,55 @@
           "additionalProperties": false,
           "description": "Changes that result in the loss, gain, or change of use of natural spaces",
           "properties": {
+            "openSpace": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "access": {
+                    "description": "Open Space access type",
+                    "enum": [
+                      "restricted",
+                      "unrestricted"
+                    ],
+                    "type": "string"
+                  },
+                  "area": {
+                    "description": "Open Space area",
+                    "type": "number"
+                  },
+                  "description": {
+                    "description": "Open Space description",
+                    "type": "string"
+                  },
+                  "designation": {
+                    "$ref": "#/definitions/OpenSpaceDesignation",
+                    "description": "Open Space designation"
+                  },
+                  "development": {
+                    "description": "Open Space change type",
+                    "enum": [
+                      "loss",
+                      "gain",
+                      "change"
+                    ],
+                    "type": "string"
+                  },
+                  "swap": {
+                    "description": "Open Space land swap",
+                    "type": "boolean"
+                  },
+                  "type": {
+                    "$ref": "#/definitions/OpenSpaceType",
+                    "description": "Open Space type"
+                  }
+                },
+                "required": [
+                  "development"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
             "openSpaces": {
               "items": {
                 "additionalProperties": false,
@@ -8722,6 +8901,47 @@
               },
               "type": "array"
             },
+            "protectedSpace": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "access": {
+                    "description": "Protected Space access",
+                    "enum": [
+                      "restricted",
+                      "unrestricted"
+                    ],
+                    "type": "string"
+                  },
+                  "area": {
+                    "description": "Protected Space area",
+                    "type": "number"
+                  },
+                  "description": {
+                    "description": "Protected Space description",
+                    "type": "string"
+                  },
+                  "designation": {
+                    "$ref": "#/definitions/ProtectedSpaceDesignation",
+                    "description": "Protected Space nature conservation designation"
+                  },
+                  "development": {
+                    "description": "Protected Space change type",
+                    "enum": [
+                      "loss",
+                      "gain",
+                      "change"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "development"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
             "protectedSpaces": {
               "items": {
                 "additionalProperties": false,
@@ -8772,6 +8992,52 @@
               "type": "array"
             }
           },
+          "type": "object"
+        },
+        "natureImpacts": {
+          "additionalProperties": false,
+          "properties": {
+            "designatedSitesAffected": {
+              "description": "Designated sites, important habitats or other important features affected?",
+              "enum": [
+                "onSite",
+                "adjacent",
+                "false"
+              ],
+              "type": "string"
+            },
+            "geologicalSitesAffected": {
+              "description": "Sites of geological conservation affected?",
+              "enum": [
+                "onSite",
+                "adjacent",
+                "false"
+              ],
+              "type": "string"
+            },
+            "importantHabitatsAffected": {
+              "description": "Important habitats affected, either on the project site ('onSite') or near to the project site ('adjacent')",
+              "enum": [
+                "onSite",
+                "adjacent"
+              ],
+              "type": "string"
+            },
+            "protectedSpeciesAffected": {
+              "description": "Protected or priority species affected",
+              "enum": [
+                "onSite",
+                "adjacent",
+                "false"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "protectedSpeciesAffected",
+            "designatedSitesAffected",
+            "geologicalSitesAffected"
+          ],
           "type": "object"
         },
         "new": {
@@ -8889,6 +9155,14 @@
           "description": "Scheme phasing",
           "type": "boolean"
         },
+        "plannedCompletionDate": {
+          "$ref": "#/definitions/Date",
+          "description": "Intended completion date"
+        },
+        "plannedStartDate": {
+          "$ref": "#/definitions/Date",
+          "description": "Intended commencement date"
+        },
         "projectType": {
           "items": {
             "$ref": "#/definitions/ProjectType"
@@ -8920,6 +9194,19 @@
           "properties": {
             "hectares": {
               "description": "What is the site area in hectares?",
+              "type": "number"
+            }
+          },
+          "required": [
+            "hectares"
+          ],
+          "type": "object"
+        },
+        "siteArea": {
+          "additionalProperties": false,
+          "properties": {
+            "hectares": {
+              "description": "Site area",
               "type": "number"
             }
           },
@@ -8999,6 +9286,24 @@
         "subdivisionDetails": {
           "description": "Sub-division of building",
           "type": "string"
+        },
+        "trees": {
+          "additionalProperties": false,
+          "properties": {
+            "influenceDevelopment": {
+              "description": "Are there trees or hedges adjacent to the site that could influence the development or might be important as part of the local landscape character?",
+              "type": "boolean"
+            },
+            "onSite": {
+              "description": "Are there trees and hedges on the project site?",
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "onSite",
+            "influenceDevelopment"
+          ],
+          "type": "object"
         },
         "units": {
           "additionalProperties": false,
@@ -9361,6 +9666,18 @@
                     "count"
                   ],
                   "type": "object"
+                },
+                "greyReuse": {
+                  "description": "Grey water reuse",
+                  "type": "boolean"
+                },
+                "rainHarvesting": {
+                  "description": "Rain water harvesting",
+                  "type": "boolean"
+                },
+                "usage": {
+                  "description": "Internal residential water usage",
+                  "type": "number"
                 }
               },
               "required": [

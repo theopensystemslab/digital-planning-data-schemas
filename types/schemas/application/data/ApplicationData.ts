@@ -20,6 +20,12 @@ export interface BaseApplicationData {
   preApp?: PreApplication;
   planningApp?: PlanningApplication;
   CIL?: CommunityInfrastructureLevy;
+  preAppAdvice?: {
+    /** @description Has prior advice been sought? */
+    form: 'Yes' | 'No';
+    /** @description Reference */
+    reference?: string;
+  };
 }
 
 /**
@@ -57,4 +63,8 @@ export interface LeadDeveloper {
     name: string;
     registrationNumber: string;
   };
+  /** @description Lead Developer name */
+  companyName?: string;
+  /** @description Overseas company number */
+  overseasCompanyRegistrationNumber?: string;
 }

@@ -88,6 +88,10 @@ export interface BaseProposal {
   flood?: {
     /** @description Is the site at risk of flooding? */
     atRisk?: boolean;
+    /** @description Is your project within 20 metres of a watercourse? */
+    within20mOfWatercourse?: boolean;
+    /** @description Will the proposal increase the flood risk elsewhere? */
+    increaseRiskElsewhere?: boolean;
     /** @description How will surface water be disposed of? */
     surfaceWaterDisposal?:
       | 'sustainableDrainageSystem'
@@ -228,6 +232,22 @@ export interface BaseProposal {
     /** @description Are you proposing to connect to the existing drainage system? */
     newConnection: boolean;
   };
+  natureImpacts?: {
+    /** @description Protected or priority species affected */
+    protectedSpeciesAffected: NatureImpact;
+    /** @description Designated sites, important habitats or other important features affected? */
+    designatedSitesAffected: NatureImpact;
+    /** @description Important habitats affected, either on the project site ('onSite') or near to the project site ('adjacent') */
+    importantHabitatsAffected?: 'onSite' | 'adjacent';
+    /** @description Sites of geological conservation affected? */
+    geologicalSitesAffected: NatureImpact;
+  };
+  trees?: {
+    /** @description Are there trees and hedges on the project site? */
+    onSite: boolean;
+    /** @description Are there trees or hedges adjacent to the site that could influence the development or might be important as part of the local landscape character? */
+    influenceDevelopment: boolean;
+  };
   effluent?: {
     /** @description Does the proposed use involve disposal of trade effluent? */
     disposal: boolean;
@@ -270,6 +290,8 @@ export interface BaseProposal {
   parking?: ProposedNationalParking;
 }
 
+type NatureImpact = 'onSite' | 'adjacent' | 'false';
+
 interface EmployeeCounts {
   fullTime?: {number: Integer};
   partTime?: {number: Integer};
@@ -282,7 +304,7 @@ interface EmployeeCounts {
  */
 export interface LondonProposal extends Omit<
   BaseProposal,
-  'units' | 'parking' | 'flood'
+  'units' | 'parking' | 'utilities' | 'flood'
 > {
   schemeName?: string;
   /**
@@ -290,9 +312,21 @@ export interface LondonProposal extends Omit<
    */
   parking?: ProposedLondonParking;
   /**
+   * @description Proposed utilities, if applicable to application.type
+   */
+  utilities?: LondonUtilities;
+  /**
    * @description Assessment of flood risk, if applicable to application.type
    */
   flood?: LondonFlood;
+  /**
+   * @description Intended commencement date
+   */
+  plannedStartDate?: Date;
+  /**
+   * @description Intended completion date
+   */
+  plannedCompletionDate?: Date;
   /**
    * @description Scheme phasing
    */
@@ -353,6 +387,10 @@ export interface LondonProposal extends Omit<
       number: Integer;
     };
   };
+  siteArea?: {
+    /** @description Site area */
+    hectares: number;
+  };
   /**
    * @description Creating new buildings
    */
@@ -396,6 +434,34 @@ export interface LondonProposal extends Omit<
       designation: ProtectedSpaceDesignation;
       access: 'restricted' | 'unrestricted';
       area: {hectares: number};
+    }[];
+    openSpace?: {
+      /** @description Open Space access type */
+      access?: 'restricted' | 'unrestricted';
+      /** @description Open Space area */
+      area?: number;
+      /** @description Open Space change type */
+      development: 'loss' | 'gain' | 'change';
+      /** @description Open Space description */
+      description?: string;
+      /** @description Open Space designation */
+      designation?: OpenSpaceDesignation;
+      /** @description Open Space land swap */
+      swap?: boolean;
+      /** @description Open Space type */
+      type?: OpenSpaceType;
+    }[];
+    protectedSpace?: {
+      /** @description Protected Space access */
+      access?: 'restricted' | 'unrestricted';
+      /** @description Protected Space area */
+      area?: number;
+      /** @description Protected Space change type */
+      development: 'loss' | 'gain' | 'change';
+      /** @description Protected Space description */
+      description?: string;
+      /** @description Protected Space nature conservation designation */
+      designation?: ProtectedSpaceDesignation;
     }[];
   };
   /**
@@ -471,6 +537,23 @@ interface EVChargingPoints {
   /** @description Number of slow EV charging points */
   slow?: {number: Integer};
 }
+
+type BaseUtilities = NonNullable<BaseProposal['utilities']>;
+
+/**
+ * @description Proposed utilities for project sites within the Greater London Authority (GLA) area
+ */
+type LondonUtilities = Omit<BaseUtilities, 'water'> & {
+  /** @description Count of new water connections */
+  water?: NonNullable<BaseUtilities['water']> & {
+    /** @description Grey water reuse */
+    greyReuse?: boolean;
+    /** @description Internal residential water usage */
+    usage?: number;
+    /** @description Rain water harvesting */
+    rainHarvesting?: boolean;
+  };
+};
 
 /**
  * @description Assessment of flood risk for project sites within the Greater London Authority (GLA) area
