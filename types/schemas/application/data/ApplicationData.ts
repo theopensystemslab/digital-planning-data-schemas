@@ -20,6 +20,12 @@ export interface BaseApplicationData {
   preApp?: PreApplication;
   planningApp?: PlanningApplication;
   CIL?: CommunityInfrastructureLevy;
+  preAppAdvice?: {
+    /** @description Has prior advice been sought? */
+    form: 'Yes' | 'No';
+    /** @description Reference */
+    reference?: string;
+  };
 }
 
 /**
@@ -29,6 +35,26 @@ export interface BaseApplicationData {
 export interface LondonApplicationData extends BaseApplicationData {
   vacantBuildingCredit?: boolean;
   leadDeveloper?: LeadDeveloper;
+  /**
+   * @description Affordable Housing Fast Track
+   */
+  housingFastTrack?: boolean;
+  linked?: {
+    superseding?: {
+      /** @description Description of the superseded components */
+      description?: string;
+      /** @description Reference number of the original application */
+      applicationNumber?: string;
+      /** @description Is the original permission only partially superseded? */
+      partial?: boolean;
+      /** @description Units that are being superseded */
+      unitReference?: string;
+    };
+  };
+  mobileNetworkOperators?: {
+    /** @description Mobile network operators consulted */
+    consulted: boolean;
+  };
 }
 
 export interface LeadDeveloper {
@@ -37,4 +63,8 @@ export interface LeadDeveloper {
     name: string;
     registrationNumber: string;
   };
+  /** @description Lead Developer name */
+  companyName?: string;
+  /** @description Overseas company number */
+  overseasCompanyRegistrationNumber?: string;
 }
