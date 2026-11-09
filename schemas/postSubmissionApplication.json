@@ -3364,9 +3364,7 @@
       "required": [
         "address",
         "localAuthorityDistrict",
-        "region",
-        "type",
-        "ward"
+        "type"
       ],
       "type": "object"
     },
@@ -7406,8 +7404,7 @@
         "address",
         "localAuthorityDistrict",
         "region",
-        "type",
-        "ward"
+        "type"
       ],
       "type": "object"
     },
@@ -11155,9 +11152,7 @@
           "required": [
             "address",
             "localAuthorityDistrict",
-            "region",
-            "type",
-            "ward"
+            "type"
           ],
           "type": "object"
         },
@@ -11474,8 +11469,7 @@
             "address",
             "localAuthorityDistrict",
             "region",
-            "type",
-            "ward"
+            "type"
           ],
           "type": "object"
         }
