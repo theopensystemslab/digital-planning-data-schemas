@@ -40,8 +40,6 @@ export const reportAPlanningBreach: Enforcement = {
           'CHARES DICKENS WRITING CHALET, EASTGATE HOUSE, HIGH STREET, ROCHESTER, MEDWAY, ME1 1EW',
       },
       localAuthorityDistrict: ['Medway'],
-      region: 'South East',
-      ward: 'Rochester West & Borstal',
       type: {
         value: 'commercial.leisure.museum',
         description: 'Museum / Gallery',

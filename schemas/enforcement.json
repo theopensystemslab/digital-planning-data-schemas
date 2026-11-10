@@ -14385,9 +14385,7 @@
           "required": [
             "address",
             "localAuthorityDistrict",
-            "region",
-            "type",
-            "ward"
+            "type"
           ],
           "type": "object"
         },

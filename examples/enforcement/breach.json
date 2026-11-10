@@ -36,8 +36,6 @@
       "localAuthorityDistrict": [
         "Medway"
       ],
-      "region": "South East",
-      "ward": "Rochester West & Borstal",
       "type": {
         "value": "commercial.leisure.museum",
         "description": "Museum / Gallery"

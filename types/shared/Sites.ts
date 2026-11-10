@@ -25,11 +25,11 @@ export type Site = {
   /**
    * @description Name of the ward sourced from planning.data.gov.uk/dataset/ward
    */
-  ward: string;
+  ward?: string;
   /**
    * @description Name of the region sourced from planning.data.gov.uk/dataset/region; "London" is a proxy for the Greater London Authority
    */
-  region: Region;
+  region?: Region;
   /**
    * @description HM Land Registry Index polygon for this property, commonly referred to as the blue line boundary, sourced from planning.data.gov.uk/dataset/title-boundary
    */
