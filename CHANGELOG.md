@@ -9,6 +9,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 The minor version will be incremented upon a breaking change and the patch version will be
 incremented for features.
 
+## [0.7.9] - 2026-11-10
+
+### Changed
+- `Site` properties which are reliant on externally sourced values from Planning Data are made optional ([#437](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/437))
+- Adds additional `data` properties to better cover Minor planning application types and GLA requirements to the `Application` schema, previously only added to the `PrototypeApplication` ([#433](https://github.com/theopensystemslab/digital-planning-data-schemas/pull/433))
+
 ## [0.7.8] - 2026-10-07
 
 ### Added
